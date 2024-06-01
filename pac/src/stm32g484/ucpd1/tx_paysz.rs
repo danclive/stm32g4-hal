@@ -1,0 +1,47 @@
+#[doc = "Register `TX_PAYSZ` reader"]
+pub type R = crate::R<TxPayszSpec>;
+#[doc = "Register `TX_PAYSZ` writer"]
+pub type W = crate::W<TxPayszSpec>;
+#[doc = "Field `TXPAYSZ` reader - TXPAYSZ"]
+pub type TxpayszR = crate::FieldReader<u16>;
+#[doc = "Field `TXPAYSZ` writer - TXPAYSZ"]
+pub type TxpayszW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
+impl R {
+    #[doc = "Bits 0:9 - TXPAYSZ"]
+    #[inline(always)]
+    pub fn txpaysz(&self) -> TxpayszR {
+        TxpayszR::new((self.bits & 0x03ff) as u16)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TX_PAYSZ")
+            .field("txpaysz", &self.txpaysz())
+            .finish()
+    }
+}
+impl W {
+    #[doc = "Bits 0:9 - TXPAYSZ"]
+    #[inline(always)]
+    #[must_use]
+    pub fn txpaysz(&mut self) -> TxpayszW<TxPayszSpec> {
+        TxpayszW::new(self, 0)
+    }
+}
+#[doc = "UCPD Tx Paysize Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_paysz::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tx_paysz::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TxPayszSpec;
+impl crate::RegisterSpec for TxPayszSpec {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`tx_paysz::R`](R) reader structure"]
+impl crate::Readable for TxPayszSpec {}
+#[doc = "`write(|w| ..)` method takes [`tx_paysz::W`](W) writer structure"]
+impl crate::Writable for TxPayszSpec {
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+}
+#[doc = "`reset()` method sets TX_PAYSZ to value 0"]
+impl crate::Resettable for TxPayszSpec {
+    const RESET_VALUE: u32 = 0;
+}

@@ -1,0 +1,50 @@
+[package]
+name = "stm32g4-hal"
+version = "0.0.1"
+authors = ["danc <dangcheng@hotmail.com>"]
+categories = ["embedded", "hardware-support", "no-std"]
+description = "Peripheral access API for STM32G4 series microcontrollers"
+keywords = ["arm", "cortex-m", "stm32g4", "stm32g4xx", "hal"]
+documentation = "https://docs.rs/stm32g4-hal"
+repository = "https://github.com/danclive/stm32g4-hal"
+edition = "2018"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7.3"
+critical-section = "1"
+defmt = { version = "0.3.8", optional = true }
+stm32g4-pac = { version = "0.0.1", path = "../pac" }
+embedded-hal = "1.0"
+
+[dev-dependencies]
+defmt-rtt = "0.4.1"
+
+[features]
+default = ["stm32g431"]
+defmt = ["dep:defmt", "stm32g4-pac/defmt"]
+
+stm32g431 = ["stm32g4-pac/stm32g431"]
+stm32g441 = ["stm32g4-pac/stm32g441"]
+stm32g471 = ["stm32g4-pac/stm32g471"]
+stm32g473 = ["stm32g4-pac/stm32g473"]
+stm32g474 = ["stm32g4-pac/stm32g474"]
+stm32g483 = ["stm32g4-pac/stm32g483"]
+stm32g484 = ["stm32g4-pac/stm32g484"]
+stm32g491 = ["stm32g4-pac/stm32g491"]
+
+[package.metadata.docs.rs]
+features = ["rt", "stm32g431", "stm32g441"]
+# default-target = "thumbv7em-none-eabihf"
+targets = ["thumbv7em-none-eabihf"]
+
+[profile.dev]
+debug = true
+lto = true
+
+[profile.release]
+debug = true
+lto = true
+opt-level = 3
