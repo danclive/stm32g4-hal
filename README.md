@@ -45,7 +45,7 @@ cargo run --example blinky --features stm32g431,defmt --release -- --chip STM32G
 A list of chips supported by probe-rs can be found by running
 
 ```
-probe-rs --list-chips
+probe-rs chip list
 ```
 
 For furher information, see the documentation for [probe-rs](https://probe.rs/).

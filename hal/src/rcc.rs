@@ -1,9 +1,28 @@
+//! Clock configuration.
+use fugit::HertzU32 as Hertz;
+
 use crate::pac::{
     self,
     rcc::{self, RegisterBlock as RccRB},
 };
 
+use clock::{Clocks, Rcc};
+
+pub mod clock;
+pub mod clockout;
 mod enable;
+
+/// Extension trait that constrains the `RCC` peripheral
+pub trait RccExt {
+    /// Constrains the `RCC` peripheral so it plays nicely with the other abstractions
+    fn constrain(self) -> Rcc;
+}
+
+impl RccExt for pac::Rcc {
+    fn constrain(self) -> Rcc {
+        Rcc::new(self)
+    }
+}
 
 /// Bus associated to peripheral
 pub trait RccBus: crate::Sealed {
@@ -45,41 +64,6 @@ pub trait Enable: RccBus {
     unsafe fn disable_unchecked() {
         let rcc = pac::Rcc::ptr();
         Self::disable(&*rcc);
-    }
-}
-
-/// Low power enable/disable peripheral
-#[allow(clippy::missing_safety_doc)]
-pub trait LPEnable: RccBus {
-    /// Enables peripheral in low power mode
-    fn enable_in_low_power(rcc: &RccRB);
-
-    /// Disables peripheral in low power mode
-    fn disable_in_low_power(rcc: &RccRB);
-
-    /// Check if peripheral enabled in low power mode
-    fn is_enabled_in_low_power() -> bool;
-
-    /// Check if peripheral disabled in low power mode
-    #[inline]
-    fn is_disabled_in_low_power() -> bool {
-        !Self::is_enabled_in_low_power()
-    }
-
-    /// # Safety
-    ///
-    /// Enables peripheral in low power mode. Takes access to RCC internally
-    unsafe fn enable_in_low_power_unchecked() {
-        let rcc = pac::Rcc::ptr();
-        Self::enable_in_low_power(&*rcc);
-    }
-
-    /// # Safety
-    ///
-    /// Disables peripheral in low power mode. Takes access to RCC internally
-    unsafe fn disable_in_low_power_unchecked() {
-        let rcc = pac::Rcc::ptr();
-        Self::disable_in_low_power(&*rcc);
     }
 }
 
@@ -138,4 +122,70 @@ bus_struct! {
     APB1_1 => (RccApb1enr1, rcc_apb1enr1, RccApb1rstr1, rcc_apb1rstr1, RccApb1smenr1, rcc_apb1smenr1, "Advanced Peripheral Bus 1_1 (APB1_1) registers"),
     APB1_2 => (RccApb1enr2, rcc_apb1enr2, RccApb1rstr2, rcc_apb1rstr2, RccApb1smenr2, rcc_apb1smenr2, "Advanced Peripheral Bus 1_2 (APB1_2) registers"),
     APB2 => (RccApb2enr, rcc_apb2enr, RccApb2rstr, rcc_apb2rstr, RccApb2smenr, rcc_apb2smenr, "Advanced Peripheral Bus 2 (APB2) registers"),
+}
+
+pub trait GetBusFreq {
+    fn get_frequency(clocks: &Clocks) -> Hertz;
+
+    fn get_timer_frequency(clocks: &Clocks) -> Hertz {
+        Self::get_frequency(clocks)
+    }
+}
+
+impl<T> GetBusFreq for T
+where
+    T: RccBus,
+    T::Bus: GetBusFreq,
+{
+    fn get_frequency(clocks: &Clocks) -> Hertz {
+        T::Bus::get_frequency(clocks)
+    }
+    fn get_timer_frequency(clocks: &Clocks) -> Hertz {
+        T::Bus::get_timer_frequency(clocks)
+    }
+}
+
+impl GetBusFreq for AHB1 {
+    fn get_frequency(clocks: &Clocks) -> Hertz {
+        clocks.ahb_clk
+    }
+}
+
+impl GetBusFreq for AHB2 {
+    fn get_frequency(clocks: &Clocks) -> Hertz {
+        clocks.ahb_clk
+    }
+}
+
+impl GetBusFreq for AHB3 {
+    fn get_frequency(clocks: &Clocks) -> Hertz {
+        clocks.ahb_clk
+    }
+}
+
+impl GetBusFreq for APB1_1 {
+    fn get_frequency(clocks: &Clocks) -> Hertz {
+        clocks.apb1_clk
+    }
+    fn get_timer_frequency(clocks: &Clocks) -> Hertz {
+        clocks.apb1_tim_clk
+    }
+}
+
+impl GetBusFreq for APB1_2 {
+    fn get_frequency(clocks: &Clocks) -> Hertz {
+        clocks.apb1_clk
+    }
+    fn get_timer_frequency(clocks: &Clocks) -> Hertz {
+        clocks.apb1_tim_clk
+    }
+}
+
+impl GetBusFreq for APB2 {
+    fn get_frequency(clocks: &Clocks) -> Hertz {
+        clocks.apb2_clk
+    }
+    fn get_timer_frequency(clocks: &Clocks) -> Hertz {
+        clocks.apb2_tim_clk
+    }
 }

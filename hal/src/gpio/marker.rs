@@ -1,3 +1,5 @@
+//! Marker traits
+
 use super::*;
 
 /// Marker trait that show if `ExtiPin` can be implemented
@@ -15,15 +17,19 @@ pub trait IntoAf<const A: u8> {}
 
 impl<MODE> Interruptible for Output<MODE> {}
 impl Interruptible for Input {}
+impl<const A: u8, OutType> Interruptible for Alt<A, OutType> {}
+
 impl Readable for Input {}
 impl Readable for Output<OpenDrain> {}
-impl<const A: u8, Otype> Interruptible for Alternate<A, Otype> {}
-impl<const A: u8, Otype> Readable for Alternate<A, Otype> {}
+impl<const A: u8, OutType> Readable for Alt<A, OutType> {}
+
 impl Active for Input {}
-impl<Otype> OutputSpeed for Output<Otype> {}
-impl<const A: u8, Otype> OutputSpeed for Alternate<A, Otype> {}
-impl<Otype> Active for Output<Otype> {}
-impl<const A: u8, Otype> Active for Alternate<A, Otype> {}
+impl<OutType> Active for Output<OutType> {}
+impl<const A: u8, OutType> Active for Alt<A, OutType> {}
+
+impl<OutType> OutputSpeed for Output<OutType> {}
+impl<const A: u8, OutType> OutputSpeed for Alt<A, OutType> {}
+
 impl NotAlt for Input {}
-impl<Otype> NotAlt for Output<Otype> {}
+impl<OutType> NotAlt for Output<OutType> {}
 impl NotAlt for Analog {}

@@ -16,26 +16,6 @@ pub mod marker;
 pub mod outport;
 mod partially_erased;
 
-/// A filler pin type
-#[derive(Debug, Default)]
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub struct NoPin<Otype = PushPull>(PhantomData<Otype>);
-impl<Otype> NoPin<Otype> {
-    pub fn new() -> Self {
-        Self(PhantomData)
-    }
-}
-
-/// Id, port and mode for any pin
-pub trait PinExt {
-    /// Current pin mode
-    type Mode;
-    /// Pin number
-    fn pin_id(&self) -> u8;
-    /// Port number starting from 0
-    fn port_id(&self) -> u8;
-}
-
 /// Input mode (type state)
 #[derive(Debug, Default)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
@@ -78,10 +58,20 @@ pub struct Analog;
 /// Some alternate mode (type state)
 #[derive(Debug, Default)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub struct Alternate<const A: u8, Otype = PushPull>(PhantomData<Otype>);
+pub struct Alt<const A: u8, OutType = PushPull>(PhantomData<OutType>);
 
 /// JTAG/SWD mote (type state)
-pub type Debugger = Alternate<0, PushPull>;
+pub type Debugger = Alt<0, PushPull>;
+
+/// A filler pin type
+#[derive(Debug, Default)]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+pub struct NoPin<OutType = PushPull>(PhantomData<OutType>);
+impl<OutType> NoPin<OutType> {
+    pub fn new() -> Self {
+        Self(PhantomData)
+    }
+}
 
 /// GPIO Pin speed selection
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
@@ -145,7 +135,7 @@ macro_rules! af {
     ($($i:literal: $AFi:ident),+) => {
         $(
             #[doc = concat!("Alternate function ", $i, " (type state)" )]
-            pub type $AFi<Otype = PushPull> = Alternate<$i, Otype>;
+            pub type $AFi<OutType = PushPull> = Alt<$i, OutType>;
         )+
     };
 }
@@ -169,14 +159,12 @@ af!(
     15: AF15
 );
 
-pub use Input as DefaultMode;
-
 /// Generic pin type
 ///
 /// - `MODE` is one of the pin modes (see [Modes](crate::gpio#modes) section).
 /// - `P` is port name: `A` for GPIOA, `B` for GPIOB, etc.
 /// - `N` is pin number: from `0` to `15`.
-pub struct Pin<const P: char, const N: u8, MODE = DefaultMode> {
+pub struct Pin<const P: char, const N: u8, MODE = Input> {
     _mode: PhantomData<MODE>,
 }
 
@@ -204,6 +192,16 @@ impl<const P: char, const N: u8, MODE> defmt::Format for Pin<P, N, MODE> {
     }
 }
 
+/// Id, port and mode for any pin
+pub trait PinExt {
+    /// Current pin mode
+    type Mode;
+    /// Pin number
+    fn pin_id(&self) -> u8;
+    /// Port number starting from 0
+    fn port_id(&self) -> u8;
+}
+
 impl<const P: char, const N: u8, MODE> PinExt for Pin<P, N, MODE> {
     type Mode = MODE;
 
@@ -211,6 +209,7 @@ impl<const P: char, const N: u8, MODE> PinExt for Pin<P, N, MODE> {
     fn pin_id(&self) -> u8 {
         N
     }
+
     #[inline(always)]
     fn port_id(&self) -> u8 {
         P as u8 - b'A'
@@ -461,7 +460,7 @@ macro_rules! gpio {
             $(
                 #[doc=stringify!($PXi)]
                 #[doc=" pin"]
-                pub type $PXi<MODE = crate::gpio::DefaultMode> = crate::gpio::Pin<$port_id, $i, MODE>;
+                pub type $PXi<MODE = crate::gpio::Input> = crate::gpio::Pin<$port_id, $i, MODE>;
 
                 $(
                     impl<MODE> crate::gpio::marker::IntoAf<$A> for $PXi<MODE> { }

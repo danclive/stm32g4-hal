@@ -1,15 +1,15 @@
 use super::*;
 
-impl<const P: char, const N: u8, const A: u8> Pin<P, N, Alternate<A, PushPull>> {
+impl<const P: char, const N: u8, const A: u8> Pin<P, N, Alt<A, PushPull>> {
     /// Turns pin alternate configuration pin into open drain
-    pub fn set_open_drain(self) -> Pin<P, N, Alternate<A, OpenDrain>> {
+    pub fn set_open_drain(self) -> Pin<P, N, Alt<A, OpenDrain>> {
         self.into_mode()
     }
 }
 
 impl<const P: char, const N: u8, MODE: PinMode> Pin<P, N, MODE> {
     /// Configures the pin to operate alternate mode
-    pub fn into_alternate<const A: u8>(self) -> Pin<P, N, Alternate<A, PushPull>>
+    pub fn into_alternate<const A: u8>(self) -> Pin<P, N, Alt<A, PushPull>>
     where
         Self: marker::IntoAf<A>,
     {
@@ -17,8 +17,7 @@ impl<const P: char, const N: u8, MODE: PinMode> Pin<P, N, MODE> {
     }
 
     /// Configures the pin to operate in alternate open drain mode
-    #[allow(path_statements)]
-    pub fn into_alternate_open_drain<const A: u8>(self) -> Pin<P, N, Alternate<A, OpenDrain>>
+    pub fn into_alternate_open_drain<const A: u8>(self) -> Pin<P, N, Alt<A, OpenDrain>>
     where
         Self: marker::IntoAf<A>,
     {
@@ -78,7 +77,7 @@ impl<const P: char, const N: u8, MODE: PinMode> Pin<P, N, MODE> {
         self.into_mode()
     }
 
-    /// Configures the pin to operate as an analog input pin
+    /// Configures the pin to operate as an analog pin
     pub fn into_analog(self) -> Pin<P, N, Analog> {
         self.into_mode()
     }
@@ -100,8 +99,8 @@ impl<const P: char, const N: u8, MODE: PinMode> Pin<P, N, MODE> {
         change_mode!((*gpiox::<P>()), N);
     }
 
-    #[inline(always)]
     /// Converts pin into specified mode
+    #[inline(always)]
     pub fn into_mode<M: PinMode>(mut self) -> Pin<P, N, M> {
         self.mode::<M>();
         Pin::new()
@@ -154,8 +153,8 @@ impl<MODE: PinMode> ErasedPin<MODE> {
         change_mode!(self.block(), n);
     }
 
-    #[inline(always)]
     /// Converts pin into specified mode
+    #[inline(always)]
     pub fn into_mode<M: PinMode>(mut self) -> ErasedPin<M> {
         self.mode::<M>();
         ErasedPin::from_pin_port(self.into_pin_port())
@@ -170,8 +169,8 @@ impl<const P: char, MODE: PinMode> PartiallyErasedPin<P, MODE> {
         change_mode!((*gpiox::<P>()), n);
     }
 
-    #[inline(always)]
     /// Converts pin into specified mode
+    #[inline(always)]
     pub fn into_mode<M: PinMode>(mut self) -> PartiallyErasedPin<P, M> {
         self.mode::<M>();
         PartiallyErasedPin::new(self.i)
@@ -308,16 +307,19 @@ pub trait PinMode: crate::Sealed {
 }
 
 impl crate::Sealed for Input {}
+
 impl PinMode for Input {
     const MODER: u32 = 0b00;
 }
 
 impl crate::Sealed for Analog {}
+
 impl PinMode for Analog {
     const MODER: u32 = 0b11;
 }
 
-impl<Otype> crate::Sealed for Output<Otype> {}
+impl<OutType> crate::Sealed for Output<OutType> {}
+
 impl PinMode for Output<OpenDrain> {
     const MODER: u32 = 0b01;
     const OTYPER: Option<u32> = Some(0b1);
@@ -328,14 +330,15 @@ impl PinMode for Output<PushPull> {
     const OTYPER: Option<u32> = Some(0b0);
 }
 
-impl<const A: u8, Otype> crate::Sealed for Alternate<A, Otype> {}
-impl<const A: u8> PinMode for Alternate<A, OpenDrain> {
+impl<const A: u8, OutType> crate::Sealed for Alt<A, OutType> {}
+
+impl<const A: u8> PinMode for Alt<A, OpenDrain> {
     const MODER: u32 = 0b10;
     const OTYPER: Option<u32> = Some(0b1);
     const AFR: Option<u32> = Some(A as _);
 }
 
-impl<const A: u8> PinMode for Alternate<A, PushPull> {
+impl<const A: u8> PinMode for Alt<A, PushPull> {
     const MODER: u32 = 0b10;
     const OTYPER: Option<u32> = Some(0b0);
     const AFR: Option<u32> = Some(A as _);

@@ -7,6 +7,7 @@ pub use crate::pac::interrupt;
 
 pub mod bb;
 pub mod gpio;
+pub mod pwr;
 pub mod rcc;
 pub mod syscfg;
 

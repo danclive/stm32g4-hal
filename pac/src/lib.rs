@@ -7,7 +7,6 @@ use generic::*;
 
 #[cfg(feature = "stm32g431")]
 pub mod stm32g431;
-
 #[cfg(feature = "stm32g441")]
 pub mod stm32g441;
 #[cfg(feature = "stm32g471")]

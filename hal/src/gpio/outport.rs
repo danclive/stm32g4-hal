@@ -1,3 +1,5 @@
+//! Pins to output port
+
 use super::*;
 
 /// Convert tuple or array of pins to output port
