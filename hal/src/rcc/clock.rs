@@ -17,14 +17,6 @@ impl Rcc {
         }
     }
 
-    pub fn pll(self) -> Self {
-        self.clock_src(SysClockSrc::PLL)
-    }
-
-    pub fn hsi(self) -> Self {
-        self.clock_src(SysClockSrc::HSI)
-    }
-
     pub fn clock_src(mut self, mux: SysClockSrc) -> Self {
         self.cfg.sys_mux = mux;
         self
