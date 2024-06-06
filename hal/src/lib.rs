@@ -1,5 +1,6 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
+#![allow(dead_code)]
 #![no_std]
 
 #[cfg(feature = "rt")]
@@ -10,6 +11,8 @@ pub mod gpio;
 pub mod pwr;
 pub mod rcc;
 pub mod syscfg;
+
+pub mod prelude;
 
 mod sealed {
     pub trait Sealed {}

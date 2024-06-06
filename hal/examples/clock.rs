@@ -1,21 +1,16 @@
 //! Blinks an LED
 
-// #![deny(unsafe_code)]
-// #![deny(warnings)]
+#![deny(unsafe_code)]
+#![deny(warnings)]
 #![no_main]
 #![no_std]
 
 use stm32g4_hal as hal;
 
-use crate::hal::{
-    gpio::GpioExt,
-    pac,
-    pwr::{self, PwrExt},
-    rcc::{clock, RccExt},
-};
-use cortex_m_rt::entry;
+use crate::hal::prelude::*;
+use crate::hal::{pac, pwr, rcc::clock};
 
-use fugit::RateExtU32;
+use cortex_m_rt::entry;
 
 pub use defmt::{debug, error, info, trace, warn};
 use defmt_rtt as _;
@@ -32,7 +27,7 @@ fn main() -> ! {
         .freeze();
     let rcc = p.rcc.constrain();
 
-    let (rcc, clock) = rcc
+    let (_rcc, clock) = rcc
         .clock_src(clock::SysClockSrc::PLL)
         .pll_cfg(clock::PllConfig {
             mux: clock::PLLSrc::HSE(25.MHz()),

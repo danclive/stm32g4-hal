@@ -140,7 +140,6 @@ impl Rcc {
             (pwr::VoltageScale::Range1 { enable_boost: true }, pwr::VoltageScale::Range2) => {
                 todo!()
             }
-
             // From VoltageScale::Range1 normal
             (
                 pwr::VoltageScale::Range1 {

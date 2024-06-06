@@ -7,7 +7,9 @@
 
 use stm32g4_hal as hal;
 
-use crate::hal::{gpio::GpioExt, pac};
+use crate::hal::pac;
+use crate::hal::prelude::*;
+
 use cortex_m_rt::entry;
 
 pub use defmt::{debug, error, info, trace, warn};
