@@ -1,3 +1,5 @@
+//! General Purpose Input / Output
+
 use core::fmt;
 use core::marker::PhantomData;
 use core::{convert::From, ops::Not};
@@ -386,25 +388,25 @@ where
 
 const fn gpiox<const P: char>() -> *const crate::pac::gpioa::RegisterBlock {
     match P {
-        'A' => crate::pac::Gpioa::ptr(),
-        'B' => crate::pac::Gpiob::ptr() as _,
-        'C' => crate::pac::Gpioc::ptr() as _,
+        'A' => crate::pac::Gpioa::PTR,
+        'B' => crate::pac::Gpiob::PTR as _,
+        'C' => crate::pac::Gpioc::PTR as _,
         #[cfg(feature = "gpiod")]
-        'D' => crate::pac::Gpiod::ptr() as _,
+        'D' => crate::pac::Gpiod::PTR as _,
         #[cfg(feature = "gpioe")]
-        'E' => crate::pac::Gpioe::ptr() as _,
+        'E' => crate::pac::Gpioe::PTR as _,
         #[cfg(feature = "gpiof")]
-        'F' => crate::pac::Gpiof::ptr() as _,
+        'F' => crate::pac::Gpiof::PTR as _,
         #[cfg(feature = "gpiog")]
-        'G' => crate::pac::Gpiog::ptr() as _,
+        'G' => crate::pac::Gpiog::PTR as _,
         #[cfg(feature = "gpioh")]
-        'H' => crate::pac::Gpioh::ptr() as _,
+        'H' => crate::pac::Gpioh::PTR as _,
         #[cfg(feature = "gpioi")]
-        'I' => crate::pac::Gpioi::ptr() as _,
+        'I' => crate::pac::Gpioi::PTR as _,
         #[cfg(feature = "gpioj")]
-        'J' => crate::pac::Gpioj::ptr() as _,
+        'J' => crate::pac::Gpioj::PTR as _,
         #[cfg(feature = "gpiok")]
-        'K' => crate::pac::Gpiok::ptr() as _,
+        'K' => crate::pac::Gpiok::PTR as _,
         _ => panic!("Unknown GPIO port"),
     }
 }

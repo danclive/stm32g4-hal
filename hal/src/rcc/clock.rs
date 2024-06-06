@@ -2,6 +2,7 @@ use fugit::{HertzU32 as Hertz, RateExtU32};
 
 use crate::pac;
 use crate::pwr::{self, PowerConfiguration};
+pub use defmt::{debug, error, info, trace, warn};
 
 /// Constrained RCC peripheral
 pub struct Rcc {
@@ -125,6 +126,9 @@ impl Rcc {
         let present_vos_mode = pwr::current_vos();
         let target_vos_mode = self.cfg.pwr_cfg.vos();
 
+        info!("present_vos_mode: {:?}", present_vos_mode);
+        info!("target_vos_mode: {:?}", target_vos_mode);
+
         match (present_vos_mode, target_vos_mode) {
             // From VoltageScale::Range1 boost
             (
@@ -230,7 +234,7 @@ impl Rcc {
 
     pub fn unlock_rtc(&mut self) {
         self.rcc.rcc_apb1enr1().modify(|_, w| w.pwren().set_bit());
-        let pwr = unsafe { &(*pac::Pwr::ptr()) };
+        let pwr = unsafe { &(*pac::Pwr::PTR) };
         pwr.pwr_cr1().modify(|_, w| w.dbp().set_bit());
     }
 
@@ -431,7 +435,7 @@ impl Rcc {
 
         unsafe {
             // Adjust flash wait states
-            let flash = &(*pac::Flash::ptr());
+            let flash = &(*pac::Flash::PTR);
             flash.acr().modify(|_, w| w.latency().bits(latency))
         }
     }

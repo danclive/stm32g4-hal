@@ -74,7 +74,7 @@ impl<MODE> ErasedPin<MODE> {
 
         let offset = GPIO_REGISTER_OFFSET * self.port_id() as usize;
         let block_ptr =
-            (crate::pac::Gpioa::ptr() as usize + offset) as *const crate::pac::gpioa::RegisterBlock;
+            (crate::pac::Gpioa::PTR as usize + offset) as *const crate::pac::gpioa::RegisterBlock;
 
         unsafe { &*block_ptr }
     }

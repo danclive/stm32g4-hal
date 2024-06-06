@@ -10,12 +10,12 @@ pub struct Lsco {
 
 impl Lsco {
     pub fn enable(&self) {
-        let rcc = unsafe { &(*pac::Rcc::ptr()) };
+        let rcc = unsafe { &(*pac::Rcc::PTR) };
         rcc.rcc_bdcr().modify(|_, w| w.lscoen().set_bit());
     }
 
     pub fn disable(&self) {
-        let rcc = unsafe { &(*pac::Rcc::ptr()) };
+        let rcc = unsafe { &(*pac::Rcc::PTR) };
         rcc.rcc_bdcr().modify(|_, w| w.lscoen().clear_bit());
     }
 
@@ -57,13 +57,13 @@ pub struct Mco<PIN> {
 
 impl<PIN> Mco<PIN> {
     pub fn enable(&self) {
-        let rcc = unsafe { &(*pac::Rcc::ptr()) };
+        let rcc = unsafe { &(*pac::Rcc::PTR) };
         rcc.rcc_cfgr()
             .modify(|_, w| unsafe { w.mcosel().bits(self.src_bits) });
     }
 
     pub fn disable(&self) {
-        let rcc = unsafe { &(*pac::Rcc::ptr()) };
+        let rcc = unsafe { &(*pac::Rcc::PTR) };
         rcc.rcc_cfgr().modify(|_, w| unsafe { w.mcosel().bits(0) });
     }
 

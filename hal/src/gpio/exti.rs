@@ -118,11 +118,11 @@ where
 
     #[inline(always)]
     fn clear_interrupt_pending_bit(&mut self) {
-        unsafe { (*Exti::ptr()).pr1().write(|w| w.bits(1 << self.pin_id())) };
+        unsafe { (*Exti::PTR).pr1().write(|w| w.bits(1 << self.pin_id())) };
     }
 
     #[inline(always)]
     fn check_interrupt(&self) -> bool {
-        unsafe { ((*Exti::ptr()).pr1().read().bits() & (1 << self.pin_id())) != 0 }
+        unsafe { ((*Exti::PTR).pr1().read().bits() & (1 << self.pin_id())) != 0 }
     }
 }

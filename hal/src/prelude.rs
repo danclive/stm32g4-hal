@@ -9,6 +9,9 @@
 pub use fugit::ExtU32 as _fugit_ExtU32;
 pub use fugit::RateExtU32 as _fugit_RateExtU32;
 
-pub use crate::gpio::GpioExt as _gpio_GpioExt;
-pub use crate::pwr::PwrExt as _pwr_PwrExt;
-pub use crate::rcc::RccExt as _rcc_RccExt;
+pub use crate::delay::{
+    DelayExt as _stm32g4_delay_DelayExt, SYSTDelayExt as _stm32g4_delay_SYSTDelayExt,
+};
+pub use crate::gpio::GpioExt as _stm32g4_gpio_GpioExt;
+pub use crate::pwr::PwrExt as _stm32g4_pwr_PwrExt;
+pub use crate::rcc::RccExt as _stm32g4_rcc_RccExt;

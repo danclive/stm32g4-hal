@@ -19,6 +19,7 @@ use defmt_rtt as _;
 fn main() -> ! {
     info!("start");
     let p = pac::Peripherals::take().unwrap();
+    let cp = cortex_m::Peripherals::take().unwrap();
 
     let pwr = p
         .pwr
@@ -41,20 +42,22 @@ fn main() -> ! {
         .freeze();
     info!("clock: {:?}", clocks);
 
+    let mut delay = cp.SYST.delay(&clocks);
+
     info!("Init Led");
     let gpioc = p.gpioc.split();
     let mut led = gpioc.pc4.into_push_pull_output();
 
     loop {
         info!("Set Led High");
-        for _ in 0..10_000_000 {
-            led.set_high();
-        }
+        led.set_high();
+
+        delay.delay(1.secs());
 
         info!("Set Led low");
-        for _ in 0..10_000_000 {
-            led.set_low();
-        }
+        led.set_low();
+
+        delay.delay(1.secs());
     }
 }
 

@@ -104,9 +104,7 @@ impl PowerConfiguration {
 impl Default for PowerConfiguration {
     fn default() -> PowerConfiguration {
         PowerConfiguration {
-            vos: VoltageScale::Range1 {
-                enable_boost: false,
-            },
+            vos: VoltageScale::Range1 { enable_boost: true },
         }
     }
 }
@@ -114,7 +112,7 @@ impl Default for PowerConfiguration {
 /// Returns the voltage scale at the current moment
 pub(crate) fn current_vos() -> VoltageScale {
     // NOTE(unsafe): Read-only access
-    let pwr = unsafe { &*pac::Pwr::ptr() };
+    let pwr = unsafe { &*pac::Pwr::PTR };
 
     match pwr.pwr_cr1().read().vos().bits() {
         0b00 => unreachable!(),
@@ -135,7 +133,7 @@ pub(crate) fn current_vos() -> VoltageScale {
 /// and that the correct sequence is respected (see 'Dynamic voltage scaling management' in RM0440). Also ensure unique
 /// access of PWR peripheral
 pub(crate) unsafe fn set_vos(vos: VoltageScale) {
-    let pwr = unsafe { &*pac::Pwr::ptr() };
+    let pwr = unsafe { &*pac::Pwr::PTR };
 
     let vos = match vos {
         VoltageScale::Range1 { .. } => 0b01,
@@ -153,7 +151,7 @@ pub(crate) unsafe fn set_vos(vos: VoltageScale) {
 /// and that the correct sequence is respected (see 'Dynamic voltage scaling management' in RM0440). Also ensure unique
 /// access of PWR peripheral
 pub(crate) unsafe fn set_boost(enable_boost: bool) {
-    let pwr = unsafe { &*pac::Pwr::ptr() };
+    let pwr = unsafe { &*pac::Pwr::PTR };
     let r1mode = !enable_boost;
     pwr.pwr_cr5().modify(|_r, w| w.r1mode().bit(r1mode));
 }

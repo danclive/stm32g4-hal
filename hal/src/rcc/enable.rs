@@ -23,7 +23,7 @@ macro_rules! bus_enable {
 
             #[inline(always)]
             fn is_enabled() -> bool {
-                let rcc = pac::Rcc::ptr();
+                let rcc = pac::Rcc::PTR;
                 (Self::Bus::enr(unsafe { &*rcc }).read().bits() >> $bit) & 0x1 != 0
             }
 
