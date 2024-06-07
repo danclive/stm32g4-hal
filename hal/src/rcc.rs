@@ -147,45 +147,45 @@ where
 
 impl GetBusFreq for AHB1 {
     fn get_frequency(clocks: &Clocks) -> Hertz {
-        clocks.ahb_clk
+        clocks.ahb_clk()
     }
 }
 
 impl GetBusFreq for AHB2 {
     fn get_frequency(clocks: &Clocks) -> Hertz {
-        clocks.ahb_clk
+        clocks.ahb_clk()
     }
 }
 
 impl GetBusFreq for AHB3 {
     fn get_frequency(clocks: &Clocks) -> Hertz {
-        clocks.ahb_clk
+        clocks.ahb_clk()
     }
 }
 
 impl GetBusFreq for APB1_1 {
     fn get_frequency(clocks: &Clocks) -> Hertz {
-        clocks.apb1_clk
+        clocks.apb1_clk()
     }
     fn get_timer_frequency(clocks: &Clocks) -> Hertz {
-        clocks.apb1_tim_clk
+        clocks.apb1_tim_clk()
     }
 }
 
 impl GetBusFreq for APB1_2 {
     fn get_frequency(clocks: &Clocks) -> Hertz {
-        clocks.apb1_clk
+        clocks.apb1_clk()
     }
     fn get_timer_frequency(clocks: &Clocks) -> Hertz {
-        clocks.apb1_tim_clk
+        clocks.apb1_tim_clk()
     }
 }
 
 impl GetBusFreq for APB2 {
     fn get_frequency(clocks: &Clocks) -> Hertz {
-        clocks.apb2_clk
+        clocks.apb2_clk()
     }
     fn get_timer_frequency(clocks: &Clocks) -> Hertz {
-        clocks.apb2_tim_clk
+        clocks.apb2_tim_clk()
     }
 }

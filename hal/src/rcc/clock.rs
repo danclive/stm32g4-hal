@@ -222,7 +222,6 @@ impl Rcc {
             Clocks {
                 pll_clk,
                 sys_clk,
-                core_clk: ahb_freq.Hz(),
                 ahb_clk: ahb_freq.Hz(),
                 apb1_clk: apb1_freq.Hz(),
                 apb1_tim_clk: apb1_tim_clk.Hz(),
@@ -534,21 +533,56 @@ pub const HSI_FREQ: u32 = 16_000_000; // Hz
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub struct Clocks {
     /// System frequency
-    pub sys_clk: Hertz,
-    /// Core frequency
-    pub core_clk: Hertz,
+    sys_clk: Hertz,
     /// AHB frequency
-    pub ahb_clk: Hertz,
+    ahb_clk: Hertz,
     /// APB 1 frequency
-    pub apb1_clk: Hertz,
+    apb1_clk: Hertz,
     /// APB 1 timers frequency (Timers 2-7)
-    pub apb1_tim_clk: Hertz,
+    apb1_tim_clk: Hertz,
     /// APB 2 frequency
-    pub apb2_clk: Hertz,
+    apb2_clk: Hertz,
     /// APB 2 timers frequency (Timers 1, 8, 20, 15, 16, 17 and HRTIM1)
-    pub apb2_tim_clk: Hertz,
+    apb2_tim_clk: Hertz,
     /// PLL frequency
-    pub pll_clk: PLLClocks,
+    pll_clk: PLLClocks,
+}
+
+impl Clocks {
+    /// Returns the system (core) frequency
+    pub fn sys_clk(&self) -> Hertz {
+        self.sys_clk
+    }
+
+    /// Returns the frequency of the AHB
+    pub fn ahb_clk(&self) -> Hertz {
+        self.ahb_clk
+    }
+
+    /// Returns the frequency of the APB1
+    pub fn apb1_clk(&self) -> Hertz {
+        self.apb1_clk
+    }
+
+    /// Returns the frequency of the APB1 TIM
+    pub fn apb1_tim_clk(&self) -> Hertz {
+        self.apb1_tim_clk
+    }
+
+    /// Returns the frequency of the APB2
+    pub fn apb2_clk(&self) -> Hertz {
+        self.apb2_clk
+    }
+
+    /// Returns the frequency of the APB2 TIM
+    pub fn apb2_tim_clk(&self) -> Hertz {
+        self.apb2_tim_clk
+    }
+
+    /// Returns the frequency of the PLL
+    pub fn pll_clk(&self) -> PLLClocks {
+        self.pll_clk
+    }
 }
 
 /// PLL Clock frequencies
@@ -569,7 +603,6 @@ impl Default for Clocks {
         Clocks {
             sys_clk: freq,
             ahb_clk: freq,
-            core_clk: freq,
             apb1_clk: freq,
             apb1_tim_clk: freq,
             apb2_clk: freq,

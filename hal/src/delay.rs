@@ -12,7 +12,7 @@ pub trait SYSTDelayExt {
 
 impl SYSTDelayExt for SYST {
     fn delay(self, clocks: &Clocks) -> Delay {
-        Delay::new(self, clocks.ahb_clk.raw())
+        Delay::new(self, clocks.ahb_clk().raw())
     }
 }
 
