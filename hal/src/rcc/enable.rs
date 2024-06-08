@@ -11,7 +11,7 @@ macro_rules! bus_enable {
                     bb::set(Self::Bus::enr(rcc), $bit);
                 }
                 // Stall the pipeline to work around erratum 2.1.13 (DM00037591)
-                cortex_m::asm::dsb();
+                // cortex_m::asm::dsb();
             }
 
             #[inline(always)]

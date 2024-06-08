@@ -3,11 +3,11 @@
 #![allow(dead_code)]
 #![no_std]
 
-#[cfg(feature = "rt")]
 pub use crate::pac::interrupt;
 
 pub mod bb;
-pub mod delay;
+// pub mod delay;
+pub mod dma;
 pub mod gpio;
 pub mod pwr;
 pub mod rcc;
