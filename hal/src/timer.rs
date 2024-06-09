@@ -16,6 +16,7 @@ use sealed::General;
 
 pub mod counter;
 pub mod delay;
+mod ehal;
 mod sealed;
 
 /// Timer wrapper.
@@ -35,8 +36,6 @@ impl Timer<SYST> {
     pub fn syst(mut tim: SYST, clocks: &Clocks) -> Self {
         tim.set_clock_source(SystClkSource::Core);
 
-        let rcc = unsafe { &*crate::pac::Rcc::PTR };
-        rcc.rcc_ccipr().read().lptim1sel();
         Self {
             tim,
             clk: clocks.ahb_clk(),

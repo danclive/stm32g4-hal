@@ -71,3 +71,9 @@ fn panic(_info: &PanicInfo) -> ! {
         atomic::compiler_fence(Ordering::SeqCst);
     }
 }
+
+#[exception]
+#[allow(non_snake_case)]
+fn SysTick() {
+    // ..
+}

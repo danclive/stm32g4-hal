@@ -3,8 +3,8 @@
 pub use cortex_m::delay::Delay;
 use fugit::MicrosDurationU32;
 
-use crate::pac::SYST;
 use crate::rcc::clock::Clocks;
+use crate::rcc::SYST;
 
 pub trait SYSTDelayExt {
     fn delay(self, clocks: &Clocks) -> Delay;
