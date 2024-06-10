@@ -9,11 +9,11 @@ use stm32g4_hal as hal;
 
 use crate::hal::gpio::{Output, Pin};
 use crate::hal::prelude::*;
-use crate::hal::{pac, pwr, rcc::clock};
+use crate::hal::{pac, pwr, rcc::clock, tim2_monotonic};
 
 use rtic::app;
 
-type Mono = hal::rtic::timer::MonoTimerUs<pac::Tim2>;
+tim2_monotonic!(Mono, 1_000_000);
 
 pub use defmt::{debug, error, info, trace, warn};
 use defmt_rtt as _;
@@ -57,8 +57,8 @@ mod app {
 
         info!("start");
 
-        p.tim2.monotonic::<1_000_000>(&mut ctx.core.NVIC, &clocks);
-        // hal::timer::FixedTimerUs::new(p.tim2, &clocks).monotonic(&mut ctx.core.NVIC);
+        // Mono::start(&mut ctx.core.NVIC, p.tim2, &clocks);
+        p.tim2.monotonic(&mut ctx.core.NVIC, &clocks);
 
         info!("Init Led");
         let gpioc = p.gpioc.split();
@@ -87,7 +87,7 @@ mod app {
 
             // Delay for 1 second
             // Mono::delay_ms(&mut Mono, 1000).await;
-            Mono::delay(1000u32.millis().into()).await;
+            Mono::delay(1000.millis().into()).await;
 
             // Turn off LED
             info!("Set Led low");
@@ -95,11 +95,11 @@ mod app {
 
             // Delay for 1 second
             // Mono::delay_ms(&mut Mono, 1000).await;
-            Mono::delay(1000u32.millis().into()).await;
+            Mono::delay(1000.millis().into()).await;
 
             // Some backends provide a manual way of pending an
             // interrupt.
-            // rtic::pend(pac::Interrupt::USART1);
+            rtic::pend(pac::Interrupt::USART1);
         }
     }
 

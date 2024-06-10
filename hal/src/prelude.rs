@@ -17,11 +17,3 @@ pub use crate::timer::TimerExt as _stm32g4_timer_TimerExt;
 
 #[cfg(feature = "rtic")]
 pub use crate::rtic::Monotonic as _stm32g4_rtic_Monotonic;
-
-#[cfg(any(
-    feature = "rtic-tim2",
-    feature = "rtic-tim3",
-    feature = "rtic-tim4",
-    feature = "rtic-tim5"
-))]
-pub use crate::rtic::timer::MonoTimerExt as _stm32g4_rtic_timer_MonoTimerExt;

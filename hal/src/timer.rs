@@ -570,7 +570,7 @@ tim!(pac::Tim16: [Timer16, u16, dmar: u16,]);
 tim!(pac::Tim17: [Timer17, u16, dmar: u16,]);
 
 #[cfg(feature = "tim20")]
-tim!(pac::Tim20: [Timer20, u16, dmar: u16,]);
+tim!(pac::Tim20: [Timer20, u16, dmar: u32,]);
 
 #[inline(always)]
 pub(crate) const fn compute_arr_presc(freq: u32, clock: u32) -> (u16, u32) {

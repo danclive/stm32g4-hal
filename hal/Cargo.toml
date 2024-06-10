@@ -37,8 +37,6 @@ rtic-systick = ["rtic"]
 rtic-systick-64bit = ["rtic-systick"]
 
 rtic-tim2 = ["rtic"]
-rtic-tim3 = ["rtic"]
-rtic-tim4 = ["rtic"]
 rtic-tim5 = ["rtic"]
 
 stm32g431 = ["stm32g4-pac/stm32g431", "gpio-g431"]

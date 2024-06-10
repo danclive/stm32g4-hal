@@ -1,3 +1,5 @@
+//! rtic_time::Monotonic implementations for systick.
+
 use portable_atomic::Ordering;
 use rtic_time::timer_queue::{TimerQueue, TimerQueueBackend};
 
