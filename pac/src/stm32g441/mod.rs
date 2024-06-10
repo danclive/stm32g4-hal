@@ -78,6 +78,7 @@ extern "C" {
     fn TIM20_UP();
     fn TIM20_TRG_COM();
     fn TIM20_CC();
+    fn FPU();
     fn AES();
     fn RNG();
     fn LPUART();
@@ -210,7 +211,7 @@ pub static __INTERRUPTS: [Vector; 102] = [
         _handler: TIM20_TRG_COM,
     },
     Vector { _handler: TIM20_CC },
-    Vector { _reserved: 0 },
+    Vector { _handler: FPU },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -371,6 +372,8 @@ pub enum Interrupt {
     TIM20_TRG_COM = 79,
     #[doc = "80 - TIM20_CC"]
     TIM20_CC = 80,
+    #[doc = "81 - Floating point interrupt"]
+    FPU = 81,
     #[doc = "85 - AES"]
     AES = 85,
     #[doc = "90 - RNG"]

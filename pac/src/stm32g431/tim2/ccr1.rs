@@ -3,14 +3,14 @@ pub type R = crate::R<Ccr1Spec>;
 #[doc = "Register `CCR1` writer"]
 pub type W = crate::W<Ccr1Spec>;
 #[doc = "Field `CCR1` reader - Capture/Compare 1 value"]
-pub type Ccr1R = crate::FieldReader<u16>;
+pub type Ccr1R = crate::FieldReader<u32>;
 #[doc = "Field `CCR1` writer - Capture/Compare 1 value"]
-pub type Ccr1W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type Ccr1W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
-    #[doc = "Bits 0:15 - Capture/Compare 1 value"]
+    #[doc = "Bits 0:31 - Capture/Compare 1 value"]
     #[inline(always)]
     pub fn ccr1(&self) -> Ccr1R {
-        Ccr1R::new((self.bits & 0xffff) as u16)
+        Ccr1R::new(self.bits)
     }
 }
 impl core::fmt::Debug for R {
@@ -19,7 +19,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Capture/Compare 1 value"]
+    #[doc = "Bits 0:31 - Capture/Compare 1 value"]
     #[inline(always)]
     #[must_use]
     pub fn ccr1(&mut self) -> Ccr1W<Ccr1Spec> {

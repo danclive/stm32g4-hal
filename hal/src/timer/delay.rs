@@ -84,10 +84,10 @@ impl SYSTDelay {
 /// ```
 ///
 /// With microsecond precision, you can wait from 2 µs to 71 min.
-pub struct Delay<TIM, const FREQ: u32>(pub(super) FreqTimer<TIM, FREQ>);
+pub struct Delay<TIM, const FREQ: u32>(pub(super) FixedTimer<TIM, FREQ>);
 
 impl<T, const FREQ: u32> Deref for Delay<T, FREQ> {
-    type Target = FreqTimer<T, FREQ>;
+    type Target = FixedTimer<T, FREQ>;
     fn deref(&self) -> &Self::Target {
         &self.0
     }
@@ -142,7 +142,7 @@ impl<TIM: Instance, const FREQ: u32> Delay<TIM, FREQ> {
     }
 
     /// Releases the TIM peripheral
-    pub fn release(mut self) -> FreqTimer<TIM, FREQ> {
+    pub fn release(mut self) -> FixedTimer<TIM, FREQ> {
         // stop counter
         self.tim.reset_control_register1();
         self.0

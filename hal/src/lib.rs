@@ -14,7 +14,12 @@ pub mod rcc;
 pub mod syscfg;
 pub mod timer;
 
+#[cfg(feature = "rtic")]
+pub mod rtic;
+
 pub mod prelude;
+
+pub use fugit;
 
 mod sealed {
     pub trait Sealed {}

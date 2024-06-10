@@ -29,6 +29,7 @@ extern "C" {
     fn DMA1_CH4();
     fn DMA1_CH5();
     fn DMA1_CH6();
+    fn DMA1_CH7();
     fn ADC1_2();
     fn USB_HP();
     fn USB_LP();
@@ -70,6 +71,8 @@ extern "C" {
     fn DMA2_CH3();
     fn DMA2_CH4();
     fn DMA2_CH5();
+    fn ADC4();
+    fn ADC5();
     fn UCPD1();
     fn COMP1_2_3();
     fn COMP4_5_6();
@@ -80,12 +83,16 @@ extern "C" {
     fn TIM20_UP();
     fn TIM20_TRG_COM();
     fn TIM20_CC();
+    fn FPU();
     fn RNG();
     fn LPUART();
     fn I2C3_EV();
     fn I2C3_ER();
     fn DMAMUX_OVR();
+    fn DMA1_CH8();
     fn DMA2_CH6();
+    fn DMA2_CH7();
+    fn DMA2_CH8();
     fn Cordic();
     fn FMAC();
 }
@@ -119,7 +126,7 @@ pub static __INTERRUPTS: [Vector; 102] = [
     Vector { _handler: DMA1_CH4 },
     Vector { _handler: DMA1_CH5 },
     Vector { _handler: DMA1_CH6 },
-    Vector { _reserved: 0 },
+    Vector { _handler: DMA1_CH7 },
     Vector { _handler: ADC1_2 },
     Vector { _handler: USB_HP },
     Vector { _handler: USB_LP },
@@ -183,8 +190,8 @@ pub static __INTERRUPTS: [Vector; 102] = [
     Vector { _handler: DMA2_CH3 },
     Vector { _handler: DMA2_CH4 },
     Vector { _handler: DMA2_CH5 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: ADC4 },
+    Vector { _handler: ADC5 },
     Vector { _handler: UCPD1 },
     Vector {
         _handler: COMP1_2_3,
@@ -211,7 +218,7 @@ pub static __INTERRUPTS: [Vector; 102] = [
         _handler: TIM20_TRG_COM,
     },
     Vector { _handler: TIM20_CC },
-    Vector { _reserved: 0 },
+    Vector { _handler: FPU },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -228,10 +235,10 @@ pub static __INTERRUPTS: [Vector; 102] = [
         _handler: DMAMUX_OVR,
     },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: DMA1_CH8 },
     Vector { _handler: DMA2_CH6 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: DMA2_CH7 },
+    Vector { _handler: DMA2_CH8 },
     Vector { _handler: Cordic },
     Vector { _handler: FMAC },
 ];
@@ -274,6 +281,8 @@ pub enum Interrupt {
     DMA1_CH5 = 15,
     #[doc = "16 - DMA1 channel 6 interrupt"]
     DMA1_CH6 = 16,
+    #[doc = "17 - DMA1 channel 7 interrupt"]
+    DMA1_CH7 = 17,
     #[doc = "18 - ADC1 and ADC2 global interrupt"]
     ADC1_2 = 18,
     #[doc = "19 - USB_HP"]
@@ -356,6 +365,10 @@ pub enum Interrupt {
     DMA2_CH4 = 59,
     #[doc = "60 - DMA2_CH5"]
     DMA2_CH5 = 60,
+    #[doc = "61 - ADC4"]
+    ADC4 = 61,
+    #[doc = "62 - ADC5"]
+    ADC5 = 62,
     #[doc = "63 - UCPD1"]
     UCPD1 = 63,
     #[doc = "64 - COMP1_2_3"]
@@ -376,6 +389,8 @@ pub enum Interrupt {
     TIM20_TRG_COM = 79,
     #[doc = "80 - TIM20_CC"]
     TIM20_CC = 80,
+    #[doc = "81 - Floating point interrupt"]
+    FPU = 81,
     #[doc = "90 - RNG"]
     RNG = 90,
     #[doc = "91 - LPUART"]
@@ -386,8 +401,14 @@ pub enum Interrupt {
     I2C3_ER = 93,
     #[doc = "94 - DMAMUX_OVR"]
     DMAMUX_OVR = 94,
+    #[doc = "96 - DMA1_CH8"]
+    DMA1_CH8 = 96,
     #[doc = "97 - DMA2_CH6"]
     DMA2_CH6 = 97,
+    #[doc = "98 - DMA2_CH7"]
+    DMA2_CH7 = 98,
+    #[doc = "99 - DMA2_CH8"]
+    DMA2_CH8 = 99,
     #[doc = "100 - Cordic"]
     Cordic = 100,
     #[doc = "101 - FMAC"]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2023 STMicroelectronics.
+Copyright (c) 2024 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -18,7 +18,7 @@ Copyright (c) 2023 STMicroelectronics.
 -->
 <device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
    <name>STM32G431</name>
-   <version>2.1</version>
+   <version>2.2</version>
    <description>STM32G431</description>
     <cpu>
     <name>CM4</name>
@@ -274,6 +274,11 @@ Copyright (c) 2023 STMicroelectronics.
             <size>0x400</size>
             <usage>registers</usage>
          </addressBlock>
+         <interrupt>
+            <name>WWDG</name>
+            <description>Window Watchdog interrupt</description>
+            <value>0</value>
+         </interrupt>
          <registers>
             <register>
                <name>CR</name>
@@ -966,11 +971,6 @@ Copyright (c) 2023 STMicroelectronics.
          <name>I2C2</name>
          <baseAddress>0x40005800</baseAddress>
          <interrupt>
-            <name>WWDG</name>
-            <description>Window Watchdog interrupt</description>
-            <value>0</value>
-         </interrupt>
-         <interrupt>
             <name>I2C2_EV</name>
             <description>I2C2_EV</description>
             <value>33</value>
@@ -994,7 +994,7 @@ Copyright (c) 2023 STMicroelectronics.
             <description>I2C3_ER</description>
             <value>93</value>
          </interrupt>
-      </peripheral>     
+      </peripheral>
       <peripheral>
          <name>FLASH</name>
          <description>Flash</description>
@@ -1332,7 +1332,7 @@ Copyright (c) 2023 STMicroelectronics.
                      <access>read-only</access>
                   </field>
 				  <field>
-                     <name>BK_ECC</name> 
+                     <name>BK_ECC</name>
                      <description>BK_ECC</description>
                      <bitOffset>21</bitOffset>
                      <bitWidth>1</bitWidth>
@@ -1350,22 +1350,22 @@ Copyright (c) 2023 STMicroelectronics.
                      <description>ECCIE</description>
                      <bitOffset>24</bitOffset>
                      <bitWidth>1</bitWidth>
-                     <access>read-write</access>        
+                     <access>read-write</access>
                   </field>
 				  <field>
                      <name>ECCC2</name>
                      <description>ECC correction</description>
                      <bitOffset>28</bitOffset>
                      <bitWidth>1</bitWidth>
-                     <access>read-write</access>        
+                     <access>read-write</access>
                   </field>
 				   <field>
                      <name>ECCD2</name>
                      <description>ECC2 detection</description>
                      <bitOffset>29</bitOffset>
                      <bitWidth>1</bitWidth>
-                     <access>read-write</access>        
-                  </field>										 
+                     <access>read-write</access>
+                  </field>
                   <field>
                      <name>ECCC</name>
                      <description>ECC correction</description>
@@ -1925,7 +1925,7 @@ Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can 
               <field>
                 <name>HSIRDY</name>
                 <description>HSI16 clock ready flag
-Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION. 
+Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION.
 Note: Once the HSION bit is cleared, HSIRDY goes low after 6 HSI16 clock cycles.</description>
                 <bitOffset>10</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -1967,7 +1967,7 @@ Cleared by hardware to stop the HSE oscillator when entering Stop, Standby or Sh
               <field>
                 <name>HSERDY</name>
                 <description>HSE clock ready flag
-Set by hardware to indicate that the HSE oscillator is stable. 
+Set by hardware to indicate that the HSE oscillator is stable.
 Note: Once the HSEON bit is cleared, HSERDY goes low after 6 HSE clock cycles.</description>
                 <bitOffset>17</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -2282,7 +2282,7 @@ Set and cleared by software to control the division factor of the APB2 clock (PC
               </field>
               <field>
                 <name>MCOSEL</name>
-                <description>Microcontroller clock output 
+                <description>Microcontroller clock output
 Set and cleared by software.
 Others: Reserved
 Note: This clock output may have some truncated cycles at startup or during MCO clock source switching.</description>
@@ -2482,7 +2482,7 @@ Note: The software has to set these bits correctly to ensure that the VCO input 
               <field>
                 <name>PLLN</name>
                 <description>Main PLL multiplication factor for VCO
-Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. 
+Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled.
 VCO output frequency = VCO input frequency x PLLN with 8 =&lt; PLLN =&lt; 127
 ...
 ...
@@ -2837,7 +2837,7 @@ Set and cleared by software to enable/disable interrupt caused by the clock secu
               </field>
               <field>
                 <name>HSI48RDYIE</name>
-                <description>HSI48 ready interrupt enable 
+                <description>HSI48 ready interrupt enable
 Set and cleared by software to enable/disable interrupt caused by the internal HSI48 oscillator.</description>
                 <bitOffset>10</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -3015,8 +3015,8 @@ Cleared by software setting the LSECSSC bit.</description>
               </field>
               <field>
                 <name>HSI48RDYF</name>
-                <description>HSI48 ready interrupt flag 
-Set by hardware when the HSI48 clock becomes stable and HSI48RDYIE is set in a response to setting the HSI48ON (refer to Clock recovery RC register (RCC_CRRCR)). 
+                <description>HSI48 ready interrupt flag
+Set by hardware when the HSI48 clock becomes stable and HSI48RDYIE is set in a response to setting the HSI48ON (refer to Clock recovery RC register (RCC_CRRCR)).
 Cleared by software setting the HSI48RDYC bit.</description>
                 <bitOffset>10</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -3187,7 +3187,7 @@ This bit is set by software to clear the LSECSSF flag.</description>
               </field>
               <field>
                 <name>HSI48RDYC</name>
-                <description>HSI48 oscillator ready interrupt clear 
+                <description>HSI48 oscillator ready interrupt clear
 This bit is set by software to clear the HSI48RDYF flag.</description>
                 <bitOffset>10</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -3626,7 +3626,7 @@ Set and cleared by software.</description>
               </field>
               <field>
                 <name>AESRST</name>
-                <description>AESRST reset 
+                <description>AESRST reset
 Set and cleared by software.</description>
                 <bitOffset>24</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -4771,7 +4771,7 @@ Set and cleared by software.</description>
               </field>
               <field>
                 <name>ADC345EN</name>
-                <description>ADC345 clock enable 
+                <description>ADC345 clock enable
    Set and cleared by software</description>
                 <bitOffset>14</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -5113,7 +5113,7 @@ Set and cleared by software.</description>
               </field>
               <field>
                 <name>RTCAPBEN</name>
-                <description>RTC APB clock enable 
+                <description>RTC APB clock enable
 Set and cleared by software</description>
                 <bitOffset>10</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -5444,7 +5444,7 @@ Set and cleared by software.</description>
               </field>
               <field>
                 <name>I2C4EN</name>
-                <description>I2C4 clock enable 
+                <description>I2C4 clock enable
 Set and cleared by software</description>
                 <bitOffset>1</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -6790,7 +6790,7 @@ Set and cleared by software.</description>
               </field>
               <field>
                 <name>I2C4SMEN</name>
-                <description>I2C4 clocks enable during Sleep and Stop modes 
+                <description>I2C4 clocks enable during Sleep and Stop modes
    Set and cleared by software</description>
                 <bitOffset>1</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -7596,7 +7596,7 @@ Set and cleared by software to bypass oscillator in debug mode. This bit can be 
               <field>
                 <name>LSEDRV</name>
                 <description>LSE oscillator drive capability
-Set by software to modulate the LSE oscillators drive capability. 
+Set by software to modulate the LSE oscillators drive capability.
 The oscillator is in Xtal mode when it is not in bypass mode.</description>
                 <bitOffset>3</bitOffset>
                 <bitWidth>2</bitWidth>
@@ -8314,7 +8314,7 @@ Note: These bits are write-protected when the PVDL bit is set in the SYSCFG_CFGR
                     <value>0x7</value>
                   </enumeratedValue>
                 </enumeratedValues>
-              </field>			  
+              </field>
               <field>
                 <name>PVMEN1</name>
                 <description>Peripheral voltage monitoring 3 enable: V&lt;sub&gt;DDA&lt;/sub&gt; vs. ADC/COMP min voltage 1.62V</description>
@@ -18403,7 +18403,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                </fields>
             </register>
          </registers>
-      </peripheral>     
+      </peripheral>
       <peripheral derivedFrom="TIM1">
          <name>TIM8</name>
          <baseAddress>0x40013400</baseAddress>
@@ -19463,7 +19463,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <name>CNT</name>
                      <description>counter value</description>
                      <bitOffset>0</bitOffset>
-                     <bitWidth>16</bitWidth>
+                     <bitWidth>31</bitWidth>
                   </field>
                </fields>
             </register>
@@ -19497,7 +19497,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <name>ARR</name>
                      <description>Auto-reload value</description>
                      <bitOffset>0</bitOffset>
-                     <bitWidth>16</bitWidth>
+                     <bitWidth>32</bitWidth>
                   </field>
                </fields>
             </register>
@@ -19531,7 +19531,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <name>CCR1</name>
                      <description>Capture/Compare 1 value</description>
                      <bitOffset>0</bitOffset>
-                     <bitWidth>16</bitWidth>
+                     <bitWidth>32</bitWidth>
                   </field>
                </fields>
             </register>
@@ -19548,7 +19548,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <name>CCR2</name>
                      <description>Capture/Compare 2 value</description>
                      <bitOffset>0</bitOffset>
-                     <bitWidth>16</bitWidth>
+                     <bitWidth>32</bitWidth>
                   </field>
                </fields>
             </register>
@@ -19565,7 +19565,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <name>CCR3</name>
                      <description>Capture/Compare value</description>
                      <bitOffset>0</bitOffset>
-                     <bitWidth>16</bitWidth>
+                     <bitWidth>32</bitWidth>
                   </field>
                </fields>
             </register>
@@ -19582,7 +19582,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <name>CCR4</name>
                      <description>Capture/Compare value</description>
                      <bitOffset>0</bitOffset>
-                     <bitWidth>16</bitWidth>
+                     <bitWidth>32</bitWidth>
                   </field>
                </fields>
             </register>
@@ -20182,7 +20182,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <description>TIM4</description>
             <value>30</value>
          </interrupt>
-      </peripheral>    
+      </peripheral>
       <peripheral>
          <name>TIM6</name>
          <description>Basic-timers</description>
@@ -22720,7 +22720,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                </fields>
             </register>
          </registers>
-      </peripheral>    
+      </peripheral>
       <peripheral>
          <name>LPUART1</name>
          <description>Universal synchronous asynchronous receiver       transmitter</description>
@@ -23836,7 +23836,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                </fields>
             </register>
          </registers>
-      </peripheral>     
+      </peripheral>
       <peripheral derivedFrom="SPI1">
          <name>SPI3</name>
          <baseAddress>0x40003C00</baseAddress>
@@ -23896,16 +23896,6 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <value>10</value>
          </interrupt>
          <interrupt>
-            <name>USB_HP</name>
-            <description>USB_HP</description>
-            <value>19</value>
-         </interrupt>
-         <interrupt>
-            <name>USB_LP</name>
-            <description>USB_LP</description>
-            <value>20</value>
-         </interrupt>
-         <interrupt>
             <name>EXTI9_5</name>
             <description>EXTI9_5</description>
             <value>23</value>
@@ -23916,14 +23906,9 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <value>40</value>
          </interrupt>
          <interrupt>
-            <name>USBWakeUP</name>
-            <description>USBWakeUP</description>
-            <value>42</value>
-         </interrupt>
-         <interrupt>
-            <name>CRS</name>
-            <description>CRS</description>
-            <value>75</value>
+            <name>FPU</name>
+            <description>Floating point interrupt</description>
+            <value>81</value>
          </interrupt>
          <registers>
             <register>
@@ -26205,7 +26190,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                </fields>
             </register>
          </registers>
-      </peripheral>  
+      </peripheral>
       <peripheral>
          <name>DMA1</name>
          <description>DMA controller</description>
@@ -26246,7 +26231,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <description>DMA1 channel 6 interrupt</description>
             <value>16</value>
          </interrupt>
-    
+
          <registers>
             <register>
                <name>ISR</name>
@@ -27731,7 +27716,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
       <peripheral derivedFrom="DMA1">
          <name>DMA2</name>
          <baseAddress>0x40020400</baseAddress>
-        
+
          <interrupt>
             <name>DMA2_CH1</name>
             <description>DMA2_CH1</description>
@@ -27762,7 +27747,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <description>DMA2_CH6</description>
             <value>97</value>
          </interrupt>
-                 
+
       </peripheral>
       <peripheral>
          <name>DMAMUX</name>
@@ -28861,7 +28846,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                </fields>
             </register>
          </registers>
-      </peripheral>	  	  	
+      </peripheral>
       <peripheral>
          <name>SYSCFG</name>
          <description>System configuration controller</description>
@@ -28871,7 +28856,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <offset>0x0</offset>
             <size>0x2A</size>
             <usage>registers</usage>
-         </addressBlock>             
+         </addressBlock>
      <registers>
             <register>
                <name>MEMRMP</name>
@@ -29397,9 +29382,9 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <bitWidth>8</bitWidth>
                   </field>
                </fields>
-            </register>											
+            </register>
          </registers>
-     </peripheral>	    	  
+     </peripheral>
 	  <peripheral>
          <name>VREFBUF</name>
          <description>Voltage reference buffer</description>
@@ -29409,8 +29394,8 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <offset>0x0</offset>
             <size>0x1D0</size>
             <usage>registers</usage>
-         </addressBlock>	  
-        <registers>			
+         </addressBlock>
+        <registers>
             <register>
                <name>VREFBUF_CSR</name>
                <displayName>VREFBUF_CSR</displayName>
@@ -29466,8 +29451,8 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                   </field>
                </fields>
             </register>
-        </registers>	
-    </peripheral>											
+        </registers>
+    </peripheral>
       <peripheral>
          <name>COMP</name>
          <description>Comparator control and status register</description>
@@ -29492,7 +29477,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <name>COMP7</name>
             <description>COMP7</description>
             <value>66</value>
-        </interrupt>		 	 
+        </interrupt>
         <registers>
             <register>
                <name>COMP_C1CSR</name>
@@ -29573,7 +29558,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <access>read-write</access>
                   </field>
                </fields>
-            </register>						
+            </register>
             <register>
                <name>COMP_C2CSR</name>
                <displayName>COMP_C2CSR</displayName>
@@ -29653,7 +29638,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <access>read-write</access>
                   </field>
                </fields>
-            </register>			
+            </register>
             <register>
                <name>COMP_C3CSR</name>
                <displayName>COMP_C3CSR</displayName>
@@ -29733,7 +29718,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <access>read-write</access>
                   </field>
                </fields>
-            </register>			
+            </register>
             <register>
                <name>COMP_C4CSR</name>
                <displayName>COMP_C4CSR</displayName>
@@ -29813,9 +29798,9 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <access>read-write</access>
                   </field>
                </fields>
-            </register>				          		
-        </registers>	
-    </peripheral>		         
+            </register>
+        </registers>
+    </peripheral>
       <peripheral>
          <name>OPAMP</name>
          <description>Operational amplifiers</description>
@@ -29922,7 +29907,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                   </field>
                </fields>
             </register>
-			
+
             <register>
                <name>OPAMP2_CSR</name>
                <displayName>OPAMP2_CSR</displayName>
@@ -30018,7 +30003,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                   </field>
                </fields>
             </register>
-			
+
             <register>
                <name>OPAMP3_CSR</name>
                <displayName>OPAMP3_CSR</displayName>
@@ -30114,7 +30099,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                   </field>
                </fields>
             </register>
-			           					 			
+
             <register>
                <name>OPAMP1_TCMR</name>
                <displayName>OPAMP1_TCMR</displayName>
@@ -30162,7 +30147,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                   </field>
                </fields>
             </register>
-			
+
             <register>
                <name>OPAMP2_TCMR</name>
                <displayName>OPAMP2_TCMR</displayName>
@@ -30210,7 +30195,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                   </field>
                </fields>
             </register>
-			
+
             <register>
                <name>OPAMP3_TCMR</name>
                <displayName>OPAMP3_TCMR</displayName>
@@ -30258,9 +30243,9 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                   </field>
                </fields>
             </register>
-			            			           			          					
-      </registers>	
-    </peripheral>					                                            
+
+      </registers>
+    </peripheral>
       <peripheral>
          <name>DAC1</name>
          <description>Digital-to-analog converter</description>
@@ -31355,7 +31340,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
                      <description>External trigger selection for regular group</description>
                      <bitOffset>5</bitOffset>
                      <bitWidth>5</bitWidth>
-                  </field>                  
+                  </field>
                   <field>
                      <name>RES</name>
                      <description>RES</description>
@@ -32215,7 +32200,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
       <peripheral derivedFrom="ADC1">
          <name>ADC2</name>
          <baseAddress>0x50000100</baseAddress>
-      </peripheral>  
+      </peripheral>
       <peripheral>
          <name>ADC12_Common</name>
          <description>Analog-to-Digital Converter</description>
@@ -34740,7 +34725,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <offset>0x0</offset>
             <size>0x400</size>
             <usage>registers</usage>
-         </addressBlock>                        
+         </addressBlock>
          <registers>
            <register>
             <name>FDCAN_CREL</name>
@@ -36075,7 +36060,7 @@ These are protected write (P) bits, which means that write access by the bits is
                 <name>MRAF</name>
                 <description>Message RAM access failure
 The flag is set when the Rx handler:
-has not completed acceptance filtering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance filtering or message storage is aborted and the Rx handler starts processing of the following message. 
+has not completed acceptance filtering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance filtering or message storage is aborted and the Rx handler starts processing of the following message.
 was unable to write a message to the message RAM. In this case message storage is aborted.
 In both cases the FIFO put index is not updated. The partly stored message is overwritten when the next message is stored to this location.
 The flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the FDCAN is switched into Restricted operation Mode (see Restricted operation mode). To leave Restricted operation Mode, the Host CPU has to reset CCCR.ASM.</description>
@@ -36761,7 +36746,7 @@ TSWL: Timestamp wraparound interrupt line</description>
               </field>
               <field>
                 <name>BERR</name>
-                <description>Bit and line error grouping the following interruption 
+                <description>Bit and line error grouping the following interruption
 EPL Error passive interrupt line
 ELOL: Error logging overflow interrupt line</description>
                 <bitOffset>5</bitOffset>
@@ -36770,7 +36755,7 @@ ELOL: Error logging overflow interrupt line</description>
               </field>
               <field>
                 <name>PERR</name>
-                <description>Protocol error grouping the following interruption 
+                <description>Protocol error grouping the following interruption
 ARAL: Access to reserved address line
 PEDL: Protocol error in data phase line
 PEAL: Protocol error in arbitration phase line
@@ -37787,8 +37772,8 @@ These are protected write (P) bits, which means that write access by the bits is
             <name>FDCAN1_IT1</name>
             <description>FDCAN1 interrupt 1</description>
             <value>22</value>
-         </interrupt>              
-      </peripheral>          
+         </interrupt>
+      </peripheral>
       <peripheral>
          <name>UCPD1</name>
          <description>UCPD1</description>
@@ -38463,6 +38448,21 @@ These are protected write (P) bits, which means that write access by the bits is
             <size>0x400</size>
             <usage>registers</usage>
          </addressBlock>
+         <interrupt>
+            <name>USB_HP</name>
+            <description>USB_HP</description>
+            <value>19</value>
+         </interrupt>
+         <interrupt>
+            <name>USB_LP</name>
+            <description>USB_LP</description>
+            <value>20</value>
+         </interrupt>
+         <interrupt>
+            <name>USBWakeUP</name>
+            <description>USBWakeUP</description>
+            <value>42</value>
+         </interrupt>
          <registers>
             <register>
                <name>EP0R</name>
@@ -39303,6 +39303,11 @@ These are protected write (P) bits, which means that write access by the bits is
             <size>0x400</size>
             <usage>registers</usage>
          </addressBlock>
+         <interrupt>
+            <name>CRS</name>
+            <description>CRS</description>
+            <value>75</value>
+         </interrupt>
          <registers>
             <register>
                <name>CR</name>

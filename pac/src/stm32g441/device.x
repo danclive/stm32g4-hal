@@ -64,6 +64,7 @@ PROVIDE(TIM20_BRK = DefaultHandler);
 PROVIDE(TIM20_UP = DefaultHandler);
 PROVIDE(TIM20_TRG_COM = DefaultHandler);
 PROVIDE(TIM20_CC = DefaultHandler);
+PROVIDE(FPU = DefaultHandler);
 PROVIDE(AES = DefaultHandler);
 PROVIDE(RNG = DefaultHandler);
 PROVIDE(LPUART = DefaultHandler);

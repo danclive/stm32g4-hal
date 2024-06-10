@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2023 STMicroelectronics.
+Copyright (c) 2024 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -18,7 +18,7 @@ Copyright (c) 2023 STMicroelectronics.
 -->
 <device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
    <name>STM32G491</name>
-   <version>1.9</version>
+   <version>2.0</version>
    <description>STM32G491</description>
     <cpu>
     <name>CM4</name>
@@ -274,6 +274,11 @@ Copyright (c) 2023 STMicroelectronics.
             <size>0x400</size>
             <usage>registers</usage>
          </addressBlock>
+         <interrupt>
+            <name>WWDG</name>
+            <description>Window Watchdog interrupt</description>
+            <value>0</value>
+         </interrupt>
          <registers>
             <register>
                <name>CR</name>
@@ -965,11 +970,6 @@ Copyright (c) 2023 STMicroelectronics.
       <peripheral derivedFrom="I2C1">
          <name>I2C2</name>
          <baseAddress>0x40005800</baseAddress>
-         <interrupt>
-            <name>WWDG</name>
-            <description>Window Watchdog interrupt</description>
-            <value>0</value>
-         </interrupt>
          <interrupt>
             <name>I2C2_EV</name>
             <description>I2C2_EV</description>
@@ -23383,16 +23383,6 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <value>10</value>
          </interrupt>
          <interrupt>
-            <name>USB_HP</name>
-            <description>USB_HP</description>
-            <value>19</value>
-         </interrupt>
-         <interrupt>
-            <name>USB_LP</name>
-            <description>USB_LP</description>
-            <value>20</value>
-         </interrupt>
-         <interrupt>
             <name>EXTI9_5</name>
             <description>EXTI9_5</description>
             <value>23</value>
@@ -23403,14 +23393,9 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <value>40</value>
          </interrupt>
          <interrupt>
-            <name>USBWakeUP</name>
-            <description>USBWakeUP</description>
-            <value>42</value>
-         </interrupt>
-         <interrupt>
-            <name>CRS</name>
-            <description>CRS</description>
-            <value>75</value>
+            <name>FPU</name>
+            <description>Floating point interrupt</description>
+            <value>81</value>
          </interrupt>
          <registers>
             <register>
@@ -25733,7 +25718,16 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <description>DMA1 channel 6 interrupt</description>
             <value>16</value>
          </interrupt>
-    
+         <interrupt>
+            <name>DMA1_CH7</name>
+            <description>DMA1 channel 7 interrupt</description>
+            <value>17</value>
+         </interrupt> 
+         <interrupt>
+            <name>DMA1_CH8</name>
+            <description>DMA1_CH8</description>
+            <value>96</value>
+         </interrupt>		 
          <registers>
             <register>
                <name>ISR</name>
@@ -27217,8 +27211,7 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
       </peripheral>
       <peripheral derivedFrom="DMA1">
          <name>DMA2</name>
-         <baseAddress>0x40020400</baseAddress>
-        
+         <baseAddress>0x40020400</baseAddress>      
          <interrupt>
             <name>DMA2_CH1</name>
             <description>DMA2_CH1</description>
@@ -27249,7 +27242,16 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
             <description>DMA2_CH6</description>
             <value>97</value>
          </interrupt>
-                 
+         <interrupt>
+            <name>DMA2_CH7</name>
+            <description>DMA2_CH7</description>
+            <value>98</value>
+         </interrupt>
+         <interrupt>
+            <name>DMA2_CH8</name>
+            <description>DMA2_CH8</description>
+            <value>99</value>
+         </interrupt> 
       </peripheral>
       <peripheral>
          <name>DMAMUX</name>
@@ -33146,6 +33148,16 @@ This bit is only valid for the main regulator in range 1 and has no effect on ra
       <peripheral derivedFrom="ADC12_Common">
          <name>ADC345_Common</name>
          <baseAddress>0x50000700</baseAddress>
+         <interrupt>
+            <name>ADC4</name>
+            <description>ADC4</description>
+            <value>61</value>
+         </interrupt>
+         <interrupt>
+            <name>ADC5</name>
+            <description>ADC5</description>
+            <value>62</value>
+         </interrupt>
       </peripheral>
       <peripheral>
          <name>FMAC</name>
@@ -39146,6 +39158,21 @@ These are protected write (P) bits, which means that write access by the bits is
             <size>0x400</size>
             <usage>registers</usage>
          </addressBlock>
+         <interrupt>
+            <name>USB_HP</name>
+            <description>USB_HP</description>
+            <value>19</value>
+         </interrupt>
+         <interrupt>
+            <name>USB_LP</name>
+            <description>USB_LP</description>
+            <value>20</value>
+         </interrupt>
+         <interrupt>
+            <name>USBWakeUP</name>
+            <description>USBWakeUP</description>
+            <value>42</value>
+         </interrupt>
          <registers>
             <register>
                <name>EP0R</name>
@@ -39986,6 +40013,11 @@ These are protected write (P) bits, which means that write access by the bits is
             <size>0x400</size>
             <usage>registers</usage>
          </addressBlock>
+         <interrupt>
+            <name>CRS</name>
+            <description>CRS</description>
+            <value>75</value>
+         </interrupt>
          <registers>
             <register>
                <name>CR</name>

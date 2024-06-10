@@ -1,7 +1,5 @@
 //! Blinks an LED
 
-#![deny(unsafe_code)]
-#![deny(warnings)]
 #![no_main]
 #![no_std]
 
@@ -156,6 +154,7 @@ fn panic(info: &PanicInfo) -> ! {
 }
 
 #[exception]
+#[allow(non_snake_case)]
 unsafe fn HardFault(ef: &ExceptionFrame) -> ! {
     panic!("{:#?}", ef);
 }

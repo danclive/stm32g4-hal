@@ -3,18 +3,18 @@ pub type R = crate::R<CntSpec>;
 #[doc = "Register `CNT` writer"]
 pub type W = crate::W<CntSpec>;
 #[doc = "Field `CNT` reader - counter value"]
-pub type CntR = crate::FieldReader<u16>;
+pub type CntR = crate::FieldReader<u32>;
 #[doc = "Field `CNT` writer - counter value"]
-pub type CntW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type CntW<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 #[doc = "Field `UIFCPY` reader - UIFCPY"]
 pub type UifcpyR = crate::BitReader;
 #[doc = "Field `UIFCPY` writer - UIFCPY"]
 pub type UifcpyW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:15 - counter value"]
+    #[doc = "Bits 0:30 - counter value"]
     #[inline(always)]
     pub fn cnt(&self) -> CntR {
-        CntR::new((self.bits & 0xffff) as u16)
+        CntR::new(self.bits & 0x7fff_ffff)
     }
     #[doc = "Bit 31 - UIFCPY"]
     #[inline(always)]
@@ -31,7 +31,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - counter value"]
+    #[doc = "Bits 0:30 - counter value"]
     #[inline(always)]
     #[must_use]
     pub fn cnt(&mut self) -> CntW<CntSpec> {

@@ -17,7 +17,7 @@ use sealed::General;
 pub mod counter;
 pub mod delay;
 mod ehal;
-mod sealed;
+pub(crate) mod sealed;
 
 /// Timer wrapper.
 ///
@@ -27,8 +27,8 @@ mod sealed;
 /// Note: If you want to use the timer to sleep a certain amount of time, use
 /// [`Delay`](`crate::timer::delay::Delay`).
 pub struct Timer<TIM> {
-    tim: TIM,
-    clk: Hertz,
+    pub(crate) tim: TIM,
+    pub(crate) clk: Hertz,
 }
 
 impl Timer<SYST> {
@@ -221,13 +221,13 @@ pub trait TimerExt: Sized {
 
 impl<TIM: Instance> TimerExt for TIM {
     fn counter<const FREQ: u32>(self, clocks: &Clocks) -> Counter<Self, FREQ> {
-        FreqTimer::new(self, clocks).counter()
+        FixedTimer::new(self, clocks).counter()
     }
     fn counter_hz(self, clocks: &Clocks) -> CounterHz<Self> {
         Timer::new(self, clocks).counter_hz()
     }
     fn delay<const FREQ: u32>(self, clocks: &Clocks) -> Delay<Self, FREQ> {
-        FreqTimer::new(self, clocks).delay()
+        FixedTimer::new(self, clocks).delay()
     }
 }
 
@@ -262,19 +262,19 @@ impl Timer<pac::Tim2> {
 /// Timer wrapper for fixed precision timers.
 ///
 /// Uses `fugit::TimerDurationU32` for most of operations
-pub struct FreqTimer<TIM, const FREQ: u32> {
-    tim: TIM,
+pub struct FixedTimer<TIM, const FREQ: u32> {
+    pub(crate) tim: TIM,
 }
 
-/// `FreqTimer` with precision of 1 μs (1 MHz sampling)
-pub type FreqTimerUs<TIM> = FreqTimer<TIM, 1_000_000>;
+/// `FixedTimer` with precision of 1 μs (1 MHz sampling)
+pub type FixedTimerUs<TIM> = FixedTimer<TIM, 1_000_000>;
 
 /// `FTimer` with precision of 1 ms (1 kHz sampling)
 ///
 /// NOTE: don't use this if your system frequency more than 65 MHz
-pub type FreqTimerMs<TIM> = FreqTimer<TIM, 1_000>;
+pub type FixedTimerMs<TIM> = FixedTimer<TIM, 1_000>;
 
-impl<TIM: Instance, const FREQ: u32> FreqTimer<TIM, FREQ> {
+impl<TIM: Instance, const FREQ: u32> FixedTimer<TIM, FREQ> {
     /// Initialize timer
     pub fn new(tim: TIM, clocks: &Clocks) -> Self {
         unsafe {
@@ -536,16 +536,41 @@ macro_rules! dmar {
     };
 }
 
+#[cfg(feature = "tim1")]
 tim!(pac::Tim1: [Timer1, u16, dmar: u32,]);
+
+#[cfg(feature = "tim2")]
 tim!(pac::Tim2: [Timer2, u32, dmar: u16,]);
+
+#[cfg(feature = "tim3")]
 tim!(pac::Tim3: [Timer3, u16, dmar: u16,]);
+
+#[cfg(feature = "tim4")]
 tim!(pac::Tim4: [Timer4, u16, dmar: u16,]);
+
+#[cfg(feature = "tim5")]
+tim!(pac::Tim5: [Timer5, u32, dmar: u16,]);
+
+#[cfg(feature = "tim6")]
 tim!(pac::Tim6: [Timer6, u16,]);
+
+#[cfg(feature = "tim7")]
 tim!(pac::Tim7: [Timer7, u16,]);
+
+#[cfg(feature = "tim8")]
 tim!(pac::Tim8: [Timer8, u16, dmar: u32,]);
+
+#[cfg(feature = "tim15")]
 tim!(pac::Tim15: [Timer15, u16, dmar: u16,]);
+
+#[cfg(feature = "tim16")]
 tim!(pac::Tim16: [Timer16, u16, dmar: u16,]);
+
+#[cfg(feature = "tim17")]
 tim!(pac::Tim17: [Timer17, u16, dmar: u16,]);
+
+#[cfg(feature = "tim20")]
+tim!(pac::Tim20: [Timer20, u16, dmar: u16,]);
 
 #[inline(always)]
 pub(crate) const fn compute_arr_presc(freq: u32, clock: u32) -> (u16, u32) {

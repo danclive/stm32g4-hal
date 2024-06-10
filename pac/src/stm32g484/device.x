@@ -79,6 +79,7 @@ PROVIDE(TIM20_BRK = DefaultHandler);
 PROVIDE(TIM20_UP = DefaultHandler);
 PROVIDE(TIM20_TRG_COM = DefaultHandler);
 PROVIDE(TIM20_CC = DefaultHandler);
+PROVIDE(FPU = DefaultHandler);
 PROVIDE(I2C4_EV = DefaultHandler);
 PROVIDE(I2C4_ER = DefaultHandler);
 PROVIDE(SPI4 = DefaultHandler);

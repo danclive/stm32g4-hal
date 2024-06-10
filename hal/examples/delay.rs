@@ -72,6 +72,8 @@ fn panic(_info: &PanicInfo) -> ! {
     }
 }
 
+use cortex_m_rt::exception;
+
 #[exception]
 #[allow(non_snake_case)]
 fn SysTick() {
