@@ -42,13 +42,13 @@ rtic-tim4 = ["rtic"]
 rtic-tim5 = ["rtic"]
 
 stm32g431 = ["stm32g4-pac/stm32g431", "gpio-g431"]
-stm32g441 = ["stm32g4-pac/stm32g441", "gpio-g441"]
-stm32g471 = ["stm32g4-pac/stm32g471", "gpio-g471"]
-stm32g473 = ["stm32g4-pac/stm32g473", "gpio-g473"]
-stm32g474 = ["stm32g4-pac/stm32g474", "gpio-g474"]
-stm32g483 = ["stm32g4-pac/stm32g483", "gpio-g483"]
-stm32g484 = ["stm32g4-pac/stm32g484", "gpio-g484"]
-stm32g491 = ["stm32g4-pac/stm32g491", "gpio-g491"]
+# stm32g441 = ["stm32g4-pac/stm32g441", "gpio-g441"]
+# stm32g471 = ["stm32g4-pac/stm32g471", "gpio-g471"]
+# stm32g473 = ["stm32g4-pac/stm32g473", "gpio-g473"]
+# stm32g474 = ["stm32g4-pac/stm32g474", "gpio-g474"]
+# stm32g483 = ["stm32g4-pac/stm32g483", "gpio-g483"]
+# stm32g484 = ["stm32g4-pac/stm32g484", "gpio-g484"]
+# stm32g491 = ["stm32g4-pac/stm32g491", "gpio-g491"]
 
 gpio-g431 = [
     "tim1", "tim2", "tim3", "tim4", "tim6", "tim7", "tim8", "tim15", "tim16", "tim17"
@@ -97,7 +97,7 @@ tim17 = []
 tim20 = []
 
 [package.metadata.docs.rs]
-features = ["stm32g431", "stm32g441"]
+features = ["stm32g431"]
 # default-target = "thumbv7em-none-eabihf"
 targets = ["thumbv7em-none-eabihf"]
 
