@@ -1602,10 +1602,10 @@ pub struct Tim3 {
 unsafe impl Send for Tim3 {}
 impl Tim3 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const tim2::RegisterBlock = 0x4000_0400 as *const _;
+    pub const PTR: *const tim3::RegisterBlock = 0x4000_0400 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const tim2::RegisterBlock {
+    pub const fn ptr() -> *const tim3::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -1628,7 +1628,7 @@ impl Tim3 {
     }
 }
 impl Deref for Tim3 {
-    type Target = tim2::RegisterBlock;
+    type Target = tim3::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1640,7 +1640,7 @@ impl core::fmt::Debug for Tim3 {
     }
 }
 #[doc = "Advanced-timers"]
-pub use self::tim2 as tim3;
+pub mod tim3;
 #[doc = "Advanced-timers"]
 pub struct Tim4 {
     _marker: PhantomData<*const ()>,
@@ -1648,10 +1648,10 @@ pub struct Tim4 {
 unsafe impl Send for Tim4 {}
 impl Tim4 {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const tim2::RegisterBlock = 0x4000_0800 as *const _;
+    pub const PTR: *const tim3::RegisterBlock = 0x4000_0800 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const tim2::RegisterBlock {
+    pub const fn ptr() -> *const tim3::RegisterBlock {
         Self::PTR
     }
     #[doc = r" Steal an instance of this peripheral"]
@@ -1674,7 +1674,7 @@ impl Tim4 {
     }
 }
 impl Deref for Tim4 {
-    type Target = tim2::RegisterBlock;
+    type Target = tim3::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -1686,7 +1686,7 @@ impl core::fmt::Debug for Tim4 {
     }
 }
 #[doc = "Advanced-timers"]
-pub use self::tim2 as tim4;
+pub use self::tim3 as tim4;
 #[doc = "Basic-timers"]
 pub struct Tim6 {
     _marker: PhantomData<*const ()>,

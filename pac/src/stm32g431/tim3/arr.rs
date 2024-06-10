@@ -2,12 +2,12 @@
 pub type R = crate::R<ArrSpec>;
 #[doc = "Register `ARR` writer"]
 pub type W = crate::W<ArrSpec>;
-#[doc = "Field `ARR` reader - Low Auto-reload value"]
+#[doc = "Field `ARR` reader - Auto-reload value"]
 pub type ArrR = crate::FieldReader<u32>;
-#[doc = "Field `ARR` writer - Low Auto-reload value"]
+#[doc = "Field `ARR` writer - Auto-reload value"]
 pub type ArrW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
-    #[doc = "Bits 0:19 - Low Auto-reload value"]
+    #[doc = "Bits 0:19 - Auto-reload value"]
     #[inline(always)]
     pub fn arr(&self) -> ArrR {
         ArrR::new(self.bits & 0x000f_ffff)
@@ -19,7 +19,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:19 - Low Auto-reload value"]
+    #[doc = "Bits 0:19 - Auto-reload value"]
     #[inline(always)]
     #[must_use]
     pub fn arr(&mut self) -> ArrW<ArrSpec> {
@@ -39,7 +39,7 @@ impl crate::Writable for ArrSpec {
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets ARR to value 0xffff"]
+#[doc = "`reset()` method sets ARR to value 0xffff_ffff"]
 impl crate::Resettable for ArrSpec {
-    const RESET_VALUE: u32 = 0xffff;
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }

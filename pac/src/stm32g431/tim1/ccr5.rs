@@ -3,9 +3,9 @@ pub type R = crate::R<Ccr5Spec>;
 #[doc = "Register `CCR5` writer"]
 pub type W = crate::W<Ccr5Spec>;
 #[doc = "Field `CCR5` reader - Capture/Compare value"]
-pub type Ccr5R = crate::FieldReader<u16>;
+pub type Ccr5R = crate::FieldReader<u32>;
 #[doc = "Field `CCR5` writer - Capture/Compare value"]
-pub type Ccr5W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type Ccr5W<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 #[doc = "Field `GC5C1` reader - Group Channel 5 and Channel 1"]
 pub type Gc5c1R = crate::BitReader;
 #[doc = "Field `GC5C1` writer - Group Channel 5 and Channel 1"]
@@ -19,10 +19,10 @@ pub type Gc5c3R = crate::BitReader;
 #[doc = "Field `GC5C3` writer - Group Channel 5 and Channel 3"]
 pub type Gc5c3W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
-    #[doc = "Bits 0:15 - Capture/Compare value"]
+    #[doc = "Bits 0:19 - Capture/Compare value"]
     #[inline(always)]
     pub fn ccr5(&self) -> Ccr5R {
-        Ccr5R::new((self.bits & 0xffff) as u16)
+        Ccr5R::new(self.bits & 0x000f_ffff)
     }
     #[doc = "Bit 29 - Group Channel 5 and Channel 1"]
     #[inline(always)]
@@ -51,7 +51,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Capture/Compare value"]
+    #[doc = "Bits 0:19 - Capture/Compare value"]
     #[inline(always)]
     #[must_use]
     pub fn ccr5(&mut self) -> Ccr5W<Ccr5Spec> {

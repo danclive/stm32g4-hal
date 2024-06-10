@@ -3,14 +3,14 @@ pub type R = crate::R<ArrSpec>;
 #[doc = "Register `ARR` writer"]
 pub type W = crate::W<ArrSpec>;
 #[doc = "Field `ARR` reader - Auto-reload value"]
-pub type ArrR = crate::FieldReader<u16>;
+pub type ArrR = crate::FieldReader<u32>;
 #[doc = "Field `ARR` writer - Auto-reload value"]
-pub type ArrW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type ArrW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 impl R {
-    #[doc = "Bits 0:15 - Auto-reload value"]
+    #[doc = "Bits 0:19 - Auto-reload value"]
     #[inline(always)]
     pub fn arr(&self) -> ArrR {
-        ArrR::new((self.bits & 0xffff) as u16)
+        ArrR::new(self.bits & 0x000f_ffff)
     }
 }
 impl core::fmt::Debug for R {
@@ -19,7 +19,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Auto-reload value"]
+    #[doc = "Bits 0:19 - Auto-reload value"]
     #[inline(always)]
     #[must_use]
     pub fn arr(&mut self) -> ArrW<ArrSpec> {
