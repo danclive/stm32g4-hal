@@ -7,7 +7,7 @@
 
 use stm32g4_hal as hal;
 
-use crate::hal::gpio::{Output, Pin};
+use crate::hal::gpio::{gpioc, Output, Pin};
 use crate::hal::prelude::*;
 use crate::hal::{pac, pwr, rcc::clock};
 
@@ -59,10 +59,11 @@ mod app {
 
         info!("start");
         // Initialize the systick interrupt & obtain the token to prove that we did
-        Mono::start(ctx.core.SYST, clocks.sys_clk().to_Hz());
+        // Mono::start(ctx.core.SYST, &clocks);
+        ctx.core.SYST.monotonic(&clocks);
 
         info!("Init Led");
-        let gpioc = p.gpioc.split();
+        let gpioc = gpioc::Pins::new(p.gpioc);
         let led = gpioc.pc4.into_push_pull_output();
 
         // Spawn heartbeat task

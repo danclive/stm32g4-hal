@@ -7,7 +7,7 @@
 
 use stm32g4_hal as hal;
 
-use crate::hal::gpio::{Output, Pin};
+use crate::hal::gpio::{gpioc, Output, Pin};
 use crate::hal::prelude::*;
 use crate::hal::{pac, pwr, rcc::clock, tim2_monotonic};
 
@@ -61,7 +61,7 @@ mod app {
         p.tim2.monotonic(&mut ctx.core.NVIC, &clocks);
 
         info!("Init Led");
-        let gpioc = p.gpioc.split();
+        let gpioc = gpioc::Pins::new(p.gpioc);
         let led = gpioc.pc4.into_push_pull_output();
 
         // Spawn heartbeat task

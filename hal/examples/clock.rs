@@ -7,6 +7,7 @@
 
 use stm32g4_hal as hal;
 
+use crate::hal::gpio::gpioc;
 use crate::hal::prelude::*;
 use crate::hal::{pac, pwr, rcc::clock};
 
@@ -42,7 +43,7 @@ fn main() -> ! {
     info!("clock: {:?}", clocks);
 
     info!("Init Led");
-    let gpioc = p.gpioc.split();
+    let gpioc = gpioc::Pins::new(p.gpioc);
     let mut led = gpioc.pc4.into_push_pull_output();
 
     loop {

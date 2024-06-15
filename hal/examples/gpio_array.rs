@@ -7,8 +7,8 @@
 
 use stm32g4_hal as hal;
 
+use crate::hal::gpio::{gpioa, gpioc};
 use crate::hal::pac;
-use crate::hal::prelude::*;
 
 use cortex_m_rt::entry;
 
@@ -20,7 +20,7 @@ fn main() -> ! {
     info!("start");
     let p = pac::Peripherals::take().unwrap();
 
-    let gpioa = p.gpioa.split();
+    let gpioa = gpioa::Pins::new(p.gpioa);
 
     let a0 = gpioa.pa0.into_push_pull_output();
     let a1 = gpioa.pa1.into_push_pull_output();
@@ -34,7 +34,7 @@ fn main() -> ! {
     a3.set_high();
 
     info!("Init Led");
-    let gpioc = p.gpioc.split();
+    let gpioc = gpioc::Pins::new(p.gpioc);
     let mut led = gpioc.pc4.into_push_pull_output();
 
     loop {

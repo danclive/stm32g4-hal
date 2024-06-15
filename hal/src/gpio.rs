@@ -411,15 +411,6 @@ const fn gpiox<const P: char>() -> *const crate::pac::gpioa::RegisterBlock {
     }
 }
 
-/// Extension trait to split a GPIO peripheral in independent pins and registers
-pub trait GpioExt {
-    /// The parts to split the GPIO into
-    type Parts;
-
-    /// Splits the GPIO block into independent pins and registers
-    fn split(self) -> Self::Parts;
-}
-
 macro_rules! gpio {
     ($GPIOX:ident, $gpiox:ident, $PEPin:ident, $port_id:expr, $PXn:ident, [
         $($PXi:ident: ($pxi:ident, $i:expr, [$($A:literal),*] $(, $MODE:ty)?),)+
@@ -429,24 +420,24 @@ macro_rules! gpio {
             use crate::pac::$GPIOX;
             use crate::rcc::{Enable, Reset};
 
-            /// GPIO parts
-            pub struct Parts {
+            /// GPIO pins
+            pub struct Pins {
                 $(
                     /// Pin
                     pub $pxi: $PXi $(<$MODE>)?,
                 )+
             }
 
-            impl crate::gpio::GpioExt for $GPIOX {
-                type Parts = Parts;
+            impl Pins {
+                pub const P: char = $port_id;
 
-                fn split(self) -> Parts {
+                pub fn new(_: $GPIOX) -> Pins {
                     unsafe {
                         // Enable clock.
                         $GPIOX::enable_unchecked();
                         $GPIOX::reset_unchecked();
                     }
-                    Parts {
+                    Pins {
                         $(
                             $pxi: $PXi::new(),
                         )+

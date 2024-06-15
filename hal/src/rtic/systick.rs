@@ -116,7 +116,7 @@ macro_rules! systick_monotonic {
             /// on the given `sysclk` parameter. If that happens, adjust the desired monotonic tick rate.
             ///
             /// This method must be called only once.
-            pub fn start(systick: crate::pac::SYST, sysclk: u32) {
+            pub fn start(systick: crate::pac::SYST, clocks: &$crate::rcc::clock::Clocks) {
                 #[no_mangle]
                 #[allow(non_snake_case)]
                 unsafe extern "C" fn SysTick() {
@@ -124,7 +124,21 @@ macro_rules! systick_monotonic {
                     $crate::rtic::systick::SystickBackend::timer_queue().on_monotonic_interrupt();
                 }
 
-                $crate::rtic::systick::SystickBackend::_start(systick, sysclk, $tick_rate_hz);
+                $crate::rtic::systick::SystickBackend::_start(
+                    systick,
+                    clocks.sys_clk().raw(),
+                    $tick_rate_hz,
+                );
+            }
+        }
+
+        trait __MonoSystickExt: Sized {
+            fn monotonic(self, clocks: &$crate::rcc::clock::Clocks);
+        }
+
+        impl __MonoSystickExt for $crate::pac::SYST {
+            fn monotonic(self, clocks: &clock::Clocks) {
+                $name::start(self, clocks);
             }
         }
 
