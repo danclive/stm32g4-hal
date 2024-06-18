@@ -57,7 +57,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "FDCAN Tx buffer cancellation finished register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdcan_txbcf::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FDCAN Tx buffer cancellation finished register\n\nYou can [`read`](crate::Reg::read) this register and get [`fdcan_txbcf::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FdcanTxbcfSpec;
 impl crate::RegisterSpec for FdcanTxbcfSpec {
     type Ux = u32;

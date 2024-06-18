@@ -14,7 +14,7 @@ impl core::fmt::Debug for R {
         f.debug_struct("TSSSR").field("ss", &self.ss()).finish()
     }
 }
-#[doc = "timestamp sub second register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tsssr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "timestamp sub second register\n\nYou can [`read`](crate::Reg::read) this register and get [`tsssr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TsssrSpec;
 impl crate::RegisterSpec for TsssrSpec {
     type Ux = u32;

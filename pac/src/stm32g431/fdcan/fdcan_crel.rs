@@ -56,7 +56,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "FDCAN core release register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdcan_crel::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FDCAN core release register\n\nYou can [`read`](crate::Reg::read) this register and get [`fdcan_crel::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FdcanCrelSpec;
 impl crate::RegisterSpec for FdcanCrelSpec {
     type Ux = u32;

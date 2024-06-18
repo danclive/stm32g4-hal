@@ -16,7 +16,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "injected data register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`jdr3::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "injected data register 3\n\nYou can [`read`](crate::Reg::read) this register and get [`jdr3::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Jdr3Spec;
 impl crate::RegisterSpec for Jdr3Spec {
     type Ux = u32;

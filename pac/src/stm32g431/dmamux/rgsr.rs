@@ -14,7 +14,7 @@ impl core::fmt::Debug for R {
         f.debug_struct("RGSR").field("of", &self.of()).finish()
     }
 }
-#[doc = "DMAMux - DMA request generator status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rgsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAMux - DMA request generator status register\n\nYou can [`read`](crate::Reg::read) this register and get [`rgsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RgsrSpec;
 impl crate::RegisterSpec for RgsrSpec {
     type Ux = u32;

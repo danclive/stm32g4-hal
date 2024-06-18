@@ -14,7 +14,7 @@ impl core::fmt::Debug for R {
         f.debug_struct("SSR").field("ss", &self.ss()).finish()
     }
 }
-#[doc = "sub second register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ssr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "sub second register\n\nYou can [`read`](crate::Reg::read) this register and get [`ssr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SsrSpec;
 impl crate::RegisterSpec for SsrSpec {
     type Ux = u32;

@@ -332,7 +332,7 @@ when APC bit is set in PWR_CR3 register."]
         Pd15W::new(self, 15)
     }
 }
-#[doc = "Power Port E pull-down control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwr_pdcre::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwr_pdcre::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Power Port E pull-down control register\n\nYou can [`read`](crate::Reg::read) this register and get [`pwr_pdcre::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pwr_pdcre::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PwrPdcreSpec;
 impl crate::RegisterSpec for PwrPdcreSpec {
     type Ux = u32;

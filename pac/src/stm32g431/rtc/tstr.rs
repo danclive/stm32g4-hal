@@ -64,7 +64,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "time stamp time register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tstr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "time stamp time register\n\nYou can [`read`](crate::Reg::read) this register and get [`tstr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TstrSpec;
 impl crate::RegisterSpec for TstrSpec {
     type Ux = u32;

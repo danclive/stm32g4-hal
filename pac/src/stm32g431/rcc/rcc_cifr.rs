@@ -352,7 +352,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "Clock interrupt flag register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rcc_cifr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Clock interrupt flag register\n\nYou can [`read`](crate::Reg::read) this register and get [`rcc_cifr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RccCifrSpec;
 impl crate::RegisterSpec for RccCifrSpec {
     type Ux = u32;

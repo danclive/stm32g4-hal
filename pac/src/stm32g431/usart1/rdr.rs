@@ -14,7 +14,7 @@ impl core::fmt::Debug for R {
         f.debug_struct("RDR").field("rdr", &self.rdr()).finish()
     }
 }
-#[doc = "Receive data register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rdr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive data register\n\nYou can [`read`](crate::Reg::read) this register and get [`rdr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RdrSpec;
 impl crate::RegisterSpec for RdrSpec {
     type Ux = u32;

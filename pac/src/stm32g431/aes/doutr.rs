@@ -16,7 +16,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "data output register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doutr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "data output register\n\nYou can [`read`](crate::Reg::read) this register and get [`doutr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DoutrSpec;
 impl crate::RegisterSpec for DoutrSpec {
     type Ux = u32;

@@ -24,7 +24,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "ADC common regular data register for dual and triple modes\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cdr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ADC common regular data register for dual and triple modes\n\nYou can [`read`](crate::Reg::read) this register and get [`cdr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CdrSpec;
 impl crate::RegisterSpec for CdrSpec {
     type Ux = u32;

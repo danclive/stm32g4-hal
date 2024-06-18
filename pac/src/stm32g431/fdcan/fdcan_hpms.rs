@@ -138,7 +138,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "FDCAN high-priority message status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdcan_hpms::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FDCAN high-priority message status register\n\nYou can [`read`](crate::Reg::read) this register and get [`fdcan_hpms::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FdcanHpmsSpec;
 impl crate::RegisterSpec for FdcanHpmsSpec {
     type Ux = u32;

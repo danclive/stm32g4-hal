@@ -28,7 +28,7 @@ impl W {
         Rxsopx2W::new(self, 0)
     }
 }
-#[doc = "UCPD Rx Ordered Set Extension Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_ordext2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rx_ordext2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UCPD Rx Ordered Set Extension Register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_ordext2::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rx_ordext2::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RxOrdext2Spec;
 impl crate::RegisterSpec for RxOrdext2Spec {
     type Ux = u32;

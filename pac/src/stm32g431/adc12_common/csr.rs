@@ -184,7 +184,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "ADC Common status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ADC Common status register\n\nYou can [`read`](crate::Reg::read) this register and get [`csr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CsrSpec;
 impl crate::RegisterSpec for CsrSpec {
     type Ux = u32;

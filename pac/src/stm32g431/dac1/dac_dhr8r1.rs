@@ -44,7 +44,7 @@ impl W {
         Dacc1dhrbW::new(self, 8)
     }
 }
-#[doc = "DAC channel1 8-bit right aligned data holding register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dac_dhr8r1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dac_dhr8r1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DAC channel1 8-bit right aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr8r1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr8r1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DacDhr8r1Spec;
 impl crate::RegisterSpec for DacDhr8r1Spec {
     type Ux = u32;

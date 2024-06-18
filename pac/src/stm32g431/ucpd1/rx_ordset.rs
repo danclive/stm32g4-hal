@@ -32,7 +32,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "UCPD Rx Ordered Set Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_ordset::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UCPD Rx Ordered Set Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_ordset::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RxOrdsetSpec;
 impl crate::RegisterSpec for RxOrdsetSpec {
     type Ux = u32;

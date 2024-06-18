@@ -99,7 +99,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "Power status register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwr_sr1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Power status register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`pwr_sr1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PwrSr1Spec;
 impl crate::RegisterSpec for PwrSr1Spec {
     type Ux = u32;

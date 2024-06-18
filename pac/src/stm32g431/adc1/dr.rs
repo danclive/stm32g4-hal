@@ -14,7 +14,7 @@ impl core::fmt::Debug for R {
         f.debug_struct("DR").field("rdata", &self.rdata()).finish()
     }
 }
-#[doc = "regular Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "regular Data Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DrSpec;
 impl crate::RegisterSpec for DrSpec {
     type Ux = u32;

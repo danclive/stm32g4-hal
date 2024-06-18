@@ -140,7 +140,7 @@ impl W {
         Dlym4rW::new(self, 28)
     }
 }
-#[doc = "PDM delay register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdmdly::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pdmdly::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PDM delay register\n\nYou can [`read`](crate::Reg::read) this register and get [`pdmdly::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pdmdly::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PdmdlySpec;
 impl crate::RegisterSpec for PdmdlySpec {
     type Ux = u32;

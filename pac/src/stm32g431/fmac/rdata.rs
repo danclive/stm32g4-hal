@@ -16,7 +16,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "FMAC Read Data register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rdata::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FMAC Read Data register\n\nYou can [`read`](crate::Reg::read) this register and get [`rdata::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RdataSpec;
 impl crate::RegisterSpec for RdataSpec {
     type Ux = u32;

@@ -72,7 +72,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "BStatus register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "BStatus register\n\nYou can [`read`](crate::Reg::read) this register and get [`bsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BsrSpec;
 impl crate::RegisterSpec for BsrSpec {
     type Ux = u32;

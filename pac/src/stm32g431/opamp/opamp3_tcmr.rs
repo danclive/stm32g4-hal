@@ -108,7 +108,7 @@ impl W {
         LockW::new(self, 31)
     }
 }
-#[doc = "OPAMP3 control/status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`opamp3_tcmr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`opamp3_tcmr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "OPAMP3 control/status register\n\nYou can [`read`](crate::Reg::read) this register and get [`opamp3_tcmr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`opamp3_tcmr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Opamp3TcmrSpec;
 impl crate::RegisterSpec for Opamp3TcmrSpec {
     type Ux = u32;

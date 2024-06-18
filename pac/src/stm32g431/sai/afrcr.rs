@@ -92,7 +92,7 @@ impl W {
         FsoffW::new(self, 18)
     }
 }
-#[doc = "AFRCR\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`afrcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`afrcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "AFRCR\n\nYou can [`read`](crate::Reg::read) this register and get [`afrcr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`afrcr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AfrcrSpec;
 impl crate::RegisterSpec for AfrcrSpec {
     type Ux = u32;

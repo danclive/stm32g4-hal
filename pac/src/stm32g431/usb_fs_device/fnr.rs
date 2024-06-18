@@ -48,7 +48,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "USB frame number register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fnr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "USB frame number register\n\nYou can [`read`](crate::Reg::read) this register and get [`fnr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FnrSpec;
 impl crate::RegisterSpec for FnrSpec {
     type Ux = u32;

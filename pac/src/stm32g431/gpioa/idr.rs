@@ -136,7 +136,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "GPIO port input data register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "GPIO port input data register\n\nYou can [`read`](crate::Reg::read) this register and get [`idr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IdrSpec;
 impl crate::RegisterSpec for IdrSpec {
     type Ux = u32;

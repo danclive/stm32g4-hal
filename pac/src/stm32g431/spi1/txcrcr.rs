@@ -16,7 +16,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "TX CRC register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`txcrcr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "TX CRC register\n\nYou can [`read`](crate::Reg::read) this register and get [`txcrcr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TxcrcrSpec;
 impl crate::RegisterSpec for TxcrcrSpec {
     type Ux = u32;

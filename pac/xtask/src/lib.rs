@@ -24,7 +24,8 @@ pub fn generate() {
 
         cmd!(
             sh,
-            "svd2rust -m -g -s -i {svd_path} -o {crate_dir} --reexport-core-peripherals --reexport-interrupt --atomics --atomics_feature atomics --impl-debug --impl-defmt defmt"
+            "svd2rust -m -g -s -i {svd_path} -o {crate_dir} --reexport-core-peripherals --reexport-interrupt
+            --atomics --atomics_feature atomics --impl-debug --impl-defmt defmt"
         )
         .run()
         .unwrap();

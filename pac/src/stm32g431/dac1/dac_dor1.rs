@@ -24,7 +24,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "DAC channel1 data output register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dac_dor1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DAC channel1 data output register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dor1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DacDor1Spec;
 impl crate::RegisterSpec for DacDor1Spec {
     type Ux = u32;

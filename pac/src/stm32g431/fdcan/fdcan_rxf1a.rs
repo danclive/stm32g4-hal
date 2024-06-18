@@ -32,7 +32,7 @@ to F1AI + 1 and update the FIFO 1 Fill Level RXF1S\\[F1FL\\]."]
         F1aiW::new(self, 0)
     }
 }
-#[doc = "FDCAN Rx FIFO 1 acknowledge register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdcan_rxf1a::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdcan_rxf1a::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FDCAN Rx FIFO 1 acknowledge register\n\nYou can [`read`](crate::Reg::read) this register and get [`fdcan_rxf1a::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fdcan_rxf1a::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FdcanRxf1aSpec;
 impl crate::RegisterSpec for FdcanRxf1aSpec {
     type Ux = u32;

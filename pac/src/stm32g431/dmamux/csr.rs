@@ -14,7 +14,7 @@ impl core::fmt::Debug for R {
         f.debug_struct("CSR").field("sof", &self.sof()).finish()
     }
 }
-#[doc = "DMAMUX request line multiplexer interrupt channel status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAMUX request line multiplexer interrupt channel status register\n\nYou can [`read`](crate::Reg::read) this register and get [`csr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CsrSpec;
 impl crate::RegisterSpec for CsrSpec {
     type Ux = u32;

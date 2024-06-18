@@ -16,7 +16,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "UCPD Rx Paysize Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_paysz::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "UCPD Rx Paysize Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_paysz::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RxPayszSpec;
 impl crate::RegisterSpec for RxPayszSpec {
     type Ux = u32;

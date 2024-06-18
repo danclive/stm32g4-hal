@@ -121,7 +121,7 @@ impl core::fmt::Debug for R {
             .finish()
     }
 }
-#[doc = "FDCAN Rx FIFO 1 status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdcan_rxf1s::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FDCAN Rx FIFO 1 status register\n\nYou can [`read`](crate::Reg::read) this register and get [`fdcan_rxf1s::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FdcanRxf1sSpec;
 impl crate::RegisterSpec for FdcanRxf1sSpec {
     type Ux = u32;

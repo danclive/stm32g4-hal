@@ -36,7 +36,7 @@ of CCCR register are set to 1."]
         EidmW::new(self, 0)
     }
 }
-#[doc = "FDCAN extended ID and mask register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdcan_xidam::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdcan_xidam::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FDCAN extended ID and mask register\n\nYou can [`read`](crate::Reg::read) this register and get [`fdcan_xidam::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fdcan_xidam::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FdcanXidamSpec;
 impl crate::RegisterSpec for FdcanXidamSpec {
     type Ux = u32;

@@ -14,7 +14,7 @@ impl core::fmt::Debug for R {
         f.debug_struct("PECR").field("pec", &self.pec()).finish()
     }
 }
-#[doc = "PEC register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pecr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PEC register\n\nYou can [`read`](crate::Reg::read) this register and get [`pecr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PecrSpec;
 impl crate::RegisterSpec for PecrSpec {
     type Ux = u32;
