@@ -9,6 +9,10 @@
 pub use fugit::ExtU32 as _fugit_ExtU32;
 pub use fugit::RateExtU32 as _fugit_RateExtU32;
 
+pub use crate::pwm::FaultMonitor as _stm32g4_pwm_FaultMonitor;
+pub use crate::pwm::PwmAdvExt as _stm32g4_pwm_PwmAdvExt;
+pub use crate::pwm::PwmExt as _stm32g4_pwm_PwmExt;
+pub use crate::pwm::PwmPinEnable as _stm32g4_pwm_PwmPinEnable;
 pub use crate::pwr::PwrExt as _stm32g4_pwr_PwrExt;
 pub use crate::rcc::RccExt as _stm32g4_rcc_RccExt;
 pub use crate::timer::SYSTimerExt as _stm32g4_timer_SYSTimerExt;

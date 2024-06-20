@@ -135,7 +135,7 @@ where
     pub fn new(tim: TIM, clocks: &Clocks) -> Self {
         unsafe {
             //NOTE(unsafe) this reference will only be used for atomic writes with no side effects
-            let rcc = &(*pac::Rcc::ptr());
+            let rcc = &(*pac::Rcc::PTR);
             // Enable and reset the timer peripheral
             TIM::enable(rcc);
             TIM::reset(rcc);

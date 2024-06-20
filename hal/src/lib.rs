@@ -9,6 +9,7 @@ pub mod bb;
 // pub mod delay;
 pub mod dma;
 pub mod gpio;
+pub mod pwm;
 pub mod pwr;
 pub mod rcc;
 pub mod syscfg;

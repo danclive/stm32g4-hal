@@ -115,7 +115,7 @@ macro_rules! mco {
                             0b111
                         },
                     };
-                    Mco { src_bits, pin: self.into_alternate() }
+                    Mco { src_bits, pin: self.into_alt() }
                 }
             }
         )+

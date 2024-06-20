@@ -462,7 +462,8 @@ macro_rules! gpio {
 
         }
 
-        // pub use $gpiox::{ $($PXi,)+ };
+        #[allow(unused_imports)]
+        pub(crate) use $gpiox::{ $($PXi,)+ };
     }
 }
 

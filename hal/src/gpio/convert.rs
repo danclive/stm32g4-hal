@@ -9,7 +9,7 @@ impl<const P: char, const N: u8, const A: u8> Pin<P, N, Alt<A, PushPull>> {
 
 impl<const P: char, const N: u8, MODE: PinMode> Pin<P, N, MODE> {
     /// Configures the pin to operate alternate mode
-    pub fn into_alternate<const A: u8>(self) -> Pin<P, N, Alt<A, PushPull>>
+    pub fn into_alt<const A: u8>(self) -> Pin<P, N, Alt<A, PushPull>>
     where
         Self: marker::IntoAf<A>,
     {
@@ -17,7 +17,7 @@ impl<const P: char, const N: u8, MODE: PinMode> Pin<P, N, MODE> {
     }
 
     /// Configures the pin to operate in alternate open drain mode
-    pub fn into_alternate_open_drain<const A: u8>(self) -> Pin<P, N, Alt<A, OpenDrain>>
+    pub fn into_alt_open_drain<const A: u8>(self) -> Pin<P, N, Alt<A, OpenDrain>>
     where
         Self: marker::IntoAf<A>,
     {
