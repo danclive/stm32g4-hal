@@ -396,7 +396,7 @@ macro_rules! tim_adv_hal {
 
                 // Timers with advanced counting options, including center aligned and right aligned PWM
                 $(
-                    pub fn center_aligned( mut self ) -> Self {
+                    pub fn center_aligned(mut self) -> Self {
                         // $cms is an Ident that only exists for timers with center/right aligned PWM, so we can use it as a variable name to
                         // only implement this method for timers that support center/right aligned PWM.
                         let $cms = Alignment::Center;
@@ -406,7 +406,7 @@ macro_rules! tim_adv_hal {
                         self
                     }
 
-                    pub fn right_aligned( mut self ) -> Self {
+                    pub fn right_aligned(mut self) -> Self {
                         self.alignment = Alignment::Right;
 
                         self
@@ -418,7 +418,7 @@ macro_rules! tim_adv_hal {
             $(
                 impl<PINS, CHANNEL, COMP> PwmBuilder<$TIMX, PINS, CHANNEL, FaultDisabled, COMP, $typ> {
                     /// Configure a break pin that will disable PWM when activated (active level based on polarity argument)
-                    /// Note: not all timers have fault inputs; FaultPins<TIM> is only implemented for valid pins/timers.
+                    /// Note: not all timers have fault inputs; `FaultPins<TIM>` is only implemented for valid pins/timers.
                     pub fn with_break_pin<P: FaultPins<$TIMX>>(self, _pin: P, polarity: Polarity) -> PwmBuilder<$TIMX, PINS, CHANNEL, FaultEnabled, COMP, $typ> {
                         PwmBuilder {
                             _tim: PhantomData,

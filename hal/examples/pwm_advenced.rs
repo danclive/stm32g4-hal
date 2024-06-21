@@ -54,7 +54,13 @@ fn main() -> ! {
     let pin = gpioa.pa8.into_alt();
     let npin = gpioa.pa7.into_alt();
 
-    let c1 = p.tim1.pwm(pin, 100.Hz(), &clocks);
+    let (_, c1) = p
+        .tim1
+        .pwm_advanced(pin, &clocks)
+        .frequency(1000.kHz())
+        .with_deadtime(100.nanos())
+        .finalize();
+
     let mut c1 = c1.into_complementary(npin);
 
     let duty = c1.get_duty();
