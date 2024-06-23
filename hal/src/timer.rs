@@ -494,6 +494,7 @@ macro_rules! tim {
             fn read_count(&self) -> Self::Width {
                 self.cnt().read().bits() as Self::Width
             }
+
             #[inline(always)]
             fn write_count(&mut self, value: Self::Width) {
                 // TODO: TIM2 and TIM5 are 32 bit
@@ -505,6 +506,7 @@ macro_rules! tim {
                 self.cr1()
                     .modify(|_, w| unsafe { w.bits(1 << 3) }.cen().set_bit());
             }
+
             #[inline(always)]
             fn start_free(&mut self, update: bool) {
                 self.cr1()

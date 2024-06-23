@@ -1,3 +1,4 @@
+//! pwm
 use core::marker::PhantomData;
 use core::mem::MaybeUninit;
 
@@ -99,14 +100,14 @@ macro_rules! tim_hal {
 
             let clk = <$TIMX>::timer_clock(clocks);
 
-            let (period, prescale) = match 32 {
+            let (period, psc) = match 32 {
                 16 => calculate_frequency_16bit(clk, freq, Alignment::Left),
                 _ => calculate_frequency_32bit(clk, freq, Alignment::Left),
             };
 
             // Write prescale
             tim.psc()
-                .write(|w| unsafe { w.psc().bits(prescale as u16) });
+                .write(|w| unsafe { w.psc().bits(psc as u16) });
 
             // Write period
             tim.arr().write(|w| unsafe { w.arr().bits(period.into()) });
@@ -492,8 +493,8 @@ tim_adv_hal!(pac::Tim20, tim20, u16, 16, BDTR: bdtr, set_bit);
 
 /// Pwm represents one PWM channel; it is created by calling TIM?.pwm(...) and lets you control the channel through the PwmPin trait
 pub struct Pwm<TIM, CHANNEL, COMP, POL, NPOL> {
-    _channel: PhantomData<CHANNEL>,
     _tim: PhantomData<TIM>,
+    _channel: PhantomData<CHANNEL>,
     _complementary: PhantomData<COMP>,
     _polarity: PhantomData<POL>,
     _npolarity: PhantomData<NPOL>,

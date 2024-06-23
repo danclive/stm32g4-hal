@@ -10,6 +10,7 @@ pub mod bb;
 pub mod dma;
 pub mod gpio;
 pub mod pwm;
+pub mod pwm_input;
 pub mod pwr;
 pub mod rcc;
 pub mod syscfg;

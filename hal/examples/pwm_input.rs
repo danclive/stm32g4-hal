@@ -7,7 +7,7 @@
 
 use stm32g4_hal as hal;
 
-use crate::hal::gpio::{gpioa, gpioc};
+use crate::hal::gpio::{gpioa, gpiob, gpioc};
 use crate::hal::prelude::*;
 use crate::hal::{pac, pwr, rcc::clock};
 
@@ -54,7 +54,7 @@ fn main() -> ! {
     let pin = gpioa.pa8.into_alt();
     let npin = gpioa.pa7.into_alt();
 
-    let c1 = p.tim1.pwm(pin, 1000.kHz(), &clocks);
+    let c1 = p.tim1.pwm(pin, 100.kHz(), &clocks);
     let mut c1 = c1.into_complementary(npin);
 
     let duty = c1.get_duty();
@@ -62,8 +62,14 @@ fn main() -> ! {
     let max_duty = c1.get_max_duty();
     info!("Max Duty: {:?}", max_duty);
 
-    c1.set_duty(max_duty / 2);
+    c1.set_duty(max_duty / 4);
     c1.enable();
+
+    let gpiob = gpiob::Pins::new(p.gpiob);
+    let pin_c1 = gpiob.pb6.into_alt();
+    let mut input_c1 = p.tim8.pwm_input(&clocks, 10.MHz(), pin_c1);
+
+    input_c1.enable();
 
     loop {
         info!("Set Led High");
@@ -75,6 +81,12 @@ fn main() -> ! {
         led.set_low();
 
         delay.delay(1.secs());
+
+        if input_c1.is_valid_capture() {
+            info!("in period clocks: {:?}", input_c1.get_period_clocks());
+            info!("in duty clocks: {:?}", input_c1.get_duty_cycle_clocks());
+            info!("in duty: {:?}", input_c1.get_duty_cycle());
+        }
     }
 }
 

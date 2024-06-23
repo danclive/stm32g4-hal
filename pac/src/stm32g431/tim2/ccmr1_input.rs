@@ -6,10 +6,10 @@ pub type W = crate::W<Ccmr1InputSpec>;
 pub type Cc1sR = crate::FieldReader;
 #[doc = "Field `CC1S` writer - Capture/Compare 1 selection"]
 pub type Cc1sW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `ICPCS` reader - Input capture 1 prescaler"]
-pub type IcpcsR = crate::FieldReader;
-#[doc = "Field `ICPCS` writer - Input capture 1 prescaler"]
-pub type IcpcsW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+#[doc = "Field `IC1PSC` reader - Input capture 1 prescaler"]
+pub type Ic1pscR = crate::FieldReader;
+#[doc = "Field `IC1PSC` writer - Input capture 1 prescaler"]
+pub type Ic1pscW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `IC1F` reader - Input capture 1 filter"]
 pub type Ic1fR = crate::FieldReader;
 #[doc = "Field `IC1F` writer - Input capture 1 filter"]
@@ -34,8 +34,8 @@ impl R {
     }
     #[doc = "Bits 2:3 - Input capture 1 prescaler"]
     #[inline(always)]
-    pub fn icpcs(&self) -> IcpcsR {
-        IcpcsR::new(((self.bits >> 2) & 3) as u8)
+    pub fn ic1psc(&self) -> Ic1pscR {
+        Ic1pscR::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:7 - Input capture 1 filter"]
     #[inline(always)]
@@ -65,7 +65,7 @@ impl core::fmt::Debug for R {
             .field("ic2psc", &self.ic2psc())
             .field("cc2s", &self.cc2s())
             .field("ic1f", &self.ic1f())
-            .field("icpcs", &self.icpcs())
+            .field("ic1psc", &self.ic1psc())
             .field("cc1s", &self.cc1s())
             .finish()
     }
@@ -80,8 +80,8 @@ impl W {
     #[doc = "Bits 2:3 - Input capture 1 prescaler"]
     #[inline(always)]
     #[must_use]
-    pub fn icpcs(&mut self) -> IcpcsW<Ccmr1InputSpec> {
-        IcpcsW::new(self, 2)
+    pub fn ic1psc(&mut self) -> Ic1pscW<Ccmr1InputSpec> {
+        Ic1pscW::new(self, 2)
     }
     #[doc = "Bits 4:7 - Input capture 1 filter"]
     #[inline(always)]
