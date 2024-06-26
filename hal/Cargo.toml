@@ -31,7 +31,12 @@ rtic = { version = "2.1.1", features = ["thumbv7-backend"] }
 
 [features]
 default = ["stm32g431", "defmt", "rtic-tim2", "rtic-systick"]
-defmt = ["dep:defmt", "stm32g4-pac/defmt", "fugit/defmt", "embedded-hal/defmt-03"]
+defmt = [
+    "dep:defmt",
+    "stm32g4-pac/defmt",
+    "fugit/defmt",
+    "embedded-hal/defmt-03",
+]
 rtic = ["rtic-time", "portable-atomic", "embedded-hal-async"]
 rtic-systick = ["rtic"]
 rtic-systick-64bit = ["rtic-systick"]
@@ -49,35 +54,123 @@ stm32g484 = ["stm32g4-pac/stm32g484", "gpio-g484"]
 stm32g491 = ["stm32g4-pac/stm32g491", "gpio-g491"]
 
 gpio-g431 = [
-    "tim1", "tim2", "tim3", "tim4", "tim6", "tim7", "tim8", "tim15", "tim16", "tim17"
+    "tim1",
+    "tim2",
+    "tim3",
+    "tim4",
+    "tim6",
+    "tim7",
+    "tim8",
+    "tim15",
+    "tim16",
+    "tim17",
 ]
 
 gpio-g441 = [
-    "tim1", "tim2", "tim3", "tim4", "tim6", "tim7", "tim8", "tim15", "tim16", "tim17"
+    "tim1",
+    "tim2",
+    "tim3",
+    "tim4",
+    "tim6",
+    "tim7",
+    "tim8",
+    "tim15",
+    "tim16",
+    "tim17",
 ]
 
 gpio-g471 = [
-    "tim1", "tim2", "tim3", "tim4", "tim5", "tim6", "tim7", "tim8", "tim15", "tim16", "tim17"
+    "tim1",
+    "tim2",
+    "tim3",
+    "tim4",
+    "tim5",
+    "tim6",
+    "tim7",
+    "tim8",
+    "tim15",
+    "tim16",
+    "tim17",
+    "i2c4",
 ]
 
 gpio-g473 = [
-    "tim1", "tim2", "tim3", "tim4", "tim5", "tim6", "tim7", "tim8", "tim15", "tim16", "tim17", "tim20"
+    "tim1",
+    "tim2",
+    "tim3",
+    "tim4",
+    "tim5",
+    "tim6",
+    "tim7",
+    "tim8",
+    "tim15",
+    "tim16",
+    "tim17",
+    "tim20",
+    "i2c4",
 ]
 
 gpio-g474 = [
-    "tim1", "tim2", "tim3", "tim4", "tim5", "tim6", "tim7", "tim8", "tim15", "tim16", "tim17", "tim20"
+    "tim1",
+    "tim2",
+    "tim3",
+    "tim4",
+    "tim5",
+    "tim6",
+    "tim7",
+    "tim8",
+    "tim15",
+    "tim16",
+    "tim17",
+    "tim20",
+    "i2c4",
 ]
 
 gpio-g483 = [
-    "tim1", "tim2", "tim3", "tim4", "tim5", "tim6", "tim7", "tim8", "tim15", "tim16", "tim17", "tim20"
+    "tim1",
+    "tim2",
+    "tim3",
+    "tim4",
+    "tim5",
+    "tim6",
+    "tim7",
+    "tim8",
+    "tim15",
+    "tim16",
+    "tim17",
+    "tim20",
+    "i2c4",
 ]
 
 gpio-g484 = [
-    "tim1", "tim2", "tim3", "tim4", "tim5", "tim6", "tim7", "tim8", "tim15", "tim16", "tim17", "tim20"
+    "tim1",
+    "tim2",
+    "tim3",
+    "tim4",
+    "tim5",
+    "tim6",
+    "tim7",
+    "tim8",
+    "tim15",
+    "tim16",
+    "tim17",
+    "tim20",
+    "i2c4",
 ]
 
 gpio-g491 = [
-    "tim1", "tim2", "tim3", "tim4", "tim5", "tim6", "tim7", "tim8", "tim15", "tim16", "tim17", "tim20"
+    "tim1",
+    "tim2",
+    "tim3",
+    "tim4",
+    "tim5",
+    "tim6",
+    "tim7",
+    "tim8",
+    "tim15",
+    "tim16",
+    "tim17",
+    "tim20",
 ]
 
 tim1 = []
@@ -93,6 +186,8 @@ tim15 = []
 tim16 = []
 tim17 = []
 tim20 = []
+
+i2c4 = []
 
 [package.metadata.docs.rs]
 features = ["stm32g431"]

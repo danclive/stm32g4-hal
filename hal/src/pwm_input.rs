@@ -65,19 +65,20 @@ macro_rules! tim_hal {
                 CHANNEL: Channel,
                 T: Into<Hertz>,
             {
-                $timX(self, clocks, freq.into(), pin)
+                $timX(self, clocks, freq, pin)
             }
         }
 
-        fn $timX<PIN, CHANNEL>(
+        pub fn $timX<PIN, CHANNEL, T>(
             tim: $TIMX,
             clocks: &Clocks,
-            freq: Hertz,
+            freq: T,
             _pin: PIN,
         ) -> PwmInput<$TIMX, CHANNEL>
         where
             PIN: Pin<$TIMX, CHANNEL>,
             CHANNEL: Channel,
+            T: Into<Hertz>,
         {
             unsafe {
                 let rcc = &(*pac::Rcc::PTR);
@@ -92,7 +93,7 @@ macro_rules! tim_hal {
             Sets the TIMer's prescaler such that the TIMer that it ticks at about the best-guess
              frequency.
             */
-            let ticks = clk.raw() / freq.raw();
+            let ticks = clk.raw() / freq.into().raw();
             assert!(ticks != 0);
             let psc = (ticks - 1) / (1 << 16);
             // Write prescale

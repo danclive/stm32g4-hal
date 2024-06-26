@@ -79,18 +79,19 @@ pub trait PwmExt: Sized {
 macro_rules! tim_hal {
     ($TIMX:ty, $timX:ident $(, BDTR: $bdtr:ident)*) => {
         impl PwmExt for $TIMX {
-            fn pwm<PINS, T, U, V>(self, _pins: PINS, frequency: T, clocks: &Clocks) -> PINS::Channel
+            fn pwm<PINS, T, U, V>(self, _pins: PINS, freq: T, clocks: &Clocks) -> PINS::Channel
             where
                 PINS: Pins<Self, U, V>,
                 T: Into<Hertz>,
             {
-                $timX(self, _pins, frequency.into(), clocks)
+                $timX(self, _pins, freq, clocks)
             }
         }
 
-        fn $timX<PINS, T, U>(tim: $TIMX, _pins: PINS, freq: Hertz, clocks: &Clocks) -> PINS::Channel
+        pub fn $timX<PINS, T, U, V>(tim: $TIMX, _pins: PINS, freq: T, clocks: &Clocks) -> PINS::Channel
         where
-            PINS: Pins<$TIMX, T, U>,
+            PINS: Pins<$TIMX, U, V>,
+            T: Into<Hertz>,
         {
             unsafe {
                 let rcc = &(*pac::Rcc::PTR);
@@ -98,6 +99,7 @@ macro_rules! tim_hal {
                 <$TIMX>::reset(rcc);
             }
 
+            let freq = freq.into();
             let clk = <$TIMX>::timer_clock(clocks);
 
             let (period, psc) = match 32 {
