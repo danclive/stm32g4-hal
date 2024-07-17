@@ -3,6 +3,7 @@ fn main() {
 }
 
 // Calculate I2C timing for Analog Filter ON, Digital Filter OFF
+#[allow(unused_macros)]
 macro_rules! i2c_timing {
     ($i2cclk:ident, $freq:ident) => {{
         // Refer to RM0433 Rev 7 Figure 539 for setup and hold timing:

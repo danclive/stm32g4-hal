@@ -40,7 +40,7 @@ macro_rules! __internal_create_timer_struct {
             pub fn start(
                 nvic: &mut cortex_m::peripheral::NVIC,
                 tim: $crate::pac::$timer,
-                clocks: &$crate::rcc::clock::Clocks,
+                clocks: &$crate::rcc::Clocks,
             ) {
                 $crate::__internal_create_timer_interrupt!($interrupt_name, $mono_backend);
 
@@ -54,15 +54,15 @@ macro_rules! __internal_create_timer_struct {
         }
 
         trait __MonoTimerExt: Sized {
-            fn monotonic(
-                self,
-                nvic: &mut cortex_m::peripheral::NVIC,
-                clocks: &$crate::rcc::clock::Clocks,
-            );
+            fn monotonic(self, nvic: &mut cortex_m::peripheral::NVIC, clocks: &$crate::rcc::Clocks);
         }
 
         impl __MonoTimerExt for $crate::pac::$timer {
-            fn monotonic(self, nvic: &mut cortex_m::peripheral::NVIC, clocks: &clock::Clocks) {
+            fn monotonic(
+                self,
+                nvic: &mut cortex_m::peripheral::NVIC,
+                clocks: &$crate::rcc::Clocks,
+            ) {
                 $name::start(nvic, self, clocks);
             }
         }

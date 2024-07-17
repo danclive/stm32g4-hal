@@ -6,7 +6,7 @@ use fugit::HertzU32 as Hertz;
 
 use crate::dma;
 use crate::pac::{self, SYST};
-use crate::rcc::{self, clock::Clocks};
+use crate::rcc::{self, Clocks};
 
 use counter::{
     Counter, CounterHz, CounterMs, CounterUs, SYSTCounter, SYSTCounterHz, SYSTCounterUs,

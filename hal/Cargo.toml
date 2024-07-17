@@ -189,6 +189,8 @@ tim20 = []
 
 i2c4 = []
 
+adc345 = []
+
 [package.metadata.docs.rs]
 features = ["stm32g431"]
 # default-target = "thumbv7em-none-eabihf"

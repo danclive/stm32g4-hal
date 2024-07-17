@@ -1,6 +1,6 @@
 use crate::gpio::{gpioa, Analog, Input, AF0};
 use crate::pac;
-use crate::rcc::{clock::Prescaler, Rcc};
+use crate::rcc::{Prescaler, Rcc};
 
 pub type LscoPin = gpioa::PA2<Input>;
 

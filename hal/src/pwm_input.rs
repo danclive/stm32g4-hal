@@ -4,7 +4,7 @@ use core::marker::PhantomData;
 use fugit::HertzU32 as Hertz;
 
 use crate::pac;
-use crate::rcc::clock::Clocks;
+use crate::rcc::Clocks;
 use crate::rcc::{BusTimerClock, Enable, Reset};
 
 pub trait Pin<TIM, CHANNEL> {}

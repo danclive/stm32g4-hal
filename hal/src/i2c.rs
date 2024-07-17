@@ -4,7 +4,7 @@ use core::cmp;
 use fugit::HertzU32 as Hertz;
 
 use crate::pac;
-use crate::rcc::clock::Clocks;
+use crate::rcc::Clocks;
 use crate::rcc::{BusTimerClock, Enable, Reset};
 
 /// I2C
@@ -614,10 +614,10 @@ i2c_hal!(pac::I2c3, i2c3);
 i2c_hal!(pac::I2c4, i2c4);
 
 macro_rules! pin {
-    ($I2CX:ty,
-        sda: [ $($( #[ $pmetasda:meta ] )* $PSDA:ty,)+ ],
-        scl: [ $($( #[ $pmetascl:meta ] )* $PSCL:ty,)+ ],
-    ) => {
+    ($I2CX:ty {
+        sda: [$($( #[ $pmetasda:meta ] )* $PSDA:ty),+ $(,)*]
+        scl: [$($( #[ $pmetascl:meta ] )* $PSCL:ty),+ $(,)*]
+    }) => {
         $(
             $( #[ $pmetasda ] )*
             impl SDAPin<$I2CX> for $PSDA {}
@@ -633,82 +633,85 @@ macro_rules! pin {
 use crate::gpio::*;
 
 pin!(
-    pac::I2c1,
-    sda: [
-        PA14<Alt<4, OpenDrain>>,
-        PB7<Alt<4, OpenDrain>>,
-        PB9<Alt<4, OpenDrain>>,
-    ],
-    scl: [
-        PA13<Alt<4, OpenDrain>>,
-        PA15<Alt<4, OpenDrain>>,
-        PB8<Alt<4, OpenDrain>>,
-    ],
+    pac::I2c1 {
+        sda: [
+            PA14<Alt<4, OpenDrain>>,
+            PB7<Alt<4, OpenDrain>>,
+            PB9<Alt<4, OpenDrain>>,
+        ]
+        scl: [
+            PA13<Alt<4, OpenDrain>>,
+            PA15<Alt<4, OpenDrain>>,
+            PB8<Alt<4, OpenDrain>>,
+        ]
+    }
 );
 
 pin!(
-    pac::I2c2,
-    sda: [
-        PA8<Alt<4, OpenDrain>>,
-        PF0<Alt<4, OpenDrain>>,
-    ],
-    scl: [
-        PA9<Alt<4, OpenDrain>>,
-        PC4<Alt<4, OpenDrain>>,
-        #[cfg(any(
-            feature = "stm32g471",
-            feature = "stm32g473",
-            feature = "stm32g474",
-            feature = "stm32g483",
-            feature = "stm32g484"
-        ))]
-        PF6<Alt<4, OpenDrain>>,
-    ],
+    pac::I2c2 {
+        sda: [
+            PA8<Alt<4, OpenDrain>>,
+            PF0<Alt<4, OpenDrain>>,
+        ]
+        scl: [
+            PA9<Alt<4, OpenDrain>>,
+            PC4<Alt<4, OpenDrain>>,
+            #[cfg(any(
+                feature = "stm32g471",
+                feature = "stm32g473",
+                feature = "stm32g474",
+                feature = "stm32g483",
+                feature = "stm32g484"
+            ))]
+            PF6<Alt<4, OpenDrain>>,
+        ]
+    }
 );
 
 pin!(
-    pac::I2c3,
-    sda: [
-        PB5<Alt<8, OpenDrain>>,
-        PC11<Alt<8, OpenDrain>>,
-        PC9<Alt<8, OpenDrain>>,
-        #[cfg(any(
-            feature = "stm32g471",
-            feature = "stm32g473",
-            feature = "stm32g474",
-            feature = "stm32g483",
-            feature = "stm32g484"
-        ))]
-        PF4<Alt<4, OpenDrain>>,
-        #[cfg(any(
-            feature = "stm32g471",
-            feature = "stm32g473",
-            feature = "stm32g474",
-            feature = "stm32g483",
-            feature = "stm32g484"
-        ))]
-        PG8<Alt<4, OpenDrain>>,
-    ],
-    scl: [
-        PA8<Alt<2, OpenDrain>>,
-        PC8<Alt<8, OpenDrain>>,
-        #[cfg(any(
-            feature = "stm32g471",
-            feature = "stm32g473",
-            feature = "stm32g474",
-            feature = "stm32g483",
-            feature = "stm32g484"
-        ))]
-        PF3<Alt<4, OpenDrain>>,
-        #[cfg(any(
-            feature = "stm32g471",
-            feature = "stm32g473",
-            feature = "stm32g474",
-            feature = "stm32g483",
-            feature = "stm32g484"
-        ))]
-        PG7<Alt<4, OpenDrain>>,
-    ],
+    pac::I2c3 {
+        sda: [
+            PB5<Alt<8, OpenDrain>>,
+            PC11<Alt<8, OpenDrain>>,
+            PC9<Alt<8, OpenDrain>>,
+            #[cfg(any(
+                feature = "stm32g471",
+                feature = "stm32g473",
+                feature = "stm32g474",
+                feature = "stm32g483",
+                feature = "stm32g484"
+            ))]
+            PF4<Alt<4, OpenDrain>>,
+            #[cfg(any(
+                feature = "stm32g471",
+                feature = "stm32g473",
+                feature = "stm32g474",
+                feature = "stm32g483",
+                feature = "stm32g484"
+            ))]
+            PG8<Alt<4, OpenDrain>>,
+        ]
+        scl: [
+            PA8<Alt<2, OpenDrain>>,
+            PC8<Alt<8, OpenDrain>>,
+            #[cfg(any(
+                feature = "stm32g471",
+                feature = "stm32g473",
+                feature = "stm32g474",
+                feature = "stm32g483",
+                feature = "stm32g484"
+            ))]
+            PF3<Alt<4, OpenDrain>>,
+            #[cfg(any(
+                feature = "stm32g471",
+                feature = "stm32g473",
+                feature = "stm32g474",
+                feature = "stm32g483",
+                feature = "stm32g484"
+            ))]
+            PG7<Alt<4, OpenDrain>>,
+        ]
+    }
 );
 
 #[cfg(any(
@@ -719,17 +722,18 @@ pin!(
     feature = "stm32g484"
 ))]
 pin!(
-    pac::I2c4,
-    sda: [
-        PB7<Alt<AF3>>,
-        PC7<Alt<8, OpenDrain>>,
-        PF15<Alt<4, OpenDrain>>,
-        PG4<Alt<4, OpenDrain>>,
-    ],
-    scl: [
-        PA13<Alt<AF3>>,
-        PC6<Alt<8, OpenDrain>>,
-        PF14<Alt<4, OpenDrain>>,
-        PG3<Alt<4, OpenDrain>>,
-    ],
+    pac::I2c4 {
+        sda: [
+            PB7<Alt<AF3>>,
+            PC7<Alt<8, OpenDrain>>,
+            PF15<Alt<4, OpenDrain>>,
+            PG4<Alt<4, OpenDrain>>,
+        ]
+        scl: [
+            PA13<Alt<AF3>>,
+            PC6<Alt<8, OpenDrain>>,
+            PF14<Alt<4, OpenDrain>>,
+            PG3<Alt<4, OpenDrain>>,
+        ]
+    }
 );

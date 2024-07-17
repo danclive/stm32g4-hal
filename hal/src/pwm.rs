@@ -6,7 +6,7 @@ use fugit::{ExtU32, HertzU32 as Hertz, NanosDurationU32};
 
 use crate::pac;
 
-use crate::rcc::clock::Clocks;
+use crate::rcc::Clocks;
 use crate::rcc::{BusTimerClock, Enable, Reset};
 
 mod pins;

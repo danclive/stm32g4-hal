@@ -9,7 +9,7 @@ use stm32g4_hal as hal;
 
 use crate::hal::gpio::{gpioa, gpiob, gpioc};
 use crate::hal::prelude::*;
-use crate::hal::{pac, pwr, rcc::clock};
+use crate::hal::{pac, pwr, rcc};
 
 use cortex_m_rt::entry;
 
@@ -30,14 +30,14 @@ fn main() -> ! {
     let rcc = p.rcc.constrain();
 
     let (_rcc, clocks) = rcc
-        .clock_src(clock::SysClockSrc::PLL)
-        .pll_cfg(clock::PllConfig {
-            mux: clock::PLLSrc::HSE(25.MHz()),
-            m: clock::PllMDiv::DIV_5,
-            n: clock::PllNMul::MUL_68,
-            r: Some(clock::PllRDiv::DIV_2),
-            q: Some(clock::PllQDiv::DIV_2),
-            p: Some(clock::PllPDiv::DIV_2),
+        .clock_src(rcc::SysClockSrc::PLL)
+        .pll_cfg(rcc::PllConfig {
+            mux: rcc::PLLSrc::HSE(25.MHz()),
+            m: rcc::PllMDiv::DIV_5,
+            n: rcc::PllNMul::MUL_68,
+            r: Some(rcc::PllRDiv::DIV_2),
+            q: Some(rcc::PllQDiv::DIV_2),
+            p: Some(rcc::PllPDiv::DIV_2),
         })
         .pwr_cfg(pwr)
         .freeze();
