@@ -24,7 +24,7 @@ impl From<ClockSource> for u8 {
 pub enum ClockMode {
     /// (Asynchronous clock mode), adc_ker_ck. generated at product level (refer to Section 6: Reset and clock control (RCC)
     Asynchronous,
-    /// (Synchronous clock mode). adc_hclk/1 This configuration must be enabled only if the AHB clock prescaler is set to 1 (HPRE[3:0] = 0xxx in RCC_CFGR register) and if the system clock has a 50% duty cycle.
+    /// (Synchronous clock mode). adc_hclk/1 This configuration must be enabled only if the AHB clock prescaler is set to 1 and if the system clock has a 50% duty cycle.
     Synchronous_Div_1,
     /// Synchronous clock mode. adc_hclk/2
     Synchronous_Div_2,
