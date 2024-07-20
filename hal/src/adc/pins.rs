@@ -128,6 +128,7 @@ macro_rules! adc_internal {
 
                     common.ccr().modify(|_, w| w.$en().set_bit());
                 }
+
                 /// Disables the internal voltage/sdissor
                 /// ADC must be disabled.
                 pub fn disable(&mut self, _adc: &Adc<crate::pac::$INT_ADC, Disabled>) {
@@ -135,6 +136,15 @@ macro_rules! adc_internal {
                     let common = unsafe { &*crate::pac::$INT_ADC_COMMON::PTR };
 
                     common.ccr().modify(|_, w| w.$en().clear_bit());
+                }
+
+                /// Returns if the internal channel is enabled
+                /// ADC must be disabled.
+                pub fn is_enabled(&self, _adc: &Adc<crate::pac::$INT_ADC, Disabled>) -> bool {
+
+                    let common = unsafe { &*crate::pac::$INT_ADC_COMMON::PTR };
+
+                    common.ccr().read().$en().bit_is_set()
                 }
             }
 
