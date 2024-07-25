@@ -7,6 +7,7 @@ pub use crate::pac::interrupt;
 
 pub mod adc;
 pub mod bb;
+pub mod dac;
 pub mod delay;
 pub mod dma;
 pub mod gpio;

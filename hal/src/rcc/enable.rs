@@ -163,7 +163,6 @@ bus! {
     feature = "stm32g483",
     feature = "stm32g484",
     feature = "stm32g491",
-    feature = "stm32g4A1"
 ))]
 bus! {
     Fdcan2 => (APB1_1, 25),

@@ -2,12 +2,7 @@
 
 #[cfg(feature = "rtic-systick")]
 pub mod systick;
-#[cfg(any(
-    feature = "rtic-tim2",
-    feature = "rtic-tim3",
-    feature = "rtic-tim4",
-    feature = "rtic-tim5"
-))]
+#[cfg(any(feature = "rtic-tim2", feature = "rtic-tim5"))]
 pub mod timer;
 
 pub use rtic_time::{

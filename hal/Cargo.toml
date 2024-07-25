@@ -173,6 +173,15 @@ gpio-g491 = [
     "tim20",
 ]
 
+gpiod = []
+gpioe = []
+gpiof = []
+gpiog = []
+gpioh = []
+gpioi = []
+gpioj = []
+gpiok = []
+
 tim1 = []
 tim2 = []
 tim3 = []

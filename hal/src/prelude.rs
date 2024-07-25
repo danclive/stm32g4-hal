@@ -10,6 +10,7 @@ pub use fugit::ExtU32 as _fugit_ExtU32;
 pub use fugit::RateExtU32 as _fugit_RateExtU32;
 
 pub use crate::adc::AdcExt as _stm32g4_adc_AdcExt;
+pub use crate::dac::DacExt as _stm32g4_dac_DacExt;
 pub use crate::i2c::I2cExt as _stm32g4_i2c_I2cExt;
 pub use crate::pwm::FaultMonitor as _stm32g4_pwm_FaultMonitor;
 pub use crate::pwm::PwmAdvExt as _stm32g4_pwm_PwmAdvExt;

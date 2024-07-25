@@ -74,49 +74,49 @@ macro_rules! adc_hal {
                 config: config::Config,
                 delay: &mut impl DelayUs,
             ) -> Adc<pac::$ADCX, Disabled> {
-                Adc::$adcX(self, clocks, cs, freq, config, delay)
+                $adcX(self, clocks, cs, freq, config, delay)
             }
         }
 
+        pub fn $adcX(
+            adc: pac::$ADCX,
+            clocks: &Clocks,
+            cs: ClockSource,
+            freq: impl Into<Hertz>,
+            config: config::Config,
+            delay: &mut impl DelayUs,
+        ) -> Adc<pac::$ADCX, Disabled> {
+            let mut adc = Adc {
+                inner: AdcInner {
+                    rb: adc,
+                    clock: Hertz::Hz(0),
+                    config,
+                    calibrated_vdda: VDDA_CALIB,
+                },
+                _enabled: PhantomData,
+            };
+
+            // Consume ADC register block, produce Self with default
+            // settings
+            let rcc = unsafe { &*pac::Rcc::PTR };
+
+            // Enable AHB clock
+            <pac::$ADCX>::enable(rcc);
+
+            // Power Down
+            adc.power_down();
+
+            // Reset peripheral
+            <pac::$ADCX>::reset(rcc);
+
+            adc.configure_clock(clocks, cs, freq.into());
+            adc.power_up(delay);
+            adc.inner.calibrate_all();
+
+            adc
+        }
+
         impl Adc<pac::$ADCX, Disabled> {
-            pub fn $adcX(
-                adc: pac::$ADCX,
-                clocks: &Clocks,
-                cs: ClockSource,
-                freq: impl Into<Hertz>,
-                config: config::Config,
-                delay: &mut impl DelayUs,
-            ) -> Self {
-                let mut adc = Adc {
-                    inner: AdcInner {
-                        rb: adc,
-                        clock: Hertz::Hz(0),
-                        config,
-                        calibrated_vdda: VDDA_CALIB,
-                    },
-                    _enabled: PhantomData,
-                };
-
-                // Consume ADC register block, produce Self with default
-                // settings
-                let rcc = unsafe { &*pac::Rcc::PTR };
-
-                // Enable AHB clock
-                <pac::$ADCX>::enable(rcc);
-
-                // Power Down
-                adc.power_down();
-
-                // Reset peripheral
-                <pac::$ADCX>::reset(rcc);
-
-                adc.configure_clock(clocks, cs, freq.into());
-                adc.power_up(delay);
-                adc.inner.calibrate_all();
-
-                adc
-            }
-
             /// Puts a Disabled Adc into Powered Mode
             #[inline(always)]
             pub fn power_down(&mut self) {
