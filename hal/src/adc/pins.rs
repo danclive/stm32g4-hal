@@ -4,6 +4,7 @@ use crate::signature::{VtempCal130, VtempCal30, VDDA_CALIB};
 use super::*;
 
 /// Core temperature internal signal
+#[derive(Debug, Default)]
 pub struct Temperature;
 
 impl Temperature {
@@ -32,7 +33,7 @@ impl Temperature {
     /// ## Arguments
     /// * `sample`: ADC sample taken on the [`Temperature`] channel.
     /// * `vdda`: Analog reference voltage (vref+) when the temperature
-    /// sample was taken, in volts.
+    ///   sample was taken, in volts.
     /// * `resolution`: Configured ADC resolution.
     #[inline(always)]
     pub fn temperature_to_degrees_centigrade(
@@ -57,7 +58,7 @@ impl Temperature {
     /// ## Arguments
     /// * `sample`: ADC sample taken on the [`Temperature`] channel.
     /// * `vdda`: Analog reference voltage (vref+) when the temperature
-    /// sample was taken, in millivolts.
+    ///   sample was taken, in millivolts.
     /// * `resolution`: Configured ADC resolution.
     #[inline(always)]
     pub fn temperature_to_degrees_centigrade_coarse(
@@ -81,9 +82,11 @@ impl Temperature {
 }
 
 /// Vbat internal signal, used for monitoring the battery (if used)
+#[derive(Debug, Default)]
 pub struct Vbat;
 
 /// Vref internal signal, used for calibration
+#[derive(Debug, Default)]
 pub struct Vref;
 
 impl Vref {

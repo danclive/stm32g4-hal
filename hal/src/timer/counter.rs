@@ -37,11 +37,7 @@ impl SYSTCounterHz {
     }
 
     pub fn wait(&mut self) -> bool {
-        if self.tim.has_wrapped() {
-            true
-        } else {
-            false
-        }
+        self.tim.has_wrapped()
     }
 
     pub fn cancel(&mut self) -> Result<(), Error> {
@@ -108,11 +104,7 @@ impl<const FREQ: u32> SYSTCounter<FREQ> {
     }
 
     pub fn wait(&mut self) -> bool {
-        if self.tim.has_wrapped() {
-            true
-        } else {
-            false
-        }
+        self.tim.has_wrapped()
     }
 
     pub fn cancel(&mut self) -> Result<(), Error> {

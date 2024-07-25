@@ -125,9 +125,10 @@ impl From<u8> for Clock {
 }
 
 /// The number of cycles to sample a given channel for
-#[derive(Copy, Clone, Debug, PartialEq)]
+#[derive(Copy, Clone, Debug, PartialEq, Default)]
 pub enum SampleTime {
     /// 2.5 cycles
+    #[default]
     Cycles_2_5,
     /// 6.5 cycles
     Cycles_6_5,
@@ -173,12 +174,6 @@ impl From<SampleTime> for u8 {
             SampleTime::Cycles_247_5 => 6,
             SampleTime::Cycles_640_5 => 7,
         }
-    }
-}
-
-impl Default for SampleTime {
-    fn default() -> SampleTime {
-        SampleTime::Cycles_2_5
     }
 }
 
@@ -340,9 +335,10 @@ impl From<u8> for Sequence {
 }
 
 /// Resolution to sample at
-#[derive(Copy, Clone, Debug, PartialEq)]
+#[derive(Copy, Clone, Debug, PartialEq, Default)]
 pub enum Resolution {
     /// 12-bit
+    #[default]
     Twelve,
     /// 10-bit
     Ten,
@@ -381,12 +377,6 @@ impl From<u8> for Resolution {
             0b11 => Resolution::Six,
             _ => unimplemented!(),
         }
-    }
-}
-
-impl Default for Resolution {
-    fn default() -> Resolution {
-        Resolution::Twelve
     }
 }
 
