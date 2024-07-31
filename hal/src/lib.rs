@@ -12,6 +12,7 @@ pub mod delay;
 pub mod dma;
 pub mod gpio;
 pub mod i2c;
+pub mod opamp;
 pub mod pwm;
 pub mod pwm_input;
 pub mod pwr;

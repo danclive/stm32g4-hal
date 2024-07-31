@@ -166,258 +166,136 @@ impl_pins!(
 );
 
 macro_rules! dac_hal_ch {
-    ($DAC:ty, $CX:ident: (
-        $en:ident,
-        $cen:ident,
-        $cal_flag:ident,
-        $trim:ident,
-        $mode:ident,
-        $dhrx:ident,
-        $dac_dor:ident,
-        $daccxdhr:ident,
-        $wave:ident,
-        $mamp:ident,
-        $ten:ident,
-        $swtrig:ident
-    )) => {
-        impl<const MODE_BITS: u8> $CX<$DAC, MODE_BITS, Disabled> {
-            /// TODO: The DAC does not seem to work unless `calibrate_buffer` has been callen
-            /// even when only using dac output internally
-            pub fn enable(self) -> $CX<$DAC, MODE_BITS, Enabled> {
-                let dac = unsafe { &(*<$DAC>::ptr()) };
+    ($DAC:ty, $CX:ident, $CN:tt) => {
+        paste::paste! {
+            impl<const MODE_BITS: u8> $CX<$DAC, MODE_BITS, Disabled> {
+                /// TODO: The DAC does not seem to work unless `calibrate_buffer` has been callen
+                /// even when only using dac output internally
+                pub fn enable(self) -> $CX<$DAC, MODE_BITS, Enabled> {
+                    let dac = unsafe { &(*<$DAC>::ptr()) };
 
-                dac.dac_mcr()
-                    .modify(|_, w| unsafe { w.$mode().bits(MODE_BITS) });
-                dac.dac_cr().modify(|_, w| w.$en().set_bit());
+                    dac.dac_mcr()
+                        .modify(|_, w| unsafe { w.[<mode $CN>]().bits(MODE_BITS) });
+                    dac.dac_cr().modify(|_, w| w.[<en $CN>]().set_bit());
 
-                $CX {
-                    _dac: PhantomData,
-                    _enabled: PhantomData,
-                }
-            }
-
-            pub fn enable_generator(
-                self,
-                config: GeneratorConfig,
-            ) -> $CX<$DAC, MODE_BITS, WaveGenerator> {
-                let dac = unsafe { &(*<$DAC>::ptr()) };
-
-                dac.dac_mcr()
-                    .modify(|_, w| unsafe { w.$mode().bits(MODE_BITS) });
-                dac.dac_cr().modify(|_, w| unsafe {
-                    w.$wave().bits(config.mode);
-                    w.$ten().set_bit();
-                    w.$mamp().bits(config.amp);
-                    w.$en().set_bit()
-                });
-
-                $CX {
-                    _dac: PhantomData,
-                    _enabled: PhantomData,
-                }
-            }
-        }
-
-        impl<const MODE_BITS: u8, ED> $CX<$DAC, MODE_BITS, ED> {
-            /// Calibrate the DAC output buffer by performing a "User
-            /// trimming" operation. It is useful when the VDDA/VREF+
-            /// voltage or temperature differ from the factory trimming
-            /// conditions.
-            ///
-            /// The calibration is only valid when the DAC channel is
-            /// operating with the buffer enabled. If applied in other
-            /// modes it has no effect.
-            ///
-            /// After the calibration operation, the DAC channel is
-            /// disabled.
-            pub fn calibrate_buffer<T>(
-                self,
-                delay: &mut impl DelayUs,
-            ) -> $CX<$DAC, MODE_BITS, Disabled> {
-                let dac = unsafe { &(*<$DAC>::ptr()) };
-                dac.dac_cr().modify(|_, w| w.$en().clear_bit());
-                dac.dac_mcr().modify(|_, w| unsafe { w.$mode().bits(0) });
-                dac.dac_cr().modify(|_, w| w.$cen().set_bit());
-                let mut trim = 0;
-                while true {
-                    dac.dac_ccr().modify(|_, w| unsafe { w.$trim().bits(trim) });
-                    delay.delay_us(64.micros());
-                    if dac.dac_sr().read().$cal_flag().bit() {
-                        break;
+                    $CX {
+                        _dac: PhantomData,
+                        _enabled: PhantomData,
                     }
-                    trim += 1;
                 }
-                dac.dac_cr().modify(|_, w| w.$cen().clear_bit());
 
-                $CX {
-                    _dac: PhantomData,
-                    _enabled: PhantomData,
+                pub fn enable_generator(
+                    self,
+                    config: GeneratorConfig,
+                ) -> $CX<$DAC, MODE_BITS, WaveGenerator> {
+                    let dac = unsafe { &(*<$DAC>::ptr()) };
+
+                    dac.dac_mcr()
+                        .modify(|_, w| unsafe { w.[<mode $CN>]().bits(MODE_BITS) });
+                    dac.dac_cr().modify(|_, w| unsafe {
+                        w.[<wave $CN>]().bits(config.mode);
+                        w.[<ten $CN>]().set_bit();
+                        w.[<mamp $CN>]().bits(config.amp);
+                        w.[<en $CN>]().set_bit()
+                    });
+
+                    $CX {
+                        _dac: PhantomData,
+                        _enabled: PhantomData,
+                    }
                 }
             }
 
-            /// Disable the DAC channel
-            pub fn disable(self) -> $CX<$DAC, MODE_BITS, Disabled> {
-                let dac = unsafe { &(*<$DAC>::ptr()) };
-                dac.dac_cr().modify(|_, w| unsafe {
-                    w.$en().clear_bit().$wave().bits(0).$ten().clear_bit()
-                });
+            impl<const MODE_BITS: u8, ED> $CX<$DAC, MODE_BITS, ED> {
+                /// Calibrate the DAC output buffer by performing a "User
+                /// trimming" operation. It is useful when the VDDA/VREF+
+                /// voltage or temperature differ from the factory trimming
+                /// conditions.
+                ///
+                /// The calibration is only valid when the DAC channel is
+                /// operating with the buffer enabled. If applied in other
+                /// modes it has no effect.
+                ///
+                /// After the calibration operation, the DAC channel is
+                /// disabled.
+                pub fn calibrate_buffer<T>(
+                    self,
+                    delay: &mut impl DelayUs,
+                ) -> $CX<$DAC, MODE_BITS, Disabled> {
+                    let dac = unsafe { &(*<$DAC>::ptr()) };
+                    dac.dac_cr().modify(|_, w| w.[<en $CN>]().clear_bit());
+                    dac.dac_mcr().modify(|_, w| unsafe { w.[<mode $CN>]().bits(0) });
+                    dac.dac_cr().modify(|_, w| w.[<cen $CN>]().set_bit());
+                    let mut trim = 0;
+                    while true {
+                        dac.dac_ccr().modify(|_, w| unsafe { w.[<otrim $CN>]().bits(trim) });
+                        delay.delay_us(64.micros());
+                        if dac.dac_sr().read().[<cal_flag $CN>]().bit() {
+                            break;
+                        }
+                        trim += 1;
+                    }
+                    dac.dac_cr().modify(|_, w| w.[<cen $CN>]().clear_bit());
 
-                $CX {
-                    _dac: PhantomData,
-                    _enabled: PhantomData,
+                    $CX {
+                        _dac: PhantomData,
+                        _enabled: PhantomData,
+                    }
+                }
+
+                /// Disable the DAC channel
+                pub fn disable(self) -> $CX<$DAC, MODE_BITS, Disabled> {
+                    let dac = unsafe { &(*<$DAC>::ptr()) };
+                    dac.dac_cr().modify(|_, w| unsafe {
+                        w.[<en $CN>]().clear_bit().[<wave $CN>]().bits(0).[<ten $CN>]().clear_bit()
+                    });
+
+                    $CX {
+                        _dac: PhantomData,
+                        _enabled: PhantomData,
+                    }
                 }
             }
-        }
 
-        /// DacOut implementation available in any Enabled/Disabled
-        /// state
-        impl<const MODE_BITS: u8, ED> DacOut<u16> for $CX<$DAC, MODE_BITS, ED> {
-            fn set_value(&mut self, val: u16) {
-                let dac = unsafe { &(*<$DAC>::ptr()) };
-                dac.$dhrx().write(|w| unsafe { w.bits(val as u32) });
+            /// DacOut implementation available in any Enabled/Disabled
+            /// state
+            impl<const MODE_BITS: u8, ED> DacOut<u16> for $CX<$DAC, MODE_BITS, ED> {
+                fn set_value(&mut self, val: u16) {
+                    let dac = unsafe { &(*<$DAC>::ptr()) };
+                    dac.[<dac_dhr12r $CN>]().write(|w| unsafe { w.bits(val as u32) });
+                }
+
+                fn get_value(&mut self) -> u16 {
+                    let dac = unsafe { &(*<$DAC>::ptr()) };
+                    dac.[<dac_dor $CN>]().read().bits() as u16
+                }
             }
 
-            fn get_value(&mut self) -> u16 {
-                let dac = unsafe { &(*<$DAC>::ptr()) };
-                dac.$dac_dor().read().bits() as u16
+            /// Wave generator state implementation
+            impl<const MODE_BITS: u8> $CX<$DAC, MODE_BITS, WaveGenerator> {
+                pub fn trigger(&mut self) {
+                    let dac = unsafe { &(*<$DAC>::ptr()) };
+                    dac.dac_swtrgr().write(|w| w.[<swtrig $CN>]().set_bit());
+                }
             }
-        }
 
-        /// Wave generator state implementation
-        impl<const MODE_BITS: u8> $CX<$DAC, MODE_BITS, WaveGenerator> {
-            pub fn trigger(&mut self) {
-                let dac = unsafe { &(*<$DAC>::ptr()) };
-                dac.dac_swtrgr().write(|w| w.$swtrig().set_bit());
-            }
         }
     };
 }
 
-dac_hal_ch!(
-    pac::Dac1, C1:
-    (
-        en1,
-        cen1,
-        cal_flag1,
-        otrim1,
-        mode1,
-        dac_dhr12r1,
-        dac_dor1,
-        dacc1dhr,
-        wave1,
-        mamp1,
-        ten1,
-        swtrig1
-    )
-);
+dac_hal_ch!(pac::Dac1, C1, 1);
 
-dac_hal_ch!(
-    pac::Dac1, C2:
-    (
-        en2,
-        cen2,
-        cal_flag2,
-        otrim2,
-        mode2,
-        dac_dhr12r2,
-        dac_dor2,
-        dacc2dhr,
-        wave2,
-        mamp2,
-        ten2,
-        swtrig2
-    )
-);
+dac_hal_ch!(pac::Dac1, C2, 2);
 
-dac_hal_ch!(
-    pac::Dac2, C1:
-    (
-        en1,
-        cen1,
-        cal_flag1,
-        otrim1,
-        mode1,
-        dac_dhr12r1,
-        dac_dor1,
-        dacc1dhr,
-        wave1,
-        mamp1,
-        ten1,
-        swtrig1
-    )
-);
+dac_hal_ch!(pac::Dac2, C1, 1);
 
-dac_hal_ch!(
-    pac::Dac3, C1:
-    (
-        en1,
-        cen1,
-        cal_flag1,
-        otrim1,
-        mode1,
-        dac_dhr12r1,
-        dac_dor1,
-        dacc1dhr,
-        wave1,
-        mamp1,
-        ten1,
-        swtrig1
-    )
-);
+dac_hal_ch!(pac::Dac3, C1, 1);
 
-dac_hal_ch!(
-    pac::Dac3, C2:
-    (
-        en2,
-        cen2,
-        cal_flag2,
-        otrim2,
-        mode2,
-        dac_dhr12r2,
-        dac_dor2,
-        dacc2dhr,
-        wave2,
-        mamp2,
-        ten2,
-        swtrig2
-    )
-);
+dac_hal_ch!(pac::Dac3, C2, 2);
 
-dac_hal_ch!(
-    pac::Dac4, C1:
-    (
-        en1,
-        cen1,
-        cal_flag1,
-        otrim1,
-        mode1,
-        dac_dhr12r1,
-        dac_dor1,
-        dacc1dhr,
-        wave1,
-        mamp1,
-        ten1,
-        swtrig1
-    )
-);
+dac_hal_ch!(pac::Dac4, C1, 1);
 
-dac_hal_ch!(
-    pac::Dac4, C2:
-    (
-        en2,
-        cen2,
-        cal_flag2,
-        otrim2,
-        mode2,
-        dac_dhr12r2,
-        dac_dor2,
-        dacc2dhr,
-        wave2,
-        mamp2,
-        ten2,
-        swtrig2
-    )
-);
+dac_hal_ch!(pac::Dac4, C2, 2);
 
 pub trait DacExt: Sized {
     fn dac<PINS>(self, pins: PINS) -> PINS::Output
