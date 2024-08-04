@@ -18,11 +18,15 @@ pub trait SDAPin<I2C> {}
 pub trait SCLPin<I2C> {}
 
 pub trait I2cExt<I2C> {
-    fn i2c<SDA, SCL, T>(self, clocks: &Clocks, pins: (SDA, SCL), freq: T) -> I2c<I2C, SDA, SCL>
+    fn i2c<SDA, SCL>(
+        self,
+        clocks: &Clocks,
+        pins: (SDA, SCL),
+        freq: impl Into<Hertz>,
+    ) -> I2c<I2C, SDA, SCL>
     where
         SDA: SDAPin<I2C>,
-        SCL: SCLPin<I2C>,
-        T: Into<Hertz>;
+        SCL: SCLPin<I2C>;
 }
 
 /// I2C Events
@@ -232,31 +236,29 @@ macro_rules! busy_wait {
 macro_rules! i2c_hal {
     ($I2CX:ty, $i2cX:ident) => {
         impl I2cExt<$I2CX> for $I2CX {
-            fn i2c<SDA, SCL, T>(
+            fn i2c<SDA, SCL>(
                 self,
                 clocks: &Clocks,
                 pins: (SDA, SCL),
-                freq: T,
+                freq: impl Into<Hertz>,
             ) -> I2c<$I2CX, SDA, SCL>
             where
                 SDA: SDAPin<$I2CX>,
                 SCL: SCLPin<$I2CX>,
-                T: Into<Hertz>,
             {
                 $i2cX(self, clocks, pins, freq)
             }
         }
 
-        pub fn $i2cX<SDA, SCL, T>(
+        pub fn $i2cX<SDA, SCL>(
             i2c: $I2CX,
             clocks: &Clocks,
             pins: (SDA, SCL),
-            freq: T,
+            freq: impl Into<Hertz>,
         ) -> I2c<$I2CX, SDA, SCL>
         where
             SDA: SDAPin<$I2CX>,
             SCL: SCLPin<$I2CX>,
-            T: Into<Hertz>,
         {
             // Enable and reset I2C
             unsafe {

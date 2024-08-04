@@ -69,6 +69,7 @@ pub type Debugger = Alt<0, PushPull>;
 #[derive(Debug, Default)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub struct NoPin<OutType = PushPull>(PhantomData<OutType>);
+
 impl<OutType> NoPin<OutType> {
     pub fn new() -> Self {
         Self(PhantomData)

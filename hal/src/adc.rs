@@ -32,7 +32,7 @@ pub trait Channel<ADC> {
 }
 
 pub struct Adc<ADC, STATUS> {
-    inner: AdcInner<ADC>,
+    inner: Inner<ADC>,
     _enabled: PhantomData<STATUS>,
 }
 
@@ -44,7 +44,7 @@ pub struct Active;
 
 pub struct Dma;
 
-struct AdcInner<ADC> {
+struct Inner<ADC> {
     rb: ADC,
     clock: Hertz,
     config: config::Config,
@@ -87,7 +87,7 @@ macro_rules! adc_hal {
             delay: &mut impl DelayUs,
         ) -> Adc<pac::$ADCX, Disabled> {
             let mut adc = Adc {
-                inner: AdcInner {
+                inner: Inner {
                     rb: adc,
                     clock: Hertz::Hz(0),
                     config,
@@ -521,7 +521,7 @@ macro_rules! adc_hal {
             }
         }
 
-        impl AdcInner<pac::$ADCX> {
+        impl Inner<pac::$ADCX> {
             /// Disables the Voltage Regulator and release the ADC
             #[inline(always)]
             fn release(mut self) -> pac::$ADCX {

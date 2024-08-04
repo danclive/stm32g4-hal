@@ -5,6 +5,8 @@
 
 pub use crate::pac::interrupt;
 
+pub mod nb;
+
 pub mod adc;
 pub mod bb;
 pub mod can;
@@ -19,6 +21,7 @@ pub mod pwm_input;
 pub mod pwr;
 pub mod rcc;
 pub mod signature;
+pub mod spi;
 pub mod syscfg;
 pub mod timer;
 
