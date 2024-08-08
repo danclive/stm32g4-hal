@@ -20,6 +20,7 @@ pub mod pwm;
 pub mod pwm_input;
 pub mod pwr;
 pub mod rcc;
+pub mod serial;
 pub mod signature;
 pub mod spi;
 pub mod syscfg;

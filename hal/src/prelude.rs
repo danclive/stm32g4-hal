@@ -10,6 +10,7 @@ pub use fugit::ExtU32 as _fugit_ExtU32;
 pub use fugit::RateExtU32 as _fugit_RateExtU32;
 
 pub use crate::adc::AdcExt as _stm32g4_adc_AdcExt;
+pub use crate::can::CanExt as _stm32g4_can_CanExt;
 pub use crate::dac::DacExt as _stm32g4_dac_DacExt;
 pub use crate::i2c::I2cExt as _stm32g4_i2c_I2cExt;
 pub use crate::pwm::FaultMonitor as _stm32g4_pwm_FaultMonitor;
@@ -19,6 +20,8 @@ pub use crate::pwm::PwmPinEnable as _stm32g4_pwm_PwmPinEnable;
 pub use crate::pwm_input::PwmInputExt as _stm32g4_pwm_in_PwmInputExt;
 pub use crate::pwr::PwrExt as _stm32g4_pwr_PwrExt;
 pub use crate::rcc::RccExt as _stm32g4_rcc_RccExt;
+pub use crate::serial::SerialExt as _stm32g4_serial_SerialExt;
+pub use crate::spi::SpiExt as _stm32g4_spi_SpiExt;
 pub use crate::timer::SYSTimerExt as _stm32g4_timer_SYSTimerExt;
 pub use crate::timer::TimerExt as _stm32g4_timer_TimerExt;
 

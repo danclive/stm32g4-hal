@@ -29,6 +29,14 @@ pub type NoMiso = NoPin;
 /// A filler type for when the Mosi pin is unnecessary
 pub type NoMosi = NoPin;
 
+impl<SPI> SCKPin<SPI> for NoSck {}
+
+impl<SPI> MISOPin<SPI> for NoMiso {}
+
+impl<SPI> MOSIPin<SPI> for NoMosi {}
+
+impl<SPI> PinNss<SPI> for NoPin {}
+
 /// SPI interrupt events
 #[enumflags2::bitflags]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
@@ -831,14 +839,6 @@ macro_rules! spi_hal {
                 self.clear_flags(BitFlags::ALL)
             }
         }
-
-        impl SCKPin<$SPIX> for NoSck {}
-
-        impl MISOPin<$SPIX> for NoMiso {}
-
-        impl MOSIPin<$SPIX> for NoMosi {}
-
-        impl PinNss<$SPIX> for NoPin {}
     };
 }
 
@@ -852,7 +852,7 @@ spi_hal!(pac::Spi3, spi3, spi3_slave);
 spi_hal!(pac::Spi4, spi4, spi4_slave);
 
 macro_rules! pin {
-    ($SPIX:ident: {
+    ($SPIX:ty: {
         sck: [$($( #[ $pmetasda:meta ] )* $PSCK:ty),+ $(,)*]
         miso: [$($( #[ $pmetasdi:meta ] )* $PMISO:ty),+ $(,)*]
         mosi: [$($( #[ $pmetasdo:meta ] )* $PMOSI:ty),+ $(,)*]
@@ -860,62 +860,62 @@ macro_rules! pin {
     }) => {
         $(
             $( #[ $pmetasda ] )*
-            impl SCKPin<pac::$SPIX> for $PSCK {}
+            impl SCKPin<$SPIX> for $PSCK {}
         )+
 
         $(
             $( #[ $pmetasdi ] )*
-            impl MISOPin<pac::$SPIX> for $PMISO {}
+            impl MISOPin<$SPIX> for $PMISO {}
         )+
 
         $(
             $( #[ $pmetasdo ] )*
-            impl MOSIPin<pac::$SPIX> for $PMOSI {}
+            impl MOSIPin<$SPIX> for $PMOSI {}
         )+
 
         $(
             $( #[ $pmetasdn ] )*
-            impl PinNss<pac::$SPIX> for $PNSS {}
+            impl PinNss<$SPIX> for $PNSS {}
         )+
     };
 }
 
 pin!(
-    Spi1: {
+    pac::Spi1: {
         sck: [
             PA5<AF5>,
             PB3<AF5>,
             #[cfg(any(
-            feature = "stm32g471",
-            feature = "stm32g473",
-            feature = "stm32g474",
-            feature = "stm32g483",
-            feature = "stm32g484"
-        ))]
+                feature = "stm32g471",
+                feature = "stm32g473",
+                feature = "stm32g474",
+                feature = "stm32g483",
+                feature = "stm32g484"
+            ))]
             PG2<AF5>,
         ]
         miso: [
             PA6<AF5>,
             PB4<AF5>,
             #[cfg(any(
-            feature = "stm32g471",
-            feature = "stm32g473",
-            feature = "stm32g474",
-            feature = "stm32g483",
-            feature = "stm32g484"
-        ))]
+                feature = "stm32g471",
+                feature = "stm32g473",
+                feature = "stm32g474",
+                feature = "stm32g483",
+                feature = "stm32g484"
+            ))]
             PG3<AF5>,
         ]
         mosi: [
             PA7<AF5>,
             PB5<AF5>,
             #[cfg(any(
-            feature = "stm32g471",
-            feature = "stm32g473",
-            feature = "stm32g474",
-            feature = "stm32g483",
-            feature = "stm32g484"
-        ))]
+                feature = "stm32g471",
+                feature = "stm32g473",
+                feature = "stm32g474",
+                feature = "stm32g483",
+                feature = "stm32g484"
+            ))]
             PG4<AF5>,
         ]
         nss: [
@@ -926,7 +926,7 @@ pin!(
 );
 
 pin!(
-    Spi2: {
+    pac::Spi2: {
         sck: [
             PB13<AF5>,
             PF1<AF5>,
@@ -949,7 +949,7 @@ pin!(
 );
 
 pin!(
-    Spi3: {
+    pac::Spi3: {
         sck: [
             PB3<AF6>,
             PC10<AF6>,
@@ -979,7 +979,7 @@ pin!(
 
 #[cfg(feature = "spi4")]
 pin!(
-    Spi4: {
+    pac::Spi4: {
         sck: [
             PE2<AF5>,
             PE12<AF5>,
