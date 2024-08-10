@@ -20,6 +20,7 @@ pub use crate::pwm::PwmPinEnable as _stm32g4_pwm_PwmPinEnable;
 pub use crate::pwm_input::PwmInputExt as _stm32g4_pwm_in_PwmInputExt;
 pub use crate::pwr::PwrExt as _stm32g4_pwr_PwrExt;
 pub use crate::rcc::RccExt as _stm32g4_rcc_RccExt;
+pub use crate::rng::RngCore as _stm32g4_rng_RngCore;
 pub use crate::serial::SerialExt as _stm32g4_serial_SerialExt;
 pub use crate::spi::SpiExt as _stm32g4_spi_SpiExt;
 pub use crate::timer::SYSTimerExt as _stm32g4_timer_SYSTimerExt;

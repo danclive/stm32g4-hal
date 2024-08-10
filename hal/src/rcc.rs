@@ -719,8 +719,8 @@ impl Default for Config {
             sys_mux: SysClockSrc::HSI,
             pll_cfg: PllConfig::default(),
             ahb_psc: Prescaler::NotDivided,
-            apb1_psc: Prescaler::NotDivided,
-            apb2_psc: Prescaler::NotDivided,
+            apb1_psc: Prescaler::Div2,
+            apb2_psc: Prescaler::Div2,
             enable_boost: false,
             pwr_cfg: PowerConfiguration::default(),
         }
