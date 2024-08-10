@@ -41,7 +41,7 @@ impl LSCOExt for LscoPin {
                 false
             }
         };
-        rcc.rcc
+        rcc.rb
             .rcc_bdcr()
             .modify(|_, w| w.lscosel().bit(src_select_bit));
         Lsco {
@@ -91,7 +91,7 @@ macro_rules! mco {
                         Prescaler::Div64 => 0b110,
                         _ => 0b111,
                     };
-                    rcc.rcc.rcc_cfgr().modify(|r, w| unsafe {
+                    rcc.rb.rcc_cfgr().modify(|r, w| unsafe {
                         w.bits((r.bits() & !(0b111 << 28)) | (psc_bits << 28))
                     });
 
