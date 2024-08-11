@@ -1,7 +1,5 @@
 //! Blinks an LED
 
-// #![deny(unsafe_code)]
-// #![deny(warnings)]
 #![no_main]
 #![no_std]
 
@@ -41,24 +39,27 @@ mod app {
             .freeze();
         let rcc = p.rcc.constrain();
 
-        let (_rcc, clocks) = rcc
+        let rcc_config = rcc::Config::new()
+            .hse(25.MHz(), false)
             .clock_src(rcc::SysClockSrc::PLL)
             .pll_cfg(rcc::PllConfig {
-                mux: rcc::PLLSrc::HSE(25.MHz()),
+                mux: rcc::PLLSrc::HSE,
                 m: rcc::PllMDiv::DIV_5,
                 n: rcc::PllNMul::MUL_68,
                 r: Some(rcc::PllRDiv::DIV_2),
                 q: Some(rcc::PllQDiv::DIV_2),
                 p: Some(rcc::PllPDiv::DIV_2),
             })
-            .pwr_cfg(pwr)
-            .freeze();
-        info!("clock: {:?}", clocks);
+            .pwr_cfg(pwr);
+
+        let rcc = rcc.freeze(rcc_config);
+
+        info!("clock: {:?}", rcc.clocks());
 
         info!("start");
 
         // Mono::start(&mut ctx.core.NVIC, p.tim2, &clocks);
-        p.tim2.monotonic(&mut ctx.core.NVIC, &clocks);
+        p.tim2.monotonic(&mut ctx.core.NVIC, rcc.clocks());
 
         info!("Init Led");
         let gpioc = gpioc::Pins::new(p.gpioc);

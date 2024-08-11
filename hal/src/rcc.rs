@@ -8,10 +8,10 @@ use crate::pac::{
 
 use crate::pwr;
 
-use config::*;
+pub use config::*;
 
 pub mod clockout;
-pub mod config;
+mod config;
 mod enable;
 pub mod rtc;
 
@@ -45,16 +45,30 @@ impl Rcc {
     /// Initialises the hardware according to CFGR state returning a Clocks instance.
     /// Panics if overclocking is attempted.
     pub fn freeze(mut self, config: Config) -> Self {
-        let pll_clk = self.pll_setup(config.pll_cfg);
+        let hse_clk = match config.hse {
+            Some((freq, bypass)) => {
+                self.enable_hse(bypass);
+                Some(freq)
+            }
+            None => {
+                self.enable_hsi();
+                None
+            }
+        };
+
+        let pll_clk = self.pll_setup(&config);
 
         let (sys_clk, sw_bits) = match config.sys_mux {
             SysClockSrc::HSI => {
                 self.enable_hsi();
                 (HSI.Hz(), 0b01)
             }
-            SysClockSrc::HSE(freq) => {
-                self.enable_hse(false);
-                (freq, 0b10)
+            SysClockSrc::HSE => {
+                if let Some((freq, _)) = config.hse {
+                    (freq, 0b10)
+                } else {
+                    panic!("HSE selected as sysclock but HSE is not configured")
+                }
             }
             SysClockSrc::PLL => {
                 // If PLL is selected as sysclock then the r output should have been configured
@@ -194,6 +208,7 @@ impl Rcc {
                 apb1_tim_clk: apb1_tim_clk.Hz(),
                 apb2_clk: apb2_freq.Hz(),
                 apb2_tim_clk: apb2_tim_clk.Hz(),
+                hse_clk,
             },
         }
     }
@@ -208,40 +223,38 @@ impl Rcc {
         pwr.pwr_cr1().modify(|_, w| w.dbp().set_bit());
     }
 
-    fn pll_setup(&self, pll_cfg: PllConfig) -> PLLClocks {
+    fn pll_setup(&self, config: &Config) -> PLLClocks {
         // Disable PLL
         self.rb.rcc_cr().modify(|_, w| w.pllon().clear_bit());
         while self.rb.rcc_cr().read().pllrdy().bit_is_set() {}
 
-        // Enable the input clock feeding the PLL
-        let (pll_input_freq, pll_src_bits) = match pll_cfg.mux {
-            PLLSrc::HSI => {
-                self.enable_hsi();
-                (HSI, 0b10)
+        let (pll_input_freq, pll_src_bits) = match config.pll_cfg.mux {
+            PLLSrc::HSE => {
+                if let Some((freq, _)) = config.hse {
+                    (freq.raw(), 0b11)
+                } else {
+                    panic!("HSE selected as PLL source but HSE is not configured")
+                }
             }
-            PLLSrc::HSE(freq) => {
-                self.enable_hse(false);
-                (freq.raw(), 0b11)
-            }
-            PLLSrc::HSE_BYPASS(freq) => {
-                self.enable_hse(true);
-                (freq.raw(), 0b11)
-            }
+            PLLSrc::HSI => (HSI, 0b10),
         };
 
         // Calculate the frequency of the internal PLL VCO.
-        let pll_freq = pll_input_freq / pll_cfg.m.divisor() * pll_cfg.n.multiplier();
+        let pll_freq = pll_input_freq / config.pll_cfg.m.divisor() * config.pll_cfg.n.multiplier();
 
         // Calculate the output frequencies for the P, Q, and R outputs
-        let p = pll_cfg
+        let p = config
+            .pll_cfg
             .p
             .map(|p| ((pll_freq / p.divisor()).Hz(), p.register_setting()));
 
-        let q = pll_cfg
+        let q = config
+            .pll_cfg
             .q
             .map(|q| ((pll_freq / q.divisor()).Hz(), q.register_setting()));
 
-        let r = pll_cfg
+        let r = config
+            .pll_cfg
             .r
             .map(|r| ((pll_freq / r.divisor()).Hz(), r.register_setting()));
 
@@ -250,9 +263,9 @@ impl Rcc {
             // Set N, M, and source
             let w = w
                 .plln()
-                .bits(pll_cfg.n.register_setting())
+                .bits(config.pll_cfg.n.register_setting())
                 .pllm()
-                .bits(pll_cfg.m.register_setting())
+                .bits(config.pll_cfg.m.register_setting())
                 .pllsrc()
                 .bits(pll_src_bits);
 
@@ -492,6 +505,8 @@ pub struct Clocks {
     apb2_tim_clk: Hertz,
     /// PLL frequency
     pll_clk: PLLClocks,
+
+    hse_clk: Option<Hertz>,
 }
 
 impl Clocks {
@@ -529,6 +544,11 @@ impl Clocks {
     pub fn pll_clk(&self) -> PLLClocks {
         self.pll_clk
     }
+
+    /// Returns the frequency of the HSE
+    pub fn hse_clk(&self) -> Option<Hertz> {
+        self.hse_clk
+    }
 }
 
 /// PLL Clock frequencies
@@ -558,6 +578,7 @@ impl Default for Clocks {
                 q: None,
                 p: None,
             },
+            hse_clk: None,
         }
     }
 }

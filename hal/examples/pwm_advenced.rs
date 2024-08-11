@@ -1,7 +1,5 @@
 //! Blinks an LED
 
-#![deny(unsafe_code)]
-#![deny(warnings)]
 #![no_main]
 #![no_std]
 
@@ -29,21 +27,24 @@ fn main() -> ! {
         .freeze();
     let rcc = p.rcc.constrain();
 
-    let (_rcc, clocks) = rcc
+    let rcc_config = rcc::Config::new()
+        .hse(25.MHz(), false)
         .clock_src(rcc::SysClockSrc::PLL)
         .pll_cfg(rcc::PllConfig {
-            mux: rcc::PLLSrc::HSE(25.MHz()),
+            mux: rcc::PLLSrc::HSE,
             m: rcc::PllMDiv::DIV_5,
             n: rcc::PllNMul::MUL_68,
             r: Some(rcc::PllRDiv::DIV_2),
             q: Some(rcc::PllQDiv::DIV_2),
             p: Some(rcc::PllPDiv::DIV_2),
         })
-        .pwr_cfg(pwr)
-        .freeze();
-    info!("clock: {:?}", clocks);
+        .pwr_cfg(pwr);
 
-    let mut delay = cp.SYST.delay(&clocks);
+    let rcc = rcc.freeze(rcc_config);
+
+    info!("clock: {:?}", rcc.clocks());
+
+    let mut delay = cp.SYST.delay(rcc.clocks());
 
     info!("Init Led");
     let gpioc = gpioc::Pins::new(p.gpioc);
@@ -56,7 +57,7 @@ fn main() -> ! {
 
     let (_, c1) = p
         .tim1
-        .pwm_advanced(pin, &clocks)
+        .pwm_advanced(pin, rcc.clocks())
         .frequency(1000.kHz())
         .with_deadtime(100.nanos())
         .finalize();

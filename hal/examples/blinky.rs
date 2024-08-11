@@ -1,7 +1,5 @@
 //! Blinks an LED
 
-#![deny(unsafe_code)]
-#![deny(warnings)]
 #![no_main]
 #![no_std]
 

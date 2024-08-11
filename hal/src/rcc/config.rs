@@ -6,6 +6,7 @@ use crate::pwr::PowerConfiguration;
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub struct Config {
+    pub(super) hse: Option<(Hertz, bool)>, // frequency, bypass
     pub(super) sys_mux: SysClockSrc,
     pub(super) pll_cfg: PllConfig,
     pub(super) ahb_psc: Prescaler,
@@ -20,6 +21,7 @@ pub struct Config {
 impl Default for Config {
     fn default() -> Config {
         Config {
+            hse: None,
             sys_mux: SysClockSrc::HSI,
             pll_cfg: PllConfig::default(),
             ahb_psc: Prescaler::NotDivided,
@@ -34,6 +36,11 @@ impl Default for Config {
 impl Config {
     pub fn new() -> Self {
         Config::default()
+    }
+
+    pub fn hse(mut self, freq: Hertz, bypass: bool) -> Self {
+        self.hse = Some((freq, bypass));
+        self
     }
 
     pub fn clock_src(mut self, mux: SysClockSrc) -> Self {
@@ -78,7 +85,7 @@ impl Config {
 pub enum SysClockSrc {
     PLL,
     HSI,
-    HSE(Hertz),
+    HSE,
 }
 
 /// PLL config
@@ -111,8 +118,7 @@ impl Default for PllConfig {
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub enum PLLSrc {
     HSI,
-    HSE(Hertz),
-    HSE_BYPASS(Hertz),
+    HSE,
 }
 
 /// Divider for the PLL clock input (M)
