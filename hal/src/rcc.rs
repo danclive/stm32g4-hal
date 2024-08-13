@@ -6,13 +6,14 @@ use crate::pac::{
     rcc::{self, RegisterBlock as RccRB},
 };
 
-use crate::pwr;
+use crate::pwr::{self, PowerConfiguration};
 
 pub use config::*;
 
-pub mod clockout;
 mod config;
 mod enable;
+pub mod lsco;
+pub mod mco;
 pub mod rtc;
 
 /// Extension trait that constrains the `RCC` peripheral
@@ -24,6 +25,7 @@ pub trait RccExt {
 impl RccExt for pac::Rcc {
     fn constrain(self) -> Rcc {
         Rcc {
+            config: Config::default(),
             rb: self,
             clocks: Clocks::default(),
         }
@@ -37,15 +39,60 @@ pub const LSI: u32 = 32_000; // Hz
 
 /// Constrained RCC peripheral
 pub struct Rcc {
+    config: Config,
     pub(crate) rb: pac::Rcc,
     pub(crate) clocks: Clocks,
 }
 
 impl Rcc {
+    pub fn hse(mut self, freq: Hertz, bypass: bool) -> Self {
+        self.config.hse = Some((freq, bypass));
+        self
+    }
+
+    pub fn clock_src(mut self, mux: SysClockSrc) -> Self {
+        self.config.sys_mux = mux;
+        self
+    }
+
+    pub fn pll_cfg(mut self, cfg: PllConfig) -> Self {
+        self.config.pll_cfg = cfg;
+        self
+    }
+
+    pub fn ahb_psc(mut self, psc: Prescaler) -> Self {
+        self.config.ahb_psc = psc;
+        self
+    }
+
+    pub fn apb1_psc(mut self, psc: Prescaler) -> Self {
+        self.config.apb1_psc = psc;
+        self
+    }
+
+    pub fn apb2_psc(mut self, psc: Prescaler) -> Self {
+        self.config.apb2_psc = psc;
+        self
+    }
+
+    pub fn boost(mut self, enable_boost: bool) -> Self {
+        self.config.enable_boost = enable_boost;
+        self
+    }
+
+    pub fn pwr_cfg(mut self, pwr_cfg: PowerConfiguration) -> Self {
+        self.config.pwr_cfg = pwr_cfg;
+        self
+    }
+
     /// Initialises the hardware according to CFGR state returning a Clocks instance.
     /// Panics if overclocking is attempted.
-    pub fn freeze(mut self, config: Config) -> Self {
-        let hse_clk = match config.hse {
+    pub fn freeze(mut self) -> Self {
+        self.enable_hsi();
+        self.enable_hsi48();
+        self.enable_lsi();
+
+        let hse_clk = match self.config.hse {
             Some((freq, bypass)) => {
                 self.enable_hse(bypass);
                 Some(freq)
@@ -56,15 +103,23 @@ impl Rcc {
             }
         };
 
-        let pll_clk = self.pll_setup(&config);
+        let lse_clk = match self.config.lse {
+            Some((freq, bypass)) => {
+                self.enable_lse(bypass);
+                Some(freq)
+            }
+            None => None,
+        };
 
-        let (sys_clk, sw_bits) = match config.sys_mux {
+        let pll_clk = self.pll_setup();
+
+        let (sys_clk, sw_bits) = match self.config.sys_mux {
             SysClockSrc::HSI => {
                 self.enable_hsi();
                 (HSI.Hz(), 0b01)
             }
             SysClockSrc::HSE => {
-                if let Some((freq, _)) = config.hse {
+                if let Some((freq, _)) = self.config.hse {
                     (freq, 0b10)
                 } else {
                     panic!("HSE selected as sysclock but HSE is not configured")
@@ -80,7 +135,7 @@ impl Rcc {
         };
 
         let sys_freq = sys_clk.raw();
-        let (ahb_freq, ahb_psc_bits) = match config.ahb_psc {
+        let (ahb_freq, ahb_psc_bits) = match self.config.ahb_psc {
             Prescaler::Div2 => (sys_freq / 2, 0b1000),
             Prescaler::Div4 => (sys_freq / 4, 0b1001),
             Prescaler::Div8 => (sys_freq / 8, 0b1010),
@@ -91,14 +146,14 @@ impl Rcc {
             Prescaler::Div512 => (sys_freq / 512, 0b1111),
             _ => (sys_freq, 0b0000),
         };
-        let (apb1_freq, apb1_psc_bits) = match config.apb1_psc {
+        let (apb1_freq, apb1_psc_bits) = match self.config.apb1_psc {
             Prescaler::Div2 => (sys_freq / 2, 0b100),
             Prescaler::Div4 => (sys_freq / 4, 0b101),
             Prescaler::Div8 => (sys_freq / 8, 0b110),
             Prescaler::Div16 => (sys_freq / 16, 0b111),
             _ => (sys_freq, 0b000),
         };
-        let (apb2_freq, apb2_psc_bits) = match config.apb2_psc {
+        let (apb2_freq, apb2_psc_bits) = match self.config.apb2_psc {
             Prescaler::Div2 => (sys_freq / 2, 0b100),
             Prescaler::Div4 => (sys_freq / 4, 0b101),
             Prescaler::Div8 => (sys_freq / 8, 0b110),
@@ -107,7 +162,7 @@ impl Rcc {
         };
 
         let present_vos_mode = pwr::current_vos();
-        let target_vos_mode = config.pwr_cfg.vos();
+        let target_vos_mode = self.config.pwr_cfg.vos();
 
         match (present_vos_mode, target_vos_mode) {
             // From VoltageScale::Range1 boost
@@ -132,7 +187,6 @@ impl Rcc {
                 pwr::VoltageScale::Range1 { enable_boost: true },
             ) => {
                 self.range1_normal_to_boost(
-                    &config,
                     sys_freq,
                     apb1_psc_bits,
                     apb2_psc_bits,
@@ -168,7 +222,7 @@ impl Rcc {
             (pwr::VoltageScale::Range2, pwr::VoltageScale::Range2) => (), // No change
         }
 
-        self.configure_wait_states(&config, sys_freq);
+        self.configure_wait_states(sys_freq);
 
         self.rb.rcc_cfgr().modify(|_, w| unsafe {
             w.hpre()
@@ -188,29 +242,35 @@ impl Rcc {
         // 1. If the APB prescaler equals 1, the timer clock frequencies are set to the same
         // frequency as that of the APB domain.
         // 2. Otherwise, they are set to twice (×2) the frequency of the APB domain.
-        let apb1_tim_clk = match config.apb1_psc {
+        let apb1_tim_clk = match self.config.apb1_psc {
             Prescaler::NotDivided => apb1_freq,
             _ => apb1_freq * 2,
         };
 
-        let apb2_tim_clk = match config.apb2_psc {
+        let apb2_tim_clk = match self.config.apb2_psc {
             Prescaler::NotDivided => apb2_freq,
             _ => apb2_freq * 2,
         };
 
-        Rcc {
-            rb: self.rb,
-            clocks: Clocks {
-                pll_clk,
-                sys_clk,
-                ahb_clk: ahb_freq.Hz(),
-                apb1_clk: apb1_freq.Hz(),
-                apb1_tim_clk: apb1_tim_clk.Hz(),
-                apb2_clk: apb2_freq.Hz(),
-                apb2_tim_clk: apb2_tim_clk.Hz(),
-                hse_clk,
-            },
-        }
+        self.mco_setup();
+        self.lsco_setup();
+
+        self.clocks = Clocks {
+            pll_clk,
+            sys_clk,
+            ahb_clk: ahb_freq.Hz(),
+            apb1_clk: apb1_freq.Hz(),
+            apb1_tim_clk: apb1_tim_clk.Hz(),
+            apb2_clk: apb2_freq.Hz(),
+            apb2_tim_clk: apb2_tim_clk.Hz(),
+            hse_clk,
+            lse_clk,
+            hsi_clk: Some(HSI.Hz()),
+            hsi48_clk: Some(HSI48.Hz()),
+            lsi_clk: Some(LSI.Hz()),
+        };
+
+        self
     }
 
     pub fn clocks(&self) -> &Clocks {
@@ -223,14 +283,14 @@ impl Rcc {
         pwr.pwr_cr1().modify(|_, w| w.dbp().set_bit());
     }
 
-    fn pll_setup(&self, config: &Config) -> PLLClocks {
+    fn pll_setup(&self) -> PLLClocks {
         // Disable PLL
         self.rb.rcc_cr().modify(|_, w| w.pllon().clear_bit());
         while self.rb.rcc_cr().read().pllrdy().bit_is_set() {}
 
-        let (pll_input_freq, pll_src_bits) = match config.pll_cfg.mux {
+        let (pll_input_freq, pll_src_bits) = match self.config.pll_cfg.mux {
             PLLSrc::HSE => {
-                if let Some((freq, _)) = config.hse {
+                if let Some((freq, _)) = self.config.hse {
                     (freq.raw(), 0b11)
                 } else {
                     panic!("HSE selected as PLL source but HSE is not configured")
@@ -240,20 +300,24 @@ impl Rcc {
         };
 
         // Calculate the frequency of the internal PLL VCO.
-        let pll_freq = pll_input_freq / config.pll_cfg.m.divisor() * config.pll_cfg.n.multiplier();
+        let pll_freq =
+            pll_input_freq / self.config.pll_cfg.m.divisor() * self.config.pll_cfg.n.multiplier();
 
         // Calculate the output frequencies for the P, Q, and R outputs
-        let p = config
+        let p = self
+            .config
             .pll_cfg
             .p
             .map(|p| ((pll_freq / p.divisor()).Hz(), p.register_setting()));
 
-        let q = config
+        let q = self
+            .config
             .pll_cfg
             .q
             .map(|q| ((pll_freq / q.divisor()).Hz(), q.register_setting()));
 
-        let r = config
+        let r = self
+            .config
             .pll_cfg
             .r
             .map(|r| ((pll_freq / r.divisor()).Hz(), r.register_setting()));
@@ -263,9 +327,9 @@ impl Rcc {
             // Set N, M, and source
             let w = w
                 .plln()
-                .bits(config.pll_cfg.n.register_setting())
+                .bits(self.config.pll_cfg.n.register_setting())
                 .pllm()
-                .bits(config.pll_cfg.m.register_setting())
+                .bits(self.config.pll_cfg.m.register_setting())
                 .pllsrc()
                 .bits(pll_src_bits);
 
@@ -334,7 +398,6 @@ impl Rcc {
 
     fn range1_normal_to_boost(
         &mut self,
-        config: &Config,
         sys_freq: u32,
         apb1_psc_bits: u8,
         apb2_psc_bits: u8,
@@ -355,7 +418,7 @@ impl Rcc {
         unsafe { pwr::set_boost(true) };
 
         // 3. Adjust the number of wait states according to the new frequency target in range1 boost mode
-        self.configure_wait_states(config, sys_freq);
+        self.configure_wait_states(sys_freq);
 
         // 4. Configure and switch to new system frequency.
         self.rb.rcc_cfgr().modify(|_, w| unsafe {
@@ -382,11 +445,11 @@ impl Rcc {
             .modify(|_, w| unsafe { w.hpre().bits(ahb_psc_bits) });
     }
 
-    fn configure_wait_states(&mut self, config: &Config, sys_freq: u32) {
+    fn configure_wait_states(&mut self, sys_freq: u32) {
         // Calculate wait states depending on voltage scale and sys_freq
         //
         // See 'Number of wait states according to CPU clock (HCLK) frequency' in RM0440
-        let latency = match config.pwr_cfg.vos() {
+        let latency = match self.config.pwr_cfg.vos() {
             pwr::VoltageScale::Range1 { enable_boost: true } => match sys_freq {
                 0..=34_000_000 => 0b0000,
                 34_000_001..=68_000_000 => 0b0001,
@@ -507,6 +570,10 @@ pub struct Clocks {
     pll_clk: PLLClocks,
 
     hse_clk: Option<Hertz>,
+    lse_clk: Option<Hertz>,
+    hsi_clk: Option<Hertz>,
+    hsi48_clk: Option<Hertz>,
+    lsi_clk: Option<Hertz>,
 }
 
 impl Clocks {
@@ -549,6 +616,26 @@ impl Clocks {
     pub fn hse_clk(&self) -> Option<Hertz> {
         self.hse_clk
     }
+
+    /// Returns the frequency of the LSE
+    pub fn lse_clk(&self) -> Option<Hertz> {
+        self.lse_clk
+    }
+
+    /// Returns the frequency of the HSI
+    pub fn hsi_clk(&self) -> Option<Hertz> {
+        self.hsi_clk
+    }
+
+    /// Returns the frequency of the HSI48
+    pub fn hsi48_clk(&self) -> Option<Hertz> {
+        self.hsi48_clk
+    }
+
+    /// Returns the frequency of the LSI
+    pub fn lsi_clk(&self) -> Option<Hertz> {
+        self.lsi_clk
+    }
 }
 
 /// PLL Clock frequencies
@@ -579,6 +666,10 @@ impl Default for Clocks {
                 p: None,
             },
             hse_clk: None,
+            lse_clk: None,
+            hsi_clk: None,
+            hsi48_clk: None,
+            lsi_clk: None,
         }
     }
 }

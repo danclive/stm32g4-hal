@@ -3,9 +3,12 @@ use fugit::HertzU32 as Hertz;
 
 use crate::pwr::PowerConfiguration;
 
+use super::lsco::LSCOConfig;
+use super::mco::MCOConfig;
+
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
-pub struct Config {
+pub(super) struct Config {
     pub(super) hse: Option<(Hertz, bool)>, // frequency, bypass
     pub(super) sys_mux: SysClockSrc,
     pub(super) pll_cfg: PllConfig,
@@ -14,6 +17,11 @@ pub struct Config {
     pub(super) apb2_psc: Prescaler,
     /// Required for f_sys > 150MHz
     pub(super) enable_boost: bool,
+
+    pub(super) lse: Option<(Hertz, bool)>, // frequency, bypass
+
+    pub(super) mco: MCOConfig,
+    pub(super) lsco: LSCOConfig,
     // Power Configuration
     pub(super) pwr_cfg: PowerConfiguration,
 }
@@ -28,54 +36,17 @@ impl Default for Config {
             apb1_psc: Prescaler::Div2,
             apb2_psc: Prescaler::Div2,
             enable_boost: false,
+            lse: None,
+            mco: MCOConfig::default(),
+            lsco: LSCOConfig::default(),
             pwr_cfg: PowerConfiguration::default(),
         }
     }
 }
 
 impl Config {
-    pub fn new() -> Self {
+    pub(super) fn new() -> Self {
         Config::default()
-    }
-
-    pub fn hse(mut self, freq: Hertz, bypass: bool) -> Self {
-        self.hse = Some((freq, bypass));
-        self
-    }
-
-    pub fn clock_src(mut self, mux: SysClockSrc) -> Self {
-        self.sys_mux = mux;
-        self
-    }
-
-    pub fn pll_cfg(mut self, cfg: PllConfig) -> Self {
-        self.pll_cfg = cfg;
-        self
-    }
-
-    pub fn ahb_psc(mut self, psc: Prescaler) -> Self {
-        self.ahb_psc = psc;
-        self
-    }
-
-    pub fn apb1_psc(mut self, psc: Prescaler) -> Self {
-        self.apb1_psc = psc;
-        self
-    }
-
-    pub fn apb2_psc(mut self, psc: Prescaler) -> Self {
-        self.apb2_psc = psc;
-        self
-    }
-
-    pub fn boost(mut self, enable_boost: bool) -> Self {
-        self.enable_boost = enable_boost;
-        self
-    }
-
-    pub fn pwr_cfg(mut self, pwr_cfg: PowerConfiguration) -> Self {
-        self.pwr_cfg = pwr_cfg;
-        self
     }
 }
 
