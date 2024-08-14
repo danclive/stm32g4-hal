@@ -70,10 +70,10 @@ pub type Ft15W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Ft16R = crate::BitReader;
 #[doc = "Field `FT16` writer - Falling trigger event configuration of line 16"]
 pub type Ft16W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `FT18` reader - Falling trigger event configuration of line 18"]
-pub type Ft18R = crate::BitReader;
-#[doc = "Field `FT18` writer - Falling trigger event configuration of line 18"]
-pub type Ft18W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `FT17` reader - Falling trigger event configuration of line 17"]
+pub type Ft17R = crate::BitReader;
+#[doc = "Field `FT17` writer - Falling trigger event configuration of line 17"]
+pub type Ft17W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FT19` reader - Falling trigger event configuration of line 19"]
 pub type Ft19R = crate::BitReader;
 #[doc = "Field `FT19` writer - Falling trigger event configuration of line 19"]
@@ -176,10 +176,10 @@ impl R {
     pub fn ft16(&self) -> Ft16R {
         Ft16R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 18 - Falling trigger event configuration of line 18"]
+    #[doc = "Bit 17 - Falling trigger event configuration of line 17"]
     #[inline(always)]
-    pub fn ft18(&self) -> Ft18R {
-        Ft18R::new(((self.bits >> 18) & 1) != 0)
+    pub fn ft17(&self) -> Ft17R {
+        Ft17R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 19 - Falling trigger event configuration of line 19"]
     #[inline(always)]
@@ -222,7 +222,7 @@ impl core::fmt::Debug for R {
             .field("ft14", &self.ft14())
             .field("ft15", &self.ft15())
             .field("ft16", &self.ft16())
-            .field("ft18", &self.ft18())
+            .field("ft17", &self.ft17())
             .field("ft19", &self.ft19())
             .field("ft20", &self.ft20())
             .field("ft21", &self.ft21())
@@ -333,11 +333,11 @@ impl W {
     pub fn ft16(&mut self) -> Ft16W<Ftsr1Spec> {
         Ft16W::new(self, 16)
     }
-    #[doc = "Bit 18 - Falling trigger event configuration of line 18"]
+    #[doc = "Bit 17 - Falling trigger event configuration of line 17"]
     #[inline(always)]
     #[must_use]
-    pub fn ft18(&mut self) -> Ft18W<Ftsr1Spec> {
-        Ft18W::new(self, 18)
+    pub fn ft17(&mut self) -> Ft17W<Ftsr1Spec> {
+        Ft17W::new(self, 17)
     }
     #[doc = "Bit 19 - Falling trigger event configuration of line 19"]
     #[inline(always)]

@@ -70,10 +70,10 @@ pub type Pif15W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Pif16R = crate::BitReader;
 #[doc = "Field `PIF16` writer - Pending bit 16"]
 pub type Pif16W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `PIF18` reader - Pending bit 18"]
-pub type Pif18R = crate::BitReader;
-#[doc = "Field `PIF18` writer - Pending bit 18"]
-pub type Pif18W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `PIF17` reader - Pending bit 17"]
+pub type Pif17R = crate::BitReader;
+#[doc = "Field `PIF17` writer - Pending bit 17"]
+pub type Pif17W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PIF19` reader - Pending bit 19"]
 pub type Pif19R = crate::BitReader;
 #[doc = "Field `PIF19` writer - Pending bit 19"]
@@ -176,10 +176,10 @@ impl R {
     pub fn pif16(&self) -> Pif16R {
         Pif16R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 18 - Pending bit 18"]
+    #[doc = "Bit 17 - Pending bit 17"]
     #[inline(always)]
-    pub fn pif18(&self) -> Pif18R {
-        Pif18R::new(((self.bits >> 18) & 1) != 0)
+    pub fn pif17(&self) -> Pif17R {
+        Pif17R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 19 - Pending bit 19"]
     #[inline(always)]
@@ -222,7 +222,7 @@ impl core::fmt::Debug for R {
             .field("pif14", &self.pif14())
             .field("pif15", &self.pif15())
             .field("pif16", &self.pif16())
-            .field("pif18", &self.pif18())
+            .field("pif17", &self.pif17())
             .field("pif19", &self.pif19())
             .field("pif20", &self.pif20())
             .field("pif21", &self.pif21())
@@ -333,11 +333,11 @@ impl W {
     pub fn pif16(&mut self) -> Pif16W<Pr1Spec> {
         Pif16W::new(self, 16)
     }
-    #[doc = "Bit 18 - Pending bit 18"]
+    #[doc = "Bit 17 - Pending bit 17"]
     #[inline(always)]
     #[must_use]
-    pub fn pif18(&mut self) -> Pif18W<Pr1Spec> {
-        Pif18W::new(self, 18)
+    pub fn pif17(&mut self) -> Pif17W<Pr1Spec> {
+        Pif17W::new(self, 17)
     }
     #[doc = "Bit 19 - Pending bit 19"]
     #[inline(always)]

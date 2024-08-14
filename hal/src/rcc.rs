@@ -373,9 +373,8 @@ impl Rcc {
     }
 
     pub(crate) fn enable_hse(&self, bypass: bool) {
-        self.rb
-            .rcc_cr()
-            .modify(|_, w| w.hseon().set_bit().hsebyp().bit(bypass));
+        self.rb.rcc_cr().modify(|_, w| w.hsebyp().bit(bypass));
+        self.rb.rcc_cr().modify(|_, w| w.hseon().set_bit());
         while self.rb.rcc_cr().read().hserdy().bit_is_clear() {}
     }
 
@@ -385,9 +384,8 @@ impl Rcc {
     }
 
     pub(crate) fn enable_lse(&self, bypass: bool) {
-        self.rb
-            .rcc_bdcr()
-            .modify(|_, w| w.lseon().set_bit().lsebyp().bit(bypass));
+        self.rb.rcc_bdcr().modify(|_, w| w.lsebyp().bit(bypass));
+        self.rb.rcc_bdcr().modify(|_, w| w.lseon().set_bit());
         while self.rb.rcc_bdcr().read().lserdy().bit_is_clear() {}
     }
 

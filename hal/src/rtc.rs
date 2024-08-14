@@ -1,20 +1,12 @@
 //! Real-Time Clock
 
-// use cast::{f32, i32, u16, u32, u8};
+use cast::{f32, i32, u16, u32, u8};
 use chrono::prelude::*;
-use fugit::HertzU32 as Hertz;
 
 use crate::pac;
 
 use crate::exti::{Event as ExtiEvent, ExtiExt};
 use crate::rcc::{self, Clocks};
-
-// use crate::exti::{Event as ExtiEvent, ExtiExt};
-// use crate::rcc::backup;
-// use crate::rcc::rec::ResetEnable;
-// use crate::rcc::Clocks;
-// use crate::stm32::{EXTI, RCC, RTC};
-// use crate::time::Hertz;
 
 pub enum Event {
     AlarmA,
@@ -41,8 +33,6 @@ pub enum RtcClock {
     /// This is in the Backup power domain, and so it can
     /// remain operational as long as VBat is present.
     Lse {
-        freq: Hertz,
-        bypass: bool,
         /// Enable the Clock Security Subsystem for the LSE
         ///
         /// Note that errata 2.2.19 for STM32H74x prevents the LSE from initializing without resetting after VDD
@@ -110,11 +100,9 @@ impl Rtc {
 
         let clock_source_matches = match (clock_source, rcc::rtc::Rtc::get_kernel_clk_mux()) {
             (RtcClock::Lsi, rcc::rtc::RtcClkSel::B0x2) => true,
-            (RtcClock::Hse, rcc::rtc::RtcClkSel::B0x3) => true,
-            (RtcClock::Lse { bypass, css, .. }, rcc::rtc::RtcClkSel::B0x1) => {
-                bdcr.lseon().bit_is_set()
-                    && bypass == bdcr.lsebyp().bit_is_set()
-                    && css == bdcr.lsecsson().bit_is_set()
+            (RtcClock::Hse, rcc::rtc::RtcClkSel::B0x3) => clocks.hse_clk().is_some(),
+            (RtcClock::Lse { css }, rcc::rtc::RtcClkSel::B0x1) => {
+                clocks.lse_clk().is_some() && css == bdcr.lsecsson().bit_is_set()
             }
             _ => false,
         };
@@ -123,9 +111,9 @@ impl Rtc {
         }
 
         let clock_source_running = match clock_source {
-            RtcClock::Lsi => clocks.lsi_ck().is_some(),
-            RtcClock::Hse => clocks.hse_ck().is_some(),
-            RtcClock::Lse { .. } => bdcr.lserdy().is_ready(),
+            RtcClock::Lsi => true,
+            RtcClock::Hse => clocks.hse_clk().is_some(),
+            RtcClock::Lse { .. } => clocks.lse_clk().is_some(),
         };
         if !clock_source_running {
             return Err((rtc, InitError::ClockNotRunning));
@@ -136,29 +124,15 @@ impl Rtc {
 
     /// Resets the RTC, including the backup registers, then initializes it.
     pub fn init(rtc: pac::Rtc, clock_source: RtcClock, clocks: &Clocks) -> Self {
-        let mut prec = rcc::rtc::Rtc::enable();
+        rcc::rtc::Rtc::enable();
 
         let rcc = unsafe { &*pac::Rcc::ptr() };
 
         // Check and configure clock source
         let ker_ck = match clock_source {
-            RtcClock::Lse { bypass, freq, .. } => {
-                // Set LSEBYP before enabling
-                rcc.rcc_bdcr().modify(|_, w| w.lsebyp().bit(bypass));
-                // Ensure LSE is on and stable
-                rcc.rcc_bdcr().modify(|_, w| w.lseon().set_bit());
-                while rcc.rcc_bdcr().read().lserdy().bit_is_clear() {}
-
-                Some(freq)
-            }
-            RtcClock::Hse { divider } => {
-                // Set HSE divider
-                assert!(divider < 64, "HSE Divider larger than 63");
-                rcc.rcc_bdcr().modify(|_, w| w.rtcpre().bits(divider));
-
-                clocks.hse_ck().map(|x| x / u32(divider))
-            }
-            RtcClock::Lsi => clocks.lsi_ck(),
+            RtcClock::Lse { .. } => clocks.lse_clk(),
+            RtcClock::Hse => clocks.hse_clk().map(|x| x / 32),
+            RtcClock::Lsi => clocks.lsi_clk(),
         }
         .expect("rtc_ker_ck not running")
         .raw();
@@ -173,8 +147,8 @@ impl Rtc {
         });
 
         // Now we can enable CSS, if required
-        if let RtcClock::Lse { css: true, .. } = clock_source {
-            rcc.rcc_bdcr().modify(|_, w| w.lsecsson().security_on());
+        if let RtcClock::Lse { css: true } = clock_source {
+            rcc.rcc_bdcr().modify(|_, w| w.lsecsson().set_bit());
         }
 
         // Disable RTC register write protection
@@ -226,24 +200,6 @@ impl Rtc {
         rtc.icsr().modify(|_, w| w.init().clear_bit());
 
         Rtc { reg: rtc }
-    }
-
-    /// Reads the value of a 32-bit backup register
-    ///
-    /// # Panics
-    ///
-    /// Panics if `reg` is greater than 31.
-    pub fn read_backup_reg(&self, reg: u8) -> u32 {
-        self.reg.bkpr[reg as usize].read().bkp().bits()
-    }
-
-    /// Writes `value` to a 32-bit backup register
-    ///
-    /// # Panics
-    ///
-    /// Panics if `reg` is greater than 31.
-    pub fn write_backup_reg(&mut self, reg: u8, value: u32) {
-        self.reg.bkpr[reg as usize].write(|w| w.bkp().bits(value));
     }
 
     /// Sets the date and time of the RTC
@@ -538,22 +494,22 @@ impl Rtc {
     /// Panics if interval is greater than 2¹⁷-1.
     pub fn enable_wakeup(&mut self, interval: u32) {
         self.reg.cr().modify(|_, w| w.wute().clear_bit());
-        self.reg.icsr().modify(|_, w| w.wutf().clear_bit());
+        self.reg.scr().write(|w| w.cwutf().clear_bit());
         while self.reg.icsr().read().wutwf().bit_is_clear() {}
 
         if interval > 1 << 16 {
             self.reg
                 .cr()
-                .modify(|_, w| unsafe { w.wucksel().bits(0b110) });
+                .modify(|_, w| unsafe { w.wcksel().bits(0b110) });
             let interval =
                 u16(interval - (1 << 16) - 1).expect("Interval was too large for wakeup timer");
-            self.reg.wutr().write(|w| w.wut().bits(interval));
+            self.reg.wutr().write(|w| unsafe { w.wut().bits(interval) });
         } else {
             self.reg
                 .cr()
-                .modify(|_, w| unsafe { w.wucksel().bits(0b100) });
+                .modify(|_, w| unsafe { w.wcksel().bits(0b100) });
             let interval = u16(interval - 1).expect("Interval was too large for wakeup timer");
-            self.reg.wutr().write(|w| w.wut().bits(interval));
+            self.reg.wutr().write(|w| unsafe { w.wut().bits(interval) });
         }
 
         self.reg.cr().modify(|_, w| w.wute().set_bit());
@@ -562,13 +518,13 @@ impl Rtc {
     /// Disables the wakeup timer
     pub fn disable_wakeup(&mut self) {
         self.reg.cr().modify(|_, w| w.wute().clear_bit());
-        self.reg.icsr().modify(|_, w| w.wutf().clear_bit());
+        self.reg.scr().write(|w| w.cwutf().clear_bit());
     }
 
     /// Configures the timestamp to be captured when the RTC switches to Vbat power
     pub fn enable_vbat_timestamp(&mut self) {
         self.reg.cr().modify(|_, w| w.tse().clear_bit());
-        self.reg.icsr().modify(|_, w| w.tsf().clear_bit());
+        self.reg.scr().write(|w| w.ctsf().clear_bit());
         self.reg.cr().modify(|_, w| w.itse().set_bit());
         self.reg.cr().modify(|_, w| w.tse().set_bit());
     }
@@ -576,7 +532,7 @@ impl Rtc {
     /// Disables the timestamp
     pub fn disable_timestamp(&mut self) {
         self.reg.cr().modify(|_, w| w.tse().clear_bit());
-        self.reg.icsr().modify(|_, w| w.tsf().clear_bit());
+        self.reg.scr().write(|w| w.ctsf().clear_bit());
     }
 
     /// Reads the stored value of the timestamp if present
@@ -609,8 +565,8 @@ impl Rtc {
         // Clear timestamp interrupt and internal timestamp interrupt (VBat transition)
         // TODO: Timestamp overflow flag
         self.reg
-            .isr
-            .modify(|_, w| w.tsf().clear_bit().itsf().clear_bit());
+            .scr()
+            .write(|w| w.ctsf().clear_bit().citsf().clear_bit());
 
         Some(date.and_time(time))
     }
@@ -623,38 +579,38 @@ impl Rtc {
         // I suppose so that they can use the EXTI's ability to wakeup the CPU or other things.
         // We need to also enable the interrupt in the EXTI.
         //
-        // Input Mapping (RM0433 Rev 7 Section 20.4):
+        // Input Mapping:
         // EXTI 17 = RTC Alarms
-        // EXTI 18 = RTC Tamper, RTC Timestamp, RTC LSECSS
-        // EXTI 19 = RTC Wakeup Timer
+        // EXTI 19 = RTC Tamper, RTC Timestamp, RTC LSECSS
+        // EXTI 20 = RTC Wakeup Timer
 
         // unsafe: Only we can use these bits for anything
-        let rcc = unsafe { &*pac::Rcc::ptr() };
+        let rcc = unsafe { &*pac::Rcc::PTR };
 
         match event {
             Event::LseCss => {
-                exti.listen(ExtiEvent::RTC_OTHER);
-                exti.rtsr1.modify(|_, w| w.tr18().enabled());
-                rcc.cier.modify(|_, w| w.lsecssie().enabled());
+                exti.listen(ExtiEvent::LSE_CSS);
+                exti.rtsr1().modify(|_, w| w.rt19().set_bit());
+                rcc.rcc_cier().modify(|_, w| w.lsecssie().set_bit());
             }
             Event::AlarmA => {
                 exti.listen(ExtiEvent::RTC_ALARM);
-                exti.rtsr1.modify(|_, w| w.tr17().enabled());
+                exti.rtsr1().modify(|_, w| w.rt17().set_bit());
                 self.reg.cr().modify(|_, w| w.alraie().set_bit());
             }
             Event::AlarmB => {
                 exti.listen(ExtiEvent::RTC_ALARM);
-                exti.rtsr1.modify(|_, w| w.tr17().enabled());
+                exti.rtsr1().modify(|_, w| w.rt17().set_bit());
                 self.reg.cr().modify(|_, w| w.alrbie().set_bit());
             }
             Event::Wakeup => {
                 exti.listen(ExtiEvent::RTC_WAKEUP);
-                exti.rtsr1.modify(|_, w| w.tr19().enabled());
+                exti.rtsr1().modify(|_, w| w.rt20().set_bit());
                 self.reg.cr().modify(|_, w| w.wutie().set_bit());
             }
             Event::Timestamp => {
-                exti.listen(ExtiEvent::RTC_OTHER);
-                exti.rtsr1.modify(|_, w| w.tr18().enabled());
+                exti.listen(ExtiEvent::LSE_CSS);
+                exti.rtsr1().modify(|_, w| w.rt19().set_bit());
                 self.reg.cr().modify(|_, w| w.tsie().set_bit());
             }
         }
@@ -668,29 +624,29 @@ impl Rtc {
 
         match event {
             Event::LseCss => {
-                rcc.rcc_cier().modify(|_, w| w.lsecssie().disabled());
-                exti.unlisten(ExtiEvent::RTC_OTHER);
-                exti.rtsr1().modify(|_, w| w.tr18().disabled());
+                rcc.rcc_cier().modify(|_, w| w.lsecssie().clear_bit());
+                exti.unlisten(ExtiEvent::LSE_CSS);
+                exti.rtsr1().modify(|_, w| w.rt19().clear_bit());
             }
             Event::AlarmA => {
                 self.reg.cr().modify(|_, w| w.alraie().clear_bit());
                 exti.unlisten(ExtiEvent::RTC_ALARM);
-                exti.rtsr1().modify(|_, w| w.tr17().disabled());
+                exti.rtsr1().modify(|_, w| w.rt17().clear_bit());
             }
             Event::AlarmB => {
                 self.reg.cr().modify(|_, w| w.alrbie().clear_bit());
                 exti.unlisten(ExtiEvent::RTC_ALARM);
-                exti.rtsr1().modify(|_, w| w.tr17().disabled());
+                exti.rtsr1().modify(|_, w| w.rt17().clear_bit());
             }
             Event::Wakeup => {
                 self.reg.cr().modify(|_, w| w.wutie().clear_bit());
                 exti.unlisten(ExtiEvent::RTC_WAKEUP);
-                exti.rtsr1().modify(|_, w| w.tr19().disabled());
+                exti.rtsr1().modify(|_, w| w.rt20().clear_bit());
             }
             Event::Timestamp => {
                 self.reg.cr().modify(|_, w| w.tsie().clear_bit());
-                exti.unlisten(ExtiEvent::RTC_OTHER);
-                exti.rtsr1().modify(|_, w| w.tr18().disabled());
+                exti.unlisten(ExtiEvent::LSE_CSS);
+                exti.rtsr1().modify(|_, w| w.rt19().clear_bit());
             }
         }
     }
@@ -698,14 +654,14 @@ impl Rtc {
     /// Returns `true` if `event` is pending
     pub fn is_pending(&self, event: Event) -> bool {
         // unsafe: Only we can do anything with this bit
-        let rcc = unsafe { &*RCC::ptr() };
+        let rcc = unsafe { &*pac::Rcc::PTR };
 
         match event {
-            Event::LseCss => rcc.cifr.read().lsecssf().bit_is_set(),
-            Event::AlarmA => self.reg.icsr().read().alraf().bit_is_set(),
-            Event::AlarmB => self.reg.icsr().read().alrbf().bit_is_set(),
-            Event::Wakeup => self.reg.icsr().read().wutf().bit_is_set(),
-            Event::Timestamp => self.reg.icsr().read().tsf().bit_is_set(),
+            Event::LseCss => rcc.rcc_cifr().read().lsecssf().bit_is_set(),
+            Event::AlarmA => self.reg.sr().read().alraf().bit_is_set(),
+            Event::AlarmB => self.reg.sr().read().alrbf().bit_is_set(),
+            Event::Wakeup => self.reg.sr().read().wutf().bit_is_set(),
+            Event::Timestamp => self.reg.sr().read().tsf().bit_is_set(),
         }
     }
 
@@ -717,24 +673,24 @@ impl Rtc {
 
         match event {
             Event::LseCss => {
-                rcc.cicr.write(|w| w.lsecssc().clear());
-                exti.unpend(ExtiEvent::RTC_OTHER);
+                rcc.rcc_cicr().write(|w| w.lsecssc().clear_bit());
+                exti.unpend(ExtiEvent::LSE_CSS);
             }
             Event::AlarmA => {
-                self.reg.icsr().modify(|_, w| w.alraf().clear_bit());
+                self.reg.scr().write(|w| w.calraf().clear_bit());
                 exti.unpend(ExtiEvent::RTC_ALARM);
             }
             Event::AlarmB => {
-                self.reg.icsr().modify(|_, w| w.alrbf().clear_bit());
+                self.reg.scr().write(|w| w.calrbf().clear_bit());
                 exti.unpend(ExtiEvent::RTC_ALARM);
             }
             Event::Wakeup => {
-                self.reg.icsr().modify(|_, w| w.wutf().clear_bit());
+                self.reg.scr().write(|w| w.cwutf().clear_bit());
                 exti.unpend(ExtiEvent::RTC_WAKEUP);
             }
             Event::Timestamp => {
-                self.reg.icsr().modify(|_, w| w.tsf().clear_bit());
-                exti.unpend(ExtiEvent::RTC_OTHER);
+                self.reg.scr().write(|w| w.ctsf().clear_bit());
+                exti.unpend(ExtiEvent::LSE_CSS);
             }
         }
     }
@@ -749,12 +705,12 @@ impl Rtc {
         }
 
         // unsafe: Only we can use these bits
-        let rcc = unsafe { &*pac::Rcc::ptr() };
+        let rcc = unsafe { &*pac::Rcc::PTR };
         rcc.rcc_bdcr()
-            .modify(|_, w| w.lsecsson().security_off().lseon().off());
+            .modify(|_, w| w.lsecsson().clear_bit().lseon().clear_bit());
 
         // We're allowed to change this once after the LSE fails
-        rcc::rtc::Rtc::kernel_clk_mux(rcc::rtc::Rtc::RtcClkSel::Lsi);
+        rcc::rtc::Rtc::kernel_clk_mux(rcc::rtc::RtcClkSel::B0x2);
     }
 
     /// Returns a reference to the inner peripheral

@@ -70,10 +70,10 @@ pub type Rt15W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Rt16R = crate::BitReader;
 #[doc = "Field `RT16` writer - Rising trigger event configuration of line 16"]
 pub type Rt16W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `RT18` reader - Rising trigger event configuration of line 18"]
-pub type Rt18R = crate::BitReader;
-#[doc = "Field `RT18` writer - Rising trigger event configuration of line 18"]
-pub type Rt18W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RT17` reader - Rising trigger event configuration of line 17"]
+pub type Rt17R = crate::BitReader;
+#[doc = "Field `RT17` writer - Rising trigger event configuration of line 17"]
+pub type Rt17W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RT19` reader - Rising trigger event configuration of line 19"]
 pub type Rt19R = crate::BitReader;
 #[doc = "Field `RT19` writer - Rising trigger event configuration of line 19"]
@@ -180,10 +180,10 @@ impl R {
     pub fn rt16(&self) -> Rt16R {
         Rt16R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 18 - Rising trigger event configuration of line 18"]
+    #[doc = "Bit 17 - Rising trigger event configuration of line 17"]
     #[inline(always)]
-    pub fn rt18(&self) -> Rt18R {
-        Rt18R::new(((self.bits >> 18) & 1) != 0)
+    pub fn rt17(&self) -> Rt17R {
+        Rt17R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 19 - Rising trigger event configuration of line 19"]
     #[inline(always)]
@@ -231,7 +231,7 @@ impl core::fmt::Debug for R {
             .field("rt14", &self.rt14())
             .field("rt15", &self.rt15())
             .field("rt16", &self.rt16())
-            .field("rt18", &self.rt18())
+            .field("rt17", &self.rt17())
             .field("rt19", &self.rt19())
             .field("rt20", &self.rt20())
             .field("rt21", &self.rt21())
@@ -343,11 +343,11 @@ impl W {
     pub fn rt16(&mut self) -> Rt16W<Rtsr1Spec> {
         Rt16W::new(self, 16)
     }
-    #[doc = "Bit 18 - Rising trigger event configuration of line 18"]
+    #[doc = "Bit 17 - Rising trigger event configuration of line 17"]
     #[inline(always)]
     #[must_use]
-    pub fn rt18(&mut self) -> Rt18W<Rtsr1Spec> {
-        Rt18W::new(self, 18)
+    pub fn rt17(&mut self) -> Rt17W<Rtsr1Spec> {
+        Rt17W::new(self, 17)
     }
     #[doc = "Bit 19 - Rising trigger event configuration of line 19"]
     #[inline(always)]

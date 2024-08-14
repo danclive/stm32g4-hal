@@ -26050,9 +26050,9 @@ Copyright (c) 2024 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>RT18</name>
-              <description>Rising trigger event configuration of line 18</description>
-              <bitOffset>18</bitOffset>
+              <name>RT17</name>
+              <description>Rising trigger event configuration of line 17</description>
+              <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -26199,9 +26199,9 @@ Copyright (c) 2024 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>FT18</name>
-              <description>Falling trigger event configuration of line 18</description>
-              <bitOffset>18</bitOffset>
+              <name>FT17</name>
+              <description>Falling trigger event configuration of line 17</description>
+              <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -26342,9 +26342,9 @@ Copyright (c) 2024 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SWI18</name>
-              <description>Software Interrupt on line 18</description>
-              <bitOffset>18</bitOffset>
+              <name>SWI17</name>
+              <description>Software Interrupt on line 17</description>
+              <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -26485,9 +26485,9 @@ Copyright (c) 2024 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>PIF18</name>
-              <description>Pending bit 18</description>
-              <bitOffset>18</bitOffset>
+              <name>PIF17</name>
+              <description>Pending bit 17</description>
+              <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>

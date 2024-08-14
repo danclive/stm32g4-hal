@@ -70,10 +70,10 @@ pub type Swi15W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Swi16R = crate::BitReader;
 #[doc = "Field `SWI16` writer - Software Interrupt on line 16"]
 pub type Swi16W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `SWI18` reader - Software Interrupt on line 18"]
-pub type Swi18R = crate::BitReader;
-#[doc = "Field `SWI18` writer - Software Interrupt on line 18"]
-pub type Swi18W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `SWI17` reader - Software Interrupt on line 17"]
+pub type Swi17R = crate::BitReader;
+#[doc = "Field `SWI17` writer - Software Interrupt on line 17"]
+pub type Swi17W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SWI19` reader - Software Interrupt on line 19"]
 pub type Swi19R = crate::BitReader;
 #[doc = "Field `SWI19` writer - Software Interrupt on line 19"]
@@ -176,10 +176,10 @@ impl R {
     pub fn swi16(&self) -> Swi16R {
         Swi16R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 18 - Software Interrupt on line 18"]
+    #[doc = "Bit 17 - Software Interrupt on line 17"]
     #[inline(always)]
-    pub fn swi18(&self) -> Swi18R {
-        Swi18R::new(((self.bits >> 18) & 1) != 0)
+    pub fn swi17(&self) -> Swi17R {
+        Swi17R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 19 - Software Interrupt on line 19"]
     #[inline(always)]
@@ -222,7 +222,7 @@ impl core::fmt::Debug for R {
             .field("swi14", &self.swi14())
             .field("swi15", &self.swi15())
             .field("swi16", &self.swi16())
-            .field("swi18", &self.swi18())
+            .field("swi17", &self.swi17())
             .field("swi19", &self.swi19())
             .field("swi20", &self.swi20())
             .field("swi21", &self.swi21())
@@ -333,11 +333,11 @@ impl W {
     pub fn swi16(&mut self) -> Swi16W<Swier1Spec> {
         Swi16W::new(self, 16)
     }
-    #[doc = "Bit 18 - Software Interrupt on line 18"]
+    #[doc = "Bit 17 - Software Interrupt on line 17"]
     #[inline(always)]
     #[must_use]
-    pub fn swi18(&mut self) -> Swi18W<Swier1Spec> {
-        Swi18W::new(self, 18)
+    pub fn swi17(&mut self) -> Swi17W<Swier1Spec> {
+        Swi17W::new(self, 17)
     }
     #[doc = "Bit 19 - Software Interrupt on line 19"]
     #[inline(always)]
