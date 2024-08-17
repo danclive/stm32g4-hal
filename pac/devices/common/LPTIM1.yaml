@@ -1,0 +1,322 @@
+_add:
+  LPTIMER1:
+    name: LPTIMER1
+    description: Low power timer
+    groupName: LPTIM
+    baseAddress: 1073773568
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    registers:
+      ISR:
+        name: ISR
+        displayName: ISR
+        description: Interrupt and Status Register
+        addressOffset: 0
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          DOWN:
+            name: DOWN
+            description: Counter direction change up to down
+            bitOffset: 6
+            bitWidth: 1
+          UP:
+            name: UP
+            description: Counter direction change down to up
+            bitOffset: 5
+            bitWidth: 1
+          ARROK:
+            name: ARROK
+            description: Autoreload register update OK
+            bitOffset: 4
+            bitWidth: 1
+          CMPOK:
+            name: CMPOK
+            description: Compare register update OK
+            bitOffset: 3
+            bitWidth: 1
+          EXTTRIG:
+            name: EXTTRIG
+            description: External trigger edge event
+            bitOffset: 2
+            bitWidth: 1
+          ARRM:
+            name: ARRM
+            description: Autoreload match
+            bitOffset: 1
+            bitWidth: 1
+          CMPM:
+            name: CMPM
+            description: Compare match
+            bitOffset: 0
+            bitWidth: 1
+      ICR:
+        name: ICR
+        displayName: ICR
+        description: Interrupt Clear Register
+        addressOffset: 4
+        size: 32
+        access: write-only
+        resetValue: 0
+        fields:
+          DOWNCF:
+            name: DOWNCF
+            description: Direction change to down Clear Flag
+            bitOffset: 6
+            bitWidth: 1
+          UPCF:
+            name: UPCF
+            description: Direction change to UP Clear Flag
+            bitOffset: 5
+            bitWidth: 1
+          ARROKCF:
+            name: ARROKCF
+            description: Autoreload register update OK Clear Flag
+            bitOffset: 4
+            bitWidth: 1
+          CMPOKCF:
+            name: CMPOKCF
+            description: Compare register update OK Clear Flag
+            bitOffset: 3
+            bitWidth: 1
+          EXTTRIGCF:
+            name: EXTTRIGCF
+            description: External trigger valid edge Clear Flag
+            bitOffset: 2
+            bitWidth: 1
+          ARRMCF:
+            name: ARRMCF
+            description: Autoreload match Clear Flag
+            bitOffset: 1
+            bitWidth: 1
+          CMPMCF:
+            name: CMPMCF
+            description: compare match Clear Flag
+            bitOffset: 0
+            bitWidth: 1
+      IER:
+        name: IER
+        displayName: IER
+        description: Interrupt Enable Register
+        addressOffset: 8
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DOWNIE:
+            name: DOWNIE
+            description: Direction change to down Interrupt Enable
+            bitOffset: 6
+            bitWidth: 1
+          UPIE:
+            name: UPIE
+            description: Direction change to UP Interrupt Enable
+            bitOffset: 5
+            bitWidth: 1
+          ARROKIE:
+            name: ARROKIE
+            description: Autoreload register update OK Interrupt Enable
+            bitOffset: 4
+            bitWidth: 1
+          CMPOKIE:
+            name: CMPOKIE
+            description: Compare register update OK Interrupt Enable
+            bitOffset: 3
+            bitWidth: 1
+          EXTTRIGIE:
+            name: EXTTRIGIE
+            description: External trigger valid edge Interrupt Enable
+            bitOffset: 2
+            bitWidth: 1
+          ARRMIE:
+            name: ARRMIE
+            description: Autoreload match Interrupt Enable
+            bitOffset: 1
+            bitWidth: 1
+          CMPMIE:
+            name: CMPMIE
+            description: Compare match Interrupt Enable
+            bitOffset: 0
+            bitWidth: 1
+      CFGR:
+        name: CFGR
+        displayName: CFGR
+        description: Configuration Register
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          ENC:
+            name: ENC
+            description: Encoder mode enable
+            bitOffset: 24
+            bitWidth: 1
+          COUNTMODE:
+            name: COUNTMODE
+            description: counter mode enabled
+            bitOffset: 23
+            bitWidth: 1
+          PRELOAD:
+            name: PRELOAD
+            description: Registers update mode
+            bitOffset: 22
+            bitWidth: 1
+          WAVPOL:
+            name: WAVPOL
+            description: Waveform shape polarity
+            bitOffset: 21
+            bitWidth: 1
+          WAVE:
+            name: WAVE
+            description: Waveform shape
+            bitOffset: 20
+            bitWidth: 1
+          TIMOUT:
+            name: TIMOUT
+            description: Timeout enable
+            bitOffset: 19
+            bitWidth: 1
+          TRIGEN:
+            name: TRIGEN
+            description: Trigger enable and polarity
+            bitOffset: 17
+            bitWidth: 2
+          TRIGSEL:
+            name: TRIGSEL
+            description: Trigger selector
+            bitOffset: 13
+            bitWidth: 4
+          PRESC:
+            name: PRESC
+            description: Clock prescaler
+            bitOffset: 9
+            bitWidth: 3
+          TRGFLT:
+            name: TRGFLT
+            description: Configurable digital filter for trigger
+            bitOffset: 6
+            bitWidth: 2
+          CKFLT:
+            name: CKFLT
+            description: Configurable digital filter for external clock
+            bitOffset: 3
+            bitWidth: 2
+          CKPOL:
+            name: CKPOL
+            description: Clock Polarity
+            bitOffset: 1
+            bitWidth: 2
+          CKSEL:
+            name: CKSEL
+            description: Clock selector
+            bitOffset: 0
+            bitWidth: 1
+      CR:
+        name: CR
+        displayName: CR
+        description: Control Register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          RSTARE:
+            name: RSTARE
+            description: RSTARE
+            bitOffset: 4
+            bitWidth: 1
+          COUNTRST:
+            name: COUNTRST
+            description: COUNTRST
+            bitOffset: 3
+            bitWidth: 1
+          CNTSTRT:
+            name: CNTSTRT
+            description: Timer start in continuous mode
+            bitOffset: 2
+            bitWidth: 1
+          SNGSTRT:
+            name: SNGSTRT
+            description: LPTIM start in single mode
+            bitOffset: 1
+            bitWidth: 1
+          ENABLE:
+            name: ENABLE
+            description: LPTIM Enable
+            bitOffset: 0
+            bitWidth: 1
+      CMP:
+        name: CMP
+        displayName: CMP
+        description: Compare Register
+        addressOffset: 20
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CMP:
+            name: CMP
+            description: Compare value
+            bitOffset: 0
+            bitWidth: 16
+      ARR:
+        name: ARR
+        displayName: ARR
+        description: Autoreload Register
+        addressOffset: 24
+        size: 32
+        access: read-write
+        resetValue: 1
+        fields:
+          ARR:
+            name: ARR
+            description: Auto reload value
+            bitOffset: 0
+            bitWidth: 16
+      CNT:
+        name: CNT
+        displayName: CNT
+        description: Counter Register
+        addressOffset: 28
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          CNT:
+            name: CNT
+            description: Counter value
+            bitOffset: 0
+            bitWidth: 16
+      OR:
+        name: OR
+        displayName: OR
+        description: option register
+        addressOffset: 32
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          IN1:
+            name: IN1
+            description: IN1
+            bitOffset: 0
+            bitWidth: 1
+          IN2:
+            name: IN2
+            description: IN2
+            bitOffset: 1
+            bitWidth: 1
+          IN1_2_1:
+            name: IN1_2_1
+            description: IN1_2_1
+            bitOffset: 2
+            bitWidth: 2
+          IN2_2_1:
+            name: IN2_2_1
+            description: IN2_2_1
+            bitOffset: 4
+            bitWidth: 2

@@ -1,0 +1,552 @@
+_add:
+  UCPD1:
+    name: UCPD1
+    description: UCPD1
+    groupName: UCPD
+    baseAddress: 1073782784
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      UCPD1:
+        name: UCPD1
+        description: UCPD1
+        value: 63
+    registers:
+      CFG1:
+        name: CFG1
+        displayName: CFG1
+        description: UCPD configuration register 1
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          HBITCLKDIV:
+            name: HBITCLKDIV
+            description: HBITCLKDIV
+            bitOffset: 0
+            bitWidth: 6
+          IFRGAP:
+            name: IFRGAP
+            description: IFRGAP
+            bitOffset: 6
+            bitWidth: 5
+          TRANSWIN:
+            name: TRANSWIN
+            description: TRANSWIN
+            bitOffset: 11
+            bitWidth: 5
+          PSC_USBPDCLK:
+            name: PSC_USBPDCLK
+            description: PSC_USBPDCLK
+            bitOffset: 17
+            bitWidth: 3
+          RXORDSETEN:
+            name: RXORDSETEN
+            description: RXORDSETEN
+            bitOffset: 20
+            bitWidth: 9
+          TXDMAEN:
+            name: TXDMAEN
+            description: TXDMAEN
+            bitOffset: 29
+            bitWidth: 1
+          RXDMAEN:
+            name: RXDMAEN
+            description: RXDMAEN
+            bitOffset: 30
+            bitWidth: 1
+          UCPDEN:
+            name: UCPDEN
+            description: UCPDEN
+            bitOffset: 31
+            bitWidth: 1
+      CFG2:
+        name: CFG2
+        displayName: CFG2
+        description: UCPD configuration register 2
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          RXFILTDIS:
+            name: RXFILTDIS
+            description: RXFILTDIS
+            bitOffset: 0
+            bitWidth: 1
+          RXFILT2N3:
+            name: RXFILT2N3
+            description: RXFILT2N3
+            bitOffset: 1
+            bitWidth: 1
+          FORCECLK:
+            name: FORCECLK
+            description: FORCECLK
+            bitOffset: 2
+            bitWidth: 1
+          WUPEN:
+            name: WUPEN
+            description: WUPEN
+            bitOffset: 3
+            bitWidth: 1
+      CR:
+        name: CR
+        displayName: CR
+        description: UCPD configuration register 2
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TXMODE:
+            name: TXMODE
+            description: TXMODE
+            bitOffset: 0
+            bitWidth: 2
+          TXSEND:
+            name: TXSEND
+            description: TXSEND
+            bitOffset: 2
+            bitWidth: 1
+          TXHRST:
+            name: TXHRST
+            description: TXHRST
+            bitOffset: 3
+            bitWidth: 1
+          RXMODE:
+            name: RXMODE
+            description: RXMODE
+            bitOffset: 4
+            bitWidth: 1
+          PHYRXEN:
+            name: PHYRXEN
+            description: PHYRXEN
+            bitOffset: 5
+            bitWidth: 1
+          PHYCCSEL:
+            name: PHYCCSEL
+            description: PHYCCSEL
+            bitOffset: 6
+            bitWidth: 1
+          ANASUBMODE:
+            name: ANASUBMODE
+            description: ANASUBMODE
+            bitOffset: 7
+            bitWidth: 2
+          ANAMODE:
+            name: ANAMODE
+            description: ANAMODE
+            bitOffset: 9
+            bitWidth: 1
+          CCENABLE:
+            name: CCENABLE
+            description: CCENABLE
+            bitOffset: 10
+            bitWidth: 2
+          FRSRXEN:
+            name: FRSRXEN
+            description: FRSRXEN
+            bitOffset: 16
+            bitWidth: 1
+          FRSTX:
+            name: FRSTX
+            description: FRSTX
+            bitOffset: 17
+            bitWidth: 1
+          RDCH:
+            name: RDCH
+            description: RDCH
+            bitOffset: 18
+            bitWidth: 1
+          CC1TCDIS:
+            name: CC1TCDIS
+            description: CC1TCDIS
+            bitOffset: 20
+            bitWidth: 1
+          CC2TCDIS:
+            name: CC2TCDIS
+            description: CC2TCDIS
+            bitOffset: 21
+            bitWidth: 1
+      IMR:
+        name: IMR
+        displayName: IMR
+        description: UCPD Interrupt Mask Register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TXISIE:
+            name: TXISIE
+            description: TXISIE
+            bitOffset: 0
+            bitWidth: 1
+          TXMSGDISCIE:
+            name: TXMSGDISCIE
+            description: TXMSGDISCIE
+            bitOffset: 1
+            bitWidth: 1
+          TXMSGSENTIE:
+            name: TXMSGSENTIE
+            description: TXMSGSENTIE
+            bitOffset: 2
+            bitWidth: 1
+          TXMSGABTIE:
+            name: TXMSGABTIE
+            description: TXMSGABTIE
+            bitOffset: 3
+            bitWidth: 1
+          HRSTDISCIE:
+            name: HRSTDISCIE
+            description: HRSTDISCIE
+            bitOffset: 4
+            bitWidth: 1
+          HRSTSENTIE:
+            name: HRSTSENTIE
+            description: HRSTSENTIE
+            bitOffset: 5
+            bitWidth: 1
+          TXUNDIE:
+            name: TXUNDIE
+            description: TXUNDIE
+            bitOffset: 6
+            bitWidth: 1
+          RXNEIE:
+            name: RXNEIE
+            description: RXNEIE
+            bitOffset: 8
+            bitWidth: 1
+          RXORDDETIE:
+            name: RXORDDETIE
+            description: RXORDDETIE
+            bitOffset: 9
+            bitWidth: 1
+          RXHRSTDETIE:
+            name: RXHRSTDETIE
+            description: RXHRSTDETIE
+            bitOffset: 10
+            bitWidth: 1
+          RXOVRIE:
+            name: RXOVRIE
+            description: RXOVRIE
+            bitOffset: 11
+            bitWidth: 1
+          RXMSGENDIE:
+            name: RXMSGENDIE
+            description: RXMSGENDIE
+            bitOffset: 12
+            bitWidth: 1
+          TYPECEVT1IE:
+            name: TYPECEVT1IE
+            description: TYPECEVT1IE
+            bitOffset: 14
+            bitWidth: 1
+          TYPECEVT2IE:
+            name: TYPECEVT2IE
+            description: TYPECEVT2IE
+            bitOffset: 15
+            bitWidth: 1
+          FRSEVTIE:
+            name: FRSEVTIE
+            description: FRSEVTIE
+            bitOffset: 20
+            bitWidth: 1
+      SR:
+        name: SR
+        displayName: SR
+        description: UCPD Status Register
+        addressOffset: 20
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TXIS:
+            name: TXIS
+            description: TXIS
+            bitOffset: 0
+            bitWidth: 1
+          TXMSGDISC:
+            name: TXMSGDISC
+            description: TXMSGDISC
+            bitOffset: 1
+            bitWidth: 1
+          TXMSGSENT:
+            name: TXMSGSENT
+            description: TXMSGSENT
+            bitOffset: 2
+            bitWidth: 1
+          TXMSGABT:
+            name: TXMSGABT
+            description: TXMSGABT
+            bitOffset: 3
+            bitWidth: 1
+          HRSTDISC:
+            name: HRSTDISC
+            description: HRSTDISC
+            bitOffset: 4
+            bitWidth: 1
+          HRSTSENT:
+            name: HRSTSENT
+            description: HRSTSENT
+            bitOffset: 5
+            bitWidth: 1
+          TXUND:
+            name: TXUND
+            description: TXUND
+            bitOffset: 6
+            bitWidth: 1
+          RXNE:
+            name: RXNE
+            description: RXNE
+            bitOffset: 8
+            bitWidth: 1
+          RXORDDET:
+            name: RXORDDET
+            description: RXORDDET
+            bitOffset: 9
+            bitWidth: 1
+          RXHRSTDET:
+            name: RXHRSTDET
+            description: RXHRSTDET
+            bitOffset: 10
+            bitWidth: 1
+          RXOVR:
+            name: RXOVR
+            description: RXOVR
+            bitOffset: 11
+            bitWidth: 1
+          RXMSGEND:
+            name: RXMSGEND
+            description: RXMSGEND
+            bitOffset: 12
+            bitWidth: 1
+          RXERR:
+            name: RXERR
+            description: RXERR
+            bitOffset: 13
+            bitWidth: 1
+          TYPECEVT1:
+            name: TYPECEVT1
+            description: TYPECEVT1
+            bitOffset: 14
+            bitWidth: 1
+          TYPECEVT2:
+            name: TYPECEVT2
+            description: TYPECEVT2
+            bitOffset: 15
+            bitWidth: 1
+          TYPEC_VSTATE_CC1:
+            name: TYPEC_VSTATE_CC1
+            description: TYPEC_VSTATE_CC1
+            bitOffset: 16
+            bitWidth: 2
+          TYPEC_VSTATE_CC2:
+            name: TYPEC_VSTATE_CC2
+            description: TYPEC_VSTATE_CC2
+            bitOffset: 18
+            bitWidth: 2
+          FRSEVT:
+            name: FRSEVT
+            description: FRSEVT
+            bitOffset: 20
+            bitWidth: 1
+      ICR:
+        name: ICR
+        displayName: ICR
+        description: UCPD Interrupt Clear Register
+        addressOffset: 24
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TXMSGDISCCF:
+            name: TXMSGDISCCF
+            description: TXMSGDISCCF
+            bitOffset: 1
+            bitWidth: 1
+          TXMSGSENTCF:
+            name: TXMSGSENTCF
+            description: TXMSGSENTCF
+            bitOffset: 2
+            bitWidth: 1
+          TXMSGABTCF:
+            name: TXMSGABTCF
+            description: TXMSGABTCF
+            bitOffset: 3
+            bitWidth: 1
+          HRSTDISCCF:
+            name: HRSTDISCCF
+            description: HRSTDISCCF
+            bitOffset: 4
+            bitWidth: 1
+          HRSTSENTCF:
+            name: HRSTSENTCF
+            description: HRSTSENTCF
+            bitOffset: 5
+            bitWidth: 1
+          TXUNDCF:
+            name: TXUNDCF
+            description: TXUNDCF
+            bitOffset: 6
+            bitWidth: 1
+          RXORDDETCF:
+            name: RXORDDETCF
+            description: RXORDDETCF
+            bitOffset: 9
+            bitWidth: 1
+          RXHRSTDETCF:
+            name: RXHRSTDETCF
+            description: RXHRSTDETCF
+            bitOffset: 10
+            bitWidth: 1
+          RXOVRCF:
+            name: RXOVRCF
+            description: RXOVRCF
+            bitOffset: 11
+            bitWidth: 1
+          RXMSGENDCF:
+            name: RXMSGENDCF
+            description: RXMSGENDCF
+            bitOffset: 12
+            bitWidth: 1
+          TYPECEVT1CF:
+            name: TYPECEVT1CF
+            description: TYPECEVT1CF
+            bitOffset: 14
+            bitWidth: 1
+          TYPECEVT2CF:
+            name: TYPECEVT2CF
+            description: TYPECEVT2CF
+            bitOffset: 15
+            bitWidth: 1
+          FRSEVTCF:
+            name: FRSEVTCF
+            description: FRSEVTCF
+            bitOffset: 20
+            bitWidth: 1
+      TX_ORDSET:
+        name: TX_ORDSET
+        displayName: TX_ORDSET
+        description: UCPD Tx Ordered Set Type Register
+        addressOffset: 28
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TXORDSET:
+            name: TXORDSET
+            description: TXORDSET
+            bitOffset: 0
+            bitWidth: 20
+      TX_PAYSZ:
+        name: TX_PAYSZ
+        displayName: TX_PAYSZ
+        description: UCPD Tx Paysize Register
+        addressOffset: 32
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TXPAYSZ:
+            name: TXPAYSZ
+            description: TXPAYSZ
+            bitOffset: 0
+            bitWidth: 10
+      TXDR:
+        name: TXDR
+        displayName: TXDR
+        description: UCPD Tx Data Register
+        addressOffset: 36
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TXDATA:
+            name: TXDATA
+            description: TXDATA
+            bitOffset: 0
+            bitWidth: 8
+      RX_ORDSET:
+        name: RX_ORDSET
+        displayName: RX_ORDSET
+        description: UCPD Rx Ordered Set Register
+        addressOffset: 40
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          RXORDSET:
+            name: RXORDSET
+            description: RXORDSET
+            bitOffset: 0
+            bitWidth: 3
+          RXSOP3OF4:
+            name: RXSOP3OF4
+            description: RXSOP3OF4
+            bitOffset: 3
+            bitWidth: 1
+          RXSOPKINVALID:
+            name: RXSOPKINVALID
+            description: RXSOPKINVALID
+            bitOffset: 4
+            bitWidth: 3
+      RX_PAYSZ:
+        name: RX_PAYSZ
+        displayName: RX_PAYSZ
+        description: UCPD Rx Paysize Register
+        addressOffset: 44
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          RXPAYSZ:
+            name: RXPAYSZ
+            description: RXPAYSZ
+            bitOffset: 0
+            bitWidth: 10
+      RXDR:
+        name: RXDR
+        displayName: RXDR
+        description: UCPD Rx Data Register
+        addressOffset: 48
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          RXDATA:
+            name: RXDATA
+            description: RXDATA
+            bitOffset: 0
+            bitWidth: 8
+      RX_ORDEXT1:
+        name: RX_ORDEXT1
+        displayName: RX_ORDEXT1
+        description: UCPD Rx Ordered Set Extension Register 1
+        addressOffset: 52
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          RXSOPX1:
+            name: RXSOPX1
+            description: RXSOPX1
+            bitOffset: 0
+            bitWidth: 20
+      RX_ORDEXT2:
+        name: RX_ORDEXT2
+        displayName: RX_ORDEXT2
+        description: UCPD Rx Ordered Set Extension Register 2
+        addressOffset: 56
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          RXSOPX2:
+            name: RXSOPX2
+            description: RXSOPX2
+            bitOffset: 0
+            bitWidth: 20

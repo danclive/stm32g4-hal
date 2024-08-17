@@ -1,0 +1,1116 @@
+_add:
+  EXTI:
+    name: EXTI
+    description: External interrupt/event controller
+    groupName: EXTI
+    baseAddress: 1073808384
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      PVD_PVM:
+        name: PVD_PVM
+        description: PVD through EXTI line detection
+        value: 1
+      EXTI0:
+        name: EXTI0
+        description: EXTI Line0 interrupt
+        value: 6
+      EXTI1:
+        name: EXTI1
+        description: EXTI Line1 interrupt
+        value: 7
+      EXTI2:
+        name: EXTI2
+        description: EXTI Line2 interrupt
+        value: 8
+      EXTI3:
+        name: EXTI3
+        description: EXTI Line3 interrupt
+        value: 9
+      EXTI4:
+        name: EXTI4
+        description: EXTI Line4 interrupt
+        value: 10
+      EXTI9_5:
+        name: EXTI9_5
+        description: EXTI9_5
+        value: 23
+      EXTI15_10:
+        name: EXTI15_10
+        description: EXTI15_10
+        value: 40
+      FPU:
+        name: FPU
+        description: Floating point interrupt
+        value: 81
+    registers:
+      IMR1:
+        name: IMR1
+        displayName: IMR1
+        description: Interrupt mask register
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 4286709760
+        fields:
+          IM0:
+            name: IM0
+            description: Interrupt Mask on line 0
+            bitOffset: 0
+            bitWidth: 1
+          IM1:
+            name: IM1
+            description: Interrupt Mask on line 1
+            bitOffset: 1
+            bitWidth: 1
+          IM2:
+            name: IM2
+            description: Interrupt Mask on line 2
+            bitOffset: 2
+            bitWidth: 1
+          IM3:
+            name: IM3
+            description: Interrupt Mask on line 3
+            bitOffset: 3
+            bitWidth: 1
+          IM4:
+            name: IM4
+            description: Interrupt Mask on line 4
+            bitOffset: 4
+            bitWidth: 1
+          IM5:
+            name: IM5
+            description: Interrupt Mask on line 5
+            bitOffset: 5
+            bitWidth: 1
+          IM6:
+            name: IM6
+            description: Interrupt Mask on line 6
+            bitOffset: 6
+            bitWidth: 1
+          IM7:
+            name: IM7
+            description: Interrupt Mask on line 7
+            bitOffset: 7
+            bitWidth: 1
+          IM8:
+            name: IM8
+            description: Interrupt Mask on line 8
+            bitOffset: 8
+            bitWidth: 1
+          IM9:
+            name: IM9
+            description: Interrupt Mask on line 9
+            bitOffset: 9
+            bitWidth: 1
+          IM10:
+            name: IM10
+            description: Interrupt Mask on line 10
+            bitOffset: 10
+            bitWidth: 1
+          IM11:
+            name: IM11
+            description: Interrupt Mask on line 11
+            bitOffset: 11
+            bitWidth: 1
+          IM12:
+            name: IM12
+            description: Interrupt Mask on line 12
+            bitOffset: 12
+            bitWidth: 1
+          IM13:
+            name: IM13
+            description: Interrupt Mask on line 13
+            bitOffset: 13
+            bitWidth: 1
+          IM14:
+            name: IM14
+            description: Interrupt Mask on line 14
+            bitOffset: 14
+            bitWidth: 1
+          IM15:
+            name: IM15
+            description: Interrupt Mask on line 15
+            bitOffset: 15
+            bitWidth: 1
+          IM16:
+            name: IM16
+            description: Interrupt Mask on line 16
+            bitOffset: 16
+            bitWidth: 1
+          IM17:
+            name: IM17
+            description: Interrupt Mask on line 17
+            bitOffset: 17
+            bitWidth: 1
+          IM18:
+            name: IM18
+            description: Interrupt Mask on line 18
+            bitOffset: 18
+            bitWidth: 1
+          IM19:
+            name: IM19
+            description: Interrupt Mask on line 19
+            bitOffset: 19
+            bitWidth: 1
+          IM20:
+            name: IM20
+            description: Interrupt Mask on line 20
+            bitOffset: 20
+            bitWidth: 1
+          IM21:
+            name: IM21
+            description: Interrupt Mask on line 21
+            bitOffset: 21
+            bitWidth: 1
+          IM22:
+            name: IM22
+            description: Interrupt Mask on line 22
+            bitOffset: 22
+            bitWidth: 1
+          IM23:
+            name: IM23
+            description: Interrupt Mask on line 23
+            bitOffset: 23
+            bitWidth: 1
+          IM24:
+            name: IM24
+            description: Interrupt Mask on line 24
+            bitOffset: 24
+            bitWidth: 1
+          IM25:
+            name: IM25
+            description: Interrupt Mask on line 25
+            bitOffset: 25
+            bitWidth: 1
+          IM26:
+            name: IM26
+            description: Interrupt Mask on line 26
+            bitOffset: 26
+            bitWidth: 1
+          IM27:
+            name: IM27
+            description: Interrupt Mask on line 27
+            bitOffset: 27
+            bitWidth: 1
+          IM28:
+            name: IM28
+            description: Interrupt Mask on line 28
+            bitOffset: 28
+            bitWidth: 1
+          IM29:
+            name: IM29
+            description: Interrupt Mask on line 29
+            bitOffset: 29
+            bitWidth: 1
+          IM30:
+            name: IM30
+            description: Interrupt Mask on line 30
+            bitOffset: 30
+            bitWidth: 1
+          IM31:
+            name: IM31
+            description: Interrupt Mask on line 31
+            bitOffset: 31
+            bitWidth: 1
+      EMR1:
+        name: EMR1
+        displayName: EMR1
+        description: Event mask register
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          EM0:
+            name: EM0
+            description: Event Mask on line 0
+            bitOffset: 0
+            bitWidth: 1
+          EM1:
+            name: EM1
+            description: Event Mask on line 1
+            bitOffset: 1
+            bitWidth: 1
+          EM2:
+            name: EM2
+            description: Event Mask on line 2
+            bitOffset: 2
+            bitWidth: 1
+          EM3:
+            name: EM3
+            description: Event Mask on line 3
+            bitOffset: 3
+            bitWidth: 1
+          EM4:
+            name: EM4
+            description: Event Mask on line 4
+            bitOffset: 4
+            bitWidth: 1
+          EM5:
+            name: EM5
+            description: Event Mask on line 5
+            bitOffset: 5
+            bitWidth: 1
+          EM6:
+            name: EM6
+            description: Event Mask on line 6
+            bitOffset: 6
+            bitWidth: 1
+          EM7:
+            name: EM7
+            description: Event Mask on line 7
+            bitOffset: 7
+            bitWidth: 1
+          EM8:
+            name: EM8
+            description: Event Mask on line 8
+            bitOffset: 8
+            bitWidth: 1
+          EM9:
+            name: EM9
+            description: Event Mask on line 9
+            bitOffset: 9
+            bitWidth: 1
+          EM10:
+            name: EM10
+            description: Event Mask on line 10
+            bitOffset: 10
+            bitWidth: 1
+          EM11:
+            name: EM11
+            description: Event Mask on line 11
+            bitOffset: 11
+            bitWidth: 1
+          EM12:
+            name: EM12
+            description: Event Mask on line 12
+            bitOffset: 12
+            bitWidth: 1
+          EM13:
+            name: EM13
+            description: Event Mask on line 13
+            bitOffset: 13
+            bitWidth: 1
+          EM14:
+            name: EM14
+            description: Event Mask on line 14
+            bitOffset: 14
+            bitWidth: 1
+          EM15:
+            name: EM15
+            description: Event Mask on line 15
+            bitOffset: 15
+            bitWidth: 1
+          EM16:
+            name: EM16
+            description: Event Mask on line 16
+            bitOffset: 16
+            bitWidth: 1
+          EM17:
+            name: EM17
+            description: Event Mask on line 17
+            bitOffset: 17
+            bitWidth: 1
+          EM18:
+            name: EM18
+            description: Event Mask on line 18
+            bitOffset: 18
+            bitWidth: 1
+          EM19:
+            name: EM19
+            description: Event Mask on line 19
+            bitOffset: 19
+            bitWidth: 1
+          EM20:
+            name: EM20
+            description: Event Mask on line 20
+            bitOffset: 20
+            bitWidth: 1
+          EM21:
+            name: EM21
+            description: Event Mask on line 21
+            bitOffset: 21
+            bitWidth: 1
+          EM22:
+            name: EM22
+            description: Event Mask on line 22
+            bitOffset: 22
+            bitWidth: 1
+          EM23:
+            name: EM23
+            description: Event Mask on line 23
+            bitOffset: 23
+            bitWidth: 1
+          EM24:
+            name: EM24
+            description: Event Mask on line 24
+            bitOffset: 24
+            bitWidth: 1
+          EM25:
+            name: EM25
+            description: Event Mask on line 25
+            bitOffset: 25
+            bitWidth: 1
+          EM26:
+            name: EM26
+            description: Event Mask on line 26
+            bitOffset: 26
+            bitWidth: 1
+          EM27:
+            name: EM27
+            description: Event Mask on line 27
+            bitOffset: 27
+            bitWidth: 1
+          EM28:
+            name: EM28
+            description: Event Mask on line 28
+            bitOffset: 28
+            bitWidth: 1
+          EM29:
+            name: EM29
+            description: Event Mask on line 29
+            bitOffset: 29
+            bitWidth: 1
+          EM30:
+            name: EM30
+            description: Event Mask on line 30
+            bitOffset: 30
+            bitWidth: 1
+          EM31:
+            name: EM31
+            description: Event Mask on line 31
+            bitOffset: 31
+            bitWidth: 1
+      RTSR1:
+        name: RTSR1
+        displayName: RTSR1
+        description: Rising Trigger selection register
+        addressOffset: 8
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          RT0:
+            name: RT0
+            description: Rising trigger event configuration of line 0
+            bitOffset: 0
+            bitWidth: 1
+          RT1:
+            name: RT1
+            description: Rising trigger event configuration of line 1
+            bitOffset: 1
+            bitWidth: 1
+          RT2:
+            name: RT2
+            description: Rising trigger event configuration of line 2
+            bitOffset: 2
+            bitWidth: 1
+          RT3:
+            name: RT3
+            description: Rising trigger event configuration of line 3
+            bitOffset: 3
+            bitWidth: 1
+          RT4:
+            name: RT4
+            description: Rising trigger event configuration of line 4
+            bitOffset: 4
+            bitWidth: 1
+          RT5:
+            name: RT5
+            description: Rising trigger event configuration of line 5
+            bitOffset: 5
+            bitWidth: 1
+          RT6:
+            name: RT6
+            description: Rising trigger event configuration of line 6
+            bitOffset: 6
+            bitWidth: 1
+          RT7:
+            name: RT7
+            description: Rising trigger event configuration of line 7
+            bitOffset: 7
+            bitWidth: 1
+          RT8:
+            name: RT8
+            description: Rising trigger event configuration of line 8
+            bitOffset: 8
+            bitWidth: 1
+          RT9:
+            name: RT9
+            description: Rising trigger event configuration of line 9
+            bitOffset: 9
+            bitWidth: 1
+          RT10:
+            name: RT10
+            description: Rising trigger event configuration of line 10
+            bitOffset: 10
+            bitWidth: 1
+          RT11:
+            name: RT11
+            description: Rising trigger event configuration of line 11
+            bitOffset: 11
+            bitWidth: 1
+          RT12:
+            name: RT12
+            description: Rising trigger event configuration of line 12
+            bitOffset: 12
+            bitWidth: 1
+          RT13:
+            name: RT13
+            description: Rising trigger event configuration of line 13
+            bitOffset: 13
+            bitWidth: 1
+          RT14:
+            name: RT14
+            description: Rising trigger event configuration of line 14
+            bitOffset: 14
+            bitWidth: 1
+          RT15:
+            name: RT15
+            description: Rising trigger event configuration of line 15
+            bitOffset: 15
+            bitWidth: 1
+          RT16:
+            name: RT16
+            description: Rising trigger event configuration of line 16
+            bitOffset: 16
+            bitWidth: 1
+          RT17:
+            name: RT17
+            description: Rising trigger event configuration of line 17
+            bitOffset: 17
+            bitWidth: 1
+          RT19:
+            name: RT19
+            description: Rising trigger event configuration of line 19
+            bitOffset: 19
+            bitWidth: 1
+          RT20:
+            name: RT20
+            description: Rising trigger event configuration of line 20
+            bitOffset: 20
+            bitWidth: 1
+          RT21:
+            name: RT21
+            description: Rising trigger event configuration of line 21
+            bitOffset: 21
+            bitWidth: 1
+          RT22:
+            name: RT22
+            description: Rising trigger event configuration of line 22
+            bitOffset: 22
+            bitWidth: 1
+          RT:
+            name: RT
+            description: RT
+            bitOffset: 29
+            bitWidth: 3
+      FTSR1:
+        name: FTSR1
+        displayName: FTSR1
+        description: Falling Trigger selection register
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          FT0:
+            name: FT0
+            description: Falling trigger event configuration of line 0
+            bitOffset: 0
+            bitWidth: 1
+          FT1:
+            name: FT1
+            description: Falling trigger event configuration of line 1
+            bitOffset: 1
+            bitWidth: 1
+          FT2:
+            name: FT2
+            description: Falling trigger event configuration of line 2
+            bitOffset: 2
+            bitWidth: 1
+          FT3:
+            name: FT3
+            description: Falling trigger event configuration of line 3
+            bitOffset: 3
+            bitWidth: 1
+          FT4:
+            name: FT4
+            description: Falling trigger event configuration of line 4
+            bitOffset: 4
+            bitWidth: 1
+          FT5:
+            name: FT5
+            description: Falling trigger event configuration of line 5
+            bitOffset: 5
+            bitWidth: 1
+          FT6:
+            name: FT6
+            description: Falling trigger event configuration of line 6
+            bitOffset: 6
+            bitWidth: 1
+          FT7:
+            name: FT7
+            description: Falling trigger event configuration of line 7
+            bitOffset: 7
+            bitWidth: 1
+          FT8:
+            name: FT8
+            description: Falling trigger event configuration of line 8
+            bitOffset: 8
+            bitWidth: 1
+          FT9:
+            name: FT9
+            description: Falling trigger event configuration of line 9
+            bitOffset: 9
+            bitWidth: 1
+          FT10:
+            name: FT10
+            description: Falling trigger event configuration of line 10
+            bitOffset: 10
+            bitWidth: 1
+          FT11:
+            name: FT11
+            description: Falling trigger event configuration of line 11
+            bitOffset: 11
+            bitWidth: 1
+          FT12:
+            name: FT12
+            description: Falling trigger event configuration of line 12
+            bitOffset: 12
+            bitWidth: 1
+          FT13:
+            name: FT13
+            description: Falling trigger event configuration of line 13
+            bitOffset: 13
+            bitWidth: 1
+          FT14:
+            name: FT14
+            description: Falling trigger event configuration of line 14
+            bitOffset: 14
+            bitWidth: 1
+          FT15:
+            name: FT15
+            description: Falling trigger event configuration of line 15
+            bitOffset: 15
+            bitWidth: 1
+          FT16:
+            name: FT16
+            description: Falling trigger event configuration of line 16
+            bitOffset: 16
+            bitWidth: 1
+          FT17:
+            name: FT17
+            description: Falling trigger event configuration of line 17
+            bitOffset: 17
+            bitWidth: 1
+          FT19:
+            name: FT19
+            description: Falling trigger event configuration of line 19
+            bitOffset: 19
+            bitWidth: 1
+          FT20:
+            name: FT20
+            description: Falling trigger event configuration of line 20
+            bitOffset: 20
+            bitWidth: 1
+          FT21:
+            name: FT21
+            description: Falling trigger event configuration of line 21
+            bitOffset: 21
+            bitWidth: 1
+          FT22:
+            name: FT22
+            description: Falling trigger event configuration of line 22
+            bitOffset: 22
+            bitWidth: 1
+      SWIER1:
+        name: SWIER1
+        displayName: SWIER1
+        description: Software interrupt event register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SWI0:
+            name: SWI0
+            description: Software Interrupt on line 0
+            bitOffset: 0
+            bitWidth: 1
+          SWI1:
+            name: SWI1
+            description: Software Interrupt on line 1
+            bitOffset: 1
+            bitWidth: 1
+          SWI2:
+            name: SWI2
+            description: Software Interrupt on line 2
+            bitOffset: 2
+            bitWidth: 1
+          SWI3:
+            name: SWI3
+            description: Software Interrupt on line 3
+            bitOffset: 3
+            bitWidth: 1
+          SWI4:
+            name: SWI4
+            description: Software Interrupt on line 4
+            bitOffset: 4
+            bitWidth: 1
+          SWI5:
+            name: SWI5
+            description: Software Interrupt on line 5
+            bitOffset: 5
+            bitWidth: 1
+          SWI6:
+            name: SWI6
+            description: Software Interrupt on line 6
+            bitOffset: 6
+            bitWidth: 1
+          SWI7:
+            name: SWI7
+            description: Software Interrupt on line 7
+            bitOffset: 7
+            bitWidth: 1
+          SWI8:
+            name: SWI8
+            description: Software Interrupt on line 8
+            bitOffset: 8
+            bitWidth: 1
+          SWI9:
+            name: SWI9
+            description: Software Interrupt on line 9
+            bitOffset: 9
+            bitWidth: 1
+          SWI10:
+            name: SWI10
+            description: Software Interrupt on line 10
+            bitOffset: 10
+            bitWidth: 1
+          SWI11:
+            name: SWI11
+            description: Software Interrupt on line 11
+            bitOffset: 11
+            bitWidth: 1
+          SWI12:
+            name: SWI12
+            description: Software Interrupt on line 12
+            bitOffset: 12
+            bitWidth: 1
+          SWI13:
+            name: SWI13
+            description: Software Interrupt on line 13
+            bitOffset: 13
+            bitWidth: 1
+          SWI14:
+            name: SWI14
+            description: Software Interrupt on line 14
+            bitOffset: 14
+            bitWidth: 1
+          SWI15:
+            name: SWI15
+            description: Software Interrupt on line 15
+            bitOffset: 15
+            bitWidth: 1
+          SWI16:
+            name: SWI16
+            description: Software Interrupt on line 16
+            bitOffset: 16
+            bitWidth: 1
+          SWI17:
+            name: SWI17
+            description: Software Interrupt on line 17
+            bitOffset: 17
+            bitWidth: 1
+          SWI19:
+            name: SWI19
+            description: Software Interrupt on line 19
+            bitOffset: 19
+            bitWidth: 1
+          SWI20:
+            name: SWI20
+            description: Software Interrupt on line 20
+            bitOffset: 20
+            bitWidth: 1
+          SWI21:
+            name: SWI21
+            description: Software Interrupt on line 21
+            bitOffset: 21
+            bitWidth: 1
+          SWI22:
+            name: SWI22
+            description: Software Interrupt on line 22
+            bitOffset: 22
+            bitWidth: 1
+      PR1:
+        name: PR1
+        displayName: PR1
+        description: Pending register
+        addressOffset: 20
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          PIF0:
+            name: PIF0
+            description: Pending bit 0
+            bitOffset: 0
+            bitWidth: 1
+          PIF1:
+            name: PIF1
+            description: Pending bit 1
+            bitOffset: 1
+            bitWidth: 1
+          PIF2:
+            name: PIF2
+            description: Pending bit 2
+            bitOffset: 2
+            bitWidth: 1
+          PIF3:
+            name: PIF3
+            description: Pending bit 3
+            bitOffset: 3
+            bitWidth: 1
+          PIF4:
+            name: PIF4
+            description: Pending bit 4
+            bitOffset: 4
+            bitWidth: 1
+          PIF5:
+            name: PIF5
+            description: Pending bit 5
+            bitOffset: 5
+            bitWidth: 1
+          PIF6:
+            name: PIF6
+            description: Pending bit 6
+            bitOffset: 6
+            bitWidth: 1
+          PIF7:
+            name: PIF7
+            description: Pending bit 7
+            bitOffset: 7
+            bitWidth: 1
+          PIF8:
+            name: PIF8
+            description: Pending bit 8
+            bitOffset: 8
+            bitWidth: 1
+          PIF9:
+            name: PIF9
+            description: Pending bit 9
+            bitOffset: 9
+            bitWidth: 1
+          PIF10:
+            name: PIF10
+            description: Pending bit 10
+            bitOffset: 10
+            bitWidth: 1
+          PIF11:
+            name: PIF11
+            description: Pending bit 11
+            bitOffset: 11
+            bitWidth: 1
+          PIF12:
+            name: PIF12
+            description: Pending bit 12
+            bitOffset: 12
+            bitWidth: 1
+          PIF13:
+            name: PIF13
+            description: Pending bit 13
+            bitOffset: 13
+            bitWidth: 1
+          PIF14:
+            name: PIF14
+            description: Pending bit 14
+            bitOffset: 14
+            bitWidth: 1
+          PIF15:
+            name: PIF15
+            description: Pending bit 15
+            bitOffset: 15
+            bitWidth: 1
+          PIF16:
+            name: PIF16
+            description: Pending bit 16
+            bitOffset: 16
+            bitWidth: 1
+          PIF17:
+            name: PIF17
+            description: Pending bit 17
+            bitOffset: 17
+            bitWidth: 1
+          PIF19:
+            name: PIF19
+            description: Pending bit 19
+            bitOffset: 19
+            bitWidth: 1
+          PIF20:
+            name: PIF20
+            description: Pending bit 20
+            bitOffset: 20
+            bitWidth: 1
+          PIF21:
+            name: PIF21
+            description: Pending bit 21
+            bitOffset: 21
+            bitWidth: 1
+          PIF22:
+            name: PIF22
+            description: Pending bit 22
+            bitOffset: 22
+            bitWidth: 1
+      IMR2:
+        name: IMR2
+        displayName: IMR2
+        description: Interrupt mask register
+        addressOffset: 32
+        size: 32
+        access: read-write
+        resetValue: 4294967175
+        fields:
+          IM32:
+            name: IM32
+            description: Interrupt Mask on external/internal line 32
+            bitOffset: 0
+            bitWidth: 1
+          IM33:
+            name: IM33
+            description: Interrupt Mask on external/internal line 33
+            bitOffset: 1
+            bitWidth: 1
+          IM34:
+            name: IM34
+            description: Interrupt Mask on external/internal line 34
+            bitOffset: 2
+            bitWidth: 1
+          IM35:
+            name: IM35
+            description: Interrupt Mask on external/internal line 35
+            bitOffset: 3
+            bitWidth: 1
+          IM36:
+            name: IM36
+            description: Interrupt Mask on external/internal line 36
+            bitOffset: 4
+            bitWidth: 1
+          IM37:
+            name: IM37
+            description: Interrupt Mask on external/internal line 37
+            bitOffset: 5
+            bitWidth: 1
+          IM38:
+            name: IM38
+            description: Interrupt Mask on external/internal line 38
+            bitOffset: 6
+            bitWidth: 1
+          IM39:
+            name: IM39
+            description: Interrupt Mask on external/internal line 39
+            bitOffset: 7
+            bitWidth: 1
+          IM40:
+            name: IM40
+            description: Interrupt Mask on external/internal line 40
+            bitOffset: 8
+            bitWidth: 1
+          IM41:
+            name: IM41
+            description: Interrupt Mask on external/internal line 41
+            bitOffset: 9
+            bitWidth: 1
+          IM42:
+            name: IM42
+            description: Interrupt Mask on external/internal line 42
+            bitOffset: 10
+            bitWidth: 1
+          IM43:
+            name: IM43
+            description: Interrupt Mask on external/internal line 43
+            bitOffset: 11
+            bitWidth: 1
+      EMR2:
+        name: EMR2
+        displayName: EMR2
+        description: Event mask register
+        addressOffset: 36
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          EM32:
+            name: EM32
+            description: Event mask on external/internal line 32
+            bitOffset: 0
+            bitWidth: 1
+          EM33:
+            name: EM33
+            description: Event mask on external/internal line 33
+            bitOffset: 1
+            bitWidth: 1
+          EM34:
+            name: EM34
+            description: Event mask on external/internal line 34
+            bitOffset: 2
+            bitWidth: 1
+          EM35:
+            name: EM35
+            description: Event mask on external/internal line 35
+            bitOffset: 3
+            bitWidth: 1
+          EM36:
+            name: EM36
+            description: Event mask on external/internal line 36
+            bitOffset: 4
+            bitWidth: 1
+          EM37:
+            name: EM37
+            description: Event mask on external/internal line 37
+            bitOffset: 5
+            bitWidth: 1
+          EM38:
+            name: EM38
+            description: Event mask on external/internal line 38
+            bitOffset: 6
+            bitWidth: 1
+          EM39:
+            name: EM39
+            description: Event mask on external/internal line 39
+            bitOffset: 7
+            bitWidth: 1
+          EM40:
+            name: EM40
+            description: Event mask on external/internal line 40
+            bitOffset: 8
+            bitWidth: 1
+      RTSR2:
+        name: RTSR2
+        displayName: RTSR2
+        description: Rising Trigger selection register
+        addressOffset: 40
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          RT32:
+            name: RT32
+            description: Rising trigger event configuration bit of line 32
+            bitOffset: 0
+            bitWidth: 1
+          RT33:
+            name: RT33
+            description: Rising trigger event configuration bit of line 32
+            bitOffset: 1
+            bitWidth: 1
+          RT38:
+            name: RT38
+            description: Rising trigger event configuration bit of line 38
+            bitOffset: 6
+            bitWidth: 1
+          RT39:
+            name: RT39
+            description: Rising trigger event configuration bit of line 39
+            bitOffset: 7
+            bitWidth: 1
+          RT40:
+            name: RT40
+            description: Rising trigger event configuration bit of line 40
+            bitOffset: 8
+            bitWidth: 1
+          RT41:
+            name: RT41
+            description: Rising trigger event configuration bit of line 41
+            bitOffset: 9
+            bitWidth: 1
+      FTSR2:
+        name: FTSR2
+        displayName: FTSR2
+        description: Falling Trigger selection register
+        addressOffset: 44
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          FT35:
+            name: FT35
+            description: Falling trigger event configuration bit of line 35
+            bitOffset: 3
+            bitWidth: 1
+          FT36:
+            name: FT36
+            description: Falling trigger event configuration bit of line 36
+            bitOffset: 4
+            bitWidth: 1
+          FT37:
+            name: FT37
+            description: Falling trigger event configuration bit of line 37
+            bitOffset: 5
+            bitWidth: 1
+          FT38:
+            name: FT38
+            description: Falling trigger event configuration bit of line 38
+            bitOffset: 6
+            bitWidth: 1
+      SWIER2:
+        name: SWIER2
+        displayName: SWIER2
+        description: Software interrupt event register
+        addressOffset: 48
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SWI35:
+            name: SWI35
+            description: Software interrupt on line 35
+            bitOffset: 3
+            bitWidth: 1
+          SWI36:
+            name: SWI36
+            description: Software interrupt on line 36
+            bitOffset: 4
+            bitWidth: 1
+          SWI37:
+            name: SWI37
+            description: Software interrupt on line 37
+            bitOffset: 5
+            bitWidth: 1
+          SWI38:
+            name: SWI38
+            description: Software interrupt on line 38
+            bitOffset: 6
+            bitWidth: 1
+      PR2:
+        name: PR2
+        displayName: PR2
+        description: Pending register
+        addressOffset: 52
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          PIF35:
+            name: PIF35
+            description: Pending interrupt flag on line 35
+            bitOffset: 3
+            bitWidth: 1
+          PIF36:
+            name: PIF36
+            description: Pending interrupt flag on line 36
+            bitOffset: 4
+            bitWidth: 1
+          PIF37:
+            name: PIF37
+            description: Pending interrupt flag on line 37
+            bitOffset: 5
+            bitWidth: 1
+          PIF38:
+            name: PIF38
+            description: Pending interrupt flag on line 38
+            bitOffset: 6
+            bitWidth: 1

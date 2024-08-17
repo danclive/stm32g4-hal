@@ -1,0 +1,998 @@
+_add:
+  ADC1:
+    name: ADC1
+    description: Analog-to-Digital Converter
+    groupName: ADC
+    baseAddress: 1342177280
+    addressBlock:
+      offset: 0
+      size: 208
+      usage: registers
+    interrupts:
+      ADC1_2:
+        name: ADC1_2
+        description: ADC1 and ADC2 global interrupt
+        value: 18
+    registers:
+      ISR:
+        name: ISR
+        displayName: ISR
+        description: interrupt and status register
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          JQOVF:
+            name: JQOVF
+            description: JQOVF
+            bitOffset: 10
+            bitWidth: 1
+          AWD3:
+            name: AWD3
+            description: AWD3
+            bitOffset: 9
+            bitWidth: 1
+          AWD2:
+            name: AWD2
+            description: AWD2
+            bitOffset: 8
+            bitWidth: 1
+          AWD1:
+            name: AWD1
+            description: AWD1
+            bitOffset: 7
+            bitWidth: 1
+          JEOS:
+            name: JEOS
+            description: JEOS
+            bitOffset: 6
+            bitWidth: 1
+          JEOC:
+            name: JEOC
+            description: JEOC
+            bitOffset: 5
+            bitWidth: 1
+          OVR:
+            name: OVR
+            description: OVR
+            bitOffset: 4
+            bitWidth: 1
+          EOS:
+            name: EOS
+            description: EOS
+            bitOffset: 3
+            bitWidth: 1
+          EOC:
+            name: EOC
+            description: EOC
+            bitOffset: 2
+            bitWidth: 1
+          EOSMP:
+            name: EOSMP
+            description: EOSMP
+            bitOffset: 1
+            bitWidth: 1
+          ADRDY:
+            name: ADRDY
+            description: ADRDY
+            bitOffset: 0
+            bitWidth: 1
+      IER:
+        name: IER
+        displayName: IER
+        description: interrupt enable register
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          JQOVFIE:
+            name: JQOVFIE
+            description: JQOVFIE
+            bitOffset: 10
+            bitWidth: 1
+          AWD3IE:
+            name: AWD3IE
+            description: AWD3IE
+            bitOffset: 9
+            bitWidth: 1
+          AWD2IE:
+            name: AWD2IE
+            description: AWD2IE
+            bitOffset: 8
+            bitWidth: 1
+          AWD1IE:
+            name: AWD1IE
+            description: AWD1IE
+            bitOffset: 7
+            bitWidth: 1
+          JEOSIE:
+            name: JEOSIE
+            description: JEOSIE
+            bitOffset: 6
+            bitWidth: 1
+          JEOCIE:
+            name: JEOCIE
+            description: JEOCIE
+            bitOffset: 5
+            bitWidth: 1
+          OVRIE:
+            name: OVRIE
+            description: OVRIE
+            bitOffset: 4
+            bitWidth: 1
+          EOSIE:
+            name: EOSIE
+            description: EOSIE
+            bitOffset: 3
+            bitWidth: 1
+          EOCIE:
+            name: EOCIE
+            description: EOCIE
+            bitOffset: 2
+            bitWidth: 1
+          EOSMPIE:
+            name: EOSMPIE
+            description: EOSMPIE
+            bitOffset: 1
+            bitWidth: 1
+          ADRDYIE:
+            name: ADRDYIE
+            description: ADRDYIE
+            bitOffset: 0
+            bitWidth: 1
+      CR:
+        name: CR
+        displayName: CR
+        description: control register
+        addressOffset: 8
+        size: 32
+        access: read-write
+        resetValue: 536870912
+        fields:
+          ADCAL:
+            name: ADCAL
+            description: ADCAL
+            bitOffset: 31
+            bitWidth: 1
+          ADCALDIF:
+            name: ADCALDIF
+            description: ADCALDIF
+            bitOffset: 30
+            bitWidth: 1
+          DEEPPWD:
+            name: DEEPPWD
+            description: DEEPPWD
+            bitOffset: 29
+            bitWidth: 1
+          ADVREGEN:
+            name: ADVREGEN
+            description: ADVREGEN
+            bitOffset: 28
+            bitWidth: 1
+          JADSTP:
+            name: JADSTP
+            description: JADSTP
+            bitOffset: 5
+            bitWidth: 1
+          ADSTP:
+            name: ADSTP
+            description: ADSTP
+            bitOffset: 4
+            bitWidth: 1
+          JADSTART:
+            name: JADSTART
+            description: JADSTART
+            bitOffset: 3
+            bitWidth: 1
+          ADSTART:
+            name: ADSTART
+            description: ADSTART
+            bitOffset: 2
+            bitWidth: 1
+          ADDIS:
+            name: ADDIS
+            description: ADDIS
+            bitOffset: 1
+            bitWidth: 1
+          ADEN:
+            name: ADEN
+            description: ADEN
+            bitOffset: 0
+            bitWidth: 1
+      CFGR:
+        name: CFGR
+        displayName: CFGR
+        description: configuration register
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 2147483648
+        fields:
+          JQDIS:
+            name: JQDIS
+            description: Injected Queue disable
+            bitOffset: 31
+            bitWidth: 1
+          AWD1CH:
+            name: AWD1CH
+            description: Analog watchdog 1 channel selection
+            bitOffset: 26
+            bitWidth: 5
+          JAUTO:
+            name: JAUTO
+            description: JAUTO
+            bitOffset: 25
+            bitWidth: 1
+          JAWD1EN:
+            name: JAWD1EN
+            description: JAWD1EN
+            bitOffset: 24
+            bitWidth: 1
+          AWD1EN:
+            name: AWD1EN
+            description: AWD1EN
+            bitOffset: 23
+            bitWidth: 1
+          AWD1SGL:
+            name: AWD1SGL
+            description: AWD1SGL
+            bitOffset: 22
+            bitWidth: 1
+          JQM:
+            name: JQM
+            description: JQM
+            bitOffset: 21
+            bitWidth: 1
+          JDISCEN:
+            name: JDISCEN
+            description: JDISCEN
+            bitOffset: 20
+            bitWidth: 1
+          DISCNUM:
+            name: DISCNUM
+            description: DISCNUM
+            bitOffset: 17
+            bitWidth: 3
+          DISCEN:
+            name: DISCEN
+            description: DISCEN
+            bitOffset: 16
+            bitWidth: 1
+          ALIGN:
+            name: ALIGN
+            description: ALIGN
+            bitOffset: 15
+            bitWidth: 1
+          AUTDLY:
+            name: AUTDLY
+            description: AUTDLY
+            bitOffset: 14
+            bitWidth: 1
+          CONT:
+            name: CONT
+            description: CONT
+            bitOffset: 13
+            bitWidth: 1
+          OVRMOD:
+            name: OVRMOD
+            description: OVRMOD
+            bitOffset: 12
+            bitWidth: 1
+          EXTEN:
+            name: EXTEN
+            description: EXTEN
+            bitOffset: 10
+            bitWidth: 2
+          EXTSEL:
+            name: EXTSEL
+            description: External trigger selection for regular group
+            bitOffset: 5
+            bitWidth: 5
+          RES:
+            name: RES
+            description: RES
+            bitOffset: 3
+            bitWidth: 2
+          DMACFG:
+            name: DMACFG
+            description: DMACFG
+            bitOffset: 1
+            bitWidth: 1
+          DMAEN:
+            name: DMAEN
+            description: DMAEN
+            bitOffset: 0
+            bitWidth: 1
+      CFGR2:
+        name: CFGR2
+        displayName: CFGR2
+        description: configuration register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SMPTRIG:
+            name: SMPTRIG
+            description: SMPTRIG
+            bitOffset: 27
+            bitWidth: 1
+          BULB:
+            name: BULB
+            description: BULB
+            bitOffset: 26
+            bitWidth: 1
+          SWTRIG:
+            name: SWTRIG
+            description: SWTRIG
+            bitOffset: 25
+            bitWidth: 1
+          GCOMP:
+            name: GCOMP
+            description: GCOMP
+            bitOffset: 16
+            bitWidth: 1
+          ROVSM:
+            name: ROVSM
+            description: EXTEN
+            bitOffset: 10
+            bitWidth: 1
+          TROVS:
+            name: TROVS
+            description: Triggered Regular Oversampling
+            bitOffset: 9
+            bitWidth: 1
+          OVSS:
+            name: OVSS
+            description: ALIGN
+            bitOffset: 5
+            bitWidth: 4
+          OVSR:
+            name: OVSR
+            description: RES
+            bitOffset: 2
+            bitWidth: 3
+          JOVSE:
+            name: JOVSE
+            description: DMACFG
+            bitOffset: 1
+            bitWidth: 1
+          ROVSE:
+            name: ROVSE
+            description: DMAEN
+            bitOffset: 0
+            bitWidth: 1
+      SMPR1:
+        name: SMPR1
+        displayName: SMPR1
+        description: sample time register 1
+        addressOffset: 20
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SMP9:
+            name: SMP9
+            description: SMP9
+            bitOffset: 27
+            bitWidth: 3
+          SMP8:
+            name: SMP8
+            description: SMP8
+            bitOffset: 24
+            bitWidth: 3
+          SMP7:
+            name: SMP7
+            description: SMP7
+            bitOffset: 21
+            bitWidth: 3
+          SMP6:
+            name: SMP6
+            description: SMP6
+            bitOffset: 18
+            bitWidth: 3
+          SMP5:
+            name: SMP5
+            description: SMP5
+            bitOffset: 15
+            bitWidth: 3
+          SMP4:
+            name: SMP4
+            description: SMP4
+            bitOffset: 12
+            bitWidth: 3
+          SMP3:
+            name: SMP3
+            description: SMP3
+            bitOffset: 9
+            bitWidth: 3
+          SMP2:
+            name: SMP2
+            description: SMP2
+            bitOffset: 6
+            bitWidth: 3
+          SMP1:
+            name: SMP1
+            description: SMP1
+            bitOffset: 3
+            bitWidth: 3
+          SMPPLUS:
+            name: SMPPLUS
+            description: Addition of one clock cycle to the sampling time
+            bitOffset: 31
+            bitWidth: 1
+          SMP0:
+            name: SMP0
+            description: SMP0
+            bitOffset: 0
+            bitWidth: 3
+      SMPR2:
+        name: SMPR2
+        displayName: SMPR2
+        description: sample time register 2
+        addressOffset: 24
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SMP18:
+            name: SMP18
+            description: SMP18
+            bitOffset: 24
+            bitWidth: 3
+          SMP17:
+            name: SMP17
+            description: SMP17
+            bitOffset: 21
+            bitWidth: 3
+          SMP16:
+            name: SMP16
+            description: SMP16
+            bitOffset: 18
+            bitWidth: 3
+          SMP15:
+            name: SMP15
+            description: SMP15
+            bitOffset: 15
+            bitWidth: 3
+          SMP14:
+            name: SMP14
+            description: SMP14
+            bitOffset: 12
+            bitWidth: 3
+          SMP13:
+            name: SMP13
+            description: SMP13
+            bitOffset: 9
+            bitWidth: 3
+          SMP12:
+            name: SMP12
+            description: SMP12
+            bitOffset: 6
+            bitWidth: 3
+          SMP11:
+            name: SMP11
+            description: SMP11
+            bitOffset: 3
+            bitWidth: 3
+          SMP10:
+            name: SMP10
+            description: SMP10
+            bitOffset: 0
+            bitWidth: 3
+      TR1:
+        name: TR1
+        displayName: TR1
+        description: watchdog threshold register 1
+        addressOffset: 32
+        size: 32
+        access: read-write
+        resetValue: 268369920
+        fields:
+          HT1:
+            name: HT1
+            description: HT1
+            bitOffset: 16
+            bitWidth: 12
+          AWDFILT:
+            name: AWDFILT
+            description: AWDFILT
+            bitOffset: 12
+            bitWidth: 3
+          LT1:
+            name: LT1
+            description: LT1
+            bitOffset: 0
+            bitWidth: 12
+      TR2:
+        name: TR2
+        displayName: TR2
+        description: watchdog threshold register
+        addressOffset: 36
+        size: 32
+        access: read-write
+        resetValue: 16711680
+        fields:
+          HT2:
+            name: HT2
+            description: HT2
+            bitOffset: 16
+            bitWidth: 8
+          LT2:
+            name: LT2
+            description: LT2
+            bitOffset: 0
+            bitWidth: 8
+      TR3:
+        name: TR3
+        displayName: TR3
+        description: watchdog threshold register 3
+        addressOffset: 40
+        size: 32
+        access: read-write
+        resetValue: 16711680
+        fields:
+          HT3:
+            name: HT3
+            description: HT3
+            bitOffset: 16
+            bitWidth: 8
+          LT3:
+            name: LT3
+            description: LT3
+            bitOffset: 0
+            bitWidth: 8
+      SQR1:
+        name: SQR1
+        displayName: SQR1
+        description: regular sequence register 1
+        addressOffset: 48
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SQ4:
+            name: SQ4
+            description: SQ4
+            bitOffset: 24
+            bitWidth: 5
+          SQ3:
+            name: SQ3
+            description: SQ3
+            bitOffset: 18
+            bitWidth: 5
+          SQ2:
+            name: SQ2
+            description: SQ2
+            bitOffset: 12
+            bitWidth: 5
+          SQ1:
+            name: SQ1
+            description: SQ1
+            bitOffset: 6
+            bitWidth: 5
+          L:
+            name: L
+            description: Regular channel sequence length
+            bitOffset: 0
+            bitWidth: 4
+      SQR2:
+        name: SQR2
+        displayName: SQR2
+        description: regular sequence register 2
+        addressOffset: 52
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SQ9:
+            name: SQ9
+            description: SQ9
+            bitOffset: 24
+            bitWidth: 5
+          SQ8:
+            name: SQ8
+            description: SQ8
+            bitOffset: 18
+            bitWidth: 5
+          SQ7:
+            name: SQ7
+            description: SQ7
+            bitOffset: 12
+            bitWidth: 5
+          SQ6:
+            name: SQ6
+            description: SQ6
+            bitOffset: 6
+            bitWidth: 5
+          SQ5:
+            name: SQ5
+            description: SQ5
+            bitOffset: 0
+            bitWidth: 5
+      SQR3:
+        name: SQR3
+        displayName: SQR3
+        description: regular sequence register 3
+        addressOffset: 56
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SQ14:
+            name: SQ14
+            description: SQ14
+            bitOffset: 24
+            bitWidth: 5
+          SQ13:
+            name: SQ13
+            description: SQ13
+            bitOffset: 18
+            bitWidth: 5
+          SQ12:
+            name: SQ12
+            description: SQ12
+            bitOffset: 12
+            bitWidth: 5
+          SQ11:
+            name: SQ11
+            description: SQ11
+            bitOffset: 6
+            bitWidth: 5
+          SQ10:
+            name: SQ10
+            description: SQ10
+            bitOffset: 0
+            bitWidth: 5
+      SQR4:
+        name: SQR4
+        displayName: SQR4
+        description: regular sequence register 4
+        addressOffset: 60
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SQ16:
+            name: SQ16
+            description: SQ16
+            bitOffset: 6
+            bitWidth: 5
+          SQ15:
+            name: SQ15
+            description: SQ15
+            bitOffset: 0
+            bitWidth: 5
+      DR:
+        name: DR
+        displayName: DR
+        description: regular Data Register
+        addressOffset: 64
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          RDATA:
+            name: RDATA
+            description: Regular Data converted
+            bitOffset: 0
+            bitWidth: 16
+      JSQR:
+        name: JSQR
+        displayName: JSQR
+        description: injected sequence register
+        addressOffset: 76
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          JSQ4:
+            name: JSQ4
+            description: JSQ4
+            bitOffset: 27
+            bitWidth: 5
+          JSQ3:
+            name: JSQ3
+            description: JSQ3
+            bitOffset: 21
+            bitWidth: 5
+          JSQ2:
+            name: JSQ2
+            description: JSQ2
+            bitOffset: 15
+            bitWidth: 5
+          JSQ1:
+            name: JSQ1
+            description: JSQ1
+            bitOffset: 9
+            bitWidth: 5
+          JEXTEN:
+            name: JEXTEN
+            description: JEXTEN
+            bitOffset: 7
+            bitWidth: 2
+          JEXTSEL:
+            name: JEXTSEL
+            description: JEXTSEL
+            bitOffset: 2
+            bitWidth: 5
+          JL:
+            name: JL
+            description: JL
+            bitOffset: 0
+            bitWidth: 2
+      OFR1:
+        name: OFR1
+        displayName: OFR1
+        description: offset register 1
+        addressOffset: 96
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OFFSET1_EN:
+            name: OFFSET1_EN
+            description: OFFSET1_EN
+            bitOffset: 31
+            bitWidth: 1
+          OFFSET1_CH:
+            name: OFFSET1_CH
+            description: OFFSET1_CH
+            bitOffset: 26
+            bitWidth: 5
+          SATEN:
+            name: SATEN
+            description: SATEN
+            bitOffset: 25
+            bitWidth: 1
+          OFFSETPOS:
+            name: OFFSETPOS
+            description: OFFSETPOS
+            bitOffset: 24
+            bitWidth: 1
+          OFFSET1:
+            name: OFFSET1
+            description: OFFSET1
+            bitOffset: 0
+            bitWidth: 12
+      OFR2:
+        name: OFR2
+        displayName: OFR2
+        description: offset register 2
+        addressOffset: 100
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OFFSET1_EN:
+            name: OFFSET1_EN
+            description: OFFSET1_EN
+            bitOffset: 31
+            bitWidth: 1
+          OFFSET1_CH:
+            name: OFFSET1_CH
+            description: OFFSET1_CH
+            bitOffset: 26
+            bitWidth: 5
+          SATEN:
+            name: SATEN
+            description: SATEN
+            bitOffset: 25
+            bitWidth: 1
+          OFFSETPOS:
+            name: OFFSETPOS
+            description: OFFSETPOS
+            bitOffset: 24
+            bitWidth: 1
+          OFFSET1:
+            name: OFFSET1
+            description: OFFSET1
+            bitOffset: 0
+            bitWidth: 12
+      OFR3:
+        name: OFR3
+        displayName: OFR3
+        description: offset register 3
+        addressOffset: 104
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OFFSET1_EN:
+            name: OFFSET1_EN
+            description: OFFSET1_EN
+            bitOffset: 31
+            bitWidth: 1
+          OFFSET1_CH:
+            name: OFFSET1_CH
+            description: OFFSET1_CH
+            bitOffset: 26
+            bitWidth: 5
+          SATEN:
+            name: SATEN
+            description: SATEN
+            bitOffset: 25
+            bitWidth: 1
+          OFFSETPOS:
+            name: OFFSETPOS
+            description: OFFSETPOS
+            bitOffset: 24
+            bitWidth: 1
+          OFFSET1:
+            name: OFFSET1
+            description: OFFSET1
+            bitOffset: 0
+            bitWidth: 12
+      OFR4:
+        name: OFR4
+        displayName: OFR4
+        description: offset register 4
+        addressOffset: 108
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OFFSET1_EN:
+            name: OFFSET1_EN
+            description: OFFSET1_EN
+            bitOffset: 31
+            bitWidth: 1
+          OFFSET1_CH:
+            name: OFFSET1_CH
+            description: OFFSET1_CH
+            bitOffset: 26
+            bitWidth: 5
+          SATEN:
+            name: SATEN
+            description: SATEN
+            bitOffset: 25
+            bitWidth: 1
+          OFFSETPOS:
+            name: OFFSETPOS
+            description: OFFSETPOS
+            bitOffset: 24
+            bitWidth: 1
+          OFFSET1:
+            name: OFFSET1
+            description: OFFSET1
+            bitOffset: 0
+            bitWidth: 12
+      JDR1:
+        name: JDR1
+        displayName: JDR1
+        description: injected data register 1
+        addressOffset: 128
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          JDATA1:
+            name: JDATA1
+            description: JDATA1
+            bitOffset: 0
+            bitWidth: 16
+      JDR2:
+        name: JDR2
+        displayName: JDR2
+        description: injected data register 2
+        addressOffset: 132
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          JDATA2:
+            name: JDATA2
+            description: JDATA2
+            bitOffset: 0
+            bitWidth: 16
+      JDR3:
+        name: JDR3
+        displayName: JDR3
+        description: injected data register 3
+        addressOffset: 136
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          JDATA3:
+            name: JDATA3
+            description: JDATA3
+            bitOffset: 0
+            bitWidth: 16
+      JDR4:
+        name: JDR4
+        displayName: JDR4
+        description: injected data register 4
+        addressOffset: 140
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          JDATA4:
+            name: JDATA4
+            description: JDATA4
+            bitOffset: 0
+            bitWidth: 16
+      AWD2CR:
+        name: AWD2CR
+        displayName: AWD2CR
+        description: Analog Watchdog 2 Configuration Register
+        addressOffset: 160
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          AWD2CH:
+            name: AWD2CH
+            description: AWD2CH
+            bitOffset: 0
+            bitWidth: 19
+      AWD3CR:
+        name: AWD3CR
+        displayName: AWD3CR
+        description: Analog Watchdog 3 Configuration Register
+        addressOffset: 164
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          AWD3CH:
+            name: AWD3CH
+            description: AWD3CH
+            bitOffset: 0
+            bitWidth: 19
+      DIFSEL:
+        name: DIFSEL
+        displayName: DIFSEL
+        description: Differential Mode Selection Register 2
+        addressOffset: 176
+        size: 32
+        resetValue: 0
+        fields:
+          DIFSEL_0:
+            name: DIFSEL_0
+            description: Differential mode for channels 0
+            bitOffset: 0
+            bitWidth: 1
+            access: read-only
+          DIFSEL_1_18:
+            name: DIFSEL_1_18
+            description: Differential mode for channels 15 to 1
+            bitOffset: 1
+            bitWidth: 18
+            access: read-write
+      CALFACT:
+        name: CALFACT
+        displayName: CALFACT
+        description: Calibration Factors
+        addressOffset: 180
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CALFACT_D:
+            name: CALFACT_D
+            description: CALFACT_D
+            bitOffset: 16
+            bitWidth: 7
+          CALFACT_S:
+            name: CALFACT_S
+            description: CALFACT_S
+            bitOffset: 0
+            bitWidth: 7
+      GCOMP:
+        name: GCOMP
+        displayName: GCOMP
+        description: Gain compensation Register
+        addressOffset: 192
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          GCOMPCOEFF:
+            name: GCOMPCOEFF
+            description: GCOMPCOEFF
+            bitOffset: 0
+            bitWidth: 14

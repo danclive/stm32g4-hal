@@ -1,0 +1,799 @@
+_add:
+  UART4:
+    name: UART4
+    description: Universal synchronous asynchronous receiver transmitter
+    groupName: USART
+    baseAddress: 1073761280
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      UART4:
+        name: UART4
+        description: UART4
+        value: 52
+    registers:
+      CR1:
+        name: CR1
+        displayName: CR1
+        description: Control register 1
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          RXFFIE:
+            name: RXFFIE
+            description: RXFFIE
+            bitOffset: 31
+            bitWidth: 1
+          TXFEIE:
+            name: TXFEIE
+            description: TXFEIE
+            bitOffset: 30
+            bitWidth: 1
+          FIFOEN:
+            name: FIFOEN
+            description: FIFOEN
+            bitOffset: 29
+            bitWidth: 1
+          M1:
+            name: M1
+            description: M1
+            bitOffset: 28
+            bitWidth: 1
+          EOBIE:
+            name: EOBIE
+            description: End of Block interrupt enable
+            bitOffset: 27
+            bitWidth: 1
+          RTOIE:
+            name: RTOIE
+            description: Receiver timeout interrupt enable
+            bitOffset: 26
+            bitWidth: 1
+          DEAT4:
+            name: DEAT4
+            description: Driver Enable assertion time
+            bitOffset: 25
+            bitWidth: 1
+          DEAT3:
+            name: DEAT3
+            description: DEAT3
+            bitOffset: 24
+            bitWidth: 1
+          DEAT2:
+            name: DEAT2
+            description: DEAT2
+            bitOffset: 23
+            bitWidth: 1
+          DEAT1:
+            name: DEAT1
+            description: DEAT1
+            bitOffset: 22
+            bitWidth: 1
+          DEAT0:
+            name: DEAT0
+            description: DEAT0
+            bitOffset: 21
+            bitWidth: 1
+          DEDT4:
+            name: DEDT4
+            description: Driver Enable de-assertion time
+            bitOffset: 20
+            bitWidth: 1
+          DEDT3:
+            name: DEDT3
+            description: DEDT3
+            bitOffset: 19
+            bitWidth: 1
+          DEDT2:
+            name: DEDT2
+            description: DEDT2
+            bitOffset: 18
+            bitWidth: 1
+          DEDT1:
+            name: DEDT1
+            description: DEDT1
+            bitOffset: 17
+            bitWidth: 1
+          DEDT0:
+            name: DEDT0
+            description: DEDT0
+            bitOffset: 16
+            bitWidth: 1
+          OVER8:
+            name: OVER8
+            description: Oversampling mode
+            bitOffset: 15
+            bitWidth: 1
+          CMIE:
+            name: CMIE
+            description: Character match interrupt enable
+            bitOffset: 14
+            bitWidth: 1
+          MME:
+            name: MME
+            description: Mute mode enable
+            bitOffset: 13
+            bitWidth: 1
+          M0:
+            name: M0
+            description: Word length
+            bitOffset: 12
+            bitWidth: 1
+          WAKE:
+            name: WAKE
+            description: Receiver wakeup method
+            bitOffset: 11
+            bitWidth: 1
+          PCE:
+            name: PCE
+            description: Parity control enable
+            bitOffset: 10
+            bitWidth: 1
+          PS:
+            name: PS
+            description: Parity selection
+            bitOffset: 9
+            bitWidth: 1
+          PEIE:
+            name: PEIE
+            description: PE interrupt enable
+            bitOffset: 8
+            bitWidth: 1
+          TXEIE:
+            name: TXEIE
+            description: interrupt enable
+            bitOffset: 7
+            bitWidth: 1
+          TCIE:
+            name: TCIE
+            description: Transmission complete interrupt enable
+            bitOffset: 6
+            bitWidth: 1
+          RXNEIE:
+            name: RXNEIE
+            description: RXNE interrupt enable
+            bitOffset: 5
+            bitWidth: 1
+          IDLEIE:
+            name: IDLEIE
+            description: IDLE interrupt enable
+            bitOffset: 4
+            bitWidth: 1
+          TE:
+            name: TE
+            description: Transmitter enable
+            bitOffset: 3
+            bitWidth: 1
+          RE:
+            name: RE
+            description: Receiver enable
+            bitOffset: 2
+            bitWidth: 1
+          UESM:
+            name: UESM
+            description: USART enable in Stop mode
+            bitOffset: 1
+            bitWidth: 1
+          UE:
+            name: UE
+            description: USART enable
+            bitOffset: 0
+            bitWidth: 1
+      CR2:
+        name: CR2
+        displayName: CR2
+        description: Control register 2
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          ADD4_7:
+            name: ADD4_7
+            description: Address of the USART node
+            bitOffset: 28
+            bitWidth: 4
+          ADD0_3:
+            name: ADD0_3
+            description: Address of the USART node
+            bitOffset: 24
+            bitWidth: 4
+          RTOEN:
+            name: RTOEN
+            description: Receiver timeout enable
+            bitOffset: 23
+            bitWidth: 1
+          ABRMOD1:
+            name: ABRMOD1
+            description: Auto baud rate mode
+            bitOffset: 22
+            bitWidth: 1
+          ABRMOD0:
+            name: ABRMOD0
+            description: ABRMOD0
+            bitOffset: 21
+            bitWidth: 1
+          ABREN:
+            name: ABREN
+            description: Auto baud rate enable
+            bitOffset: 20
+            bitWidth: 1
+          MSBFIRST:
+            name: MSBFIRST
+            description: Most significant bit first
+            bitOffset: 19
+            bitWidth: 1
+          TAINV:
+            name: TAINV
+            description: Binary data inversion
+            bitOffset: 18
+            bitWidth: 1
+          TXINV:
+            name: TXINV
+            description: TX pin active level inversion
+            bitOffset: 17
+            bitWidth: 1
+          RXINV:
+            name: RXINV
+            description: RX pin active level inversion
+            bitOffset: 16
+            bitWidth: 1
+          SWAP:
+            name: SWAP
+            description: Swap TX/RX pins
+            bitOffset: 15
+            bitWidth: 1
+          LINEN:
+            name: LINEN
+            description: LIN mode enable
+            bitOffset: 14
+            bitWidth: 1
+          STOP:
+            name: STOP
+            description: STOP bits
+            bitOffset: 12
+            bitWidth: 2
+          CLKEN:
+            name: CLKEN
+            description: Clock enable
+            bitOffset: 11
+            bitWidth: 1
+          CPOL:
+            name: CPOL
+            description: Clock polarity
+            bitOffset: 10
+            bitWidth: 1
+          CPHA:
+            name: CPHA
+            description: Clock phase
+            bitOffset: 9
+            bitWidth: 1
+          LBCL:
+            name: LBCL
+            description: Last bit clock pulse
+            bitOffset: 8
+            bitWidth: 1
+          LBDIE:
+            name: LBDIE
+            description: LIN break detection interrupt enable
+            bitOffset: 6
+            bitWidth: 1
+          LBDL:
+            name: LBDL
+            description: LIN break detection length
+            bitOffset: 5
+            bitWidth: 1
+          ADDM7:
+            name: ADDM7
+            description: '7-bit Address Detection/4-bit Address Detection'
+            bitOffset: 4
+            bitWidth: 1
+          DIS_NSS:
+            name: DIS_NSS
+            description: DIS_NSS
+            bitOffset: 3
+            bitWidth: 1
+          SLVEN:
+            name: SLVEN
+            description: SLVEN
+            bitOffset: 0
+            bitWidth: 1
+      CR3:
+        name: CR3
+        displayName: CR3
+        description: Control register 3
+        addressOffset: 8
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TXFTCFG:
+            name: TXFTCFG
+            description: TXFTCFG
+            bitOffset: 29
+            bitWidth: 3
+          RXFTIE:
+            name: RXFTIE
+            description: RXFTIE
+            bitOffset: 28
+            bitWidth: 1
+          RXFTCFG:
+            name: RXFTCFG
+            description: RXFTCFG
+            bitOffset: 25
+            bitWidth: 3
+          TCBGTIE:
+            name: TCBGTIE
+            description: TCBGTIE
+            bitOffset: 24
+            bitWidth: 1
+          TXFTIE:
+            name: TXFTIE
+            description: TXFTIE
+            bitOffset: 23
+            bitWidth: 1
+          WUFIE:
+            name: WUFIE
+            description: Wakeup from Stop mode interrupt enable
+            bitOffset: 22
+            bitWidth: 1
+          WUS:
+            name: WUS
+            description: Wakeup from Stop mode interrupt flag selection
+            bitOffset: 20
+            bitWidth: 2
+          SCARCNT:
+            name: SCARCNT
+            description: Smartcard auto-retry count
+            bitOffset: 17
+            bitWidth: 3
+          DEP:
+            name: DEP
+            description: Driver enable polarity selection
+            bitOffset: 15
+            bitWidth: 1
+          DEM:
+            name: DEM
+            description: Driver enable mode
+            bitOffset: 14
+            bitWidth: 1
+          DDRE:
+            name: DDRE
+            description: DMA Disable on Reception Error
+            bitOffset: 13
+            bitWidth: 1
+          OVRDIS:
+            name: OVRDIS
+            description: Overrun Disable
+            bitOffset: 12
+            bitWidth: 1
+          ONEBIT:
+            name: ONEBIT
+            description: One sample bit method enable
+            bitOffset: 11
+            bitWidth: 1
+          CTSIE:
+            name: CTSIE
+            description: CTS interrupt enable
+            bitOffset: 10
+            bitWidth: 1
+          CTSE:
+            name: CTSE
+            description: CTS enable
+            bitOffset: 9
+            bitWidth: 1
+          RTSE:
+            name: RTSE
+            description: RTS enable
+            bitOffset: 8
+            bitWidth: 1
+          DMAT:
+            name: DMAT
+            description: DMA enable transmitter
+            bitOffset: 7
+            bitWidth: 1
+          DMAR:
+            name: DMAR
+            description: DMA enable receiver
+            bitOffset: 6
+            bitWidth: 1
+          SCEN:
+            name: SCEN
+            description: Smartcard mode enable
+            bitOffset: 5
+            bitWidth: 1
+          NACK:
+            name: NACK
+            description: Smartcard NACK enable
+            bitOffset: 4
+            bitWidth: 1
+          HDSEL:
+            name: HDSEL
+            description: Half-duplex selection
+            bitOffset: 3
+            bitWidth: 1
+          IRLP:
+            name: IRLP
+            description: Ir low-power
+            bitOffset: 2
+            bitWidth: 1
+          IREN:
+            name: IREN
+            description: Ir mode enable
+            bitOffset: 1
+            bitWidth: 1
+          EIE:
+            name: EIE
+            description: Error interrupt enable
+            bitOffset: 0
+            bitWidth: 1
+      BRR:
+        name: BRR
+        displayName: BRR
+        description: Baud rate register
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DIV_Mantissa:
+            name: DIV_Mantissa
+            description: DIV_Mantissa
+            bitOffset: 4
+            bitWidth: 12
+          DIV_Fraction:
+            name: DIV_Fraction
+            description: DIV_Fraction
+            bitOffset: 0
+            bitWidth: 4
+      GTPR:
+        name: GTPR
+        displayName: GTPR
+        description: Guard time and prescaler register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          GT:
+            name: GT
+            description: Guard time value
+            bitOffset: 8
+            bitWidth: 8
+          PSC:
+            name: PSC
+            description: Prescaler value
+            bitOffset: 0
+            bitWidth: 8
+      RTOR:
+        name: RTOR
+        displayName: RTOR
+        description: Receiver timeout register
+        addressOffset: 20
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          BLEN:
+            name: BLEN
+            description: Block Length
+            bitOffset: 24
+            bitWidth: 8
+          RTO:
+            name: RTO
+            description: Receiver timeout value
+            bitOffset: 0
+            bitWidth: 24
+      RQR:
+        name: RQR
+        displayName: RQR
+        description: Request register
+        addressOffset: 24
+        size: 32
+        access: write-only
+        resetValue: 0
+        fields:
+          TXFRQ:
+            name: TXFRQ
+            description: Transmit data flush request
+            bitOffset: 4
+            bitWidth: 1
+          RXFRQ:
+            name: RXFRQ
+            description: Receive data flush request
+            bitOffset: 3
+            bitWidth: 1
+          MMRQ:
+            name: MMRQ
+            description: Mute mode request
+            bitOffset: 2
+            bitWidth: 1
+          SBKRQ:
+            name: SBKRQ
+            description: Send break request
+            bitOffset: 1
+            bitWidth: 1
+          ABRRQ:
+            name: ABRRQ
+            description: Auto baud rate request
+            bitOffset: 0
+            bitWidth: 1
+      ISR:
+        name: ISR
+        displayName: ISR
+        description: Interrupt & status register
+        addressOffset: 28
+        size: 32
+        access: read-only
+        resetValue: 192
+        fields:
+          TXFT:
+            name: TXFT
+            description: TXFT
+            bitOffset: 27
+            bitWidth: 1
+          RXFT:
+            name: RXFT
+            description: RXFT
+            bitOffset: 26
+            bitWidth: 1
+          TCBGT:
+            name: TCBGT
+            description: TCBGT
+            bitOffset: 25
+            bitWidth: 1
+          RXFF:
+            name: RXFF
+            description: RXFF
+            bitOffset: 24
+            bitWidth: 1
+          TXFE:
+            name: TXFE
+            description: TXFE
+            bitOffset: 23
+            bitWidth: 1
+          REACK:
+            name: REACK
+            description: REACK
+            bitOffset: 22
+            bitWidth: 1
+          TEACK:
+            name: TEACK
+            description: TEACK
+            bitOffset: 21
+            bitWidth: 1
+          WUF:
+            name: WUF
+            description: WUF
+            bitOffset: 20
+            bitWidth: 1
+          RWU:
+            name: RWU
+            description: RWU
+            bitOffset: 19
+            bitWidth: 1
+          SBKF:
+            name: SBKF
+            description: SBKF
+            bitOffset: 18
+            bitWidth: 1
+          CMF:
+            name: CMF
+            description: CMF
+            bitOffset: 17
+            bitWidth: 1
+          BUSY:
+            name: BUSY
+            description: BUSY
+            bitOffset: 16
+            bitWidth: 1
+          ABRF:
+            name: ABRF
+            description: ABRF
+            bitOffset: 15
+            bitWidth: 1
+          ABRE:
+            name: ABRE
+            description: ABRE
+            bitOffset: 14
+            bitWidth: 1
+          UDR:
+            name: UDR
+            description: UDR
+            bitOffset: 13
+            bitWidth: 1
+          EOBF:
+            name: EOBF
+            description: EOBF
+            bitOffset: 12
+            bitWidth: 1
+          RTOF:
+            name: RTOF
+            description: RTOF
+            bitOffset: 11
+            bitWidth: 1
+          CTS:
+            name: CTS
+            description: CTS
+            bitOffset: 10
+            bitWidth: 1
+          CTSIF:
+            name: CTSIF
+            description: CTSIF
+            bitOffset: 9
+            bitWidth: 1
+          LBDF:
+            name: LBDF
+            description: LBDF
+            bitOffset: 8
+            bitWidth: 1
+          TXE:
+            name: TXE
+            description: TXE
+            bitOffset: 7
+            bitWidth: 1
+          TC:
+            name: TC
+            description: TC
+            bitOffset: 6
+            bitWidth: 1
+          RXNE:
+            name: RXNE
+            description: RXNE
+            bitOffset: 5
+            bitWidth: 1
+          IDLE:
+            name: IDLE
+            description: IDLE
+            bitOffset: 4
+            bitWidth: 1
+          ORE:
+            name: ORE
+            description: ORE
+            bitOffset: 3
+            bitWidth: 1
+          NF:
+            name: NF
+            description: NF
+            bitOffset: 2
+            bitWidth: 1
+          FE:
+            name: FE
+            description: FE
+            bitOffset: 1
+            bitWidth: 1
+          PE:
+            name: PE
+            description: PE
+            bitOffset: 0
+            bitWidth: 1
+      ICR:
+        name: ICR
+        displayName: ICR
+        description: Interrupt flag clear register
+        addressOffset: 32
+        size: 32
+        access: write-only
+        resetValue: 0
+        fields:
+          WUCF:
+            name: WUCF
+            description: Wakeup from Stop mode clear flag
+            bitOffset: 20
+            bitWidth: 1
+          CMCF:
+            name: CMCF
+            description: Character match clear flag
+            bitOffset: 17
+            bitWidth: 1
+          UDRCF:
+            name: UDRCF
+            description: UDRCF
+            bitOffset: 13
+            bitWidth: 1
+          EOBCF:
+            name: EOBCF
+            description: End of block clear flag
+            bitOffset: 12
+            bitWidth: 1
+          RTOCF:
+            name: RTOCF
+            description: Receiver timeout clear flag
+            bitOffset: 11
+            bitWidth: 1
+          CTSCF:
+            name: CTSCF
+            description: CTS clear flag
+            bitOffset: 9
+            bitWidth: 1
+          LBDCF:
+            name: LBDCF
+            description: LIN break detection clear flag
+            bitOffset: 8
+            bitWidth: 1
+          TCBGTCF:
+            name: TCBGTCF
+            description: TCBGTCF
+            bitOffset: 7
+            bitWidth: 1
+          TCCF:
+            name: TCCF
+            description: Transmission complete clear flag
+            bitOffset: 6
+            bitWidth: 1
+          TXFECF:
+            name: TXFECF
+            description: TXFECF
+            bitOffset: 5
+            bitWidth: 1
+          IDLECF:
+            name: IDLECF
+            description: Idle line detected clear flag
+            bitOffset: 4
+            bitWidth: 1
+          ORECF:
+            name: ORECF
+            description: Overrun error clear flag
+            bitOffset: 3
+            bitWidth: 1
+          NCF:
+            name: NCF
+            description: Noise detected clear flag
+            bitOffset: 2
+            bitWidth: 1
+          FECF:
+            name: FECF
+            description: Framing error clear flag
+            bitOffset: 1
+            bitWidth: 1
+          PECF:
+            name: PECF
+            description: Parity error clear flag
+            bitOffset: 0
+            bitWidth: 1
+      RDR:
+        name: RDR
+        displayName: RDR
+        description: Receive data register
+        addressOffset: 36
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          RDR:
+            name: RDR
+            description: Receive data value
+            bitOffset: 0
+            bitWidth: 9
+      TDR:
+        name: TDR
+        displayName: TDR
+        description: Transmit data register
+        addressOffset: 40
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TDR:
+            name: TDR
+            description: Transmit data value
+            bitOffset: 0
+            bitWidth: 9
+      PRESC:
+        name: PRESC
+        displayName: PRESC
+        description: USART prescaler register
+        addressOffset: 44
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          PRESCALER:
+            name: PRESCALER
+            description: PRESCALER
+            bitOffset: 0
+            bitWidth: 4

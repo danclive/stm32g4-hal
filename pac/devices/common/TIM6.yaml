@@ -1,0 +1,169 @@
+_add:
+  TIM6:
+    name: TIM6
+    description: Basic-timers
+    groupName: TIM
+    baseAddress: 1073745920
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      TIM6_DACUNDER:
+        name: TIM6_DACUNDER
+        description: TIM6_DACUNDER
+        value: 54
+    registers:
+      CR1:
+        name: CR1
+        displayName: CR1
+        description: control register 1
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DITHEN:
+            name: DITHEN
+            description: Dithering Enable
+            bitOffset: 12
+            bitWidth: 1
+          UIFREMAP:
+            name: UIFREMAP
+            description: UIF status bit remapping
+            bitOffset: 11
+            bitWidth: 1
+          ARPE:
+            name: ARPE
+            description: Auto-reload preload enable
+            bitOffset: 7
+            bitWidth: 1
+          OPM:
+            name: OPM
+            description: One-pulse mode
+            bitOffset: 3
+            bitWidth: 1
+          URS:
+            name: URS
+            description: Update request source
+            bitOffset: 2
+            bitWidth: 1
+          UDIS:
+            name: UDIS
+            description: Update disable
+            bitOffset: 1
+            bitWidth: 1
+          CEN:
+            name: CEN
+            description: Counter enable
+            bitOffset: 0
+            bitWidth: 1
+      CR2:
+        name: CR2
+        displayName: CR2
+        description: control register 2
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          MMS:
+            name: MMS
+            description: Master mode selection
+            bitOffset: 4
+            bitWidth: 3
+      DIER:
+        name: DIER
+        displayName: DIER
+        description: DMA/Interrupt enable register
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          UDE:
+            name: UDE
+            description: Update DMA request enable
+            bitOffset: 8
+            bitWidth: 1
+          UIE:
+            name: UIE
+            description: Update interrupt enable
+            bitOffset: 0
+            bitWidth: 1
+      SR:
+        name: SR
+        displayName: SR
+        description: status register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          UIF:
+            name: UIF
+            description: Update interrupt flag
+            bitOffset: 0
+            bitWidth: 1
+      EGR:
+        name: EGR
+        displayName: EGR
+        description: event generation register
+        addressOffset: 20
+        size: 32
+        access: write-only
+        resetValue: 0
+        fields:
+          UG:
+            name: UG
+            description: Update generation
+            bitOffset: 0
+            bitWidth: 1
+      CNT:
+        name: CNT
+        displayName: CNT
+        description: counter
+        addressOffset: 36
+        size: 32
+        resetValue: 0
+        fields:
+          UIFCPY:
+            name: UIFCPY
+            description: UIF Copy
+            bitOffset: 31
+            bitWidth: 1
+            access: read-only
+          CNT:
+            name: CNT
+            description: Low counter value
+            bitOffset: 0
+            bitWidth: 16
+            access: read-write
+      PSC:
+        name: PSC
+        displayName: PSC
+        description: prescaler
+        addressOffset: 40
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          PSC:
+            name: PSC
+            description: Prescaler value
+            bitOffset: 0
+            bitWidth: 16
+      ARR:
+        name: ARR
+        displayName: ARR
+        description: auto-reload register
+        addressOffset: 44
+        size: 32
+        access: read-write
+        resetValue: 65535
+        fields:
+          ARR:
+            name: ARR
+            description: Low Auto-reload value
+            bitOffset: 0
+            bitWidth: 20

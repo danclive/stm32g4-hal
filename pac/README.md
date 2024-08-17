@@ -2,7 +2,7 @@
 
 This repository contains Peripheral Access Crates (PACs) for STM32G4 series Cortex-M microcontrollers.
 
-All these crates are automatically generated using [svd2rust].
+All these crates are automatically generated using [svdtools] and [svd2rust].
 
 For a more user-friendly interface to the peripherals, the [`stm32g4-hal`] crates might be more appropriate.
 
@@ -11,6 +11,7 @@ Please refer to the [changelog] to see what changed in the last releases.
 [changelog]: ./CHANGELOG.md
 [`stm32g4-hal`]: https://github.com/danclive/stm32g4-hal
 [svd2rust]: https://github.com/rust-embedded/svd2rust
+[svdtools]: https://github.com/rust-embedded/svdtools
 
 ## Supported Devices
 

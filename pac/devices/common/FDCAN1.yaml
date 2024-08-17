@@ -1,0 +1,2142 @@
+_add:
+  FDCAN1:
+    name: FDCAN1
+    description: FDCAN 1
+    groupName: FDCAN
+    baseAddress: 1073783808
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      FDCAN1_IT0:
+        name: FDCAN1_IT0
+        description: FDCAN1 interrupt 0
+        value: 21
+      FDCAN1_IT1:
+        name: FDCAN1_IT0
+        description: FDCAN1 interrupt 1
+        value: 22
+    registers:
+      FDCAN_CREL:
+        name: FDCAN_CREL
+        displayName: FDCAN_CREL
+        description: FDCAN core release register
+        addressOffset: 0
+        size: 32
+        resetValue: 840176152
+        resetMask: 4294967295
+        fields:
+          DAY:
+            name: DAY
+            description: '18'
+            bitOffset: 0
+            bitWidth: 8
+            access: read-only
+          MON:
+            name: MON
+            description: '12'
+            bitOffset: 8
+            bitWidth: 8
+            access: read-only
+          YEAR:
+            name: YEAR
+            description: '4'
+            bitOffset: 16
+            bitWidth: 4
+            access: read-only
+          SUBSTEP:
+            name: SUBSTEP
+            description: '1'
+            bitOffset: 20
+            bitWidth: 4
+            access: read-only
+          STEP:
+            name: STEP
+            description: '2'
+            bitOffset: 24
+            bitWidth: 4
+            access: read-only
+          REL:
+            name: REL
+            description: '3'
+            bitOffset: 28
+            bitWidth: 4
+            access: read-only
+      FDCAN_ENDN:
+        name: FDCAN_ENDN
+        displayName: FDCAN_ENDN
+        description: FDCAN endian register
+        addressOffset: 4
+        size: 32
+        resetValue: 2271560481
+        resetMask: 4294967295
+        fields:
+          ETV:
+            name: ETV
+            description: Endianness test value The endianness test value is 0x8765 4321.
+            bitOffset: 0
+            bitWidth: 32
+            access: read-only
+      FDCAN_DBTP:
+        name: FDCAN_DBTP
+        displayName: FDCAN_DBTP
+        description: FDCAN data bit timing and prescaler register
+        addressOffset: 12
+        size: 32
+        resetValue: 2611
+        resetMask: 4294967295
+        fields:
+          DSJW:
+            name: DSJW
+            description: 'Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t<sub>SJW</sub> = (DSJW + 1) x tq.'
+            bitOffset: 0
+            bitWidth: 4
+            access: read-write
+          DTSEG2:
+            name: DTSEG2
+            description: Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS2</sub> = (DTSEG2 + 1) x tq.
+            bitOffset: 4
+            bitWidth: 4
+            access: read-write
+          DTSEG1:
+            name: DTSEG1
+            description: Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS1</sub> = (DTSEG1 + 1) x tq.
+            bitOffset: 8
+            bitWidth: 5
+            access: read-write
+          DBRP:
+            name: DBRP
+            description: Data bit rate prescaler The value by which the oscillator frequency is divided to generate the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 31. The hardware interpreters this value as the value programmed plus 1.
+            bitOffset: 16
+            bitWidth: 5
+            access: read-write
+          TDC:
+            name: TDC
+            description: Transceiver delay compensation
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+      FDCAN_TEST:
+        name: FDCAN_TEST
+        displayName: FDCAN_TEST
+        description: FDCAN test register
+        addressOffset: 16
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          LBCK:
+            name: LBCK
+            description: Loop back mode
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          TX:
+            name: TX
+            description: Control of transmit pin
+            bitOffset: 5
+            bitWidth: 2
+            access: read-write
+          RX:
+            name: RX
+            description: Receive pin Monitors the actual value of pin FDCANx_RX
+            bitOffset: 7
+            bitWidth: 1
+            access: read-only
+      FDCAN_RWD:
+        name: FDCAN_RWD
+        displayName: FDCAN_RWD
+        description: FDCAN RAM watchdog register
+        addressOffset: 20
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          WDC:
+            name: WDC
+            description: Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 [CCE] and bit 0 [INIT] of FDCAN_CCCR register are set to 1.
+            bitOffset: 0
+            bitWidth: 8
+            access: read-write
+          WDV:
+            name: WDV
+            description: Watchdog value Actual message RAM watchdog counter value.
+            bitOffset: 8
+            bitWidth: 8
+            access: read-only
+      FDCAN_CCCR:
+        name: FDCAN_CCCR
+        displayName: FDCAN_CCCR
+        description: FDCAN CC control register
+        addressOffset: 24
+        size: 32
+        resetValue: 1
+        resetMask: 4294967295
+        fields:
+          INIT:
+            name: INIT
+            description: Initialization
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          CCE:
+            name: CCE
+            description: Configuration change enable
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          ASM:
+            name: ASM
+            description: ASM restricted operation mode The restricted operation mode is intended for applications that adapt themselves to different CAN bit rates. The application tests different bit rates and leaves the Restricted operation Mode after it has received a valid frame. In the optional Restricted operation Mode the node is able to transmit and receive data and remote frames and it gives acknowledge to valid frames, but it does not send active error frames or overload frames. In case of an error condition or overload condition, it does not send dominant bits, instead it waits for the occurrence of bus idle condition to resynchronize itself to the CAN communication. The error counters are not incremented. Bit ASM can only be set by software when both CCE and INIT are set to 1. The bit can be reset by the software at any time.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          CSA:
+            name: CSA
+            description: Clock stop acknowledge
+            bitOffset: 3
+            bitWidth: 1
+            access: read-only
+          CSR:
+            name: CSR
+            description: Clock stop request
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          MON:
+            name: MON
+            description: Bus monitoring mode Bit MON can only be set by software when both CCE and INIT are set to 1. The bit can be reset by the Host at any time.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          DAR:
+            name: DAR
+            description: Disable automatic retransmission
+            bitOffset: 6
+            bitWidth: 1
+            access: read-write
+          TEST:
+            name: TEST
+            description: Test mode enable
+            bitOffset: 7
+            bitWidth: 1
+            access: read-write
+          FDOE:
+            name: FDOE
+            description: FD operation enable
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          BRSE:
+            name: BRSE
+            description: FDCAN bit rate switching
+            bitOffset: 9
+            bitWidth: 1
+            access: read-write
+          PXHD:
+            name: PXHD
+            description: Protocol exception handling disable
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+          EFBI:
+            name: EFBI
+            description: Edge filtering during bus integration
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          TXP:
+            name: TXP
+            description: If this bit is set, the FDCAN pauses for two CAN bit times before starting the next transmission after successfully transmitting a frame.
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          NISO:
+            name: NISO
+            description: Non ISO operation If this bit is set, the FDCAN uses the CAN FD frame format as specified by the Bosch CAN FD Specification V1.0.
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+      FDCAN_NBTP:
+        name: FDCAN_NBTP
+        displayName: FDCAN_NBTP
+        description: FDCAN nominal bit timing and prescaler register
+        addressOffset: 28
+        size: 32
+        resetValue: 100665859
+        resetMask: 4294967295
+        fields:
+          NTSEG2:
+            name: NTSEG2
+            description: Nominal time segment after sample point Valid values are 0 to 127. The actual interpretation by the hardware of this value is such that one more than the programmed value is used.
+            bitOffset: 0
+            bitWidth: 7
+            access: read-write
+          NTSEG1:
+            name: NTSEG1
+            description: Nominal time segment before sample point Valid values are 0 to 255. The actual interpretation by the hardware of this value is such that one more than the programmed value is used. These are protected write (P) bits, write access is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 8
+            bitWidth: 8
+            access: read-write
+          NBRP:
+            name: NBRP
+            description: Bit rate prescaler Value by which the oscillator frequency is divided for generating the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values are 0 to 511. The actual interpretation by the hardware of this value is such that one more than the value programmed here is used. These are protected write (P) bits, write access is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 16
+            bitWidth: 9
+            access: read-write
+          NSJW:
+            name: NSJW
+            description: Nominal (re)synchronization jump width Valid values are 0 to 127. The actual interpretation by the hardware of this value is such that the used value is the one programmed incremented by one. These are protected write (P) bits, write access is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 25
+            bitWidth: 7
+            access: read-write
+      FDCAN_TSCC:
+        name: FDCAN_TSCC
+        displayName: FDCAN_TSCC
+        description: FDCAN timestamp counter configuration register
+        addressOffset: 32
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          TSS:
+            name: TSS
+            description: Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 0
+            bitWidth: 2
+            access: read-write
+          TCP:
+            name: TCP
+            description: Timestamp counter prescaler
+            bitOffset: 16
+            bitWidth: 4
+            access: read-write
+      FDCAN_TSCV:
+        name: FDCAN_TSCV
+        displayName: FDCAN_TSCV
+        description: FDCAN timestamp counter value register
+        addressOffset: 36
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          TSC:
+            name: TSC
+            description: Timestamp counter
+            bitOffset: 0
+            bitWidth: 16
+            access: read-write
+      FDCAN_TOCC:
+        name: FDCAN_TOCC
+        displayName: FDCAN_TOCC
+        description: FDCAN timeout counter configuration register
+        addressOffset: 40
+        size: 32
+        resetValue: 4294901760
+        resetMask: 4294967295
+        fields:
+          ETOC:
+            name: ETOC
+            description: Timeout counter enable This is a protected write (P) bit, write access is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          TOS:
+            name: TOS
+            description: Timeout select When operating in Continuous mode, a write to TOCV presets the counter to the value configured by TOCC[TOP] and continues down-counting. When the timeout counter is controlled by one of the FIFOs, an empty FIFO presets the counter to the value configured by TOCC[TOP]. Down-counting is started when the first FIFO element is stored. These are protected write (P) bits, write access is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 1
+            bitWidth: 2
+            access: read-write
+          TOP:
+            name: TOP
+            description: Timeout period Start value of the timeout counter (down-counter). Configures the timeout period.
+            bitOffset: 16
+            bitWidth: 16
+            access: read-write
+      FDCAN_TOCV:
+        name: FDCAN_TOCV
+        displayName: FDCAN_TOCV
+        description: FDCAN timeout counter value register
+        addressOffset: 44
+        size: 32
+        resetValue: 65535
+        resetMask: 4294967295
+        fields:
+          TOC:
+            name: TOC
+            description: Timeout counter
+            bitOffset: 0
+            bitWidth: 16
+            access: read-write
+      FDCAN_ECR:
+        name: FDCAN_ECR
+        displayName: FDCAN_ECR
+        description: FDCAN error counter register
+        addressOffset: 64
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          TEC:
+            name: TEC
+            description: Transmit error counter Actual state of the transmit error counter, values between 0 and 255. When CCCR.ASM is set, the CAN protocol controller does not increment TEC and REC when a CAN protocol error is detected, but CEL is still incremented.
+            bitOffset: 0
+            bitWidth: 8
+            access: read-only
+          REC:
+            name: REC
+            description: Receive error counter Actual state of the receive error counter, values between 0 and 127.
+            bitOffset: 8
+            bitWidth: 7
+            access: read-only
+          RP:
+            name: RP
+            description: Receive error passive
+            bitOffset: 15
+            bitWidth: 1
+            access: read-only
+          CEL:
+            name: CEL
+            description: 'CAN error logging The counter is incremented each time when a CAN protocol error causes the transmit error counter or the receive error counter to be incremented. It is reset by read access to CEL. The counter stops at 0xFF; the next increment of TEC or REC sets interrupt flag IR[ELO]. Access type is RX: reset on read.'
+            bitOffset: 16
+            bitWidth: 8
+            access: read-write
+      FDCAN_PSR:
+        name: FDCAN_PSR
+        displayName: FDCAN_PSR
+        description: FDCAN protocol status register
+        addressOffset: 68
+        size: 32
+        resetValue: 1799
+        resetMask: 4294967295
+        fields:
+          LEC:
+            name: LEC
+            description: 'Last error code The LEC indicates the type of the last error to occur on the CAN bus. This field is cleared to 0 when a message has been transferred (reception or transmission) without error. Access type is RS: set on read.'
+            bitOffset: 0
+            bitWidth: 3
+            access: read-write
+          ACT:
+            name: ACT
+            description: Activity Monitors the modules CAN communication state.
+            bitOffset: 3
+            bitWidth: 2
+            access: read-only
+          EP:
+            name: EP
+            description: Error passive
+            bitOffset: 5
+            bitWidth: 1
+            access: read-only
+          EW:
+            name: EW
+            description: Warning Sstatus
+            bitOffset: 6
+            bitWidth: 1
+            access: read-only
+          BO:
+            name: BO
+            description: Bus_Off status
+            bitOffset: 7
+            bitWidth: 1
+            access: read-only
+          DLEC:
+            name: DLEC
+            description: 'Data last error code Type of last error that occurred in the data phase of a FDCAN format frame with its BRS flag set. Coding is the same as for LEC. This field is cleared to 0 when a FDCAN format frame with its BRS flag set has been transferred (reception or transmission) without error. Access type is RS: set on read.'
+            bitOffset: 8
+            bitWidth: 3
+            access: read-write
+          RESI:
+            name: RESI
+            description: 'ESI flag of last received FDCAN message This bit is set together with REDL, independent of acceptance filtering. Access type is RX: reset on read.'
+            bitOffset: 11
+            bitWidth: 1
+            access: read-write
+          RBRS:
+            name: RBRS
+            description: 'BRS flag of last received FDCAN message This bit is set together with REDL, independent of acceptance filtering. Access type is RX: reset on read.'
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+          REDL:
+            name: REDL
+            description: 'Received FDCAN message This bit is set independent of acceptance filtering. Access type is RX: reset on read.'
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          PXE:
+            name: PXE
+            description: Protocol exception event
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          TDCV:
+            name: TDCV
+            description: Transmitter delay compensation value Position of the secondary sample point, defined by the sum of the measured delay from FDCAN_TX to FDCAN_RX and TDCR.TDCO. The SSP position is, in the data phase, the number of minimum time quanta (mtq) between the start of the transmitted bit and the secondary sample point. Valid values are 0 to 127 mtq.
+            bitOffset: 16
+            bitWidth: 7
+            access: read-only
+      FDCAN_TDCR:
+        name: FDCAN_TDCR
+        displayName: FDCAN_TDCR
+        description: FDCAN transmitter delay compensation register
+        addressOffset: 72
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          TDCF:
+            name: TDCF
+            description: Transmitter delay compensation filter window length Defines the minimum value for the SSP position, dominant edges on FDCAN_RX that would result in an earlier SSP position are ignored for transmitter delay measurements. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 0
+            bitWidth: 7
+            access: read-write
+          TDCO:
+            name: TDCO
+            description: Transmitter delay compensation offset Offset value defining the distance between the measured delay from FDCAN_TX to FDCAN_RX and the secondary sample point. Valid values are 0 to 127 mtq. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 8
+            bitWidth: 7
+            access: read-write
+      FDCAN_IR:
+        name: FDCAN_IR
+        displayName: FDCAN_IR
+        description: FDCAN interrupt register
+        addressOffset: 80
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          RF0N:
+            name: RF0N
+            description: Rx FIFO 0 new message
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          RF0F:
+            name: RF0F
+            description: Rx FIFO 0 full
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          RF0L:
+            name: RF0L
+            description: Rx FIFO 0 message lost
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          RF1N:
+            name: RF1N
+            description: Rx FIFO 1 new message
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          RF1F:
+            name: RF1F
+            description: Rx FIFO 1 full
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          RF1L:
+            name: RF1L
+            description: Rx FIFO 1 message lost
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          HPM:
+            name: HPM
+            description: High-priority message
+            bitOffset: 6
+            bitWidth: 1
+            access: read-write
+          TC:
+            name: TC
+            description: Transmission completed
+            bitOffset: 7
+            bitWidth: 1
+            access: read-write
+          TCF:
+            name: TCF
+            description: Transmission cancellation finished
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          TFE:
+            name: TFE
+            description: Tx FIFO empty
+            bitOffset: 9
+            bitWidth: 1
+            access: read-write
+          TEFN:
+            name: TEFN
+            description: Tx event FIFO New Entry
+            bitOffset: 10
+            bitWidth: 1
+            access: read-write
+          TEFF:
+            name: TEFF
+            description: Tx event FIFO full
+            bitOffset: 11
+            bitWidth: 1
+            access: read-write
+          TEFL:
+            name: TEFL
+            description: Tx event FIFO element lost
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+          TSW:
+            name: TSW
+            description: Timestamp wraparound
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          MRAF:
+            name: MRAF
+            description: 'Message RAM access failure The flag is set when the Rx handler: has not completed acceptance filtering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance filtering or message storage is aborted and the Rx handler starts processing of the following message. was unable to write a message to the message RAM. In this case message storage is aborted. In both cases the FIFO put index is not updated. The partly stored message is overwritten when the next message is stored to this location. The flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the FDCAN is switched into Restricted operation Mode (see Restricted operation mode). To leave Restricted operation Mode, the Host CPU has to reset CCCR.ASM.'
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          TOO:
+            name: TOO
+            description: Timeout occurred
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          ELO:
+            name: ELO
+            description: Error logging overflow
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          EP:
+            name: EP
+            description: Error passive
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          EW:
+            name: EW
+            description: Warning status
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          BO:
+            name: BO
+            description: Bus_Off status
+            bitOffset: 19
+            bitWidth: 1
+            access: read-write
+          WDI:
+            name: WDI
+            description: Watchdog interrupt
+            bitOffset: 20
+            bitWidth: 1
+            access: read-write
+          PEA:
+            name: PEA
+            description: Protocol error in arbitration phase (nominal bit time is used)
+            bitOffset: 21
+            bitWidth: 1
+            access: read-write
+          PED:
+            name: PED
+            description: Protocol error in data phase (data bit time is used)
+            bitOffset: 22
+            bitWidth: 1
+            access: read-write
+          ARA:
+            name: ARA
+            description: Access to reserved address
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+      FDCAN_IE:
+        name: FDCAN_IE
+        displayName: FDCAN_IE
+        description: FDCAN interrupt enable register
+        addressOffset: 84
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          RF0NE:
+            name: RF0NE
+            description: Rx FIFO 0 new message interrupt enable
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          RF0FE:
+            name: RF0FE
+            description: Rx FIFO 0 full interrupt enable
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          RF0LE:
+            name: RF0LE
+            description: Rx FIFO 0 message lost interrupt enable
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          RF1NE:
+            name: RF1NE
+            description: Rx FIFO 1 new message interrupt enable
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          RF1FE:
+            name: RF1FE
+            description: Rx FIFO 1 full interrupt enable
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          RF1LE:
+            name: RF1LE
+            description: Rx FIFO 1 message lost interrupt enable
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          HPME:
+            name: HPME
+            description: High-priority message interrupt enable
+            bitOffset: 6
+            bitWidth: 1
+            access: read-write
+          TCE:
+            name: TCE
+            description: Transmission completed interrupt enable
+            bitOffset: 7
+            bitWidth: 1
+            access: read-write
+          TCFE:
+            name: TCFE
+            description: Transmission cancellation finished interrupt enable
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          TFEE:
+            name: TFEE
+            description: Tx FIFO empty interrupt enable
+            bitOffset: 9
+            bitWidth: 1
+            access: read-write
+          TEFNE:
+            name: TEFNE
+            description: Tx event FIFO new entry interrupt enable
+            bitOffset: 10
+            bitWidth: 1
+            access: read-write
+          TEFFE:
+            name: TEFFE
+            description: Tx event FIFO full interrupt enable
+            bitOffset: 11
+            bitWidth: 1
+            access: read-write
+          TEFLE:
+            name: TEFLE
+            description: Tx event FIFO element lost interrupt enable
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+          TSWE:
+            name: TSWE
+            description: Timestamp wraparound interrupt enable
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          MRAFE:
+            name: MRAFE
+            description: Message RAM access failure interrupt enable
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          TOOE:
+            name: TOOE
+            description: Timeout occurred interrupt enable
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          ELOE:
+            name: ELOE
+            description: Error logging overflow interrupt enable
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          EPE:
+            name: EPE
+            description: Error passive interrupt enable
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          EWE:
+            name: EWE
+            description: Warning status interrupt enable
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          BOE:
+            name: BOE
+            description: Bus_Off status
+            bitOffset: 19
+            bitWidth: 1
+            access: read-write
+          WDIE:
+            name: WDIE
+            description: Watchdog interrupt enable
+            bitOffset: 20
+            bitWidth: 1
+            access: read-write
+          PEAE:
+            name: PEAE
+            description: Protocol error in arbitration phase enable
+            bitOffset: 21
+            bitWidth: 1
+            access: read-write
+          PEDE:
+            name: PEDE
+            description: Protocol error in data phase enable
+            bitOffset: 22
+            bitWidth: 1
+            access: read-write
+          ARAE:
+            name: ARAE
+            description: Access to reserved address enable
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+      FDCAN_ILS:
+        name: FDCAN_ILS
+        displayName: FDCAN_ILS
+        description: FDCAN interrupt line select register
+        addressOffset: 88
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          RXFIFO0:
+            name: RXFIFO0
+            description: 'RX FIFO bit grouping the following interruption RF0LL: Rx FIFO 0 message lost interrupt line RF0FL: Rx FIFO 0 full interrupt line RF0NL: Rx FIFO 0 new message interrupt line'
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          RXFIFO1:
+            name: RXFIFO1
+            description: 'RX FIFO bit grouping the following interruption RF1LL: Rx FIFO 1 message lost interrupt line RF1FL: Rx FIFO 1 full interrupt line RF1NL: Rx FIFO 1 new message interrupt line'
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          SMSG:
+            name: SMSG
+            description: 'Status message bit grouping the following interruption TCFL: Transmission cancellation finished interrupt line TCL: Transmission completed interrupt line HPML: High-priority message interrupt line'
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          TFERR:
+            name: TFERR
+            description: 'Tx FIFO ERROR grouping the following interruption TEFLL: Tx event FIFO element lost interrupt line TEFFL: Tx event FIFO full interrupt line TEFNL: Tx event FIFO new entry interrupt line TFEL: Tx FIFO empty interrupt line'
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          MISC:
+            name: MISC
+            description: 'Interrupt regrouping the following interruption TOOL: Timeout occurred interrupt line MRAFL: Message RAM access failure interrupt line TSWL: Timestamp wraparound interrupt line'
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          BERR:
+            name: BERR
+            description: 'Bit and line error grouping the following interruption EPL Error passive interrupt line ELOL: Error logging overflow interrupt line'
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          PERR:
+            name: PERR
+            description: 'Protocol error grouping the following interruption ARAL: Access to reserved address line PEDL: Protocol error in data phase line PEAL: Protocol error in arbitration phase line WDIL: Watchdog interrupt line BOL: Bus_Off status EWL: Warning status interrupt line'
+            bitOffset: 6
+            bitWidth: 1
+            access: read-write
+      FDCAN_ILE:
+        name: FDCAN_ILE
+        displayName: FDCAN_ILE
+        description: FDCAN interrupt line enable register
+        addressOffset: 92
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          EINT0:
+            name: EINT0
+            description: Enable interrupt line 0
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          EINT1:
+            name: EINT1
+            description: Enable interrupt line 1
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+      FDCAN_RXGFC:
+        name: FDCAN_RXGFC
+        displayName: FDCAN_RXGFC
+        description: FDCAN global filter configuration register
+        addressOffset: 128
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          RRFE:
+            name: RRFE
+            description: Reject remote frames extended These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          RRFS:
+            name: RRFS
+            description: Reject remote frames standard These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          ANFE:
+            name: ANFE
+            description: Accept non-matching frames extended Defines how received messages with 29-bit IDs that do not match any element of the filter list are treated. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 2
+            bitWidth: 2
+            access: read-write
+          ANFS:
+            name: ANFS
+            description: Accept Non-matching frames standard Defines how received messages with 11-bit IDs that do not match any element of the filter list are treated. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 4
+            bitWidth: 2
+            access: read-write
+          F1OM:
+            name: F1OM
+            description: FIFO 1 operation mode (overwrite or blocking) This is a protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          F0OM:
+            name: F0OM
+            description: FIFO 0 operation mode (overwrite or blocking) This is protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 9
+            bitWidth: 1
+            access: read-write
+          LSS:
+            name: LSS
+            description: 'List size standard 1 to 28: Number of standard message ID filter elements >28: Values greater than 28 are interpreted as 28. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.'
+            bitOffset: 16
+            bitWidth: 5
+            access: read-write
+          LSE:
+            name: LSE
+            description: 'List size extended 1 to 8: Number of extended message ID filter elements >8: Values greater than 8 are interpreted as 8. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.'
+            bitOffset: 24
+            bitWidth: 4
+            access: read-write
+      FDCAN_XIDAM:
+        name: FDCAN_XIDAM
+        displayName: FDCAN_XIDAM
+        description: FDCAN extended ID and mask register
+        addressOffset: 132
+        size: 32
+        resetValue: 536870911
+        resetMask: 4294967295
+        fields:
+          EIDM:
+            name: EIDM
+            description: Extended ID mask For acceptance filtering of extended frames the Extended ID AND Mask is AND-ed with the Message ID of a received frame. Intended for masking of 29-bit IDs in SAE J1939. With the reset value of all bits set to 1 the mask is not active. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 0
+            bitWidth: 29
+            access: read-write
+      FDCAN_HPMS:
+        name: FDCAN_HPMS
+        displayName: FDCAN_HPMS
+        description: FDCAN high-priority message status register
+        addressOffset: 136
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          BIDX:
+            name: BIDX
+            description: Buffer index Index of Rx FIFO element to which the message was stored. Only valid when MSI[1] = 1.
+            bitOffset: 0
+            bitWidth: 3
+            access: read-only
+          MSI:
+            name: MSI
+            description: Message storage indicator
+            bitOffset: 6
+            bitWidth: 2
+            access: read-only
+          FIDX:
+            name: FIDX
+            description: Filter index Index of matching filter element. Range is 0 to RXGFC[LSS] - 1 or RXGFC[LSE] - 1.
+            bitOffset: 8
+            bitWidth: 5
+            access: read-only
+          FLST:
+            name: FLST
+            description: Filter list Indicates the filter list of the matching filter element.
+            bitOffset: 15
+            bitWidth: 1
+            access: read-only
+      FDCAN_RXF0S:
+        name: FDCAN_RXF0S
+        displayName: FDCAN_RXF0S
+        description: FDCAN Rx FIFO 0 status register
+        addressOffset: 144
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          F0FL:
+            name: F0FL
+            description: Rx FIFO 0 fill level Number of elements stored in Rx FIFO 0, range 0 to 3.
+            bitOffset: 0
+            bitWidth: 4
+            access: read-only
+          F0GI:
+            name: F0GI
+            description: Rx FIFO 0 get index Rx FIFO 0 read index pointer, range 0 to 2.
+            bitOffset: 8
+            bitWidth: 2
+            access: read-only
+          F0PI:
+            name: F0PI
+            description: Rx FIFO 0 put index Rx FIFO 0 write index pointer, range 0 to 2.
+            bitOffset: 16
+            bitWidth: 2
+            access: read-only
+          F0F:
+            name: F0F
+            description: Rx FIFO 0 full
+            bitOffset: 24
+            bitWidth: 1
+            access: read-only
+          RF0L:
+            name: RF0L
+            description: Rx FIFO 0 message lost This bit is a copy of interrupt flag IR[RF0L]. When IR[RF0L] is reset, this bit is also reset.
+            bitOffset: 25
+            bitWidth: 1
+            access: read-only
+      FDCAN_RXF0A:
+        name: FDCAN_RXF0A
+        displayName: FDCAN_RXF0A
+        description: CAN Rx FIFO 0 acknowledge register
+        addressOffset: 148
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          F0AI:
+            name: F0AI
+            description: Rx FIFO 0 acknowledge index After the Host has read a message or a sequence of messages from Rx FIFO 0 it has to write the buffer index of the last element read from Rx FIFO 0 to F0AI. This sets the Rx FIFO 0 get index RXF0S[F0GI] to F0AI + 1 and update the FIFO 0 fill level RXF0S[F0FL].
+            bitOffset: 0
+            bitWidth: 3
+            access: read-write
+      FDCAN_RXF1S:
+        name: FDCAN_RXF1S
+        displayName: FDCAN_RXF1S
+        description: FDCAN Rx FIFO 1 status register
+        addressOffset: 152
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          F1FL:
+            name: F1FL
+            description: Rx FIFO 1 fill level Number of elements stored in Rx FIFO 1, range 0 to 3.
+            bitOffset: 0
+            bitWidth: 4
+            access: read-only
+          F1GI:
+            name: F1GI
+            description: Rx FIFO 1 get index Rx FIFO 1 read index pointer, range 0 to 2.
+            bitOffset: 8
+            bitWidth: 2
+            access: read-only
+          F1PI:
+            name: F1PI
+            description: Rx FIFO 1 put index Rx FIFO 1 write index pointer, range 0 to 2.
+            bitOffset: 16
+            bitWidth: 2
+            access: read-only
+          F1F:
+            name: F1F
+            description: Rx FIFO 1 full
+            bitOffset: 24
+            bitWidth: 1
+            access: read-only
+          RF1L:
+            name: RF1L
+            description: Rx FIFO 1 message lost This bit is a copy of interrupt flag IR[RF1L]. When IR[RF1L] is reset, this bit is also reset.
+            bitOffset: 25
+            bitWidth: 1
+            access: read-only
+      FDCAN_RXF1A:
+        name: FDCAN_RXF1A
+        displayName: FDCAN_RXF1A
+        description: FDCAN Rx FIFO 1 acknowledge register
+        addressOffset: 156
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          F1AI:
+            name: F1AI
+            description: Rx FIFO 1 acknowledge index After the Host has read a message or a sequence of messages from Rx FIFO 1 it has to write the buffer index of the last element read from Rx FIFO 1 to F1AI. This sets the Rx FIFO 1 get index RXF1S[F1GI] to F1AI + 1 and update the FIFO 1 Fill Level RXF1S[F1FL].
+            bitOffset: 0
+            bitWidth: 3
+            access: read-write
+      FDCAN_TXBC:
+        name: FDCAN_TXBC
+        displayName: FDCAN_TXBC
+        description: FDCAN Tx buffer configuration register
+        addressOffset: 192
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          TFQM:
+            name: TFQM
+            description: Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 24
+            bitWidth: 1
+            access: read-write
+      FDCAN_TXFQS:
+        name: FDCAN_TXFQS
+        displayName: FDCAN_TXFQS
+        description: FDCAN Tx FIFO/queue status register
+        addressOffset: 196
+        size: 32
+        resetValue: 3
+        resetMask: 4294967295
+        fields:
+          TFFL:
+            name: TFFL
+            description: Tx FIFO free level Number of consecutive free Tx FIFO elements starting from TFGI, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC[TFQM] = 1).
+            bitOffset: 0
+            bitWidth: 3
+            access: read-only
+          TFGI:
+            name: TFGI
+            description: Tx FIFO get index Tx FIFO read index pointer, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC.TFQM = 1)
+            bitOffset: 8
+            bitWidth: 2
+            access: read-only
+          TFQPI:
+            name: TFQPI
+            description: Tx FIFO/queue put index Tx FIFO/queue write index pointer, range 0 to 3
+            bitOffset: 16
+            bitWidth: 2
+            access: read-only
+          TFQF:
+            name: TFQF
+            description: Tx FIFO/queue full
+            bitOffset: 21
+            bitWidth: 1
+            access: read-only
+      FDCAN_TXBRP:
+        name: FDCAN_TXBRP
+        displayName: FDCAN_TXBRP
+        description: FDCAN Tx buffer request pending register
+        addressOffset: 200
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          TRP:
+            name: TRP
+            description: Transmission request pending Each Tx buffer has its own transmission request pending bit. The bits are set via register TXBAR. The bits are reset after a requested transmission has completed or has been canceled via register TXBCR. After a TXBRP bit has been set, a Tx scan is started to check for the pending Tx request with the highest priority (Tx buffer with lowest Message ID). A cancellation request resets the corresponding transmission request pending bit of register TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding TXBRP bit has been reset. After a cancellation has been requested, a finished cancellation is signaled via TXBCF after successful transmission together with the corresponding TXBTO bit when the transmission has not yet been started at the point of cancellation when the transmission has been aborted due to lost arbitration when an error occurred during frame transmission In DAR mode all transmissions are automatically canceled if they are not successful. The corresponding TXBCF bit is set for all unsuccessful transmissions.
+            bitOffset: 0
+            bitWidth: 3
+            access: read-only
+      FDCAN_TXBAR:
+        name: FDCAN_TXBAR
+        displayName: FDCAN_TXBAR
+        description: FDCAN Tx buffer add request register
+        addressOffset: 204
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          AR:
+            name: AR
+            description: Add request Each Tx buffer has its own add request bit. Writing a 1 sets the corresponding add request bit; writing a 0 has no impact. This enables the Host to set transmission requests for multiple Tx buffers with one write to TXBAR. When no Tx scan is running, the bits are reset immediately, else the bits remain set until the Tx scan process has completed.
+            bitOffset: 0
+            bitWidth: 3
+            access: read-write
+      FDCAN_TXBCR:
+        name: FDCAN_TXBCR
+        displayName: FDCAN_TXBCR
+        description: FDCAN Tx buffer cancellation request register
+        addressOffset: 208
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          CR:
+            name: CR
+            description: Cancellation request Each Tx buffer has its own cancellation request bit. Writing a 1 sets the corresponding CR bit; writing a 0 has no impact. This enables the Host to set cancellation requests for multiple Tx buffers with one write to TXBCR. The bits remain set until the corresponding TXBRP bit is reset.
+            bitOffset: 0
+            bitWidth: 3
+            access: read-write
+      FDCAN_TXBTO:
+        name: FDCAN_TXBTO
+        displayName: FDCAN_TXBTO
+        description: FDCAN Tx buffer transmission occurred register
+        addressOffset: 212
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          TO:
+            name: TO
+            description: Transmission occurred. Each Tx buffer has its own TO bit. The bits are set when the corresponding TXBRP bit is cleared after a successful transmission. The bits are reset when a new transmission is requested by writing a 1 to the corresponding bit of register TXBAR.
+            bitOffset: 0
+            bitWidth: 3
+            access: read-only
+      FDCAN_TXBCF:
+        name: FDCAN_TXBCF
+        displayName: FDCAN_TXBCF
+        description: FDCAN Tx buffer cancellation finished register
+        addressOffset: 216
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          CF:
+            name: CF
+            description: Cancellation finished Each Tx buffer has its own CF bit. The bits are set when the corresponding TXBRP bit is cleared after a cancellation was requested via TXBCR. In case the corresponding TXBRP bit was not set at the point of cancellation, CF is set immediately. The bits are reset when a new transmission is requested by writing a 1 to the corresponding bit of register TXBAR.
+            bitOffset: 0
+            bitWidth: 3
+            access: read-only
+      FDCAN_TXBTIE:
+        name: FDCAN_TXBTIE
+        displayName: FDCAN_TXBTIE
+        description: FDCAN Tx buffer transmission interrupt enable register
+        addressOffset: 220
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          TIE:
+            name: TIE
+            description: Transmission interrupt enable Each Tx buffer has its own TIE bit.
+            bitOffset: 0
+            bitWidth: 3
+            access: read-write
+      FDCAN_TXBCIE:
+        name: FDCAN_TXBCIE
+        displayName: FDCAN_TXBCIE
+        description: FDCAN Tx buffer cancellation finished interrupt enable register
+        addressOffset: 224
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          CFIE:
+            name: CFIE
+            description: Cancellation finished interrupt enable. Each Tx buffer has its own CFIE bit.
+            bitOffset: 0
+            bitWidth: 3
+            access: read-write
+      FDCAN_TXEFS:
+        name: FDCAN_TXEFS
+        displayName: FDCAN_TXEFS
+        description: FDCAN Tx event FIFO status register
+        addressOffset: 228
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          EFFL:
+            name: EFFL
+            description: Event FIFO fill level Number of elements stored in Tx event FIFO, range 0 to 3.
+            bitOffset: 0
+            bitWidth: 3
+            access: read-only
+          EFGI:
+            name: EFGI
+            description: Event FIFO get index Tx event FIFO read index pointer, range 0 to 3.
+            bitOffset: 8
+            bitWidth: 2
+            access: read-only
+          EFPI:
+            name: EFPI
+            description: Event FIFO put index Tx event FIFO write index pointer, range 0 to 3.
+            bitOffset: 16
+            bitWidth: 2
+            access: read-only
+          EFF:
+            name: EFF
+            description: Event FIFO full
+            bitOffset: 24
+            bitWidth: 1
+            access: read-only
+          TEFL:
+            name: TEFL
+            description: Tx event FIFO element lost This bit is a copy of interrupt flag IR[TEFL]. When IR[TEFL] is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIFO element lost, also set after write attempt to Tx event FIFO of size 0.
+            bitOffset: 25
+            bitWidth: 1
+            access: read-only
+      FDCAN_TXEFA:
+        name: FDCAN_TXEFA
+        displayName: FDCAN_TXEFA
+        description: FDCAN Tx event FIFO acknowledge register
+        addressOffset: 232
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          EFAI:
+            name: EFAI
+            description: Event FIFO acknowledge index After the Host has read an element or a sequence of elements from the Tx event FIFO, it has to write the index of the last element read from Tx event FIFO to EFAI. This sets the Tx event FIFO get index TXEFS[EFGI] to EFAI + 1 and updates the FIFO 0 fill level TXEFS[EFFL].
+            bitOffset: 0
+            bitWidth: 2
+            access: read-write
+      FDCAN_CKDIV:
+        name: FDCAN_CKDIV
+        displayName: FDCAN_CKDIV
+        description: FDCAN CFG clock divider register
+        addressOffset: 256
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          PDIV:
+            name: PDIV
+            description: input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 [CCE] and bit 0 [INIT] of CCCR register are set to 1.
+            bitOffset: 0
+            bitWidth: 4
+            access: read-write
+FDCAN1:
+  FDCAN_DBTP:
+    TDC:
+      B_0x0:
+      - 0
+      - Transceiver delay compensation disabled
+      B_0x1:
+      - 1
+      - Transceiver delay compensation enabled
+  FDCAN_TEST:
+    LBCK:
+      B_0x0:
+      - 0
+      - Reset value, Loop Back mode is disabled
+      B_0x1:
+      - 1
+      - Loop Back mode is enabled (see Power down (Sleep mode))
+    TX:
+      B_0x0:
+      - 0
+      - Reset value, FDCANx_TX TX is controlled by the CAN core, updated at the end of the CAN bit time
+      B_0x1:
+      - 1
+      - Sample point can be monitored at pin FDCANx_TX
+      B_0x2:
+      - 2
+      - Dominant (0) level at pin FDCANx_TX
+      B_0x3:
+      - 3
+      - Recessive (1) at pin FDCANx_TX
+    RX:
+      B_0x0:
+      - 0
+      - The CAN bus is dominant (FDCANx_RX = 0)
+      B_0x1:
+      - 1
+      - The CAN bus is recessive (FDCANx_RX = 1)
+  FDCAN_CCCR:
+    INIT:
+      B_0x0:
+      - 0
+      - Normal operation
+      B_0x1:
+      - 1
+      - Initialization started
+    CCE:
+      B_0x0:
+      - 0
+      - The CPU has no write access to the protected configuration registers.
+      B_0x1:
+      - 1
+      - The CPU has write access to the protected configuration registers (while CCCR.INIT = 1).
+    ASM:
+      B_0x0:
+      - 0
+      - Normal CAN operation
+      B_0x1:
+      - 1
+      - Restricted operation Mode active
+    CSA:
+      B_0x0:
+      - 0
+      - No clock stop acknowledged
+      B_0x1:
+      - 1
+      - FDCAN may be set in power down by stopping APB clock and kernel clock.
+    CSR:
+      B_0x0:
+      - 0
+      - No clock stop requested
+      B_0x1:
+      - 1
+      - Clock stop requested. When clock stop is requested, first INIT and then CSA is set after all pending transfer requests have been completed and the CAN bus reached idle.
+    MON:
+      B_0x0:
+      - 0
+      - Bus monitoring mode disabled
+      B_0x1:
+      - 1
+      - Bus monitoring mode enabled
+    DAR:
+      B_0x0:
+      - 0
+      - Automatic retransmission of messages not transmitted successfully enabled
+      B_0x1:
+      - 1
+      - Automatic retransmission disabled
+    TEST:
+      B_0x0:
+      - 0
+      - Normal operation, register TEST holds reset values
+      B_0x1:
+      - 1
+      - Test Mode, write access to register TEST enabled
+    FDOE:
+      B_0x0:
+      - 0
+      - FD operation disabled
+      B_0x1:
+      - 1
+      - FD operation enabled
+    BRSE:
+      B_0x0:
+      - 0
+      - Bit rate switching for transmissions disabled
+      B_0x1:
+      - 1
+      - Bit rate switching for transmissions enabled
+    PXHD:
+      B_0x0:
+      - 0
+      - Protocol exception handling enabled
+      B_0x1:
+      - 1
+      - Protocol exception handling disabled
+    EFBI:
+      B_0x0:
+      - 0
+      - Edge filtering disabled
+      B_0x1:
+      - 1
+      - Two consecutive dominant tq required to detect an edge for hard synchronization
+    TXP:
+      B_0x0:
+      - 0
+      - disabled
+      B_0x1:
+      - 1
+      - enabled
+    NISO:
+      B_0x0:
+      - 0
+      - CAN FD frame format according to ISO11898-1
+      B_0x1:
+      - 1
+      - CAN FD frame format according to Bosch CAN FD Specification V1.0
+  FDCAN_TSCC:
+    TSS:
+      B_0x0:
+      - 0
+      - Timestamp counter value always 0x0000
+      B_0x1:
+      - 1
+      - Timestamp counter value incremented according to TCP
+      B_0x2:
+      - 2
+      - External timestamp counter from TIM3 value (tim3_cnt[0:15])
+      B_0x3:
+      - 3
+      - Same as 00.
+  FDCAN_TOCC:
+    ETOC:
+      B_0x0:
+      - 0
+      - Timeout counter disabled
+      B_0x1:
+      - 1
+      - Timeout counter enabled
+    TOS:
+      B_0x0:
+      - 0
+      - Continuous operation
+      B_0x1:
+      - 1
+      - Timeout controlled by Tx event FIFO
+      B_0x2:
+      - 2
+      - Timeout controlled by Rx FIFO 0
+      B_0x3:
+      - 3
+      - Timeout controlled by Rx FIFO 1
+  FDCAN_ECR:
+    RP:
+      B_0x0:
+      - 0
+      - The receive error counter is below the error passive level of 128.
+      B_0x1:
+      - 1
+      - The receive error counter has reached the error passive level of 128.
+  FDCAN_PSR:
+    LEC:
+      B_0x0:
+      - 0
+      - 'No Error: No error occurred since LEC has been reset by successful reception or transmission.'
+      B_0x1:
+      - 1
+      - 'Stuff Error: More than 5 equal bits in a sequence have occurred in a part of a received message where this is not allowed.'
+      B_0x2:
+      - 2
+      - 'Form Error: A fixed format part of a received frame has the wrong format.'
+      B_0x3:
+      - 3
+      - 'AckError: The message transmitted by the FDCAN was not acknowledged by another node.'
+      B_0x4:
+      - 4
+      - 'Bit1Error: During the transmission of a message (with the exception of the arbitration field), the device wanted to send a recessive level (bit of logical value 1), but the monitored bus value was dominant.'
+      B_0x5:
+      - 5
+      - 'Bit0Error: During the transmission of a message (or acknowledge bit, or active error flag, or overload flag), the device wanted to send a dominant level (data or identifier bit logical value 0), but the monitored bus value was recessive. During Bus_Off recovery this status is set each time a sequence of 11 recessive bits has been monitored. This enables the CPU to monitor the proceeding of the Bus_Off recovery sequence (indicating the bus is not stuck at dominant or continuously disturbed).'
+      B_0x6:
+      - 6
+      - 'CRCError: The CRC check sum of a received message was incorrect. The CRC of an incoming message does not match with the CRC calculated from the received data.'
+      B_0x7:
+      - 7
+      - 'NoChange: Any read access to the Protocol status register re-initializes the LEC to 7. When the LEC shows the value 7, no CAN bus event was detected since the last CPU read access to the Protocol status register.'
+    ACT:
+      B_0x0:
+      - 0
+      - 'Synchronizing: node is synchronizing on CAN communication.'
+      B_0x1:
+      - 1
+      - 'Idle: node is neither receiver nor transmitter.'
+      B_0x2:
+      - 2
+      - 'Receiver: node is operating as receiver.'
+      B_0x3:
+      - 3
+      - 'Transmitter: node is operating as transmitter.'
+    EP:
+      B_0x0:
+      - 0
+      - The FDCAN is in the Error_Active state. It normally takes part in bus communication and sends an active error flag when an error has been detected.
+      B_0x1:
+      - 1
+      - The FDCAN is in the Error_Passive state.
+    EW:
+      B_0x0:
+      - 0
+      - Both error counters are below the Error_Warning limit of 96.
+      B_0x1:
+      - 1
+      - At least one of error counter has reached the Error_Warning limit of 96.
+    BO:
+      B_0x0:
+      - 0
+      - The FDCAN is not Bus_Off.
+      B_0x1:
+      - 1
+      - The FDCAN is in Bus_Off state.
+    RESI:
+      B_0x0:
+      - 0
+      - Last received FDCAN message did not have its ESI flag set.
+      B_0x1:
+      - 1
+      - Last received FDCAN message had its ESI flag set.
+    RBRS:
+      B_0x0:
+      - 0
+      - Last received FDCAN message did not have its BRS flag set.
+      B_0x1:
+      - 1
+      - Last received FDCAN message had its BRS flag set.
+    REDL:
+      B_0x0:
+      - 0
+      - Since this bit was reset by the CPU, no FDCAN message has been received.
+      B_0x1:
+      - 1
+      - Message in FDCAN format with EDL flag set has been received.
+    PXE:
+      B_0x0:
+      - 0
+      - No protocol exception event occurred since last read access
+      B_0x1:
+      - 1
+      - Protocol exception event occurred
+  FDCAN_IR:
+    RF0N:
+      B_0x0:
+      - 0
+      - No new message written to Rx FIFO 0
+      B_0x1:
+      - 1
+      - New message written to Rx FIFO 0
+    RF0F:
+      B_0x0:
+      - 0
+      - Rx FIFO 0 not full
+      B_0x1:
+      - 1
+      - Rx FIFO 0 full
+    RF0L:
+      B_0x0:
+      - 0
+      - No Rx FIFO 0 message lost
+      B_0x1:
+      - 1
+      - Rx FIFO 0 message lost
+    RF1N:
+      B_0x0:
+      - 0
+      - No new message written to Rx FIFO 1
+      B_0x1:
+      - 1
+      - New message written to Rx FIFO 1
+    RF1F:
+      B_0x0:
+      - 0
+      - Rx FIFO 1 not full
+      B_0x1:
+      - 1
+      - Rx FIFO 1 full
+    RF1L:
+      B_0x0:
+      - 0
+      - No Rx FIFO 1 message lost
+      B_0x1:
+      - 1
+      - Rx FIFO 1 message lost
+    HPM:
+      B_0x0:
+      - 0
+      - No high-priority message received
+      B_0x1:
+      - 1
+      - High-priority message received
+    TC:
+      B_0x0:
+      - 0
+      - No transmission completed
+      B_0x1:
+      - 1
+      - Transmission completed
+    TCF:
+      B_0x0:
+      - 0
+      - No transmission cancellation finished
+      B_0x1:
+      - 1
+      - Transmission cancellation finished
+    TFE:
+      B_0x0:
+      - 0
+      - Tx FIFO non-empty
+      B_0x1:
+      - 1
+      - Tx FIFO empty
+    TEFN:
+      B_0x0:
+      - 0
+      - Tx event FIFO unchanged
+      B_0x1:
+      - 1
+      - Tx handler wrote Tx event FIFO element.
+    TEFF:
+      B_0x0:
+      - 0
+      - Tx event FIFO Not full
+      B_0x1:
+      - 1
+      - Tx event FIFO full
+    TEFL:
+      B_0x0:
+      - 0
+      - No Tx event FIFO element lost
+      B_0x1:
+      - 1
+      - Tx event FIFO element lost
+    TSW:
+      B_0x0:
+      - 0
+      - No timestamp counter wrap-around
+      B_0x1:
+      - 1
+      - Timestamp counter wrapped around
+    MRAF:
+      B_0x0:
+      - 0
+      - No Message RAM access failure occurred
+      B_0x1:
+      - 1
+      - Message RAM access failure occurred
+    TOO:
+      B_0x0:
+      - 0
+      - No timeout
+      B_0x1:
+      - 1
+      - Timeout reached
+    ELO:
+      B_0x0:
+      - 0
+      - CAN error logging counter did not overflow.
+      B_0x1:
+      - 1
+      - Overflow of CAN error logging counter occurred.
+    EP:
+      B_0x0:
+      - 0
+      - Error_Passive status unchanged
+      B_0x1:
+      - 1
+      - Error_Passive status changed
+    EW:
+      B_0x0:
+      - 0
+      - Error_Warning status unchanged
+      B_0x1:
+      - 1
+      - Error_Warning status changed
+    BO:
+      B_0x0:
+      - 0
+      - Bus_Off status unchanged
+      B_0x1:
+      - 1
+      - Bus_Off status changed
+    WDI:
+      B_0x0:
+      - 0
+      - No message RAM watchdog event occurred
+      B_0x1:
+      - 1
+      - Message RAM watchdog event due to missing READY
+    PEA:
+      B_0x0:
+      - 0
+      - No protocol error in arbitration phase
+      B_0x1:
+      - 1
+      - Protocol error in arbitration phase detected (PSR.LEC different from 0,7)
+    PED:
+      B_0x0:
+      - 0
+      - No protocol error in data phase
+      B_0x1:
+      - 1
+      - Protocol error in data phase detected (PSR.DLEC different from 0,7)
+    ARA:
+      B_0x0:
+      - 0
+      - No access to reserved address occurred
+      B_0x1:
+      - 1
+      - Access to reserved address occurred
+  FDCAN_IE:
+    RF0NE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    RF0FE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    RF0LE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    RF1NE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    RF1FE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    RF1LE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    HPME:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    TCE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    TCFE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    TFEE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    TEFNE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    TEFFE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    TEFLE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    TSWE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    MRAFE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    TOOE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    ELOE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    EPE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    EWE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    BOE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+    WDIE:
+      B_0x0:
+      - 0
+      - Interrupt disabled
+      B_0x1:
+      - 1
+      - Interrupt enabled
+  FDCAN_ILE:
+    EINT0:
+      B_0x0:
+      - 0
+      - Interrupt line fdcan_intr1_it disabled
+      B_0x1:
+      - 1
+      - Interrupt line fdcan_intr1_it enabled
+    EINT1:
+      B_0x0:
+      - 0
+      - Interrupt line fdcan_intr0_it disabled
+      B_0x1:
+      - 1
+      - Interrupt line fdcan_intr0_it enabled
+  FDCAN_RXGFC:
+    RRFE:
+      B_0x0:
+      - 0
+      - Filter remote frames with 29-bit standard IDs
+      B_0x1:
+      - 1
+      - Reject all remote frames with 29-bit standard IDs
+    RRFS:
+      B_0x0:
+      - 0
+      - Filter remote frames with 11-bit standard IDs
+      B_0x1:
+      - 1
+      - Reject all remote frames with 11-bit standard IDs
+    ANFE:
+      B_0x0:
+      - 0
+      - Accept in Rx FIFO 0
+      B_0x1:
+      - 1
+      - Accept in Rx FIFO 1
+      B_0x2:
+      - 2
+      - Reject
+      B_0x3:
+      - 3
+      - Reject
+    ANFS:
+      B_0x0:
+      - 0
+      - Accept in Rx FIFO 0
+      B_0x1:
+      - 1
+      - Accept in Rx FIFO 1
+      B_0x2:
+      - 2
+      - Reject
+      B_0x3:
+      - 3
+      - Reject
+    LSS:
+      B_0x0:
+      - 0
+      - No standard message ID filter
+    LSE:
+      B_0x0:
+      - 0
+      - No extended message ID filter
+  FDCAN_HPMS:
+    MSI:
+      B_0x0:
+      - 0
+      - No FIFO selected
+      B_0x1:
+      - 1
+      - FIFO overrun
+      B_0x2:
+      - 2
+      - Message stored in FIFO 0
+      B_0x3:
+      - 3
+      - Message stored in FIFO 1
+    FLST:
+      B_0x0:
+      - 0
+      - Standard filter list
+      B_0x1:
+      - 1
+      - Extended filter list
+  FDCAN_RXF0S:
+    F0F:
+      B_0x0:
+      - 0
+      - Rx FIFO 0 not full
+      B_0x1:
+      - 1
+      - Rx FIFO 0 full
+    RF0L:
+      B_0x0:
+      - 0
+      - No Rx FIFO 0 message lost
+      B_0x1:
+      - 1
+      - Rx FIFO 0 message lost, also set after write attempt to Rx FIFO 0 of size 0
+  FDCAN_RXF1S:
+    F1F:
+      B_0x0:
+      - 0
+      - Rx FIFO 1 not full
+      B_0x1:
+      - 1
+      - Rx FIFO 1 full
+    RF1L:
+      B_0x0:
+      - 0
+      - No Rx FIFO 1 message lost
+      B_0x1:
+      - 1
+      - Rx FIFO 1 message lost, also set after write attempt to Rx FIFO 1 of size 0
+  FDCAN_TXBC:
+    TFQM:
+      B_0x0:
+      - 0
+      - Tx FIFO operation
+      B_0x1:
+      - 1
+      - Tx queue operation.
+  FDCAN_TXFQS:
+    TFQF:
+      B_0x0:
+      - 0
+      - Tx FIFO/queue not full
+      B_0x1:
+      - 1
+      - Tx FIFO/queue full
+  FDCAN_TXBRP:
+    TRP:
+      B_0x0:
+      - 0
+      - No transmission request pending
+      B_0x1:
+      - 1
+      - Transmission request pending
+  FDCAN_TXBAR:
+    AR:
+      B_0x0:
+      - 0
+      - No transmission request added
+      B_0x1:
+      - 1
+      - Transmission requested added.
+  FDCAN_TXBCR:
+    CR:
+      B_0x0:
+      - 0
+      - No cancellation pending
+      B_0x1:
+      - 1
+      - Cancellation pending
+  FDCAN_TXBTO:
+    TO:
+      B_0x0:
+      - 0
+      - No transmission occurred
+      B_0x1:
+      - 1
+      - Transmission occurred
+  FDCAN_TXBCF:
+    CF:
+      B_0x0:
+      - 0
+      - No transmit buffer cancellation
+      B_0x1:
+      - 1
+      - Transmit buffer cancellation finished
+  FDCAN_TXBTIE:
+    TIE:
+      B_0x0:
+      - 0
+      - Transmission interrupt disabled
+      B_0x1:
+      - 1
+      - Transmission interrupt enable
+  FDCAN_TXBCIE:
+    CFIE:
+      B_0x0:
+      - 0
+      - Cancellation finished interrupt disabled
+      B_0x1:
+      - 1
+      - Cancellation finished interrupt enabled
+  FDCAN_TXEFS:
+    EFF:
+      B_0x0:
+      - 0
+      - Tx event FIFO not full
+      B_0x1:
+      - 1
+      - Tx event FIFO full
+  FDCAN_CKDIV:
+    PDIV:
+      B_0x0:
+      - 0
+      - Divide by 1
+      B_0x1:
+      - 1
+      - Divide by 2
+      B_0x2:
+      - 2
+      - Divide by 4
+      B_0x3:
+      - 3
+      - Divide by 6
+      B_0x4:
+      - 4
+      - Divide by 8
+      B_0x5:
+      - 5
+      - Divide by 10
+      B_0x6:
+      - 6
+      - Divide by 12
+      B_0x7:
+      - 7
+      - Divide by 14
+      B_0x8:
+      - 8
+      - Divide by 16
+      B_0x9:
+      - 9
+      - Divide by 18
+      B_0xA:
+      - 10
+      - Divide by 20
+      B_0xB:
+      - 11
+      - Divide by 22
+      B_0xC:
+      - 12
+      - Divide by 24
+      B_0xD:
+      - 13
+      - Divide by 26
+      B_0xE:
+      - 14
+      - Divide by 28
+      B_0xF:
+      - 15
+      - Divide by 30

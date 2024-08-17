@@ -1,0 +1,4114 @@
+_add:
+  RCC:
+    name: RCC
+    description: Reset and clock control
+    groupName: RCC
+    baseAddress: 1073876992
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      RCC:
+        name: RCC
+        description: RCC global interrupt
+        value: 5
+    registers:
+      RCC_CR:
+        name: RCC_CR
+        displayName: RCC_CR
+        description: Clock control register
+        addressOffset: 0
+        size: 32
+        resetValue: 99
+        resetMask: 4294967295
+        fields:
+          HSION:
+            name: HSION
+            description: HSI16 clock enable Set and cleared by software. Cleared by hardware to stop the HSI16 oscillator when entering Stop, Standby or Shutdown mode. Set by hardware to force the HSI16 oscillator ON when STOPWUCK=1 or HSIASFS = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator. This bit is set by hardware if the HSI16 is used directly or indirectly as system clock.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          HSIKERON:
+            name: HSIKERON
+            description: HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I<sup>2</sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value.
+            bitOffset: 9
+            bitWidth: 1
+            access: read-write
+          HSIRDY:
+            name: HSIRDY
+            description: 'HSI16 clock ready flag Set by hardware to indicate that HSI16 oscillator is stable. This bit is set only when HSI16 is enabled by software by setting HSION. Note: Once the HSION bit is cleared, HSIRDY goes low after 6 HSI16 clock cycles.'
+            bitOffset: 10
+            bitWidth: 1
+            access: read-only
+          HSEON:
+            name: HSEON
+            description: HSE clock enable Set and cleared by software. Cleared by hardware to stop the HSE oscillator when entering Stop, Standby or Shutdown mode. This bit cannot be reset if the HSE oscillator is used directly or indirectly as the system clock.
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          HSERDY:
+            name: HSERDY
+            description: 'HSE clock ready flag Set by hardware to indicate that the HSE oscillator is stable. Note: Once the HSEON bit is cleared, HSERDY goes low after 6 HSE clock cycles.'
+            bitOffset: 17
+            bitWidth: 1
+            access: read-only
+          HSEBYP:
+            name: HSEBYP
+            description: HSE crystal oscillator bypass Set and cleared by software to bypass the oscillator with an external clock. The external clock must be enabled with the HSEON bit set, to be used by the device. The HSEBYP bit can be written only if the HSE oscillator is disabled.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          CSSON:
+            name: CSSON
+            description: Clock security system enable Set by software to enable the clock security system. When CSSON is set, the clock detector is enabled by hardware when the HSE oscillator is ready, and disabled by hardware if a HSE clock failure is detected. This bit is set only and is cleared by reset.
+            bitOffset: 19
+            bitWidth: 1
+            access: read-write
+          PLLON:
+            name: PLLON
+            description: Main PLL enable Set and cleared by software to enable the main PLL. Cleared by hardware when entering Stop, Standby or Shutdown mode. This bit cannot be reset if the PLL clock is used as the system clock.
+            bitOffset: 24
+            bitWidth: 1
+            access: read-write
+          PLLRDY:
+            name: PLLRDY
+            description: Main PLL clock ready flag Set by hardware to indicate that the main PLL is locked.
+            bitOffset: 25
+            bitWidth: 1
+            access: read-only
+      RCC_ICSCR:
+        name: RCC_ICSCR
+        displayName: RCC_ICSCR
+        description: Internal clock sources calibration register
+        addressOffset: 4
+        size: 32
+        resetValue: 1073741824
+        resetMask: 4294967295
+        fields:
+          HSICAL:
+            name: HSICAL
+            description: HSI16 clock calibration These bits are initialized at startup with the factory-programmed HSI16 calibration trim value. When HSITRIM is written, HSICAL is updated with the sum of HSITRIM and the factory trim value.
+            bitOffset: 16
+            bitWidth: 8
+            access: read-only
+          HSITRIM:
+            name: HSITRIM
+            description: HSI16 clock trimming These bits provide an additional user-programmable trimming value that is added to the HSICAL[7:0] bits. It can be programmed to adjust to variations in voltage and temperature that influence the frequency of the HSI16. The default value is 16, which, when added to the HSICAL value, should trim the HSI16 to 16 MHz 1 %.
+            bitOffset: 24
+            bitWidth: 7
+            access: read-write
+      RCC_CFGR:
+        name: RCC_CFGR
+        displayName: RCC_CFGR
+        description: Clock configuration register
+        addressOffset: 8
+        size: 32
+        resetValue: 5
+        resetMask: 4294967295
+        fields:
+          SW:
+            name: SW
+            description: System clock switch Set and cleared by software to select system clock source (SYSCLK). Configured by hardware to force HSI16 oscillator selection when exiting stop and standby modes or in case of failure of the HSE oscillator.
+            bitOffset: 0
+            bitWidth: 2
+            access: read-write
+          SWS:
+            name: SWS
+            description: System clock switch status Set and cleared by hardware to indicate which clock source is used as system clock.
+            bitOffset: 2
+            bitWidth: 2
+            access: read-only
+          HPRE:
+            name: HPRE
+            description: 'AHB prescaler Set and cleared by software to control the division factor of the AHB clock. Note: Depending on the device voltage range, the software has to set correctly these bits to ensure that the system frequency does not exceed the maximum allowed frequency (for more details please refer to Section 6.1.5: Dynamic voltage scaling management). After a write operation to these bits and before decreasing the voltage range, this register must be read to be sure that the new value has been taken into account. 0xxx: SYSCLK not divided'
+            bitOffset: 4
+            bitWidth: 4
+            access: read-write
+          PPRE1:
+            name: PPRE1
+            description: 'APB1 prescaler Set and cleared by software to control the division factor of the APB1 clock (PCLK1). 0xx: HCLK not divided'
+            bitOffset: 8
+            bitWidth: 3
+            access: read-write
+          PPRE2:
+            name: PPRE2
+            description: 'APB2 prescaler Set and cleared by software to control the division factor of the APB2 clock (PCLK2). 0xx: HCLK not divided'
+            bitOffset: 11
+            bitWidth: 3
+            access: read-write
+          MCOSEL:
+            name: MCOSEL
+            description: 'Microcontroller clock output Set and cleared by software. Others: Reserved Note: This clock output may have some truncated cycles at startup or during MCO clock source switching.'
+            bitOffset: 24
+            bitWidth: 4
+            access: read-write
+          MCOPRE:
+            name: MCOPRE
+            description: 'Microcontroller clock output prescaler These bits are set and cleared by software. It is highly recommended to change this prescaler before MCO output is enabled. Others: not allowed'
+            bitOffset: 28
+            bitWidth: 3
+            access: read-write
+      RCC_PLLCFGR:
+        name: RCC_PLLCFGR
+        displayName: RCC_PLLCFGR
+        description: PLL configuration register
+        addressOffset: 12
+        size: 32
+        resetValue: 4096
+        resetMask: 4294967295
+        fields:
+          PLLSRC:
+            name: PLLSRC
+            description: Main PLL entry clock source Set and cleared by software to select PLL clock source. These bits can be written only when PLL is disabled. In order to save power, when no PLL is used, the value of PLLSRC should be 00.
+            bitOffset: 0
+            bitWidth: 2
+            access: read-write
+          PLLM:
+            name: PLLM
+            description: 'Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 <= PLLM <= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet.'
+            bitOffset: 4
+            bitWidth: 4
+            access: read-write
+          PLLN:
+            name: PLLN
+            description: 'Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =< PLLN =< 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet.'
+            bitOffset: 8
+            bitWidth: 7
+            access: read-write
+          PLLPEN:
+            name: PLLPEN
+            description: Main PLL PLL P clock output enable Set and reset by software to enable the PLL P clock output of the PLL. In order to save power, when the PLL P clock output of the PLL is not used, the value of PLLPEN should be 0.
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          PLLP:
+            name: PLLP
+            description: 'Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV[4:0] is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain.'
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          PLLQEN:
+            name: PLLQEN
+            description: Main PLL Q clock output enable Set and reset by software to enable the PLL Q clock output of the PLL. In order to save power, when the PLL Q clock output of the PLL is not used, the value of PLLQEN should be 0.
+            bitOffset: 20
+            bitWidth: 1
+            access: read-write
+          PLLQ:
+            name: PLLQ
+            description: 'Main PLL division factor for PLL Q clock. Set and cleared by software to control the frequency of the main PLL output clock PLL Q clock. This output can be selected for USB, RNG, SAI (48 MHz clock). These bits can be written only if PLL is disabled. PLL Q output clock frequency = VCO frequency / PLLQ with PLLQ = 2, 4, 6, or 8 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain.'
+            bitOffset: 21
+            bitWidth: 2
+            access: read-write
+          PLLREN:
+            name: PLLREN
+            description: PLL R clock output enable Set and reset by software to enable the PLL R clock output of the PLL (used as system clock). This bit cannot be written when PLL R clock output of the PLL is used as System Clock. In order to save power, when the PLL R clock output of the PLL is not used, the value of PLLREN should be 0.
+            bitOffset: 24
+            bitWidth: 1
+            access: read-write
+          PLLR:
+            name: PLLR
+            description: 'Main PLL division factor for PLL R clock (system clock) Set and cleared by software to control the frequency of the main PLL output clock PLLCLK. This output can be selected as system clock. These bits can be written only if PLL is disabled. PLL R output clock frequency = VCO frequency / PLLR with PLLR = 2, 4, 6, or 8 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain.'
+            bitOffset: 25
+            bitWidth: 2
+            access: read-write
+          PLLPDIV:
+            name: PLLPDIV
+            description: Main PLLP division factor Set and cleared by software to control the PLL P frequency. PLL P output clock frequency = VCO frequency / PLLPDIV. ....
+            bitOffset: 27
+            bitWidth: 5
+            access: read-write
+      RCC_CIER:
+        name: RCC_CIER
+        displayName: RCC_CIER
+        description: Clock interrupt enable register
+        addressOffset: 24
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          LSIRDYIE:
+            name: LSIRDYIE
+            description: LSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSI oscillator stabilization.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          LSERDYIE:
+            name: LSERDYIE
+            description: LSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSE oscillator stabilization.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          HSIRDYIE:
+            name: HSIRDYIE
+            description: HSI16 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          HSERDYIE:
+            name: HSERDYIE
+            description: HSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSE oscillator stabilization.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          PLLRDYIE:
+            name: PLLRDYIE
+            description: PLL ready interrupt enable Set and cleared by software to enable/disable interrupt caused by PLL lock.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          LSECSSIE:
+            name: LSECSSIE
+            description: LSE clock security system interrupt enable Set and cleared by software to enable/disable interrupt caused by the clock security system on LSE.
+            bitOffset: 9
+            bitWidth: 1
+            access: read-write
+          HSI48RDYIE:
+            name: HSI48RDYIE
+            description: HSI48 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the internal HSI48 oscillator.
+            bitOffset: 10
+            bitWidth: 1
+            access: read-write
+      RCC_CIFR:
+        name: RCC_CIFR
+        displayName: RCC_CIFR
+        description: Clock interrupt flag register
+        addressOffset: 28
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          LSIRDYF:
+            name: LSIRDYF
+            description: LSI ready interrupt flag Set by hardware when the LSI clock becomes stable and LSIRDYDIE is set. Cleared by software setting the LSIRDYC bit.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-only
+          LSERDYF:
+            name: LSERDYF
+            description: LSE ready interrupt flag Set by hardware when the LSE clock becomes stable and LSERDYDIE is set. Cleared by software setting the LSERDYC bit.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-only
+          HSIRDYF:
+            name: HSIRDYF
+            description: HSI16 ready interrupt flag Set by hardware when the HSI16 clock becomes stable and HSIRDYDIE is set in a response to setting the HSION (refer to Clock control register (RCC_CR)). When HSION is not set but the HSI16 oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-only
+          HSERDYF:
+            name: HSERDYF
+            description: HSE ready interrupt flag Set by hardware when the HSE clock becomes stable and HSERDYDIE is set. Cleared by software setting the HSERDYC bit.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-only
+          PLLRDYF:
+            name: PLLRDYF
+            description: PLL ready interrupt flag Set by hardware when the PLL locks and PLLRDYDIE is set. Cleared by software setting the PLLRDYC bit.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-only
+          CSSF:
+            name: CSSF
+            description: Clock security system interrupt flag Set by hardware when a failure is detected in the HSE oscillator. Cleared by software setting the CSSC bit.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-only
+          LSECSSF:
+            name: LSECSSF
+            description: LSE Clock security system interrupt flag Set by hardware when a failure is detected in the LSE oscillator. Cleared by software setting the LSECSSC bit.
+            bitOffset: 9
+            bitWidth: 1
+            access: read-only
+          HSI48RDYF:
+            name: HSI48RDYF
+            description: HSI48 ready interrupt flag Set by hardware when the HSI48 clock becomes stable and HSI48RDYIE is set in a response to setting the HSI48ON (refer to Clock recovery RC register (RCC_CRRCR)). Cleared by software setting the HSI48RDYC bit.
+            bitOffset: 10
+            bitWidth: 1
+            access: read-only
+      RCC_CICR:
+        name: RCC_CICR
+        displayName: RCC_CICR
+        description: Clock interrupt clear register
+        addressOffset: 32
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          LSIRDYC:
+            name: LSIRDYC
+            description: LSI ready interrupt clear This bit is set by software to clear the LSIRDYF flag.
+            bitOffset: 0
+            bitWidth: 1
+            access: write-only
+          LSERDYC:
+            name: LSERDYC
+            description: LSE ready interrupt clear This bit is set by software to clear the LSERDYF flag.
+            bitOffset: 1
+            bitWidth: 1
+            access: write-only
+          HSIRDYC:
+            name: HSIRDYC
+            description: HSI16 ready interrupt clear This bit is set software to clear the HSIRDYF flag.
+            bitOffset: 3
+            bitWidth: 1
+            access: write-only
+          HSERDYC:
+            name: HSERDYC
+            description: HSE ready interrupt clear This bit is set by software to clear the HSERDYF flag.
+            bitOffset: 4
+            bitWidth: 1
+            access: write-only
+          PLLRDYC:
+            name: PLLRDYC
+            description: PLL ready interrupt clear This bit is set by software to clear the PLLRDYF flag.
+            bitOffset: 5
+            bitWidth: 1
+            access: write-only
+          CSSC:
+            name: CSSC
+            description: Clock security system interrupt clear This bit is set by software to clear the CSSF flag.
+            bitOffset: 8
+            bitWidth: 1
+            access: write-only
+          LSECSSC:
+            name: LSECSSC
+            description: LSE Clock security system interrupt clear This bit is set by software to clear the LSECSSF flag.
+            bitOffset: 9
+            bitWidth: 1
+            access: write-only
+          HSI48RDYC:
+            name: HSI48RDYC
+            description: HSI48 oscillator ready interrupt clear This bit is set by software to clear the HSI48RDYF flag.
+            bitOffset: 10
+            bitWidth: 1
+            access: write-only
+      RCC_AHB1RSTR:
+        name: RCC_AHB1RSTR
+        displayName: RCC_AHB1RSTR
+        description: AHB1 peripheral reset register
+        addressOffset: 40
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          DMA1RST:
+            name: DMA1RST
+            description: DMA1 reset Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          DMA2RST:
+            name: DMA2RST
+            description: DMA2 reset Set and cleared by software.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          DMAMUX1RST:
+            name: DMAMUX1RST
+            description: Set and cleared by software.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          CORDICRST:
+            name: CORDICRST
+            description: Set and cleared by software
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          FMACRST:
+            name: FMACRST
+            description: Set and cleared by software
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          FLASHRST:
+            name: FLASHRST
+            description: Flash memory interface reset Set and cleared by software. This bit can be activated only when the Flash memory is in power down mode.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          CRCRST:
+            name: CRCRST
+            description: CRC reset Set and cleared by software.
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+      RCC_AHB2RSTR:
+        name: RCC_AHB2RSTR
+        displayName: RCC_AHB2RSTR
+        description: AHB2 peripheral reset register
+        addressOffset: 44
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          GPIOARST:
+            name: GPIOARST
+            description: IO port A reset Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          GPIOBRST:
+            name: GPIOBRST
+            description: IO port B reset Set and cleared by software.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          GPIOCRST:
+            name: GPIOCRST
+            description: IO port C reset Set and cleared by software.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          GPIODRST:
+            name: GPIODRST
+            description: IO port D reset Set and cleared by software.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          GPIOERST:
+            name: GPIOERST
+            description: IO port E reset Set and cleared by software.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          GPIOFRST:
+            name: GPIOFRST
+            description: IO port F reset Set and cleared by software.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          GPIOGRST:
+            name: GPIOGRST
+            description: IO port G reset Set and cleared by software.
+            bitOffset: 6
+            bitWidth: 1
+            access: read-write
+          ADC12RST:
+            name: ADC12RST
+            description: ADC12 reset Set and cleared by software.
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          ADC345RST:
+            name: ADC345RST
+            description: ADC345 reset Set and cleared by software.
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          DAC1RST:
+            name: DAC1RST
+            description: DAC1 reset Set and cleared by software.
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          DAC2RST:
+            name: DAC2RST
+            description: DAC2 reset Set and cleared by software.
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          DAC3RST:
+            name: DAC3RST
+            description: DAC3 reset Set and cleared by software.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          DAC4RST:
+            name: DAC4RST
+            description: DAC4 reset Set and cleared by software.
+            bitOffset: 19
+            bitWidth: 1
+            access: read-write
+          AESRST:
+            name: AESRST
+            description: AESRST reset Set and cleared by software.
+            bitOffset: 24
+            bitWidth: 1
+            access: read-write
+          RNGRST:
+            name: RNGRST
+            description: RNG reset Set and cleared by software.
+            bitOffset: 26
+            bitWidth: 1
+            access: read-write
+      RCC_AHB3RSTR:
+        name: RCC_AHB3RSTR
+        displayName: RCC_AHB3RSTR
+        description: AHB3 peripheral reset register
+        addressOffset: 48
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          FMCRST:
+            name: FMCRST
+            description: Flexible static memory controller reset Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          QSPIRST:
+            name: QSPIRST
+            description: QUADSPI reset Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+      RCC_APB1RSTR1:
+        name: RCC_APB1RSTR1
+        displayName: RCC_APB1RSTR1
+        description: APB1 peripheral reset register 1
+        addressOffset: 56
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          TIM2RST:
+            name: TIM2RST
+            description: TIM2 timer reset Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          TIM3RST:
+            name: TIM3RST
+            description: TIM3 timer reset Set and cleared by software.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          TIM4RST:
+            name: TIM4RST
+            description: TIM3 timer reset Set and cleared by software.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          TIM5RST:
+            name: TIM5RST
+            description: TIM5 timer reset Set and cleared by software.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          TIM6RST:
+            name: TIM6RST
+            description: TIM6 timer reset Set and cleared by software.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          TIM7RST:
+            name: TIM7RST
+            description: TIM7 timer reset Set and cleared by software.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          CRSRST:
+            name: CRSRST
+            description: CRS reset Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          SPI2RST:
+            name: SPI2RST
+            description: SPI2 reset Set and cleared by software.
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          SPI3RST:
+            name: SPI3RST
+            description: SPI3 reset Set and cleared by software.
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          USART2RST:
+            name: USART2RST
+            description: USART2 reset Set and cleared by software.
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          USART3RST:
+            name: USART3RST
+            description: USART3 reset Set and cleared by software.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          UART4RST:
+            name: UART4RST
+            description: UART4 reset Set and cleared by software.
+            bitOffset: 19
+            bitWidth: 1
+            access: read-write
+          UART5RST:
+            name: UART5RST
+            description: UART5 reset Set and cleared by software.
+            bitOffset: 20
+            bitWidth: 1
+            access: read-write
+          I2C1RST:
+            name: I2C1RST
+            description: I2C1 reset Set and cleared by software.
+            bitOffset: 21
+            bitWidth: 1
+            access: read-write
+          I2C2RST:
+            name: I2C2RST
+            description: I2C2 reset Set and cleared by software.
+            bitOffset: 22
+            bitWidth: 1
+            access: read-write
+          USBRST:
+            name: USBRST
+            description: USB device reset Set and reset by software.
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+          FDCANRST:
+            name: FDCANRST
+            description: FDCAN reset Set and reset by software.
+            bitOffset: 25
+            bitWidth: 1
+            access: read-write
+          PWRRST:
+            name: PWRRST
+            description: Power interface reset Set and cleared by software.
+            bitOffset: 28
+            bitWidth: 1
+            access: read-write
+          I2C3RST:
+            name: I2C3RST
+            description: I2C3 reset Set and cleared by software.
+            bitOffset: 30
+            bitWidth: 1
+            access: read-write
+          LPTIM1RST:
+            name: LPTIM1RST
+            description: Low Power Timer 1 reset Set and cleared by software.
+            bitOffset: 31
+            bitWidth: 1
+            access: read-write
+      RCC_APB1RSTR2:
+        name: RCC_APB1RSTR2
+        displayName: RCC_APB1RSTR2
+        description: APB1 peripheral reset register 2
+        addressOffset: 60
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          LPUART1RST:
+            name: LPUART1RST
+            description: Low-power UART 1 reset Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          I2C4RST:
+            name: I2C4RST
+            description: I2C4 reset Set and cleared by software
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          UCPD1RST:
+            name: UCPD1RST
+            description: UCPD1 reset Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+      RCC_APB2RSTR:
+        name: RCC_APB2RSTR
+        displayName: RCC_APB2RSTR
+        description: APB2 peripheral reset register
+        addressOffset: 64
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          SYSCFGRST:
+            name: SYSCFGRST
+            description: SYSCFG + COMP + OPAMP + VREFBUF reset
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          TIM1RST:
+            name: TIM1RST
+            description: TIM1 timer reset Set and cleared by software.
+            bitOffset: 11
+            bitWidth: 1
+            access: read-write
+          SPI1RST:
+            name: SPI1RST
+            description: SPI1 reset Set and cleared by software.
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+          TIM8RST:
+            name: TIM8RST
+            description: TIM8 timer reset Set and cleared by software.
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          USART1RST:
+            name: USART1RST
+            description: USART1 reset Set and cleared by software.
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          SPI4RST:
+            name: SPI4RST
+            description: SPI4 reset Set and cleared by software.
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          TIM15RST:
+            name: TIM15RST
+            description: TIM15 timer reset Set and cleared by software.
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          TIM16RST:
+            name: TIM16RST
+            description: TIM16 timer reset Set and cleared by software.
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          TIM17RST:
+            name: TIM17RST
+            description: TIM17 timer reset Set and cleared by software.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          TIM20RST:
+            name: TIM20RST
+            description: TIM20 reset Set and cleared by software.
+            bitOffset: 20
+            bitWidth: 1
+            access: read-write
+          SAI1RST:
+            name: SAI1RST
+            description: Serial audio interface 1 (SAI1) reset Set and cleared by software.
+            bitOffset: 21
+            bitWidth: 1
+            access: read-write
+          HRTIM1RST:
+            name: HRTIM1RST
+            description: HRTIM1 reset Set and cleared by software.
+            bitOffset: 26
+            bitWidth: 1
+            access: read-write
+      RCC_AHB1ENR:
+        name: RCC_AHB1ENR
+        displayName: RCC_AHB1ENR
+        description: AHB1 peripheral clock enable register
+        addressOffset: 72
+        size: 32
+        resetValue: 256
+        resetMask: 4294967295
+        fields:
+          DMA1EN:
+            name: DMA1EN
+            description: DMA1 clock enable Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          DMA2EN:
+            name: DMA2EN
+            description: DMA2 clock enable Set and cleared by software.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          DMAMUX1EN:
+            name: DMAMUX1EN
+            description: DMAMUX1 clock enable Set and reset by software.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          CORDICEN:
+            name: CORDICEN
+            description: CORDIC clock enable Set and reset by software.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          FMACEN:
+            name: FMACEN
+            description: FMAC enable Set and reset by software.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          FLASHEN:
+            name: FLASHEN
+            description: Flash memory interface clock enable Set and cleared by software. This bit can be disabled only when the Flash is in power down mode.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          CRCEN:
+            name: CRCEN
+            description: CRC clock enable Set and cleared by software.
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+      RCC_AHB2ENR:
+        name: RCC_AHB2ENR
+        displayName: RCC_AHB2ENR
+        description: AHB2 peripheral clock enable register
+        addressOffset: 76
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          GPIOAEN:
+            name: GPIOAEN
+            description: IO port A clock enable Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          GPIOBEN:
+            name: GPIOBEN
+            description: IO port B clock enable Set and cleared by software.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          GPIOCEN:
+            name: GPIOCEN
+            description: IO port C clock enable Set and cleared by software.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          GPIODEN:
+            name: GPIODEN
+            description: IO port D clock enable Set and cleared by software.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          GPIOEEN:
+            name: GPIOEEN
+            description: IO port E clock enable Set and cleared by software.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          GPIOFEN:
+            name: GPIOFEN
+            description: IO port F clock enable Set and cleared by software.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          GPIOGEN:
+            name: GPIOGEN
+            description: IO port G clock enable Set and cleared by software.
+            bitOffset: 6
+            bitWidth: 1
+            access: read-write
+          ADC12EN:
+            name: ADC12EN
+            description: ADC12 clock enable Set and cleared by software.
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          ADC345EN:
+            name: ADC345EN
+            description: ADC345 clock enable Set and cleared by software
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          DAC1EN:
+            name: DAC1EN
+            description: DAC1 clock enable Set and cleared by software.
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          DAC2EN:
+            name: DAC2EN
+            description: DAC2 clock enable Set and cleared by software.
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          DAC3EN:
+            name: DAC3EN
+            description: DAC3 clock enable Set and cleared by software.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          DAC4EN:
+            name: DAC4EN
+            description: DAC4 clock enable Set and cleared by software.
+            bitOffset: 19
+            bitWidth: 1
+            access: read-write
+          AESEN:
+            name: AESEN
+            description: AES clock enable Set and cleared by software.
+            bitOffset: 24
+            bitWidth: 1
+            access: read-write
+          RNGEN:
+            name: RNGEN
+            description: RNG enable Set and cleared by software.
+            bitOffset: 26
+            bitWidth: 1
+            access: read-write
+      RCC_AHB3ENR:
+        name: RCC_AHB3ENR
+        displayName: RCC_AHB3ENR
+        description: AHB3 peripheral clock enable register
+        addressOffset: 80
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          FMCEN:
+            name: FMCEN
+            description: Flexible static memory controller clock enable Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          QSPIEN:
+            name: QSPIEN
+            description: QUADSPI memory interface clock enable Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+      RCC_APB1ENR1:
+        name: RCC_APB1ENR1
+        displayName: RCC_APB1ENR1
+        description: APB1 peripheral clock enable register 1
+        addressOffset: 88
+        size: 32
+        resetValue: 1024
+        resetMask: 4294967295
+        fields:
+          TIM2EN:
+            name: TIM2EN
+            description: TIM2 timer clock enable Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          TIM3EN:
+            name: TIM3EN
+            description: TIM3 timer clock enable Set and cleared by software.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          TIM4EN:
+            name: TIM4EN
+            description: TIM4 timer clock enable Set and cleared by software.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          TIM5EN:
+            name: TIM5EN
+            description: TIM5 timer clock enable Set and cleared by software.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          TIM6EN:
+            name: TIM6EN
+            description: TIM6 timer clock enable Set and cleared by software.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          TIM7EN:
+            name: TIM7EN
+            description: TIM7 timer clock enable Set and cleared by software.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          CRSEN:
+            name: CRSEN
+            description: CRS Recovery System clock enable Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          RTCAPBEN:
+            name: RTCAPBEN
+            description: RTC APB clock enable Set and cleared by software
+            bitOffset: 10
+            bitWidth: 1
+            access: read-write
+          WWDGEN:
+            name: WWDGEN
+            description: Window watchdog clock enable Set by software to enable the window watchdog clock. Reset by hardware system reset. This bit can also be set by hardware if the WWDG_SW option bit is reset.
+            bitOffset: 11
+            bitWidth: 1
+            access: read-write
+          SPI2EN:
+            name: SPI2EN
+            description: SPI2 clock enable Set and cleared by software.
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          SPI3EN:
+            name: SPI3EN
+            description: SPI3 clock enable Set and cleared by software.
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          USART2EN:
+            name: USART2EN
+            description: USART2 clock enable Set and cleared by software.
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          USART3EN:
+            name: USART3EN
+            description: USART3 clock enable Set and cleared by software.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          UART4EN:
+            name: UART4EN
+            description: UART4 clock enable Set and cleared by software.
+            bitOffset: 19
+            bitWidth: 1
+            access: read-write
+          UART5EN:
+            name: UART5EN
+            description: UART5 clock enable Set and cleared by software.
+            bitOffset: 20
+            bitWidth: 1
+            access: read-write
+          I2C1EN:
+            name: I2C1EN
+            description: I2C1 clock enable Set and cleared by software.
+            bitOffset: 21
+            bitWidth: 1
+            access: read-write
+          I2C2EN:
+            name: I2C2EN
+            description: I2C2 clock enable Set and cleared by software.
+            bitOffset: 22
+            bitWidth: 1
+            access: read-write
+          USBEN:
+            name: USBEN
+            description: USB device clock enable Set and cleared by software.
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+          FDCANEN:
+            name: FDCANEN
+            description: FDCAN clock enable Set and cleared by software.
+            bitOffset: 25
+            bitWidth: 1
+            access: read-write
+          PWREN:
+            name: PWREN
+            description: Power interface clock enable Set and cleared by software.
+            bitOffset: 28
+            bitWidth: 1
+            access: read-write
+          I2C3EN:
+            name: I2C3EN
+            description: I2C3 clock enable Set and cleared by software.
+            bitOffset: 30
+            bitWidth: 1
+            access: read-write
+          LPTIM1EN:
+            name: LPTIM1EN
+            description: Low power timer 1 clock enable Set and cleared by software.
+            bitOffset: 31
+            bitWidth: 1
+            access: read-write
+      RCC_APB1ENR2:
+        name: RCC_APB1ENR2
+        displayName: RCC_APB1ENR2
+        description: APB1 peripheral clock enable register 2
+        addressOffset: 92
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          LPUART1EN:
+            name: LPUART1EN
+            description: Low power UART 1 clock enable Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          I2C4EN:
+            name: I2C4EN
+            description: I2C4 clock enable Set and cleared by software
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          UCPD1EN:
+            name: UCPD1EN
+            description: UCPD1 clock enable Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+      RCC_APB2ENR:
+        name: RCC_APB2ENR
+        displayName: RCC_APB2ENR
+        description: APB2 peripheral clock enable register
+        addressOffset: 96
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          SYSCFGEN:
+            name: SYSCFGEN
+            description: SYSCFG + COMP + VREFBUF + OPAMP clock enable Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          TIM1EN:
+            name: TIM1EN
+            description: TIM1 timer clock enable Set and cleared by software.
+            bitOffset: 11
+            bitWidth: 1
+            access: read-write
+          SPI1EN:
+            name: SPI1EN
+            description: SPI1 clock enable Set and cleared by software.
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+          TIM8EN:
+            name: TIM8EN
+            description: TIM8 timer clock enable Set and cleared by software.
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          USART1EN:
+            name: USART1EN
+            description: USART1clock enable Set and cleared by software.
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          SPI4EN:
+            name: SPI4EN
+            description: SPI4 clock enable Set and cleared by software.
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          TIM15EN:
+            name: TIM15EN
+            description: TIM15 timer clock enable Set and cleared by software.
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          TIM16EN:
+            name: TIM16EN
+            description: TIM16 timer clock enable Set and cleared by software.
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          TIM17EN:
+            name: TIM17EN
+            description: TIM17 timer clock enable Set and cleared by software.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          TIM20EN:
+            name: TIM20EN
+            description: TIM20 timer clock enable Set and cleared by software.
+            bitOffset: 20
+            bitWidth: 1
+            access: read-write
+          SAI1EN:
+            name: SAI1EN
+            description: SAI1 clock enable Set and cleared by software.
+            bitOffset: 21
+            bitWidth: 1
+            access: read-write
+          HRTIM1EN:
+            name: HRTIM1EN
+            description: HRTIM1 clock enable Set and cleared by software.
+            bitOffset: 26
+            bitWidth: 1
+            access: read-write
+      RCC_AHB1SMENR:
+        name: RCC_AHB1SMENR
+        displayName: RCC_AHB1SMENR
+        description: AHB1 peripheral clocks enable in Sleep and Stop modes register
+        addressOffset: 104
+        size: 32
+        resetValue: 4879
+        resetMask: 4294967295
+        fields:
+          DMA1SMEN:
+            name: DMA1SMEN
+            description: DMA1 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          DMA2SMEN:
+            name: DMA2SMEN
+            description: DMA2 clocks enable during Sleep and Stop modes Set and cleared by software during Sleep mode.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          DMAMUX1SMEN:
+            name: DMAMUX1SMEN
+            description: DMAMUX1 clock enable during Sleep and Stop modes. Set and cleared by software.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          CORDICSMEN:
+            name: CORDICSMEN
+            description: CORDICSM clock enable. Set and cleared by software.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          FMACSMEN:
+            name: FMACSMEN
+            description: FMACSM clock enable. Set and cleared by software.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          FLASHSMEN:
+            name: FLASHSMEN
+            description: Flash memory interface clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          SRAM1SMEN:
+            name: SRAM1SMEN
+            description: SRAM1 interface clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 9
+            bitWidth: 1
+            access: read-write
+          CRCSMEN:
+            name: CRCSMEN
+            description: CRC clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+      RCC_AHB2SMENR:
+        name: RCC_AHB2SMENR
+        displayName: RCC_AHB2SMENR
+        description: AHB2 peripheral clocks enable in Sleep and Stop modes register
+        addressOffset: 108
+        size: 32
+        resetValue: 84895359
+        resetMask: 4294967295
+        fields:
+          GPIOASMEN:
+            name: GPIOASMEN
+            description: IO port A clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          GPIOBSMEN:
+            name: GPIOBSMEN
+            description: IO port B clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          GPIOCSMEN:
+            name: GPIOCSMEN
+            description: IO port C clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          GPIODSMEN:
+            name: GPIODSMEN
+            description: IO port D clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          GPIOESMEN:
+            name: GPIOESMEN
+            description: IO port E clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          GPIOFSMEN:
+            name: GPIOFSMEN
+            description: IO port F clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          GPIOGSMEN:
+            name: GPIOGSMEN
+            description: IO port G clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 6
+            bitWidth: 1
+            access: read-write
+          CCMSRAMSMEN:
+            name: CCMSRAMSMEN
+            description: CCM SRAM interface clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 9
+            bitWidth: 1
+            access: read-write
+          SRAM2SMEN:
+            name: SRAM2SMEN
+            description: SRAM2 interface clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 10
+            bitWidth: 1
+            access: read-write
+          ADC12SMEN:
+            name: ADC12SMEN
+            description: ADC12 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          ADC345SMEN:
+            name: ADC345SMEN
+            description: ADC345 clock enable Set and cleared by software.
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          DAC1SMEN:
+            name: DAC1SMEN
+            description: DAC1 clock enable Set and cleared by software.
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          DAC2SMEN:
+            name: DAC2SMEN
+            description: DAC2 clock enable Set and cleared by software.
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          DAC3SMEN:
+            name: DAC3SMEN
+            description: DAC3 clock enable Set and cleared by software.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          DAC4SMEN:
+            name: DAC4SMEN
+            description: DAC4 clock enable Set and cleared by software.
+            bitOffset: 19
+            bitWidth: 1
+            access: read-write
+          AESSMEN:
+            name: AESSMEN
+            description: AESM clocks enable Set and cleared by software.
+            bitOffset: 24
+            bitWidth: 1
+            access: read-write
+          RNGEN:
+            name: RNGEN
+            description: RNG enable Set and cleared by software.
+            bitOffset: 26
+            bitWidth: 1
+            access: read-write
+      RCC_AHB3SMENR:
+        name: RCC_AHB3SMENR
+        displayName: RCC_AHB3SMENR
+        description: AHB3 peripheral clocks enable in Sleep and Stop modes register
+        addressOffset: 112
+        size: 32
+        resetValue: 257
+        resetMask: 4294967295
+        fields:
+          FMCSMEN:
+            name: FMCSMEN
+            description: Flexible static memory controller clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          QSPISMEN:
+            name: QSPISMEN
+            description: QUADSPI memory interface clock enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+      RCC_APB1SMENR1:
+        name: RCC_APB1SMENR1
+        displayName: RCC_APB1SMENR1
+        description: APB1 peripheral clocks enable in Sleep and Stop modes register 1
+        addressOffset: 120
+        size: 32
+        resetValue: 3539914047
+        resetMask: 4294967295
+        fields:
+          TIM2SMEN:
+            name: TIM2SMEN
+            description: TIM2 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          TIM3SMEN:
+            name: TIM3SMEN
+            description: TIM3 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          TIM4SMEN:
+            name: TIM4SMEN
+            description: TIM4 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          TIM5SMEN:
+            name: TIM5SMEN
+            description: TIM5 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 3
+            bitWidth: 1
+            access: read-write
+          TIM6SMEN:
+            name: TIM6SMEN
+            description: TIM6 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 4
+            bitWidth: 1
+            access: read-write
+          TIM7SMEN:
+            name: TIM7SMEN
+            description: TIM7 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          CRSSMEN:
+            name: CRSSMEN
+            description: CRS timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          RTCAPBSMEN:
+            name: RTCAPBSMEN
+            description: RTC APB clock enable during Sleep and Stop modes Set and cleared by software
+            bitOffset: 10
+            bitWidth: 1
+            access: read-write
+          WWDGSMEN:
+            name: WWDGSMEN
+            description: Window watchdog clocks enable during Sleep and Stop modes Set and cleared by software. This bit is forced to 1 by hardware when the hardware WWDG option is activated.
+            bitOffset: 11
+            bitWidth: 1
+            access: read-write
+          SPI2SMEN:
+            name: SPI2SMEN
+            description: SPI2 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          SPI3SMEN:
+            name: SPI3SMEN
+            description: SPI3 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          USART2SMEN:
+            name: USART2SMEN
+            description: USART2 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          USART3SMEN:
+            name: USART3SMEN
+            description: USART3 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          UART4SMEN:
+            name: UART4SMEN
+            description: UART4 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 19
+            bitWidth: 1
+            access: read-write
+          UART5SMEN:
+            name: UART5SMEN
+            description: UART5 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 20
+            bitWidth: 1
+            access: read-write
+          I2C1SMEN:
+            name: I2C1SMEN
+            description: I2C1 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 21
+            bitWidth: 1
+            access: read-write
+          I2C2SMEN:
+            name: I2C2SMEN
+            description: I2C2 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 22
+            bitWidth: 1
+            access: read-write
+          USBSMEN:
+            name: USBSMEN
+            description: USB device clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+          FDCANSMEN:
+            name: FDCANSMEN
+            description: FDCAN clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 25
+            bitWidth: 1
+            access: read-write
+          PWRSMEN:
+            name: PWRSMEN
+            description: Power interface clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 28
+            bitWidth: 1
+            access: read-write
+          I2C3SMEN:
+            name: I2C3SMEN
+            description: I2C3 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 30
+            bitWidth: 1
+            access: read-write
+          LPTIM1SMEN:
+            name: LPTIM1SMEN
+            description: Low power timer 1 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 31
+            bitWidth: 1
+            access: read-write
+      RCC_APB1SMENR2:
+        name: RCC_APB1SMENR2
+        displayName: RCC_APB1SMENR2
+        description: APB1 peripheral clocks enable in Sleep and Stop modes register 2
+        addressOffset: 124
+        size: 32
+        resetValue: 259
+        resetMask: 4294967295
+        fields:
+          LPUART1SMEN:
+            name: LPUART1SMEN
+            description: Low power UART 1 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          I2C4SMEN:
+            name: I2C4SMEN
+            description: I2C4 clocks enable during Sleep and Stop modes Set and cleared by software
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          UCPD1SMEN:
+            name: UCPD1SMEN
+            description: UCPD1 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+      RCC_APB2SMENR:
+        name: RCC_APB2SMENR
+        displayName: RCC_APB2SMENR
+        description: APB2 peripheral clocks enable in Sleep and Stop modes register
+        addressOffset: 128
+        size: 32
+        resetValue: 70776833
+        resetMask: 4294967295
+        fields:
+          SYSCFGSMEN:
+            name: SYSCFGSMEN
+            description: SYSCFG + COMP + VREFBUF + OPAMP clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          TIM1SMEN:
+            name: TIM1SMEN
+            description: TIM1 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 11
+            bitWidth: 1
+            access: read-write
+          SPI1SMEN:
+            name: SPI1SMEN
+            description: SPI1 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 12
+            bitWidth: 1
+            access: read-write
+          TIM8SMEN:
+            name: TIM8SMEN
+            description: TIM8 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 13
+            bitWidth: 1
+            access: read-write
+          USART1SMEN:
+            name: USART1SMEN
+            description: USART1clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 14
+            bitWidth: 1
+            access: read-write
+          SPI4SMEN:
+            name: SPI4SMEN
+            description: SPI4 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          TIM15SMEN:
+            name: TIM15SMEN
+            description: TIM15 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          TIM16SMEN:
+            name: TIM16SMEN
+            description: TIM16 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 17
+            bitWidth: 1
+            access: read-write
+          TIM17SMEN:
+            name: TIM17SMEN
+            description: TIM17 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 18
+            bitWidth: 1
+            access: read-write
+          TIM20SMEN:
+            name: TIM20SMEN
+            description: TIM20 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 20
+            bitWidth: 1
+            access: read-write
+          SAI1SMEN:
+            name: SAI1SMEN
+            description: SAI1 clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 21
+            bitWidth: 1
+            access: read-write
+          HRTIM1SMEN:
+            name: HRTIM1SMEN
+            description: HRTIM1 timer clocks enable during Sleep and Stop modes Set and cleared by software.
+            bitOffset: 26
+            bitWidth: 1
+            access: read-write
+      RCC_CCIPR:
+        name: RCC_CCIPR
+        displayName: RCC_CCIPR
+        description: Peripherals independent clock configuration register
+        addressOffset: 136
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          USART1SEL:
+            name: USART1SEL
+            description: USART1 clock source selection This bit is set and cleared by software to select the USART1 clock source.
+            bitOffset: 0
+            bitWidth: 2
+            access: read-write
+          USART2SEL:
+            name: USART2SEL
+            description: USART2 clock source selection This bit is set and cleared by software to select the USART2 clock source.
+            bitOffset: 2
+            bitWidth: 2
+            access: read-write
+          USART3SEL:
+            name: USART3SEL
+            description: USART3 clock source selection This bit is set and cleared by software to select the USART3 clock source.
+            bitOffset: 4
+            bitWidth: 2
+            access: read-write
+          UART4SEL:
+            name: UART4SEL
+            description: UART4 clock source selection This bit is set and cleared by software to select the UART4 clock source.
+            bitOffset: 6
+            bitWidth: 2
+            access: read-write
+          UART5SEL:
+            name: UART5SEL
+            description: UART5 clock source selection These bits are set and cleared by software to select the UART5 clock source.
+            bitOffset: 8
+            bitWidth: 2
+            access: read-write
+          LPUART1SEL:
+            name: LPUART1SEL
+            description: LPUART1 clock source selection These bits are set and cleared by software to select the LPUART1 clock source.
+            bitOffset: 10
+            bitWidth: 2
+            access: read-write
+          I2C1SEL:
+            name: I2C1SEL
+            description: I2C1 clock source selection These bits are set and cleared by software to select the I2C1 clock source.
+            bitOffset: 12
+            bitWidth: 2
+            access: read-write
+          I2C2SEL:
+            name: I2C2SEL
+            description: I2C2 clock source selection These bits are set and cleared by software to select the I2C2 clock source.
+            bitOffset: 14
+            bitWidth: 2
+            access: read-write
+          I2C3SEL:
+            name: I2C3SEL
+            description: I2C3 clock source selection These bits are set and cleared by software to select the I2C3 clock source.
+            bitOffset: 16
+            bitWidth: 2
+            access: read-write
+          LPTIM1SEL:
+            name: LPTIM1SEL
+            description: Low power timer 1 clock source selection These bits are set and cleared by software to select the LPTIM1 clock source.
+            bitOffset: 18
+            bitWidth: 2
+            access: read-write
+          SAI1SEL:
+            name: SAI1SEL
+            description: clock source selection These bits are set and cleared by software to select the SAI clock source.
+            bitOffset: 20
+            bitWidth: 2
+            access: read-write
+          I2S23SEL:
+            name: I2S23SEL
+            description: clock source selection These bits are set and cleared by software to select the I2S23 clock source.
+            bitOffset: 22
+            bitWidth: 2
+            access: read-write
+          FDCANSEL:
+            name: FDCANSEL
+            description: None
+            bitOffset: 24
+            bitWidth: 2
+            access: read-write
+          CLK48SEL:
+            name: CLK48SEL
+            description: '48 MHz clock source selection These bits are set and cleared by software to select the 48 MHz clock source used by USB device FS and RNG.'
+            bitOffset: 26
+            bitWidth: 2
+            access: read-write
+          ADC12SEL:
+            name: ADC12SEL
+            description: ADC1/2 clock source selection These bits are set and cleared by software to select the clock source used by the ADC interface.
+            bitOffset: 28
+            bitWidth: 2
+            access: read-write
+          ADC345SEL:
+            name: ADC345SEL
+            description: ADC3/4/5 clock source selection These bits are set and cleared by software to select the clock source used by the ADC345 interface.
+            bitOffset: 30
+            bitWidth: 2
+            access: read-write
+      RCC_BDCR:
+        name: RCC_BDCR
+        displayName: RCC_BDCR
+        description: RTC domain control register
+        addressOffset: 144
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          LSEON:
+            name: LSEON
+            description: LSE oscillator enable Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          LSERDY:
+            name: LSERDY
+            description: LSE oscillator ready Set and cleared by hardware to indicate when the external 32 kHz oscillator is stable. After the LSEON bit is cleared, LSERDY goes low after 6 external low-speed oscillator clock cycles.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-only
+          LSEBYP:
+            name: LSEBYP
+            description: LSE oscillator bypass Set and cleared by software to bypass oscillator in debug mode. This bit can be written only when the external 32 kHz oscillator is disabled (LSEON=0 and LSERDY=0).
+            bitOffset: 2
+            bitWidth: 1
+            access: read-write
+          LSEDRV:
+            name: LSEDRV
+            description: LSE oscillator drive capability Set by software to modulate the LSE oscillators drive capability. The oscillator is in Xtal mode when it is not in bypass mode.
+            bitOffset: 3
+            bitWidth: 2
+            access: read-write
+          LSECSSON:
+            name: LSECSSON
+            description: CSS on LSE enable Set by software to enable the Clock Security System on LSE (32 kHz oscillator). LSECSSON must be enabled after the LSE oscillator is enabled (LSEON bit enabled) and ready (LSERDY flag set by hardware), and after the RTCSEL bit is selected. Once enabled this bit cannot be disabled, except after a LSE failure detection (LSECSSD =1). In that case the software MUST disable the LSECSSON bit.
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          LSECSSD:
+            name: LSECSSD
+            description: CSS on LSE failure Detection Set by hardware to indicate when a failure has been detected by the Clock Security System on the external 32 kHz oscillator (LSE).
+            bitOffset: 6
+            bitWidth: 1
+            access: read-only
+          RTCSEL:
+            name: RTCSEL
+            description: RTC clock source selection Set by software to select the clock source for the RTC. Once the RTC clock source has been selected, it cannot be changed anymore unless the RTC domain is reset, or unless a failure is detected on LSE (LSECSSD is set). The BDRST bit can be used to reset them.
+            bitOffset: 8
+            bitWidth: 2
+            access: read-write
+          RTCEN:
+            name: RTCEN
+            description: RTC clock enable Set and cleared by software.
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          BDRST:
+            name: BDRST
+            description: RTC domain software reset Set and cleared by software.
+            bitOffset: 16
+            bitWidth: 1
+            access: read-write
+          LSCOEN:
+            name: LSCOEN
+            description: Low speed clock output enable Set and cleared by software.
+            bitOffset: 24
+            bitWidth: 1
+            access: read-write
+          LSCOSEL:
+            name: LSCOSEL
+            description: Low speed clock output selection Set and cleared by software.
+            bitOffset: 25
+            bitWidth: 1
+            access: read-write
+      RCC_CSR:
+        name: RCC_CSR
+        displayName: RCC_CSR
+        description: Control/status register
+        addressOffset: 148
+        size: 32
+        resetValue: 201326592
+        resetMask: 4294967295
+        fields:
+          LSION:
+            name: LSION
+            description: LSI oscillator enable Set and cleared by software.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          LSIRDY:
+            name: LSIRDY
+            description: LSI oscillator ready Set and cleared by hardware to indicate when the LSI oscillator is stable. After the LSION bit is cleared, LSIRDY goes low after 3 LSI oscillator clock cycles. This bit can be set even if LSION = 0 if the LSI is requested by the Clock Security System on LSE, by the Independent Watchdog or by the RTC.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-only
+          RMVF:
+            name: RMVF
+            description: Remove reset flag Set by software to clear the reset flags.
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+          OBLRSTF:
+            name: OBLRSTF
+            description: Option byte loader reset flag Set by hardware when a reset from the Option Byte loading occurs. Cleared by writing to the RMVF bit.
+            bitOffset: 25
+            bitWidth: 1
+            access: read-only
+          PINRSTF:
+            name: PINRSTF
+            description: Pin reset flag Set by hardware when a reset from the NRST pin occurs. Cleared by writing to the RMVF bit.
+            bitOffset: 26
+            bitWidth: 1
+            access: read-only
+          BORRSTF:
+            name: BORRSTF
+            description: BOR flag Set by hardware when a BOR occurs. Cleared by writing to the RMVF bit.
+            bitOffset: 27
+            bitWidth: 1
+            access: read-only
+          SFTRSTF:
+            name: SFTRSTF
+            description: Software reset flag Set by hardware when a software reset occurs. Cleared by writing to the RMVF bit.
+            bitOffset: 28
+            bitWidth: 1
+            access: read-only
+          IWDGRSTF:
+            name: IWDGRSTF
+            description: Independent window watchdog reset flag Set by hardware when an independent watchdog reset domain occurs. Cleared by writing to the RMVF bit.
+            bitOffset: 29
+            bitWidth: 1
+            access: read-only
+          WWDGRSTF:
+            name: WWDGRSTF
+            description: Window watchdog reset flag Set by hardware when a window watchdog reset occurs. Cleared by writing to the RMVF bit.
+            bitOffset: 30
+            bitWidth: 1
+            access: read-only
+          LPWRRSTF:
+            name: LPWRRSTF
+            description: Low-power reset flag Set by hardware when a reset occurs due to illegal Stop, Standby or Shutdown mode entry. Cleared by writing to the RMVF bit.
+            bitOffset: 31
+            bitWidth: 1
+            access: read-only
+      RCC_CRRCR:
+        name: RCC_CRRCR
+        displayName: RCC_CRRCR
+        description: Clock recovery RC register
+        addressOffset: 152
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          HSI48ON:
+            name: HSI48ON
+            description: HSI48 clock enable Set and cleared by software. Cleared by hardware to stop the HSI48 when entering in Stop, Standby or Shutdown modes.
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          HSI48RDY:
+            name: HSI48RDY
+            description: HSI48 clock ready flag Set by hardware to indicate that HSI48 oscillator is stable. This bit is set only when HSI48 is enabled by software by setting HSI48ON.
+            bitOffset: 1
+            bitWidth: 1
+            access: read-only
+          HSI48CAL:
+            name: HSI48CAL
+            description: HSI48 clock calibration These bits are initialized at startup with the factory-programmed HSI48 calibration trim value. They are ready only.
+            bitOffset: 7
+            bitWidth: 9
+            access: read-only
+      RCC_CCIPR2:
+        name: RCC_CCIPR2
+        displayName: RCC_CCIPR2
+        description: Peripherals independent clock configuration register
+        addressOffset: 156
+        size: 32
+        resetValue: 0
+        resetMask: 4294967295
+        fields:
+          I2C4SEL:
+            name: I2C4SEL
+            description: I2C4 clock source selection These bits are set and cleared by software to select the I2C4 clock source.
+            bitOffset: 0
+            bitWidth: 2
+            access: read-write
+          QSPISEL:
+            name: QSPISEL
+            description: QUADSPI clock source selection Set and reset by software.
+            bitOffset: 20
+            bitWidth: 2
+            access: read-write
+RCC:
+  RCC_CR:
+    HSION:
+      B_0x0:
+      - 0
+      - HSI16 oscillator OFF
+      B_0x1:
+      - 1
+      - HSI16 oscillator ON
+    HSIKERON:
+      B_0x0:
+      - 0
+      - No effect on HSI16 oscillator.
+      B_0x1:
+      - 1
+      - HSI16 oscillator is forced ON even in Stop mode.
+    HSIRDY:
+      B_0x0:
+      - 0
+      - HSI16 oscillator not ready
+      B_0x1:
+      - 1
+      - HSI16 oscillator ready
+    HSEON:
+      B_0x0:
+      - 0
+      - HSE oscillator OFF
+      B_0x1:
+      - 1
+      - HSE oscillator ON
+    HSERDY:
+      B_0x0:
+      - 0
+      - HSE oscillator not ready
+      B_0x1:
+      - 1
+      - HSE oscillator ready
+    HSEBYP:
+      B_0x0:
+      - 0
+      - HSE crystal oscillator not bypassed
+      B_0x1:
+      - 1
+      - HSE crystal oscillator bypassed with external clock
+    CSSON:
+      B_0x0:
+      - 0
+      - Clock security system OFF (clock detector OFF)
+      B_0x1:
+      - 1
+      - Clock security system ON (Clock detector ON if the HSE oscillator is stable, OFF if not).
+    PLLON:
+      B_0x0:
+      - 0
+      - PLL OFF
+      B_0x1:
+      - 1
+      - PLL ON
+    PLLRDY:
+      B_0x0:
+      - 0
+      - PLL unlocked
+      B_0x1:
+      - 1
+      - PLL locked
+  RCC_CFGR:
+    SW:
+      B_0x0:
+      - 0
+      - Reserved, must be kept at reset value
+      B_0x1:
+      - 1
+      - HSI16 selected as system clock
+      B_0x2:
+      - 2
+      - HSE selected as system clock
+      B_0x3:
+      - 3
+      - PLL selected as system clock
+    SWS:
+      B_0x0:
+      - 0
+      - Reserved, must be kept at reset value
+      B_0x1:
+      - 1
+      - HSI16 oscillator used as system clock
+      B_0x2:
+      - 2
+      - HSE used as system clock
+      B_0x3:
+      - 3
+      - PLL used as system clock
+    HPRE:
+      B_0x8:
+      - 8
+      - SYSCLK divided by 2
+      B_0x9:
+      - 9
+      - SYSCLK divided by 4
+      B_0xA:
+      - 10
+      - SYSCLK divided by 8
+      B_0xB:
+      - 11
+      - SYSCLK divided by 16
+      B_0xC:
+      - 12
+      - SYSCLK divided by 64
+      B_0xD:
+      - 13
+      - SYSCLK divided by 128
+      B_0xE:
+      - 14
+      - SYSCLK divided by 256
+      B_0xF:
+      - 15
+      - SYSCLK divided by 512
+    PPRE1:
+      B_0x4:
+      - 4
+      - HCLK divided by 2
+      B_0x5:
+      - 5
+      - HCLK divided by 4
+      B_0x6:
+      - 6
+      - HCLK divided by 8
+      B_0x7:
+      - 7
+      - HCLK divided by 16
+    PPRE2:
+      B_0x4:
+      - 4
+      - HCLK divided by 2
+      B_0x5:
+      - 5
+      - HCLK divided by 4
+      B_0x6:
+      - 6
+      - HCLK divided by 8
+      B_0x7:
+      - 7
+      - HCLK divided by 16
+    MCOSEL:
+      B_0x0:
+      - 0
+      - MCO output disabled, no clock on MCO
+      B_0x1:
+      - 1
+      - SYSCLK system clock selected
+      B_0x2:
+      - 2
+      - Reserved, must be kept at reset value
+      B_0x3:
+      - 3
+      - HSI16 clock selected
+      B_0x4:
+      - 4
+      - HSE clock selected
+      B_0x5:
+      - 5
+      - Main PLL clock selected
+      B_0x6:
+      - 6
+      - LSI clock selected
+      B_0x7:
+      - 7
+      - LSE clock selected
+      B_0x8:
+      - 8
+      - Internal HSI48 clock selected
+    MCOPRE:
+      B_0x0:
+      - 0
+      - MCO is divided by 1
+      B_0x1:
+      - 1
+      - MCO is divided by 2
+      B_0x2:
+      - 2
+      - MCO is divided by 4
+      B_0x3:
+      - 3
+      - MCO is divided by 8
+      B_0x4:
+      - 4
+      - MCO is divided by 16
+  RCC_PLLCFGR:
+    PLLSRC:
+      B_0x0:
+      - 0
+      - No clock sent to PLL
+      B_0x1:
+      - 1
+      - No clock sent to PLL
+      B_0x2:
+      - 2
+      - HSI16 clock selected as PLL clock entry
+      B_0x3:
+      - 3
+      - HSE clock selected as PLL clock entry
+    PLLM:
+      B_0x0:
+      - 0
+      - PLLM = 1
+      B_0x1:
+      - 1
+      - PLLM = 2
+      B_0x2:
+      - 2
+      - PLLM = 3
+      B_0x3:
+      - 3
+      - PLLM = 4
+      B_0x4:
+      - 4
+      - PLLM = 5
+      B_0x5:
+      - 5
+      - PLLM = 6
+      B_0x6:
+      - 6
+      - PLLM = 7
+      B_0x7:
+      - 7
+      - PLLM = 8
+      B_0x8:
+      - 8
+      - PLLSYSM = 9
+      B_0xF:
+      - 15
+      - PLLSYSM= 16
+    PLLN:
+      B_0x0:
+      - 0
+      - PLLN = 0 wrong configuration
+      B_0x1:
+      - 1
+      - PLLN = 1 wrong configuration
+      B_0x7:
+      - 7
+      - PLLN = 7 wrong configuration
+      B_0x8:
+      - 8
+      - PLLN = 8
+      B_0x9:
+      - 9
+      - PLLN = 9
+      B_0x7F:
+      - 127
+      - PLLN = 127
+    PLLPEN:
+      B_0x0:
+      - 0
+      - PLL P clock output disable
+      B_0x1:
+      - 1
+      - PLL P clock output enable
+    PLLP:
+      B_0x0:
+      - 0
+      - PLLP = 7
+      B_0x1:
+      - 1
+      - PLLP = 17
+    PLLQEN:
+      B_0x0:
+      - 0
+      - PLL Q clock output disable
+      B_0x1:
+      - 1
+      - PLL Q clock output enable
+    PLLQ:
+      B_0x0:
+      - 0
+      - PLLQ = 2
+      B_0x1:
+      - 1
+      - PLLQ = 4
+      B_0x2:
+      - 2
+      - PLLQ = 6
+      B_0x3:
+      - 3
+      - PLLQ = 8
+    PLLREN:
+      B_0x0:
+      - 0
+      - PLL R clock output disable
+      B_0x1:
+      - 1
+      - PLL R clock output enable
+    PLLR:
+      B_0x0:
+      - 0
+      - PLLR = 2
+      B_0x1:
+      - 1
+      - PLLR = 4
+      B_0x2:
+      - 2
+      - PLLR = 6
+      B_0x3:
+      - 3
+      - PLLR = 8
+    PLLPDIV:
+      B_0x0:
+      - 0
+      - PLL P clock is controlled by the bit PLLP
+      B_0x1:
+      - 1
+      - Reserved.
+      B_0x2:
+      - 2
+      - PLL P clock = VCO / 2
+      B_0x1F:
+      - 31
+      - PLL P clock = VCO / 31
+  RCC_CIER:
+    LSIRDYIE:
+      B_0x0:
+      - 0
+      - LSI ready interrupt disabled
+      B_0x1:
+      - 1
+      - LSI ready interrupt enabled
+    LSERDYIE:
+      B_0x0:
+      - 0
+      - LSE ready interrupt disabled
+      B_0x1:
+      - 1
+      - LSE ready interrupt enabled
+    HSIRDYIE:
+      B_0x0:
+      - 0
+      - HSI16 ready interrupt disabled
+      B_0x1:
+      - 1
+      - HSI16 ready interrupt enabled
+    HSERDYIE:
+      B_0x0:
+      - 0
+      - HSE ready interrupt disabled
+      B_0x1:
+      - 1
+      - HSE ready interrupt enabled
+    PLLRDYIE:
+      B_0x0:
+      - 0
+      - PLL lock interrupt disabled
+      B_0x1:
+      - 1
+      - PLL lock interrupt enabled
+    LSECSSIE:
+      B_0x0:
+      - 0
+      - Clock security interrupt caused by LSE clock failure disabled
+      B_0x1:
+      - 1
+      - Clock security interrupt caused by LSE clock failure enabled
+    HSI48RDYIE:
+      B_0x0:
+      - 0
+      - HSI48 ready interrupt disabled
+      B_0x1:
+      - 1
+      - HSI48 ready interrupt enabled
+  RCC_CIFR:
+    LSIRDYF:
+      B_0x0:
+      - 0
+      - No clock ready interrupt caused by the LSI oscillator
+      B_0x1:
+      - 1
+      - Clock ready interrupt caused by the LSI oscillator
+    LSERDYF:
+      B_0x0:
+      - 0
+      - No clock ready interrupt caused by the LSE oscillator
+      B_0x1:
+      - 1
+      - Clock ready interrupt caused by the LSE oscillator
+    HSIRDYF:
+      B_0x0:
+      - 0
+      - No clock ready interrupt caused by the HSI16 oscillator
+      B_0x1:
+      - 1
+      - Clock ready interrupt caused by the HSI16 oscillator
+    HSERDYF:
+      B_0x0:
+      - 0
+      - No clock ready interrupt caused by the HSE oscillator
+      B_0x1:
+      - 1
+      - Clock ready interrupt caused by the HSE oscillator
+    PLLRDYF:
+      B_0x0:
+      - 0
+      - No clock ready interrupt caused by PLL lock
+      B_0x1:
+      - 1
+      - Clock ready interrupt caused by PLL lock
+    CSSF:
+      B_0x0:
+      - 0
+      - No clock security interrupt caused by HSE clock failure
+      B_0x1:
+      - 1
+      - Clock security interrupt caused by HSE clock failure
+    LSECSSF:
+      B_0x0:
+      - 0
+      - No clock security interrupt caused by LSE clock failure
+      B_0x1:
+      - 1
+      - Clock security interrupt caused by LSE clock failure
+    HSI48RDYF:
+      B_0x0:
+      - 0
+      - No clock ready interrupt caused by the HSI48 oscillator
+      B_0x1:
+      - 1
+      - Clock ready interrupt caused by the HSI48 oscillator
+  RCC_CICR:
+    LSIRDYC:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - LSIRDYF cleared
+    LSERDYC:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - LSERDYF cleared
+    HSIRDYC:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Clear HSIRDYF flag
+    HSERDYC:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Clear HSERDYF flag
+    PLLRDYC:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Clear PLLRDYF flag
+    CSSC:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Clear CSSF flag
+    LSECSSC:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Clear LSECSSF flag
+    HSI48RDYC:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Clear the HSI48RDYC flag
+  RCC_AHB1RSTR:
+    DMA1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset DMA1
+    DMA2RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset DMA2
+    DMAMUX1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset DMAMUX1
+    CORDICRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset CORDIC
+    FMACRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset FMAC
+    FLASHRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset Flash memory interface
+    CRCRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset CRC
+  RCC_AHB2RSTR:
+    GPIOARST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset IO port A
+    GPIOBRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset IO port B
+    GPIOCRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset IO port C
+    GPIODRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset IO port D
+    GPIOERST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset IO port E
+    GPIOFRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset IO port F
+    GPIOGRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset IO port G
+    ADC12RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset ADC12 interface
+    ADC345RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset ADC345
+    DAC1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset DAC1
+    DAC2RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset DAC2
+    DAC3RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset DAC3
+    DAC4RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset DAC4
+    AESRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset AES
+    RNGRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset RNG
+  RCC_AHB3RSTR:
+    FMCRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset FSMC
+    QSPIRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset QUADSPI
+  RCC_APB1RSTR1:
+    TIM2RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM2
+    TIM3RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM3
+    TIM4RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM3
+    TIM5RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM5
+    TIM6RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM7
+    TIM7RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM7
+    CRSRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset CRS
+    SPI2RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset SPI2
+    SPI3RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset SPI3
+    USART2RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset USART2
+    USART3RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset USART3
+    UART4RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset UART4
+    UART5RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset UART5
+    I2C1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset I2C1
+    I2C2RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset I2C2
+    USBRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset USB device
+    FDCANRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset the FDCAN
+    PWRRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset PWR
+    I2C3RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset I2C3 interface
+    LPTIM1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset LPTIM1
+  RCC_APB1RSTR2:
+    LPUART1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset LPUART1
+    I2C4RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset I2C4
+    UCPD1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset UCPD1
+  RCC_APB2RSTR:
+    SYSCFGRST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset SYSCFG + COMP + OPAMP + VREFBUF
+    TIM1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM1 timer
+    SPI1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset SPI1
+    TIM8RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM8 timer
+    USART1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset USART1
+    SPI4RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset SPI4
+    TIM15RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM15 timer
+    TIM16RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM16 timer
+    TIM17RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM17 timer
+    TIM20RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset TIM20
+    SAI1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset SAI1
+    HRTIM1RST:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Reset HRTIM1
+  RCC_AHB1ENR:
+    DMA1EN:
+      B_0x0:
+      - 0
+      - DMA1 clock disable
+      B_0x1:
+      - 1
+      - DMA1 clock enable
+    DMA2EN:
+      B_0x0:
+      - 0
+      - DMA2 clock disable
+      B_0x1:
+      - 1
+      - DMA2 clock enable
+    DMAMUX1EN:
+      B_0x0:
+      - 0
+      - DMAMUX1 clock disabled
+      B_0x1:
+      - 1
+      - DMAMUX1 clock enabled
+    CORDICEN:
+      B_0x0:
+      - 0
+      - CORDIC clock disabled
+      B_0x1:
+      - 1
+      - CORDIC clock enabled
+    FMACEN:
+      B_0x0:
+      - 0
+      - FMAC clock disabled
+      B_0x1:
+      - 1
+      - FMAC clock enabled
+    FLASHEN:
+      B_0x0:
+      - 0
+      - Flash memory interface clock disable
+      B_0x1:
+      - 1
+      - Flash memory interface clock enable
+    CRCEN:
+      B_0x0:
+      - 0
+      - CRC clock disable
+      B_0x1:
+      - 1
+      - CRC clock enable
+  RCC_AHB2ENR:
+    GPIOAEN:
+      B_0x0:
+      - 0
+      - IO port A clock disabled
+      B_0x1:
+      - 1
+      - IO port A clock enabled
+    GPIOBEN:
+      B_0x0:
+      - 0
+      - IO port B clock disabled
+      B_0x1:
+      - 1
+      - IO port B clock enabled
+    GPIOCEN:
+      B_0x0:
+      - 0
+      - IO port C clock disabled
+      B_0x1:
+      - 1
+      - IO port C clock enabled
+    GPIODEN:
+      B_0x0:
+      - 0
+      - IO port D clock disabled
+      B_0x1:
+      - 1
+      - IO port D clock enabled
+    GPIOEEN:
+      B_0x0:
+      - 0
+      - IO port E clock disabled
+      B_0x1:
+      - 1
+      - IO port E clock enabled
+    GPIOFEN:
+      B_0x0:
+      - 0
+      - IO port F clock disabled
+      B_0x1:
+      - 1
+      - IO port F clock enabled
+    GPIOGEN:
+      B_0x0:
+      - 0
+      - IO port G clock disabled
+      B_0x1:
+      - 1
+      - IO port G clock enabled
+    ADC12EN:
+      B_0x0:
+      - 0
+      - ADC12 clock disabled
+      B_0x1:
+      - 1
+      - ADC12 clock enabled
+    ADC345EN:
+      B_0x0:
+      - 0
+      - ADC345 clock disabled
+      B_0x1:
+      - 1
+      - ADC345 clock enabled
+    DAC1EN:
+      B_0x0:
+      - 0
+      - DAC1 clock disabled
+      B_0x1:
+      - 1
+      - DAC1 clock enabled
+    DAC2EN:
+      B_0x0:
+      - 0
+      - DAC2 clock disabled
+      B_0x1:
+      - 1
+      - DAC2 clock enabled
+    DAC3EN:
+      B_0x0:
+      - 0
+      - DAC3 clock disabled
+      B_0x1:
+      - 1
+      - DAC3 clock enabled
+    DAC4EN:
+      B_0x0:
+      - 0
+      - DAC4 clock disabled
+      B_0x1:
+      - 1
+      - DAC4 clock enabled
+    AESEN:
+      B_0x0:
+      - 0
+      - AES clock disabled
+      B_0x1:
+      - 1
+      - AES clock enabled
+    RNGEN:
+      B_0x0:
+      - 0
+      - RNG disabled
+      B_0x1:
+      - 1
+      - RNG enabled
+  RCC_AHB3ENR:
+    FMCEN:
+      B_0x0:
+      - 0
+      - FSMC clock disable
+      B_0x1:
+      - 1
+      - FSMC clock enable
+    QSPIEN:
+      B_0x0:
+      - 0
+      - QUADSPI clock disable
+      B_0x1:
+      - 1
+      - QUADSPI clock enable
+  RCC_APB1ENR1:
+    TIM2EN:
+      B_0x0:
+      - 0
+      - TIM2 clock disabled
+      B_0x1:
+      - 1
+      - TIM2 clock enabled
+    TIM3EN:
+      B_0x0:
+      - 0
+      - TIM3 clock disabled
+      B_0x1:
+      - 1
+      - TIM3 clock enabled
+    TIM4EN:
+      B_0x0:
+      - 0
+      - TIM4 clock disabled
+      B_0x1:
+      - 1
+      - TIM4 clock enabled
+    TIM5EN:
+      B_0x0:
+      - 0
+      - TIM5 clock disabled
+      B_0x1:
+      - 1
+      - TIM5 clock enabled
+    TIM6EN:
+      B_0x0:
+      - 0
+      - TIM6 clock disabled
+      B_0x1:
+      - 1
+      - TIM6 clock enabled
+    TIM7EN:
+      B_0x0:
+      - 0
+      - TIM7 clock disabled
+      B_0x1:
+      - 1
+      - TIM7 clock enabled
+    CRSEN:
+      B_0x0:
+      - 0
+      - CRS clock disabled
+      B_0x1:
+      - 1
+      - CRS clock enabled
+    RTCAPBEN:
+      B_0x0:
+      - 0
+      - RTC APB clock disabled
+      B_0x1:
+      - 1
+      - RTC APB clock enabled
+    WWDGEN:
+      B_0x0:
+      - 0
+      - Window watchdog clock disabled
+      B_0x1:
+      - 1
+      - Window watchdog clock enabled
+    SPI2EN:
+      B_0x0:
+      - 0
+      - SPI2 clock disabled
+      B_0x1:
+      - 1
+      - SPI2 clock enabled
+    SPI3EN:
+      B_0x0:
+      - 0
+      - SPI3 clock disabled
+      B_0x1:
+      - 1
+      - SPI3 clock enabled
+    USART2EN:
+      B_0x0:
+      - 0
+      - USART2 clock disabled
+      B_0x1:
+      - 1
+      - USART2 clock enabled
+    USART3EN:
+      B_0x0:
+      - 0
+      - USART3 clock disabled
+      B_0x1:
+      - 1
+      - USART3 clock enabled
+    UART4EN:
+      B_0x0:
+      - 0
+      - UART4 clock disabled
+      B_0x1:
+      - 1
+      - UART4 clock enabled
+    UART5EN:
+      B_0x0:
+      - 0
+      - UART5 clock disabled
+      B_0x1:
+      - 1
+      - UART5 clock enabled
+    I2C1EN:
+      B_0x0:
+      - 0
+      - I2C1 clock disabled
+      B_0x1:
+      - 1
+      - I2C1 clock enabled
+    I2C2EN:
+      B_0x0:
+      - 0
+      - I2C2 clock disabled
+      B_0x1:
+      - 1
+      - I2C2 clock enabled
+    USBEN:
+      B_0x0:
+      - 0
+      - USB device clock disabled
+      B_0x1:
+      - 1
+      - USB device clock enabled
+    FDCANEN:
+      B_0x0:
+      - 0
+      - FDCAN clock disabled
+      B_0x1:
+      - 1
+      - FDCAN clock enabled
+    PWREN:
+      B_0x0:
+      - 0
+      - Power interface clock disabled
+      B_0x1:
+      - 1
+      - Power interface clock enabled
+    I2C3EN:
+      B_0x0:
+      - 0
+      - I2C3 clock disabled
+      B_0x1:
+      - 1
+      - I2C3 clock enabled
+    LPTIM1EN:
+      B_0x0:
+      - 0
+      - LPTIM1 clock disabled
+      B_0x1:
+      - 1
+      - LPTIM1 clock enabled
+  RCC_APB1ENR2:
+    LPUART1EN:
+      B_0x0:
+      - 0
+      - LPUART1 clock disable
+      B_0x1:
+      - 1
+      - LPUART1 clock enable
+    I2C4EN:
+      B_0x0:
+      - 0
+      - I2C4 clock disabled
+      B_0x1:
+      - 1
+      - I2C4 clock enabled
+    UCPD1EN:
+      B_0x0:
+      - 0
+      - UCPD1 clock disable
+      B_0x1:
+      - 1
+      - UCPD1 clock enable
+  RCC_APB2ENR:
+    SYSCFGEN:
+      B_0x0:
+      - 0
+      - SYSCFG + COMP + VREFBUF + OPAMP clock disabled
+      B_0x1:
+      - 1
+      - SYSCFG + COMP + VREFBUF + OPAMP clock enabled
+    TIM1EN:
+      B_0x0:
+      - 0
+      - TIM1 timer clock disabled
+      B_0x1:
+      - 1
+      - TIM1P timer clock enabled
+    SPI1EN:
+      B_0x0:
+      - 0
+      - SPI1 clock disabled
+      B_0x1:
+      - 1
+      - SPI1 clock enabled
+    TIM8EN:
+      B_0x0:
+      - 0
+      - TIM8 timer clock disabled
+      B_0x1:
+      - 1
+      - TIM8 timer clock enabled
+    USART1EN:
+      B_0x0:
+      - 0
+      - USART1clock disabled
+      B_0x1:
+      - 1
+      - USART1clock enabled
+    SPI4EN:
+      B_0x0:
+      - 0
+      - SPI4 clock disabled
+      B_0x1:
+      - 1
+      - SPI4 clock enabled
+    TIM15EN:
+      B_0x0:
+      - 0
+      - TIM15 timer clock disabled
+      B_0x1:
+      - 1
+      - TIM15 timer clock enabled
+    TIM16EN:
+      B_0x0:
+      - 0
+      - TIM16 timer clock disabled
+      B_0x1:
+      - 1
+      - TIM16 timer clock enabled
+    TIM17EN:
+      B_0x0:
+      - 0
+      - TIM17 timer clock disabled
+      B_0x1:
+      - 1
+      - TIM17 timer clock enabled
+    TIM20EN:
+      B_0x0:
+      - 0
+      - TIM20 clock disabled
+      B_0x1:
+      - 1
+      - TIM20 clock enabled
+    SAI1EN:
+      B_0x0:
+      - 0
+      - SAI1 clock disabled
+      B_0x1:
+      - 1
+      - SAI1 clock enabled
+    HRTIM1EN:
+      B_0x0:
+      - 0
+      - HRTIM1 clock disabled
+      B_0x1:
+      - 1
+      - HRTIM1 clock enable
+  RCC_AHB1SMENR:
+    DMA1SMEN:
+      B_0x0:
+      - 0
+      - DMA1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - DMA1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    DMA2SMEN:
+      B_0x0:
+      - 0
+      - DMA2 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - DMA2 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    DMAMUX1SMEN:
+      B_0x0:
+      - 0
+      - DMAMUX1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - DMAMUX1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    CORDICSMEN:
+      B_0x0:
+      - 0
+      - CORDICSM clocks disabled.
+      B_0x1:
+      - 1
+      - CORDICSM clocks enabled.
+    FMACSMEN:
+      B_0x0:
+      - 0
+      - FMACSM clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - FMACSM clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    FLASHSMEN:
+      B_0x0:
+      - 0
+      - Flash memory interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - Flash memory interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    SRAM1SMEN:
+      B_0x0:
+      - 0
+      - SRAM1 interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - SRAM1 interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    CRCSMEN:
+      B_0x0:
+      - 0
+      - CRC clocks disabled by the clock gating during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - CRC clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+  RCC_AHB2SMENR:
+    GPIOASMEN:
+      B_0x0:
+      - 0
+      - IO port A clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - IO port A clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    GPIOBSMEN:
+      B_0x0:
+      - 0
+      - IO port B clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - IO port B clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    GPIOCSMEN:
+      B_0x0:
+      - 0
+      - IO port C clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - IO port C clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    GPIODSMEN:
+      B_0x0:
+      - 0
+      - IO port D clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - IO port D clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    GPIOESMEN:
+      B_0x0:
+      - 0
+      - IO port E clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - IO port E clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    GPIOFSMEN:
+      B_0x0:
+      - 0
+      - IO port F clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - IO port F clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    GPIOGSMEN:
+      B_0x0:
+      - 0
+      - IO port G clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - IO port G clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    CCMSRAMSMEN:
+      B_0x0:
+      - 0
+      - CCM SRAM interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - CCM SRAM interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    SRAM2SMEN:
+      B_0x0:
+      - 0
+      - SRAM2 interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - SRAM2 interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    ADC12SMEN:
+      B_0x0:
+      - 0
+      - ADC12 clocks disabled by the clock gating during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - ADC12 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    ADC345SMEN:
+      B_0x0:
+      - 0
+      - ADC345 clock disabled
+      B_0x1:
+      - 1
+      - ADC345 clock enabled
+    DAC1SMEN:
+      B_0x0:
+      - 0
+      - DAC1 clock disabled
+      B_0x1:
+      - 1
+      - DAC1 clock enabled during sleep and stop modes
+    DAC2SMEN:
+      B_0x0:
+      - 0
+      - DAC2 clock disabled
+      B_0x1:
+      - 1
+      - DAC2 clock enabled during sleep and stop modes
+    DAC3SMEN:
+      B_0x0:
+      - 0
+      - DAC3 clock disabled
+      B_0x1:
+      - 1
+      - DAC3 clock enabled during sleep and stop modes
+    DAC4SMEN:
+      B_0x0:
+      - 0
+      - DAC4 clock disabled
+      B_0x1:
+      - 1
+      - DAC4 clock enabled during sleep and stop modes
+    AESSMEN:
+      B_0x0:
+      - 0
+      - AESM clocks disabled
+      B_0x1:
+      - 1
+      - AESM clocks enabled
+    RNGEN:
+      B_0x0:
+      - 0
+      - RNG disabled
+      B_0x1:
+      - 1
+      - RNG enabled
+  RCC_AHB3SMENR:
+    FMCSMEN:
+      B_0x0:
+      - 0
+      - FSMC clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - FSMC clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    QSPISMEN:
+      B_0x0:
+      - 0
+      - QUADSPI clock disabled by the clock gating during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - QUADSPI clock enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+  RCC_APB1SMENR1:
+    TIM2SMEN:
+      B_0x0:
+      - 0
+      - TIM2 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM2 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    TIM3SMEN:
+      B_0x0:
+      - 0
+      - TIM3 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM3 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    TIM4SMEN:
+      B_0x0:
+      - 0
+      - TIM4 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM4 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    TIM5SMEN:
+      B_0x0:
+      - 0
+      - TIM5 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM5 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    TIM6SMEN:
+      B_0x0:
+      - 0
+      - TIM6 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM6 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    TIM7SMEN:
+      B_0x0:
+      - 0
+      - TIM7 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM7 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    CRSSMEN:
+      B_0x0:
+      - 0
+      - CRS clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - CRS clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    RTCAPBSMEN:
+      B_0x0:
+      - 0
+      - RTC APB clock disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - RTC APB clock enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    WWDGSMEN:
+      B_0x0:
+      - 0
+      - Window watchdog clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - Window watchdog clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    SPI2SMEN:
+      B_0x0:
+      - 0
+      - SPI2 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - SPI2 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    SPI3SMEN:
+      B_0x0:
+      - 0
+      - SPI3 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - SPI3 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    USART2SMEN:
+      B_0x0:
+      - 0
+      - USART2 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - USART2 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    USART3SMEN:
+      B_0x0:
+      - 0
+      - USART3 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - USART3 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    UART4SMEN:
+      B_0x0:
+      - 0
+      - UART4 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - UART4 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    UART5SMEN:
+      B_0x0:
+      - 0
+      - UART5 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - UART5 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    I2C1SMEN:
+      B_0x0:
+      - 0
+      - I2C1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - I2C1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    I2C2SMEN:
+      B_0x0:
+      - 0
+      - I2C2 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - I2C2 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    USBSMEN:
+      B_0x0:
+      - 0
+      - USB device clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - USB device clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    FDCANSMEN:
+      B_0x0:
+      - 0
+      - FDCAN clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - FDCAN clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    PWRSMEN:
+      B_0x0:
+      - 0
+      - Power interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - Power interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    I2C3SMEN:
+      B_0x0:
+      - 0
+      - I2C3 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - I2C3 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    LPTIM1SMEN:
+      B_0x0:
+      - 0
+      - LPTIM1 clocks disabled by the clock gating during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - LPTIM1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+  RCC_APB1SMENR2:
+    LPUART1SMEN:
+      B_0x0:
+      - 0
+      - LPUART1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - LPUART1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    I2C4SMEN:
+      B_0x0:
+      - 0
+      - I2C4 clocks disabled by the clock gating during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - I2C4 clock enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    UCPD1SMEN:
+      B_0x0:
+      - 0
+      - UCPD1 clocks disabled by the clock gating during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - UCPD1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+  RCC_APB2SMENR:
+    SYSCFGSMEN:
+      B_0x0:
+      - 0
+      - SYSCFG + COMP + VREFBUF + OPAMP clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - SYSCFG + COMP + VREFBUF + OPAMP clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    TIM1SMEN:
+      B_0x0:
+      - 0
+      - TIM1 timer clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM1P timer clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    SPI1SMEN:
+      B_0x0:
+      - 0
+      - SPI1 clocks disabled by the clock gating during<sup>(1)</sup> Sleep and Stop modes
+      B_0x1:
+      - 1
+      - SPI1 clocks enabled by the clock gating during<sup>(1)</sup> Sleep and Stop modes
+    TIM8SMEN:
+      B_0x0:
+      - 0
+      - TIM8 timer clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM8 timer clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    USART1SMEN:
+      B_0x0:
+      - 0
+      - USART1clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - USART1clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    SPI4SMEN:
+      B_0x0:
+      - 0
+      - SPI4 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - SPI4 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop mode
+    TIM15SMEN:
+      B_0x0:
+      - 0
+      - TIM15 timer clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM15 timer clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop mode
+    TIM16SMEN:
+      B_0x0:
+      - 0
+      - TIM16 timer clocks disabled by the clock gating during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM16 timer clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    TIM17SMEN:
+      B_0x0:
+      - 0
+      - TIM17 timer clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM17 timer clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    TIM20SMEN:
+      B_0x0:
+      - 0
+      - TIM20 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - TIM20 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    SAI1SMEN:
+      B_0x0:
+      - 0
+      - SAI1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - SAI1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+    HRTIM1SMEN:
+      B_0x0:
+      - 0
+      - HRTIM1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+      B_0x1:
+      - 1
+      - HRTIM1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes
+  RCC_CCIPR:
+    USART1SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as USART1 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as USART1 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as USART1 clock
+      B_0x3:
+      - 3
+      - LSE clock selected as USART1 clock
+    USART2SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as USART2 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as USART2 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as USART2 clock
+      B_0x3:
+      - 3
+      - LSE clock selected as USART2 clock
+    USART3SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as USART3 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as USART3 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as USART3 clock
+      B_0x3:
+      - 3
+      - LSE clock selected as USART3 clock
+    UART4SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as UART4 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as UART4 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as UART4 clock
+      B_0x3:
+      - 3
+      - LSE clock selected as UART4 clock
+    UART5SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as UART5 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as UART5 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as UART5 clock
+      B_0x3:
+      - 3
+      - LSE clock selected as UART5 clock
+    LPUART1SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as LPUART1 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as LPUART1 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as LPUART1 clock
+      B_0x3:
+      - 3
+      - LSE clock selected as LPUART1 clock
+    I2C1SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as I2C1 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as I2C1 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as I2C1 clock
+    I2C2SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as I2C2 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as I2C2 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as I2C2 clock
+    I2C3SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as I2C3 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as I2C3 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as I2C3 clock
+    LPTIM1SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as LPTIM1 clock
+      B_0x1:
+      - 1
+      - LSI clock selected as LPTIM1 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as LPTIM1 clock
+      B_0x3:
+      - 3
+      - LSE clock selected as LPTIM1 clock
+    SAI1SEL:
+      B_0x0:
+      - 0
+      - System clock selected as SAI clock
+      B_0x1:
+      - 1
+      - PLL Q clock selected as SAI clock
+      B_0x2:
+      - 2
+      - Clock provided on I2S_CKIN pin selected as SAI clock
+      B_0x3:
+      - 3
+      - HSI16 clock selected as SAI clock
+    I2S23SEL:
+      B_0x0:
+      - 0
+      - System clock selected as I2S23 clock
+      B_0x1:
+      - 1
+      - PLL Q clock selected as I2S23 clock
+      B_0x2:
+      - 2
+      - Clock provided on I2S_CKIN pin is selected as I2S23 clock
+      B_0x3:
+      - 3
+      - HSI16 clock selected as I2S23 clock.
+    CLK48SEL:
+      B_0x0:
+      - 0
+      - HSI48 clock selected as 48 MHz clock
+      B_0x2:
+      - 2
+      - PLL Q clock (PLL48M1CLK) selected as 48 MHz clock
+      B_0x3:
+      - 3
+      - Reserved, must be kept at reset value
+    ADC12SEL:
+      B_0x0:
+      - 0
+      - No clock selected
+      B_0x1:
+      - 1
+      - PLL P clock selected as ADC1/2 clock
+      B_0x2:
+      - 2
+      - System clock selected as ADC1/2 clock
+    ADC345SEL:
+      B_0x0:
+      - 0
+      - No clock selected
+      B_0x1:
+      - 1
+      - PLL P clock selected as ADC345 clock
+      B_0x2:
+      - 2
+      - System clock selected as ADC3/4/5 clock
+      B_0x3:
+      - 3
+      - Reserved.
+  RCC_BDCR:
+    LSEON:
+      B_0x0:
+      - 0
+      - LSE oscillator OFF
+      B_0x1:
+      - 1
+      - LSE oscillator ON
+    LSERDY:
+      B_0x0:
+      - 0
+      - LSE oscillator not ready
+      B_0x1:
+      - 1
+      - LSE oscillator ready
+    LSEBYP:
+      B_0x0:
+      - 0
+      - LSE oscillator not bypassed
+      B_0x1:
+      - 1
+      - LSE oscillator bypassed
+    LSEDRV:
+      B_0x0:
+      - 0
+      - Xtal mode lower driving capability
+      B_0x1:
+      - 1
+      - Xtal mode medium low driving capability
+      B_0x2:
+      - 2
+      - Xtal mode medium high driving capability
+      B_0x3:
+      - 3
+      - Xtal mode higher driving capability
+    LSECSSON:
+      B_0x0:
+      - 0
+      - CSS on LSE (32 kHz external oscillator) OFF
+      B_0x1:
+      - 1
+      - CSS on LSE (32 kHz external oscillator) ON
+    LSECSSD:
+      B_0x0:
+      - 0
+      - No failure detected on LSE (32 kHz oscillator)
+      B_0x1:
+      - 1
+      - Failure detected on LSE (32 kHz oscillator)
+    RTCSEL:
+      B_0x0:
+      - 0
+      - No clock
+      B_0x1:
+      - 1
+      - LSE oscillator clock used as RTC clock
+      B_0x2:
+      - 2
+      - LSI oscillator clock used as RTC clock
+      B_0x3:
+      - 3
+      - HSE oscillator clock divided by 32 used as RTC clock
+    RTCEN:
+      B_0x0:
+      - 0
+      - RTC clock disabled
+      B_0x1:
+      - 1
+      - RTC clock enabled
+    BDRST:
+      B_0x0:
+      - 0
+      - Reset not activated
+      B_0x1:
+      - 1
+      - Reset the entire RTC domain
+    LSCOEN:
+      B_0x0:
+      - 0
+      - Low speed clock output (LSCO) disable
+      B_0x1:
+      - 1
+      - Low speed clock output (LSCO) enable
+    LSCOSEL:
+      B_0x0:
+      - 0
+      - LSI clock selected
+      B_0x1:
+      - 1
+      - LSE clock selected
+  RCC_CSR:
+    LSION:
+      B_0x0:
+      - 0
+      - LSI oscillator OFF
+      B_0x1:
+      - 1
+      - LSI oscillator ON
+    LSIRDY:
+      B_0x0:
+      - 0
+      - LSI oscillator not ready
+      B_0x1:
+      - 1
+      - LSI oscillator ready
+    RMVF:
+      B_0x0:
+      - 0
+      - No effect
+      B_0x1:
+      - 1
+      - Clear the reset flags
+    OBLRSTF:
+      B_0x0:
+      - 0
+      - No reset from Option Byte loading occurred
+      B_0x1:
+      - 1
+      - Reset from Option Byte loading occurred
+    PINRSTF:
+      B_0x0:
+      - 0
+      - No reset from NRST pin occurred
+      B_0x1:
+      - 1
+      - Reset from NRST pin occurred
+    BORRSTF:
+      B_0x0:
+      - 0
+      - No BOR occurred
+      B_0x1:
+      - 1
+      - BOR occurred
+    SFTRSTF:
+      B_0x0:
+      - 0
+      - No software reset occurred
+      B_0x1:
+      - 1
+      - Software reset occurred
+    IWDGRSTF:
+      B_0x0:
+      - 0
+      - No independent watchdog reset occurred
+      B_0x1:
+      - 1
+      - Independent watchdog reset occurred
+    WWDGRSTF:
+      B_0x0:
+      - 0
+      - No window watchdog reset occurred
+      B_0x1:
+      - 1
+      - Window watchdog reset occurred
+    LPWRRSTF:
+      B_0x0:
+      - 0
+      - No illegal mode reset occurred
+      B_0x1:
+      - 1
+      - Illegal mode reset occurred
+  RCC_CRRCR:
+    HSI48ON:
+      B_0x0:
+      - 0
+      - HSI48 oscillator OFF
+      B_0x1:
+      - 1
+      - HSI48 oscillator ON
+    HSI48RDY:
+      B_0x0:
+      - 0
+      - HSI48 oscillator not ready
+      B_0x1:
+      - 1
+      - HSI48 oscillator ready
+  RCC_CCIPR2:
+    I2C4SEL:
+      B_0x0:
+      - 0
+      - PCLK selected as I2C4 clock
+      B_0x1:
+      - 1
+      - System clock (SYSCLK) selected as I2C4 clock
+      B_0x2:
+      - 2
+      - HSI16 clock selected as I2C4 clock
+    QSPISEL:
+      B_0x0:
+      - 0
+      - system clock selected as QUADSPI kernel clock
+      B_0x1:
+      - 1
+      - HSI16 clock selected as QUADSPI kernel clock
+      B_0x2:
+      - 2
+      - PLL Q clock selected as QUADSPI kernel clock

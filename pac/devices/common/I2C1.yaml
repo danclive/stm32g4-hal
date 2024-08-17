@@ -1,0 +1,515 @@
+_add:
+  I2C1:
+    name: I2C1
+    description: Inter-integrated circuit
+    groupName: I2C
+    baseAddress: 1073763328
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      I2C1_EV:
+        name: I2C1_EV
+        description: I2C1_EV
+        value: 31
+      I2C1_ER:
+        name: I2C1_ER
+        description: I2C1_ER
+        value: 32
+    registers:
+      CR1:
+        name: CR1
+        displayName: CR1
+        description: Control register 1
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          PE:
+            name: PE
+            description: Peripheral enable
+            bitOffset: 0
+            bitWidth: 1
+          TXIE:
+            name: TXIE
+            description: TX Interrupt enable
+            bitOffset: 1
+            bitWidth: 1
+          RXIE:
+            name: RXIE
+            description: RX Interrupt enable
+            bitOffset: 2
+            bitWidth: 1
+          ADDRIE:
+            name: ADDRIE
+            description: Address match interrupt enable (slave only)
+            bitOffset: 3
+            bitWidth: 1
+          NACKIE:
+            name: NACKIE
+            description: Not acknowledge received interrupt enable
+            bitOffset: 4
+            bitWidth: 1
+          STOPIE:
+            name: STOPIE
+            description: STOP detection Interrupt enable
+            bitOffset: 5
+            bitWidth: 1
+          TCIE:
+            name: TCIE
+            description: Transfer Complete interrupt enable
+            bitOffset: 6
+            bitWidth: 1
+          ERRIE:
+            name: ERRIE
+            description: Error interrupts enable
+            bitOffset: 7
+            bitWidth: 1
+          DNF:
+            name: DNF
+            description: Digital noise filter
+            bitOffset: 8
+            bitWidth: 4
+          ANFOFF:
+            name: ANFOFF
+            description: Analog noise filter OFF
+            bitOffset: 12
+            bitWidth: 1
+          TXDMAEN:
+            name: TXDMAEN
+            description: DMA transmission requests enable
+            bitOffset: 14
+            bitWidth: 1
+          RXDMAEN:
+            name: RXDMAEN
+            description: DMA reception requests enable
+            bitOffset: 15
+            bitWidth: 1
+          SBC:
+            name: SBC
+            description: Slave byte control
+            bitOffset: 16
+            bitWidth: 1
+          NOSTRETCH:
+            name: NOSTRETCH
+            description: Clock stretching disable
+            bitOffset: 17
+            bitWidth: 1
+          WUPEN:
+            name: WUPEN
+            description: Wakeup from STOP enable
+            bitOffset: 18
+            bitWidth: 1
+          GCEN:
+            name: GCEN
+            description: General call enable
+            bitOffset: 19
+            bitWidth: 1
+          SMBHEN:
+            name: SMBHEN
+            description: SMBus Host address enable
+            bitOffset: 20
+            bitWidth: 1
+          SMBDEN:
+            name: SMBDEN
+            description: SMBus Device Default address enable
+            bitOffset: 21
+            bitWidth: 1
+          ALERTEN:
+            name: ALERTEN
+            description: SMBUS alert enable
+            bitOffset: 22
+            bitWidth: 1
+          PECEN:
+            name: PECEN
+            description: PEC enable
+            bitOffset: 23
+            bitWidth: 1
+      CR2:
+        name: CR2
+        displayName: CR2
+        description: Control register 2
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          PECBYTE:
+            name: PECBYTE
+            description: Packet error checking byte
+            bitOffset: 26
+            bitWidth: 1
+          AUTOEND:
+            name: AUTOEND
+            description: Automatic end mode (master mode)
+            bitOffset: 25
+            bitWidth: 1
+          RELOAD:
+            name: RELOAD
+            description: NBYTES reload mode
+            bitOffset: 24
+            bitWidth: 1
+          NBYTES:
+            name: NBYTES
+            description: Number of bytes
+            bitOffset: 16
+            bitWidth: 8
+          NACK:
+            name: NACK
+            description: NACK generation (slave mode)
+            bitOffset: 15
+            bitWidth: 1
+          STOP:
+            name: STOP
+            description: Stop generation (master mode)
+            bitOffset: 14
+            bitWidth: 1
+          START:
+            name: START
+            description: Start generation
+            bitOffset: 13
+            bitWidth: 1
+          HEAD10R:
+            name: HEAD10R
+            description: '10-bit address header only read direction (master receiver mode)'
+            bitOffset: 12
+            bitWidth: 1
+          ADD10:
+            name: ADD10
+            description: '10-bit addressing mode (master mode)'
+            bitOffset: 11
+            bitWidth: 1
+          RD_WRN:
+            name: RD_WRN
+            description: Transfer direction (master mode)
+            bitOffset: 10
+            bitWidth: 1
+          SADD:
+            name: SADD
+            description: Slave address bit (master mode)
+            bitOffset: 0
+            bitWidth: 10
+      OAR1:
+        name: OAR1
+        displayName: OAR1
+        description: Own address register 1
+        addressOffset: 8
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OA1:
+            name: OA1
+            description: Interface address
+            bitOffset: 0
+            bitWidth: 10
+          OA1MODE:
+            name: OA1MODE
+            description: Own Address 1 10-bit mode
+            bitOffset: 10
+            bitWidth: 1
+          OA1EN:
+            name: OA1EN
+            description: Own Address 1 enable
+            bitOffset: 15
+            bitWidth: 1
+      OAR2:
+        name: OAR2
+        displayName: OAR2
+        description: Own address register 2
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OA2:
+            name: OA2
+            description: Interface address
+            bitOffset: 1
+            bitWidth: 7
+          OA2MSK:
+            name: OA2MSK
+            description: Own Address 2 masks
+            bitOffset: 8
+            bitWidth: 3
+          OA2EN:
+            name: OA2EN
+            description: Own Address 2 enable
+            bitOffset: 15
+            bitWidth: 1
+      TIMINGR:
+        name: TIMINGR
+        displayName: TIMINGR
+        description: Timing register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SCLL:
+            name: SCLL
+            description: SCL low period (master mode)
+            bitOffset: 0
+            bitWidth: 8
+          SCLH:
+            name: SCLH
+            description: SCL high period (master mode)
+            bitOffset: 8
+            bitWidth: 8
+          SDADEL:
+            name: SDADEL
+            description: Data hold time
+            bitOffset: 16
+            bitWidth: 4
+          SCLDEL:
+            name: SCLDEL
+            description: Data setup time
+            bitOffset: 20
+            bitWidth: 4
+          PRESC:
+            name: PRESC
+            description: Timing prescaler
+            bitOffset: 28
+            bitWidth: 4
+      TIMEOUTR:
+        name: TIMEOUTR
+        displayName: TIMEOUTR
+        description: Status register 1
+        addressOffset: 20
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TIMEOUTA:
+            name: TIMEOUTA
+            description: Bus timeout A
+            bitOffset: 0
+            bitWidth: 12
+          TIDLE:
+            name: TIDLE
+            description: Idle clock timeout detection
+            bitOffset: 12
+            bitWidth: 1
+          TIMOUTEN:
+            name: TIMOUTEN
+            description: Clock timeout enable
+            bitOffset: 15
+            bitWidth: 1
+          TIMEOUTB:
+            name: TIMEOUTB
+            description: Bus timeout B
+            bitOffset: 16
+            bitWidth: 12
+          TEXTEN:
+            name: TEXTEN
+            description: Extended clock timeout enable
+            bitOffset: 31
+            bitWidth: 1
+      ISR:
+        name: ISR
+        displayName: ISR
+        description: Interrupt and Status register
+        addressOffset: 24
+        size: 32
+        resetValue: 1
+        fields:
+          ADDCODE:
+            name: ADDCODE
+            description: Address match code (Slave mode)
+            bitOffset: 17
+            bitWidth: 7
+            access: read-only
+          DIR:
+            name: DIR
+            description: Transfer direction (Slave mode)
+            bitOffset: 16
+            bitWidth: 1
+            access: read-only
+          BUSY:
+            name: BUSY
+            description: Bus busy
+            bitOffset: 15
+            bitWidth: 1
+            access: read-only
+          ALERT:
+            name: ALERT
+            description: SMBus alert
+            bitOffset: 13
+            bitWidth: 1
+            access: read-only
+          TIMEOUT:
+            name: TIMEOUT
+            description: Timeout or t_low detection flag
+            bitOffset: 12
+            bitWidth: 1
+            access: read-only
+          PECERR:
+            name: PECERR
+            description: PEC Error in reception
+            bitOffset: 11
+            bitWidth: 1
+            access: read-only
+          OVR:
+            name: OVR
+            description: Overrun/Underrun (slave mode)
+            bitOffset: 10
+            bitWidth: 1
+            access: read-only
+          ARLO:
+            name: ARLO
+            description: Arbitration lost
+            bitOffset: 9
+            bitWidth: 1
+            access: read-only
+          BERR:
+            name: BERR
+            description: Bus error
+            bitOffset: 8
+            bitWidth: 1
+            access: read-only
+          TCR:
+            name: TCR
+            description: Transfer Complete Reload
+            bitOffset: 7
+            bitWidth: 1
+            access: read-only
+          TC:
+            name: TC
+            description: Transfer Complete (master mode)
+            bitOffset: 6
+            bitWidth: 1
+            access: read-only
+          STOPF:
+            name: STOPF
+            description: Stop detection flag
+            bitOffset: 5
+            bitWidth: 1
+            access: read-only
+          NACKF:
+            name: NACKF
+            description: Not acknowledge received flag
+            bitOffset: 4
+            bitWidth: 1
+            access: read-only
+          ADDR:
+            name: ADDR
+            description: Address matched (slave mode)
+            bitOffset: 3
+            bitWidth: 1
+            access: read-only
+          RXNE:
+            name: RXNE
+            description: Receive data register not empty (receivers)
+            bitOffset: 2
+            bitWidth: 1
+            access: read-only
+          TXIS:
+            name: TXIS
+            description: Transmit interrupt status (transmitters)
+            bitOffset: 1
+            bitWidth: 1
+            access: read-write
+          TXE:
+            name: TXE
+            description: Transmit data register empty (transmitters)
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+      ICR:
+        name: ICR
+        displayName: ICR
+        description: Interrupt clear register
+        addressOffset: 28
+        size: 32
+        access: write-only
+        resetValue: 0
+        fields:
+          ALERTCF:
+            name: ALERTCF
+            description: Alert flag clear
+            bitOffset: 13
+            bitWidth: 1
+          TIMOUTCF:
+            name: TIMOUTCF
+            description: Timeout detection flag clear
+            bitOffset: 12
+            bitWidth: 1
+          PECCF:
+            name: PECCF
+            description: PEC Error flag clear
+            bitOffset: 11
+            bitWidth: 1
+          OVRCF:
+            name: OVRCF
+            description: Overrun/Underrun flag clear
+            bitOffset: 10
+            bitWidth: 1
+          ARLOCF:
+            name: ARLOCF
+            description: Arbitration lost flag clear
+            bitOffset: 9
+            bitWidth: 1
+          BERRCF:
+            name: BERRCF
+            description: Bus error flag clear
+            bitOffset: 8
+            bitWidth: 1
+          STOPCF:
+            name: STOPCF
+            description: Stop detection flag clear
+            bitOffset: 5
+            bitWidth: 1
+          NACKCF:
+            name: NACKCF
+            description: Not Acknowledge flag clear
+            bitOffset: 4
+            bitWidth: 1
+          ADDRCF:
+            name: ADDRCF
+            description: Address Matched flag clear
+            bitOffset: 3
+            bitWidth: 1
+      PECR:
+        name: PECR
+        displayName: PECR
+        description: PEC register
+        addressOffset: 32
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          PEC:
+            name: PEC
+            description: Packet error checking register
+            bitOffset: 0
+            bitWidth: 8
+      RXDR:
+        name: RXDR
+        displayName: RXDR
+        description: Receive data register
+        addressOffset: 36
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          RXDATA:
+            name: RXDATA
+            description: '8-bit receive data'
+            bitOffset: 0
+            bitWidth: 8
+      TXDR:
+        name: TXDR
+        displayName: TXDR
+        description: Transmit data register
+        addressOffset: 40
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TXDATA:
+            name: TXDATA
+            description: '8-bit transmit data'
+            bitOffset: 0
+            bitWidth: 8

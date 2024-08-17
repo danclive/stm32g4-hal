@@ -1,0 +1,73 @@
+_add:
+  WWDG:
+    name: WWDG
+    description: System window watchdog
+    groupName: WWDG
+    baseAddress: 1073753088
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      WWDG:
+        name: WWDG
+        description: Window Watchdog interrupt
+        value: 0
+    registers:
+      CR:
+        name: CR
+        displayName: CR
+        description: Control register
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 127
+        fields:
+          WDGA:
+            name: WDGA
+            description: Activation bit
+            bitOffset: 7
+            bitWidth: 1
+          T:
+            name: T
+            description: '7-bit counter (MSB to LSB)'
+            bitOffset: 0
+            bitWidth: 7
+      CFR:
+        name: CFR
+        displayName: CFR
+        description: Configuration register
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 127
+        fields:
+          WDGTB:
+            name: WDGTB
+            description: Timer base
+            bitOffset: 11
+            bitWidth: 3
+          EWI:
+            name: EWI
+            description: Early wakeup interrupt
+            bitOffset: 9
+            bitWidth: 1
+          W:
+            name: W
+            description: '7-bit window value'
+            bitOffset: 0
+            bitWidth: 7
+      SR:
+        name: SR
+        displayName: SR
+        description: Status register
+        addressOffset: 8
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          EWIF:
+            name: EWIF
+            description: Early wakeup interrupt flag
+            bitOffset: 0
+            bitWidth: 1

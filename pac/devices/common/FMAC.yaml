@@ -1,0 +1,233 @@
+_add:
+  FMAC:
+    name: FMAC
+    description: Filter Math Accelerator
+    groupName: FMAC
+    baseAddress: 1073878016
+    addressBlock:
+      offset: 0
+      size: 3072
+      usage: registers
+    interrupts:
+      FMAC:
+        name: FMAC
+        description: FMAC
+        value: 101
+    registers:
+      X1BUFCFG:
+        name: X1BUFCFG
+        displayName: X1BUFCFG
+        description: FMAC X1 Buffer Configuration register
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          X1_BASE:
+            name: X1_BASE
+            description: X1_BASE
+            bitOffset: 0
+            bitWidth: 8
+          X1_BUF_SIZE:
+            name: X1_BUF_SIZE
+            description: X1_BUF_SIZE
+            bitOffset: 8
+            bitWidth: 8
+          FULL_WM:
+            name: FULL_WM
+            description: FULL_WM
+            bitOffset: 24
+            bitWidth: 2
+      X2BUFCFG:
+        name: X2BUFCFG
+        displayName: X2BUFCFG
+        description: FMAC X2 Buffer Configuration register
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          X2_BASE:
+            name: X2_BASE
+            description: X1_BASE
+            bitOffset: 0
+            bitWidth: 8
+          X2_BUF_SIZE:
+            name: X2_BUF_SIZE
+            description: X1_BUF_SIZE
+            bitOffset: 8
+            bitWidth: 8
+      YBUFCFG:
+        name: YBUFCFG
+        displayName: YBUFCFG
+        description: FMAC Y Buffer Configuration register
+        addressOffset: 8
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          Y_BASE:
+            name: Y_BASE
+            description: X1_BASE
+            bitOffset: 0
+            bitWidth: 8
+          Y_BUF_SIZE:
+            name: Y_BUF_SIZE
+            description: X1_BUF_SIZE
+            bitOffset: 8
+            bitWidth: 8
+          EMPTY_WM:
+            name: EMPTY_WM
+            description: EMPTY_WM
+            bitOffset: 24
+            bitWidth: 2
+      PARAM:
+        name: PARAM
+        displayName: PARAM
+        description: FMAC Parameter register
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          START:
+            name: START
+            description: START
+            bitOffset: 31
+            bitWidth: 1
+          FUNC:
+            name: FUNC
+            description: FUNC
+            bitOffset: 24
+            bitWidth: 7
+          R:
+            name: R
+            description: R
+            bitOffset: 16
+            bitWidth: 8
+          Q:
+            name: Q
+            description: Q
+            bitOffset: 8
+            bitWidth: 8
+          P:
+            name: P
+            description: P
+            bitOffset: 0
+            bitWidth: 8
+      CR:
+        name: CR
+        displayName: CR
+        description: FMAC Control register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          RESET:
+            name: RESET
+            description: RESET
+            bitOffset: 16
+            bitWidth: 1
+          CLIPEN:
+            name: CLIPEN
+            description: CLIPEN
+            bitOffset: 15
+            bitWidth: 1
+          DMAWEN:
+            name: DMAWEN
+            description: DMAWEN
+            bitOffset: 9
+            bitWidth: 1
+          DMAREN:
+            name: DMAREN
+            description: DMAREN
+            bitOffset: 8
+            bitWidth: 1
+          SATIEN:
+            name: SATIEN
+            description: SATIEN
+            bitOffset: 4
+            bitWidth: 1
+          UNFLIEN:
+            name: UNFLIEN
+            description: UNFLIEN
+            bitOffset: 3
+            bitWidth: 1
+          OVFLIEN:
+            name: OVFLIEN
+            description: OVFLIEN
+            bitOffset: 2
+            bitWidth: 1
+          WIEN:
+            name: WIEN
+            description: WIEN
+            bitOffset: 1
+            bitWidth: 1
+          RIEN:
+            name: RIEN
+            description: RIEN
+            bitOffset: 0
+            bitWidth: 1
+      SR:
+        name: SR
+        displayName: SR
+        description: FMAC Status register
+        addressOffset: 20
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          YEMPTY:
+            name: YEMPTY
+            description: YEMPTY
+            bitOffset: 0
+            bitWidth: 1
+          X1FULL:
+            name: X1FULL
+            description: X1FULL
+            bitOffset: 1
+            bitWidth: 1
+          OVFL:
+            name: OVFL
+            description: OVFL
+            bitOffset: 8
+            bitWidth: 1
+          UNFL:
+            name: UNFL
+            description: UNFL
+            bitOffset: 9
+            bitWidth: 1
+          SAT:
+            name: SAT
+            description: SAT
+            bitOffset: 10
+            bitWidth: 1
+      WDATA:
+        name: WDATA
+        displayName: WDATA
+        description: FMAC Write Data register
+        addressOffset: 24
+        size: 32
+        access: write-only
+        resetValue: 0
+        fields:
+          WDATA:
+            name: WDATA
+            description: WDATA
+            bitOffset: 0
+            bitWidth: 16
+      RDATA:
+        name: RDATA
+        displayName: RDATA
+        description: FMAC Read Data register
+        addressOffset: 28
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          RDATA:
+            name: RDATA
+            description: RDATA
+            bitOffset: 0
+            bitWidth: 16

@@ -1,0 +1,238 @@
+# Path to the SVD file we're targeting. Relative to this file.
+# This must be included only in the device YAML file.
+_svd: "./svds/STM32G431.svd"
+
+_include:
+  - "./common/FLASH.yaml"
+  - "./common/PWR.yaml"
+  - "./common/RCC.yaml"
+  - "./common/CRS.yaml"
+  - "./common/GPIOA.yaml"
+  - "./common/GPIOB.yaml"
+  - "./common/GPIOC.yaml"
+  - "./common/SYSCFG.yaml"
+  - "./common/DMA1.yaml"
+  - "./common/DMAMUX.yaml"
+  - "./common/EXTI.yaml"
+  - "./common/CRC.yaml"
+  - "./common/CORDIC.yaml"
+  - "./common/FMAC.yaml"
+  - "./common/ADC1.yaml"
+  - "./common/ADC12_COM.yaml"
+  - "./common/DAC1.yaml"
+  - "./common/VREFBUF.yaml"
+  - "./common/COMP.yaml"
+  - "./common/OPAMP.yaml"
+  - "./common/RNG.yaml"
+  - "./common/TIM1.yaml"
+  - "./common/TIM2.yaml"
+  - "./common/TIM3.yaml"
+  - "./common/TIM6.yaml"
+  - "./common/TIM15.yaml"
+  - "./common/TIM16.yaml"
+  - "./common/LPTIM1.yaml"
+  - "./common/AES.yaml"
+  - "./common/RTC.yaml"
+  - "./common/TAMP.yaml"
+  - "./common/USART1.yaml"
+  - "./common/UART4.yaml"
+  - "./common/LPUART1.yaml"
+  - "./common/SPI1.yaml"
+  - "./common/SAI.yaml"
+  - "./common/I2C1.yaml"
+  - "./common/IWDG.yaml"
+  - "./common/WWDG.yaml"
+  - "./common/FDCAN1.yaml"
+  - "./common/USB_FS.yaml"
+  - "./common/UCPD1.yaml"
+  - "./common/DBGMCU.yaml"
+
+_add:
+  GPIOD:
+    name: GPIOD
+    baseAddress: 1207962624
+    derivedFrom: GPIOC
+
+  GPIOE:
+    name: GPIOE
+    baseAddress: 1207963648
+    derivedFrom: GPIOC
+
+  GPIOF:
+    name: GPIOF
+    baseAddress: 1207964672
+    derivedFrom: GPIOC
+
+  GPIOG:
+    name: GPIOG
+    baseAddress: 1207965696
+    derivedFrom: GPIOC
+
+  DMA2:
+    name: DMA2
+    baseAddress: 1073769472
+    interrupts:
+      DMA2_CH1:
+        description: DMA2_CH1
+        value: 56
+      DMA2_CH2:
+        description: DMA2_CH2
+        value: 57
+      DMA2_CH3:
+        description: DMA2_CH3
+        value: 58
+      DMA2_CH4:
+        description: DMA2_CH4
+        value: 59
+      DMA2_CH5:
+        description: DMA2_CH5
+        value: 60
+      DMA2_CH6:
+        description: DMA2_CH6
+        value: 97
+    derivedFrom: DMA1
+
+  ADC2:
+    name: ADC2
+    baseAddress: 1342177536
+    derivedFrom: ADC1
+
+  ADC345_Common:
+    name: ADC345_Common
+    baseAddress: 1342179072
+    derivedFrom: ADC12_Common
+
+  DAC2:
+    name: DAC2
+    baseAddress: 1342180352
+    derivedFrom: DAC1
+
+  DAC3:
+    name: DAC3
+    baseAddress: 1342181376
+    derivedFrom: DAC1
+
+  DAC4:
+    name: DAC4
+    baseAddress: 1342182400
+    derivedFrom: DAC1
+
+  TIM8:
+    name: TIM8
+    baseAddress: 1073820672
+    interrupts:
+      TIM8_BRK:
+        description: TIM8_BRK
+        value: 43
+      TIM8_UP:
+        description: TIM8_UP
+        value: 44
+      TIM8_TRG_COM:
+        description: TIM8_TRG_COM
+        value: 45
+    derivedFrom: TIM1
+
+  TIM20:
+    name: TIM20
+    baseAddress: 1073827840
+    interrupts:
+      TIM20_BRK:
+        description: TIM20_BRK
+        value: 77
+      TIM20_UP:
+        description: TIM20_UP
+        value: 78
+      TIM20_TRG_COM:
+        description: TIM20_TRG_COM
+        value: 79
+      TIM20_CC:
+        description: TIM20_CC
+        value: 80
+    derivedFrom: TIM1
+
+  TIM4:
+    name: TIM4
+    baseAddress: 1073743872
+    interrupts:
+      TIM4:
+        description: TIM4
+        value: 30
+    derivedFrom: TIM3
+
+  TIM7:
+    name: TIM7
+    baseAddress: 1073746944
+    interrupts:
+      TIM7:
+        description: TIM7
+        value: 55
+    derivedFrom: TIM6
+
+  TIM17:
+    name: TIM17
+    baseAddress: 1073825792
+    derivedFrom: TIM16
+
+  USART2:
+    name: USART2
+    baseAddress: 1073759232
+    interrupts:
+      USART2:
+        description: USART2
+        value: 38
+    derivedFrom: USART1
+
+  USART3:
+    name: USART3
+    baseAddress: 1073760256
+    interrupts:
+      USART3:
+        description: USART3
+        value: 39
+    derivedFrom: USART1
+
+  SPI2:
+    name: SPI2
+    baseAddress: 1073756160
+    interrupts:
+      SPI2:
+        description: SPI2
+        value: 36
+    derivedFrom: SPI1
+
+  SPI3:
+    name: SPI3
+    baseAddress: 1073757184
+    interrupts:
+      SPI3:
+        description: SPI3
+        value: 51
+    derivedFrom: SPI1
+
+  I2C2:
+    name: I2C2
+    baseAddress: 1073764352
+    interrupts:
+      I2C2_EV:
+        name: I2C2_EV
+        description: I2C2_EV
+        value: 33
+      I2C2_ER:
+        name: I2C2_ER
+        description: I2C2_ER
+        value: 34
+    derivedFrom: I2C1
+
+  I2C3:
+    name: I2C3
+    baseAddress: 1073772544
+    interrupts:
+      I2C3_EV:
+        name: I2C3_EV
+        description: I2C3_EV
+        value: 92
+      I2C3_ER:
+        name: I2C3_ER
+        description: I2C3_ER
+        value: 93
+    derivedFrom: I2C1

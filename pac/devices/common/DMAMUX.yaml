@@ -1,0 +1,912 @@
+_add:
+  DMAMUX:
+    name: DMAMUX
+    description: DMAMUX
+    groupName: DMAMUX
+    baseAddress: 1073874944
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      DMAMUX_OVR:
+        name: DMAMUX_OVR
+        description: DMAMUX_OVR
+        value: 94
+    registers:
+      C0CR:
+        name: C0CR
+        displayName: C0CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C1CR:
+        name: C1CR
+        displayName: C1CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C2CR:
+        name: C2CR
+        displayName: C2CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 8
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C3CR:
+        name: C3CR
+        displayName: C3CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C4CR:
+        name: C4CR
+        displayName: C4CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C5CR:
+        name: C5CR
+        displayName: C5CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 20
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C6CR:
+        name: C6CR
+        displayName: C6CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 24
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C7CR:
+        name: C7CR
+        displayName: C7CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 28
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C8CR:
+        name: C8CR
+        displayName: C8CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 32
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C9CR:
+        name: C9CR
+        displayName: C9CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 36
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C10CR:
+        name: C10CR
+        displayName: C10CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 40
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C11CR:
+        name: C11CR
+        displayName: C11CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 44
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C12CR:
+        name: C12CR
+        displayName: C12CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 48
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C13CR:
+        name: C13CR
+        displayName: C13CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 52
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C14CR:
+        name: C14CR
+        displayName: C14CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 56
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      C15CR:
+        name: C15CR
+        displayName: C15CR
+        description: DMAMux - DMA request line multiplexer channel x control register
+        addressOffset: 60
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAREQ_ID:
+            name: DMAREQ_ID
+            description: Input DMA request line selected
+            bitOffset: 0
+            bitWidth: 7
+          SOIE:
+            name: SOIE
+            description: Interrupt enable at synchronization event overrun
+            bitOffset: 8
+            bitWidth: 1
+          EGE:
+            name: EGE
+            description: Event generation enable/disable
+            bitOffset: 9
+            bitWidth: 1
+          SE:
+            name: SE
+            description: Synchronous operating mode enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          SPOL:
+            name: SPOL
+            description: 'Synchronization event type selector Defines the synchronization event on the selected synchronization input:'
+            bitOffset: 17
+            bitWidth: 2
+          NBREQ:
+            name: NBREQ
+            description: 'Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset.'
+            bitOffset: 19
+            bitWidth: 5
+          SYNC_ID:
+            name: SYNC_ID
+            description: Synchronization input selected
+            bitOffset: 24
+            bitWidth: 5
+      RG0CR:
+        name: RG0CR
+        displayName: RG0CR
+        description: DMAMux - DMA request generator channel x control register
+        addressOffset: 256
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SIG_ID:
+            name: SIG_ID
+            description: DMA request trigger input selected
+            bitOffset: 0
+            bitWidth: 5
+          OIE:
+            name: OIE
+            description: Interrupt enable at trigger event overrun
+            bitOffset: 8
+            bitWidth: 1
+          GE:
+            name: GE
+            description: DMA request generator channel enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          GPOL:
+            name: GPOL
+            description: DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
+            bitOffset: 17
+            bitWidth: 2
+          GNBREQ:
+            name: GNBREQ
+            description: 'Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.'
+            bitOffset: 19
+            bitWidth: 5
+      RG1CR:
+        name: RG1CR
+        displayName: RG1CR
+        description: DMAMux - DMA request generator channel x control register
+        addressOffset: 260
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SIG_ID:
+            name: SIG_ID
+            description: DMA request trigger input selected
+            bitOffset: 0
+            bitWidth: 5
+          OIE:
+            name: OIE
+            description: Interrupt enable at trigger event overrun
+            bitOffset: 8
+            bitWidth: 1
+          GE:
+            name: GE
+            description: DMA request generator channel enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          GPOL:
+            name: GPOL
+            description: DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
+            bitOffset: 17
+            bitWidth: 2
+          GNBREQ:
+            name: GNBREQ
+            description: 'Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.'
+            bitOffset: 19
+            bitWidth: 5
+      RG2CR:
+        name: RG2CR
+        displayName: RG2CR
+        description: DMAMux - DMA request generator channel x control register
+        addressOffset: 264
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SIG_ID:
+            name: SIG_ID
+            description: DMA request trigger input selected
+            bitOffset: 0
+            bitWidth: 5
+          OIE:
+            name: OIE
+            description: Interrupt enable at trigger event overrun
+            bitOffset: 8
+            bitWidth: 1
+          GE:
+            name: GE
+            description: DMA request generator channel enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          GPOL:
+            name: GPOL
+            description: DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
+            bitOffset: 17
+            bitWidth: 2
+          GNBREQ:
+            name: GNBREQ
+            description: 'Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.'
+            bitOffset: 19
+            bitWidth: 5
+      RG3CR:
+        name: RG3CR
+        displayName: RG3CR
+        description: DMAMux - DMA request generator channel x control register
+        addressOffset: 268
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SIG_ID:
+            name: SIG_ID
+            description: DMA request trigger input selected
+            bitOffset: 0
+            bitWidth: 5
+          OIE:
+            name: OIE
+            description: Interrupt enable at trigger event overrun
+            bitOffset: 8
+            bitWidth: 1
+          GE:
+            name: GE
+            description: DMA request generator channel enable/disable
+            bitOffset: 16
+            bitWidth: 1
+          GPOL:
+            name: GPOL
+            description: DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input
+            bitOffset: 17
+            bitWidth: 2
+          GNBREQ:
+            name: GNBREQ
+            description: 'Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset.'
+            bitOffset: 19
+            bitWidth: 5
+      RGSR:
+        name: RGSR
+        displayName: RGSR
+        description: DMAMux - DMA request generator status register
+        addressOffset: 320
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          OF:
+            name: OF
+            description: Trigger event overrun flag The flag is set when a trigger event occurs on DMA request generator channel x, while the DMA request generator counter value is lower than GNBREQ. The flag is cleared by writing 1 to the corresponding COFx bit in DMAMUX_RGCFR register.
+            bitOffset: 0
+            bitWidth: 4
+      RGCFR:
+        name: RGCFR
+        displayName: RGCFR
+        description: DMAMux - DMA request generator clear flag register
+        addressOffset: 324
+        size: 32
+        access: write-only
+        resetValue: 0
+        fields:
+          COF:
+            name: COF
+            description: Clear trigger event overrun flag Upon setting, this bit clears the corresponding overrun flag OFx in the DMAMUX_RGCSR register.
+            bitOffset: 0
+            bitWidth: 4
+      CSR:
+        name: CSR
+        displayName: CSR
+        description: DMAMUX request line multiplexer interrupt channel status register
+        addressOffset: 128
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          SOF:
+            name: SOF
+            description: Synchronization overrun event flag
+            bitOffset: 0
+            bitWidth: 16
+      CFR:
+        name: CFR
+        displayName: CFR
+        description: DMAMUX request line multiplexer interrupt clear flag register
+        addressOffset: 132
+        size: 32
+        access: write-only
+        resetValue: 0
+        fields:
+          CSOF:
+            name: CSOF
+            description: Clear synchronization overrun event flag
+            bitOffset: 0
+            bitWidth: 16

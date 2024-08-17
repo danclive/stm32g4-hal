@@ -1,0 +1,1443 @@
+_add:
+  TIM1:
+    name: TIM1
+    description: Advanced-timers
+    groupName: TIM
+    baseAddress: 1073818624
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      TIM1_BRK_TIM15:
+        name: TIM1_BRK_TIM15
+        description: TIM1_BRK_TIM15
+        value: 24
+      TIM1_UP_TIM16:
+        name: TIM1_UP_TIM16
+        description: TIM1_UP_TIM16
+        value: 25
+      TIM1_TRG_COM:
+        name: TIM1_TRG_COM
+        description: TIM1_TRG_COM/
+        value: 26
+      TIM1_CC:
+        name: TIM1_CC
+        description: TIM1 capture compare interrupt
+        value: 27
+      TIM8_CC:
+        name: TIM8_CC
+        description: TIM8_CC
+        value: 46
+    registers:
+      CR1:
+        name: CR1
+        displayName: CR1
+        description: control register 1
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DITHEN:
+            name: DITHEN
+            description: Dithering Enable
+            bitOffset: 12
+            bitWidth: 1
+          UIFREMAP:
+            name: UIFREMAP
+            description: UIF status bit remapping
+            bitOffset: 11
+            bitWidth: 1
+          CKD:
+            name: CKD
+            description: Clock division
+            bitOffset: 8
+            bitWidth: 2
+          ARPE:
+            name: ARPE
+            description: Auto-reload preload enable
+            bitOffset: 7
+            bitWidth: 1
+          CMS:
+            name: CMS
+            description: Center-aligned mode selection
+            bitOffset: 5
+            bitWidth: 2
+          DIR:
+            name: DIR
+            description: Direction
+            bitOffset: 4
+            bitWidth: 1
+          OPM:
+            name: OPM
+            description: One-pulse mode
+            bitOffset: 3
+            bitWidth: 1
+          URS:
+            name: URS
+            description: Update request source
+            bitOffset: 2
+            bitWidth: 1
+          UDIS:
+            name: UDIS
+            description: Update disable
+            bitOffset: 1
+            bitWidth: 1
+          CEN:
+            name: CEN
+            description: Counter enable
+            bitOffset: 0
+            bitWidth: 1
+      CR2:
+        name: CR2
+        displayName: CR2
+        description: control register 2
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          MMS_3:
+            name: MMS_3
+            description: Master mode selection - bit 3
+            bitOffset: 25
+            bitWidth: 1
+          MMS2:
+            name: MMS2
+            description: Master mode selection 2
+            bitOffset: 20
+            bitWidth: 4
+          OIS6:
+            name: OIS6
+            description: Output Idle state 6 (OC6 output)
+            bitOffset: 18
+            bitWidth: 1
+          OIS5:
+            name: OIS5
+            description: Output Idle state 5 (OC5 output)
+            bitOffset: 16
+            bitWidth: 1
+          OIS4N:
+            name: OIS4N
+            description: Output Idle state 4 (OC4N output)
+            bitOffset: 15
+            bitWidth: 1
+          OIS4:
+            name: OIS4
+            description: Output Idle state 4
+            bitOffset: 14
+            bitWidth: 1
+          OIS3N:
+            name: OIS3N
+            description: Output Idle state 3
+            bitOffset: 13
+            bitWidth: 1
+          OIS3:
+            name: OIS3
+            description: Output Idle state 3
+            bitOffset: 12
+            bitWidth: 1
+          OIS2N:
+            name: OIS2N
+            description: Output Idle state 2
+            bitOffset: 11
+            bitWidth: 1
+          OIS2:
+            name: OIS2
+            description: Output Idle state 2
+            bitOffset: 10
+            bitWidth: 1
+          OIS1N:
+            name: OIS1N
+            description: Output Idle state 1
+            bitOffset: 9
+            bitWidth: 1
+          OIS1:
+            name: OIS1
+            description: Output Idle state 1
+            bitOffset: 8
+            bitWidth: 1
+          TI1S:
+            name: TI1S
+            description: TI1 selection
+            bitOffset: 7
+            bitWidth: 1
+          MMS:
+            name: MMS
+            description: Master mode selection
+            bitOffset: 4
+            bitWidth: 3
+          CCDS:
+            name: CCDS
+            description: Capture/compare DMA selection
+            bitOffset: 3
+            bitWidth: 1
+          CCUS:
+            name: CCUS
+            description: Capture/compare control update selection
+            bitOffset: 2
+            bitWidth: 1
+          CCPC:
+            name: CCPC
+            description: Capture/compare preloaded control
+            bitOffset: 0
+            bitWidth: 1
+      SMCR:
+        name: SMCR
+        displayName: SMCR
+        description: slave mode control register
+        addressOffset: 8
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          SMSPS:
+            name: SMSPS
+            description: SMS Preload Source
+            bitOffset: 25
+            bitWidth: 1
+          SMSPE:
+            name: SMSPE
+            description: SMS Preload Enable
+            bitOffset: 24
+            bitWidth: 1
+          TS_4_3:
+            name: TS_4_3
+            description: Trigger selection - bit 4:3
+            bitOffset: 20
+            bitWidth: 2
+          SMS_3:
+            name: SMS_3
+            description: Slave mode selection - bit 3
+            bitOffset: 16
+            bitWidth: 1
+          ETP:
+            name: ETP
+            description: External trigger polarity
+            bitOffset: 15
+            bitWidth: 1
+          ECE:
+            name: ECE
+            description: External clock enable
+            bitOffset: 14
+            bitWidth: 1
+          ETPS:
+            name: ETPS
+            description: External trigger prescaler
+            bitOffset: 12
+            bitWidth: 2
+          ETF:
+            name: ETF
+            description: External trigger filter
+            bitOffset: 8
+            bitWidth: 4
+          MSM:
+            name: MSM
+            description: Master/Slave mode
+            bitOffset: 7
+            bitWidth: 1
+          TS:
+            name: TS
+            description: Trigger selection
+            bitOffset: 4
+            bitWidth: 3
+          OCCS:
+            name: OCCS
+            description: OCREF clear selection
+            bitOffset: 3
+            bitWidth: 1
+          SMS:
+            name: SMS
+            description: Slave mode selection
+            bitOffset: 0
+            bitWidth: 3
+      DIER:
+        name: DIER
+        displayName: DIER
+        description: DMA/Interrupt enable register
+        addressOffset: 12
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TERRIE:
+            name: TERRIE
+            description: Transition Error interrupt enable
+            bitOffset: 23
+            bitWidth: 1
+          IERRIE:
+            name: IERRIE
+            description: Index Error interrupt enable
+            bitOffset: 22
+            bitWidth: 1
+          DIRIE:
+            name: DIRIE
+            description: Direction Change interrupt enable
+            bitOffset: 21
+            bitWidth: 1
+          IDXIE:
+            name: IDXIE
+            description: Index interrupt enable
+            bitOffset: 20
+            bitWidth: 1
+          TDE:
+            name: TDE
+            description: Trigger DMA request enable
+            bitOffset: 14
+            bitWidth: 1
+          COMDE:
+            name: COMDE
+            description: COM DMA request enable
+            bitOffset: 13
+            bitWidth: 1
+          CC4DE:
+            name: CC4DE
+            description: Capture/Compare 4 DMA request enable
+            bitOffset: 12
+            bitWidth: 1
+          CC3DE:
+            name: CC3DE
+            description: Capture/Compare 3 DMA request enable
+            bitOffset: 11
+            bitWidth: 1
+          CC2DE:
+            name: CC2DE
+            description: Capture/Compare 2 DMA request enable
+            bitOffset: 10
+            bitWidth: 1
+          CC1DE:
+            name: CC1DE
+            description: Capture/Compare 1 DMA request enable
+            bitOffset: 9
+            bitWidth: 1
+          UDE:
+            name: UDE
+            description: Update DMA request enable
+            bitOffset: 8
+            bitWidth: 1
+          TIE:
+            name: TIE
+            description: Trigger interrupt enable
+            bitOffset: 6
+            bitWidth: 1
+          CC4IE:
+            name: CC4IE
+            description: Capture/Compare 4 interrupt enable
+            bitOffset: 4
+            bitWidth: 1
+          CC3IE:
+            name: CC3IE
+            description: Capture/Compare 3 interrupt enable
+            bitOffset: 3
+            bitWidth: 1
+          CC2IE:
+            name: CC2IE
+            description: Capture/Compare 2 interrupt enable
+            bitOffset: 2
+            bitWidth: 1
+          CC1IE:
+            name: CC1IE
+            description: Capture/Compare 1 interrupt enable
+            bitOffset: 1
+            bitWidth: 1
+          UIE:
+            name: UIE
+            description: Update interrupt enable
+            bitOffset: 0
+            bitWidth: 1
+          BIE:
+            name: BIE
+            description: Break interrupt enable
+            bitOffset: 7
+            bitWidth: 1
+          COMIE:
+            name: COMIE
+            description: COM interrupt enable
+            bitOffset: 5
+            bitWidth: 1
+      SR:
+        name: SR
+        displayName: SR
+        description: status register
+        addressOffset: 16
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TERRF:
+            name: TERRF
+            description: Transition Error interrupt flag
+            bitOffset: 23
+            bitWidth: 1
+          IERRF:
+            name: IERRF
+            description: Index Error interrupt flag
+            bitOffset: 22
+            bitWidth: 1
+          DIRF:
+            name: DIRF
+            description: Direction Change interrupt flag
+            bitOffset: 21
+            bitWidth: 1
+          IDXF:
+            name: IDXF
+            description: Index interrupt flag
+            bitOffset: 20
+            bitWidth: 1
+          CC6IF:
+            name: CC6IF
+            description: Compare 6 interrupt flag
+            bitOffset: 17
+            bitWidth: 1
+          CC5IF:
+            name: CC5IF
+            description: Compare 5 interrupt flag
+            bitOffset: 16
+            bitWidth: 1
+          SBIF:
+            name: SBIF
+            description: System Break interrupt flag
+            bitOffset: 13
+            bitWidth: 1
+          CC4OF:
+            name: CC4OF
+            description: Capture/Compare 4 overcapture flag
+            bitOffset: 12
+            bitWidth: 1
+          CC3OF:
+            name: CC3OF
+            description: Capture/Compare 3 overcapture flag
+            bitOffset: 11
+            bitWidth: 1
+          CC2OF:
+            name: CC2OF
+            description: Capture/compare 2 overcapture flag
+            bitOffset: 10
+            bitWidth: 1
+          CC1OF:
+            name: CC1OF
+            description: Capture/Compare 1 overcapture flag
+            bitOffset: 9
+            bitWidth: 1
+          B2IF:
+            name: B2IF
+            description: Break 2 interrupt flag
+            bitOffset: 8
+            bitWidth: 1
+          BIF:
+            name: BIF
+            description: Break interrupt flag
+            bitOffset: 7
+            bitWidth: 1
+          TIF:
+            name: TIF
+            description: Trigger interrupt flag
+            bitOffset: 6
+            bitWidth: 1
+          COMIF:
+            name: COMIF
+            description: COM interrupt flag
+            bitOffset: 5
+            bitWidth: 1
+          CC4IF:
+            name: CC4IF
+            description: Capture/Compare 4 interrupt flag
+            bitOffset: 4
+            bitWidth: 1
+          CC3IF:
+            name: CC3IF
+            description: Capture/Compare 3 interrupt flag
+            bitOffset: 3
+            bitWidth: 1
+          CC2IF:
+            name: CC2IF
+            description: Capture/Compare 2 interrupt flag
+            bitOffset: 2
+            bitWidth: 1
+          CC1IF:
+            name: CC1IF
+            description: Capture/compare 1 interrupt flag
+            bitOffset: 1
+            bitWidth: 1
+          UIF:
+            name: UIF
+            description: Update interrupt flag
+            bitOffset: 0
+            bitWidth: 1
+      EGR:
+        name: EGR
+        displayName: EGR
+        description: event generation register
+        addressOffset: 20
+        size: 32
+        access: write-only
+        resetValue: 0
+        fields:
+          B2G:
+            name: B2G
+            description: Break 2 generation
+            bitOffset: 8
+            bitWidth: 1
+          BG:
+            name: BG
+            description: Break generation
+            bitOffset: 7
+            bitWidth: 1
+          TG:
+            name: TG
+            description: Trigger generation
+            bitOffset: 6
+            bitWidth: 1
+          COMG:
+            name: COMG
+            description: Capture/Compare control update generation
+            bitOffset: 5
+            bitWidth: 1
+          CC4G:
+            name: CC4G
+            description: Capture/compare 4 generation
+            bitOffset: 4
+            bitWidth: 1
+          CC3G:
+            name: CC3G
+            description: Capture/compare 3 generation
+            bitOffset: 3
+            bitWidth: 1
+          CC2G:
+            name: CC2G
+            description: Capture/compare 2 generation
+            bitOffset: 2
+            bitWidth: 1
+          CC1G:
+            name: CC1G
+            description: Capture/compare 1 generation
+            bitOffset: 1
+            bitWidth: 1
+          UG:
+            name: UG
+            description: Update generation
+            bitOffset: 0
+            bitWidth: 1
+      CCMR1_Output:
+        name: CCMR1_Output
+        displayName: CCMR1_Output
+        description: capture/compare mode register 1 (output mode)
+        addressOffset: 24
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OC2M_3:
+            name: OC2M_3
+            description: Output Compare 2 mode - bit 3
+            bitOffset: 24
+            bitWidth: 1
+          OC1M_3:
+            name: OC1M_3
+            description: Output Compare 1 mode - bit 3
+            bitOffset: 16
+            bitWidth: 1
+          OC2CE:
+            name: OC2CE
+            description: Output Compare 2 clear enable
+            bitOffset: 15
+            bitWidth: 1
+          OC2M:
+            name: OC2M
+            description: Output Compare 2 mode
+            bitOffset: 12
+            bitWidth: 3
+          OC2PE:
+            name: OC2PE
+            description: Output Compare 2 preload enable
+            bitOffset: 11
+            bitWidth: 1
+          OC2FE:
+            name: OC2FE
+            description: Output Compare 2 fast enable
+            bitOffset: 10
+            bitWidth: 1
+          CC2S:
+            name: CC2S
+            description: Capture/Compare 2 selection
+            bitOffset: 8
+            bitWidth: 2
+          OC1CE:
+            name: OC1CE
+            description: Output Compare 1 clear enable
+            bitOffset: 7
+            bitWidth: 1
+          OC1M:
+            name: OC1M
+            description: Output Compare 1 mode
+            bitOffset: 4
+            bitWidth: 3
+          OC1PE:
+            name: OC1PE
+            description: Output Compare 1 preload enable
+            bitOffset: 3
+            bitWidth: 1
+          OC1FE:
+            name: OC1FE
+            description: Output Compare 1 fast enable
+            bitOffset: 2
+            bitWidth: 1
+          CC1S:
+            name: CC1S
+            description: Capture/Compare 1 selection
+            bitOffset: 0
+            bitWidth: 2
+      CCMR1_Input:
+        name: CCMR1_Input
+        displayName: CCMR1_Input
+        description: capture/compare mode register 1 (input mode)
+        addressOffset: 24
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          IC2F:
+            name: IC2F
+            description: Input capture 2 filter
+            bitOffset: 12
+            bitWidth: 4
+          IC2PSC:
+            name: IC2PSC
+            description: Input capture 2 prescaler
+            bitOffset: 10
+            bitWidth: 2
+          CC2S:
+            name: CC2S
+            description: Capture/Compare 2 selection
+            bitOffset: 8
+            bitWidth: 2
+          IC1F:
+            name: IC1F
+            description: Input capture 1 filter
+            bitOffset: 4
+            bitWidth: 4
+          IC1PSC:
+            name: IC1PSC
+            description: Input capture 1 prescaler
+            bitOffset: 2
+            bitWidth: 2
+          CC1S:
+            name: CC1S
+            description: Capture/Compare 1 selection
+            bitOffset: 0
+            bitWidth: 2
+      CCMR2_Output:
+        name: CCMR2_Output
+        displayName: CCMR2_Output
+        description: capture/compare mode register 2 (output mode)
+        addressOffset: 28
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OC4M_3:
+            name: OC4M_3
+            description: Output Compare 4 mode - bit 3
+            bitOffset: 24
+            bitWidth: 1
+          OC3M_3:
+            name: OC3M_3
+            description: Output Compare 3 mode - bit 3
+            bitOffset: 16
+            bitWidth: 1
+          OC4CE:
+            name: OC4CE
+            description: Output compare 4 clear enable
+            bitOffset: 15
+            bitWidth: 1
+          OC4M:
+            name: OC4M
+            description: Output compare 4 mode
+            bitOffset: 12
+            bitWidth: 3
+          OC4PE:
+            name: OC4PE
+            description: Output compare 4 preload enable
+            bitOffset: 11
+            bitWidth: 1
+          OC4FE:
+            name: OC4FE
+            description: Output compare 4 fast enable
+            bitOffset: 10
+            bitWidth: 1
+          CC4S:
+            name: CC4S
+            description: Capture/Compare 4 selection
+            bitOffset: 8
+            bitWidth: 2
+          OC3CE:
+            name: OC3CE
+            description: Output compare 3 clear enable
+            bitOffset: 7
+            bitWidth: 1
+          OC3M:
+            name: OC3M
+            description: Output compare 3 mode
+            bitOffset: 4
+            bitWidth: 3
+          OC3PE:
+            name: OC3PE
+            description: Output compare 3 preload enable
+            bitOffset: 3
+            bitWidth: 1
+          OC3FE:
+            name: OC3FE
+            description: Output compare 3 fast enable
+            bitOffset: 2
+            bitWidth: 1
+          CC3S:
+            name: CC3S
+            description: Capture/Compare 3 selection
+            bitOffset: 0
+            bitWidth: 2
+      CCMR2_Input:
+        name: CCMR2_Input
+        displayName: CCMR2_Input
+        description: capture/compare mode register 2 (input mode)
+        addressOffset: 28
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          IC4F:
+            name: IC4F
+            description: Input capture 4 filter
+            bitOffset: 12
+            bitWidth: 4
+          IC4PSC:
+            name: IC4PSC
+            description: Input capture 4 prescaler
+            bitOffset: 10
+            bitWidth: 2
+          CC4S:
+            name: CC4S
+            description: Capture/Compare 4 selection
+            bitOffset: 8
+            bitWidth: 2
+          IC3F:
+            name: IC3F
+            description: Input capture 3 filter
+            bitOffset: 4
+            bitWidth: 4
+          IC3PSC:
+            name: IC3PSC
+            description: Input capture 3 prescaler
+            bitOffset: 2
+            bitWidth: 2
+          CC3S:
+            name: CC3S
+            description: Capture/compare 3 selection
+            bitOffset: 0
+            bitWidth: 2
+      CCER:
+        name: CCER
+        displayName: CCER
+        description: capture/compare enable register
+        addressOffset: 32
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CC6P:
+            name: CC6P
+            description: Capture/Compare 6 output polarity
+            bitOffset: 21
+            bitWidth: 1
+          CC6E:
+            name: CC6E
+            description: Capture/Compare 6 output enable
+            bitOffset: 20
+            bitWidth: 1
+          CC5P:
+            name: CC5P
+            description: Capture/Compare 5 output polarity
+            bitOffset: 17
+            bitWidth: 1
+          CC5E:
+            name: CC5E
+            description: Capture/Compare 5 output enable
+            bitOffset: 16
+            bitWidth: 1
+          CC4NP:
+            name: CC4NP
+            description: Capture/Compare 4 complementary output polarity
+            bitOffset: 15
+            bitWidth: 1
+          CC4NE:
+            name: CC4NE
+            description: Capture/Compare 4 complementary output enable
+            bitOffset: 14
+            bitWidth: 1
+          CC4P:
+            name: CC4P
+            description: Capture/Compare 3 output Polarity
+            bitOffset: 13
+            bitWidth: 1
+          CC4E:
+            name: CC4E
+            description: Capture/Compare 4 output enable
+            bitOffset: 12
+            bitWidth: 1
+          CC3NP:
+            name: CC3NP
+            description: Capture/Compare 3 output Polarity
+            bitOffset: 11
+            bitWidth: 1
+          CC3NE:
+            name: CC3NE
+            description: Capture/Compare 3 complementary output enable
+            bitOffset: 10
+            bitWidth: 1
+          CC3P:
+            name: CC3P
+            description: Capture/Compare 3 output Polarity
+            bitOffset: 9
+            bitWidth: 1
+          CC3E:
+            name: CC3E
+            description: Capture/Compare 3 output enable
+            bitOffset: 8
+            bitWidth: 1
+          CC2NP:
+            name: CC2NP
+            description: Capture/Compare 2 output Polarity
+            bitOffset: 7
+            bitWidth: 1
+          CC2NE:
+            name: CC2NE
+            description: Capture/Compare 2 complementary output enable
+            bitOffset: 6
+            bitWidth: 1
+          CC2P:
+            name: CC2P
+            description: Capture/Compare 2 output Polarity
+            bitOffset: 5
+            bitWidth: 1
+          CC2E:
+            name: CC2E
+            description: Capture/Compare 2 output enable
+            bitOffset: 4
+            bitWidth: 1
+          CC1NP:
+            name: CC1NP
+            description: Capture/Compare 1 output Polarity
+            bitOffset: 3
+            bitWidth: 1
+          CC1NE:
+            name: CC1NE
+            description: Capture/Compare 1 complementary output enable
+            bitOffset: 2
+            bitWidth: 1
+          CC1P:
+            name: CC1P
+            description: Capture/Compare 1 output Polarity
+            bitOffset: 1
+            bitWidth: 1
+          CC1E:
+            name: CC1E
+            description: Capture/Compare 1 output enable
+            bitOffset: 0
+            bitWidth: 1
+      CNT:
+        name: CNT
+        displayName: CNT
+        description: counter
+        addressOffset: 36
+        size: 32
+        resetValue: 0
+        fields:
+          UIFCPY:
+            name: UIFCPY
+            description: UIFCPY
+            bitOffset: 31
+            bitWidth: 1
+            access: read-only
+          CNT:
+            name: CNT
+            description: counter value
+            bitOffset: 0
+            bitWidth: 16
+            access: read-write
+      PSC:
+        name: PSC
+        displayName: PSC
+        description: prescaler
+        addressOffset: 40
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          PSC:
+            name: PSC
+            description: Prescaler value
+            bitOffset: 0
+            bitWidth: 16
+      ARR:
+        name: ARR
+        displayName: ARR
+        description: auto-reload register
+        addressOffset: 44
+        size: 32
+        access: read-write
+        resetValue: 65535
+        fields:
+          ARR:
+            name: ARR
+            description: Auto-reload value
+            bitOffset: 0
+            bitWidth: 20
+      RCR:
+        name: RCR
+        displayName: RCR
+        description: repetition counter register
+        addressOffset: 48
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          REP:
+            name: REP
+            description: Repetition counter value
+            bitOffset: 0
+            bitWidth: 16
+      CCR1:
+        name: CCR1
+        displayName: CCR1
+        description: capture/compare register 1
+        addressOffset: 52
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CCR1:
+            name: CCR1
+            description: Capture/Compare 1 value
+            bitOffset: 0
+            bitWidth: 20
+      CCR2:
+        name: CCR2
+        displayName: CCR2
+        description: capture/compare register 2
+        addressOffset: 56
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CCR2:
+            name: CCR2
+            description: Capture/Compare 2 value
+            bitOffset: 0
+            bitWidth: 20
+      CCR3:
+        name: CCR3
+        displayName: CCR3
+        description: capture/compare register 3
+        addressOffset: 60
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CCR3:
+            name: CCR3
+            description: Capture/Compare value
+            bitOffset: 0
+            bitWidth: 20
+      CCR4:
+        name: CCR4
+        displayName: CCR4
+        description: capture/compare register 4
+        addressOffset: 64
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CCR4:
+            name: CCR4
+            description: Capture/Compare value
+            bitOffset: 0
+            bitWidth: 20
+      BDTR:
+        name: BDTR
+        displayName: BDTR
+        description: break and dead-time register
+        addressOffset: 68
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          BK2ID:
+            name: BK2ID
+            description: BK2ID
+            bitOffset: 29
+            bitWidth: 1
+          BKBID:
+            name: BKBID
+            description: BKBID
+            bitOffset: 28
+            bitWidth: 1
+          BK2DSRM:
+            name: BK2DSRM
+            description: BK2DSRM
+            bitOffset: 27
+            bitWidth: 1
+          BKDSRM:
+            name: BKDSRM
+            description: BKDSRM
+            bitOffset: 26
+            bitWidth: 1
+          BK2P:
+            name: BK2P
+            description: Break 2 polarity
+            bitOffset: 25
+            bitWidth: 1
+          BK2E:
+            name: BK2E
+            description: Break 2 Enable
+            bitOffset: 24
+            bitWidth: 1
+          BK2F:
+            name: BK2F
+            description: Break 2 filter
+            bitOffset: 20
+            bitWidth: 4
+          BKF:
+            name: BKF
+            description: Break filter
+            bitOffset: 16
+            bitWidth: 4
+          MOE:
+            name: MOE
+            description: Main output enable
+            bitOffset: 15
+            bitWidth: 1
+          AOE:
+            name: AOE
+            description: Automatic output enable
+            bitOffset: 14
+            bitWidth: 1
+          BKP:
+            name: BKP
+            description: Break polarity
+            bitOffset: 13
+            bitWidth: 1
+          BKE:
+            name: BKE
+            description: Break enable
+            bitOffset: 12
+            bitWidth: 1
+          OSSR:
+            name: OSSR
+            description: Off-state selection for Run mode
+            bitOffset: 11
+            bitWidth: 1
+          OSSI:
+            name: OSSI
+            description: Off-state selection for Idle mode
+            bitOffset: 10
+            bitWidth: 1
+          LOCK:
+            name: LOCK
+            description: Lock configuration
+            bitOffset: 8
+            bitWidth: 2
+          DTG:
+            name: DTG
+            description: Dead-time generator setup
+            bitOffset: 0
+            bitWidth: 8
+      CCR5:
+        name: CCR5
+        displayName: CCR5
+        description: capture/compare register 4
+        addressOffset: 72
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CCR5:
+            name: CCR5
+            description: Capture/Compare value
+            bitOffset: 0
+            bitWidth: 20
+          GC5C1:
+            name: GC5C1
+            description: Group Channel 5 and Channel 1
+            bitOffset: 29
+            bitWidth: 1
+          GC5C2:
+            name: GC5C2
+            description: Group Channel 5 and Channel 2
+            bitOffset: 30
+            bitWidth: 1
+          GC5C3:
+            name: GC5C3
+            description: Group Channel 5 and Channel 3
+            bitOffset: 31
+            bitWidth: 1
+      CCR6:
+        name: CCR6
+        displayName: CCR6
+        description: capture/compare register 4
+        addressOffset: 76
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CCR6:
+            name: CCR6
+            description: Capture/Compare value
+            bitOffset: 0
+            bitWidth: 20
+      CCMR3_Output:
+        name: CCMR3_Output
+        displayName: CCMR3_Output
+        description: capture/compare mode register 2 (output mode)
+        addressOffset: 80
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OC6M_bit3:
+            name: OC6M_bit3
+            description: Output Compare 6 mode bit 3
+            bitOffset: 24
+            bitWidth: 1
+          OC5M_bit3:
+            name: OC5M_bit3
+            description: Output Compare 5 mode bit 3
+            bitOffset: 16
+            bitWidth: 3
+          OC6CE:
+            name: OC6CE
+            description: Output compare 6 clear enable
+            bitOffset: 15
+            bitWidth: 1
+          OC6M:
+            name: OC6M
+            description: Output compare 6 mode
+            bitOffset: 12
+            bitWidth: 3
+          OC6PE:
+            name: OC6PE
+            description: Output compare 6 preload enable
+            bitOffset: 11
+            bitWidth: 1
+          OC6FE:
+            name: OC6FE
+            description: Output compare 6 fast enable
+            bitOffset: 10
+            bitWidth: 1
+          OC5CE:
+            name: OC5CE
+            description: Output compare 5 clear enable
+            bitOffset: 7
+            bitWidth: 1
+          OC5M:
+            name: OC5M
+            description: Output compare 5 mode
+            bitOffset: 4
+            bitWidth: 3
+          OC5PE:
+            name: OC5PE
+            description: Output compare 5 preload enable
+            bitOffset: 3
+            bitWidth: 1
+          OC5FE:
+            name: OC5FE
+            description: Output compare 5 fast enable
+            bitOffset: 2
+            bitWidth: 1
+      DTR2:
+        name: DTR2
+        displayName: DTR2
+        description: timer Deadtime Register 2
+        addressOffset: 84
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DTPE:
+            name: DTPE
+            description: Deadtime Preload Enable
+            bitOffset: 17
+            bitWidth: 1
+          DTAE:
+            name: DTAE
+            description: Deadtime Asymmetric Enable
+            bitOffset: 16
+            bitWidth: 1
+          DTGF:
+            name: DTGF
+            description: Dead-time falling edge generator setup
+            bitOffset: 0
+            bitWidth: 8
+      ECR:
+        name: ECR
+        displayName: ECR
+        description: DMA control register
+        addressOffset: 88
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          IE:
+            name: IE
+            description: Index Enable
+            bitOffset: 0
+            bitWidth: 1
+          IDIR:
+            name: IDIR
+            description: Index Direction
+            bitOffset: 1
+            bitWidth: 2
+          IBLK:
+            name: IBLK
+            description: Index Blanking
+            bitOffset: 3
+            bitWidth: 2
+          FIDX:
+            name: FIDX
+            description: First Index
+            bitOffset: 5
+            bitWidth: 1
+          IPOS:
+            name: IPOS
+            description: Index Positioning
+            bitOffset: 6
+            bitWidth: 2
+          PW:
+            name: PW
+            description: Pulse width
+            bitOffset: 16
+            bitWidth: 8
+          PWPRSC:
+            name: PWPRSC
+            description: Pulse Width prescaler
+            bitOffset: 24
+            bitWidth: 3
+      TISEL:
+        name: TISEL
+        displayName: TISEL
+        description: TIM timer input selection register
+        addressOffset: 92
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          TI1SEL:
+            name: TI1SEL
+            description: TI1[0] to TI1[15] input selection
+            bitOffset: 0
+            bitWidth: 4
+          TI2SEL:
+            name: TI2SEL
+            description: TI2[0] to TI2[15] input selection
+            bitOffset: 8
+            bitWidth: 4
+          TI3SEL:
+            name: TI3SEL
+            description: TI3[0] to TI3[15] input selection
+            bitOffset: 16
+            bitWidth: 4
+          TI4SEL:
+            name: TI4SEL
+            description: TI4[0] to TI4[15] input selection
+            bitOffset: 24
+            bitWidth: 4
+      AF1:
+        name: AF1
+        displayName: AF1
+        description: TIM alternate function option register 1
+        addressOffset: 96
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          ETRSEL:
+            name: ETRSEL
+            description: ETR source selection
+            bitOffset: 14
+            bitWidth: 4
+          BKCMP4P:
+            name: BKCMP4P
+            description: BRK COMP4 input polarity
+            bitOffset: 13
+            bitWidth: 1
+          BKCMP3P:
+            name: BKCMP3P
+            description: BRK COMP3 input polarity
+            bitOffset: 12
+            bitWidth: 1
+          BKCMP2P:
+            name: BKCMP2P
+            description: BRK COMP2 input polarity
+            bitOffset: 11
+            bitWidth: 1
+          BKCMP1P:
+            name: BKCMP1P
+            description: BRK COMP1 input polarity
+            bitOffset: 10
+            bitWidth: 1
+          BKINP:
+            name: BKINP
+            description: BRK BKIN input polarity
+            bitOffset: 9
+            bitWidth: 1
+          BKCMP7E:
+            name: BKCMP7E
+            description: BRK COMP7 enable
+            bitOffset: 7
+            bitWidth: 1
+          BKCMP6E:
+            name: BKCMP6E
+            description: BRK COMP6 enable
+            bitOffset: 6
+            bitWidth: 1
+          BKCMP5E:
+            name: BKCMP5E
+            description: BRK COMP5 enable
+            bitOffset: 5
+            bitWidth: 1
+          BKCMP4E:
+            name: BKCMP4E
+            description: BRK COMP4 enable
+            bitOffset: 4
+            bitWidth: 1
+          BKCMP3E:
+            name: BKCMP3E
+            description: BRK COMP3 enable
+            bitOffset: 3
+            bitWidth: 1
+          BKCMP2E:
+            name: BKCMP2E
+            description: BRK COMP2 enable
+            bitOffset: 2
+            bitWidth: 1
+          BKCMP1E:
+            name: BKCMP1E
+            description: BRK COMP1 enable
+            bitOffset: 1
+            bitWidth: 1
+          BKINE:
+            name: BKINE
+            description: BRK BKIN input enable
+            bitOffset: 0
+            bitWidth: 1
+      AF2:
+        name: AF2
+        displayName: AF2
+        description: TIM alternate function option register 2
+        addressOffset: 100
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          OCRSEL:
+            name: OCRSEL
+            description: OCREF_CLR source selection
+            bitOffset: 16
+            bitWidth: 3
+          BK2CMP4P:
+            name: BK2CMP4P
+            description: BRK2 COMP4 input polarity
+            bitOffset: 13
+            bitWidth: 1
+          BK2CMP3P:
+            name: BK2CMP3P
+            description: BRK2 COMP3 input polarity
+            bitOffset: 12
+            bitWidth: 1
+          BK2CMP2P:
+            name: BK2CMP2P
+            description: BRK2 COMP2 input polarity
+            bitOffset: 11
+            bitWidth: 1
+          BK2CMP1P:
+            name: BK2CMP1P
+            description: BRK2 COMP1 input polarity
+            bitOffset: 10
+            bitWidth: 1
+          BK2INP:
+            name: BK2INP
+            description: BRK2 BKIN input polarity
+            bitOffset: 9
+            bitWidth: 1
+          BK2CMP7E:
+            name: BK2CMP7E
+            description: BRK2 COMP7 enable
+            bitOffset: 7
+            bitWidth: 1
+          BK2CMP6E:
+            name: BK2CMP6E
+            description: BRK2 COMP6 enable
+            bitOffset: 6
+            bitWidth: 1
+          BK2CMP5E:
+            name: BK2CMP5E
+            description: BRK2 COMP5 enable
+            bitOffset: 5
+            bitWidth: 1
+          BK2CMP4E:
+            name: BK2CMP4E
+            description: BRK2 COMP4 enable
+            bitOffset: 4
+            bitWidth: 1
+          BK2CMP3E:
+            name: BK2CMP3E
+            description: BRK2 COMP3 enable
+            bitOffset: 3
+            bitWidth: 1
+          BK2CMP2E:
+            name: BK2CMP2E
+            description: BRK2 COMP2 enable
+            bitOffset: 2
+            bitWidth: 1
+          BK2CMP1E:
+            name: BK2CMP1E
+            description: BRK2 COMP1 enable
+            bitOffset: 1
+            bitWidth: 1
+          BKINE:
+            name: BKINE
+            description: BRK BKIN input enable
+            bitOffset: 0
+            bitWidth: 1
+      DCR:
+        name: DCR
+        displayName: DCR
+        description: control register
+        addressOffset: 988
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DBL:
+            name: DBL
+            description: DMA burst length
+            bitOffset: 8
+            bitWidth: 5
+          DBA:
+            name: DBA
+            description: DMA base address
+            bitOffset: 0
+            bitWidth: 5
+      DMAR:
+        name: DMAR
+        displayName: DMAR
+        description: DMA address for full transfer
+        addressOffset: 992
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          DMAB:
+            name: DMAB
+            description: DMA register for burst accesses
+            bitOffset: 0
+            bitWidth: 32

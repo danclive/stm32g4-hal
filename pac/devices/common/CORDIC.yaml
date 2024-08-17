@@ -1,0 +1,108 @@
+_add:
+  CORDIC:
+    name: CORDIC
+    description: CORDIC Co-processor
+    groupName: CORDIC
+    baseAddress: 1073875968
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      Cordic:
+        name: Cordic
+        description: Cordic
+        value: 100
+    registers:
+      CSR:
+        name: CSR
+        displayName: CSR
+        description: CORDIC Control Status register
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          FUNC:
+            name: FUNC
+            description: FUNC
+            bitOffset: 0
+            bitWidth: 4
+          PRECISION:
+            name: PRECISION
+            description: PRECISION
+            bitOffset: 4
+            bitWidth: 4
+          SCALE:
+            name: SCALE
+            description: SCALE
+            bitOffset: 8
+            bitWidth: 3
+          IEN:
+            name: IEN
+            description: IEN
+            bitOffset: 16
+            bitWidth: 1
+          DMAREN:
+            name: DMAREN
+            description: DMAREN
+            bitOffset: 17
+            bitWidth: 1
+          DMAWEN:
+            name: DMAWEN
+            description: DMAWEN
+            bitOffset: 18
+            bitWidth: 1
+          NRES:
+            name: NRES
+            description: NRES
+            bitOffset: 19
+            bitWidth: 1
+          NARGS:
+            name: NARGS
+            description: NARGS
+            bitOffset: 20
+            bitWidth: 1
+          RESSIZE:
+            name: RESSIZE
+            description: RESSIZE
+            bitOffset: 21
+            bitWidth: 1
+          ARGSIZE:
+            name: ARGSIZE
+            description: ARGSIZE
+            bitOffset: 22
+            bitWidth: 1
+          RRDY:
+            name: RRDY
+            description: RRDY
+            bitOffset: 31
+            bitWidth: 1
+      WDATA:
+        name: WDATA
+        displayName: WDATA
+        description: FMAC Write Data register
+        addressOffset: 4
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          ARG:
+            name: ARG
+            description: ARG
+            bitOffset: 0
+            bitWidth: 32
+      RDATA:
+        name: RDATA
+        displayName: RDATA
+        description: FMAC Read Data register
+        addressOffset: 8
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          RES:
+            name: RES
+            description: RES
+            bitOffset: 0
+            bitWidth: 32

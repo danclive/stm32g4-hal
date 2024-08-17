@@ -1,0 +1,296 @@
+_add:
+  COMP:
+    name: COMP
+    description: Comparator control and status register
+    groupName: COMP
+    baseAddress: 1073807872
+    addressBlock:
+      offset: 0
+      size: 256
+      usage: registers
+    interrupts:
+      COMP1_2_3:
+        name: COMP1_2_3
+        description: COMP1_2_3
+        value: 64
+      COMP4_5_6:
+        name: COMP4_5_6
+        description: COMP4_5_6
+        value: 65
+      COMP7:
+        name: COMP7
+        description: COMP7
+        value: 66
+    registers:
+      COMP_C1CSR:
+        name: COMP_C1CSR
+        displayName: COMP_C1CSR
+        description: Comparator control/status register
+        addressOffset: 0
+        size: 32
+        resetValue: 0
+        fields:
+          EN:
+            name: EN
+            description: EN
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          INMSEL:
+            name: INMSEL
+            description: INMSEL
+            bitOffset: 4
+            bitWidth: 3
+            access: read-write
+          INPSEL:
+            name: INPSEL
+            description: INPSEL
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          POL:
+            name: POL
+            description: POL
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          HYST:
+            name: HYST
+            description: HYST
+            bitOffset: 16
+            bitWidth: 3
+            access: read-write
+          BLANKSEL:
+            name: BLANKSEL
+            description: BLANKSEL
+            bitOffset: 19
+            bitWidth: 3
+            access: read-write
+          BRGEN:
+            name: BRGEN
+            description: BRGEN
+            bitOffset: 22
+            bitWidth: 1
+            access: read-write
+          SCALEN:
+            name: SCALEN
+            description: SCALEN
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+          VALUE:
+            name: VALUE
+            description: VALUE
+            bitOffset: 30
+            bitWidth: 1
+            access: read-only
+          LOCK:
+            name: LOCK
+            description: LOCK
+            bitOffset: 31
+            bitWidth: 1
+            access: read-write
+      COMP_C2CSR:
+        name: COMP_C2CSR
+        displayName: COMP_C2CSR
+        description: Comparator control/status register
+        addressOffset: 4
+        size: 32
+        resetValue: 0
+        fields:
+          EN:
+            name: EN
+            description: EN
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          INMSEL:
+            name: INMSEL
+            description: INMSEL
+            bitOffset: 4
+            bitWidth: 3
+            access: read-write
+          INPSEL:
+            name: INPSEL
+            description: INPSEL
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          POL:
+            name: POL
+            description: POL
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          HYST:
+            name: HYST
+            description: HYST
+            bitOffset: 16
+            bitWidth: 3
+            access: read-write
+          BLANKSEL:
+            name: BLANKSEL
+            description: BLANKSEL
+            bitOffset: 19
+            bitWidth: 3
+            access: read-write
+          BRGEN:
+            name: BRGEN
+            description: BRGEN
+            bitOffset: 22
+            bitWidth: 1
+            access: read-write
+          SCALEN:
+            name: SCALEN
+            description: SCALEN
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+          VALUE:
+            name: VALUE
+            description: VALUE
+            bitOffset: 30
+            bitWidth: 1
+            access: read-only
+          LOCK:
+            name: LOCK
+            description: LOCK
+            bitOffset: 31
+            bitWidth: 1
+            access: read-write
+      COMP_C3CSR:
+        name: COMP_C3CSR
+        displayName: COMP_C3CSR
+        description: Comparator control/status register
+        addressOffset: 8
+        size: 32
+        resetValue: 0
+        fields:
+          EN:
+            name: EN
+            description: EN
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          INMSEL:
+            name: INMSEL
+            description: INMSEL
+            bitOffset: 4
+            bitWidth: 3
+            access: read-write
+          INPSEL:
+            name: INPSEL
+            description: INPSEL
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          POL:
+            name: POL
+            description: POL
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          HYST:
+            name: HYST
+            description: HYST
+            bitOffset: 16
+            bitWidth: 3
+            access: read-write
+          BLANKSEL:
+            name: BLANKSEL
+            description: BLANKSEL
+            bitOffset: 19
+            bitWidth: 3
+            access: read-write
+          BRGEN:
+            name: BRGEN
+            description: BRGEN
+            bitOffset: 22
+            bitWidth: 1
+            access: read-write
+          SCALEN:
+            name: SCALEN
+            description: SCALEN
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+          VALUE:
+            name: VALUE
+            description: VALUE
+            bitOffset: 30
+            bitWidth: 1
+            access: read-only
+          LOCK:
+            name: LOCK
+            description: LOCK
+            bitOffset: 31
+            bitWidth: 1
+            access: read-write
+      COMP_C4CSR:
+        name: COMP_C4CSR
+        displayName: COMP_C4CSR
+        description: Comparator control/status register
+        addressOffset: 12
+        size: 32
+        resetValue: 0
+        fields:
+          EN:
+            name: EN
+            description: EN
+            bitOffset: 0
+            bitWidth: 1
+            access: read-write
+          INMSEL:
+            name: INMSEL
+            description: INMSEL
+            bitOffset: 4
+            bitWidth: 3
+            access: read-write
+          INPSEL:
+            name: INPSEL
+            description: INPSEL
+            bitOffset: 8
+            bitWidth: 1
+            access: read-write
+          POL:
+            name: POL
+            description: POL
+            bitOffset: 15
+            bitWidth: 1
+            access: read-write
+          HYST:
+            name: HYST
+            description: HYST
+            bitOffset: 16
+            bitWidth: 3
+            access: read-write
+          BLANKSEL:
+            name: BLANKSEL
+            description: BLANKSEL
+            bitOffset: 19
+            bitWidth: 3
+            access: read-write
+          BRGEN:
+            name: BRGEN
+            description: BRGEN
+            bitOffset: 22
+            bitWidth: 1
+            access: read-write
+          SCALEN:
+            name: SCALEN
+            description: SCALEN
+            bitOffset: 23
+            bitWidth: 1
+            access: read-write
+          VALUE:
+            name: VALUE
+            description: VALUE
+            bitOffset: 30
+            bitWidth: 1
+            access: read-only
+          LOCK:
+            name: LOCK
+            description: LOCK
+            bitOffset: 31
+            bitWidth: 1
+            access: read-write

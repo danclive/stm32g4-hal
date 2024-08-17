@@ -8,20 +8,6 @@ fn main() {
 
         let (device_file, svd_file) = if env::var_os("CARGO_FEATURE_STM32G431").is_some() {
             ("src/stm32g431/device.x", "svds/STM32G431.svd")
-        } else if env::var_os("CARGO_FEATURE_STM32G441").is_some() {
-            ("src/stm32g441/device.x", "svds/STM32G441.svd")
-        } else if env::var_os("CARGO_FEATURE_STM32G471").is_some() {
-            ("src/stm32g471/device.x", "svds/STM32G471.svd")
-        } else if env::var_os("CARGO_FEATURE_STM32G473").is_some() {
-            ("src/stm32g473/device.x", "svds/STM32G473.svd")
-        } else if env::var_os("CARGO_FEATURE_STM32G474").is_some() {
-            ("src/stm32g474/device.x", "svds/STM32G474.svd")
-        } else if env::var_os("CARGO_FEATURE_STM32G483").is_some() {
-            ("src/stm32g483/device.x", "svds/STM32G483.svd")
-        } else if env::var_os("CARGO_FEATURE_STM32G484").is_some() {
-            ("src/stm32g484/device.x", "svds/STM32G484.svd")
-        } else if env::var_os("CARGO_FEATURE_STM32G491").is_some() {
-            ("src/stm32g491/device.x", "svds/STM32G491.svd")
         } else {
             panic!("No device features selected");
         };

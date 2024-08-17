@@ -1,0 +1,92 @@
+_add:
+  RNG:
+    name: RNG
+    description: Random number generator
+    groupName: RNG
+    baseAddress: 1342572544
+    addressBlock:
+      offset: 0
+      size: 1024
+      usage: registers
+    interrupts:
+      RNG:
+        name: RNG
+        description: RNG
+        value: 90
+    registers:
+      CR:
+        name: CR
+        displayName: CR
+        description: control register
+        addressOffset: 0
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          CED:
+            name: CED
+            description: Clock error detection
+            bitOffset: 5
+            bitWidth: 1
+          IE:
+            name: IE
+            description: Interrupt enable
+            bitOffset: 3
+            bitWidth: 1
+          RNGEN:
+            name: RNGEN
+            description: Random number generator enable
+            bitOffset: 2
+            bitWidth: 1
+      SR:
+        name: SR
+        displayName: SR
+        description: status register
+        addressOffset: 4
+        size: 32
+        resetValue: 0
+        fields:
+          SEIS:
+            name: SEIS
+            description: Seed error interrupt status
+            bitOffset: 6
+            bitWidth: 1
+            access: read-write
+          CEIS:
+            name: CEIS
+            description: Clock error interrupt status
+            bitOffset: 5
+            bitWidth: 1
+            access: read-write
+          SECS:
+            name: SECS
+            description: Seed error current status
+            bitOffset: 2
+            bitWidth: 1
+            access: read-only
+          CECS:
+            name: CECS
+            description: Clock error current status
+            bitOffset: 1
+            bitWidth: 1
+            access: read-only
+          DRDY:
+            name: DRDY
+            description: Data ready
+            bitOffset: 0
+            bitWidth: 1
+            access: read-only
+      DR:
+        name: DR
+        displayName: DR
+        description: data register
+        addressOffset: 8
+        size: 32
+        access: read-only
+        resetValue: 0
+        fields:
+          RNDATA:
+            name: RNDATA
+            description: Random data
+            bitOffset: 0
+            bitWidth: 32
