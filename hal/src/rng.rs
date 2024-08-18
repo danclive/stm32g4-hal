@@ -17,29 +17,25 @@ pub struct Rng {
 }
 
 pub fn rng(rb: pac::Rng) -> Rng {
-    Rng::new(rb)
+    // Enable and reset Rng
+    unsafe {
+        let rcc = &(*pac::Rcc::PTR);
+        <pac::Rng>::enable(rcc);
+        <pac::Rng>::reset(rcc);
+
+        if rcc.rcc_crrcr().read().hsi48on().bit_is_clear() {
+            rcc.rcc_crrcr().modify(|_, w| w.hsi48on().set_bit());
+
+            while rcc.rcc_crrcr().read().hsi48rdy().bit_is_clear() {}
+        }
+    }
+
+    rb.cr().modify(|_, w| w.ced().set_bit().rngen().set_bit());
+
+    Rng { rb }
 }
 
 impl Rng {
-    pub fn new(rb: pac::Rng) -> Self {
-        // Enable and reset Rng
-        unsafe {
-            let rcc = &(*pac::Rcc::PTR);
-            <pac::Rng>::enable(rcc);
-            <pac::Rng>::reset(rcc);
-
-            if rcc.rcc_crrcr().read().hsi48on().bit_is_clear() {
-                rcc.rcc_crrcr().modify(|_, w| w.hsi48on().set_bit());
-
-                while rcc.rcc_crrcr().read().hsi48rdy().bit_is_clear() {}
-            }
-        }
-
-        rb.cr().modify(|_, w| w.ced().set_bit().rngen().set_bit());
-
-        Rng { rb }
-    }
-
     /// Returns 32 bits of randomness, or error
     pub fn value(&mut self) -> Result<u32, ErrorKind> {
         loop {
