@@ -76,132 +76,132 @@ pub struct Rtc {
     reg: pac::Rtc,
 }
 
+/// Opens the RTC if it is running and its configuration matches, otherwise resets and inits the RTC
+pub fn open_or_init(rtc: pac::Rtc, clock_source: RtcClock, clocks: &Clocks) -> Rtc {
+    match try_open(rtc, clock_source, clocks) {
+        Ok(rtc) => rtc,
+        Err((rtc, _err)) => init(rtc, clock_source, clocks),
+    }
+}
+
+/// Opens the RTC if it is running and its configuration matches
+pub fn try_open(
+    rtc: pac::Rtc,
+    clock_source: RtcClock,
+    clocks: &Clocks,
+) -> Result<Rtc, (pac::Rtc, InitError)> {
+    if !rcc::rtc::Rtc::is_enabled() {
+        return Err((rtc, InitError::RtcNotRunning));
+    }
+
+    let rcc = unsafe { &*pac::Rcc::PTR };
+    let bdcr = rcc.rcc_bdcr().read();
+
+    let clock_source_matches = match (clock_source, rcc::rtc::Rtc::get_kernel_clk_mux()) {
+        (RtcClock::Lsi, rcc::rtc::RtcClkSel::B0x2) => true,
+        (RtcClock::Hse, rcc::rtc::RtcClkSel::B0x3) => clocks.hse_clk().is_some(),
+        (RtcClock::Lse { css }, rcc::rtc::RtcClkSel::B0x1) => {
+            clocks.lse_clk().is_some() && css == bdcr.lsecsson().bit_is_set()
+        }
+        _ => false,
+    };
+    if !clock_source_matches {
+        return Err((rtc, InitError::ConfigMismatch));
+    }
+
+    let clock_source_running = match clock_source {
+        RtcClock::Lsi => true,
+        RtcClock::Hse => clocks.hse_clk().is_some(),
+        RtcClock::Lse { .. } => clocks.lse_clk().is_some(),
+    };
+    if !clock_source_running {
+        return Err((rtc, InitError::ClockNotRunning));
+    }
+
+    Ok(Rtc { reg: rtc })
+}
+
+/// Resets the RTC, including the backup registers, then initializes it.
+pub fn init(rtc: pac::Rtc, clock_source: RtcClock, clocks: &Clocks) -> Rtc {
+    rcc::rtc::Rtc::enable();
+
+    let rcc = unsafe { &*pac::Rcc::ptr() };
+
+    // Check and configure clock source
+    let ker_ck = match clock_source {
+        RtcClock::Lse { .. } => clocks.lse_clk(),
+        RtcClock::Hse => clocks.hse_clk().map(|x| x / 32),
+        RtcClock::Lsi => clocks.lsi_clk(),
+    }
+    .expect("rtc_ker_ck not running")
+    .raw();
+
+    assert!(ker_ck <= 1 << 22, "rtc_ker_ck too fast for prescaler");
+
+    // Select RTC kernel clock
+    rcc::rtc::Rtc::kernel_clk_mux(match clock_source {
+        RtcClock::Hse { .. } => rcc::rtc::RtcClkSel::B0x3,
+        RtcClock::Lsi => rcc::rtc::RtcClkSel::B0x2,
+        RtcClock::Lse { .. } => rcc::rtc::RtcClkSel::B0x1,
+    });
+
+    // Now we can enable CSS, if required
+    if let RtcClock::Lse { css: true } = clock_source {
+        rcc.rcc_bdcr().modify(|_, w| w.lsecsson().set_bit());
+    }
+
+    // Disable RTC register write protection
+    rtc.wpr().write(|w| unsafe { w.bits(0xCA) });
+    rtc.wpr().write(|w| unsafe { w.bits(0x53) });
+
+    // Enter initialization mode
+    rtc.icsr().modify(|_, w| w.init().set_bit());
+    while rtc.icsr().read().initf().bit_is_clear() {}
+
+    // Enable Shadow Register Bypass
+    rtc.cr().modify(|_, w| w.bypshad().set_bit());
+
+    // Configure prescaler for 1Hz clock
+    // Want to maximize a_pre_max for power reasons, though it reduces the
+    // subsecond precision.
+    let total_div = ker_ck;
+    let a_pre_max = 1 << 7;
+    let s_pre_max = 1 << 15;
+
+    let (a_pre, s_pre) = if total_div <= a_pre_max {
+        (total_div, 1)
+    } else if total_div % a_pre_max == 0 {
+        (a_pre_max, total_div / a_pre_max)
+    } else {
+        let mut a_pre = a_pre_max;
+        while a_pre > 1 {
+            if total_div % a_pre == 0 {
+                break;
+            }
+            a_pre -= 1;
+        }
+        let s_pre = total_div / a_pre;
+        (a_pre, s_pre)
+    };
+    assert!(
+        a_pre <= a_pre_max && s_pre <= s_pre_max,
+        "Invalid RTC prescaler value"
+    );
+
+    rtc.prer().write(|w| unsafe {
+        w.prediv_s()
+            .bits(u16(s_pre - 1).unwrap())
+            .prediv_a()
+            .bits(u8(a_pre - 1).unwrap())
+    });
+
+    // Exit initialization mode
+    rtc.icsr().modify(|_, w| w.init().clear_bit());
+
+    Rtc { reg: rtc }
+}
+
 impl Rtc {
-    /// Opens the RTC if it is running and its configuration matches, otherwise resets and inits the RTC
-    pub fn open_or_init(rtc: pac::Rtc, clock_source: RtcClock, clocks: &Clocks) -> Self {
-        match Rtc::try_open(rtc, clock_source, clocks) {
-            Ok(rtc) => rtc,
-            Err((rtc, _err)) => Rtc::init(rtc, clock_source, clocks),
-        }
-    }
-
-    /// Opens the RTC if it is running and its configuration matches
-    pub fn try_open(
-        rtc: pac::Rtc,
-        clock_source: RtcClock,
-        clocks: &Clocks,
-    ) -> Result<Self, (pac::Rtc, InitError)> {
-        if !rcc::rtc::Rtc::is_enabled() {
-            return Err((rtc, InitError::RtcNotRunning));
-        }
-
-        let rcc = unsafe { &*pac::Rcc::PTR };
-        let bdcr = rcc.rcc_bdcr().read();
-
-        let clock_source_matches = match (clock_source, rcc::rtc::Rtc::get_kernel_clk_mux()) {
-            (RtcClock::Lsi, rcc::rtc::RtcClkSel::B0x2) => true,
-            (RtcClock::Hse, rcc::rtc::RtcClkSel::B0x3) => clocks.hse_clk().is_some(),
-            (RtcClock::Lse { css }, rcc::rtc::RtcClkSel::B0x1) => {
-                clocks.lse_clk().is_some() && css == bdcr.lsecsson().bit_is_set()
-            }
-            _ => false,
-        };
-        if !clock_source_matches {
-            return Err((rtc, InitError::ConfigMismatch));
-        }
-
-        let clock_source_running = match clock_source {
-            RtcClock::Lsi => true,
-            RtcClock::Hse => clocks.hse_clk().is_some(),
-            RtcClock::Lse { .. } => clocks.lse_clk().is_some(),
-        };
-        if !clock_source_running {
-            return Err((rtc, InitError::ClockNotRunning));
-        }
-
-        Ok(Rtc { reg: rtc })
-    }
-
-    /// Resets the RTC, including the backup registers, then initializes it.
-    pub fn init(rtc: pac::Rtc, clock_source: RtcClock, clocks: &Clocks) -> Self {
-        rcc::rtc::Rtc::enable();
-
-        let rcc = unsafe { &*pac::Rcc::ptr() };
-
-        // Check and configure clock source
-        let ker_ck = match clock_source {
-            RtcClock::Lse { .. } => clocks.lse_clk(),
-            RtcClock::Hse => clocks.hse_clk().map(|x| x / 32),
-            RtcClock::Lsi => clocks.lsi_clk(),
-        }
-        .expect("rtc_ker_ck not running")
-        .raw();
-
-        assert!(ker_ck <= 1 << 22, "rtc_ker_ck too fast for prescaler");
-
-        // Select RTC kernel clock
-        rcc::rtc::Rtc::kernel_clk_mux(match clock_source {
-            RtcClock::Hse { .. } => rcc::rtc::RtcClkSel::B0x3,
-            RtcClock::Lsi => rcc::rtc::RtcClkSel::B0x2,
-            RtcClock::Lse { .. } => rcc::rtc::RtcClkSel::B0x1,
-        });
-
-        // Now we can enable CSS, if required
-        if let RtcClock::Lse { css: true } = clock_source {
-            rcc.rcc_bdcr().modify(|_, w| w.lsecsson().set_bit());
-        }
-
-        // Disable RTC register write protection
-        rtc.wpr().write(|w| unsafe { w.bits(0xCA) });
-        rtc.wpr().write(|w| unsafe { w.bits(0x53) });
-
-        // Enter initialization mode
-        rtc.icsr().modify(|_, w| w.init().set_bit());
-        while rtc.icsr().read().initf().bit_is_clear() {}
-
-        // Enable Shadow Register Bypass
-        rtc.cr().modify(|_, w| w.bypshad().set_bit());
-
-        // Configure prescaler for 1Hz clock
-        // Want to maximize a_pre_max for power reasons, though it reduces the
-        // subsecond precision.
-        let total_div = ker_ck;
-        let a_pre_max = 1 << 7;
-        let s_pre_max = 1 << 15;
-
-        let (a_pre, s_pre) = if total_div <= a_pre_max {
-            (total_div, 1)
-        } else if total_div % a_pre_max == 0 {
-            (a_pre_max, total_div / a_pre_max)
-        } else {
-            let mut a_pre = a_pre_max;
-            while a_pre > 1 {
-                if total_div % a_pre == 0 {
-                    break;
-                }
-                a_pre -= 1;
-            }
-            let s_pre = total_div / a_pre;
-            (a_pre, s_pre)
-        };
-        assert!(
-            a_pre <= a_pre_max && s_pre <= s_pre_max,
-            "Invalid RTC prescaler value"
-        );
-
-        rtc.prer().write(|w| unsafe {
-            w.prediv_s()
-                .bits(u16(s_pre - 1).unwrap())
-                .prediv_a()
-                .bits(u8(a_pre - 1).unwrap())
-        });
-
-        // Exit initialization mode
-        rtc.icsr().modify(|_, w| w.init().clear_bit());
-
-        Rtc { reg: rtc }
-    }
-
     /// Sets the date and time of the RTC
     ///
     /// # Panics
