@@ -20,6 +20,7 @@ pub mod opamp;
 pub mod pwm;
 pub mod pwm_input;
 pub mod pwr;
+pub mod qei;
 pub mod rcc;
 pub mod rng;
 pub mod rtc;

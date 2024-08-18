@@ -20,7 +20,7 @@ pub trait MISOPin<SPI> {}
 
 pub trait MOSIPin<SPI> {}
 
-pub trait PinNss<SPI> {}
+pub trait NSSPin<SPI> {}
 
 /// A filler type for when the SCK pin is unnecessary
 pub type NoSck = NoPin;
@@ -35,7 +35,7 @@ impl<SPI> MISOPin<SPI> for NoMiso {}
 
 impl<SPI> MOSIPin<SPI> for NoMosi {}
 
-impl<SPI> PinNss<SPI> for NoPin {}
+impl<SPI> NSSPin<SPI> for NoPin {}
 
 /// SPI interrupt events
 #[enumflags2::bitflags]
@@ -205,7 +205,7 @@ pub trait SpiExt<SPI>: Sized {
         SCK: SCKPin<SPI>,
         MISO: MISOPin<SPI>,
         MOSI: MOSIPin<SPI>,
-        NSS: PinNss<SPI>;
+        NSS: NSSPin<SPI>;
 
     fn spi_slave_bidi<SCK, MISO, NSS>(
         self,
@@ -215,23 +215,23 @@ pub trait SpiExt<SPI>: Sized {
     where
         SCK: SCKPin<SPI>,
         MISO: MISOPin<SPI>,
-        NSS: PinNss<SPI>;
+        NSS: NSSPin<SPI>;
 }
 
 macro_rules! spi_hal {
-    ($SPIX:ty, $spiX:ident, $spiX_slave:ident) => {
-        impl SpiExt<$SPIX> for $SPIX {
+    ($SPIX:ident, $spiX:ident, $spiX_slave:ident) => {
+        impl SpiExt<pac::$SPIX> for pac::$SPIX {
             fn spi<SCK, MISO, MOSI>(
                 self,
                 pins: (SCK, MISO, MOSI),
                 mode: Mode,
                 clocks: &Clocks,
                 freq: impl Into<Hertz>,
-            ) -> Spi<$SPIX, SCK, MISO, MOSI>
+            ) -> Spi<pac::$SPIX, SCK, MISO, MOSI>
             where
-                SCK: SCKPin<$SPIX>,
-                MISO: MISOPin<$SPIX>,
-                MOSI: MOSIPin<$SPIX>,
+                SCK: SCKPin<pac::$SPIX>,
+                MISO: MISOPin<pac::$SPIX>,
+                MOSI: MOSIPin<pac::$SPIX>,
             {
                 $spiX(self, pins, mode, clocks, freq)
             }
@@ -242,10 +242,10 @@ macro_rules! spi_hal {
                 mode: Mode,
                 clocks: &Clocks,
                 freq: impl Into<Hertz>,
-            ) -> Spi<$SPIX, SCK, NoMiso, MOSI, true>
+            ) -> Spi<pac::$SPIX, SCK, NoMiso, MOSI, true>
             where
-                SCK: SCKPin<$SPIX>,
-                MOSI: MOSIPin<$SPIX>,
+                SCK: SCKPin<pac::$SPIX>,
+                MOSI: MOSIPin<pac::$SPIX>,
             {
                 $spiX(self, (pins.0, NoPin::new(), pins.1), mode, clocks, freq)
             }
@@ -254,12 +254,12 @@ macro_rules! spi_hal {
                 self,
                 pins: (SCK, MISO, MOSI, Option<NSS>),
                 mode: Mode,
-            ) -> SpiSlave<$SPIX, SCK, MISO, MOSI, NSS>
+            ) -> SpiSlave<pac::$SPIX, SCK, MISO, MOSI, NSS>
             where
-                SCK: SCKPin<$SPIX>,
-                MISO: MISOPin<$SPIX>,
-                MOSI: MOSIPin<$SPIX>,
-                NSS: PinNss<$SPIX>,
+                SCK: SCKPin<pac::$SPIX>,
+                MISO: MISOPin<pac::$SPIX>,
+                MOSI: MOSIPin<pac::$SPIX>,
+                NSS: NSSPin<pac::$SPIX>,
             {
                 $spiX_slave(self, pins, mode)
             }
@@ -268,39 +268,39 @@ macro_rules! spi_hal {
                 self,
                 pins: (SCK, MISO, Option<NSS>),
                 mode: Mode,
-            ) -> SpiSlave<$SPIX, SCK, MISO, NoMosi, NSS, true>
+            ) -> SpiSlave<pac::$SPIX, SCK, MISO, NoMosi, NSS, true>
             where
-                SCK: SCKPin<$SPIX>,
-                MISO: MISOPin<$SPIX>,
-                NSS: PinNss<$SPIX>,
+                SCK: SCKPin<pac::$SPIX>,
+                MISO: MISOPin<pac::$SPIX>,
+                NSS: NSSPin<pac::$SPIX>,
             {
                 $spiX_slave(self, (pins.0, pins.1, NoPin::new(), pins.2), mode)
             }
         }
 
         pub fn $spiX<SCK, MISO, MOSI, const BIDI: bool>(
-            spi: $SPIX,
+            spi: pac::$SPIX,
             pins: (SCK, MISO, MOSI),
             mode: Mode,
             clocks: &Clocks,
             freq: impl Into<Hertz>,
-        ) -> Spi<$SPIX, SCK, MISO, MOSI, BIDI>
+        ) -> Spi<pac::$SPIX, SCK, MISO, MOSI, BIDI>
         where
-            SCK: SCKPin<$SPIX>,
-            MISO: MISOPin<$SPIX>,
-            MOSI: MOSIPin<$SPIX>,
+            SCK: SCKPin<pac::$SPIX>,
+            MISO: MISOPin<pac::$SPIX>,
+            MOSI: MOSIPin<pac::$SPIX>,
         {
             unsafe {
                 let rcc_ptr = &(*pac::Rcc::PTR);
-                <$SPIX>::enable(rcc_ptr);
-                <$SPIX>::reset(rcc_ptr);
+                <pac::$SPIX>::enable(rcc_ptr);
+                <pac::$SPIX>::reset(rcc_ptr);
             }
 
             // disable SS output
             spi.cr2().write(|w| w.ssoe().clear_bit());
 
             let freq = freq.into().raw();
-            let clk = <$SPIX>::timer_clock(clocks).raw();
+            let clk = <pac::$SPIX>::timer_clock(clocks).raw();
 
             let br = match clk / freq {
                 0 => unreachable!(),
@@ -345,16 +345,16 @@ macro_rules! spi_hal {
             });
 
             Spi {
-                inner: Inner::<$SPIX>::new(spi),
+                inner: Inner::<pac::$SPIX>::new(spi),
                 pins,
             }
         }
 
-        impl<SCK, MISO, MOSI, const BIDI: bool> Spi<$SPIX, SCK, MISO, MOSI, BIDI>
+        impl<SCK, MISO, MOSI, const BIDI: bool> Spi<pac::$SPIX, SCK, MISO, MOSI, BIDI>
         where
-            SCK: SCKPin<$SPIX>,
-            MISO: MISOPin<$SPIX>,
-            MOSI: MOSIPin<$SPIX>,
+            SCK: SCKPin<pac::$SPIX>,
+            MISO: MISOPin<pac::$SPIX>,
+            MOSI: MOSIPin<pac::$SPIX>,
         {
             pub fn read_nonblocking(&mut self) -> nb::Result<u8, Error> {
                 if BIDI {
@@ -438,11 +438,11 @@ macro_rules! spi_hal {
                 Ok(())
             }
 
-            pub fn release(self) -> ($SPIX, (SCK, MISO, MOSI)) {
+            pub fn release(self) -> (pac::$SPIX, (SCK, MISO, MOSI)) {
                 unsafe {
                     let rcc = &(*pac::Rcc::PTR);
-                    <$SPIX>::reset(rcc);
-                    <$SPIX>::disable(rcc);
+                    <pac::$SPIX>::reset(rcc);
+                    <pac::$SPIX>::disable(rcc);
                 }
 
                 (self.inner.spi, self.pins)
@@ -450,20 +450,20 @@ macro_rules! spi_hal {
         }
 
         pub fn $spiX_slave<SCK, MISO, MOSI, NSS, const BIDI: bool>(
-            spi: $SPIX,
+            spi: pac::$SPIX,
             pins: (SCK, MISO, MOSI, Option<NSS>),
             mode: Mode,
-        ) -> SpiSlave<$SPIX, SCK, MISO, MOSI, NSS, BIDI>
+        ) -> SpiSlave<pac::$SPIX, SCK, MISO, MOSI, NSS, BIDI>
         where
-            SCK: SCKPin<$SPIX>,
-            MISO: MISOPin<$SPIX>,
-            MOSI: MOSIPin<$SPIX>,
-            NSS: PinNss<$SPIX>,
+            SCK: SCKPin<pac::$SPIX>,
+            MISO: MISOPin<pac::$SPIX>,
+            MOSI: MOSIPin<pac::$SPIX>,
+            NSS: NSSPin<pac::$SPIX>,
         {
             unsafe {
                 let rcc_ptr = &(*pac::Rcc::PTR);
-                <$SPIX>::enable(rcc_ptr);
-                <$SPIX>::reset(rcc_ptr);
+                <pac::$SPIX>::enable(rcc_ptr);
+                <pac::$SPIX>::reset(rcc_ptr);
             }
 
             // disable SS output
@@ -500,17 +500,18 @@ macro_rules! spi_hal {
             });
 
             SpiSlave {
-                inner: Inner::<$SPIX>::new(spi),
+                inner: Inner::<pac::$SPIX>::new(spi),
                 pins,
             }
         }
 
-        impl<SCK, MISO, MOSI, NSS, const BIDI: bool> SpiSlave<$SPIX, SCK, MISO, MOSI, NSS, BIDI>
+        impl<SCK, MISO, MOSI, NSS, const BIDI: bool>
+            SpiSlave<pac::$SPIX, SCK, MISO, MOSI, NSS, BIDI>
         where
-            SCK: SCKPin<$SPIX>,
-            MISO: MISOPin<$SPIX>,
-            MOSI: MOSIPin<$SPIX>,
-            NSS: PinNss<$SPIX>,
+            SCK: SCKPin<pac::$SPIX>,
+            MISO: MISOPin<pac::$SPIX>,
+            MOSI: MOSIPin<pac::$SPIX>,
+            NSS: NSSPin<pac::$SPIX>,
         {
             pub fn read_nonblocking(&mut self) -> nb::Result<u8, Error> {
                 if BIDI {
@@ -594,35 +595,37 @@ macro_rules! spi_hal {
                 Ok(())
             }
 
-            pub fn release(self) -> ($SPIX, (SCK, MISO, MOSI, Option<NSS>)) {
+            pub fn release(self) -> (pac::$SPIX, (SCK, MISO, MOSI, Option<NSS>)) {
                 unsafe {
                     let rcc = &(*pac::Rcc::PTR);
-                    <$SPIX>::reset(rcc);
-                    <$SPIX>::disable(rcc);
+                    <pac::$SPIX>::reset(rcc);
+                    <pac::$SPIX>::disable(rcc);
                 }
 
                 (self.inner.spi, self.pins)
             }
         }
 
-        impl<SCK, MISO, MOSI, const BIDI: bool> Deref for Spi<$SPIX, SCK, MISO, MOSI, BIDI> {
-            type Target = Inner<$SPIX>;
+        impl<SCK, MISO, MOSI, const BIDI: bool> Deref for Spi<pac::$SPIX, SCK, MISO, MOSI, BIDI> {
+            type Target = Inner<pac::$SPIX>;
 
             fn deref(&self) -> &Self::Target {
                 &self.inner
             }
         }
 
-        impl<SCK, MISO, MOSI, const BIDI: bool> DerefMut for Spi<$SPIX, SCK, MISO, MOSI, BIDI> {
+        impl<SCK, MISO, MOSI, const BIDI: bool> DerefMut
+            for Spi<pac::$SPIX, SCK, MISO, MOSI, BIDI>
+        {
             fn deref_mut(&mut self) -> &mut Self::Target {
                 &mut self.inner
             }
         }
 
         impl<SCK, MISO, MOSI, NSS, const BIDI: bool> Deref
-            for SpiSlave<$SPIX, SCK, MISO, MOSI, NSS, BIDI>
+            for SpiSlave<pac::$SPIX, SCK, MISO, MOSI, NSS, BIDI>
         {
-            type Target = Inner<$SPIX>;
+            type Target = Inner<pac::$SPIX>;
 
             fn deref(&self) -> &Self::Target {
                 &self.inner
@@ -630,15 +633,15 @@ macro_rules! spi_hal {
         }
 
         impl<SCK, MISO, MOSI, NSS, const BIDI: bool> DerefMut
-            for SpiSlave<$SPIX, SCK, MISO, MOSI, NSS, BIDI>
+            for SpiSlave<pac::$SPIX, SCK, MISO, MOSI, NSS, BIDI>
         {
             fn deref_mut(&mut self) -> &mut Self::Target {
                 &mut self.inner
             }
         }
 
-        impl Inner<$SPIX> {
-            fn new(spi: $SPIX) -> Self {
+        impl Inner<pac::$SPIX> {
+            fn new(spi: pac::$SPIX) -> Self {
                 Self { spi }
             }
 
@@ -842,17 +845,17 @@ macro_rules! spi_hal {
     };
 }
 
-spi_hal!(pac::Spi1, spi1, spi1_slave);
+spi_hal!(Spi1, spi1, spi1_slave);
 
-spi_hal!(pac::Spi2, spi2, spi2_slave);
+spi_hal!(Spi2, spi2, spi2_slave);
 
-spi_hal!(pac::Spi3, spi3, spi3_slave);
+spi_hal!(Spi3, spi3, spi3_slave);
 
 #[cfg(feature = "spi4")]
-spi_hal!(pac::Spi4, spi4, spi4_slave);
+spi_hal!(Spi4, spi4, spi4_slave);
 
 macro_rules! pin {
-    ($SPIX:ty: {
+    ($SPIX:ident: {
         sck: [$($( #[ $pmetasda:meta ] )* $PSCK:ty),+ $(,)*]
         miso: [$($( #[ $pmetasdi:meta ] )* $PMISO:ty),+ $(,)*]
         mosi: [$($( #[ $pmetasdo:meta ] )* $PMOSI:ty),+ $(,)*]
@@ -860,28 +863,28 @@ macro_rules! pin {
     }) => {
         $(
             $( #[ $pmetasda ] )*
-            impl SCKPin<$SPIX> for $PSCK {}
+            impl SCKPin<pac::$SPIX> for $PSCK {}
         )+
 
         $(
             $( #[ $pmetasdi ] )*
-            impl MISOPin<$SPIX> for $PMISO {}
+            impl MISOPin<pac::$SPIX> for $PMISO {}
         )+
 
         $(
             $( #[ $pmetasdo ] )*
-            impl MOSIPin<$SPIX> for $PMOSI {}
+            impl MOSIPin<pac::$SPIX> for $PMOSI {}
         )+
 
         $(
             $( #[ $pmetasdn ] )*
-            impl PinNss<$SPIX> for $PNSS {}
+            impl NSSPin<pac::$SPIX> for $PNSS {}
         )+
     };
 }
 
 pin!(
-    pac::Spi1: {
+    Spi1: {
         sck: [
             PA5<AF5>,
             PB3<AF5>,
@@ -926,7 +929,7 @@ pin!(
 );
 
 pin!(
-    pac::Spi2: {
+    Spi2: {
         sck: [
             PB13<AF5>,
             PF1<AF5>,
@@ -949,7 +952,7 @@ pin!(
 );
 
 pin!(
-    pac::Spi3: {
+    Spi3: {
         sck: [
             PB3<AF6>,
             PC10<AF6>,
@@ -979,7 +982,7 @@ pin!(
 
 #[cfg(feature = "spi4")]
 pin!(
-    pac::Spi4: {
+    Spi4: {
         sck: [
             PE2<AF5>,
             PE12<AF5>,

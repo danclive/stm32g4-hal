@@ -234,42 +234,42 @@ macro_rules! busy_wait {
 }
 
 macro_rules! i2c_hal {
-    ($I2CX:ty, $i2cX:ident) => {
-        impl I2cExt<$I2CX> for $I2CX {
+    ($I2CX:ident, $i2cX:ident) => {
+        impl I2cExt<pac::$I2CX> for pac::$I2CX {
             fn i2c<SDA, SCL>(
                 self,
                 clocks: &Clocks,
                 pins: (SDA, SCL),
                 freq: impl Into<Hertz>,
-            ) -> I2c<$I2CX, SDA, SCL>
+            ) -> I2c<pac::$I2CX, SDA, SCL>
             where
-                SDA: SDAPin<$I2CX>,
-                SCL: SCLPin<$I2CX>,
+                SDA: SDAPin<pac::$I2CX>,
+                SCL: SCLPin<pac::$I2CX>,
             {
                 $i2cX(self, clocks, pins, freq)
             }
         }
 
         pub fn $i2cX<SDA, SCL>(
-            i2c: $I2CX,
+            i2c: pac::$I2CX,
             clocks: &Clocks,
             pins: (SDA, SCL),
             freq: impl Into<Hertz>,
-        ) -> I2c<$I2CX, SDA, SCL>
+        ) -> I2c<pac::$I2CX, SDA, SCL>
         where
-            SDA: SDAPin<$I2CX>,
-            SCL: SCLPin<$I2CX>,
+            SDA: SDAPin<pac::$I2CX>,
+            SCL: SCLPin<pac::$I2CX>,
         {
             // Enable and reset I2C
             unsafe {
                 let rcc = &(*pac::Rcc::PTR);
-                <$I2CX>::enable(rcc);
-                <$I2CX>::reset(rcc);
+                <pac::$I2CX>::enable(rcc);
+                <pac::$I2CX>::reset(rcc);
             }
 
             let freq = freq.into().raw();
 
-            let clk = <$I2CX>::timer_clock(clocks).raw();
+            let clk = <pac::$I2CX>::timer_clock(clocks).raw();
 
             // Make sure the I2C unit is disabled so we can configure it
             i2c.cr1().modify(|_, w| w.pe().clear_bit());
@@ -300,18 +300,18 @@ macro_rules! i2c_hal {
             I2c { i2c, pins }
         }
 
-        impl<SDA, SCL> I2c<$I2CX, SDA, SCL>
+        impl<SDA, SCL> I2c<pac::$I2CX, SDA, SCL>
         where
-            SDA: SDAPin<$I2CX>,
-            SCL: SCLPin<$I2CX>,
+            SDA: SDAPin<pac::$I2CX>,
+            SCL: SCLPin<pac::$I2CX>,
         {
             /// Returns a reference to the inner peripheral
-            pub fn inner(&self) -> &$I2CX {
+            pub fn inner(&self) -> &pac::$I2CX {
                 &self.i2c
             }
 
             /// Returns a mutable reference to the inner peripheral
-            pub fn inner_mut(&mut self) -> &mut $I2CX {
+            pub fn inner_mut(&mut self) -> &mut pac::$I2CX {
                 &mut self.i2c
             }
 
@@ -364,12 +364,12 @@ macro_rules! i2c_hal {
             }
 
             /// Disables I2C and releases the peripheral as well as the pins.
-            pub fn release(self) -> ($I2CX, (SDA, SCL)) {
+            pub fn release(self) -> (pac::$I2CX, (SDA, SCL)) {
                 // Disable I2C.
                 unsafe {
                     let rcc = &(*pac::Rcc::PTR);
-                    <$I2CX>::reset(rcc);
-                    <$I2CX>::disable(rcc);
+                    <pac::$I2CX>::reset(rcc);
+                    <pac::$I2CX>::disable(rcc);
                 }
 
                 (self.i2c, self.pins)
@@ -606,28 +606,28 @@ macro_rules! i2c_hal {
     };
 }
 
-i2c_hal!(pac::I2c1, i2c1);
+i2c_hal!(I2c1, i2c1);
 
-i2c_hal!(pac::I2c2, i2c2);
+i2c_hal!(I2c2, i2c2);
 
-i2c_hal!(pac::I2c3, i2c3);
+i2c_hal!(I2c3, i2c3);
 
 #[cfg(feature = "i2c4")]
-i2c_hal!(pac::I2c4, i2c4);
+i2c_hal!(I2c4, i2c4);
 
 macro_rules! pin {
-    ($I2CX:ty {
+    ($I2CX:ident {
         sda: [$($( #[ $pmetasda:meta ] )* $PSDA:ty),+ $(,)*]
         scl: [$($( #[ $pmetascl:meta ] )* $PSCL:ty),+ $(,)*]
     }) => {
         $(
             $( #[ $pmetasda ] )*
-            impl SDAPin<$I2CX> for $PSDA {}
+            impl SDAPin<pac::$I2CX> for $PSDA {}
         )+
 
         $(
             $( #[ $pmetascl ] )*
-            impl SCLPin<$I2CX> for $PSCL {}
+            impl SCLPin<pac::$I2CX> for $PSCL {}
         )+
     }
 }
@@ -635,7 +635,7 @@ macro_rules! pin {
 use crate::gpio::*;
 
 pin!(
-    pac::I2c1 {
+    I2c1 {
         sda: [
             PA14<Alt<4, OpenDrain>>,
             PB7<Alt<4, OpenDrain>>,
@@ -650,7 +650,7 @@ pin!(
 );
 
 pin!(
-    pac::I2c2 {
+    I2c2 {
         sda: [
             PA8<Alt<4, OpenDrain>>,
             PF0<Alt<4, OpenDrain>>,
@@ -671,7 +671,7 @@ pin!(
 );
 
 pin!(
-    pac::I2c3 {
+    I2c3 {
         sda: [
             PB5<Alt<8, OpenDrain>>,
             PC11<Alt<8, OpenDrain>>,
@@ -718,7 +718,7 @@ pin!(
 
 #[cfg(feature = "i2c4")]
 pin!(
-    pac::I2c4 {
+    I2c4 {
         sda: [
             PB7<Alt<AF3>>,
             PC7<Alt<8, OpenDrain>>,

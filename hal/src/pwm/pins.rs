@@ -1,6 +1,8 @@
 /// pins
 use super::*;
 
+use crate::pac;
+
 use crate::gpio::*;
 
 macro_rules! pins_tuples {
@@ -103,15 +105,15 @@ pins_tuples! {
 // Pin definitions, mark which pins can be used with which timers and channels
 macro_rules! pins {
     // Single channel timer
-    ($TIMX:ty { OUT: [$($OUT:ty),*] }) => {
+    ($TIMX:ident { OUT: [$($OUT:ty),*] }) => {
         $(
-            impl Pins<$TIMX, C1, ComplementaryImpossible> for $OUT {
-                type Channel = Pwm<$TIMX, C1, ComplementaryImpossible, ActiveHigh, ActiveHigh>;
+            impl Pins<pac::$TIMX, C1, ComplementaryImpossible> for $OUT {
+                type Channel = Pwm<pac::$TIMX, C1, ComplementaryImpossible, ActiveHigh, ActiveHigh>;
             }
         )*
     };
     // Dual channel timer $pm
-    ($TIMX:ty {
+    ($TIMX:ident {
         CH1($COMP1:ty): [$($( #[ $pmeta1:meta ] )* $CH1:ty),*]
         CH2($COMP2:ty): [$($( #[ $pmeta2:meta ] )* $CH2:ty),*]
         CH1N: [$($( #[ $pmeta3:meta ] )* $CH1N:ty),*]
@@ -121,39 +123,39 @@ macro_rules! pins {
 
         $(
             $( #[ $pmeta1 ] )*
-            impl Pins<$TIMX, C1, $COMP1> for $CH1 {
-                type Channel = Pwm<$TIMX, C1, $COMP1, ActiveHigh, ActiveHigh>;
+            impl Pins<pac::$TIMX, C1, $COMP1> for $CH1 {
+                type Channel = Pwm<pac::$TIMX, C1, $COMP1, ActiveHigh, ActiveHigh>;
             }
         )*
         $(
             $( #[ $pmeta2 ] )*
-            impl Pins<$TIMX, C2, $COMP2> for $CH2 {
-                type Channel = Pwm<$TIMX, C2, $COMP2, ActiveHigh, ActiveHigh>;
+            impl Pins<pac::$TIMX, C2, $COMP2> for $CH2 {
+                type Channel = Pwm<pac::$TIMX, C2, $COMP2, ActiveHigh, ActiveHigh>;
             }
         )*
         $(
             $( #[ $pmeta3 ] )*
-            impl NPins<$TIMX, C1> for $CH1N {}
+            impl NPins<pac::$TIMX, C1> for $CH1N {}
         )*
         $(
             $( #[ $pmeta4 ] )*
-            impl NPins<$TIMX, C2> for $CH2N {}
+            impl NPins<pac::$TIMX, C2> for $CH2N {}
         )*
         $(
             $( #[ $pmeta5 ] )*
-            impl FaultPins<$TIMX,> for $BRK {
+            impl FaultPins<pac::$TIMX,> for $BRK {
                 const INPUT: BreakInput = BreakInput::BreakIn;
             }
         )*
         $(
             $( #[ $pmeta6 ] )*
-            impl FaultPins<$TIMX> for $BRK2 {
+            impl FaultPins<pac::$TIMX> for $BRK2 {
                 const INPUT: BreakInput = BreakInput::BreakIn2;
             }
         )*
     };
     // Quad channel timers
-    ($TIMX:ty {
+    ($TIMX:ident {
         CH1($COMP1:ty): [$($( #[ $pmeta1:meta ] )* $CH1:ty),*]
         CH2($COMP2:ty): [$($( #[ $pmeta2:meta ] )* $CH2:ty),*]
         CH3($COMP3:ty): [$($( #[ $pmeta3:meta ] )* $CH3:ty),*]
@@ -167,53 +169,53 @@ macro_rules! pins {
 
         $(
             $( #[ $pmeta1 ] )*
-            impl Pins<$TIMX, C1, $COMP1> for $CH1 {
-                type Channel = Pwm<$TIMX, C1, $COMP1, ActiveHigh, ActiveHigh>;
+            impl Pins<pac::$TIMX, C1, $COMP1> for $CH1 {
+                type Channel = Pwm<pac::$TIMX, C1, $COMP1, ActiveHigh, ActiveHigh>;
             }
         )*
         $(
             $( #[ $pmeta2 ] )*
-            impl Pins<$TIMX, C2, $COMP2> for $CH2 {
-                type Channel = Pwm<$TIMX, C2, $COMP2, ActiveHigh, ActiveHigh>;
+            impl Pins<pac::$TIMX, C2, $COMP2> for $CH2 {
+                type Channel = Pwm<pac::$TIMX, C2, $COMP2, ActiveHigh, ActiveHigh>;
             }
         )*
         $(
             $( #[ $pmeta3 ] )*
-            impl Pins<$TIMX, C3, $COMP3> for $CH3 {
-                type Channel = Pwm<$TIMX, C3, $COMP3, ActiveHigh, ActiveHigh>;
+            impl Pins<pac::$TIMX, C3, $COMP3> for $CH3 {
+                type Channel = Pwm<pac::$TIMX, C3, $COMP3, ActiveHigh, ActiveHigh>;
             }
         )*
         $(
             $( #[ $pmeta4 ] )*
-            impl Pins<$TIMX, C4, $COMP4> for $CH4 {
-                type Channel = Pwm<$TIMX, C4, $COMP4, ActiveHigh, ActiveHigh>;
+            impl Pins<pac::$TIMX, C4, $COMP4> for $CH4 {
+                type Channel = Pwm<pac::$TIMX, C4, $COMP4, ActiveHigh, ActiveHigh>;
             }
         )*
         $(
             $( #[ $pmeta5 ] )*
-            impl NPins<$TIMX, C1> for $CH1N {}
+            impl NPins<pac::$TIMX, C1> for $CH1N {}
         )*
         $(
             $( #[ $pmeta6 ] )*
-            impl NPins<$TIMX, C2> for $CH2N {}
+            impl NPins<pac::$TIMX, C2> for $CH2N {}
         )*
         $(
             $( #[ $pmeta7 ] )*
-            impl NPins<$TIMX, C3> for $CH3N {}
+            impl NPins<pac::$TIMX, C3> for $CH3N {}
         )*
         $(
             $( #[ $pmeta8 ] )*
-            impl NPins<$TIMX, C4> for $CH4N {}
+            impl NPins<pac::$TIMX, C4> for $CH4N {}
         )*
         $(
             $( #[ $pmeta9 ] )*
-            impl FaultPins<$TIMX> for $BRK {
+            impl FaultPins<pac::$TIMX> for $BRK {
                 const INPUT: BreakInput = BreakInput::BreakIn;
             }
         )*
         $(
             $( #[ $pmeta10 ] )*
-            impl FaultPins<$TIMX> for $BRK2 {
+            impl FaultPins<pac::$TIMX> for $BRK2 {
                 const INPUT: BreakInput = BreakInput::BreakIn2;
             }
         )*
@@ -222,7 +224,7 @@ macro_rules! pins {
 
 // Single channel timers
 pins! {
-    crate::pac::Lptimer1 {
+    Lptimer1 {
         OUT: [
             PA14<Alt<1>>,
             PB2<Alt<1>>,
@@ -231,9 +233,8 @@ pins! {
     }
 }
 
-#[cfg(feature = "tim1")]
 pins! {
-    crate::pac::Tim1 {
+    Tim1 {
         CH1(ComplementaryDisabled): [
             PA8<Alt<6>>,
             PC0<Alt<2>>,
@@ -296,9 +297,8 @@ pins! {
     }
 }
 
-#[cfg(feature = "tim2")]
 pins! {
-    crate::pac::Tim2 {
+    Tim2 {
         CH1(ComplementaryImpossible): [
             PA0<Alt<1>>,
             PA5<Alt<1>>,
@@ -331,9 +331,8 @@ pins! {
     }
 }
 
-#[cfg(feature = "tim3")]
 pins! {
-    crate::pac::Tim3 {
+    Tim3 {
         CH1(ComplementaryImpossible): [
             PA6<Alt<2>>,
             PB4<Alt<2>>,
@@ -367,9 +366,8 @@ pins! {
     }
 }
 
-#[cfg(feature = "tim4")]
 pins! {
-    crate::pac::Tim4 {
+    Tim4 {
         CH1(ComplementaryImpossible): [
             PA11<Alt<10>>,
             PB6<Alt<2>>,
@@ -408,7 +406,7 @@ pins! {
 
 #[cfg(feature = "tim5")]
 pins! {
-    crate::pac::Tim5 {
+    Tim5 {
         CH1(ComplementaryImpossible): [
             PA0<Alt<2>>,
             PB2<Alt<2>>,
@@ -438,9 +436,8 @@ pins! {
     }
 }
 
-#[cfg(feature = "tim8")]
 pins! {
-    crate::pac::Tim8 {
+    Tim8 {
         CH1(ComplementaryDisabled): [
             PA15<Alt<2>>,
             PB6<Alt<5>>,
@@ -493,9 +490,8 @@ pins! {
     }
 }
 
-#[cfg(feature = "tim15")]
 pins! {
-    crate::pac::Tim15 {
+    Tim15 {
         CH1(ComplementaryDisabled): [
             PA2<Alt<9>>,
             PB14<Alt<1>>,
@@ -527,9 +523,8 @@ pins! {
     }
 }
 
-#[cfg(feature = "tim16")]
 pins! {
-    crate::pac::Tim16 {
+    Tim16 {
         CH1(ComplementaryDisabled): [
             PA6<Alt<1>>,
             PA12<Alt<1>>,
@@ -550,9 +545,8 @@ pins! {
     }
 }
 
-#[cfg(feature = "tim17")]
 pins! {
-    crate::pac::Tim17 {
+    Tim17 {
         CH1(ComplementaryDisabled): [
             PA7<Alt<1>>,
             PB5<Alt<10>>,
@@ -574,7 +568,7 @@ pins! {
 
 #[cfg(feature = "tim20")]
 pins! {
-    crate::pac::Tim20 {
+    Tim20 {
         CH1(ComplementaryDisabled): [
             PB2<Alt<3>>,
             PE2<Alt<6>>,

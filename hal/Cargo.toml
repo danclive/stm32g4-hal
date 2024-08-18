@@ -57,60 +57,18 @@ stm32g483 = ["stm32g4-pac/stm32g483", "gpio-g483"]
 stm32g484 = ["stm32g4-pac/stm32g484", "gpio-g484"]
 stm32g491 = ["stm32g4-pac/stm32g491", "gpio-g491"]
 
-gpio-g431 = [
-    "tim1",
-    "tim2",
-    "tim3",
-    "tim4",
-    "tim6",
-    "tim7",
-    "tim8",
-    "tim15",
-    "tim16",
-    "tim17",
-]
+gpio-g431 = []
 
-gpio-g441 = [
-    "tim1",
-    "tim2",
-    "tim3",
-    "tim4",
-    "tim6",
-    "tim7",
-    "tim8",
-    "tim15",
-    "tim16",
-    "tim17",
-]
+gpio-g441 = []
 
 gpio-g471 = [
-    "tim1",
-    "tim2",
-    "tim3",
-    "tim4",
     "tim5",
-    "tim6",
-    "tim7",
-    "tim8",
-    "tim15",
-    "tim16",
-    "tim17",
     "i2c4",
     "can2",
 ]
 
 gpio-g473 = [
-    "tim1",
-    "tim2",
-    "tim3",
-    "tim4",
     "tim5",
-    "tim6",
-    "tim7",
-    "tim8",
-    "tim15",
-    "tim16",
-    "tim17",
     "tim20",
     "i2c4",
     "can2",
@@ -118,17 +76,7 @@ gpio-g473 = [
 ]
 
 gpio-g474 = [
-    "tim1",
-    "tim2",
-    "tim3",
-    "tim4",
     "tim5",
-    "tim6",
-    "tim7",
-    "tim8",
-    "tim15",
-    "tim16",
-    "tim17",
     "tim20",
     "i2c4",
     "can2",
@@ -136,17 +84,7 @@ gpio-g474 = [
 ]
 
 gpio-g483 = [
-    "tim1",
-    "tim2",
-    "tim3",
-    "tim4",
     "tim5",
-    "tim6",
-    "tim7",
-    "tim8",
-    "tim15",
-    "tim16",
-    "tim17",
     "tim20",
     "i2c4",
     "can2",
@@ -154,17 +92,7 @@ gpio-g483 = [
 ]
 
 gpio-g484 = [
-    "tim1",
-    "tim2",
-    "tim3",
-    "tim4",
     "tim5",
-    "tim6",
-    "tim7",
-    "tim8",
-    "tim15",
-    "tim16",
-    "tim17",
     "tim20",
     "i2c4",
     "can2",
@@ -172,17 +100,7 @@ gpio-g484 = [
 ]
 
 gpio-g491 = [
-    "tim1",
-    "tim2",
-    "tim3",
-    "tim4",
     "tim5",
-    "tim6",
-    "tim7",
-    "tim8",
-    "tim15",
-    "tim16",
-    "tim17",
     "tim20",
     "can2",
     "can3",
@@ -197,18 +115,7 @@ gpioi = []
 gpioj = []
 gpiok = []
 
-tim1 = []
-tim2 = []
-tim3 = []
-tim4 = []
 tim5 = []
-tim6 = []
-tim7 = []
-tim8 = []
-
-tim15 = []
-tim16 = []
-tim17 = []
 tim20 = []
 
 i2c4 = []

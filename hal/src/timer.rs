@@ -390,10 +390,10 @@ pub enum Flag {
 }
 
 macro_rules! tim {
-    ($TIM:ty: [$Timer:ident, $bits:ty, $(dmar: $memsize:ty,)?]) => {
-        impl Instance for $TIM {}
+    ($TIMX:ident: [$TimerX:ident, $bits:ty, $(dmar: $memsize:ty,)?]) => {
+        impl Instance for pac::$TIMX {}
 
-        impl General for $TIM {
+        impl General for pac::$TIMX {
             type Width = $bits;
 
             #[inline(always)]
@@ -419,7 +419,7 @@ macro_rules! tim {
 
             #[inline(always)]
             fn read_auto_reload() -> u32 {
-                let tim = unsafe { &*<$TIM>::ptr() };
+                let tim = unsafe { &*<pac::$TIMX>::ptr() };
                 tim.arr().read().bits()
             }
 
@@ -519,7 +519,7 @@ macro_rules! tim {
             }
         }
 
-        $(dmar!($TIM, $memsize);)?
+        $(dmar!($TIMX, $memsize);)?
     };
 }
 
@@ -527,8 +527,8 @@ macro_rules! tim {
 pub struct DMAR<T>(T);
 
 macro_rules! dmar {
-    ($TIM:ty, $memsize:ty) => {
-        unsafe impl dma::PeriAddress for DMAR<$TIM> {
+    ($TIMX:ident, $memsize:ty) => {
+        unsafe impl dma::PeriAddress for DMAR<pac::$TIMX> {
             type MemSize = $memsize;
 
             fn address(&self) -> u32 {
@@ -538,41 +538,31 @@ macro_rules! dmar {
     };
 }
 
-#[cfg(feature = "tim1")]
-tim!(pac::Tim1: [Timer1, u16, dmar: u32,]);
+tim!(Tim1: [Timer1, u16, dmar: u32,]);
 
-#[cfg(feature = "tim2")]
-tim!(pac::Tim2: [Timer2, u32, dmar: u16,]);
+tim!(Tim2: [Timer2, u32, dmar: u16,]);
 
-#[cfg(feature = "tim3")]
-tim!(pac::Tim3: [Timer3, u16, dmar: u16,]);
+tim!(Tim3: [Timer3, u16, dmar: u16,]);
 
-#[cfg(feature = "tim4")]
-tim!(pac::Tim4: [Timer4, u16, dmar: u16,]);
+tim!(Tim4: [Timer4, u16, dmar: u16,]);
 
 #[cfg(feature = "tim5")]
-tim!(pac::Tim5: [Timer5, u32, dmar: u16,]);
+tim!(Tim5: [Timer5, u32, dmar: u16,]);
 
-#[cfg(feature = "tim6")]
-tim!(pac::Tim6: [Timer6, u16,]);
+tim!(Tim6: [Timer6, u16,]);
 
-#[cfg(feature = "tim7")]
-tim!(pac::Tim7: [Timer7, u16,]);
+tim!(Tim7: [Timer7, u16,]);
 
-#[cfg(feature = "tim8")]
-tim!(pac::Tim8: [Timer8, u16, dmar: u32,]);
+tim!(Tim8: [Timer8, u16, dmar: u32,]);
 
-#[cfg(feature = "tim15")]
-tim!(pac::Tim15: [Timer15, u16, dmar: u16,]);
+tim!(Tim15: [Timer15, u16, dmar: u16,]);
 
-#[cfg(feature = "tim16")]
-tim!(pac::Tim16: [Timer16, u16, dmar: u16,]);
+tim!(Tim16: [Timer16, u16, dmar: u16,]);
 
-#[cfg(feature = "tim17")]
-tim!(pac::Tim17: [Timer17, u16, dmar: u16,]);
+tim!(Tim17: [Timer17, u16, dmar: u16,]);
 
 #[cfg(feature = "tim20")]
-tim!(pac::Tim20: [Timer20, u16, dmar: u32,]);
+tim!(Tim20: [Timer20, u16, dmar: u32,]);
 
 #[inline(always)]
 pub(crate) const fn compute_arr_presc(freq: u32, clock: u32) -> (u16, u32) {

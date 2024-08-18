@@ -44,31 +44,11 @@ pub enum Event {
     Rxftie,
 }
 
-pub trait Pins<USART> {
-    const SYNC: bool = false;
-}
-
 pub trait TXPin<USART> {}
 
 pub trait RXPin<USART> {}
 
 pub trait CKPin<USART> {}
-
-impl<USART, TX, RX> Pins<USART> for (TX, RX)
-where
-    TX: TXPin<USART>,
-    RX: RXPin<USART>,
-{
-}
-
-impl<USART, TX, RX, CK> Pins<USART> for (TX, RX, CK)
-where
-    TX: TXPin<USART>,
-    RX: RXPin<USART>,
-    CK: CKPin<USART>,
-{
-    const SYNC: bool = true;
-}
 
 /// A filler type for when the Tx pin is unnecessary
 pub type NoTx = NoPin;
@@ -98,17 +78,17 @@ pub struct Serial<USART> {
 }
 
 macro_rules! uart_hal_shared {
-    ($USARTX:ty) => {
-        impl Rx<$USARTX> {
+    ($UARTX:ident) => {
+        impl Rx<pac::$UARTX> {
             /// Starts listening for an interrupt event
             pub fn listen(&mut self) {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.cr1().modify(|_, w| w.rxneie().set_bit());
             }
 
             /// Stop listening for an interrupt event
             pub fn unlisten(&mut self) {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.cr1().modify(|_, w| w.rxneie().clear_bit());
                 let _ = usart.cr1().read();
                 let _ = usart.cr1().read(); // Delay 2 peripheral clocks
@@ -119,13 +99,13 @@ macro_rules! uart_hal_shared {
             /// The line idle status bit is set when the peripheral detects the receive line is idle.
             /// The bit is cleared by software, by calling `clear_idle()`.
             pub fn is_idle(&self) -> bool {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.isr().read().idle().bit_is_set()
             }
 
             /// Clear the line idle status bit
             pub fn clear_idle(&mut self) {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.icr().write(|w| w.idlecf().set_bit());
                 let _ = usart.isr().read();
                 let _ = usart.isr().read(); // Delay 2 peripheral clocks
@@ -136,24 +116,24 @@ macro_rules! uart_hal_shared {
             /// The busy status bit is set when there is communication active on the receive line,
             /// and reset at the end of reception.
             pub fn is_busy(&self) -> bool {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.isr().read().busy().bit_is_set()
             }
 
             /// Return true if the rx register is not empty (and can be read)
             pub fn is_rxne(&self) -> bool {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.isr().read().rxne().bit_is_set()
             }
 
             /// Returns true if the rx fifo threshold has been reached.
             pub fn fifo_threshold_reached(&self) -> bool {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.isr().read().rxft().bit_is_set()
             }
 
             pub fn read(&mut self) -> nb::Result<u8, Error> {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 let isr = usart.isr().read();
                 Err(if isr.pe().bit_is_set() {
                     usart.icr().write(|w| w.pecf().set_bit());
@@ -175,16 +155,16 @@ macro_rules! uart_hal_shared {
             }
         }
 
-        impl Tx<$USARTX> {
+        impl Tx<pac::$UARTX> {
             /// Starts listening for an interrupt event
             pub fn listen(&mut self) {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.cr1().modify(|_, w| w.txeie().set_bit());
             }
 
             /// Stop listening for an interrupt event
             pub fn unlisten(&mut self) {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.cr1().modify(|_, w| w.txeie().clear_bit());
                 let _ = usart.cr1().read();
                 let _ = usart.cr1().read(); // Delay 2 peripheral clocks
@@ -192,18 +172,18 @@ macro_rules! uart_hal_shared {
 
             /// Return true if the tx register is empty (and can accept data)
             pub fn is_txe(&self) -> bool {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.isr().read().txe().bit_is_set()
             }
 
             /// Returns true if the tx fifo threshold has been reached.
             pub fn fifo_threshold_reached(&self) -> bool {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 usart.isr().read().txft().bit_is_set()
             }
 
             pub fn flush(&mut self) -> nb::Result<(), Error> {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 if usart.isr().read().tc().bit_is_set() {
                     Ok(())
                 } else {
@@ -212,7 +192,7 @@ macro_rules! uart_hal_shared {
             }
 
             pub fn write(&mut self, byte: u8) -> nb::Result<(), Error> {
-                let usart = unsafe { &(*<$USARTX>::PTR) };
+                let usart = unsafe { &(*<pac::$UARTX>::PTR) };
                 if usart.isr().read().txe().bit_is_set() {
                     usart.tdr().write(|w| unsafe { w.bits(byte as u32) });
                     Ok(())
@@ -222,7 +202,7 @@ macro_rules! uart_hal_shared {
             }
         }
 
-        impl Serial<$USARTX> {
+        impl Serial<pac::$UARTX> {
             pub fn read(&mut self) -> nb::Result<u8, Error> {
                 self.rx.read()
             }
@@ -237,7 +217,7 @@ macro_rules! uart_hal_shared {
 
             /// Separates the serial struct into separate channel objects for sending (Tx) and
             /// receiving (Rx)
-            pub fn split(self) -> (Tx<$USARTX>, Rx<$USARTX>) {
+            pub fn split(self) -> (Tx<pac::$UARTX>, Rx<pac::$UARTX>) {
                 (self.tx, self.rx)
             }
 
@@ -245,9 +225,9 @@ macro_rules! uart_hal_shared {
             ///
             /// This function can be used in combination with `release()` to deinitialize the
             /// peripheral after it has been split.
-            pub fn join(tx: Tx<$USARTX>, rx: Rx<$USARTX>) -> Self {
-                assert_eq!(core::mem::size_of::<$USARTX>(), 0);
-                let usart = unsafe { core::mem::zeroed::<$USARTX>() };
+            pub fn join(tx: Tx<pac::$UARTX>, rx: Rx<pac::$UARTX>) -> Self {
+                assert_eq!(core::mem::size_of::<pac::$UARTX>(), 0);
+                let usart = unsafe { core::mem::zeroed::<pac::$UARTX>() };
                 Serial { usart, tx, rx }
             }
 
@@ -256,24 +236,24 @@ macro_rules! uart_hal_shared {
             /// This function makes the components available for further use. For example, the
             /// USART can later be reinitialized with a different baud rate or other configuration
             /// changes.
-            pub fn release(self) -> $USARTX {
+            pub fn release(self) -> pac::$UARTX {
                 // Disable the UART as well as its clock.
                 self.usart.cr1().modify(|_, w| w.ue().clear_bit());
                 unsafe {
                     let rcc_ptr = &(*pac::Rcc::PTR);
-                    <$USARTX>::disable(rcc_ptr);
+                    <pac::$UARTX>::disable(rcc_ptr);
                 }
 
                 self.usart
             }
 
             /// Returns a reference to the inner peripheral
-            pub fn inner(&self) -> &$USARTX {
+            pub fn inner(&self) -> &pac::$UARTX {
                 &self.usart
             }
 
             /// Returns a mutable reference to the inner peripheral
-            pub fn inner_mut(&mut self) -> &mut $USARTX {
+            pub fn inner_mut(&mut self) -> &mut pac::$UARTX {
                 &mut self.usart
             }
 
@@ -306,12 +286,12 @@ macro_rules! uart_hal_shared {
             /// The line idle status bit is set when the peripheral detects the receive line is idle.
             /// The bit is cleared by software, by calling `clear_idle()`.
             pub fn is_idle(&self) -> bool {
-                unsafe { (*<$USARTX>::PTR).isr().read().idle().bit_is_set() }
+                unsafe { (*<pac::$UARTX>::PTR).isr().read().idle().bit_is_set() }
             }
 
             /// Clear the line idle status bit
             pub fn clear_idle(&mut self) {
-                unsafe { (*<$USARTX>::PTR).icr().write(|w| w.idlecf().set_bit()) }
+                unsafe { (*<pac::$UARTX>::PTR).icr().write(|w| w.idlecf().set_bit()) }
                 let _ = self.usart.isr().read();
                 let _ = self.usart.isr().read(); // Delay 2 peripheral clocks
             }
@@ -321,62 +301,65 @@ macro_rules! uart_hal_shared {
             /// The busy status bit is set when there is communication active on the receive line,
             /// and reset at the end of reception.
             pub fn is_busy(&self) -> bool {
-                unsafe { (*<$USARTX>::PTR).isr().read().busy().bit_is_set() }
+                unsafe { (*<pac::$UARTX>::PTR).isr().read().busy().bit_is_set() }
             }
 
             /// Return true if the tx register is empty (and can accept data)
             pub fn is_txe(&self) -> bool {
-                unsafe { (*<$USARTX>::PTR).isr().read().txe().bit_is_set() }
+                unsafe { (*<pac::$UARTX>::PTR).isr().read().txe().bit_is_set() }
             }
 
             /// Return true if the rx register is not empty (and can be read)
             pub fn is_rxne(&self) -> bool {
-                unsafe { (*<$USARTX>::PTR).isr().read().rxne().bit_is_set() }
+                unsafe { (*<pac::$UARTX>::PTR).isr().read().rxne().bit_is_set() }
             }
         }
     };
 }
 
-pub trait SerialExt: Sized {
-    fn usart<PINS>(
+pub trait UartExt<USART>: Sized {
+    fn usart<TX, RX>(
         self,
-        pins: PINS,
+        pins: (TX, RX),
         config: config::Config,
         clocks: &Clocks,
-    ) -> Result<Serial<Self>, config::InvalidConfig>
+    ) -> Serial<USART>
     where
-        PINS: Pins<Self>;
+        TX: TXPin<USART>,
+        RX: RXPin<USART>;
 }
 
-macro_rules! usart_hal {
-    ($USARTX:ty, $usartX:ident) => {
-        impl SerialExt for $USARTX {
-            fn usart<PINS>(
+macro_rules! uart_hal {
+    ($UARTX:ident, $uartX:ident) => {
+        impl UartExt<pac::$UARTX> for pac::$UARTX {
+            fn usart<TX, RX>(
                 self,
-                pins: PINS,
+                pins: (TX, RX),
                 config: config::Config,
                 clocks: &Clocks,
-            ) -> Result<Serial<Self>, config::InvalidConfig>
+            ) -> Serial<Self>
             where
-                PINS: Pins<Self>,
+                TX: TXPin<pac::$UARTX>,
+                RX: RXPin<pac::$UARTX>,
             {
-                $usartX(self, pins, config, clocks)
+                $uartX(self, pins, config, clocks)
             }
         }
 
-        pub fn $usartX<PINS>(
-            usart: $USARTX,
-            _pins: PINS,
+        pub fn $uartX<TX, RX>(
+            usart: pac::$UARTX,
+            _pins: (TX, RX),
             config: config::Config,
             clocks: &Clocks,
-        ) -> Result<Serial<$USARTX>, config::InvalidConfig>
+        ) -> Serial<pac::$UARTX>
         where
-            PINS: Pins<$USARTX>,
+            TX: TXPin<pac::$UARTX>,
+            RX: RXPin<pac::$UARTX>,
         {
             unsafe {
                 let rcc_ptr = &(*pac::Rcc::PTR);
-                <$USARTX>::enable(rcc_ptr);
-                <$USARTX>::reset(rcc_ptr);
+                <pac::$UARTX>::enable(rcc_ptr);
+                <pac::$UARTX>::reset(rcc_ptr);
             }
 
             // TODO: By default, all UARTs are clocked from PCLK. We could modify RCC_CCIPR to
@@ -385,7 +368,7 @@ macro_rules! usart_hal {
 
             // let sync = PINS::SYNC;
 
-            let clk = <$USARTX>::timer_clock(clocks);
+            let clk = <pac::$UARTX>::timer_clock(clocks);
             usart.presc().reset();
 
             // Calculate baudrate divisor
@@ -394,7 +377,7 @@ macro_rules! usart_hal {
 
             if div < 16 {
                 // We need 16x oversampling.
-                return Err(config::InvalidConfig);
+                panic!("16x oversampling required");
             }
 
             usart.brr().write(|w| unsafe { w.bits(div) });
@@ -452,7 +435,7 @@ macro_rules! usart_hal {
                     .bit(config.fifo_enable)
             });
 
-            Ok(Serial {
+            Serial {
                 usart,
                 tx: Tx {
                     _usart: PhantomData,
@@ -460,73 +443,74 @@ macro_rules! usart_hal {
                 rx: Rx {
                     _usart: PhantomData,
                 },
-            })
-        }
-
-        uart_hal_shared!($USARTX);
-    };
-}
-
-usart_hal!(pac::Usart1, usart1);
-
-usart_hal!(pac::Usart2, usart2);
-
-usart_hal!(pac::Usart3, usart3);
-
-usart_hal!(pac::Uart4, uart4);
-
-#[cfg(feature = "uart5")]
-usart_hal!(pac::Uart5, uart5);
-
-pub trait LPSerialExt: Sized {
-    fn usart<PINS>(
-        self,
-        pins: PINS,
-        config: config::LPConfig,
-        clocks: &Clocks,
-    ) -> Result<Serial<Self>, config::InvalidConfig>
-    where
-        PINS: Pins<Self>;
-}
-
-macro_rules! lpusart_hal {
-    ($USARTX:ty, $usartX:ident) => {
-        impl LPSerialExt for $USARTX {
-            fn usart<PINS>(
-                self,
-                pins: PINS,
-                config: config::LPConfig,
-                clocks: &Clocks,
-            ) -> Result<Serial<Self>, config::InvalidConfig>
-            where
-                PINS: Pins<Self>,
-            {
-                $usartX(self, pins, config, clocks)
             }
         }
 
-        pub fn $usartX<PINS>(
-            usart: $USARTX,
-            _pins: PINS,
+        uart_hal_shared!($UARTX);
+    };
+}
+
+uart_hal!(Usart1, usart1);
+
+uart_hal!(Usart2, usart2);
+
+uart_hal!(Usart3, usart3);
+
+uart_hal!(Uart4, uart4);
+
+#[cfg(feature = "uart5")]
+uart_hal!(Uart5, uart5);
+
+pub trait LPUartExt<UART>: Sized {
+    fn usart<TX, RX>(
+        self,
+        pins: (TX, RX),
+        config: config::LPConfig,
+        clocks: &Clocks,
+    ) -> Serial<Self>
+    where
+        TX: TXPin<UART>,
+        RX: RXPin<UART>;
+}
+
+macro_rules! lpusart_hal {
+    ($UARTX:ident, $uartX:ident) => {
+        impl LPUartExt<pac::$UARTX> for pac::$UARTX {
+            fn usart<TX, RX>(
+                self,
+                pins: (TX, RX),
+                config: config::LPConfig,
+                clocks: &Clocks,
+            ) -> Serial<Self>
+            where
+                TX: TXPin<pac::$UARTX>,
+                RX: RXPin<pac::$UARTX>,
+            {
+                $uartX(self, pins, config, clocks)
+            }
+        }
+
+        pub fn $uartX<TX, RX>(
+            usart: pac::$UARTX,
+            _pins: (TX, RX),
             config: config::LPConfig,
             clocks: &Clocks,
-        ) -> Result<Serial<$USARTX>, config::InvalidConfig>
+        ) -> Serial<pac::$UARTX>
         where
-            PINS: Pins<$USARTX>,
+            TX: TXPin<pac::$UARTX>,
+            RX: RXPin<pac::$UARTX>,
         {
             unsafe {
                 let rcc_ptr = &(*pac::Rcc::PTR);
-                <$USARTX>::enable(rcc_ptr);
-                <$USARTX>::reset(rcc_ptr);
+                <pac::$UARTX>::enable(rcc_ptr);
+                <pac::$UARTX>::reset(rcc_ptr);
             }
 
             // TODO: By default, all UARTs are clocked from PCLK. We could modify RCC_CCIPR to
             // try SYSCLK if PCLK is not high enough. We could also select 8x oversampling
             // instead of 16x.
 
-            // let sync = PINS::SYNC;
-
-            let clk = <$USARTX>::timer_clock(clocks);
+            let clk = <pac::$UARTX>::timer_clock(clocks);
             usart.presc().reset();
 
             // Calculate baudrate divisor
@@ -535,7 +519,7 @@ macro_rules! lpusart_hal {
 
             if div < 16 {
                 // We need 16x oversampling.
-                return Err(config::InvalidConfig);
+                panic!("16x oversampling required");
             }
 
             usart.brr().write(|w| unsafe { w.bits(div) });
@@ -587,7 +571,7 @@ macro_rules! lpusart_hal {
                     .bit(config.fifo_enable)
             });
 
-            Ok(Serial {
+            Serial {
                 usart,
                 tx: Tx {
                     _usart: PhantomData,
@@ -595,56 +579,56 @@ macro_rules! lpusart_hal {
                 rx: Rx {
                     _usart: PhantomData,
                 },
-            })
+            }
         }
 
-        uart_hal_shared!($USARTX);
+        uart_hal_shared!($UARTX);
     };
 }
 
-lpusart_hal!(pac::Lpuart1, lpuart1);
+lpusart_hal!(Lpuart1, lpuart1);
 
 macro_rules! usart_pins {
-    ($USARTX:ty: {
+    ($USARTX:ident: {
         TX: [$($( #[ $pmeta1:meta ] )* $TX:ty),+ $(,)*]
         RX: [$($( #[ $pmeta2:meta ] )* $RX:ty),+ $(,)*]
         CK: [$($( #[ $pmeta3:meta ] )* $CK:ty),+ $(,)*]
     }) => {
         $(
             $( #[ $pmeta1 ] )*
-            impl TXPin<$USARTX> for $TX {}
+            impl TXPin<pac::$USARTX> for $TX {}
         )*
 
         $(
             $( #[ $pmeta2 ] )*
-            impl RXPin<$USARTX> for $RX {}
+            impl RXPin<pac::$USARTX> for $RX {}
         )*
 
         $(
             $( #[ $pmeta3 ] )*
-            impl CKPin<$USARTX> for $CK {}
+            impl CKPin<pac::$USARTX> for $CK {}
         )*
     }
 }
 
 macro_rules! uart_pins {
-    ($UARTX:ty: {
+    ($UARTX:ident: {
        TX: [$($( #[ $pmeta1:meta ] )* $TX:ty),+ $(,)*]
        RX: [$($( #[ $pmeta2:meta ] )* $RX:ty),+ $(,)*]
     }) => {
         $(
             $( #[ $pmeta1 ] )*
-            impl TXPin<$UARTX> for $TX {}
+            impl TXPin<pac::$UARTX> for $TX {}
         )*
         $(
             $( #[ $pmeta2 ] )*
-            impl RXPin<$UARTX> for $RX {}
+            impl RXPin<pac::$UARTX> for $RX {}
         )*
     }
 }
 
 usart_pins!(
-    pac::Usart1: {
+    Usart1: {
         TX: [
             PA9<AF7>,
             PB6<AF7>,
@@ -672,7 +656,7 @@ usart_pins!(
 );
 
 usart_pins!(
-    pac::Usart2: {
+    Usart2: {
         TX: [
             PA2<AF7>,
             PA14<AF7>,
@@ -694,7 +678,7 @@ usart_pins!(
 );
 
 usart_pins!(
-    pac::Usart3: {
+    Usart3: {
         TX: [
             PB9<AF7>,
             PB10<AF7>,
@@ -717,7 +701,7 @@ usart_pins!(
 );
 
 uart_pins!(
-    pac::Uart4: {
+    Uart4: {
         TX: [PC10<AF5>]
         RX: [PC11<AF5>]
     }
@@ -725,14 +709,14 @@ uart_pins!(
 
 #[cfg(feature = "uart5")]
 uart_pins!(
-    pac::Uart5: {
+    Uart5: {
         TX: [PC12<AF5>]
         RX: [PD2<AF5>]
     }
 );
 
 uart_pins!(
-    pac::Lpuart1: {
+    Lpuart1: {
         TX: [
             PA2<AF12>,
             PB11<AF8>,

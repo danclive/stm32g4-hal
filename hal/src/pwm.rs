@@ -77,8 +77,8 @@ pub trait PwmExt: Sized {
 }
 
 macro_rules! tim_hal {
-    ($TIMX:ty, $timX:ident $(, BDTR: $bdtr:ident)*) => {
-        impl PwmExt for $TIMX {
+    ($TIMX:ident, $timX:ident $(, BDTR: $bdtr:ident)*) => {
+        impl PwmExt for pac::$TIMX {
             fn pwm<PINS, T, U, V>(self, _pins: PINS, freq: T, clocks: &Clocks) -> PINS::Channel
             where
                 PINS: Pins<Self, U, V>,
@@ -88,19 +88,19 @@ macro_rules! tim_hal {
             }
         }
 
-        pub fn $timX<PINS, T, U, V>(tim: $TIMX, _pins: PINS, freq: T, clocks: &Clocks) -> PINS::Channel
+        pub fn $timX<PINS, T, U, V>(tim: pac::$TIMX, _pins: PINS, freq: T, clocks: &Clocks) -> PINS::Channel
         where
-            PINS: Pins<$TIMX, U, V>,
+            PINS: Pins<pac::$TIMX, U, V>,
             T: Into<Hertz>,
         {
             unsafe {
                 let rcc = &(*pac::Rcc::PTR);
-                <$TIMX>::enable(rcc);
-                <$TIMX>::reset(rcc);
+                <pac::$TIMX>::enable(rcc);
+                <pac::$TIMX>::reset(rcc);
             }
 
             let freq = freq.into();
-            let clk = <$TIMX>::timer_clock(clocks);
+            let clk = <pac::$TIMX>::timer_clock(clocks);
 
             let (period, psc) = match 32 {
                 16 => calculate_frequency_16bit(clk, freq, Alignment::Left),
@@ -130,35 +130,27 @@ macro_rules! tim_hal {
     };
 }
 
-#[cfg(feature = "tim1")]
-tim_hal!(pac::Tim1, tim1, BDTR: bdtr);
+tim_hal!(Tim1, tim1, BDTR: bdtr);
 
-#[cfg(feature = "tim2")]
-tim_hal!(pac::Tim2, tim2);
+tim_hal!(Tim2, tim2);
 
-#[cfg(feature = "tim3")]
-tim_hal!(pac::Tim3, tim3);
+tim_hal!(Tim3, tim3);
 
-#[cfg(feature = "tim4")]
-tim_hal!(pac::Tim4, tim4);
+tim_hal!(Tim4, tim4);
 
 #[cfg(feature = "tim5")]
-tim_hal!(pac::Tim5, tim5);
+tim_hal!(Tim5, tim5);
 
-#[cfg(feature = "tim8")]
-tim_hal!(pac::Tim8, tim8);
+tim_hal!(Tim8, tim8);
 
-#[cfg(feature = "tim15")]
-tim_hal!(pac::Tim15, tim15);
+tim_hal!(Tim15, tim15);
 
-#[cfg(feature = "tim16")]
-tim_hal!(pac::Tim16, tim16);
+tim_hal!(Tim16, tim16);
 
-#[cfg(feature = "tim17")]
-tim_hal!(pac::Tim17, tim17);
+tim_hal!(Tim17, tim17);
 
 #[cfg(feature = "tim20")]
-tim_hal!(pac::Tim20, tim20);
+tim_hal!(Tim20, tim20);
 
 pub trait PwmAdvExt<WIDTH>: Sized {
     fn pwm_advanced<PINS, CHANNEL, COMP>(
@@ -206,8 +198,8 @@ pub struct PwmControl<TIM, FAULT> {
 }
 
 macro_rules! tim_adv_hal {
-    ($TIMX:ty, $timX:ident, $typ:ty, $bits:expr $(, DIR: $cms:ident)* $(, BDTR: $bdtr:ident, $bkinp_setting:ident $(, $bk2inp_setting:ident)*)*) => {
-        impl PwmAdvExt<$typ> for $TIMX {
+    ($TIMX:ident, $timX:ident, $typ:ty, $bits:expr $(, DIR: $cms:ident)* $(, BDTR: $bdtr:ident, $bkinp_setting:ident $(, $bk2inp_setting:ident)*)*) => {
+        impl PwmAdvExt<$typ> for pac::$TIMX {
             fn pwm_advanced<PINS, CHANNEL, COMP>(
                 self,
                 _pins: PINS,
@@ -218,11 +210,11 @@ macro_rules! tim_adv_hal {
             {
                 unsafe {
                     let rcc = &(*pac::Rcc::PTR);
-                    <$TIMX>::enable(rcc);
-                    <$TIMX>::reset(rcc);
+                    <pac::$TIMX>::enable(rcc);
+                    <pac::$TIMX>::reset(rcc);
                 }
 
-                let clk = <$TIMX>::timer_clock(clocks);
+                let clk = <pac::$TIMX>::timer_clock(clocks);
 
                 PwmBuilder {
                     _tim: PhantomData,
@@ -245,12 +237,12 @@ macro_rules! tim_adv_hal {
         }
 
         impl<PINS, CHANNEL, FAULT, COMP>
-                PwmBuilder<$TIMX, PINS, CHANNEL, FAULT, COMP, $typ>
+                PwmBuilder<pac::$TIMX, PINS, CHANNEL, FAULT, COMP, $typ>
             where
-                PINS: Pins<$TIMX, CHANNEL, COMP>,
+                PINS: Pins<pac::$TIMX, CHANNEL, COMP>,
             {
-                pub fn finalize(self) -> (PwmControl<$TIMX, FAULT>, PINS::Channel) {
-                    let tim = unsafe { &*<$TIMX>::PTR };
+                pub fn finalize(self) -> (PwmControl<pac::$TIMX, FAULT>, PINS::Channel) {
+                    let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                     let (period, prescaler) = match self.count {
                         CountSettings::Explicit { period, prescaler } => (period as u32, prescaler),
@@ -339,7 +331,7 @@ macro_rules! tim_adv_hal {
                     tim.cr1().modify(|_, w| w.cen().set_bit());
 
                     unsafe {
-                        MaybeUninit::<(PwmControl<$TIMX, FAULT>, PINS::Channel)>::uninit()
+                        MaybeUninit::<(PwmControl<pac::$TIMX, FAULT>, PINS::Channel)>::uninit()
                             .assume_init()
                     }
                 }
@@ -419,10 +411,10 @@ macro_rules! tim_adv_hal {
 
             // Timers with break/fault, dead time, and complimentary capabilities
             $(
-                impl<PINS, CHANNEL, COMP> PwmBuilder<$TIMX, PINS, CHANNEL, FaultDisabled, COMP, $typ> {
+                impl<PINS, CHANNEL, COMP> PwmBuilder<pac::$TIMX, PINS, CHANNEL, FaultDisabled, COMP, $typ> {
                     /// Configure a break pin that will disable PWM when activated (active level based on polarity argument)
                     /// Note: not all timers have fault inputs; `FaultPins<TIM>` is only implemented for valid pins/timers.
-                    pub fn with_break_pin<P: FaultPins<$TIMX>>(self, _pin: P, polarity: Polarity) -> PwmBuilder<$TIMX, PINS, CHANNEL, FaultEnabled, COMP, $typ> {
+                    pub fn with_break_pin<P: FaultPins<pac::$TIMX>>(self, _pin: P, polarity: Polarity) -> PwmBuilder<pac::$TIMX, PINS, CHANNEL, FaultEnabled, COMP, $typ> {
                         PwmBuilder {
                             _tim: PhantomData,
                             _pins: PhantomData,
@@ -440,21 +432,21 @@ macro_rules! tim_adv_hal {
                     }
                 }
 
-                impl FaultMonitor for PwmControl<$TIMX, FaultEnabled> {
+                impl FaultMonitor for PwmControl<pac::$TIMX, FaultEnabled> {
                     fn is_fault_active(&self) -> bool {
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         !tim.$bdtr().read().moe().bit()
                     }
 
                     fn clear_fault(&mut self) {
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         tim.$bdtr().modify(|_, w| w.moe().set_bit());
                     }
 
                     fn set_fault(&mut self) {
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         tim.$bdtr().modify(|_, w| w.moe().clear_bit());
                     }
@@ -463,35 +455,27 @@ macro_rules! tim_adv_hal {
     };
 }
 
-#[cfg(feature = "tim1")]
-tim_adv_hal!(pac::Tim1, tim1, u16, 16, DIR: cms, BDTR: bdtr, clear_bit, clear_bit);
+tim_adv_hal!(Tim1, tim1, u16, 16, DIR: cms, BDTR: bdtr, clear_bit, clear_bit);
 
-#[cfg(feature = "tim2")]
-tim_adv_hal!(pac::Tim2, tim2, u32, 32, DIR: cms);
+tim_adv_hal!(Tim2, tim2, u32, 32, DIR: cms);
 
-#[cfg(feature = "tim3")]
-tim_adv_hal!(pac::Tim3, tim3, u16, 16, DIR: cms);
+tim_adv_hal!(Tim3, tim3, u16, 16, DIR: cms);
 
-#[cfg(feature = "tim4")]
-tim_adv_hal!(pac::Tim4, tim4, u16, 16, DIR: cms);
+tim_adv_hal!(Tim4, tim4, u16, 16, DIR: cms);
 
 #[cfg(feature = "tim5")]
-tim_adv_hal!(pac::Tim5, tim5, u32, 32, DIR: cms);
+tim_adv_hal!(Tim5, tim5, u32, 32, DIR: cms);
 
-#[cfg(feature = "tim8")]
-tim_adv_hal!(pac::Tim8, tim1, u16, 16, DIR: cms, BDTR: bdtr, clear_bit, clear_bit);
+tim_adv_hal!(Tim8, tim1, u16, 16, DIR: cms, BDTR: bdtr, clear_bit, clear_bit);
 
-#[cfg(feature = "tim15")]
-tim_adv_hal!(pac::Tim15, tim15, u16, 16, BDTR: bdtr, set_bit);
+tim_adv_hal!(Tim15, tim15, u16, 16, BDTR: bdtr, set_bit);
 
-#[cfg(feature = "tim16")]
-tim_adv_hal!(pac::Tim16, tim16, u16, 16, BDTR: bdtr, set_bit);
+tim_adv_hal!(Tim16, tim16, u16, 16, BDTR: bdtr, set_bit);
 
-#[cfg(feature = "tim17")]
-tim_adv_hal!(pac::Tim17, tim17, u16, 16, BDTR: bdtr, set_bit);
+tim_adv_hal!(Tim17, tim17, u16, 16, BDTR: bdtr, set_bit);
 
 #[cfg(feature = "tim20")]
-tim_adv_hal!(pac::Tim20, tim20, u16, 16, BDTR: bdtr, set_bit);
+tim_adv_hal!(Tim20, tim20, u16, 16, BDTR: bdtr, set_bit);
 
 /// Pwm represents one PWM channel; it is created by calling TIM?.pwm(...) and lets you control the channel through the PwmPin trait
 pub struct Pwm<TIM, CHANNEL, COMP, POL, NPOL> {
@@ -510,13 +494,13 @@ pub trait PwmPinEnable {
 // Implement PwmPin for timer channels
 macro_rules! tim_pin_hal {
     // Standard pins (no complementary functionality)
-    ($($TIMX:ty:
-       ($CH:ty, $ccxe:ident, $ccxp:ident, $ccmrx_output:ident, $ocxpe:ident, $ocxm:ident, $ocxm_3:ident,
+    ($($TIMX:ident:
+       ($CH:ident, $ccxe:ident, $ccxp:ident, $ccmrx_output:ident, $ocxpe:ident, $ocxm:ident, $ocxm_3:ident,
         $ccrx:ident, $typ:ident $(,$ccxne:ident, $ccxnp:ident)*),)+
     ) => {
         $(
-            impl<COMP, POL, NPOL> Pwm<$TIMX, $CH, COMP, POL, NPOL>
-                where Pwm<$TIMX, $CH, COMP, POL, NPOL>: PwmPinEnable {
+            impl<COMP, POL, NPOL> Pwm<pac::$TIMX, $CH, COMP, POL, NPOL>
+                where Pwm<pac::$TIMX, $CH, COMP, POL, NPOL>: PwmPinEnable {
 
                 // You may not access self in the following methods!
                 // See unsafe above
@@ -526,7 +510,7 @@ macro_rules! tim_pin_hal {
                 }
 
                 pub fn enable(&mut self) {
-                    let tim = unsafe { &*<$TIMX>::PTR };
+                    let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                     tim.$ccmrx_output().modify(|_, w|
                         unsafe {
@@ -544,7 +528,7 @@ macro_rules! tim_pin_hal {
                 }
 
                 pub fn get_duty(&self) -> $typ {
-                    let tim = unsafe { &*<$TIMX>::PTR };
+                    let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                     // Even though the field is 20 bits long for 16-bit counters, only 16 bits are
                     // valid, so we convert to the appropriate type.
@@ -552,7 +536,7 @@ macro_rules! tim_pin_hal {
                 }
 
                 pub fn get_max_duty(&self) -> $typ {
-                    let tim = unsafe { &*<$TIMX>::PTR };
+                    let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                     // Even though the field is 20 bits long for 16-bit counters, only 16 bits are
                     // valid, so we convert to the appropriate type.
@@ -571,29 +555,29 @@ macro_rules! tim_pin_hal {
                 }
 
                 pub fn set_duty(&mut self, duty: $typ) {
-                    let tim = unsafe { &*<$TIMX>::PTR };
+                    let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                     tim.$ccrx().write(|w| unsafe { w.$ccrx().bits(duty.into()) });
                 }
             }
 
             // Enable implementation for ComplementaryImpossible
-            impl<POL, NPOL> PwmPinEnable for Pwm<$TIMX, $CH, ComplementaryImpossible, POL, NPOL> {
+            impl<POL, NPOL> PwmPinEnable for Pwm<pac::$TIMX, $CH, ComplementaryImpossible, POL, NPOL> {
                 fn ccer_enable(&mut self) {
-                    let tim = unsafe { &*<$TIMX>::PTR };
+                    let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                     tim.ccer().modify(|_, w| w.$ccxe().set_bit());
                 }
                 fn ccer_disable(&mut self) {
-                    let tim = unsafe { &*<$TIMX>::PTR };
+                    let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                     tim.ccer().modify(|_, w| w.$ccxe().clear_bit());
                 }
             }
 
-            impl<COMP, NPOL> Pwm<$TIMX, $CH, COMP, ActiveHigh, NPOL> {
-                pub fn into_active_low(self) -> Pwm<$TIMX, $CH, COMP, ActiveLow, NPOL> {
-                    let tim = unsafe { &*<$TIMX>::PTR };
+            impl<COMP, NPOL> Pwm<pac::$TIMX, $CH, COMP, ActiveHigh, NPOL> {
+                pub fn into_active_low(self) -> Pwm<pac::$TIMX, $CH, COMP, ActiveLow, NPOL> {
+                    let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                     tim.ccer().modify(|_, w| w.$ccxp().set_bit());
 
@@ -607,9 +591,9 @@ macro_rules! tim_pin_hal {
                 }
             }
 
-            impl<COMP, NPOL> Pwm<$TIMX, $CH, COMP, ActiveLow, NPOL> {
-                pub fn into_active_high(self) -> Pwm<$TIMX, $CH, COMP, ActiveHigh, NPOL> {
-                    let tim = unsafe { &*<$TIMX>::PTR };
+            impl<COMP, NPOL> Pwm<pac::$TIMX, $CH, COMP, ActiveLow, NPOL> {
+                pub fn into_active_high(self) -> Pwm<pac::$TIMX, $CH, COMP, ActiveHigh, NPOL> {
+                    let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                     tim.ccer().modify(|_, w| w.$ccxp().clear_bit());
 
@@ -626,38 +610,38 @@ macro_rules! tim_pin_hal {
             // Complementary channels
             $(
                 // Enable implementation for ComplementaryDisabled
-                impl<POL, NPOL> PwmPinEnable for Pwm<$TIMX, $CH, ComplementaryDisabled, POL, NPOL> {
+                impl<POL, NPOL> PwmPinEnable for Pwm<pac::$TIMX, $CH, ComplementaryDisabled, POL, NPOL> {
                     fn ccer_enable(&mut self) {
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         tim.ccer().modify(|_, w| w.$ccxe().set_bit());
                     }
                     fn ccer_disable(&mut self) {
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         tim.ccer().modify(|_, w| w.$ccxe().clear_bit());
                     }
                 }
 
                 // Enable implementation for ComplementaryEnabled
-                impl<POL, NPOL> PwmPinEnable for Pwm<$TIMX, $CH, ComplementaryEnabled, POL, NPOL> {
+                impl<POL, NPOL> PwmPinEnable for Pwm<pac::$TIMX, $CH, ComplementaryEnabled, POL, NPOL> {
                     fn ccer_enable(&mut self) {
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         tim.ccer().modify(|_, w| w.$ccxe().set_bit().$ccxne().set_bit());
                     }
                     fn ccer_disable(&mut self) {
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         tim.ccer().modify(|_, w| w.$ccxe().clear_bit().$ccxne().clear_bit());
                     }
                 }
 
-                impl<POL, NPOL> Pwm<$TIMX, $CH, ComplementaryDisabled, POL, NPOL> {
-                    pub fn into_complementary<NPIN>(self, _npin: NPIN) -> Pwm<$TIMX, $CH, ComplementaryEnabled, POL, NPOL>
-                        where NPIN: NPins<$TIMX, $CH> {
+                impl<POL, NPOL> Pwm<pac::$TIMX, $CH, ComplementaryDisabled, POL, NPOL> {
+                    pub fn into_complementary<NPIN>(self, _npin: NPIN) -> Pwm<pac::$TIMX, $CH, ComplementaryEnabled, POL, NPOL>
+                        where NPIN: NPins<pac::$TIMX, $CH> {
                         // Make sure we aren't switching to complementary after we enable the channel
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         let enabled = tim.ccer().read().$ccxe().bit();
 
@@ -673,9 +657,9 @@ macro_rules! tim_pin_hal {
                     }
                 }
 
-                impl<POL> Pwm<$TIMX, $CH, ComplementaryEnabled, POL, ActiveHigh> {
-                    pub fn into_comp_active_low(self) -> Pwm<$TIMX, $CH, ComplementaryEnabled, POL, ActiveLow> {
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                impl<POL> Pwm<pac::$TIMX, $CH, ComplementaryEnabled, POL, ActiveHigh> {
+                    pub fn into_comp_active_low(self) -> Pwm<pac::$TIMX, $CH, ComplementaryEnabled, POL, ActiveLow> {
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         tim.ccer().modify(|_, w| w.$ccxnp().set_bit());
 
@@ -689,9 +673,9 @@ macro_rules! tim_pin_hal {
                     }
                 }
 
-                impl<POL> Pwm<$TIMX, $CH, ComplementaryEnabled, POL, ActiveLow> {
-                    pub fn into_comp_active_high(self) -> Pwm<$TIMX, $CH, ComplementaryEnabled, POL, ActiveHigh> {
-                        let tim = unsafe { &*<$TIMX>::PTR };
+                impl<POL> Pwm<pac::$TIMX, $CH, ComplementaryEnabled, POL, ActiveLow> {
+                    pub fn into_comp_active_high(self) -> Pwm<pac::$TIMX, $CH, ComplementaryEnabled, POL, ActiveHigh> {
+                        let tim = unsafe { &*<pac::$TIMX>::PTR };
 
                         tim.ccer().modify(|_, w| w.$ccxnp().clear_bit());
 
@@ -709,60 +693,55 @@ macro_rules! tim_pin_hal {
     };
 }
 
-#[cfg(feature = "tim1")]
 tim_pin_hal! {
-    pac::Tim1: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
-    pac::Tim1: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
-    pac::Tim1: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
-    pac::Tim1: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
+    Tim1: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
+    Tim1: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
+    Tim1: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
+    Tim1: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
 }
 
-#[cfg(feature = "tim2")]
 tim_pin_hal! {
-    pac::Tim2: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u32),
-    pac::Tim2: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u32),
-    pac::Tim2: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u32),
-    pac::Tim2: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u32),
+    Tim2: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u32),
+    Tim2: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u32),
+    Tim2: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u32),
+    Tim2: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u32),
 }
 
-#[cfg(feature = "tim3")]
 tim_pin_hal! {
-    pac::Tim3: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16),
-    pac::Tim3: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16),
-    pac::Tim3: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16),
-    pac::Tim3: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16),
+    Tim3: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16),
+    Tim3: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16),
+    Tim3: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16),
+    Tim3: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16),
 }
 
-#[cfg(feature = "tim4")]
 tim_pin_hal! {
-    pac::Tim4: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16),
-    pac::Tim4: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16),
-    pac::Tim4: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16),
-    pac::Tim4: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16),
+    Tim4: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16),
+    Tim4: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16),
+    Tim4: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16),
+    Tim4: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16),
 }
 
 #[cfg(feature = "tim5")]
 tim_pin_hal! {
-    pac::Tim5: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u32),
-    pac::Tim5: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc1m_3, ccr2, u32),
-    pac::Tim5: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc1m_3, ccr3, u32),
-    pac::Tim5: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc1m_3, ccr4, u32),
+    Tim5: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u32),
+    Tim5: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc1m_3, ccr2, u32),
+    Tim5: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc1m_3, ccr3, u32),
+    Tim5: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc1m_3, ccr4, u32),
 }
 
-#[cfg(feature = "tim8")]
 tim_pin_hal! {
-    pac::Tim8: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
-    pac::Tim8: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
-    pac::Tim8: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
-    pac::Tim8: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
+    Tim8: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
+    Tim8: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
+    Tim8: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
+    Tim8: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
 }
 
 #[cfg(feature = "tim20")]
 tim_pin_hal! {
-    pac::Tim20: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
-    pac::Tim20: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
-    pac::Tim20: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
-    pac::Tim20: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
+    Tim20: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
+    Tim20: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
+    Tim20: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
+    Tim20: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
 }
 
 // Period and prescaler calculator for 32-bit timers

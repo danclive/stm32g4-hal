@@ -128,6 +128,3 @@ impl Default for Config {
         }
     }
 }
-
-#[derive(Debug)]
-pub struct InvalidConfig;

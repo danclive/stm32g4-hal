@@ -93,7 +93,7 @@ macro_rules! __internal_create_timer_struct {
 /// * `name` - The name that the monotonic type will have.
 /// * `tick_rate_hz` - The tick rate of the timer peripheral.
 ///
-#[cfg(all(feature = "tim2", feature = "rtic-tim2"))]
+#[cfg(feature = "rtic-tim2")]
 #[macro_export]
 macro_rules! tim2_monotonic {
     ($name:ident, $tick_rate_hz:expr) => {
@@ -248,7 +248,7 @@ macro_rules! make_timer {
     };
 }
 
-#[cfg(all(feature = "tim2", feature = "rtic-tim2"))]
+#[cfg(feature = "rtic-tim2")]
 make_timer!(tim2, Tim2, u32, Tim2Backend, TIMER2_OVERFLOWS, TIMER2_TQ);
 
 #[cfg(all(feature = "tim5", feature = "rtic-tim5"))]
@@ -258,7 +258,6 @@ pub trait Irq {
     const IRQ: crate::pac::Interrupt;
 }
 
-#[cfg(feature = "tim2")]
 impl Irq for crate::pac::Tim2 {
     const IRQ: crate::pac::Interrupt = crate::pac::Interrupt::TIM2;
 }
