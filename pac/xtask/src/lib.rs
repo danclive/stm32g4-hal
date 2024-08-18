@@ -12,20 +12,28 @@ pub static CHIPS: &[(&str, &str)] = &[
     // ("stm32g491", "STM32G491"),
 ];
 
+pub fn patch() {
+    let sh = Shell::new().unwrap();
+
+    for (_chip, name) in CHIPS {
+        let device_path = format!("devices/{}.yaml", name);
+        let svd_path = format!("svds/{}.svd", name);
+
+        cmd!(sh, "svdtools patch {device_path} {svd_path}")
+            .run()
+            .unwrap();
+    }
+}
+
 pub fn generate() {
     let sh = Shell::new().unwrap();
 
     for (chip, name) in CHIPS {
-        let device_path = format!("devices/{}.yaml", name);
         let svd_path = format!("svds/{}.svd", name);
         let crate_dir = format!("src/{}", chip);
 
         let _ = fs::remove_dir_all(&crate_dir);
         fs::create_dir_all(&crate_dir).unwrap();
-
-        cmd!(sh, "svdtools patch {device_path} {svd_path}")
-            .run()
-            .unwrap();
 
         cmd!(
             sh,
