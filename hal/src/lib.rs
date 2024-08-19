@@ -29,6 +29,7 @@ pub mod signature;
 pub mod spi;
 pub mod syscfg;
 pub mod timer;
+pub mod watchdog;
 
 #[cfg(feature = "rtic")]
 pub mod rtic;

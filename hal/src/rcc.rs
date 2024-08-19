@@ -590,6 +590,10 @@ impl Clocks {
         self.apb1_clk
     }
 
+    pub fn pclk1(&self) -> Hertz {
+        self.apb1_clk()
+    }
+
     /// Returns the frequency of the APB1 TIM
     pub fn apb1_tim_clk(&self) -> Hertz {
         self.apb1_tim_clk
@@ -598,6 +602,10 @@ impl Clocks {
     /// Returns the frequency of the APB2
     pub fn apb2_clk(&self) -> Hertz {
         self.apb2_clk
+    }
+
+    pub fn pclk2(&self) -> Hertz {
+        self.apb2_clk()
     }
 
     /// Returns the frequency of the APB2 TIM
