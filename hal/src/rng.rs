@@ -16,6 +16,16 @@ pub struct Rng {
     rb: pac::Rng,
 }
 
+pub trait RngExt {
+    fn rng(self) -> Rng;
+}
+
+impl RngExt for pac::Rng {
+    fn rng(self) -> Rng {
+        rng(self)
+    }
+}
+
 pub fn rng(rb: pac::Rng) -> Rng {
     // Enable and reset Rng
     unsafe {

@@ -4,8 +4,10 @@
 #![no_std]
 
 pub use crate::pac::interrupt;
+pub use panic::panic;
 
 pub mod nb;
+pub mod panic;
 
 pub mod adc;
 pub mod bb;

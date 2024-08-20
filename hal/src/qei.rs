@@ -84,11 +84,11 @@ macro_rules! tim_hal {
                 self.tim
             }
 
-            fn count(&self) -> $bits {
+            pub fn count(&self) -> $bits {
                 self.tim.cnt().read().bits() as $bits
             }
 
-            fn direction(&self) -> Direction {
+            pub fn direction(&self) -> Direction {
                 if self.tim.cr1().read().dir().bit_is_clear() {
                     Direction::Upcounting
                 } else {

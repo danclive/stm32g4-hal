@@ -23,6 +23,7 @@ pub use crate::pwr::PwrExt as _stm32g4_pwr_PwrExt;
 pub use crate::qei::QeiExt as _stm32g4_qei_QeiExt;
 pub use crate::rcc::RccExt as _stm32g4_rcc_RccExt;
 pub use crate::rng::RngCore as _stm32g4_rng_RngCore;
+pub use crate::rng::RngExt as _stm32g4_rng_RngExt;
 pub use crate::serial::LPUartExt as _stm32g4_serial_LPUartExt;
 pub use crate::serial::UartExt as _stm32g4_serial_UartExt;
 pub use crate::spi::SpiExt as _stm32g4_spi_SpiExt;

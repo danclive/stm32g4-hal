@@ -7,7 +7,6 @@ use stm32g4_hal as hal;
 
 use crate::hal::gpio::gpioc;
 use crate::hal::prelude::*;
-use crate::hal::rng::Rng;
 use crate::hal::{pac, pwr, rcc};
 
 use cortex_m_rt::entry;
@@ -28,7 +27,7 @@ fn main() -> ! {
         .freeze();
     let rcc = p.rcc.constrain();
 
-    let rcc_config = rcc::Config::new()
+    let rcc = rcc
         .hse(25.MHz(), false)
         .clock_src(rcc::SysClockSrc::PLL)
         .pll_cfg(rcc::PllConfig {
@@ -41,7 +40,7 @@ fn main() -> ! {
         })
         .pwr_cfg(pwr);
 
-    let rcc = rcc.freeze(rcc_config);
+    let rcc = rcc.freeze();
 
     info!("clock: {:?}", rcc.clocks());
 
@@ -51,7 +50,7 @@ fn main() -> ! {
     let gpioc = gpioc::Pins::new(p.gpioc);
     let mut led = gpioc.pc4.into_push_pull_output();
 
-    let mut rng = Rng::new(p.rng);
+    let mut rng = p.rng.rng();
 
     loop {
         info!("Set Led High");
@@ -66,59 +65,17 @@ fn main() -> ! {
 
         let random_number = rng.value();
         info!("Random number: {}", random_number);
+
+        panic!("aaaa");
     }
 }
 
 use core::panic::PanicInfo;
-use core::sync::atomic::{self, Ordering};
 
 #[inline(never)]
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
-    use defmt::error as println;
-
-    println!("");
-    println!("");
-
-    if let Some(location) = info.location() {
-        let (file, line, column) = (location.file(), location.line(), location.column());
-        println!(
-            "!! A panic occured in '{}', at line {}, column {}:",
-            file, line, column
-        );
-    } else {
-        println!("!! A panic occured at an unknown location:");
-    }
-
-    #[cfg(not(nightly))]
-    {
-        #[cfg(not(feature = "defmt"))]
-        println!("{:#?}", info);
-
-        #[cfg(feature = "defmt")]
-        println!("{:#?}", defmt::Display2Format(info));
-    }
-
-    #[cfg(nightly)]
-    {
-        if let Some(message) = info.message() {
-            #[cfg(not(feature = "defmt"))]
-            println!("{}", message);
-
-            #[cfg(feature = "defmt")]
-            println!("{}", defmt::Display2Format(message));
-        }
-    }
-
-    if let Some(s) = info.payload().downcast_ref::<&str>() {
-        println!("panic occurred: {}", s);
-    } else {
-        println!("panic occurred");
-    }
-
-    loop {
-        atomic::compiler_fence(Ordering::SeqCst);
-    }
+    hal::panic(info)
 }
 
 use cortex_m_rt::exception;
