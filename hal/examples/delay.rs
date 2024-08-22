@@ -27,7 +27,7 @@ fn main() -> ! {
         .freeze();
     let rcc = p.rcc.constrain();
 
-    let rcc_config = rcc::Config::new()
+    let rcc = rcc
         .hse(25.MHz(), false)
         .clock_src(rcc::SysClockSrc::PLL)
         .pll_cfg(rcc::PllConfig {
@@ -40,7 +40,7 @@ fn main() -> ! {
         })
         .pwr_cfg(pwr);
 
-    let rcc = rcc.freeze(rcc_config);
+    let rcc = rcc.freeze();
 
     info!("clock: {:?}", rcc.clocks());
 
@@ -63,15 +63,10 @@ fn main() -> ! {
     }
 }
 
-use core::panic::PanicInfo;
-use core::sync::atomic::{self, Ordering};
-
 #[inline(never)]
 #[panic_handler]
-fn panic(_info: &PanicInfo) -> ! {
-    loop {
-        atomic::compiler_fence(Ordering::SeqCst);
-    }
+fn panic(info: &core::panic::PanicInfo) -> ! {
+    hal::panic(info)
 }
 
 use cortex_m_rt::exception;

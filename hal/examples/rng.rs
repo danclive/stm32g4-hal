@@ -65,16 +65,12 @@ fn main() -> ! {
 
         let random_number = rng.value();
         info!("Random number: {}", random_number);
-
-        panic!("aaaa");
     }
 }
 
-use core::panic::PanicInfo;
-
 #[inline(never)]
 #[panic_handler]
-fn panic(info: &PanicInfo) -> ! {
+fn panic(info: &core::panic::PanicInfo) -> ! {
     hal::panic(info)
 }
 
