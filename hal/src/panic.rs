@@ -5,28 +5,20 @@ use core::sync::atomic::{self, Ordering};
 pub fn panic(info: &PanicInfo) -> ! {
     use defmt::error as println;
 
-    println!("!! PANIC !!");
-
     if let Some(location) = info.location() {
         let (file, line, column) = (location.file(), location.line(), location.column());
         println!(
-            "!! A panic occured in '{}', at line {}, column {}:",
-            file, line, column
+            "!! PANIC !!\n!! A panic occured in '{}', at line {}, column {}:\n!! {:#?}\n",
+            file,
+            line,
+            column,
+            defmt::Display2Format(&info.message())
         );
     } else {
-        println!("!! A panic occured at an unknown location:");
-    }
-
-    println!("{:#?}", defmt::Display2Format(info));
-
-    // if let Some(message) = info.message() {
-    //     println!("{}", defmt::Display2Format(message));
-    // }
-
-    if let Some(s) = info.payload().downcast_ref::<&str>() {
-        println!("panic occurred: {}", s);
-    } else {
-        println!("panic occurred");
+        println!(
+            "!! PANIC !!\n!! {:#?}\n",
+            defmt::Display2Format(&info.message())
+        );
     }
 
     loop {

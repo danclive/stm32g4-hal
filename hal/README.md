@@ -29,7 +29,7 @@ Currently supported configurations are:
 If you are compiling the crate on its own for development or running examples,
 specify your microcontroller on the command line. For example:
 
-```
+```sh
 cargo build --example blinky --features stm32g431,defmt
 ```
 
@@ -38,13 +38,13 @@ cargo build --example blinky --features stm32g431,defmt
 Examples can be built and run using `cargo run`. It is necessary to provide any
 required features followed by the name of the chip.
 
-```
+```sh
 cargo run --example blinky --features stm32g431,defmt --release -- --chip STM32G431CBUx
 ```
 
 A list of chips supported by probe-rs can be found by running
 
-```
+```sh
 probe-rs chip list
 ```
 
@@ -55,7 +55,7 @@ For furher information, see the documentation for [probe-rs](https://probe.rs/).
 When using this crate as a dependency in your project, the microcontroller can
 be specified as part of the `Cargo.toml` definition.
 
-```
+```toml
 [dependencies]
 stm32g4-hal = { version = "0.0.1", features = ["stm32g431", "defmt"] }
 ```
