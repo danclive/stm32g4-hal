@@ -16,13 +16,6 @@ specified with a feature, for example `stm32g431`.
 Currently supported configurations are:
 
 * stm32g431
-* stm32g441
-* stm32g471
-* stm32g473
-* stm32g474
-* stm32g483
-* stm32g484
-* stm32g491
 
 ### Building an Example
 

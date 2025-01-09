@@ -91,19 +91,16 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 3 - Shift operation pending"]
     #[inline(always)]
-    #[must_use]
     pub fn shpf(&mut self) -> ShpfW<IcsrSpec> {
         ShpfW::new(self, 3)
     }
     #[doc = "Bit 5 - Registers synchronization flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rsf(&mut self) -> RsfW<IcsrSpec> {
         RsfW::new(self, 5)
     }
     #[doc = "Bit 7 - Initialization mode"]
     #[inline(always)]
-    #[must_use]
     pub fn init(&mut self) -> InitW<IcsrSpec> {
         InitW::new(self, 7)
     }

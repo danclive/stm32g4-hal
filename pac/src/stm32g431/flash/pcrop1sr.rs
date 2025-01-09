@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:14 - Bank 1 PCROP area start offset"]
     #[inline(always)]
-    #[must_use]
     pub fn pcrop1_strt(&mut self) -> Pcrop1StrtW<Pcrop1srSpec> {
         Pcrop1StrtW::new(self, 0)
     }

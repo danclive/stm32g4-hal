@@ -233,133 +233,111 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - SLVEN"]
     #[inline(always)]
-    #[must_use]
     pub fn slven(&mut self) -> SlvenW<Cr2Spec> {
         SlvenW::new(self, 0)
     }
     #[doc = "Bit 3 - DIS_NSS"]
     #[inline(always)]
-    #[must_use]
     pub fn dis_nss(&mut self) -> DisNssW<Cr2Spec> {
         DisNssW::new(self, 3)
     }
     #[doc = "Bit 4 - 7-bit Address Detection/4-bit Address Detection"]
     #[inline(always)]
-    #[must_use]
     pub fn addm7(&mut self) -> Addm7W<Cr2Spec> {
         Addm7W::new(self, 4)
     }
     #[doc = "Bit 5 - LIN break detection length"]
     #[inline(always)]
-    #[must_use]
     pub fn lbdl(&mut self) -> LbdlW<Cr2Spec> {
         LbdlW::new(self, 5)
     }
     #[doc = "Bit 6 - LIN break detection interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn lbdie(&mut self) -> LbdieW<Cr2Spec> {
         LbdieW::new(self, 6)
     }
     #[doc = "Bit 8 - Last bit clock pulse"]
     #[inline(always)]
-    #[must_use]
     pub fn lbcl(&mut self) -> LbclW<Cr2Spec> {
         LbclW::new(self, 8)
     }
     #[doc = "Bit 9 - Clock phase"]
     #[inline(always)]
-    #[must_use]
     pub fn cpha(&mut self) -> CphaW<Cr2Spec> {
         CphaW::new(self, 9)
     }
     #[doc = "Bit 10 - Clock polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn cpol(&mut self) -> CpolW<Cr2Spec> {
         CpolW::new(self, 10)
     }
     #[doc = "Bit 11 - Clock enable"]
     #[inline(always)]
-    #[must_use]
     pub fn clken(&mut self) -> ClkenW<Cr2Spec> {
         ClkenW::new(self, 11)
     }
     #[doc = "Bits 12:13 - STOP bits"]
     #[inline(always)]
-    #[must_use]
     pub fn stop(&mut self) -> StopW<Cr2Spec> {
         StopW::new(self, 12)
     }
     #[doc = "Bit 14 - LIN mode enable"]
     #[inline(always)]
-    #[must_use]
     pub fn linen(&mut self) -> LinenW<Cr2Spec> {
         LinenW::new(self, 14)
     }
     #[doc = "Bit 15 - Swap TX/RX pins"]
     #[inline(always)]
-    #[must_use]
     pub fn swap(&mut self) -> SwapW<Cr2Spec> {
         SwapW::new(self, 15)
     }
     #[doc = "Bit 16 - RX pin active level inversion"]
     #[inline(always)]
-    #[must_use]
     pub fn rxinv(&mut self) -> RxinvW<Cr2Spec> {
         RxinvW::new(self, 16)
     }
     #[doc = "Bit 17 - TX pin active level inversion"]
     #[inline(always)]
-    #[must_use]
     pub fn txinv(&mut self) -> TxinvW<Cr2Spec> {
         TxinvW::new(self, 17)
     }
     #[doc = "Bit 18 - Binary data inversion"]
     #[inline(always)]
-    #[must_use]
     pub fn tainv(&mut self) -> TainvW<Cr2Spec> {
         TainvW::new(self, 18)
     }
     #[doc = "Bit 19 - Most significant bit first"]
     #[inline(always)]
-    #[must_use]
     pub fn msbfirst(&mut self) -> MsbfirstW<Cr2Spec> {
         MsbfirstW::new(self, 19)
     }
     #[doc = "Bit 20 - Auto baud rate enable"]
     #[inline(always)]
-    #[must_use]
     pub fn abren(&mut self) -> AbrenW<Cr2Spec> {
         AbrenW::new(self, 20)
     }
     #[doc = "Bit 21 - ABRMOD0"]
     #[inline(always)]
-    #[must_use]
     pub fn abrmod0(&mut self) -> Abrmod0W<Cr2Spec> {
         Abrmod0W::new(self, 21)
     }
     #[doc = "Bit 22 - Auto baud rate mode"]
     #[inline(always)]
-    #[must_use]
     pub fn abrmod1(&mut self) -> Abrmod1W<Cr2Spec> {
         Abrmod1W::new(self, 22)
     }
     #[doc = "Bit 23 - Receiver timeout enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rtoen(&mut self) -> RtoenW<Cr2Spec> {
         RtoenW::new(self, 23)
     }
     #[doc = "Bits 24:27 - Address of the USART node"]
     #[inline(always)]
-    #[must_use]
     pub fn add0_3(&mut self) -> Add0_3W<Cr2Spec> {
         Add0_3W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Address of the USART node"]
     #[inline(always)]
-    #[must_use]
     pub fn add4_7(&mut self) -> Add4_7W<Cr2Spec> {
         Add4_7W::new(self, 28)
     }

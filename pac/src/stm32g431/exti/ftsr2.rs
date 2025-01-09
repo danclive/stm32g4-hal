@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 3 - Falling trigger event configuration bit of line 35"]
     #[inline(always)]
-    #[must_use]
     pub fn ft35(&mut self) -> Ft35W<Ftsr2Spec> {
         Ft35W::new(self, 3)
     }
     #[doc = "Bit 4 - Falling trigger event configuration bit of line 36"]
     #[inline(always)]
-    #[must_use]
     pub fn ft36(&mut self) -> Ft36W<Ftsr2Spec> {
         Ft36W::new(self, 4)
     }
     #[doc = "Bit 5 - Falling trigger event configuration bit of line 37"]
     #[inline(always)]
-    #[must_use]
     pub fn ft37(&mut self) -> Ft37W<Ftsr2Spec> {
         Ft37W::new(self, 5)
     }
     #[doc = "Bit 6 - Falling trigger event configuration bit of line 38"]
     #[inline(always)]
-    #[must_use]
     pub fn ft38(&mut self) -> Ft38W<Ftsr2Spec> {
         Ft38W::new(self, 6)
     }

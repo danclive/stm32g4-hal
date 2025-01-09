@@ -113,61 +113,51 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 11 - TIM1 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim1_stop(&mut self) -> DbgTim1StopW<Apb2FzSpec> {
         DbgTim1StopW::new(self, 11)
     }
     #[doc = "Bit 13 - TIM8 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim8_stop(&mut self) -> DbgTim8StopW<Apb2FzSpec> {
         DbgTim8StopW::new(self, 13)
     }
     #[doc = "Bit 16 - TIM15 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim15_stop(&mut self) -> DbgTim15StopW<Apb2FzSpec> {
         DbgTim15StopW::new(self, 16)
     }
     #[doc = "Bit 17 - TIM16 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim16_stop(&mut self) -> DbgTim16StopW<Apb2FzSpec> {
         DbgTim16StopW::new(self, 17)
     }
     #[doc = "Bit 18 - TIM17 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim17_stop(&mut self) -> DbgTim17StopW<Apb2FzSpec> {
         DbgTim17StopW::new(self, 18)
     }
     #[doc = "Bit 20 - TIM20counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim20_stop(&mut self) -> DbgTim20StopW<Apb2FzSpec> {
         DbgTim20StopW::new(self, 20)
     }
     #[doc = "Bit 26 - DBG_HRTIM0_STOP"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_hrtim0_stop(&mut self) -> DbgHrtim0StopW<Apb2FzSpec> {
         DbgHrtim0StopW::new(self, 26)
     }
     #[doc = "Bit 27 - DBG_HRTIM0_STOP"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_hrtim1_stop(&mut self) -> DbgHrtim1StopW<Apb2FzSpec> {
         DbgHrtim1StopW::new(self, 27)
     }
     #[doc = "Bit 28 - DBG_HRTIM0_STOP"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_hrtim2_stop(&mut self) -> DbgHrtim2StopW<Apb2FzSpec> {
         DbgHrtim2StopW::new(self, 28)
     }
     #[doc = "Bit 29 - DBG_HRTIM0_STOP"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_hrtim3_stop(&mut self) -> DbgHrtim3StopW<Apb2FzSpec> {
         DbgHrtim3StopW::new(self, 29)
     }

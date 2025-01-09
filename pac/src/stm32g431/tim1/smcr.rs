@@ -133,73 +133,61 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Slave mode selection"]
     #[inline(always)]
-    #[must_use]
     pub fn sms(&mut self) -> SmsW<SmcrSpec> {
         SmsW::new(self, 0)
     }
     #[doc = "Bit 3 - OCREF clear selection"]
     #[inline(always)]
-    #[must_use]
     pub fn occs(&mut self) -> OccsW<SmcrSpec> {
         OccsW::new(self, 3)
     }
     #[doc = "Bits 4:6 - Trigger selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ts(&mut self) -> TsW<SmcrSpec> {
         TsW::new(self, 4)
     }
     #[doc = "Bit 7 - Master/Slave mode"]
     #[inline(always)]
-    #[must_use]
     pub fn msm(&mut self) -> MsmW<SmcrSpec> {
         MsmW::new(self, 7)
     }
     #[doc = "Bits 8:11 - External trigger filter"]
     #[inline(always)]
-    #[must_use]
     pub fn etf(&mut self) -> EtfW<SmcrSpec> {
         EtfW::new(self, 8)
     }
     #[doc = "Bits 12:13 - External trigger prescaler"]
     #[inline(always)]
-    #[must_use]
     pub fn etps(&mut self) -> EtpsW<SmcrSpec> {
         EtpsW::new(self, 12)
     }
     #[doc = "Bit 14 - External clock enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ece(&mut self) -> EceW<SmcrSpec> {
         EceW::new(self, 14)
     }
     #[doc = "Bit 15 - External trigger polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn etp(&mut self) -> EtpW<SmcrSpec> {
         EtpW::new(self, 15)
     }
     #[doc = "Bit 16 - Slave mode selection - bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn sms_3(&mut self) -> Sms3W<SmcrSpec> {
         Sms3W::new(self, 16)
     }
     #[doc = "Bits 20:21 - Trigger selection - bit 4:3"]
     #[inline(always)]
-    #[must_use]
     pub fn ts_4_3(&mut self) -> Ts4_3W<SmcrSpec> {
         Ts4_3W::new(self, 20)
     }
     #[doc = "Bit 24 - SMS Preload Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn smspe(&mut self) -> SmspeW<SmcrSpec> {
         SmspeW::new(self, 24)
     }
     #[doc = "Bit 25 - SMS Preload Source"]
     #[inline(always)]
-    #[must_use]
     pub fn smsps(&mut self) -> SmspsW<SmcrSpec> {
         SmspsW::new(self, 25)
     }

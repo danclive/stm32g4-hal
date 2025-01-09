@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - Peripheral address"]
     #[inline(always)]
-    #[must_use]
     pub fn pa(&mut self) -> PaW<Cpar8Spec> {
         PaW::new(self, 0)
     }

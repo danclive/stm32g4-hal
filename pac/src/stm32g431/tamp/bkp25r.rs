@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - BKP"]
     #[inline(always)]
-    #[must_use]
     pub fn bkp(&mut self) -> BkpW<Bkp25rSpec> {
         BkpW::new(self, 0)
     }

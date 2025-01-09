@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - Prescaler value"]
     #[inline(always)]
-    #[must_use]
     pub fn psc(&mut self) -> PscW<PscSpec> {
         PscW::new(self, 0)
     }

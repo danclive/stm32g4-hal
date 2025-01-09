@@ -333,193 +333,161 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page0_wp(&mut self) -> Page0WpW<SwprSpec> {
         Page0WpW::new(self, 0)
     }
     #[doc = "Bit 1 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page1_wp(&mut self) -> Page1WpW<SwprSpec> {
         Page1WpW::new(self, 1)
     }
     #[doc = "Bit 2 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page2_wp(&mut self) -> Page2WpW<SwprSpec> {
         Page2WpW::new(self, 2)
     }
     #[doc = "Bit 3 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page3_wp(&mut self) -> Page3WpW<SwprSpec> {
         Page3WpW::new(self, 3)
     }
     #[doc = "Bit 4 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page4_wp(&mut self) -> Page4WpW<SwprSpec> {
         Page4WpW::new(self, 4)
     }
     #[doc = "Bit 5 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page5_wp(&mut self) -> Page5WpW<SwprSpec> {
         Page5WpW::new(self, 5)
     }
     #[doc = "Bit 6 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page6_wp(&mut self) -> Page6WpW<SwprSpec> {
         Page6WpW::new(self, 6)
     }
     #[doc = "Bit 7 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page7_wp(&mut self) -> Page7WpW<SwprSpec> {
         Page7WpW::new(self, 7)
     }
     #[doc = "Bit 8 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page8_wp(&mut self) -> Page8WpW<SwprSpec> {
         Page8WpW::new(self, 8)
     }
     #[doc = "Bit 9 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page9_wp(&mut self) -> Page9WpW<SwprSpec> {
         Page9WpW::new(self, 9)
     }
     #[doc = "Bit 10 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page10_wp(&mut self) -> Page10WpW<SwprSpec> {
         Page10WpW::new(self, 10)
     }
     #[doc = "Bit 11 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page11_wp(&mut self) -> Page11WpW<SwprSpec> {
         Page11WpW::new(self, 11)
     }
     #[doc = "Bit 12 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page12_wp(&mut self) -> Page12WpW<SwprSpec> {
         Page12WpW::new(self, 12)
     }
     #[doc = "Bit 13 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page13_wp(&mut self) -> Page13WpW<SwprSpec> {
         Page13WpW::new(self, 13)
     }
     #[doc = "Bit 14 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page14_wp(&mut self) -> Page14WpW<SwprSpec> {
         Page14WpW::new(self, 14)
     }
     #[doc = "Bit 15 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page15_wp(&mut self) -> Page15WpW<SwprSpec> {
         Page15WpW::new(self, 15)
     }
     #[doc = "Bit 16 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page16_wp(&mut self) -> Page16WpW<SwprSpec> {
         Page16WpW::new(self, 16)
     }
     #[doc = "Bit 17 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page17_wp(&mut self) -> Page17WpW<SwprSpec> {
         Page17WpW::new(self, 17)
     }
     #[doc = "Bit 18 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page18_wp(&mut self) -> Page18WpW<SwprSpec> {
         Page18WpW::new(self, 18)
     }
     #[doc = "Bit 19 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page19_wp(&mut self) -> Page19WpW<SwprSpec> {
         Page19WpW::new(self, 19)
     }
     #[doc = "Bit 20 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page20_wp(&mut self) -> Page20WpW<SwprSpec> {
         Page20WpW::new(self, 20)
     }
     #[doc = "Bit 21 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page21_wp(&mut self) -> Page21WpW<SwprSpec> {
         Page21WpW::new(self, 21)
     }
     #[doc = "Bit 22 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page22_wp(&mut self) -> Page22WpW<SwprSpec> {
         Page22WpW::new(self, 22)
     }
     #[doc = "Bit 23 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page23_wp(&mut self) -> Page23WpW<SwprSpec> {
         Page23WpW::new(self, 23)
     }
     #[doc = "Bit 24 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page24_wp(&mut self) -> Page24WpW<SwprSpec> {
         Page24WpW::new(self, 24)
     }
     #[doc = "Bit 25 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page25_wp(&mut self) -> Page25WpW<SwprSpec> {
         Page25WpW::new(self, 25)
     }
     #[doc = "Bit 26 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page26_wp(&mut self) -> Page26WpW<SwprSpec> {
         Page26WpW::new(self, 26)
     }
     #[doc = "Bit 27 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page27_wp(&mut self) -> Page27WpW<SwprSpec> {
         Page27WpW::new(self, 27)
     }
     #[doc = "Bit 28 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page28_wp(&mut self) -> Page28WpW<SwprSpec> {
         Page28WpW::new(self, 28)
     }
     #[doc = "Bit 29 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page29_wp(&mut self) -> Page29WpW<SwprSpec> {
         Page29WpW::new(self, 29)
     }
     #[doc = "Bit 30 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page30_wp(&mut self) -> Page30WpW<SwprSpec> {
         Page30WpW::new(self, 30)
     }
     #[doc = "Bit 31 - Write protection"]
     #[inline(always)]
-    #[must_use]
     pub fn page31_wp(&mut self) -> Page31WpW<SwprSpec> {
         Page31WpW::new(self, 31)
     }

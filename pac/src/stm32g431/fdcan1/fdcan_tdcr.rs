@@ -47,7 +47,6 @@ impl W {
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn tdcf(&mut self) -> TdcfW<FdcanTdcrSpec> {
         TdcfW::new(self, 0)
     }
@@ -55,7 +54,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn tdco(&mut self) -> TdcoW<FdcanTdcrSpec> {
         TdcoW::new(self, 8)
     }

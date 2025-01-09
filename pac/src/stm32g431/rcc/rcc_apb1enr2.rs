@@ -193,19 +193,16 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Low power UART 1 clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn lpuart1en(&mut self) -> Lpuart1enW<RccApb1enr2Spec> {
         Lpuart1enW::new(self, 0)
     }
     #[doc = "Bit 1 - I2C4 clock enable Set and cleared by software"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c4en(&mut self) -> I2c4enW<RccApb1enr2Spec> {
         I2c4enW::new(self, 1)
     }
     #[doc = "Bit 8 - UCPD1 clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn ucpd1en(&mut self) -> Ucpd1enW<RccApb1enr2Spec> {
         Ucpd1enW::new(self, 8)
     }

@@ -93,49 +93,41 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - FIFO threshold"]
     #[inline(always)]
-    #[must_use]
     pub fn fth(&mut self) -> FthW<Bcr2Spec> {
         FthW::new(self, 0)
     }
     #[doc = "Bit 3 - FIFO flush"]
     #[inline(always)]
-    #[must_use]
     pub fn fflus(&mut self) -> FflusW<Bcr2Spec> {
         FflusW::new(self, 3)
     }
     #[doc = "Bit 4 - Tristate management on data line"]
     #[inline(always)]
-    #[must_use]
     pub fn tris(&mut self) -> TrisW<Bcr2Spec> {
         TrisW::new(self, 4)
     }
     #[doc = "Bit 5 - Mute"]
     #[inline(always)]
-    #[must_use]
     pub fn mute(&mut self) -> MuteW<Bcr2Spec> {
         MuteW::new(self, 5)
     }
     #[doc = "Bit 6 - Mute value"]
     #[inline(always)]
-    #[must_use]
     pub fn muteval(&mut self) -> MutevalW<Bcr2Spec> {
         MutevalW::new(self, 6)
     }
     #[doc = "Bits 7:12 - Mute counter"]
     #[inline(always)]
-    #[must_use]
     pub fn mutecn(&mut self) -> MutecnW<Bcr2Spec> {
         MutecnW::new(self, 7)
     }
     #[doc = "Bit 13 - Complement bit"]
     #[inline(always)]
-    #[must_use]
     pub fn cpl(&mut self) -> CplW<Bcr2Spec> {
         CplW::new(self, 13)
     }
     #[doc = "Bits 14:15 - Companding mode"]
     #[inline(always)]
-    #[must_use]
     pub fn comp(&mut self) -> CompW<Bcr2Spec> {
         CompW::new(self, 14)
     }

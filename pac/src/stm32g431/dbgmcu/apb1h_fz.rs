@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 1 - DBG_I2C4_STOP"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_i2c4_stop(&mut self) -> DbgI2c4StopW<Apb1hFzSpec> {
         DbgI2c4StopW::new(self, 1)
     }

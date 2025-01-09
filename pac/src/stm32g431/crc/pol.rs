@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - Programmable polynomial"]
     #[inline(always)]
-    #[must_use]
     pub fn pol(&mut self) -> PolW<PolSpec> {
         PolW::new(self, 0)
     }

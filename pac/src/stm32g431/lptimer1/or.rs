@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - IN1"]
     #[inline(always)]
-    #[must_use]
     pub fn in1(&mut self) -> In1W<OrSpec> {
         In1W::new(self, 0)
     }
     #[doc = "Bit 1 - IN2"]
     #[inline(always)]
-    #[must_use]
     pub fn in2(&mut self) -> In2W<OrSpec> {
         In2W::new(self, 1)
     }
     #[doc = "Bits 2:3 - IN1_2_1"]
     #[inline(always)]
-    #[must_use]
     pub fn in1_2_1(&mut self) -> In1_2_1W<OrSpec> {
         In1_2_1W::new(self, 2)
     }
     #[doc = "Bits 4:5 - IN2_2_1"]
     #[inline(always)]
-    #[must_use]
     pub fn in2_2_1(&mut self) -> In2_2_1W<OrSpec> {
         In2_2_1W::new(self, 4)
     }

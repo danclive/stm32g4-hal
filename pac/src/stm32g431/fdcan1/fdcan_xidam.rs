@@ -31,7 +31,6 @@ impl W {
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn eidm(&mut self) -> EidmW<FdcanXidamSpec> {
         EidmW::new(self, 0)
     }

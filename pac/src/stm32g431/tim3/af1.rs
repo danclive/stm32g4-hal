@@ -153,85 +153,71 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - BRK BKIN input enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bkine(&mut self) -> BkineW<Af1Spec> {
         BkineW::new(self, 0)
     }
     #[doc = "Bit 1 - BRK COMP1 enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp1e(&mut self) -> Bkcmp1eW<Af1Spec> {
         Bkcmp1eW::new(self, 1)
     }
     #[doc = "Bit 2 - BRK COMP2 enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp2e(&mut self) -> Bkcmp2eW<Af1Spec> {
         Bkcmp2eW::new(self, 2)
     }
     #[doc = "Bit 3 - BRK COMP3 enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp3e(&mut self) -> Bkcmp3eW<Af1Spec> {
         Bkcmp3eW::new(self, 3)
     }
     #[doc = "Bit 4 - BRK COMP4 enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp4e(&mut self) -> Bkcmp4eW<Af1Spec> {
         Bkcmp4eW::new(self, 4)
     }
     #[doc = "Bit 5 - BRK COMP5 enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp5e(&mut self) -> Bkcmp5eW<Af1Spec> {
         Bkcmp5eW::new(self, 5)
     }
     #[doc = "Bit 6 - BRK COMP6 enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp6e(&mut self) -> Bkcmp6eW<Af1Spec> {
         Bkcmp6eW::new(self, 6)
     }
     #[doc = "Bit 7 - BRK COMP7 enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp7e(&mut self) -> Bkcmp7eW<Af1Spec> {
         Bkcmp7eW::new(self, 7)
     }
     #[doc = "Bit 9 - BRK BKIN input polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn bkinp(&mut self) -> BkinpW<Af1Spec> {
         BkinpW::new(self, 9)
     }
     #[doc = "Bit 10 - BRK COMP1 input polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp1p(&mut self) -> Bkcmp1pW<Af1Spec> {
         Bkcmp1pW::new(self, 10)
     }
     #[doc = "Bit 11 - BRK COMP2 input polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp2p(&mut self) -> Bkcmp2pW<Af1Spec> {
         Bkcmp2pW::new(self, 11)
     }
     #[doc = "Bit 12 - BRK COMP3 input polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp3p(&mut self) -> Bkcmp3pW<Af1Spec> {
         Bkcmp3pW::new(self, 12)
     }
     #[doc = "Bit 13 - BRK COMP4 input polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn bkcmp4p(&mut self) -> Bkcmp4pW<Af1Spec> {
         Bkcmp4pW::new(self, 13)
     }
     #[doc = "Bits 14:17 - ETR source selection"]
     #[inline(always)]
-    #[must_use]
     pub fn etrsel(&mut self) -> EtrselW<Af1Spec> {
         EtrselW::new(self, 14)
     }

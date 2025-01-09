@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<RgcfrSpec> {
 impl W {
     #[doc = "Bits 0:3 - Clear trigger event overrun flag Upon setting, this bit clears the corresponding overrun flag OFx in the DMAMUX_RGCSR register."]
     #[inline(always)]
-    #[must_use]
     pub fn cof(&mut self) -> CofW<RgcfrSpec> {
         CofW::new(self, 0)
     }

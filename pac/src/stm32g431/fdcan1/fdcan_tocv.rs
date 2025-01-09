@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - Timeout counter"]
     #[inline(always)]
-    #[must_use]
     pub fn toc(&mut self) -> TocW<FdcanTocvSpec> {
         TocW::new(self, 0)
     }

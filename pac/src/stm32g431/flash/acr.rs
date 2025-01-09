@@ -103,55 +103,46 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - Latency"]
     #[inline(always)]
-    #[must_use]
     pub fn latency(&mut self) -> LatencyW<AcrSpec> {
         LatencyW::new(self, 0)
     }
     #[doc = "Bit 8 - Prefetch enable"]
     #[inline(always)]
-    #[must_use]
     pub fn prften(&mut self) -> PrftenW<AcrSpec> {
         PrftenW::new(self, 8)
     }
     #[doc = "Bit 9 - Instruction cache enable"]
     #[inline(always)]
-    #[must_use]
     pub fn icen(&mut self) -> IcenW<AcrSpec> {
         IcenW::new(self, 9)
     }
     #[doc = "Bit 10 - Data cache enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dcen(&mut self) -> DcenW<AcrSpec> {
         DcenW::new(self, 10)
     }
     #[doc = "Bit 11 - Instruction cache reset"]
     #[inline(always)]
-    #[must_use]
     pub fn icrst(&mut self) -> IcrstW<AcrSpec> {
         IcrstW::new(self, 11)
     }
     #[doc = "Bit 12 - Data cache reset"]
     #[inline(always)]
-    #[must_use]
     pub fn dcrst(&mut self) -> DcrstW<AcrSpec> {
         DcrstW::new(self, 12)
     }
     #[doc = "Bit 13 - Flash Power-down mode during Low-power run mode"]
     #[inline(always)]
-    #[must_use]
     pub fn run_pd(&mut self) -> RunPdW<AcrSpec> {
         RunPdW::new(self, 13)
     }
     #[doc = "Bit 14 - Flash Power-down mode during Low-power sleep mode"]
     #[inline(always)]
-    #[must_use]
     pub fn sleep_pd(&mut self) -> SleepPdW<AcrSpec> {
         SleepPdW::new(self, 14)
     }
     #[doc = "Bit 18 - Debug software enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_swen(&mut self) -> DbgSwenW<AcrSpec> {
         DbgSwenW::new(self, 18)
     }

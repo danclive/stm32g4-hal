@@ -113,61 +113,51 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Counter enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cen(&mut self) -> CenW<Cr1Spec> {
         CenW::new(self, 0)
     }
     #[doc = "Bit 1 - Update disable"]
     #[inline(always)]
-    #[must_use]
     pub fn udis(&mut self) -> UdisW<Cr1Spec> {
         UdisW::new(self, 1)
     }
     #[doc = "Bit 2 - Update request source"]
     #[inline(always)]
-    #[must_use]
     pub fn urs(&mut self) -> UrsW<Cr1Spec> {
         UrsW::new(self, 2)
     }
     #[doc = "Bit 3 - One-pulse mode"]
     #[inline(always)]
-    #[must_use]
     pub fn opm(&mut self) -> OpmW<Cr1Spec> {
         OpmW::new(self, 3)
     }
     #[doc = "Bit 4 - Direction"]
     #[inline(always)]
-    #[must_use]
     pub fn dir(&mut self) -> DirW<Cr1Spec> {
         DirW::new(self, 4)
     }
     #[doc = "Bits 5:6 - Center-aligned mode selection"]
     #[inline(always)]
-    #[must_use]
     pub fn cms(&mut self) -> CmsW<Cr1Spec> {
         CmsW::new(self, 5)
     }
     #[doc = "Bit 7 - Auto-reload preload enable"]
     #[inline(always)]
-    #[must_use]
     pub fn arpe(&mut self) -> ArpeW<Cr1Spec> {
         ArpeW::new(self, 7)
     }
     #[doc = "Bits 8:9 - Clock division"]
     #[inline(always)]
-    #[must_use]
     pub fn ckd(&mut self) -> CkdW<Cr1Spec> {
         CkdW::new(self, 8)
     }
     #[doc = "Bit 11 - UIF status bit remapping"]
     #[inline(always)]
-    #[must_use]
     pub fn uifremap(&mut self) -> UifremapW<Cr1Spec> {
         UifremapW::new(self, 11)
     }
     #[doc = "Bit 12 - Dithering Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dithen(&mut self) -> DithenW<Cr1Spec> {
         DithenW::new(self, 12)
     }

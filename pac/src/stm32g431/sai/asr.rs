@@ -93,49 +93,41 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Overrun / underrun"]
     #[inline(always)]
-    #[must_use]
     pub fn ovrudr(&mut self) -> OvrudrW<AsrSpec> {
         OvrudrW::new(self, 0)
     }
     #[doc = "Bit 1 - Mute detection"]
     #[inline(always)]
-    #[must_use]
     pub fn mutedet(&mut self) -> MutedetW<AsrSpec> {
         MutedetW::new(self, 1)
     }
     #[doc = "Bit 2 - Wrong clock configuration flag. This bit is read only"]
     #[inline(always)]
-    #[must_use]
     pub fn wckcfg(&mut self) -> WckcfgW<AsrSpec> {
         WckcfgW::new(self, 2)
     }
     #[doc = "Bit 3 - FIFO request"]
     #[inline(always)]
-    #[must_use]
     pub fn freq(&mut self) -> FreqW<AsrSpec> {
         FreqW::new(self, 3)
     }
     #[doc = "Bit 4 - Codec not ready"]
     #[inline(always)]
-    #[must_use]
     pub fn cnrdy(&mut self) -> CnrdyW<AsrSpec> {
         CnrdyW::new(self, 4)
     }
     #[doc = "Bit 5 - Anticipated frame synchronization detection"]
     #[inline(always)]
-    #[must_use]
     pub fn afsdet(&mut self) -> AfsdetW<AsrSpec> {
         AfsdetW::new(self, 5)
     }
     #[doc = "Bit 6 - Late frame synchronization detection"]
     #[inline(always)]
-    #[must_use]
     pub fn lfsdet(&mut self) -> LfsdetW<AsrSpec> {
         LfsdetW::new(self, 6)
     }
     #[doc = "Bits 16:18 - FIFO level threshold"]
     #[inline(always)]
-    #[must_use]
     pub fn flvl(&mut self) -> FlvlW<AsrSpec> {
         FlvlW::new(self, 16)
     }

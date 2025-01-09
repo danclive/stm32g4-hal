@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - CRC polynomial register"]
     #[inline(always)]
-    #[must_use]
     pub fn crcpoly(&mut self) -> CrcpolyW<CrcprSpec> {
         CrcpolyW::new(self, 0)
     }

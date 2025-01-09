@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<PdkeyrSpec> {
 impl W {
     #[doc = "Bits 0:31 - RUN_PD in FLASH_ACR key"]
     #[inline(always)]
-    #[must_use]
     pub fn pdkeyr(&mut self) -> PdkeyrW<PdkeyrSpec> {
         PdkeyrW::new(self, 0)
     }

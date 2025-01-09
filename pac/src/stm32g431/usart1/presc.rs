@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - PRESCALER"]
     #[inline(always)]
-    #[must_use]
     pub fn prescaler(&mut self) -> PrescalerW<PrescSpec> {
         PrescalerW::new(self, 0)
     }

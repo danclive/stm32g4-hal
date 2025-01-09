@@ -209,13 +209,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 4 - Loop back mode"]
     #[inline(always)]
-    #[must_use]
     pub fn lbck(&mut self) -> LbckW<FdcanTestSpec> {
         LbckW::new(self, 4)
     }
     #[doc = "Bits 5:6 - Control of transmit pin"]
     #[inline(always)]
-    #[must_use]
     pub fn tx(&mut self) -> TxW<FdcanTestSpec> {
         TxW::new(self, 5)
     }

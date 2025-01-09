@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - SCL low period (master mode)"]
     #[inline(always)]
-    #[must_use]
     pub fn scll(&mut self) -> ScllW<TimingrSpec> {
         ScllW::new(self, 0)
     }
     #[doc = "Bits 8:15 - SCL high period (master mode)"]
     #[inline(always)]
-    #[must_use]
     pub fn sclh(&mut self) -> SclhW<TimingrSpec> {
         SclhW::new(self, 8)
     }
     #[doc = "Bits 16:19 - Data hold time"]
     #[inline(always)]
-    #[must_use]
     pub fn sdadel(&mut self) -> SdadelW<TimingrSpec> {
         SdadelW::new(self, 16)
     }
     #[doc = "Bits 20:23 - Data setup time"]
     #[inline(always)]
-    #[must_use]
     pub fn scldel(&mut self) -> ScldelW<TimingrSpec> {
         ScldelW::new(self, 20)
     }
     #[doc = "Bits 28:31 - Timing prescaler"]
     #[inline(always)]
-    #[must_use]
     pub fn presc(&mut self) -> PrescW<TimingrSpec> {
         PrescW::new(self, 28)
     }

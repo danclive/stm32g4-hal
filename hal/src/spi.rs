@@ -832,7 +832,7 @@ macro_rules! spi_hal {
                 if flags.into().contains(Flag::CrcError) {
                     self.spi
                         .sr()
-                        .write(|w| unsafe { w.bits(0xffff).crcerr().clear_bit() })
+                        .write(|w| unsafe { w.bits(0xffff).crcerr().clear_bit() });
                 }
             }
 

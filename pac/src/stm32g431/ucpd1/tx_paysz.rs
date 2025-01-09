@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:9 - TXPAYSZ"]
     #[inline(always)]
-    #[must_use]
     pub fn txpaysz(&mut self) -> TxpayszW<TxPayszSpec> {
         TxpayszW::new(self, 0)
     }

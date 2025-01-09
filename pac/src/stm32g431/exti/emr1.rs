@@ -333,193 +333,161 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Event Mask on line 0"]
     #[inline(always)]
-    #[must_use]
     pub fn em0(&mut self) -> Em0W<Emr1Spec> {
         Em0W::new(self, 0)
     }
     #[doc = "Bit 1 - Event Mask on line 1"]
     #[inline(always)]
-    #[must_use]
     pub fn em1(&mut self) -> Em1W<Emr1Spec> {
         Em1W::new(self, 1)
     }
     #[doc = "Bit 2 - Event Mask on line 2"]
     #[inline(always)]
-    #[must_use]
     pub fn em2(&mut self) -> Em2W<Emr1Spec> {
         Em2W::new(self, 2)
     }
     #[doc = "Bit 3 - Event Mask on line 3"]
     #[inline(always)]
-    #[must_use]
     pub fn em3(&mut self) -> Em3W<Emr1Spec> {
         Em3W::new(self, 3)
     }
     #[doc = "Bit 4 - Event Mask on line 4"]
     #[inline(always)]
-    #[must_use]
     pub fn em4(&mut self) -> Em4W<Emr1Spec> {
         Em4W::new(self, 4)
     }
     #[doc = "Bit 5 - Event Mask on line 5"]
     #[inline(always)]
-    #[must_use]
     pub fn em5(&mut self) -> Em5W<Emr1Spec> {
         Em5W::new(self, 5)
     }
     #[doc = "Bit 6 - Event Mask on line 6"]
     #[inline(always)]
-    #[must_use]
     pub fn em6(&mut self) -> Em6W<Emr1Spec> {
         Em6W::new(self, 6)
     }
     #[doc = "Bit 7 - Event Mask on line 7"]
     #[inline(always)]
-    #[must_use]
     pub fn em7(&mut self) -> Em7W<Emr1Spec> {
         Em7W::new(self, 7)
     }
     #[doc = "Bit 8 - Event Mask on line 8"]
     #[inline(always)]
-    #[must_use]
     pub fn em8(&mut self) -> Em8W<Emr1Spec> {
         Em8W::new(self, 8)
     }
     #[doc = "Bit 9 - Event Mask on line 9"]
     #[inline(always)]
-    #[must_use]
     pub fn em9(&mut self) -> Em9W<Emr1Spec> {
         Em9W::new(self, 9)
     }
     #[doc = "Bit 10 - Event Mask on line 10"]
     #[inline(always)]
-    #[must_use]
     pub fn em10(&mut self) -> Em10W<Emr1Spec> {
         Em10W::new(self, 10)
     }
     #[doc = "Bit 11 - Event Mask on line 11"]
     #[inline(always)]
-    #[must_use]
     pub fn em11(&mut self) -> Em11W<Emr1Spec> {
         Em11W::new(self, 11)
     }
     #[doc = "Bit 12 - Event Mask on line 12"]
     #[inline(always)]
-    #[must_use]
     pub fn em12(&mut self) -> Em12W<Emr1Spec> {
         Em12W::new(self, 12)
     }
     #[doc = "Bit 13 - Event Mask on line 13"]
     #[inline(always)]
-    #[must_use]
     pub fn em13(&mut self) -> Em13W<Emr1Spec> {
         Em13W::new(self, 13)
     }
     #[doc = "Bit 14 - Event Mask on line 14"]
     #[inline(always)]
-    #[must_use]
     pub fn em14(&mut self) -> Em14W<Emr1Spec> {
         Em14W::new(self, 14)
     }
     #[doc = "Bit 15 - Event Mask on line 15"]
     #[inline(always)]
-    #[must_use]
     pub fn em15(&mut self) -> Em15W<Emr1Spec> {
         Em15W::new(self, 15)
     }
     #[doc = "Bit 16 - Event Mask on line 16"]
     #[inline(always)]
-    #[must_use]
     pub fn em16(&mut self) -> Em16W<Emr1Spec> {
         Em16W::new(self, 16)
     }
     #[doc = "Bit 17 - Event Mask on line 17"]
     #[inline(always)]
-    #[must_use]
     pub fn em17(&mut self) -> Em17W<Emr1Spec> {
         Em17W::new(self, 17)
     }
     #[doc = "Bit 18 - Event Mask on line 18"]
     #[inline(always)]
-    #[must_use]
     pub fn em18(&mut self) -> Em18W<Emr1Spec> {
         Em18W::new(self, 18)
     }
     #[doc = "Bit 19 - Event Mask on line 19"]
     #[inline(always)]
-    #[must_use]
     pub fn em19(&mut self) -> Em19W<Emr1Spec> {
         Em19W::new(self, 19)
     }
     #[doc = "Bit 20 - Event Mask on line 20"]
     #[inline(always)]
-    #[must_use]
     pub fn em20(&mut self) -> Em20W<Emr1Spec> {
         Em20W::new(self, 20)
     }
     #[doc = "Bit 21 - Event Mask on line 21"]
     #[inline(always)]
-    #[must_use]
     pub fn em21(&mut self) -> Em21W<Emr1Spec> {
         Em21W::new(self, 21)
     }
     #[doc = "Bit 22 - Event Mask on line 22"]
     #[inline(always)]
-    #[must_use]
     pub fn em22(&mut self) -> Em22W<Emr1Spec> {
         Em22W::new(self, 22)
     }
     #[doc = "Bit 23 - Event Mask on line 23"]
     #[inline(always)]
-    #[must_use]
     pub fn em23(&mut self) -> Em23W<Emr1Spec> {
         Em23W::new(self, 23)
     }
     #[doc = "Bit 24 - Event Mask on line 24"]
     #[inline(always)]
-    #[must_use]
     pub fn em24(&mut self) -> Em24W<Emr1Spec> {
         Em24W::new(self, 24)
     }
     #[doc = "Bit 25 - Event Mask on line 25"]
     #[inline(always)]
-    #[must_use]
     pub fn em25(&mut self) -> Em25W<Emr1Spec> {
         Em25W::new(self, 25)
     }
     #[doc = "Bit 26 - Event Mask on line 26"]
     #[inline(always)]
-    #[must_use]
     pub fn em26(&mut self) -> Em26W<Emr1Spec> {
         Em26W::new(self, 26)
     }
     #[doc = "Bit 27 - Event Mask on line 27"]
     #[inline(always)]
-    #[must_use]
     pub fn em27(&mut self) -> Em27W<Emr1Spec> {
         Em27W::new(self, 27)
     }
     #[doc = "Bit 28 - Event Mask on line 28"]
     #[inline(always)]
-    #[must_use]
     pub fn em28(&mut self) -> Em28W<Emr1Spec> {
         Em28W::new(self, 28)
     }
     #[doc = "Bit 29 - Event Mask on line 29"]
     #[inline(always)]
-    #[must_use]
     pub fn em29(&mut self) -> Em29W<Emr1Spec> {
         Em29W::new(self, 29)
     }
     #[doc = "Bit 30 - Event Mask on line 30"]
     #[inline(always)]
-    #[must_use]
     pub fn em30(&mut self) -> Em30W<Emr1Spec> {
         Em30W::new(self, 30)
     }
     #[doc = "Bit 31 - Event Mask on line 31"]
     #[inline(always)]
-    #[must_use]
     pub fn em31(&mut self) -> Em31W<Emr1Spec> {
         Em31W::new(self, 31)
     }

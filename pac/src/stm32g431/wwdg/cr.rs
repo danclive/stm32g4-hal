@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:6 - 7-bit counter (MSB to LSB)"]
     #[inline(always)]
-    #[must_use]
     pub fn t(&mut self) -> TW<CrSpec> {
         TW::new(self, 0)
     }
     #[doc = "Bit 7 - Activation bit"]
     #[inline(always)]
-    #[must_use]
     pub fn wdga(&mut self) -> WdgaW<CrSpec> {
         WdgaW::new(self, 7)
     }

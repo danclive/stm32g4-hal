@@ -433,43 +433,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - LSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSI oscillator stabilization."]
     #[inline(always)]
-    #[must_use]
     pub fn lsirdyie(&mut self) -> LsirdyieW<RccCierSpec> {
         LsirdyieW::new(self, 0)
     }
     #[doc = "Bit 1 - LSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSE oscillator stabilization."]
     #[inline(always)]
-    #[must_use]
     pub fn lserdyie(&mut self) -> LserdyieW<RccCierSpec> {
         LserdyieW::new(self, 1)
     }
     #[doc = "Bit 3 - HSI16 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization."]
     #[inline(always)]
-    #[must_use]
     pub fn hsirdyie(&mut self) -> HsirdyieW<RccCierSpec> {
         HsirdyieW::new(self, 3)
     }
     #[doc = "Bit 4 - HSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSE oscillator stabilization."]
     #[inline(always)]
-    #[must_use]
     pub fn hserdyie(&mut self) -> HserdyieW<RccCierSpec> {
         HserdyieW::new(self, 4)
     }
     #[doc = "Bit 5 - PLL ready interrupt enable Set and cleared by software to enable/disable interrupt caused by PLL lock."]
     #[inline(always)]
-    #[must_use]
     pub fn pllrdyie(&mut self) -> PllrdyieW<RccCierSpec> {
         PllrdyieW::new(self, 5)
     }
     #[doc = "Bit 9 - LSE clock security system interrupt enable Set and cleared by software to enable/disable interrupt caused by the clock security system on LSE."]
     #[inline(always)]
-    #[must_use]
     pub fn lsecssie(&mut self) -> LsecssieW<RccCierSpec> {
         LsecssieW::new(self, 9)
     }
     #[doc = "Bit 10 - HSI48 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the internal HSI48 oscillator."]
     #[inline(always)]
-    #[must_use]
     pub fn hsi48rdyie(&mut self) -> Hsi48rdyieW<RccCierSpec> {
         Hsi48rdyieW::new(self, 10)
     }

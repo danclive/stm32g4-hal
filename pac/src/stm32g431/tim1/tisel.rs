@@ -79,7 +79,6 @@ impl W {
 to TI1\\[15\\]
 input selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ti1sel(&mut self) -> Ti1selW<TiselSpec> {
         Ti1selW::new(self, 0)
     }
@@ -87,7 +86,6 @@ input selection"]
 to TI2\\[15\\]
 input selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ti2sel(&mut self) -> Ti2selW<TiselSpec> {
         Ti2selW::new(self, 8)
     }
@@ -95,7 +93,6 @@ input selection"]
 to TI3\\[15\\]
 input selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ti3sel(&mut self) -> Ti3selW<TiselSpec> {
         Ti3selW::new(self, 16)
     }
@@ -103,7 +100,6 @@ input selection"]
 to TI4\\[15\\]
 input selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ti4sel(&mut self) -> Ti4selW<TiselSpec> {
         Ti4selW::new(self, 24)
     }

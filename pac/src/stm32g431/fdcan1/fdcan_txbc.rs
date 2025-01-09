@@ -83,7 +83,6 @@ impl W {
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn tfqm(&mut self) -> TfqmW<FdcanTxbcSpec> {
         TfqmW::new(self, 24)
     }

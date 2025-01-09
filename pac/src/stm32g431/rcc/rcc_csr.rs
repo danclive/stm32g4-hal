@@ -477,13 +477,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - LSI oscillator enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn lsion(&mut self) -> LsionW<RccCsrSpec> {
         LsionW::new(self, 0)
     }
     #[doc = "Bit 23 - Remove reset flag Set by software to clear the reset flags."]
     #[inline(always)]
-    #[must_use]
     pub fn rmvf(&mut self) -> RmvfW<RccCsrSpec> {
         RmvfW::new(self, 23)
     }

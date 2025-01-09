@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 3:15 - BTABLE"]
     #[inline(always)]
-    #[must_use]
     pub fn btable(&mut self) -> BtableW<BtableSpec> {
         BtableW::new(self, 3)
     }

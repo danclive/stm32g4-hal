@@ -115,9 +115,9 @@ impl VosfR {
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pvdo {
-    #[doc = "0: V&lt;sub>DD&lt;/sub> is above the selected PVD threshold"]
+    #[doc = "0: V<sub>DD</sub> is above the selected PVD threshold"]
     B0x0 = 0,
-    #[doc = "1: V&lt;sub>DD&lt;/sub> is below the selected PVD threshold"]
+    #[doc = "1: V<sub>DD</sub> is below the selected PVD threshold"]
     B0x1 = 1,
 }
 impl From<Pvdo> for bool {
@@ -137,24 +137,24 @@ impl PvdoR {
             true => Pvdo::B0x1,
         }
     }
-    #[doc = "V&lt;sub>DD&lt;/sub> is above the selected PVD threshold"]
+    #[doc = "V<sub>DD</sub> is above the selected PVD threshold"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Pvdo::B0x0
     }
-    #[doc = "V&lt;sub>DD&lt;/sub> is below the selected PVD threshold"]
+    #[doc = "V<sub>DD</sub> is below the selected PVD threshold"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Pvdo::B0x1
     }
 }
-#[doc = "Peripheral voltage monitoring output: V&lt;sub>DDA&lt;/sub> vs. 1.62 V Note: PVMO1 is cleared when PVM1 is disabled (PVME = 0). After enabling PVM1, the PVM1 output is valid after the PVM1 wakeup time.\n\nValue on reset: 0"]
+#[doc = "Peripheral voltage monitoring output: V<sub>DDA</sub> vs. 1.62 V Note: PVMO1 is cleared when PVM1 is disabled (PVME = 0). After enabling PVM1, the PVM1 output is valid after the PVM1 wakeup time.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pvmo1 {
-    #[doc = "0: V&lt;sub>DDA&lt;/sub> voltage is above PVM1 threshold (around 1.62 V)."]
+    #[doc = "0: V<sub>DDA</sub> voltage is above PVM1 threshold (around 1.62 V)."]
     B0x0 = 0,
-    #[doc = "1: V&lt;sub>DDA&lt;/sub> voltage is below PVM1 threshold (around 1.62 V)."]
+    #[doc = "1: V<sub>DDA</sub> voltage is below PVM1 threshold (around 1.62 V)."]
     B0x1 = 1,
 }
 impl From<Pvmo1> for bool {
@@ -163,7 +163,7 @@ impl From<Pvmo1> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PVMO1` reader - Peripheral voltage monitoring output: V&lt;sub>DDA&lt;/sub> vs. 1.62 V Note: PVMO1 is cleared when PVM1 is disabled (PVME = 0). After enabling PVM1, the PVM1 output is valid after the PVM1 wakeup time."]
+#[doc = "Field `PVMO1` reader - Peripheral voltage monitoring output: V<sub>DDA</sub> vs. 1.62 V Note: PVMO1 is cleared when PVM1 is disabled (PVME = 0). After enabling PVM1, the PVM1 output is valid after the PVM1 wakeup time."]
 pub type Pvmo1R = crate::BitReader<Pvmo1>;
 impl Pvmo1R {
     #[doc = "Get enumerated values variant"]
@@ -174,24 +174,24 @@ impl Pvmo1R {
             true => Pvmo1::B0x1,
         }
     }
-    #[doc = "V&lt;sub>DDA&lt;/sub> voltage is above PVM1 threshold (around 1.62 V)."]
+    #[doc = "V<sub>DDA</sub> voltage is above PVM1 threshold (around 1.62 V)."]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Pvmo1::B0x0
     }
-    #[doc = "V&lt;sub>DDA&lt;/sub> voltage is below PVM1 threshold (around 1.62 V)."]
+    #[doc = "V<sub>DDA</sub> voltage is below PVM1 threshold (around 1.62 V)."]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Pvmo1::B0x1
     }
 }
-#[doc = "Peripheral voltage monitoring output: V&lt;sub>DDA&lt;/sub> vs. 1.8 V Note: PVMO2 is cleared when PVM2 is disabled (PVME = 0). After enabling PVM2, the PVM2 output is valid after the PVM2 wakeup time.\n\nValue on reset: 0"]
+#[doc = "Peripheral voltage monitoring output: V<sub>DDA</sub> vs. 1.8 V Note: PVMO2 is cleared when PVM2 is disabled (PVME = 0). After enabling PVM2, the PVM2 output is valid after the PVM2 wakeup time.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pvmo2 {
-    #[doc = "0: V&lt;sub>DDA&lt;/sub> voltage is above PVM2 threshold (around 1.8 V)."]
+    #[doc = "0: V<sub>DDA</sub> voltage is above PVM2 threshold (around 1.8 V)."]
     B0x0 = 0,
-    #[doc = "1: V&lt;sub>DDA&lt;/sub> voltage is below PVM2 threshold (around 1.8 V)."]
+    #[doc = "1: V<sub>DDA</sub> voltage is below PVM2 threshold (around 1.8 V)."]
     B0x1 = 1,
 }
 impl From<Pvmo2> for bool {
@@ -200,7 +200,7 @@ impl From<Pvmo2> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PVMO2` reader - Peripheral voltage monitoring output: V&lt;sub>DDA&lt;/sub> vs. 1.8 V Note: PVMO2 is cleared when PVM2 is disabled (PVME = 0). After enabling PVM2, the PVM2 output is valid after the PVM2 wakeup time."]
+#[doc = "Field `PVMO2` reader - Peripheral voltage monitoring output: V<sub>DDA</sub> vs. 1.8 V Note: PVMO2 is cleared when PVM2 is disabled (PVME = 0). After enabling PVM2, the PVM2 output is valid after the PVM2 wakeup time."]
 pub type Pvmo2R = crate::BitReader<Pvmo2>;
 impl Pvmo2R {
     #[doc = "Get enumerated values variant"]
@@ -211,12 +211,12 @@ impl Pvmo2R {
             true => Pvmo2::B0x1,
         }
     }
-    #[doc = "V&lt;sub>DDA&lt;/sub> voltage is above PVM2 threshold (around 1.8 V)."]
+    #[doc = "V<sub>DDA</sub> voltage is above PVM2 threshold (around 1.8 V)."]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Pvmo2::B0x0
     }
-    #[doc = "V&lt;sub>DDA&lt;/sub> voltage is below PVM2 threshold (around 1.8 V)."]
+    #[doc = "V<sub>DDA</sub> voltage is below PVM2 threshold (around 1.8 V)."]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Pvmo2::B0x1
@@ -243,12 +243,12 @@ impl R {
     pub fn pvdo(&self) -> PvdoR {
         PvdoR::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 14 - Peripheral voltage monitoring output: V&lt;sub>DDA&lt;/sub> vs. 1.62 V Note: PVMO1 is cleared when PVM1 is disabled (PVME = 0). After enabling PVM1, the PVM1 output is valid after the PVM1 wakeup time."]
+    #[doc = "Bit 14 - Peripheral voltage monitoring output: V<sub>DDA</sub> vs. 1.62 V Note: PVMO1 is cleared when PVM1 is disabled (PVME = 0). After enabling PVM1, the PVM1 output is valid after the PVM1 wakeup time."]
     #[inline(always)]
     pub fn pvmo1(&self) -> Pvmo1R {
         Pvmo1R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 15 - Peripheral voltage monitoring output: V&lt;sub>DDA&lt;/sub> vs. 1.8 V Note: PVMO2 is cleared when PVM2 is disabled (PVME = 0). After enabling PVM2, the PVM2 output is valid after the PVM2 wakeup time."]
+    #[doc = "Bit 15 - Peripheral voltage monitoring output: V<sub>DDA</sub> vs. 1.8 V Note: PVMO2 is cleared when PVM2 is disabled (PVME = 0). After enabling PVM2, the PVM2 output is valid after the PVM2 wakeup time."]
     #[inline(always)]
     pub fn pvmo2(&self) -> Pvmo2R {
         Pvmo2R::new(((self.bits >> 15) & 1) != 0)

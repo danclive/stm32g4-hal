@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:8 - Transmit data value"]
     #[inline(always)]
-    #[must_use]
     pub fn tdr(&mut self) -> TdrW<TdrSpec> {
         TdrW::new(self, 0)
     }

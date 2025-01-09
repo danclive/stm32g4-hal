@@ -16,7 +16,7 @@ pub type Dmaudr1R = crate::BitReader;
 pub type Dmaudr1W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CAL_FLAG1` reader - DAC Channel 1 calibration offset status This bit is set and cleared by hardware"]
 pub type CalFlag1R = crate::BitReader;
-#[doc = "Field `BWST1` reader - DAC Channel 1 busy writing sample time flag This bit is systematically set just after Sample &amp; Hold mode enable and is set each time the software writes the register DAC_SHSR1, It is cleared by hardware when the write operation of DAC_SHSR1 is complete. (It takes about 3LSI periods of synchronization)."]
+#[doc = "Field `BWST1` reader - DAC Channel 1 busy writing sample time flag This bit is systematically set just after Sample & Hold mode enable and is set each time the software writes the register DAC_SHSR1, It is cleared by hardware when the write operation of DAC_SHSR1 is complete. (It takes about 3LSI periods of synchronization)."]
 pub type Bwst1R = crate::BitReader;
 #[doc = "Field `DAC2RDY` reader - DAC channel 2 ready status bit"]
 pub type Dac2rdyR = crate::BitReader;
@@ -32,7 +32,7 @@ pub type Dmaudr2R = crate::BitReader;
 pub type Dmaudr2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CAL_FLAG2` reader - DAC Channel 2 calibration offset status This bit is set and cleared by hardware"]
 pub type CalFlag2R = crate::BitReader;
-#[doc = "Field `BWST2` reader - DAC Channel 2 busy writing sample time flag This bit is systematically set just after Sample &amp; Hold mode enable and is set each time the software writes the register DAC_SHSR2, It is cleared by hardware when the write operation of DAC_SHSR2 is complete. (It takes about 3 LSI periods of synchronization)."]
+#[doc = "Field `BWST2` reader - DAC Channel 2 busy writing sample time flag This bit is systematically set just after Sample & Hold mode enable and is set each time the software writes the register DAC_SHSR2, It is cleared by hardware when the write operation of DAC_SHSR2 is complete. (It takes about 3 LSI periods of synchronization)."]
 pub type Bwst2R = crate::BitReader;
 impl R {
     #[doc = "Bit 11 - DAC channel1 ready status bit"]
@@ -55,7 +55,7 @@ impl R {
     pub fn cal_flag1(&self) -> CalFlag1R {
         CalFlag1R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 15 - DAC Channel 1 busy writing sample time flag This bit is systematically set just after Sample &amp; Hold mode enable and is set each time the software writes the register DAC_SHSR1, It is cleared by hardware when the write operation of DAC_SHSR1 is complete. (It takes about 3LSI periods of synchronization)."]
+    #[doc = "Bit 15 - DAC Channel 1 busy writing sample time flag This bit is systematically set just after Sample & Hold mode enable and is set each time the software writes the register DAC_SHSR1, It is cleared by hardware when the write operation of DAC_SHSR1 is complete. (It takes about 3LSI periods of synchronization)."]
     #[inline(always)]
     pub fn bwst1(&self) -> Bwst1R {
         Bwst1R::new(((self.bits >> 15) & 1) != 0)
@@ -80,7 +80,7 @@ impl R {
     pub fn cal_flag2(&self) -> CalFlag2R {
         CalFlag2R::new(((self.bits >> 30) & 1) != 0)
     }
-    #[doc = "Bit 31 - DAC Channel 2 busy writing sample time flag This bit is systematically set just after Sample &amp; Hold mode enable and is set each time the software writes the register DAC_SHSR2, It is cleared by hardware when the write operation of DAC_SHSR2 is complete. (It takes about 3 LSI periods of synchronization)."]
+    #[doc = "Bit 31 - DAC Channel 2 busy writing sample time flag This bit is systematically set just after Sample & Hold mode enable and is set each time the software writes the register DAC_SHSR2, It is cleared by hardware when the write operation of DAC_SHSR2 is complete. (It takes about 3 LSI periods of synchronization)."]
     #[inline(always)]
     pub fn bwst2(&self) -> Bwst2R {
         Bwst2R::new(((self.bits >> 31) & 1) != 0)
@@ -105,37 +105,31 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 11 - DAC channel1 ready status bit"]
     #[inline(always)]
-    #[must_use]
     pub fn dac1rdy(&mut self) -> Dac1rdyW<DacSrSpec> {
         Dac1rdyW::new(self, 11)
     }
     #[doc = "Bit 12 - DAC channel1 output register status bit"]
     #[inline(always)]
-    #[must_use]
     pub fn dorstat1(&mut self) -> Dorstat1W<DacSrSpec> {
         Dorstat1W::new(self, 12)
     }
     #[doc = "Bit 13 - DAC channel1 DMA underrun flag This bit is set by hardware and cleared by software (by writing it to 1)."]
     #[inline(always)]
-    #[must_use]
     pub fn dmaudr1(&mut self) -> Dmaudr1W<DacSrSpec> {
         Dmaudr1W::new(self, 13)
     }
     #[doc = "Bit 27 - DAC channel 2 ready status bit"]
     #[inline(always)]
-    #[must_use]
     pub fn dac2rdy(&mut self) -> Dac2rdyW<DacSrSpec> {
         Dac2rdyW::new(self, 27)
     }
     #[doc = "Bit 28 - DAC channel 2 output register status bit"]
     #[inline(always)]
-    #[must_use]
     pub fn dorstat2(&mut self) -> Dorstat2W<DacSrSpec> {
         Dorstat2W::new(self, 28)
     }
     #[doc = "Bit 29 - DAC channel2 DMA underrun flag This bit is set by hardware and cleared by software (by writing it to 1)."]
     #[inline(always)]
-    #[must_use]
     pub fn dmaudr2(&mut self) -> Dmaudr2W<DacSrSpec> {
         Dmaudr2W::new(self, 29)
     }

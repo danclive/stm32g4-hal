@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - AES key"]
     #[inline(always)]
-    #[must_use]
     pub fn key(&mut self) -> KeyW<Keyr6Spec> {
         KeyW::new(self, 0)
     }

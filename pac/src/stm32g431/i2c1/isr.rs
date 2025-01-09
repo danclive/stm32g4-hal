@@ -153,13 +153,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Transmit data register empty (transmitters)"]
     #[inline(always)]
-    #[must_use]
     pub fn txe(&mut self) -> TxeW<IsrSpec> {
         TxeW::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit interrupt status (transmitters)"]
     #[inline(always)]
-    #[must_use]
     pub fn txis(&mut self) -> TxisW<IsrSpec> {
         TxisW::new(self, 1)
     }

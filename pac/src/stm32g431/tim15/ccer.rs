@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Capture/Compare 1 output enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1e(&mut self) -> Cc1eW<CcerSpec> {
         Cc1eW::new(self, 0)
     }
     #[doc = "Bit 1 - Capture/Compare 1 output Polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1p(&mut self) -> Cc1pW<CcerSpec> {
         Cc1pW::new(self, 1)
     }
     #[doc = "Bit 2 - Capture/Compare 1 complementary output enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1ne(&mut self) -> Cc1neW<CcerSpec> {
         Cc1neW::new(self, 2)
     }
     #[doc = "Bit 3 - Capture/Compare 1 output Polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1np(&mut self) -> Cc1npW<CcerSpec> {
         Cc1npW::new(self, 3)
     }
     #[doc = "Bit 4 - Capture/Compare 2 output enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc2e(&mut self) -> Cc2eW<CcerSpec> {
         Cc2eW::new(self, 4)
     }
     #[doc = "Bit 5 - Capture/Compare 2 output polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn cc2p(&mut self) -> Cc2pW<CcerSpec> {
         Cc2pW::new(self, 5)
     }
     #[doc = "Bit 7 - Capture/Compare 2 complementary output polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn cc2np(&mut self) -> Cc2npW<CcerSpec> {
         Cc2npW::new(self, 7)
     }

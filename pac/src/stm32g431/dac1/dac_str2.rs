@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:11 - DAC Channel 2 Sawtooth reset value"]
     #[inline(always)]
-    #[must_use]
     pub fn strstdata2(&mut self) -> Strstdata2W<DacStr2Spec> {
         Strstdata2W::new(self, 0)
     }
     #[doc = "Bit 12 - DAC Channel2 Sawtooth direction setting"]
     #[inline(always)]
-    #[must_use]
     pub fn stdir2(&mut self) -> Stdir2W<DacStr2Spec> {
         Stdir2W::new(self, 12)
     }
     #[doc = "Bits 16:31 - DAC CH2 Sawtooth increment value (12.4 bit format)"]
     #[inline(always)]
-    #[must_use]
     pub fn stincdata2(&mut self) -> Stincdata2W<DacStr2Spec> {
         Stincdata2W::new(self, 16)
     }

@@ -123,67 +123,56 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - ADRDY"]
     #[inline(always)]
-    #[must_use]
     pub fn adrdy(&mut self) -> AdrdyW<IsrSpec> {
         AdrdyW::new(self, 0)
     }
     #[doc = "Bit 1 - EOSMP"]
     #[inline(always)]
-    #[must_use]
     pub fn eosmp(&mut self) -> EosmpW<IsrSpec> {
         EosmpW::new(self, 1)
     }
     #[doc = "Bit 2 - EOC"]
     #[inline(always)]
-    #[must_use]
     pub fn eoc(&mut self) -> EocW<IsrSpec> {
         EocW::new(self, 2)
     }
     #[doc = "Bit 3 - EOS"]
     #[inline(always)]
-    #[must_use]
     pub fn eos(&mut self) -> EosW<IsrSpec> {
         EosW::new(self, 3)
     }
     #[doc = "Bit 4 - OVR"]
     #[inline(always)]
-    #[must_use]
     pub fn ovr(&mut self) -> OvrW<IsrSpec> {
         OvrW::new(self, 4)
     }
     #[doc = "Bit 5 - JEOC"]
     #[inline(always)]
-    #[must_use]
     pub fn jeoc(&mut self) -> JeocW<IsrSpec> {
         JeocW::new(self, 5)
     }
     #[doc = "Bit 6 - JEOS"]
     #[inline(always)]
-    #[must_use]
     pub fn jeos(&mut self) -> JeosW<IsrSpec> {
         JeosW::new(self, 6)
     }
     #[doc = "Bit 7 - AWD1"]
     #[inline(always)]
-    #[must_use]
     pub fn awd1(&mut self) -> Awd1W<IsrSpec> {
         Awd1W::new(self, 7)
     }
     #[doc = "Bit 8 - AWD2"]
     #[inline(always)]
-    #[must_use]
     pub fn awd2(&mut self) -> Awd2W<IsrSpec> {
         Awd2W::new(self, 8)
     }
     #[doc = "Bit 9 - AWD3"]
     #[inline(always)]
-    #[must_use]
     pub fn awd3(&mut self) -> Awd3W<IsrSpec> {
         Awd3W::new(self, 9)
     }
     #[doc = "Bit 10 - JQOVF"]
     #[inline(always)]
-    #[must_use]
     pub fn jqovf(&mut self) -> JqovfW<IsrSpec> {
         JqovfW::new(self, 10)
     }

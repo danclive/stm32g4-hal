@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:18 - AWD2CH"]
     #[inline(always)]
-    #[must_use]
     pub fn awd2ch(&mut self) -> Awd2chW<Awd2crSpec> {
         Awd2chW::new(self, 0)
     }

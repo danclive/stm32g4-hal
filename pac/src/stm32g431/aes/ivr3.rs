@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - Initialization Vector Register (MSB IVR \\[127:96\\])"]
     #[inline(always)]
-    #[must_use]
     pub fn aes_ivr3(&mut self) -> AesIvr3W<Ivr3Spec> {
         AesIvr3W::new(self, 0)
     }

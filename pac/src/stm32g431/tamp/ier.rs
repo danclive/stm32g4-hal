@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - TAMP1IE"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp1ie(&mut self) -> Tamp1ieW<IerSpec> {
         Tamp1ieW::new(self, 0)
     }
     #[doc = "Bit 1 - TAMP2IE"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp2ie(&mut self) -> Tamp2ieW<IerSpec> {
         Tamp2ieW::new(self, 1)
     }
     #[doc = "Bit 2 - TAMP3IE"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp3ie(&mut self) -> Tamp3ieW<IerSpec> {
         Tamp3ieW::new(self, 2)
     }
     #[doc = "Bit 18 - ITAMP3IE"]
     #[inline(always)]
-    #[must_use]
     pub fn itamp3ie(&mut self) -> Itamp3ieW<IerSpec> {
         Itamp3ieW::new(self, 18)
     }
     #[doc = "Bit 19 - ITAMP4IE"]
     #[inline(always)]
-    #[must_use]
     pub fn itamp4ie(&mut self) -> Itamp4ieW<IerSpec> {
         Itamp4ieW::new(self, 19)
     }
     #[doc = "Bit 20 - ITAMP5IE"]
     #[inline(always)]
-    #[must_use]
     pub fn itamp5ie(&mut self) -> Itamp5ieW<IerSpec> {
         Itamp5ieW::new(self, 20)
     }
     #[doc = "Bit 21 - ITAMP6IE"]
     #[inline(always)]
-    #[must_use]
     pub fn itamp6ie(&mut self) -> Itamp6ieW<IerSpec> {
         Itamp6ieW::new(self, 21)
     }

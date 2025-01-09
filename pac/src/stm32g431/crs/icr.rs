@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - SYNC event OK clear flag Writing 1 to this bit clears the SYNCOKF flag in the CRS_ISR register."]
     #[inline(always)]
-    #[must_use]
     pub fn syncokc(&mut self) -> SyncokcW<IcrSpec> {
         SyncokcW::new(self, 0)
     }
     #[doc = "Bit 1 - SYNC warning clear flag Writing 1 to this bit clears the SYNCWARNF flag in the CRS_ISR register."]
     #[inline(always)]
-    #[must_use]
     pub fn syncwarnc(&mut self) -> SyncwarncW<IcrSpec> {
         SyncwarncW::new(self, 1)
     }
     #[doc = "Bit 2 - Error clear flag Writing 1 to this bit clears TRIMOVF, SYNCMISS and SYNCERR bits and consequently also the ERRF flag in the CRS_ISR register."]
     #[inline(always)]
-    #[must_use]
     pub fn errc(&mut self) -> ErrcW<IcrSpec> {
         ErrcW::new(self, 2)
     }
     #[doc = "Bit 3 - Expected SYNC clear flag Writing 1 to this bit clears the ESYNCF flag in the CRS_ISR register."]
     #[inline(always)]
-    #[must_use]
     pub fn esyncc(&mut self) -> EsynccW<IcrSpec> {
         EsynccW::new(self, 3)
     }

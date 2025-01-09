@@ -26,55 +26,46 @@ impl core::fmt::Debug for crate::generic::Reg<IcrSpec> {
 impl W {
     #[doc = "Bit 3 - Address Matched flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn addrcf(&mut self) -> AddrcfW<IcrSpec> {
         AddrcfW::new(self, 3)
     }
     #[doc = "Bit 4 - Not Acknowledge flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn nackcf(&mut self) -> NackcfW<IcrSpec> {
         NackcfW::new(self, 4)
     }
     #[doc = "Bit 5 - Stop detection flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn stopcf(&mut self) -> StopcfW<IcrSpec> {
         StopcfW::new(self, 5)
     }
     #[doc = "Bit 8 - Bus error flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn berrcf(&mut self) -> BerrcfW<IcrSpec> {
         BerrcfW::new(self, 8)
     }
     #[doc = "Bit 9 - Arbitration lost flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn arlocf(&mut self) -> ArlocfW<IcrSpec> {
         ArlocfW::new(self, 9)
     }
     #[doc = "Bit 10 - Overrun/Underrun flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ovrcf(&mut self) -> OvrcfW<IcrSpec> {
         OvrcfW::new(self, 10)
     }
     #[doc = "Bit 11 - PEC Error flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn peccf(&mut self) -> PeccfW<IcrSpec> {
         PeccfW::new(self, 11)
     }
     #[doc = "Bit 12 - Timeout detection flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn timoutcf(&mut self) -> TimoutcfW<IcrSpec> {
         TimoutcfW::new(self, 12)
     }
     #[doc = "Bit 13 - Alert flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn alertcf(&mut self) -> AlertcfW<IcrSpec> {
         AlertcfW::new(self, 13)
     }

@@ -173,97 +173,81 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr0(&mut self) -> Pupdr0W<PupdrSpec> {
         Pupdr0W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr1(&mut self) -> Pupdr1W<PupdrSpec> {
         Pupdr1W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr2(&mut self) -> Pupdr2W<PupdrSpec> {
         Pupdr2W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr3(&mut self) -> Pupdr3W<PupdrSpec> {
         Pupdr3W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr4(&mut self) -> Pupdr4W<PupdrSpec> {
         Pupdr4W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr5(&mut self) -> Pupdr5W<PupdrSpec> {
         Pupdr5W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr6(&mut self) -> Pupdr6W<PupdrSpec> {
         Pupdr6W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr7(&mut self) -> Pupdr7W<PupdrSpec> {
         Pupdr7W::new(self, 14)
     }
     #[doc = "Bits 16:17 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr8(&mut self) -> Pupdr8W<PupdrSpec> {
         Pupdr8W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr9(&mut self) -> Pupdr9W<PupdrSpec> {
         Pupdr9W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr10(&mut self) -> Pupdr10W<PupdrSpec> {
         Pupdr10W::new(self, 20)
     }
     #[doc = "Bits 22:23 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr11(&mut self) -> Pupdr11W<PupdrSpec> {
         Pupdr11W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr12(&mut self) -> Pupdr12W<PupdrSpec> {
         Pupdr12W::new(self, 24)
     }
     #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr13(&mut self) -> Pupdr13W<PupdrSpec> {
         Pupdr13W::new(self, 26)
     }
     #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr14(&mut self) -> Pupdr14W<PupdrSpec> {
         Pupdr14W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn pupdr15(&mut self) -> Pupdr15W<PupdrSpec> {
         Pupdr15W::new(self, 30)
     }

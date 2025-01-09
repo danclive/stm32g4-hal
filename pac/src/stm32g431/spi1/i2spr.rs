@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - I2SDIV"]
     #[inline(always)]
-    #[must_use]
     pub fn i2sdiv(&mut self) -> I2sdivW<I2sprSpec> {
         I2sdivW::new(self, 0)
     }
     #[doc = "Bit 8 - ODD"]
     #[inline(always)]
-    #[must_use]
     pub fn odd(&mut self) -> OddW<I2sprSpec> {
         OddW::new(self, 8)
     }
     #[doc = "Bit 9 - MCKOE"]
     #[inline(always)]
-    #[must_use]
     pub fn mckoe(&mut self) -> MckoeW<I2sprSpec> {
         MckoeW::new(self, 9)
     }

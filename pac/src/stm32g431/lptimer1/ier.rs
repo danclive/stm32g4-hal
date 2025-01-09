@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Compare match Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmpmie(&mut self) -> CmpmieW<IerSpec> {
         CmpmieW::new(self, 0)
     }
     #[doc = "Bit 1 - Autoreload match Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn arrmie(&mut self) -> ArrmieW<IerSpec> {
         ArrmieW::new(self, 1)
     }
     #[doc = "Bit 2 - External trigger valid edge Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn exttrigie(&mut self) -> ExttrigieW<IerSpec> {
         ExttrigieW::new(self, 2)
     }
     #[doc = "Bit 3 - Compare register update OK Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmpokie(&mut self) -> CmpokieW<IerSpec> {
         CmpokieW::new(self, 3)
     }
     #[doc = "Bit 4 - Autoreload register update OK Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn arrokie(&mut self) -> ArrokieW<IerSpec> {
         ArrokieW::new(self, 4)
     }
     #[doc = "Bit 5 - Direction change to UP Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn upie(&mut self) -> UpieW<IerSpec> {
         UpieW::new(self, 5)
     }
     #[doc = "Bit 6 - Direction change to down Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn downie(&mut self) -> DownieW<IerSpec> {
         DownieW::new(self, 6)
     }

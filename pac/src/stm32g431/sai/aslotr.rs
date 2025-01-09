@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:4 - First bit offset"]
     #[inline(always)]
-    #[must_use]
     pub fn fboff(&mut self) -> FboffW<AslotrSpec> {
         FboffW::new(self, 0)
     }
     #[doc = "Bits 6:7 - Slot size"]
     #[inline(always)]
-    #[must_use]
     pub fn slotsz(&mut self) -> SlotszW<AslotrSpec> {
         SlotszW::new(self, 6)
     }
     #[doc = "Bits 8:11 - Number of slots in an audio frame"]
     #[inline(always)]
-    #[must_use]
     pub fn nbslot(&mut self) -> NbslotW<AslotrSpec> {
         NbslotW::new(self, 8)
     }
     #[doc = "Bits 16:31 - Slot enable"]
     #[inline(always)]
-    #[must_use]
     pub fn sloten(&mut self) -> SlotenW<AslotrSpec> {
         SlotenW::new(self, 16)
     }

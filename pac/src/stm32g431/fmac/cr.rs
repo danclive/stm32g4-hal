@@ -103,55 +103,46 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - RIEN"]
     #[inline(always)]
-    #[must_use]
     pub fn rien(&mut self) -> RienW<CrSpec> {
         RienW::new(self, 0)
     }
     #[doc = "Bit 1 - WIEN"]
     #[inline(always)]
-    #[must_use]
     pub fn wien(&mut self) -> WienW<CrSpec> {
         WienW::new(self, 1)
     }
     #[doc = "Bit 2 - OVFLIEN"]
     #[inline(always)]
-    #[must_use]
     pub fn ovflien(&mut self) -> OvflienW<CrSpec> {
         OvflienW::new(self, 2)
     }
     #[doc = "Bit 3 - UNFLIEN"]
     #[inline(always)]
-    #[must_use]
     pub fn unflien(&mut self) -> UnflienW<CrSpec> {
         UnflienW::new(self, 3)
     }
     #[doc = "Bit 4 - SATIEN"]
     #[inline(always)]
-    #[must_use]
     pub fn satien(&mut self) -> SatienW<CrSpec> {
         SatienW::new(self, 4)
     }
     #[doc = "Bit 8 - DMAREN"]
     #[inline(always)]
-    #[must_use]
     pub fn dmaren(&mut self) -> DmarenW<CrSpec> {
         DmarenW::new(self, 8)
     }
     #[doc = "Bit 9 - DMAWEN"]
     #[inline(always)]
-    #[must_use]
     pub fn dmawen(&mut self) -> DmawenW<CrSpec> {
         DmawenW::new(self, 9)
     }
     #[doc = "Bit 15 - CLIPEN"]
     #[inline(always)]
-    #[must_use]
     pub fn clipen(&mut self) -> ClipenW<CrSpec> {
         ClipenW::new(self, 15)
     }
     #[doc = "Bit 16 - RESET"]
     #[inline(always)]
-    #[must_use]
     pub fn reset(&mut self) -> ResetW<CrSpec> {
         ResetW::new(self, 16)
     }

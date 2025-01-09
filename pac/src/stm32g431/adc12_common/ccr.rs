@@ -103,55 +103,46 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:4 - Dual ADC mode selection"]
     #[inline(always)]
-    #[must_use]
     pub fn dual(&mut self) -> DualW<CcrSpec> {
         DualW::new(self, 0)
     }
     #[doc = "Bits 8:11 - Delay between 2 sampling phases"]
     #[inline(always)]
-    #[must_use]
     pub fn delay(&mut self) -> DelayW<CcrSpec> {
         DelayW::new(self, 8)
     }
     #[doc = "Bit 13 - DMA configuration (for multi-ADC mode)"]
     #[inline(always)]
-    #[must_use]
     pub fn dmacfg(&mut self) -> DmacfgW<CcrSpec> {
         DmacfgW::new(self, 13)
     }
     #[doc = "Bits 14:15 - Direct memory access mode for multi ADC mode"]
     #[inline(always)]
-    #[must_use]
     pub fn mdma(&mut self) -> MdmaW<CcrSpec> {
         MdmaW::new(self, 14)
     }
     #[doc = "Bits 16:17 - ADC clock mode"]
     #[inline(always)]
-    #[must_use]
     pub fn ckmode(&mut self) -> CkmodeW<CcrSpec> {
         CkmodeW::new(self, 16)
     }
     #[doc = "Bits 18:21 - ADC prescaler"]
     #[inline(always)]
-    #[must_use]
     pub fn presc(&mut self) -> PrescW<CcrSpec> {
         PrescW::new(self, 18)
     }
     #[doc = "Bit 22 - VREFINT enable"]
     #[inline(always)]
-    #[must_use]
     pub fn vrefen(&mut self) -> VrefenW<CcrSpec> {
         VrefenW::new(self, 22)
     }
     #[doc = "Bit 23 - VTS selection"]
     #[inline(always)]
-    #[must_use]
     pub fn vsensesel(&mut self) -> VsenseselW<CcrSpec> {
         VsenseselW::new(self, 23)
     }
     #[doc = "Bit 24 - VBAT selection"]
     #[inline(always)]
-    #[must_use]
     pub fn vbatsel(&mut self) -> VbatselW<CcrSpec> {
         VbatselW::new(self, 24)
     }

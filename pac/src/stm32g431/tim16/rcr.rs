@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - Repetition counter value"]
     #[inline(always)]
-    #[must_use]
     pub fn rep(&mut self) -> RepW<RcrSpec> {
         RepW::new(self, 0)
     }

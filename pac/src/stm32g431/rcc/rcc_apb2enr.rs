@@ -733,73 +733,61 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - SYSCFG + COMP + VREFBUF + OPAMP clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn syscfgen(&mut self) -> SyscfgenW<RccApb2enrSpec> {
         SyscfgenW::new(self, 0)
     }
     #[doc = "Bit 11 - TIM1 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn tim1en(&mut self) -> Tim1enW<RccApb2enrSpec> {
         Tim1enW::new(self, 11)
     }
     #[doc = "Bit 12 - SPI1 clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn spi1en(&mut self) -> Spi1enW<RccApb2enrSpec> {
         Spi1enW::new(self, 12)
     }
     #[doc = "Bit 13 - TIM8 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn tim8en(&mut self) -> Tim8enW<RccApb2enrSpec> {
         Tim8enW::new(self, 13)
     }
     #[doc = "Bit 14 - USART1clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn usart1en(&mut self) -> Usart1enW<RccApb2enrSpec> {
         Usart1enW::new(self, 14)
     }
     #[doc = "Bit 15 - SPI4 clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn spi4en(&mut self) -> Spi4enW<RccApb2enrSpec> {
         Spi4enW::new(self, 15)
     }
     #[doc = "Bit 16 - TIM15 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn tim15en(&mut self) -> Tim15enW<RccApb2enrSpec> {
         Tim15enW::new(self, 16)
     }
     #[doc = "Bit 17 - TIM16 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn tim16en(&mut self) -> Tim16enW<RccApb2enrSpec> {
         Tim16enW::new(self, 17)
     }
     #[doc = "Bit 18 - TIM17 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn tim17en(&mut self) -> Tim17enW<RccApb2enrSpec> {
         Tim17enW::new(self, 18)
     }
     #[doc = "Bit 20 - TIM20 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn tim20en(&mut self) -> Tim20enW<RccApb2enrSpec> {
         Tim20enW::new(self, 20)
     }
     #[doc = "Bit 21 - SAI1 clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn sai1en(&mut self) -> Sai1enW<RccApb2enrSpec> {
         Sai1enW::new(self, 21)
     }
     #[doc = "Bit 26 - HRTIM1 clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn hrtim1en(&mut self) -> Hrtim1enW<RccApb2enrSpec> {
         Hrtim1enW::new(self, 26)
     }

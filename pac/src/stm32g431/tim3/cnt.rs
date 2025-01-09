@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - counter value"]
     #[inline(always)]
-    #[must_use]
     pub fn cnt(&mut self) -> CntW<CntSpec> {
         CntW::new(self, 0)
     }
     #[doc = "Bit 31 - UIFCPY"]
     #[inline(always)]
-    #[must_use]
     pub fn uifcpy(&mut self) -> UifcpyW<CntSpec> {
         UifcpyW::new(self, 31)
     }

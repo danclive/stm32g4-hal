@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:11 - Watchdog counter window value"]
     #[inline(always)]
-    #[must_use]
     pub fn win(&mut self) -> WinW<WinrSpec> {
         WinW::new(self, 0)
     }

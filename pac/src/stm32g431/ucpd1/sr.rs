@@ -193,109 +193,91 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - TXIS"]
     #[inline(always)]
-    #[must_use]
     pub fn txis(&mut self) -> TxisW<SrSpec> {
         TxisW::new(self, 0)
     }
     #[doc = "Bit 1 - TXMSGDISC"]
     #[inline(always)]
-    #[must_use]
     pub fn txmsgdisc(&mut self) -> TxmsgdiscW<SrSpec> {
         TxmsgdiscW::new(self, 1)
     }
     #[doc = "Bit 2 - TXMSGSENT"]
     #[inline(always)]
-    #[must_use]
     pub fn txmsgsent(&mut self) -> TxmsgsentW<SrSpec> {
         TxmsgsentW::new(self, 2)
     }
     #[doc = "Bit 3 - TXMSGABT"]
     #[inline(always)]
-    #[must_use]
     pub fn txmsgabt(&mut self) -> TxmsgabtW<SrSpec> {
         TxmsgabtW::new(self, 3)
     }
     #[doc = "Bit 4 - HRSTDISC"]
     #[inline(always)]
-    #[must_use]
     pub fn hrstdisc(&mut self) -> HrstdiscW<SrSpec> {
         HrstdiscW::new(self, 4)
     }
     #[doc = "Bit 5 - HRSTSENT"]
     #[inline(always)]
-    #[must_use]
     pub fn hrstsent(&mut self) -> HrstsentW<SrSpec> {
         HrstsentW::new(self, 5)
     }
     #[doc = "Bit 6 - TXUND"]
     #[inline(always)]
-    #[must_use]
     pub fn txund(&mut self) -> TxundW<SrSpec> {
         TxundW::new(self, 6)
     }
     #[doc = "Bit 8 - RXNE"]
     #[inline(always)]
-    #[must_use]
     pub fn rxne(&mut self) -> RxneW<SrSpec> {
         RxneW::new(self, 8)
     }
     #[doc = "Bit 9 - RXORDDET"]
     #[inline(always)]
-    #[must_use]
     pub fn rxorddet(&mut self) -> RxorddetW<SrSpec> {
         RxorddetW::new(self, 9)
     }
     #[doc = "Bit 10 - RXHRSTDET"]
     #[inline(always)]
-    #[must_use]
     pub fn rxhrstdet(&mut self) -> RxhrstdetW<SrSpec> {
         RxhrstdetW::new(self, 10)
     }
     #[doc = "Bit 11 - RXOVR"]
     #[inline(always)]
-    #[must_use]
     pub fn rxovr(&mut self) -> RxovrW<SrSpec> {
         RxovrW::new(self, 11)
     }
     #[doc = "Bit 12 - RXMSGEND"]
     #[inline(always)]
-    #[must_use]
     pub fn rxmsgend(&mut self) -> RxmsgendW<SrSpec> {
         RxmsgendW::new(self, 12)
     }
     #[doc = "Bit 13 - RXERR"]
     #[inline(always)]
-    #[must_use]
     pub fn rxerr(&mut self) -> RxerrW<SrSpec> {
         RxerrW::new(self, 13)
     }
     #[doc = "Bit 14 - TYPECEVT1"]
     #[inline(always)]
-    #[must_use]
     pub fn typecevt1(&mut self) -> Typecevt1W<SrSpec> {
         Typecevt1W::new(self, 14)
     }
     #[doc = "Bit 15 - TYPECEVT2"]
     #[inline(always)]
-    #[must_use]
     pub fn typecevt2(&mut self) -> Typecevt2W<SrSpec> {
         Typecevt2W::new(self, 15)
     }
     #[doc = "Bits 16:17 - TYPEC_VSTATE_CC1"]
     #[inline(always)]
-    #[must_use]
     pub fn typec_vstate_cc1(&mut self) -> TypecVstateCc1W<SrSpec> {
         TypecVstateCc1W::new(self, 16)
     }
     #[doc = "Bits 18:19 - TYPEC_VSTATE_CC2"]
     #[inline(always)]
-    #[must_use]
     pub fn typec_vstate_cc2(&mut self) -> TypecVstateCc2W<SrSpec> {
         TypecVstateCc2W::new(self, 18)
     }
     #[doc = "Bit 20 - FRSEVT"]
     #[inline(always)]
-    #[must_use]
     pub fn frsevt(&mut self) -> FrsevtW<SrSpec> {
         FrsevtW::new(self, 20)
     }

@@ -20,37 +20,31 @@ impl core::fmt::Debug for crate::generic::Reg<PwrScrSpec> {
 impl W {
     #[doc = "Bit 0 - Clear wakeup flag 1 Setting this bit clears the WUF1 flag in the PWR_SR1 register."]
     #[inline(always)]
-    #[must_use]
     pub fn cwuf1(&mut self) -> Cwuf1W<PwrScrSpec> {
         Cwuf1W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear wakeup flag 2 Setting this bit clears the WUF2 flag in the PWR_SR1 register."]
     #[inline(always)]
-    #[must_use]
     pub fn cwuf2(&mut self) -> Cwuf2W<PwrScrSpec> {
         Cwuf2W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear wakeup flag 3 Setting this bit clears the WUF3 flag in the PWR_SR1 register."]
     #[inline(always)]
-    #[must_use]
     pub fn cwuf3(&mut self) -> Cwuf3W<PwrScrSpec> {
         Cwuf3W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear wakeup flag 4 Setting this bit clears the WUF4 flag in the PWR_SR1 register."]
     #[inline(always)]
-    #[must_use]
     pub fn cwuf4(&mut self) -> Cwuf4W<PwrScrSpec> {
         Cwuf4W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear wakeup flag 5 Setting this bit clears the WUF5 flag in the PWR_SR1 register."]
     #[inline(always)]
-    #[must_use]
     pub fn cwuf5(&mut self) -> Cwuf5W<PwrScrSpec> {
         Cwuf5W::new(self, 4)
     }
     #[doc = "Bit 8 - Clear standby flag Setting this bit clears the SBF flag in the PWR_SR1 register."]
     #[inline(always)]
-    #[must_use]
     pub fn csbf(&mut self) -> CsbfW<PwrScrSpec> {
         CsbfW::new(self, 8)
     }

@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - LPTIM Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> EnableW<CrSpec> {
         EnableW::new(self, 0)
     }
     #[doc = "Bit 1 - LPTIM start in single mode"]
     #[inline(always)]
-    #[must_use]
     pub fn sngstrt(&mut self) -> SngstrtW<CrSpec> {
         SngstrtW::new(self, 1)
     }
     #[doc = "Bit 2 - Timer start in continuous mode"]
     #[inline(always)]
-    #[must_use]
     pub fn cntstrt(&mut self) -> CntstrtW<CrSpec> {
         CntstrtW::new(self, 2)
     }
     #[doc = "Bit 3 - COUNTRST"]
     #[inline(always)]
-    #[must_use]
     pub fn countrst(&mut self) -> CountrstW<CrSpec> {
         CountrstW::new(self, 3)
     }
     #[doc = "Bit 4 - RSTARE"]
     #[inline(always)]
-    #[must_use]
     pub fn rstare(&mut self) -> RstareW<CrSpec> {
         RstareW::new(self, 4)
     }

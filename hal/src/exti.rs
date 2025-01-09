@@ -63,10 +63,13 @@ impl ExtiExt for Exti {
 
         unsafe {
             match line {
-                0..=31 => self.imr1().modify(|r, w| w.bits(r.bits() | (1 << line))),
-                32..=37 | 40..=43 => self
-                    .imr2()
-                    .modify(|r, w| w.bits(r.bits() | (1 << (line - 32)))),
+                0..=31 => {
+                    self.imr1().modify(|r, w| w.bits(r.bits() | (1 << line)));
+                }
+                32..=37 | 40..=43 => {
+                    self.imr2()
+                        .modify(|r, w| w.bits(r.bits() | (1 << (line - 32))));
+                }
                 _ => {}
             }
         }

@@ -103,55 +103,46 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 4 - 7-bit Address Detection/4-bit Address Detection"]
     #[inline(always)]
-    #[must_use]
     pub fn addm7(&mut self) -> Addm7W<Cr2Spec> {
         Addm7W::new(self, 4)
     }
     #[doc = "Bits 12:13 - STOP bits"]
     #[inline(always)]
-    #[must_use]
     pub fn stop(&mut self) -> StopW<Cr2Spec> {
         StopW::new(self, 12)
     }
     #[doc = "Bit 15 - Swap TX/RX pins"]
     #[inline(always)]
-    #[must_use]
     pub fn swap(&mut self) -> SwapW<Cr2Spec> {
         SwapW::new(self, 15)
     }
     #[doc = "Bit 16 - RX pin active level inversion"]
     #[inline(always)]
-    #[must_use]
     pub fn rxinv(&mut self) -> RxinvW<Cr2Spec> {
         RxinvW::new(self, 16)
     }
     #[doc = "Bit 17 - TX pin active level inversion"]
     #[inline(always)]
-    #[must_use]
     pub fn txinv(&mut self) -> TxinvW<Cr2Spec> {
         TxinvW::new(self, 17)
     }
     #[doc = "Bit 18 - Binary data inversion"]
     #[inline(always)]
-    #[must_use]
     pub fn tainv(&mut self) -> TainvW<Cr2Spec> {
         TainvW::new(self, 18)
     }
     #[doc = "Bit 19 - Most significant bit first"]
     #[inline(always)]
-    #[must_use]
     pub fn msbfirst(&mut self) -> MsbfirstW<Cr2Spec> {
         MsbfirstW::new(self, 19)
     }
     #[doc = "Bits 24:27 - Address of the USART node"]
     #[inline(always)]
-    #[must_use]
     pub fn add0_3(&mut self) -> Add0_3W<Cr2Spec> {
         Add0_3W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Address of the USART node"]
     #[inline(always)]
-    #[must_use]
     pub fn add4_7(&mut self) -> Add4_7W<Cr2Spec> {
         Add4_7W::new(self, 28)
     }

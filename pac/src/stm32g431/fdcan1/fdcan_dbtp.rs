@@ -2,17 +2,17 @@
 pub type R = crate::R<FdcanDbtpSpec>;
 #[doc = "Register `FDCAN_DBTP` writer"]
 pub type W = crate::W<FdcanDbtpSpec>;
-#[doc = "Field `DSJW` reader - Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t&lt;sub>SJW&lt;/sub> = (DSJW + 1) x tq."]
+#[doc = "Field `DSJW` reader - Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t<sub>SJW</sub> = (DSJW + 1) x tq."]
 pub type DsjwR = crate::FieldReader;
-#[doc = "Field `DSJW` writer - Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t&lt;sub>SJW&lt;/sub> = (DSJW + 1) x tq."]
+#[doc = "Field `DSJW` writer - Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t<sub>SJW</sub> = (DSJW + 1) x tq."]
 pub type DsjwW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `DTSEG2` reader - Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t&lt;sub>BS2&lt;/sub> = (DTSEG2 + 1) x tq."]
+#[doc = "Field `DTSEG2` reader - Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS2</sub> = (DTSEG2 + 1) x tq."]
 pub type Dtseg2R = crate::FieldReader;
-#[doc = "Field `DTSEG2` writer - Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t&lt;sub>BS2&lt;/sub> = (DTSEG2 + 1) x tq."]
+#[doc = "Field `DTSEG2` writer - Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS2</sub> = (DTSEG2 + 1) x tq."]
 pub type Dtseg2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `DTSEG1` reader - Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t&lt;sub>BS1&lt;/sub> = (DTSEG1 + 1) x tq."]
+#[doc = "Field `DTSEG1` reader - Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS1</sub> = (DTSEG1 + 1) x tq."]
 pub type Dtseg1R = crate::FieldReader;
-#[doc = "Field `DTSEG1` writer - Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t&lt;sub>BS1&lt;/sub> = (DTSEG1 + 1) x tq."]
+#[doc = "Field `DTSEG1` writer - Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS1</sub> = (DTSEG1 + 1) x tq."]
 pub type Dtseg1W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `DBRP` reader - Data bit rate prescaler The value by which the oscillator frequency is divided to generate the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 31. The hardware interpreters this value as the value programmed plus 1."]
 pub type DbrpR = crate::FieldReader;
@@ -73,17 +73,17 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:3 - Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t&lt;sub>SJW&lt;/sub> = (DSJW + 1) x tq."]
+    #[doc = "Bits 0:3 - Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t<sub>SJW</sub> = (DSJW + 1) x tq."]
     #[inline(always)]
     pub fn dsjw(&self) -> DsjwR {
         DsjwR::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7 - Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t&lt;sub>BS2&lt;/sub> = (DTSEG2 + 1) x tq."]
+    #[doc = "Bits 4:7 - Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS2</sub> = (DTSEG2 + 1) x tq."]
     #[inline(always)]
     pub fn dtseg2(&self) -> Dtseg2R {
         Dtseg2R::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:12 - Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t&lt;sub>BS1&lt;/sub> = (DTSEG1 + 1) x tq."]
+    #[doc = "Bits 8:12 - Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS1</sub> = (DTSEG1 + 1) x tq."]
     #[inline(always)]
     pub fn dtseg1(&self) -> Dtseg1R {
         Dtseg1R::new(((self.bits >> 8) & 0x1f) as u8)
@@ -111,33 +111,28 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t&lt;sub>SJW&lt;/sub> = (DSJW + 1) x tq."]
+    #[doc = "Bits 0:3 - Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t<sub>SJW</sub> = (DSJW + 1) x tq."]
     #[inline(always)]
-    #[must_use]
     pub fn dsjw(&mut self) -> DsjwW<FdcanDbtpSpec> {
         DsjwW::new(self, 0)
     }
-    #[doc = "Bits 4:7 - Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t&lt;sub>BS2&lt;/sub> = (DTSEG2 + 1) x tq."]
+    #[doc = "Bits 4:7 - Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS2</sub> = (DTSEG2 + 1) x tq."]
     #[inline(always)]
-    #[must_use]
     pub fn dtseg2(&mut self) -> Dtseg2W<FdcanDbtpSpec> {
         Dtseg2W::new(self, 4)
     }
-    #[doc = "Bits 8:12 - Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t&lt;sub>BS1&lt;/sub> = (DTSEG1 + 1) x tq."]
+    #[doc = "Bits 8:12 - Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS1</sub> = (DTSEG1 + 1) x tq."]
     #[inline(always)]
-    #[must_use]
     pub fn dtseg1(&mut self) -> Dtseg1W<FdcanDbtpSpec> {
         Dtseg1W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Data bit rate prescaler The value by which the oscillator frequency is divided to generate the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 31. The hardware interpreters this value as the value programmed plus 1."]
     #[inline(always)]
-    #[must_use]
     pub fn dbrp(&mut self) -> DbrpW<FdcanDbtpSpec> {
         DbrpW::new(self, 16)
     }
     #[doc = "Bit 23 - Transceiver delay compensation"]
     #[inline(always)]
-    #[must_use]
     pub fn tdc(&mut self) -> TdcW<FdcanDbtpSpec> {
         TdcW::new(self, 23)
     }

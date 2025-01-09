@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - Date units in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn du(&mut self) -> DuW<DrSpec> {
         DuW::new(self, 0)
     }
     #[doc = "Bits 4:5 - Date tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn dt(&mut self) -> DtW<DrSpec> {
         DtW::new(self, 4)
     }
     #[doc = "Bits 8:11 - Month units in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn mu(&mut self) -> MuW<DrSpec> {
         MuW::new(self, 8)
     }
     #[doc = "Bit 12 - Month tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn mt(&mut self) -> MtW<DrSpec> {
         MtW::new(self, 12)
     }
     #[doc = "Bits 13:15 - Week day units"]
     #[inline(always)]
-    #[must_use]
     pub fn wdu(&mut self) -> WduW<DrSpec> {
         WduW::new(self, 13)
     }
     #[doc = "Bits 16:19 - Year units in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn yu(&mut self) -> YuW<DrSpec> {
         YuW::new(self, 16)
     }
     #[doc = "Bits 20:23 - Year tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn yt(&mut self) -> YtW<DrSpec> {
         YtW::new(self, 20)
     }

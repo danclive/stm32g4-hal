@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Core Lockup Lock"]
     #[inline(always)]
-    #[must_use]
     pub fn cll(&mut self) -> CllW<Cfgr2Spec> {
         CllW::new(self, 0)
     }
     #[doc = "Bit 1 - SRAM Parity Lock"]
     #[inline(always)]
-    #[must_use]
     pub fn spl(&mut self) -> SplW<Cfgr2Spec> {
         SplW::new(self, 1)
     }
     #[doc = "Bit 2 - PVD Lock"]
     #[inline(always)]
-    #[must_use]
     pub fn pvdl(&mut self) -> PvdlW<Cfgr2Spec> {
         PvdlW::new(self, 2)
     }
     #[doc = "Bit 3 - ECC Lock"]
     #[inline(always)]
-    #[must_use]
     pub fn eccl(&mut self) -> EcclW<Cfgr2Spec> {
         EcclW::new(self, 3)
     }
     #[doc = "Bit 8 - SRAM Parity Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn spf(&mut self) -> SpfW<Cfgr2Spec> {
         SpfW::new(self, 8)
     }

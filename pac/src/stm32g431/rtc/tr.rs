@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - Second units in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn su(&mut self) -> SuW<TrSpec> {
         SuW::new(self, 0)
     }
     #[doc = "Bits 4:6 - Second tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn st(&mut self) -> StW<TrSpec> {
         StW::new(self, 4)
     }
     #[doc = "Bits 8:11 - Minute units in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn mnu(&mut self) -> MnuW<TrSpec> {
         MnuW::new(self, 8)
     }
     #[doc = "Bits 12:14 - Minute tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn mnt(&mut self) -> MntW<TrSpec> {
         MntW::new(self, 12)
     }
     #[doc = "Bits 16:19 - Hour units in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn hu(&mut self) -> HuW<TrSpec> {
         HuW::new(self, 16)
     }
     #[doc = "Bits 20:21 - Hour tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn ht(&mut self) -> HtW<TrSpec> {
         HtW::new(self, 20)
     }
     #[doc = "Bit 22 - AM/PM notation"]
     #[inline(always)]
-    #[must_use]
     pub fn pm(&mut self) -> PmW<TrSpec> {
         PmW::new(self, 22)
     }

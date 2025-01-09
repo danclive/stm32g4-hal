@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:19 - BRR"]
     #[inline(always)]
-    #[must_use]
     pub fn brr(&mut self) -> BrrW<BrrSpec> {
         BrrW::new(self, 0)
     }

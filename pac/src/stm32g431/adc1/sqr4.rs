@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:4 - SQ15"]
     #[inline(always)]
-    #[must_use]
     pub fn sq15(&mut self) -> Sq15W<Sqr4Spec> {
         Sq15W::new(self, 0)
     }
     #[doc = "Bits 6:10 - SQ16"]
     #[inline(always)]
-    #[must_use]
     pub fn sq16(&mut self) -> Sq16W<Sqr4Spec> {
         Sq16W::new(self, 6)
     }

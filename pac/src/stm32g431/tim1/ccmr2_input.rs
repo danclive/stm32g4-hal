@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Capture/compare 3 selection"]
     #[inline(always)]
-    #[must_use]
     pub fn cc3s(&mut self) -> Cc3sW<Ccmr2InputSpec> {
         Cc3sW::new(self, 0)
     }
     #[doc = "Bits 2:3 - Input capture 3 prescaler"]
     #[inline(always)]
-    #[must_use]
     pub fn ic3psc(&mut self) -> Ic3pscW<Ccmr2InputSpec> {
         Ic3pscW::new(self, 2)
     }
     #[doc = "Bits 4:7 - Input capture 3 filter"]
     #[inline(always)]
-    #[must_use]
     pub fn ic3f(&mut self) -> Ic3fW<Ccmr2InputSpec> {
         Ic3fW::new(self, 4)
     }
     #[doc = "Bits 8:9 - Capture/Compare 4 selection"]
     #[inline(always)]
-    #[must_use]
     pub fn cc4s(&mut self) -> Cc4sW<Ccmr2InputSpec> {
         Cc4sW::new(self, 8)
     }
     #[doc = "Bits 10:11 - Input capture 4 prescaler"]
     #[inline(always)]
-    #[must_use]
     pub fn ic4psc(&mut self) -> Ic4pscW<Ccmr2InputSpec> {
         Ic4pscW::new(self, 10)
     }
     #[doc = "Bits 12:15 - Input capture 4 filter"]
     #[inline(always)]
-    #[must_use]
     pub fn ic4f(&mut self) -> Ic4fW<Ccmr2InputSpec> {
         Ic4fW::new(self, 12)
     }

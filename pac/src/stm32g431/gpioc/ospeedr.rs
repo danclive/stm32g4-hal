@@ -173,97 +173,81 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr0(&mut self) -> Ospeedr0W<OspeedrSpec> {
         Ospeedr0W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr1(&mut self) -> Ospeedr1W<OspeedrSpec> {
         Ospeedr1W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr2(&mut self) -> Ospeedr2W<OspeedrSpec> {
         Ospeedr2W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr3(&mut self) -> Ospeedr3W<OspeedrSpec> {
         Ospeedr3W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr4(&mut self) -> Ospeedr4W<OspeedrSpec> {
         Ospeedr4W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr5(&mut self) -> Ospeedr5W<OspeedrSpec> {
         Ospeedr5W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr6(&mut self) -> Ospeedr6W<OspeedrSpec> {
         Ospeedr6W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr7(&mut self) -> Ospeedr7W<OspeedrSpec> {
         Ospeedr7W::new(self, 14)
     }
     #[doc = "Bits 16:17 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr8(&mut self) -> Ospeedr8W<OspeedrSpec> {
         Ospeedr8W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr9(&mut self) -> Ospeedr9W<OspeedrSpec> {
         Ospeedr9W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr10(&mut self) -> Ospeedr10W<OspeedrSpec> {
         Ospeedr10W::new(self, 20)
     }
     #[doc = "Bits 22:23 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr11(&mut self) -> Ospeedr11W<OspeedrSpec> {
         Ospeedr11W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr12(&mut self) -> Ospeedr12W<OspeedrSpec> {
         Ospeedr12W::new(self, 24)
     }
     #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr13(&mut self) -> Ospeedr13W<OspeedrSpec> {
         Ospeedr13W::new(self, 26)
     }
     #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr14(&mut self) -> Ospeedr14W<OspeedrSpec> {
         Ospeedr14W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn ospeedr15(&mut self) -> Ospeedr15W<OspeedrSpec> {
         Ospeedr15W::new(self, 30)
     }

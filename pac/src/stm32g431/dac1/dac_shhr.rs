@@ -2,21 +2,21 @@
 pub type R = crate::R<DacShhrSpec>;
 #[doc = "Register `DAC_SHHR` writer"]
 pub type W = crate::W<DacShhrSpec>;
-#[doc = "Field `THOLD1` reader - DAC Channel 1 hold Time (only valid in sample &amp;amp; hold mode) Hold time= (THOLD\\[9:0\\]) x T LSI"]
+#[doc = "Field `THOLD1` reader - DAC Channel 1 hold Time (only valid in sample &amp; hold mode) Hold time= (THOLD\\[9:0\\]) x T LSI"]
 pub type Thold1R = crate::FieldReader<u16>;
-#[doc = "Field `THOLD1` writer - DAC Channel 1 hold Time (only valid in sample &amp;amp; hold mode) Hold time= (THOLD\\[9:0\\]) x T LSI"]
+#[doc = "Field `THOLD1` writer - DAC Channel 1 hold Time (only valid in sample &amp; hold mode) Hold time= (THOLD\\[9:0\\]) x T LSI"]
 pub type Thold1W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-#[doc = "Field `THOLD2` reader - DAC Channel 2 hold time (only valid in sample &amp;amp; hold mode). Hold time= (THOLD\\[9:0\\]) x T LSI"]
+#[doc = "Field `THOLD2` reader - DAC Channel 2 hold time (only valid in sample &amp; hold mode). Hold time= (THOLD\\[9:0\\]) x T LSI"]
 pub type Thold2R = crate::FieldReader<u16>;
-#[doc = "Field `THOLD2` writer - DAC Channel 2 hold time (only valid in sample &amp;amp; hold mode). Hold time= (THOLD\\[9:0\\]) x T LSI"]
+#[doc = "Field `THOLD2` writer - DAC Channel 2 hold time (only valid in sample &amp; hold mode). Hold time= (THOLD\\[9:0\\]) x T LSI"]
 pub type Thold2W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
-    #[doc = "Bits 0:9 - DAC Channel 1 hold Time (only valid in sample &amp;amp; hold mode) Hold time= (THOLD\\[9:0\\]) x T LSI"]
+    #[doc = "Bits 0:9 - DAC Channel 1 hold Time (only valid in sample &amp; hold mode) Hold time= (THOLD\\[9:0\\]) x T LSI"]
     #[inline(always)]
     pub fn thold1(&self) -> Thold1R {
         Thold1R::new((self.bits & 0x03ff) as u16)
     }
-    #[doc = "Bits 16:25 - DAC Channel 2 hold time (only valid in sample &amp;amp; hold mode). Hold time= (THOLD\\[9:0\\]) x T LSI"]
+    #[doc = "Bits 16:25 - DAC Channel 2 hold time (only valid in sample &amp; hold mode). Hold time= (THOLD\\[9:0\\]) x T LSI"]
     #[inline(always)]
     pub fn thold2(&self) -> Thold2R {
         Thold2R::new(((self.bits >> 16) & 0x03ff) as u16)
@@ -31,15 +31,13 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - DAC Channel 1 hold Time (only valid in sample &amp;amp; hold mode) Hold time= (THOLD\\[9:0\\]) x T LSI"]
+    #[doc = "Bits 0:9 - DAC Channel 1 hold Time (only valid in sample &amp; hold mode) Hold time= (THOLD\\[9:0\\]) x T LSI"]
     #[inline(always)]
-    #[must_use]
     pub fn thold1(&mut self) -> Thold1W<DacShhrSpec> {
         Thold1W::new(self, 0)
     }
-    #[doc = "Bits 16:25 - DAC Channel 2 hold time (only valid in sample &amp;amp; hold mode). Hold time= (THOLD\\[9:0\\]) x T LSI"]
+    #[doc = "Bits 16:25 - DAC Channel 2 hold time (only valid in sample &amp; hold mode). Hold time= (THOLD\\[9:0\\]) x T LSI"]
     #[inline(always)]
-    #[must_use]
     pub fn thold2(&mut self) -> Thold2W<DacShhrSpec> {
         Thold2W::new(self, 16)
     }

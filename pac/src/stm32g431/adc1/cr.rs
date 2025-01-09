@@ -113,61 +113,51 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - ADEN"]
     #[inline(always)]
-    #[must_use]
     pub fn aden(&mut self) -> AdenW<CrSpec> {
         AdenW::new(self, 0)
     }
     #[doc = "Bit 1 - ADDIS"]
     #[inline(always)]
-    #[must_use]
     pub fn addis(&mut self) -> AddisW<CrSpec> {
         AddisW::new(self, 1)
     }
     #[doc = "Bit 2 - ADSTART"]
     #[inline(always)]
-    #[must_use]
     pub fn adstart(&mut self) -> AdstartW<CrSpec> {
         AdstartW::new(self, 2)
     }
     #[doc = "Bit 3 - JADSTART"]
     #[inline(always)]
-    #[must_use]
     pub fn jadstart(&mut self) -> JadstartW<CrSpec> {
         JadstartW::new(self, 3)
     }
     #[doc = "Bit 4 - ADSTP"]
     #[inline(always)]
-    #[must_use]
     pub fn adstp(&mut self) -> AdstpW<CrSpec> {
         AdstpW::new(self, 4)
     }
     #[doc = "Bit 5 - JADSTP"]
     #[inline(always)]
-    #[must_use]
     pub fn jadstp(&mut self) -> JadstpW<CrSpec> {
         JadstpW::new(self, 5)
     }
     #[doc = "Bit 28 - ADVREGEN"]
     #[inline(always)]
-    #[must_use]
     pub fn advregen(&mut self) -> AdvregenW<CrSpec> {
         AdvregenW::new(self, 28)
     }
     #[doc = "Bit 29 - DEEPPWD"]
     #[inline(always)]
-    #[must_use]
     pub fn deeppwd(&mut self) -> DeeppwdW<CrSpec> {
         DeeppwdW::new(self, 29)
     }
     #[doc = "Bit 30 - ADCALDIF"]
     #[inline(always)]
-    #[must_use]
     pub fn adcaldif(&mut self) -> AdcaldifW<CrSpec> {
         AdcaldifW::new(self, 30)
     }
     #[doc = "Bit 31 - ADCAL"]
     #[inline(always)]
-    #[must_use]
     pub fn adcal(&mut self) -> AdcalW<CrSpec> {
         AdcalW::new(self, 31)
     }

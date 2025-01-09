@@ -272,13 +272,13 @@ where
         self.variant(Wp5::B0x1)
     }
 }
-#[doc = "V&lt;sub>BAT&lt;/sub> battery charging enable\n\nValue on reset: 0"]
+#[doc = "V<sub>BAT</sub> battery charging enable\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vbe {
-    #[doc = "0: V&lt;sub>BAT&lt;/sub> battery charging disable"]
+    #[doc = "0: V<sub>BAT</sub> battery charging disable"]
     B0x0 = 0,
-    #[doc = "1: V&lt;sub>BAT&lt;/sub> battery charging enable"]
+    #[doc = "1: V<sub>BAT</sub> battery charging enable"]
     B0x1 = 1,
 }
 impl From<Vbe> for bool {
@@ -287,7 +287,7 @@ impl From<Vbe> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VBE` reader - V&lt;sub>BAT&lt;/sub> battery charging enable"]
+#[doc = "Field `VBE` reader - V<sub>BAT</sub> battery charging enable"]
 pub type VbeR = crate::BitReader<Vbe>;
 impl VbeR {
     #[doc = "Get enumerated values variant"]
@@ -298,41 +298,41 @@ impl VbeR {
             true => Vbe::B0x1,
         }
     }
-    #[doc = "V&lt;sub>BAT&lt;/sub> battery charging disable"]
+    #[doc = "V<sub>BAT</sub> battery charging disable"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Vbe::B0x0
     }
-    #[doc = "V&lt;sub>BAT&lt;/sub> battery charging enable"]
+    #[doc = "V<sub>BAT</sub> battery charging enable"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Vbe::B0x1
     }
 }
-#[doc = "Field `VBE` writer - V&lt;sub>BAT&lt;/sub> battery charging enable"]
+#[doc = "Field `VBE` writer - V<sub>BAT</sub> battery charging enable"]
 pub type VbeW<'a, REG> = crate::BitWriter<'a, REG, Vbe>;
 impl<'a, REG> VbeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "V&lt;sub>BAT&lt;/sub> battery charging disable"]
+    #[doc = "V<sub>BAT</sub> battery charging disable"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Vbe::B0x0)
     }
-    #[doc = "V&lt;sub>BAT&lt;/sub> battery charging enable"]
+    #[doc = "V<sub>BAT</sub> battery charging enable"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Vbe::B0x1)
     }
 }
-#[doc = "V&lt;sub>BAT&lt;/sub> battery charging resistor selection\n\nValue on reset: 0"]
+#[doc = "V<sub>BAT</sub> battery charging resistor selection\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vbrs {
-    #[doc = "0: Charge V&lt;sub>BAT&lt;/sub> through a 5 kOhms resistor"]
+    #[doc = "0: Charge V<sub>BAT</sub> through a 5 kOhms resistor"]
     B0x0 = 0,
-    #[doc = "1: Charge V&lt;sub>BAT&lt;/sub> through a 1.5 kOhms resistor"]
+    #[doc = "1: Charge V<sub>BAT</sub> through a 1.5 kOhms resistor"]
     B0x1 = 1,
 }
 impl From<Vbrs> for bool {
@@ -341,7 +341,7 @@ impl From<Vbrs> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VBRS` reader - V&lt;sub>BAT&lt;/sub> battery charging resistor selection"]
+#[doc = "Field `VBRS` reader - V<sub>BAT</sub> battery charging resistor selection"]
 pub type VbrsR = crate::BitReader<Vbrs>;
 impl VbrsR {
     #[doc = "Get enumerated values variant"]
@@ -352,29 +352,29 @@ impl VbrsR {
             true => Vbrs::B0x1,
         }
     }
-    #[doc = "Charge V&lt;sub>BAT&lt;/sub> through a 5 kOhms resistor"]
+    #[doc = "Charge V<sub>BAT</sub> through a 5 kOhms resistor"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Vbrs::B0x0
     }
-    #[doc = "Charge V&lt;sub>BAT&lt;/sub> through a 1.5 kOhms resistor"]
+    #[doc = "Charge V<sub>BAT</sub> through a 1.5 kOhms resistor"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Vbrs::B0x1
     }
 }
-#[doc = "Field `VBRS` writer - V&lt;sub>BAT&lt;/sub> battery charging resistor selection"]
+#[doc = "Field `VBRS` writer - V<sub>BAT</sub> battery charging resistor selection"]
 pub type VbrsW<'a, REG> = crate::BitWriter<'a, REG, Vbrs>;
 impl<'a, REG> VbrsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Charge V&lt;sub>BAT&lt;/sub> through a 5 kOhms resistor"]
+    #[doc = "Charge V<sub>BAT</sub> through a 5 kOhms resistor"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Vbrs::B0x0)
     }
-    #[doc = "Charge V&lt;sub>BAT&lt;/sub> through a 1.5 kOhms resistor"]
+    #[doc = "Charge V<sub>BAT</sub> through a 1.5 kOhms resistor"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Vbrs::B0x1)
@@ -406,12 +406,12 @@ impl R {
     pub fn wp5(&self) -> Wp5R {
         Wp5R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 8 - V&lt;sub>BAT&lt;/sub> battery charging enable"]
+    #[doc = "Bit 8 - V<sub>BAT</sub> battery charging enable"]
     #[inline(always)]
     pub fn vbe(&self) -> VbeR {
         VbeR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - V&lt;sub>BAT&lt;/sub> battery charging resistor selection"]
+    #[doc = "Bit 9 - V<sub>BAT</sub> battery charging resistor selection"]
     #[inline(always)]
     pub fn vbrs(&self) -> VbrsR {
         VbrsR::new(((self.bits >> 9) & 1) != 0)
@@ -433,43 +433,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Wakeup pin WKUP1 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP1"]
     #[inline(always)]
-    #[must_use]
     pub fn wp1(&mut self) -> Wp1W<PwrCr4Spec> {
         Wp1W::new(self, 0)
     }
     #[doc = "Bit 1 - Wakeup pin WKUP2 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP2"]
     #[inline(always)]
-    #[must_use]
     pub fn wp2(&mut self) -> Wp2W<PwrCr4Spec> {
         Wp2W::new(self, 1)
     }
     #[doc = "Bit 2 - Wakeup pin WKUP3 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP3"]
     #[inline(always)]
-    #[must_use]
     pub fn wp3(&mut self) -> Wp3W<PwrCr4Spec> {
         Wp3W::new(self, 2)
     }
     #[doc = "Bit 3 - Wakeup pin WKUP4 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP4"]
     #[inline(always)]
-    #[must_use]
     pub fn wp4(&mut self) -> Wp4W<PwrCr4Spec> {
         Wp4W::new(self, 3)
     }
     #[doc = "Bit 4 - Wakeup pin WKUP5 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP5"]
     #[inline(always)]
-    #[must_use]
     pub fn wp5(&mut self) -> Wp5W<PwrCr4Spec> {
         Wp5W::new(self, 4)
     }
-    #[doc = "Bit 8 - V&lt;sub>BAT&lt;/sub> battery charging enable"]
+    #[doc = "Bit 8 - V<sub>BAT</sub> battery charging enable"]
     #[inline(always)]
-    #[must_use]
     pub fn vbe(&mut self) -> VbeW<PwrCr4Spec> {
         VbeW::new(self, 8)
     }
-    #[doc = "Bit 9 - V&lt;sub>BAT&lt;/sub> battery charging resistor selection"]
+    #[doc = "Bit 9 - V<sub>BAT</sub> battery charging resistor selection"]
     #[inline(always)]
-    #[must_use]
     pub fn vbrs(&mut self) -> VbrsW<PwrCr4Spec> {
         VbrsW::new(self, 9)
     }

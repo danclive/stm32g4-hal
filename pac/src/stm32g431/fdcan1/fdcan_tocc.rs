@@ -198,7 +198,6 @@ impl W {
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn etoc(&mut self) -> EtocW<FdcanToccSpec> {
         EtocW::new(self, 0)
     }
@@ -207,13 +206,11 @@ and continues down-counting. When the timeout counter is controlled by one of th
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn tos(&mut self) -> TosW<FdcanToccSpec> {
         TosW::new(self, 1)
     }
     #[doc = "Bits 16:31 - Timeout period Start value of the timeout counter (down-counter). Configures the timeout period."]
     #[inline(always)]
-    #[must_use]
     pub fn top(&mut self) -> TopW<FdcanToccSpec> {
         TopW::new(self, 16)
     }

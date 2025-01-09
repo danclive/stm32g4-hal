@@ -133,73 +133,61 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - channel enable"]
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<Ccr7Spec> {
         EnW::new(self, 0)
     }
     #[doc = "Bit 1 - TCIE"]
     #[inline(always)]
-    #[must_use]
     pub fn tcie(&mut self) -> TcieW<Ccr7Spec> {
         TcieW::new(self, 1)
     }
     #[doc = "Bit 2 - HTIE"]
     #[inline(always)]
-    #[must_use]
     pub fn htie(&mut self) -> HtieW<Ccr7Spec> {
         HtieW::new(self, 2)
     }
     #[doc = "Bit 3 - TEIE"]
     #[inline(always)]
-    #[must_use]
     pub fn teie(&mut self) -> TeieW<Ccr7Spec> {
         TeieW::new(self, 3)
     }
     #[doc = "Bit 4 - DIR"]
     #[inline(always)]
-    #[must_use]
     pub fn dir(&mut self) -> DirW<Ccr7Spec> {
         DirW::new(self, 4)
     }
     #[doc = "Bit 5 - CIRC"]
     #[inline(always)]
-    #[must_use]
     pub fn circ(&mut self) -> CircW<Ccr7Spec> {
         CircW::new(self, 5)
     }
     #[doc = "Bit 6 - PINC"]
     #[inline(always)]
-    #[must_use]
     pub fn pinc(&mut self) -> PincW<Ccr7Spec> {
         PincW::new(self, 6)
     }
     #[doc = "Bit 7 - MINC"]
     #[inline(always)]
-    #[must_use]
     pub fn minc(&mut self) -> MincW<Ccr7Spec> {
         MincW::new(self, 7)
     }
     #[doc = "Bits 8:9 - PSIZE"]
     #[inline(always)]
-    #[must_use]
     pub fn psize(&mut self) -> PsizeW<Ccr7Spec> {
         PsizeW::new(self, 8)
     }
     #[doc = "Bits 10:11 - MSIZE"]
     #[inline(always)]
-    #[must_use]
     pub fn msize(&mut self) -> MsizeW<Ccr7Spec> {
         MsizeW::new(self, 10)
     }
     #[doc = "Bits 12:13 - PL"]
     #[inline(always)]
-    #[must_use]
     pub fn pl(&mut self) -> PlW<Ccr7Spec> {
         PlW::new(self, 12)
     }
     #[doc = "Bit 14 - MEM2MEM"]
     #[inline(always)]
-    #[must_use]
     pub fn mem2mem(&mut self) -> Mem2memW<Ccr7Spec> {
         Mem2memW::new(self, 14)
     }

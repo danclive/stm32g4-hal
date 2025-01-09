@@ -403,7 +403,7 @@ macro_rules! tim {
 
             #[inline(always)]
             unsafe fn set_auto_reload_unchecked(&mut self, arr: u32) {
-                self.arr().write(|w| w.bits(arr))
+                self.arr().write(|w| w.bits(arr));
             }
 
             #[inline(always)]

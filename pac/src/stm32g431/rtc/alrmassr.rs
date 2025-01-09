@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:14 - Sub seconds value"]
     #[inline(always)]
-    #[must_use]
     pub fn ss(&mut self) -> SsW<AlrmassrSpec> {
         SsW::new(self, 0)
     }
     #[doc = "Bits 24:27 - Mask the most-significant bits starting at this bit"]
     #[inline(always)]
-    #[must_use]
     pub fn maskss(&mut self) -> MaskssW<AlrmassrSpec> {
         MaskssW::new(self, 24)
     }

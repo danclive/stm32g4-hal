@@ -253,145 +253,121 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Error interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn eie(&mut self) -> EieW<Cr3Spec> {
         EieW::new(self, 0)
     }
     #[doc = "Bit 1 - Ir mode enable"]
     #[inline(always)]
-    #[must_use]
     pub fn iren(&mut self) -> IrenW<Cr3Spec> {
         IrenW::new(self, 1)
     }
     #[doc = "Bit 2 - Ir low-power"]
     #[inline(always)]
-    #[must_use]
     pub fn irlp(&mut self) -> IrlpW<Cr3Spec> {
         IrlpW::new(self, 2)
     }
     #[doc = "Bit 3 - Half-duplex selection"]
     #[inline(always)]
-    #[must_use]
     pub fn hdsel(&mut self) -> HdselW<Cr3Spec> {
         HdselW::new(self, 3)
     }
     #[doc = "Bit 4 - Smartcard NACK enable"]
     #[inline(always)]
-    #[must_use]
     pub fn nack(&mut self) -> NackW<Cr3Spec> {
         NackW::new(self, 4)
     }
     #[doc = "Bit 5 - Smartcard mode enable"]
     #[inline(always)]
-    #[must_use]
     pub fn scen(&mut self) -> ScenW<Cr3Spec> {
         ScenW::new(self, 5)
     }
     #[doc = "Bit 6 - DMA enable receiver"]
     #[inline(always)]
-    #[must_use]
     pub fn dmar(&mut self) -> DmarW<Cr3Spec> {
         DmarW::new(self, 6)
     }
     #[doc = "Bit 7 - DMA enable transmitter"]
     #[inline(always)]
-    #[must_use]
     pub fn dmat(&mut self) -> DmatW<Cr3Spec> {
         DmatW::new(self, 7)
     }
     #[doc = "Bit 8 - RTS enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rtse(&mut self) -> RtseW<Cr3Spec> {
         RtseW::new(self, 8)
     }
     #[doc = "Bit 9 - CTS enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ctse(&mut self) -> CtseW<Cr3Spec> {
         CtseW::new(self, 9)
     }
     #[doc = "Bit 10 - CTS interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ctsie(&mut self) -> CtsieW<Cr3Spec> {
         CtsieW::new(self, 10)
     }
     #[doc = "Bit 11 - One sample bit method enable"]
     #[inline(always)]
-    #[must_use]
     pub fn onebit(&mut self) -> OnebitW<Cr3Spec> {
         OnebitW::new(self, 11)
     }
     #[doc = "Bit 12 - Overrun Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn ovrdis(&mut self) -> OvrdisW<Cr3Spec> {
         OvrdisW::new(self, 12)
     }
     #[doc = "Bit 13 - DMA Disable on Reception Error"]
     #[inline(always)]
-    #[must_use]
     pub fn ddre(&mut self) -> DdreW<Cr3Spec> {
         DdreW::new(self, 13)
     }
     #[doc = "Bit 14 - Driver enable mode"]
     #[inline(always)]
-    #[must_use]
     pub fn dem(&mut self) -> DemW<Cr3Spec> {
         DemW::new(self, 14)
     }
     #[doc = "Bit 15 - Driver enable polarity selection"]
     #[inline(always)]
-    #[must_use]
     pub fn dep(&mut self) -> DepW<Cr3Spec> {
         DepW::new(self, 15)
     }
     #[doc = "Bits 17:19 - Smartcard auto-retry count"]
     #[inline(always)]
-    #[must_use]
     pub fn scarcnt(&mut self) -> ScarcntW<Cr3Spec> {
         ScarcntW::new(self, 17)
     }
     #[doc = "Bits 20:21 - Wakeup from Stop mode interrupt flag selection"]
     #[inline(always)]
-    #[must_use]
     pub fn wus(&mut self) -> WusW<Cr3Spec> {
         WusW::new(self, 20)
     }
     #[doc = "Bit 22 - Wakeup from Stop mode interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wufie(&mut self) -> WufieW<Cr3Spec> {
         WufieW::new(self, 22)
     }
     #[doc = "Bit 23 - TXFTIE"]
     #[inline(always)]
-    #[must_use]
     pub fn txftie(&mut self) -> TxftieW<Cr3Spec> {
         TxftieW::new(self, 23)
     }
     #[doc = "Bit 24 - TCBGTIE"]
     #[inline(always)]
-    #[must_use]
     pub fn tcbgtie(&mut self) -> TcbgtieW<Cr3Spec> {
         TcbgtieW::new(self, 24)
     }
     #[doc = "Bits 25:27 - RXFTCFG"]
     #[inline(always)]
-    #[must_use]
     pub fn rxftcfg(&mut self) -> RxftcfgW<Cr3Spec> {
         RxftcfgW::new(self, 25)
     }
     #[doc = "Bit 28 - RXFTIE"]
     #[inline(always)]
-    #[must_use]
     pub fn rxftie(&mut self) -> RxftieW<Cr3Spec> {
         RxftieW::new(self, 28)
     }
     #[doc = "Bits 29:31 - TXFTCFG"]
     #[inline(always)]
-    #[must_use]
     pub fn txftcfg(&mut self) -> TxftcfgW<Cr3Spec> {
         TxftcfgW::new(self, 29)
     }

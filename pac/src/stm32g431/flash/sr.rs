@@ -131,67 +131,56 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - End of operation"]
     #[inline(always)]
-    #[must_use]
     pub fn eop(&mut self) -> EopW<SrSpec> {
         EopW::new(self, 0)
     }
     #[doc = "Bit 1 - Operation error"]
     #[inline(always)]
-    #[must_use]
     pub fn operr(&mut self) -> OperrW<SrSpec> {
         OperrW::new(self, 1)
     }
     #[doc = "Bit 3 - Programming error"]
     #[inline(always)]
-    #[must_use]
     pub fn progerr(&mut self) -> ProgerrW<SrSpec> {
         ProgerrW::new(self, 3)
     }
     #[doc = "Bit 4 - Write protected error"]
     #[inline(always)]
-    #[must_use]
     pub fn wrperr(&mut self) -> WrperrW<SrSpec> {
         WrperrW::new(self, 4)
     }
     #[doc = "Bit 5 - Programming alignment error"]
     #[inline(always)]
-    #[must_use]
     pub fn pgaerr(&mut self) -> PgaerrW<SrSpec> {
         PgaerrW::new(self, 5)
     }
     #[doc = "Bit 6 - Size error"]
     #[inline(always)]
-    #[must_use]
     pub fn sizerr(&mut self) -> SizerrW<SrSpec> {
         SizerrW::new(self, 6)
     }
     #[doc = "Bit 7 - Programming sequence error"]
     #[inline(always)]
-    #[must_use]
     pub fn pgserr(&mut self) -> PgserrW<SrSpec> {
         PgserrW::new(self, 7)
     }
     #[doc = "Bit 8 - Fast programming data miss error"]
     #[inline(always)]
-    #[must_use]
     pub fn miserr(&mut self) -> MiserrW<SrSpec> {
         MiserrW::new(self, 8)
     }
     #[doc = "Bit 9 - Fast programming error"]
     #[inline(always)]
-    #[must_use]
     pub fn fasterr(&mut self) -> FasterrW<SrSpec> {
         FasterrW::new(self, 9)
     }
     #[doc = "Bit 14 - PCROP read error"]
     #[inline(always)]
-    #[must_use]
     pub fn rderr(&mut self) -> RderrW<SrSpec> {
         RderrW::new(self, 14)
     }
     #[doc = "Bit 15 - Option validity error"]
     #[inline(always)]
-    #[must_use]
     pub fn optverr(&mut self) -> OptverrW<SrSpec> {
         OptverrW::new(self, 15)
     }

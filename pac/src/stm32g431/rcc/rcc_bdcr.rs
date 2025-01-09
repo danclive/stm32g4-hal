@@ -705,55 +705,46 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - LSE oscillator enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn lseon(&mut self) -> LseonW<RccBdcrSpec> {
         LseonW::new(self, 0)
     }
     #[doc = "Bit 2 - LSE oscillator bypass Set and cleared by software to bypass oscillator in debug mode. This bit can be written only when the external 32 kHz oscillator is disabled (LSEON=0 and LSERDY=0)."]
     #[inline(always)]
-    #[must_use]
     pub fn lsebyp(&mut self) -> LsebypW<RccBdcrSpec> {
         LsebypW::new(self, 2)
     }
     #[doc = "Bits 3:4 - LSE oscillator drive capability Set by software to modulate the LSE oscillators drive capability. The oscillator is in Xtal mode when it is not in bypass mode."]
     #[inline(always)]
-    #[must_use]
     pub fn lsedrv(&mut self) -> LsedrvW<RccBdcrSpec> {
         LsedrvW::new(self, 3)
     }
     #[doc = "Bit 5 - CSS on LSE enable Set by software to enable the Clock Security System on LSE (32 kHz oscillator). LSECSSON must be enabled after the LSE oscillator is enabled (LSEON bit enabled) and ready (LSERDY flag set by hardware), and after the RTCSEL bit is selected. Once enabled this bit cannot be disabled, except after a LSE failure detection (LSECSSD =1). In that case the software MUST disable the LSECSSON bit."]
     #[inline(always)]
-    #[must_use]
     pub fn lsecsson(&mut self) -> LsecssonW<RccBdcrSpec> {
         LsecssonW::new(self, 5)
     }
     #[doc = "Bits 8:9 - RTC clock source selection Set by software to select the clock source for the RTC. Once the RTC clock source has been selected, it cannot be changed anymore unless the RTC domain is reset, or unless a failure is detected on LSE (LSECSSD is set). The BDRST bit can be used to reset them."]
     #[inline(always)]
-    #[must_use]
     pub fn rtcsel(&mut self) -> RtcselW<RccBdcrSpec> {
         RtcselW::new(self, 8)
     }
     #[doc = "Bit 15 - RTC clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn rtcen(&mut self) -> RtcenW<RccBdcrSpec> {
         RtcenW::new(self, 15)
     }
     #[doc = "Bit 16 - RTC domain software reset Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn bdrst(&mut self) -> BdrstW<RccBdcrSpec> {
         BdrstW::new(self, 16)
     }
     #[doc = "Bit 24 - Low speed clock output enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn lscoen(&mut self) -> LscoenW<RccBdcrSpec> {
         LscoenW::new(self, 24)
     }
     #[doc = "Bit 25 - Low speed clock output selection Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn lscosel(&mut self) -> LscoselW<RccBdcrSpec> {
         LscoselW::new(self, 25)
     }

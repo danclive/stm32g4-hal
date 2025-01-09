@@ -143,79 +143,66 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Debug Timer 2 stopped when Core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_timer2_stop(&mut self) -> DbgTimer2StopW<Apb1lFzSpec> {
         DbgTimer2StopW::new(self, 0)
     }
     #[doc = "Bit 1 - TIM3 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim3_stop(&mut self) -> DbgTim3StopW<Apb1lFzSpec> {
         DbgTim3StopW::new(self, 1)
     }
     #[doc = "Bit 2 - TIM4 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim4_stop(&mut self) -> DbgTim4StopW<Apb1lFzSpec> {
         DbgTim4StopW::new(self, 2)
     }
     #[doc = "Bit 3 - TIM5 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim5_stop(&mut self) -> DbgTim5StopW<Apb1lFzSpec> {
         DbgTim5StopW::new(self, 3)
     }
     #[doc = "Bit 4 - Debug Timer 6 stopped when Core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_timer6_stop(&mut self) -> DbgTimer6StopW<Apb1lFzSpec> {
         DbgTimer6StopW::new(self, 4)
     }
     #[doc = "Bit 5 - TIM7 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_tim7_stop(&mut self) -> DbgTim7StopW<Apb1lFzSpec> {
         DbgTim7StopW::new(self, 5)
     }
     #[doc = "Bit 10 - Debug RTC stopped when Core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_rtc_stop(&mut self) -> DbgRtcStopW<Apb1lFzSpec> {
         DbgRtcStopW::new(self, 10)
     }
     #[doc = "Bit 11 - Debug Window Wachdog stopped when Core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_wwdg_stop(&mut self) -> DbgWwdgStopW<Apb1lFzSpec> {
         DbgWwdgStopW::new(self, 11)
     }
     #[doc = "Bit 12 - Debug Independent Wachdog stopped when Core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_iwdg_stop(&mut self) -> DbgIwdgStopW<Apb1lFzSpec> {
         DbgIwdgStopW::new(self, 12)
     }
     #[doc = "Bit 21 - I2C1 SMBUS timeout mode stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_i2c1_stop(&mut self) -> DbgI2c1StopW<Apb1lFzSpec> {
         DbgI2c1StopW::new(self, 21)
     }
     #[doc = "Bit 22 - I2C2 SMBUS timeout mode stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_i2c2_stop(&mut self) -> DbgI2c2StopW<Apb1lFzSpec> {
         DbgI2c2StopW::new(self, 22)
     }
     #[doc = "Bit 30 - I2C3 SMBUS timeout mode stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_i2c3_stop(&mut self) -> DbgI2c3StopW<Apb1lFzSpec> {
         DbgI2c3StopW::new(self, 30)
     }
     #[doc = "Bit 31 - LPTIM1 counter stopped when core is halted"]
     #[inline(always)]
-    #[must_use]
     pub fn dbg_lptimer_stop(&mut self) -> DbgLptimerStopW<Apb1lFzSpec> {
         DbgLptimerStopW::new(self, 31)
     }

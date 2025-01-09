@@ -111,55 +111,46 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - EN"]
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<CompC4csrSpec> {
         EnW::new(self, 0)
     }
     #[doc = "Bits 4:6 - INMSEL"]
     #[inline(always)]
-    #[must_use]
     pub fn inmsel(&mut self) -> InmselW<CompC4csrSpec> {
         InmselW::new(self, 4)
     }
     #[doc = "Bit 8 - INPSEL"]
     #[inline(always)]
-    #[must_use]
     pub fn inpsel(&mut self) -> InpselW<CompC4csrSpec> {
         InpselW::new(self, 8)
     }
     #[doc = "Bit 15 - POL"]
     #[inline(always)]
-    #[must_use]
     pub fn pol(&mut self) -> PolW<CompC4csrSpec> {
         PolW::new(self, 15)
     }
     #[doc = "Bits 16:18 - HYST"]
     #[inline(always)]
-    #[must_use]
     pub fn hyst(&mut self) -> HystW<CompC4csrSpec> {
         HystW::new(self, 16)
     }
     #[doc = "Bits 19:21 - BLANKSEL"]
     #[inline(always)]
-    #[must_use]
     pub fn blanksel(&mut self) -> BlankselW<CompC4csrSpec> {
         BlankselW::new(self, 19)
     }
     #[doc = "Bit 22 - BRGEN"]
     #[inline(always)]
-    #[must_use]
     pub fn brgen(&mut self) -> BrgenW<CompC4csrSpec> {
         BrgenW::new(self, 22)
     }
     #[doc = "Bit 23 - SCALEN"]
     #[inline(always)]
-    #[must_use]
     pub fn scalen(&mut self) -> ScalenW<CompC4csrSpec> {
         ScalenW::new(self, 23)
     }
     #[doc = "Bit 31 - LOCK"]
     #[inline(always)]
-    #[must_use]
     pub fn lock(&mut self) -> LockW<CompC4csrSpec> {
         LockW::new(self, 31)
     }

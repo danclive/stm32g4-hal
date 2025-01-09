@@ -435,7 +435,7 @@ impl Rcc {
         let us_per_s = 1_000_000;
         // Number of cycles @ sys_freq for 1us, rounded up, this will
         // likely end up being 2us since the AHB prescaler is changed
-        let delay_cycles = (sys_freq + us_per_s - 1) / us_per_s;
+        let delay_cycles = sys_freq.div_ceil(us_per_s);
         cortex_m::asm::delay(delay_cycles);
 
         self.rb
@@ -486,7 +486,7 @@ impl Rcc {
         unsafe {
             // Adjust flash wait states
             let flash = &(*pac::Flash::PTR);
-            flash.acr().modify(|_, w| w.latency().bits(latency))
+            flash.acr().modify(|_, w| w.latency().bits(latency));
         }
     }
 

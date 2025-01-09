@@ -11,7 +11,7 @@ pub struct LSCOConfig {
     pub src: LSCOSrc,
 }
 
-///
+/// LSCO Source
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Copy, Clone, PartialEq, Eq, Debug, Default)]
 #[repr(u8)]

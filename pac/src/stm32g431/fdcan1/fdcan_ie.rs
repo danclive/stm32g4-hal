@@ -1303,145 +1303,121 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Rx FIFO 0 new message interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rf0ne(&mut self) -> Rf0neW<FdcanIeSpec> {
         Rf0neW::new(self, 0)
     }
     #[doc = "Bit 1 - Rx FIFO 0 full interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rf0fe(&mut self) -> Rf0feW<FdcanIeSpec> {
         Rf0feW::new(self, 1)
     }
     #[doc = "Bit 2 - Rx FIFO 0 message lost interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rf0le(&mut self) -> Rf0leW<FdcanIeSpec> {
         Rf0leW::new(self, 2)
     }
     #[doc = "Bit 3 - Rx FIFO 1 new message interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rf1ne(&mut self) -> Rf1neW<FdcanIeSpec> {
         Rf1neW::new(self, 3)
     }
     #[doc = "Bit 4 - Rx FIFO 1 full interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rf1fe(&mut self) -> Rf1feW<FdcanIeSpec> {
         Rf1feW::new(self, 4)
     }
     #[doc = "Bit 5 - Rx FIFO 1 message lost interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rf1le(&mut self) -> Rf1leW<FdcanIeSpec> {
         Rf1leW::new(self, 5)
     }
     #[doc = "Bit 6 - High-priority message interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn hpme(&mut self) -> HpmeW<FdcanIeSpec> {
         HpmeW::new(self, 6)
     }
     #[doc = "Bit 7 - Transmission completed interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tce(&mut self) -> TceW<FdcanIeSpec> {
         TceW::new(self, 7)
     }
     #[doc = "Bit 8 - Transmission cancellation finished interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tcfe(&mut self) -> TcfeW<FdcanIeSpec> {
         TcfeW::new(self, 8)
     }
     #[doc = "Bit 9 - Tx FIFO empty interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tfee(&mut self) -> TfeeW<FdcanIeSpec> {
         TfeeW::new(self, 9)
     }
     #[doc = "Bit 10 - Tx event FIFO new entry interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tefne(&mut self) -> TefneW<FdcanIeSpec> {
         TefneW::new(self, 10)
     }
     #[doc = "Bit 11 - Tx event FIFO full interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn teffe(&mut self) -> TeffeW<FdcanIeSpec> {
         TeffeW::new(self, 11)
     }
     #[doc = "Bit 12 - Tx event FIFO element lost interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tefle(&mut self) -> TefleW<FdcanIeSpec> {
         TefleW::new(self, 12)
     }
     #[doc = "Bit 13 - Timestamp wraparound interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tswe(&mut self) -> TsweW<FdcanIeSpec> {
         TsweW::new(self, 13)
     }
     #[doc = "Bit 14 - Message RAM access failure interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mrafe(&mut self) -> MrafeW<FdcanIeSpec> {
         MrafeW::new(self, 14)
     }
     #[doc = "Bit 15 - Timeout occurred interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tooe(&mut self) -> TooeW<FdcanIeSpec> {
         TooeW::new(self, 15)
     }
     #[doc = "Bit 16 - Error logging overflow interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn eloe(&mut self) -> EloeW<FdcanIeSpec> {
         EloeW::new(self, 16)
     }
     #[doc = "Bit 17 - Error passive interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn epe(&mut self) -> EpeW<FdcanIeSpec> {
         EpeW::new(self, 17)
     }
     #[doc = "Bit 18 - Warning status interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ewe(&mut self) -> EweW<FdcanIeSpec> {
         EweW::new(self, 18)
     }
     #[doc = "Bit 19 - Bus_Off status"]
     #[inline(always)]
-    #[must_use]
     pub fn boe(&mut self) -> BoeW<FdcanIeSpec> {
         BoeW::new(self, 19)
     }
     #[doc = "Bit 20 - Watchdog interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wdie(&mut self) -> WdieW<FdcanIeSpec> {
         WdieW::new(self, 20)
     }
     #[doc = "Bit 21 - Protocol error in arbitration phase enable"]
     #[inline(always)]
-    #[must_use]
     pub fn peae(&mut self) -> PeaeW<FdcanIeSpec> {
         PeaeW::new(self, 21)
     }
     #[doc = "Bit 22 - Protocol error in data phase enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pede(&mut self) -> PedeW<FdcanIeSpec> {
         PedeW::new(self, 22)
     }
     #[doc = "Bit 23 - Access to reserved address enable"]
     #[inline(always)]
-    #[must_use]
     pub fn arae(&mut self) -> AraeW<FdcanIeSpec> {
         AraeW::new(self, 23)
     }

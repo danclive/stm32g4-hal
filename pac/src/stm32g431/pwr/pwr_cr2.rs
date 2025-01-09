@@ -61,21 +61,21 @@ where
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Pvdls {
-    #[doc = "0: V&lt;sub>PVD0&lt;/sub> PVD threshold 0"]
+    #[doc = "0: V<sub>PVD0</sub> PVD threshold 0"]
     B0x0 = 0,
-    #[doc = "1: V&lt;sub>PVD1&lt;/sub> PVD threshold 1"]
+    #[doc = "1: V<sub>PVD1</sub> PVD threshold 1"]
     B0x1 = 1,
-    #[doc = "2: V&lt;sub>PVD2&lt;/sub> PVD threshold 2"]
+    #[doc = "2: V<sub>PVD2</sub> PVD threshold 2"]
     B0x2 = 2,
-    #[doc = "3: V&lt;sub>PVD3&lt;/sub> PVD threshold 3"]
+    #[doc = "3: V<sub>PVD3</sub> PVD threshold 3"]
     B0x3 = 3,
-    #[doc = "4: V&lt;sub>PVD4&lt;/sub> PVD threshold 4"]
+    #[doc = "4: V<sub>PVD4</sub> PVD threshold 4"]
     B0x4 = 4,
-    #[doc = "5: V&lt;sub>PVD5&lt;/sub> PVD threshold 5"]
+    #[doc = "5: V<sub>PVD5</sub> PVD threshold 5"]
     B0x5 = 5,
-    #[doc = "6: V&lt;sub>PVD6&lt;/sub> PVD threshold 6"]
+    #[doc = "6: V<sub>PVD6</sub> PVD threshold 6"]
     B0x6 = 6,
-    #[doc = "7: External input analog voltage PVD_IN (compared internally to V&lt;sub>REFINT&lt;/sub>)"]
+    #[doc = "7: External input analog voltage PVD_IN (compared internally to V<sub>REFINT</sub>)"]
     B0x7 = 7,
 }
 impl From<Pvdls> for u8 {
@@ -106,42 +106,42 @@ impl PvdlsR {
             _ => unreachable!(),
         }
     }
-    #[doc = "V&lt;sub>PVD0&lt;/sub> PVD threshold 0"]
+    #[doc = "V<sub>PVD0</sub> PVD threshold 0"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Pvdls::B0x0
     }
-    #[doc = "V&lt;sub>PVD1&lt;/sub> PVD threshold 1"]
+    #[doc = "V<sub>PVD1</sub> PVD threshold 1"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Pvdls::B0x1
     }
-    #[doc = "V&lt;sub>PVD2&lt;/sub> PVD threshold 2"]
+    #[doc = "V<sub>PVD2</sub> PVD threshold 2"]
     #[inline(always)]
     pub fn is_b_0x2(&self) -> bool {
         *self == Pvdls::B0x2
     }
-    #[doc = "V&lt;sub>PVD3&lt;/sub> PVD threshold 3"]
+    #[doc = "V<sub>PVD3</sub> PVD threshold 3"]
     #[inline(always)]
     pub fn is_b_0x3(&self) -> bool {
         *self == Pvdls::B0x3
     }
-    #[doc = "V&lt;sub>PVD4&lt;/sub> PVD threshold 4"]
+    #[doc = "V<sub>PVD4</sub> PVD threshold 4"]
     #[inline(always)]
     pub fn is_b_0x4(&self) -> bool {
         *self == Pvdls::B0x4
     }
-    #[doc = "V&lt;sub>PVD5&lt;/sub> PVD threshold 5"]
+    #[doc = "V<sub>PVD5</sub> PVD threshold 5"]
     #[inline(always)]
     pub fn is_b_0x5(&self) -> bool {
         *self == Pvdls::B0x5
     }
-    #[doc = "V&lt;sub>PVD6&lt;/sub> PVD threshold 6"]
+    #[doc = "V<sub>PVD6</sub> PVD threshold 6"]
     #[inline(always)]
     pub fn is_b_0x6(&self) -> bool {
         *self == Pvdls::B0x6
     }
-    #[doc = "External input analog voltage PVD_IN (compared internally to V&lt;sub>REFINT&lt;/sub>)"]
+    #[doc = "External input analog voltage PVD_IN (compared internally to V<sub>REFINT</sub>)"]
     #[inline(always)]
     pub fn is_b_0x7(&self) -> bool {
         *self == Pvdls::B0x7
@@ -154,54 +154,54 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "V&lt;sub>PVD0&lt;/sub> PVD threshold 0"]
+    #[doc = "V<sub>PVD0</sub> PVD threshold 0"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Pvdls::B0x0)
     }
-    #[doc = "V&lt;sub>PVD1&lt;/sub> PVD threshold 1"]
+    #[doc = "V<sub>PVD1</sub> PVD threshold 1"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Pvdls::B0x1)
     }
-    #[doc = "V&lt;sub>PVD2&lt;/sub> PVD threshold 2"]
+    #[doc = "V<sub>PVD2</sub> PVD threshold 2"]
     #[inline(always)]
     pub fn b_0x2(self) -> &'a mut crate::W<REG> {
         self.variant(Pvdls::B0x2)
     }
-    #[doc = "V&lt;sub>PVD3&lt;/sub> PVD threshold 3"]
+    #[doc = "V<sub>PVD3</sub> PVD threshold 3"]
     #[inline(always)]
     pub fn b_0x3(self) -> &'a mut crate::W<REG> {
         self.variant(Pvdls::B0x3)
     }
-    #[doc = "V&lt;sub>PVD4&lt;/sub> PVD threshold 4"]
+    #[doc = "V<sub>PVD4</sub> PVD threshold 4"]
     #[inline(always)]
     pub fn b_0x4(self) -> &'a mut crate::W<REG> {
         self.variant(Pvdls::B0x4)
     }
-    #[doc = "V&lt;sub>PVD5&lt;/sub> PVD threshold 5"]
+    #[doc = "V<sub>PVD5</sub> PVD threshold 5"]
     #[inline(always)]
     pub fn b_0x5(self) -> &'a mut crate::W<REG> {
         self.variant(Pvdls::B0x5)
     }
-    #[doc = "V&lt;sub>PVD6&lt;/sub> PVD threshold 6"]
+    #[doc = "V<sub>PVD6</sub> PVD threshold 6"]
     #[inline(always)]
     pub fn b_0x6(self) -> &'a mut crate::W<REG> {
         self.variant(Pvdls::B0x6)
     }
-    #[doc = "External input analog voltage PVD_IN (compared internally to V&lt;sub>REFINT&lt;/sub>)"]
+    #[doc = "External input analog voltage PVD_IN (compared internally to V<sub>REFINT</sub>)"]
     #[inline(always)]
     pub fn b_0x7(self) -> &'a mut crate::W<REG> {
         self.variant(Pvdls::B0x7)
     }
 }
-#[doc = "Peripheral voltage monitoring 3 enable: V&lt;sub>DDA&lt;/sub> vs. ADC/COMP min voltage 1.62V\n\nValue on reset: 0"]
+#[doc = "Peripheral voltage monitoring 3 enable: V<sub>DDA</sub> vs. ADC/COMP min voltage 1.62V\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pvmen1 {
-    #[doc = "0: PVM1 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.62V threshold) disable."]
+    #[doc = "0: PVM1 (V<sub>DDA</sub> monitoring vs. 1.62V threshold) disable."]
     B0x0 = 0,
-    #[doc = "1: PVM1 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.62V threshold) enable."]
+    #[doc = "1: PVM1 (V<sub>DDA</sub> monitoring vs. 1.62V threshold) enable."]
     B0x1 = 1,
 }
 impl From<Pvmen1> for bool {
@@ -210,7 +210,7 @@ impl From<Pvmen1> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PVMEN1` reader - Peripheral voltage monitoring 3 enable: V&lt;sub>DDA&lt;/sub> vs. ADC/COMP min voltage 1.62V"]
+#[doc = "Field `PVMEN1` reader - Peripheral voltage monitoring 3 enable: V<sub>DDA</sub> vs. ADC/COMP min voltage 1.62V"]
 pub type Pvmen1R = crate::BitReader<Pvmen1>;
 impl Pvmen1R {
     #[doc = "Get enumerated values variant"]
@@ -221,41 +221,41 @@ impl Pvmen1R {
             true => Pvmen1::B0x1,
         }
     }
-    #[doc = "PVM1 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.62V threshold) disable."]
+    #[doc = "PVM1 (V<sub>DDA</sub> monitoring vs. 1.62V threshold) disable."]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Pvmen1::B0x0
     }
-    #[doc = "PVM1 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.62V threshold) enable."]
+    #[doc = "PVM1 (V<sub>DDA</sub> monitoring vs. 1.62V threshold) enable."]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Pvmen1::B0x1
     }
 }
-#[doc = "Field `PVMEN1` writer - Peripheral voltage monitoring 3 enable: V&lt;sub>DDA&lt;/sub> vs. ADC/COMP min voltage 1.62V"]
+#[doc = "Field `PVMEN1` writer - Peripheral voltage monitoring 3 enable: V<sub>DDA</sub> vs. ADC/COMP min voltage 1.62V"]
 pub type Pvmen1W<'a, REG> = crate::BitWriter<'a, REG, Pvmen1>;
 impl<'a, REG> Pvmen1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "PVM1 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.62V threshold) disable."]
+    #[doc = "PVM1 (V<sub>DDA</sub> monitoring vs. 1.62V threshold) disable."]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Pvmen1::B0x0)
     }
-    #[doc = "PVM1 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.62V threshold) enable."]
+    #[doc = "PVM1 (V<sub>DDA</sub> monitoring vs. 1.62V threshold) enable."]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Pvmen1::B0x1)
     }
 }
-#[doc = "Peripheral voltage monitoring 4 enable: V&lt;sub>DDA&lt;/sub> vs. DAC 1MSPS /DAC 15MSPS min voltage.\n\nValue on reset: 0"]
+#[doc = "Peripheral voltage monitoring 4 enable: V<sub>DDA</sub> vs. DAC 1MSPS /DAC 15MSPS min voltage.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pvmen2 {
-    #[doc = "0: PVM2 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.8 V threshold) disable."]
+    #[doc = "0: PVM2 (V<sub>DDA</sub> monitoring vs. 1.8 V threshold) disable."]
     B0x0 = 0,
-    #[doc = "1: PVM2 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.8 V threshold) enable."]
+    #[doc = "1: PVM2 (V<sub>DDA</sub> monitoring vs. 1.8 V threshold) enable."]
     B0x1 = 1,
 }
 impl From<Pvmen2> for bool {
@@ -264,7 +264,7 @@ impl From<Pvmen2> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PVMEN2` reader - Peripheral voltage monitoring 4 enable: V&lt;sub>DDA&lt;/sub> vs. DAC 1MSPS /DAC 15MSPS min voltage."]
+#[doc = "Field `PVMEN2` reader - Peripheral voltage monitoring 4 enable: V<sub>DDA</sub> vs. DAC 1MSPS /DAC 15MSPS min voltage."]
 pub type Pvmen2R = crate::BitReader<Pvmen2>;
 impl Pvmen2R {
     #[doc = "Get enumerated values variant"]
@@ -275,29 +275,29 @@ impl Pvmen2R {
             true => Pvmen2::B0x1,
         }
     }
-    #[doc = "PVM2 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.8 V threshold) disable."]
+    #[doc = "PVM2 (V<sub>DDA</sub> monitoring vs. 1.8 V threshold) disable."]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Pvmen2::B0x0
     }
-    #[doc = "PVM2 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.8 V threshold) enable."]
+    #[doc = "PVM2 (V<sub>DDA</sub> monitoring vs. 1.8 V threshold) enable."]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Pvmen2::B0x1
     }
 }
-#[doc = "Field `PVMEN2` writer - Peripheral voltage monitoring 4 enable: V&lt;sub>DDA&lt;/sub> vs. DAC 1MSPS /DAC 15MSPS min voltage."]
+#[doc = "Field `PVMEN2` writer - Peripheral voltage monitoring 4 enable: V<sub>DDA</sub> vs. DAC 1MSPS /DAC 15MSPS min voltage."]
 pub type Pvmen2W<'a, REG> = crate::BitWriter<'a, REG, Pvmen2>;
 impl<'a, REG> Pvmen2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "PVM2 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.8 V threshold) disable."]
+    #[doc = "PVM2 (V<sub>DDA</sub> monitoring vs. 1.8 V threshold) disable."]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Pvmen2::B0x0)
     }
-    #[doc = "PVM2 (V&lt;sub>DDA&lt;/sub> monitoring vs. 1.8 V threshold) enable."]
+    #[doc = "PVM2 (V<sub>DDA</sub> monitoring vs. 1.8 V threshold) enable."]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Pvmen2::B0x1)
@@ -314,12 +314,12 @@ impl R {
     pub fn pvdls(&self) -> PvdlsR {
         PvdlsR::new(((self.bits >> 1) & 7) as u8)
     }
-    #[doc = "Bit 6 - Peripheral voltage monitoring 3 enable: V&lt;sub>DDA&lt;/sub> vs. ADC/COMP min voltage 1.62V"]
+    #[doc = "Bit 6 - Peripheral voltage monitoring 3 enable: V<sub>DDA</sub> vs. ADC/COMP min voltage 1.62V"]
     #[inline(always)]
     pub fn pvmen1(&self) -> Pvmen1R {
         Pvmen1R::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - Peripheral voltage monitoring 4 enable: V&lt;sub>DDA&lt;/sub> vs. DAC 1MSPS /DAC 15MSPS min voltage."]
+    #[doc = "Bit 7 - Peripheral voltage monitoring 4 enable: V<sub>DDA</sub> vs. DAC 1MSPS /DAC 15MSPS min voltage."]
     #[inline(always)]
     pub fn pvmen2(&self) -> Pvmen2R {
         Pvmen2R::new(((self.bits >> 7) & 1) != 0)
@@ -338,25 +338,21 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Programmable voltage detector enable Note: This bit is write-protected when the PVDL bit is set in the SYSCFG_CFGR2 register. The protection can be reset only by a system reset."]
     #[inline(always)]
-    #[must_use]
     pub fn pvde(&mut self) -> PvdeW<PwrCr2Spec> {
         PvdeW::new(self, 0)
     }
     #[doc = "Bits 1:3 - Programmable voltage detector level selection. These bits select the PVD falling threshold: Note: These bits are write-protected when the PVDL bit is set in the SYSCFG_CFGR2 register. The protection can be reset only by a system reset."]
     #[inline(always)]
-    #[must_use]
     pub fn pvdls(&mut self) -> PvdlsW<PwrCr2Spec> {
         PvdlsW::new(self, 1)
     }
-    #[doc = "Bit 6 - Peripheral voltage monitoring 3 enable: V&lt;sub>DDA&lt;/sub> vs. ADC/COMP min voltage 1.62V"]
+    #[doc = "Bit 6 - Peripheral voltage monitoring 3 enable: V<sub>DDA</sub> vs. ADC/COMP min voltage 1.62V"]
     #[inline(always)]
-    #[must_use]
     pub fn pvmen1(&mut self) -> Pvmen1W<PwrCr2Spec> {
         Pvmen1W::new(self, 6)
     }
-    #[doc = "Bit 7 - Peripheral voltage monitoring 4 enable: V&lt;sub>DDA&lt;/sub> vs. DAC 1MSPS /DAC 15MSPS min voltage."]
+    #[doc = "Bit 7 - Peripheral voltage monitoring 4 enable: V<sub>DDA</sub> vs. DAC 1MSPS /DAC 15MSPS min voltage."]
     #[inline(always)]
-    #[must_use]
     pub fn pvmen2(&mut self) -> Pvmen2W<PwrCr2Spec> {
         Pvmen2W::new(self, 7)
     }

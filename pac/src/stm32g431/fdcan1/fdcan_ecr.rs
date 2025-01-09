@@ -82,7 +82,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 16:23 - CAN error logging The counter is incremented each time when a CAN protocol error causes the transmit error counter or the receive error counter to be incremented. It is reset by read access to CEL. The counter stops at 0xFF; the next increment of TEC or REC sets interrupt flag IR\\[ELO\\]. Access type is RX: reset on read."]
     #[inline(always)]
-    #[must_use]
     pub fn cel(&mut self) -> CelW<FdcanEcrSpec> {
         CelW::new(self, 16)
     }

@@ -6,9 +6,9 @@ pub type W = crate::W<RccAhb3smenrSpec>;
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fmcsmen {
-    #[doc = "0: FSMC clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "0: FSMC clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: FSMC clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: FSMC clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Fmcsmen> for bool {
@@ -28,12 +28,12 @@ impl FmcsmenR {
             true => Fmcsmen::B0x1,
         }
     }
-    #[doc = "FSMC clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "FSMC clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Fmcsmen::B0x0
     }
-    #[doc = "FSMC clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "FSMC clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Fmcsmen::B0x1
@@ -45,12 +45,12 @@ impl<'a, REG> FmcsmenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "FSMC clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "FSMC clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Fmcsmen::B0x0)
     }
-    #[doc = "FSMC clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "FSMC clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Fmcsmen::B0x1)
@@ -62,7 +62,7 @@ where
 pub enum Qspismen {
     #[doc = "0: QUADSPI clock disabled by the clock gating during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: QUADSPI clock enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: QUADSPI clock enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Qspismen> for bool {
@@ -87,7 +87,7 @@ impl QspismenR {
     pub fn is_b_0x0(&self) -> bool {
         *self == Qspismen::B0x0
     }
-    #[doc = "QUADSPI clock enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "QUADSPI clock enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Qspismen::B0x1
@@ -104,7 +104,7 @@ where
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Qspismen::B0x0)
     }
-    #[doc = "QUADSPI clock enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "QUADSPI clock enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Qspismen::B0x1)
@@ -133,13 +133,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Flexible static memory controller clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn fmcsmen(&mut self) -> FmcsmenW<RccAhb3smenrSpec> {
         FmcsmenW::new(self, 0)
     }
     #[doc = "Bit 8 - QUADSPI memory interface clock enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn qspismen(&mut self) -> QspismenW<RccAhb3smenrSpec> {
         QspismenW::new(self, 8)
     }

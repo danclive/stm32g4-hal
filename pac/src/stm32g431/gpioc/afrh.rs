@@ -93,49 +93,41 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn afrh8(&mut self) -> Afrh8W<AfrhSpec> {
         Afrh8W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn afrh9(&mut self) -> Afrh9W<AfrhSpec> {
         Afrh9W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn afrh10(&mut self) -> Afrh10W<AfrhSpec> {
         Afrh10W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn afrh11(&mut self) -> Afrh11W<AfrhSpec> {
         Afrh11W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn afrh12(&mut self) -> Afrh12W<AfrhSpec> {
         Afrh12W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn afrh13(&mut self) -> Afrh13W<AfrhSpec> {
         Afrh13W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn afrh14(&mut self) -> Afrh14W<AfrhSpec> {
         Afrh14W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn afrh15(&mut self) -> Afrh15W<AfrhSpec> {
         Afrh15W::new(self, 28)
     }

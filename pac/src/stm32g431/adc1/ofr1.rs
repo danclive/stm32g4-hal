@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:11 - OFFSET1"]
     #[inline(always)]
-    #[must_use]
     pub fn offset1(&mut self) -> Offset1W<Ofr1Spec> {
         Offset1W::new(self, 0)
     }
     #[doc = "Bit 24 - OFFSETPOS"]
     #[inline(always)]
-    #[must_use]
     pub fn offsetpos(&mut self) -> OffsetposW<Ofr1Spec> {
         OffsetposW::new(self, 24)
     }
     #[doc = "Bit 25 - SATEN"]
     #[inline(always)]
-    #[must_use]
     pub fn saten(&mut self) -> SatenW<Ofr1Spec> {
         SatenW::new(self, 25)
     }
     #[doc = "Bits 26:30 - OFFSET1_CH"]
     #[inline(always)]
-    #[must_use]
     pub fn offset1_ch(&mut self) -> Offset1ChW<Ofr1Spec> {
         Offset1ChW::new(self, 26)
     }
     #[doc = "Bit 31 - OFFSET1_EN"]
     #[inline(always)]
-    #[must_use]
     pub fn offset1_en(&mut self) -> Offset1EnW<Ofr1Spec> {
         Offset1EnW::new(self, 31)
     }

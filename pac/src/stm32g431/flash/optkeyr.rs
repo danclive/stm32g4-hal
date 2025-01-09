@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<OptkeyrSpec> {
 impl W {
     #[doc = "Bits 0:31 - Option byte key"]
     #[inline(always)]
-    #[must_use]
     pub fn optkeyr(&mut self) -> OptkeyrW<OptkeyrSpec> {
         OptkeyrW::new(self, 0)
     }

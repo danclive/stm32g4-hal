@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:6 - 7-bit window value"]
     #[inline(always)]
-    #[must_use]
     pub fn w(&mut self) -> WW<CfrSpec> {
         WW::new(self, 0)
     }
     #[doc = "Bit 9 - Early wakeup interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn ewi(&mut self) -> EwiW<CfrSpec> {
         EwiW::new(self, 9)
     }
     #[doc = "Bits 11:13 - Timer base"]
     #[inline(always)]
-    #[must_use]
     pub fn wdgtb(&mut self) -> WdgtbW<CfrSpec> {
         WdgtbW::new(self, 11)
     }

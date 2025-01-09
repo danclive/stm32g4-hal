@@ -6,9 +6,9 @@ pub type W = crate::W<RccApb1smenr2Spec>;
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lpuart1smen {
-    #[doc = "0: LPUART1 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "0: LPUART1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: LPUART1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: LPUART1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Lpuart1smen> for bool {
@@ -28,12 +28,12 @@ impl Lpuart1smenR {
             true => Lpuart1smen::B0x1,
         }
     }
-    #[doc = "LPUART1 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "LPUART1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Lpuart1smen::B0x0
     }
-    #[doc = "LPUART1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "LPUART1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Lpuart1smen::B0x1
@@ -45,12 +45,12 @@ impl<'a, REG> Lpuart1smenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "LPUART1 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "LPUART1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Lpuart1smen::B0x0)
     }
-    #[doc = "LPUART1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "LPUART1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Lpuart1smen::B0x1)
@@ -62,7 +62,7 @@ where
 pub enum I2c4smen {
     #[doc = "0: I2C4 clocks disabled by the clock gating during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: I2C4 clock enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: I2C4 clock enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<I2c4smen> for bool {
@@ -87,7 +87,7 @@ impl I2c4smenR {
     pub fn is_b_0x0(&self) -> bool {
         *self == I2c4smen::B0x0
     }
-    #[doc = "I2C4 clock enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "I2C4 clock enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == I2c4smen::B0x1
@@ -104,7 +104,7 @@ where
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(I2c4smen::B0x0)
     }
-    #[doc = "I2C4 clock enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "I2C4 clock enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(I2c4smen::B0x1)
@@ -116,7 +116,7 @@ where
 pub enum Ucpd1smen {
     #[doc = "0: UCPD1 clocks disabled by the clock gating during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: UCPD1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: UCPD1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Ucpd1smen> for bool {
@@ -141,7 +141,7 @@ impl Ucpd1smenR {
     pub fn is_b_0x0(&self) -> bool {
         *self == Ucpd1smen::B0x0
     }
-    #[doc = "UCPD1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "UCPD1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Ucpd1smen::B0x1
@@ -158,7 +158,7 @@ where
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Ucpd1smen::B0x0)
     }
-    #[doc = "UCPD1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "UCPD1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Ucpd1smen::B0x1)
@@ -193,19 +193,16 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Low power UART 1 clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn lpuart1smen(&mut self) -> Lpuart1smenW<RccApb1smenr2Spec> {
         Lpuart1smenW::new(self, 0)
     }
     #[doc = "Bit 1 - I2C4 clocks enable during Sleep and Stop modes Set and cleared by software"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c4smen(&mut self) -> I2c4smenW<RccApb1smenr2Spec> {
         I2c4smenW::new(self, 1)
     }
     #[doc = "Bit 8 - UCPD1 clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn ucpd1smen(&mut self) -> Ucpd1smenW<RccApb1smenr2Spec> {
         Ucpd1smenW::new(self, 8)
     }

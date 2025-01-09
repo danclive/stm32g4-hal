@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:23 - Receiver timeout value"]
     #[inline(always)]
-    #[must_use]
     pub fn rto(&mut self) -> RtoW<RtorSpec> {
         RtoW::new(self, 0)
     }
     #[doc = "Bits 24:31 - Block Length"]
     #[inline(always)]
-    #[must_use]
     pub fn blen(&mut self) -> BlenW<RtorSpec> {
         BlenW::new(self, 24)
     }

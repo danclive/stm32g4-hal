@@ -2,21 +2,21 @@
 pub type R = crate::R<DacShrrSpec>;
 #[doc = "Register `DAC_SHRR` writer"]
 pub type W = crate::W<DacShrrSpec>;
-#[doc = "Field `TREFRESH1` reader - DAC Channel 1 refresh Time (only valid in sample &amp;amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
+#[doc = "Field `TREFRESH1` reader - DAC Channel 1 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
 pub type Trefresh1R = crate::FieldReader;
-#[doc = "Field `TREFRESH1` writer - DAC Channel 1 refresh Time (only valid in sample &amp;amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
+#[doc = "Field `TREFRESH1` writer - DAC Channel 1 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
 pub type Trefresh1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
-#[doc = "Field `TREFRESH2` reader - DAC Channel 2 refresh Time (only valid in sample &amp;amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
+#[doc = "Field `TREFRESH2` reader - DAC Channel 2 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
 pub type Trefresh2R = crate::FieldReader;
-#[doc = "Field `TREFRESH2` writer - DAC Channel 2 refresh Time (only valid in sample &amp;amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
+#[doc = "Field `TREFRESH2` writer - DAC Channel 2 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
 pub type Trefresh2W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Bits 0:7 - DAC Channel 1 refresh Time (only valid in sample &amp;amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
+    #[doc = "Bits 0:7 - DAC Channel 1 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
     #[inline(always)]
     pub fn trefresh1(&self) -> Trefresh1R {
         Trefresh1R::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 16:23 - DAC Channel 2 refresh Time (only valid in sample &amp;amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
+    #[doc = "Bits 16:23 - DAC Channel 2 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
     #[inline(always)]
     pub fn trefresh2(&self) -> Trefresh2R {
         Trefresh2R::new(((self.bits >> 16) & 0xff) as u8)
@@ -31,15 +31,13 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - DAC Channel 1 refresh Time (only valid in sample &amp;amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
+    #[doc = "Bits 0:7 - DAC Channel 1 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
     #[inline(always)]
-    #[must_use]
     pub fn trefresh1(&mut self) -> Trefresh1W<DacShrrSpec> {
         Trefresh1W::new(self, 0)
     }
-    #[doc = "Bits 16:23 - DAC Channel 2 refresh Time (only valid in sample &amp;amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
+    #[doc = "Bits 16:23 - DAC Channel 2 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
     #[inline(always)]
-    #[must_use]
     pub fn trefresh2(&mut self) -> Trefresh2W<DacShrrSpec> {
         Trefresh2W::new(self, 16)
     }

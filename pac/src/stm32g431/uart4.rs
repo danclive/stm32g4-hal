@@ -51,7 +51,7 @@ impl RegisterBlock {
     pub const fn rqr(&self) -> &Rqr {
         &self.rqr
     }
-    #[doc = "0x1c - Interrupt &amp; status register"]
+    #[doc = "0x1c - Interrupt & status register"]
     #[inline(always)]
     pub const fn isr(&self) -> &Isr {
         &self.isr
@@ -119,11 +119,11 @@ module"]
 pub type Rqr = crate::Reg<rqr::RqrSpec>;
 #[doc = "Request register"]
 pub mod rqr;
-#[doc = "ISR (r) register accessor: Interrupt &amp; status register\n\nYou can [`read`](crate::Reg::read) this register and get [`isr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@isr`]
+#[doc = "ISR (r) register accessor: Interrupt & status register\n\nYou can [`read`](crate::Reg::read) this register and get [`isr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@isr`]
 module"]
 #[doc(alias = "ISR")]
 pub type Isr = crate::Reg<isr::IsrSpec>;
-#[doc = "Interrupt &amp; status register"]
+#[doc = "Interrupt & status register"]
 pub mod isr;
 #[doc = "ICR (w) register accessor: Interrupt flag clear register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`icr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@icr`]
 module"]

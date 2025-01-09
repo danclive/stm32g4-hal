@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - Frame length"]
     #[inline(always)]
-    #[must_use]
     pub fn frl(&mut self) -> FrlW<BfrcrSpec> {
         FrlW::new(self, 0)
     }
     #[doc = "Bits 8:14 - Frame synchronization active level length"]
     #[inline(always)]
-    #[must_use]
     pub fn fsall(&mut self) -> FsallW<BfrcrSpec> {
         FsallW::new(self, 8)
     }
     #[doc = "Bit 16 - Frame synchronization definition"]
     #[inline(always)]
-    #[must_use]
     pub fn fsdef(&mut self) -> FsdefW<BfrcrSpec> {
         FsdefW::new(self, 16)
     }
     #[doc = "Bit 17 - Frame synchronization polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn fspol(&mut self) -> FspolW<BfrcrSpec> {
         FspolW::new(self, 17)
     }
     #[doc = "Bit 18 - Frame synchronization offset"]
     #[inline(always)]
-    #[must_use]
     pub fn fsoff(&mut self) -> FsoffW<BfrcrSpec> {
         FsoffW::new(self, 18)
     }

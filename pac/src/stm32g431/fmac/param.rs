@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - P"]
     #[inline(always)]
-    #[must_use]
     pub fn p(&mut self) -> PW<ParamSpec> {
         PW::new(self, 0)
     }
     #[doc = "Bits 8:15 - Q"]
     #[inline(always)]
-    #[must_use]
     pub fn q(&mut self) -> QW<ParamSpec> {
         QW::new(self, 8)
     }
     #[doc = "Bits 16:23 - R"]
     #[inline(always)]
-    #[must_use]
     pub fn r(&mut self) -> RW<ParamSpec> {
         RW::new(self, 16)
     }
     #[doc = "Bits 24:30 - FUNC"]
     #[inline(always)]
-    #[must_use]
     pub fn func(&mut self) -> FuncW<ParamSpec> {
         FuncW::new(self, 24)
     }
     #[doc = "Bit 31 - START"]
     #[inline(always)]
-    #[must_use]
     pub fn start(&mut self) -> StartW<ParamSpec> {
         StartW::new(self, 31)
     }

@@ -766,37 +766,31 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - System clock switch Set and cleared by software to select system clock source (SYSCLK). Configured by hardware to force HSI16 oscillator selection when exiting stop and standby modes or in case of failure of the HSE oscillator."]
     #[inline(always)]
-    #[must_use]
     pub fn sw(&mut self) -> SwW<RccCfgrSpec> {
         SwW::new(self, 0)
     }
     #[doc = "Bits 4:7 - AHB prescaler Set and cleared by software to control the division factor of the AHB clock. Note: Depending on the device voltage range, the software has to set correctly these bits to ensure that the system frequency does not exceed the maximum allowed frequency (for more details please refer to Section 6.1.5: Dynamic voltage scaling management). After a write operation to these bits and before decreasing the voltage range, this register must be read to be sure that the new value has been taken into account. 0xxx: SYSCLK not divided"]
     #[inline(always)]
-    #[must_use]
     pub fn hpre(&mut self) -> HpreW<RccCfgrSpec> {
         HpreW::new(self, 4)
     }
     #[doc = "Bits 8:10 - APB1 prescaler Set and cleared by software to control the division factor of the APB1 clock (PCLK1). 0xx: HCLK not divided"]
     #[inline(always)]
-    #[must_use]
     pub fn ppre1(&mut self) -> Ppre1W<RccCfgrSpec> {
         Ppre1W::new(self, 8)
     }
     #[doc = "Bits 11:13 - APB2 prescaler Set and cleared by software to control the division factor of the APB2 clock (PCLK2). 0xx: HCLK not divided"]
     #[inline(always)]
-    #[must_use]
     pub fn ppre2(&mut self) -> Ppre2W<RccCfgrSpec> {
         Ppre2W::new(self, 11)
     }
     #[doc = "Bits 24:27 - Microcontroller clock output Set and cleared by software. Others: Reserved Note: This clock output may have some truncated cycles at startup or during MCO clock source switching."]
     #[inline(always)]
-    #[must_use]
     pub fn mcosel(&mut self) -> McoselW<RccCfgrSpec> {
         McoselW::new(self, 24)
     }
     #[doc = "Bits 28:30 - Microcontroller clock output prescaler These bits are set and cleared by software. It is highly recommended to change this prescaler before MCO output is enabled. Others: not allowed"]
     #[inline(always)]
-    #[must_use]
     pub fn mcopre(&mut self) -> McopreW<RccCfgrSpec> {
         McopreW::new(self, 28)
     }

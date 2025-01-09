@@ -93,49 +93,41 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Update interrupt flag"]
     #[inline(always)]
-    #[must_use]
     pub fn uif(&mut self) -> UifW<SrSpec> {
         UifW::new(self, 0)
     }
     #[doc = "Bit 1 - Capture/compare 1 interrupt flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1if(&mut self) -> Cc1ifW<SrSpec> {
         Cc1ifW::new(self, 1)
     }
     #[doc = "Bit 2 - Capture/compare 2 interrupt flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cc2if(&mut self) -> Cc2ifW<SrSpec> {
         Cc2ifW::new(self, 2)
     }
     #[doc = "Bit 5 - COM interrupt flag"]
     #[inline(always)]
-    #[must_use]
     pub fn comif(&mut self) -> ComifW<SrSpec> {
         ComifW::new(self, 5)
     }
     #[doc = "Bit 6 - Trigger interrupt flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tif(&mut self) -> TifW<SrSpec> {
         TifW::new(self, 6)
     }
     #[doc = "Bit 7 - Break interrupt flag"]
     #[inline(always)]
-    #[must_use]
     pub fn bif(&mut self) -> BifW<SrSpec> {
         BifW::new(self, 7)
     }
     #[doc = "Bit 9 - Capture/Compare 1 overcapture flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1of(&mut self) -> Cc1ofW<SrSpec> {
         Cc1ofW::new(self, 9)
     }
     #[doc = "Bit 10 - Capture/Compare 2 overcapture flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cc2of(&mut self) -> Cc2ofW<SrSpec> {
         Cc2ofW::new(self, 10)
     }

@@ -153,85 +153,71 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Programming"]
     #[inline(always)]
-    #[must_use]
     pub fn pg(&mut self) -> PgW<CrSpec> {
         PgW::new(self, 0)
     }
     #[doc = "Bit 1 - Page erase"]
     #[inline(always)]
-    #[must_use]
     pub fn per(&mut self) -> PerW<CrSpec> {
         PerW::new(self, 1)
     }
     #[doc = "Bit 2 - Bank 1 Mass erase"]
     #[inline(always)]
-    #[must_use]
     pub fn mer1(&mut self) -> Mer1W<CrSpec> {
         Mer1W::new(self, 2)
     }
     #[doc = "Bits 3:9 - Page number"]
     #[inline(always)]
-    #[must_use]
     pub fn pnb(&mut self) -> PnbW<CrSpec> {
         PnbW::new(self, 3)
     }
     #[doc = "Bit 16 - Start"]
     #[inline(always)]
-    #[must_use]
     pub fn strt(&mut self) -> StrtW<CrSpec> {
         StrtW::new(self, 16)
     }
     #[doc = "Bit 17 - Options modification start"]
     #[inline(always)]
-    #[must_use]
     pub fn optstrt(&mut self) -> OptstrtW<CrSpec> {
         OptstrtW::new(self, 17)
     }
     #[doc = "Bit 18 - Fast programming"]
     #[inline(always)]
-    #[must_use]
     pub fn fstpg(&mut self) -> FstpgW<CrSpec> {
         FstpgW::new(self, 18)
     }
     #[doc = "Bit 24 - End of operation interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn eopie(&mut self) -> EopieW<CrSpec> {
         EopieW::new(self, 24)
     }
     #[doc = "Bit 25 - Error interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn errie(&mut self) -> ErrieW<CrSpec> {
         ErrieW::new(self, 25)
     }
     #[doc = "Bit 26 - PCROP read error interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rderrie(&mut self) -> RderrieW<CrSpec> {
         RderrieW::new(self, 26)
     }
     #[doc = "Bit 27 - Force the option byte loading"]
     #[inline(always)]
-    #[must_use]
     pub fn obl_launch(&mut self) -> OblLaunchW<CrSpec> {
         OblLaunchW::new(self, 27)
     }
     #[doc = "Bit 28 - SEC_PROT1"]
     #[inline(always)]
-    #[must_use]
     pub fn sec_prot1(&mut self) -> SecProt1W<CrSpec> {
         SecProt1W::new(self, 28)
     }
     #[doc = "Bit 30 - Options Lock"]
     #[inline(always)]
-    #[must_use]
     pub fn optlock(&mut self) -> OptlockW<CrSpec> {
         OptlockW::new(self, 30)
     }
     #[doc = "Bit 31 - FLASH_CR Lock"]
     #[inline(always)]
-    #[must_use]
     pub fn lock(&mut self) -> LockW<CrSpec> {
         LockW::new(self, 31)
     }

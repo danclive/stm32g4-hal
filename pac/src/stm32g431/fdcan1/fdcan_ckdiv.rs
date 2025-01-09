@@ -272,7 +272,6 @@ impl W {
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn pdiv(&mut self) -> PdivW<FdcanCkdivSpec> {
         PdivW::new(self, 0)
     }

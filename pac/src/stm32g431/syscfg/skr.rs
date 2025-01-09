@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<SkrSpec> {
 impl W {
     #[doc = "Bits 0:7 - SRAM2 Key for software erase"]
     #[inline(always)]
-    #[must_use]
     pub fn key(&mut self) -> KeyW<SkrSpec> {
         KeyW::new(self, 0)
     }

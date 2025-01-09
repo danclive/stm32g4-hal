@@ -80,7 +80,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Add request Each Tx buffer has its own add request bit. Writing a 1 sets the corresponding add request bit; writing a 0 has no impact. This enables the Host to set transmission requests for multiple Tx buffers with one write to TXBAR. When no Tx scan is running, the bits are reset immediately, else the bits remain set until the Tx scan process has completed."]
     #[inline(always)]
-    #[must_use]
     pub fn ar(&mut self) -> ArW<FdcanTxbarSpec> {
         ArW::new(self, 0)
     }

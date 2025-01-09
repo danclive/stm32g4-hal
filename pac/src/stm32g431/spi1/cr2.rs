@@ -133,73 +133,61 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Rx buffer DMA enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rxdmaen(&mut self) -> RxdmaenW<Cr2Spec> {
         RxdmaenW::new(self, 0)
     }
     #[doc = "Bit 1 - Tx buffer DMA enable"]
     #[inline(always)]
-    #[must_use]
     pub fn txdmaen(&mut self) -> TxdmaenW<Cr2Spec> {
         TxdmaenW::new(self, 1)
     }
     #[doc = "Bit 2 - SS output enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ssoe(&mut self) -> SsoeW<Cr2Spec> {
         SsoeW::new(self, 2)
     }
     #[doc = "Bit 3 - NSS pulse management"]
     #[inline(always)]
-    #[must_use]
     pub fn nssp(&mut self) -> NsspW<Cr2Spec> {
         NsspW::new(self, 3)
     }
     #[doc = "Bit 4 - Frame format"]
     #[inline(always)]
-    #[must_use]
     pub fn frf(&mut self) -> FrfW<Cr2Spec> {
         FrfW::new(self, 4)
     }
     #[doc = "Bit 5 - Error interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn errie(&mut self) -> ErrieW<Cr2Spec> {
         ErrieW::new(self, 5)
     }
     #[doc = "Bit 6 - RX buffer not empty interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rxneie(&mut self) -> RxneieW<Cr2Spec> {
         RxneieW::new(self, 6)
     }
     #[doc = "Bit 7 - Tx buffer empty interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn txeie(&mut self) -> TxeieW<Cr2Spec> {
         TxeieW::new(self, 7)
     }
     #[doc = "Bits 8:11 - Data size"]
     #[inline(always)]
-    #[must_use]
     pub fn ds(&mut self) -> DsW<Cr2Spec> {
         DsW::new(self, 8)
     }
     #[doc = "Bit 12 - FIFO reception threshold"]
     #[inline(always)]
-    #[must_use]
     pub fn frxth(&mut self) -> FrxthW<Cr2Spec> {
         FrxthW::new(self, 12)
     }
     #[doc = "Bit 13 - Last DMA transfer for reception"]
     #[inline(always)]
-    #[must_use]
     pub fn ldma_rx(&mut self) -> LdmaRxW<Cr2Spec> {
         LdmaRxW::new(self, 13)
     }
     #[doc = "Bit 14 - Last DMA transfer for transmission"]
     #[inline(always)]
-    #[must_use]
     pub fn ldma_tx(&mut self) -> LdmaTxW<Cr2Spec> {
         LdmaTxW::new(self, 14)
     }

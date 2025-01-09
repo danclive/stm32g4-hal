@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 1:7 - Interface address"]
     #[inline(always)]
-    #[must_use]
     pub fn oa2(&mut self) -> Oa2W<Oar2Spec> {
         Oa2W::new(self, 1)
     }
     #[doc = "Bits 8:10 - Own Address 2 masks"]
     #[inline(always)]
-    #[must_use]
     pub fn oa2msk(&mut self) -> Oa2mskW<Oar2Spec> {
         Oa2mskW::new(self, 8)
     }
     #[doc = "Bit 15 - Own Address 2 enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oa2en(&mut self) -> Oa2enW<Oar2Spec> {
         Oa2enW::new(self, 15)
     }

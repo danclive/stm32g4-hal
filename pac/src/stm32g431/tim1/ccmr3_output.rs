@@ -113,61 +113,51 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 2 - Output compare 5 fast enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc5fe(&mut self) -> Oc5feW<Ccmr3OutputSpec> {
         Oc5feW::new(self, 2)
     }
     #[doc = "Bit 3 - Output compare 5 preload enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc5pe(&mut self) -> Oc5peW<Ccmr3OutputSpec> {
         Oc5peW::new(self, 3)
     }
     #[doc = "Bits 4:6 - Output compare 5 mode"]
     #[inline(always)]
-    #[must_use]
     pub fn oc5m(&mut self) -> Oc5mW<Ccmr3OutputSpec> {
         Oc5mW::new(self, 4)
     }
     #[doc = "Bit 7 - Output compare 5 clear enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc5ce(&mut self) -> Oc5ceW<Ccmr3OutputSpec> {
         Oc5ceW::new(self, 7)
     }
     #[doc = "Bit 10 - Output compare 6 fast enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc6fe(&mut self) -> Oc6feW<Ccmr3OutputSpec> {
         Oc6feW::new(self, 10)
     }
     #[doc = "Bit 11 - Output compare 6 preload enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc6pe(&mut self) -> Oc6peW<Ccmr3OutputSpec> {
         Oc6peW::new(self, 11)
     }
     #[doc = "Bits 12:14 - Output compare 6 mode"]
     #[inline(always)]
-    #[must_use]
     pub fn oc6m(&mut self) -> Oc6mW<Ccmr3OutputSpec> {
         Oc6mW::new(self, 12)
     }
     #[doc = "Bit 15 - Output compare 6 clear enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc6ce(&mut self) -> Oc6ceW<Ccmr3OutputSpec> {
         Oc6ceW::new(self, 15)
     }
     #[doc = "Bits 16:18 - Output Compare 5 mode bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn oc5m_bit3(&mut self) -> Oc5mBit3W<Ccmr3OutputSpec> {
         Oc5mBit3W::new(self, 16)
     }
     #[doc = "Bit 24 - Output Compare 6 mode bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn oc6m_bit3(&mut self) -> Oc6mBit3W<Ccmr3OutputSpec> {
         Oc6mBit3W::new(self, 24)
     }

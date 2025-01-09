@@ -89,7 +89,7 @@ where
         self.variant(Pllsrc::B0x3)
     }
 }
-#[doc = "Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 &lt;= PLLM &lt;= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet.\n\nValue on reset: 0"]
+#[doc = "Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 <= PLLM <= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -125,7 +125,7 @@ impl crate::FieldSpec for Pllm {
     type Ux = u8;
 }
 impl crate::IsEnum for Pllm {}
-#[doc = "Field `PLLM` reader - Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 &lt;= PLLM &lt;= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet."]
+#[doc = "Field `PLLM` reader - Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 <= PLLM <= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet."]
 pub type PllmR = crate::FieldReader<Pllm>;
 impl PllmR {
     #[doc = "Get enumerated values variant"]
@@ -196,7 +196,7 @@ impl PllmR {
         *self == Pllm::B0xF
     }
 }
-#[doc = "Field `PLLM` writer - Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 &lt;= PLLM &lt;= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet."]
+#[doc = "Field `PLLM` writer - Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 <= PLLM <= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet."]
 pub type PllmW<'a, REG> = crate::FieldWriter<'a, REG, 4, Pllm>;
 impl<'a, REG> PllmW<'a, REG>
 where
@@ -254,7 +254,7 @@ where
         self.variant(Pllm::B0xF)
     }
 }
-#[doc = "Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =&lt; PLLN =&lt; 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet.\n\nValue on reset: 16"]
+#[doc = "Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =< PLLN =< 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet.\n\nValue on reset: 16"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -282,7 +282,7 @@ impl crate::FieldSpec for Plln {
     type Ux = u8;
 }
 impl crate::IsEnum for Plln {}
-#[doc = "Field `PLLN` reader - Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =&lt; PLLN =&lt; 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet."]
+#[doc = "Field `PLLN` reader - Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =< PLLN =< 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet."]
 pub type PllnR = crate::FieldReader<Plln>;
 impl PllnR {
     #[doc = "Get enumerated values variant"]
@@ -329,7 +329,7 @@ impl PllnR {
         *self == Plln::B0x7f
     }
 }
-#[doc = "Field `PLLN` writer - Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =&lt; PLLN =&lt; 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet."]
+#[doc = "Field `PLLN` writer - Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =< PLLN =< 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet."]
 pub type PllnW<'a, REG> = crate::FieldWriter<'a, REG, 7, Plln>;
 impl<'a, REG> PllnW<'a, REG>
 where
@@ -853,12 +853,12 @@ impl R {
     pub fn pllsrc(&self) -> PllsrcR {
         PllsrcR::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 4:7 - Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 &lt;= PLLM &lt;= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet."]
+    #[doc = "Bits 4:7 - Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 <= PLLM <= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet."]
     #[inline(always)]
     pub fn pllm(&self) -> PllmR {
         PllmR::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:14 - Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =&lt; PLLN =&lt; 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet."]
+    #[doc = "Bits 8:14 - Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =< PLLN =< 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet."]
     #[inline(always)]
     pub fn plln(&self) -> PllnR {
         PllnR::new(((self.bits >> 8) & 0x7f) as u8)
@@ -919,62 +919,52 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Main PLL entry clock source Set and cleared by software to select PLL clock source. These bits can be written only when PLL is disabled. In order to save power, when no PLL is used, the value of PLLSRC should be 00."]
     #[inline(always)]
-    #[must_use]
     pub fn pllsrc(&mut self) -> PllsrcW<RccPllcfgrSpec> {
         PllsrcW::new(self, 0)
     }
-    #[doc = "Bits 4:7 - Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 &lt;= PLLM &lt;= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet."]
+    #[doc = "Bits 4:7 - Division factor for the main PLL input clock Set and cleared by software to divide the PLL input clock before the VCO. These bits can be written only when all PLLs are disabled. VCO input frequency = PLL input clock frequency / PLLM with 1 <= PLLM <= 16 ... Note: The software has to set these bits correctly to ensure that the VCO input frequency is within the range defined in the device datasheet."]
     #[inline(always)]
-    #[must_use]
     pub fn pllm(&mut self) -> PllmW<RccPllcfgrSpec> {
         PllmW::new(self, 4)
     }
-    #[doc = "Bits 8:14 - Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =&lt; PLLN =&lt; 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet."]
+    #[doc = "Bits 8:14 - Main PLL multiplication factor for VCO Set and cleared by software to control the multiplication factor of the VCO. These bits can be written only when the PLL is disabled. VCO output frequency = VCO input frequency x PLLN with 8 =< PLLN =< 127 ... ... Note: The software has to set correctly these bits to assure that the VCO output frequency is within the range defined in the device datasheet."]
     #[inline(always)]
-    #[must_use]
     pub fn plln(&mut self) -> PllnW<RccPllcfgrSpec> {
         PllnW::new(self, 8)
     }
     #[doc = "Bit 16 - Main PLL PLL P clock output enable Set and reset by software to enable the PLL P clock output of the PLL. In order to save power, when the PLL P clock output of the PLL is not used, the value of PLLPEN should be 0."]
     #[inline(always)]
-    #[must_use]
     pub fn pllpen(&mut self) -> PllpenW<RccPllcfgrSpec> {
         PllpenW::new(self, 16)
     }
     #[doc = "Bit 17 - Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\]
 is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
     #[inline(always)]
-    #[must_use]
     pub fn pllp(&mut self) -> PllpW<RccPllcfgrSpec> {
         PllpW::new(self, 17)
     }
     #[doc = "Bit 20 - Main PLL Q clock output enable Set and reset by software to enable the PLL Q clock output of the PLL. In order to save power, when the PLL Q clock output of the PLL is not used, the value of PLLQEN should be 0."]
     #[inline(always)]
-    #[must_use]
     pub fn pllqen(&mut self) -> PllqenW<RccPllcfgrSpec> {
         PllqenW::new(self, 20)
     }
     #[doc = "Bits 21:22 - Main PLL division factor for PLL Q clock. Set and cleared by software to control the frequency of the main PLL output clock PLL Q clock. This output can be selected for USB, RNG, SAI (48 MHz clock). These bits can be written only if PLL is disabled. PLL Q output clock frequency = VCO frequency / PLLQ with PLLQ = 2, 4, 6, or 8 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
     #[inline(always)]
-    #[must_use]
     pub fn pllq(&mut self) -> PllqW<RccPllcfgrSpec> {
         PllqW::new(self, 21)
     }
     #[doc = "Bit 24 - PLL R clock output enable Set and reset by software to enable the PLL R clock output of the PLL (used as system clock). This bit cannot be written when PLL R clock output of the PLL is used as System Clock. In order to save power, when the PLL R clock output of the PLL is not used, the value of PLLREN should be 0."]
     #[inline(always)]
-    #[must_use]
     pub fn pllren(&mut self) -> PllrenW<RccPllcfgrSpec> {
         PllrenW::new(self, 24)
     }
     #[doc = "Bits 25:26 - Main PLL division factor for PLL R clock (system clock) Set and cleared by software to control the frequency of the main PLL output clock PLLCLK. This output can be selected as system clock. These bits can be written only if PLL is disabled. PLL R output clock frequency = VCO frequency / PLLR with PLLR = 2, 4, 6, or 8 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
     #[inline(always)]
-    #[must_use]
     pub fn pllr(&mut self) -> PllrW<RccPllcfgrSpec> {
         PllrW::new(self, 25)
     }
     #[doc = "Bits 27:31 - Main PLLP division factor Set and cleared by software to control the PLL P frequency. PLL P output clock frequency = VCO frequency / PLLPDIV. ...."]
     #[inline(always)]
-    #[must_use]
     pub fn pllpdiv(&mut self) -> PllpdivW<RccPllcfgrSpec> {
         PllpdivW::new(self, 27)
     }

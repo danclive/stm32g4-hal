@@ -103,55 +103,46 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Event mask on external/internal line 32"]
     #[inline(always)]
-    #[must_use]
     pub fn em32(&mut self) -> Em32W<Emr2Spec> {
         Em32W::new(self, 0)
     }
     #[doc = "Bit 1 - Event mask on external/internal line 33"]
     #[inline(always)]
-    #[must_use]
     pub fn em33(&mut self) -> Em33W<Emr2Spec> {
         Em33W::new(self, 1)
     }
     #[doc = "Bit 2 - Event mask on external/internal line 34"]
     #[inline(always)]
-    #[must_use]
     pub fn em34(&mut self) -> Em34W<Emr2Spec> {
         Em34W::new(self, 2)
     }
     #[doc = "Bit 3 - Event mask on external/internal line 35"]
     #[inline(always)]
-    #[must_use]
     pub fn em35(&mut self) -> Em35W<Emr2Spec> {
         Em35W::new(self, 3)
     }
     #[doc = "Bit 4 - Event mask on external/internal line 36"]
     #[inline(always)]
-    #[must_use]
     pub fn em36(&mut self) -> Em36W<Emr2Spec> {
         Em36W::new(self, 4)
     }
     #[doc = "Bit 5 - Event mask on external/internal line 37"]
     #[inline(always)]
-    #[must_use]
     pub fn em37(&mut self) -> Em37W<Emr2Spec> {
         Em37W::new(self, 5)
     }
     #[doc = "Bit 6 - Event mask on external/internal line 38"]
     #[inline(always)]
-    #[must_use]
     pub fn em38(&mut self) -> Em38W<Emr2Spec> {
         Em38W::new(self, 6)
     }
     #[doc = "Bit 7 - Event mask on external/internal line 39"]
     #[inline(always)]
-    #[must_use]
     pub fn em39(&mut self) -> Em39W<Emr2Spec> {
         Em39W::new(self, 7)
     }
     #[doc = "Bit 8 - Event mask on external/internal line 40"]
     #[inline(always)]
-    #[must_use]
     pub fn em40(&mut self) -> Em40W<Emr2Spec> {
         Em40W::new(self, 8)
     }

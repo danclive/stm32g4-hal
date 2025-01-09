@@ -233,133 +233,111 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Software Interrupt on line 0"]
     #[inline(always)]
-    #[must_use]
     pub fn swi0(&mut self) -> Swi0W<Swier1Spec> {
         Swi0W::new(self, 0)
     }
     #[doc = "Bit 1 - Software Interrupt on line 1"]
     #[inline(always)]
-    #[must_use]
     pub fn swi1(&mut self) -> Swi1W<Swier1Spec> {
         Swi1W::new(self, 1)
     }
     #[doc = "Bit 2 - Software Interrupt on line 2"]
     #[inline(always)]
-    #[must_use]
     pub fn swi2(&mut self) -> Swi2W<Swier1Spec> {
         Swi2W::new(self, 2)
     }
     #[doc = "Bit 3 - Software Interrupt on line 3"]
     #[inline(always)]
-    #[must_use]
     pub fn swi3(&mut self) -> Swi3W<Swier1Spec> {
         Swi3W::new(self, 3)
     }
     #[doc = "Bit 4 - Software Interrupt on line 4"]
     #[inline(always)]
-    #[must_use]
     pub fn swi4(&mut self) -> Swi4W<Swier1Spec> {
         Swi4W::new(self, 4)
     }
     #[doc = "Bit 5 - Software Interrupt on line 5"]
     #[inline(always)]
-    #[must_use]
     pub fn swi5(&mut self) -> Swi5W<Swier1Spec> {
         Swi5W::new(self, 5)
     }
     #[doc = "Bit 6 - Software Interrupt on line 6"]
     #[inline(always)]
-    #[must_use]
     pub fn swi6(&mut self) -> Swi6W<Swier1Spec> {
         Swi6W::new(self, 6)
     }
     #[doc = "Bit 7 - Software Interrupt on line 7"]
     #[inline(always)]
-    #[must_use]
     pub fn swi7(&mut self) -> Swi7W<Swier1Spec> {
         Swi7W::new(self, 7)
     }
     #[doc = "Bit 8 - Software Interrupt on line 8"]
     #[inline(always)]
-    #[must_use]
     pub fn swi8(&mut self) -> Swi8W<Swier1Spec> {
         Swi8W::new(self, 8)
     }
     #[doc = "Bit 9 - Software Interrupt on line 9"]
     #[inline(always)]
-    #[must_use]
     pub fn swi9(&mut self) -> Swi9W<Swier1Spec> {
         Swi9W::new(self, 9)
     }
     #[doc = "Bit 10 - Software Interrupt on line 10"]
     #[inline(always)]
-    #[must_use]
     pub fn swi10(&mut self) -> Swi10W<Swier1Spec> {
         Swi10W::new(self, 10)
     }
     #[doc = "Bit 11 - Software Interrupt on line 11"]
     #[inline(always)]
-    #[must_use]
     pub fn swi11(&mut self) -> Swi11W<Swier1Spec> {
         Swi11W::new(self, 11)
     }
     #[doc = "Bit 12 - Software Interrupt on line 12"]
     #[inline(always)]
-    #[must_use]
     pub fn swi12(&mut self) -> Swi12W<Swier1Spec> {
         Swi12W::new(self, 12)
     }
     #[doc = "Bit 13 - Software Interrupt on line 13"]
     #[inline(always)]
-    #[must_use]
     pub fn swi13(&mut self) -> Swi13W<Swier1Spec> {
         Swi13W::new(self, 13)
     }
     #[doc = "Bit 14 - Software Interrupt on line 14"]
     #[inline(always)]
-    #[must_use]
     pub fn swi14(&mut self) -> Swi14W<Swier1Spec> {
         Swi14W::new(self, 14)
     }
     #[doc = "Bit 15 - Software Interrupt on line 15"]
     #[inline(always)]
-    #[must_use]
     pub fn swi15(&mut self) -> Swi15W<Swier1Spec> {
         Swi15W::new(self, 15)
     }
     #[doc = "Bit 16 - Software Interrupt on line 16"]
     #[inline(always)]
-    #[must_use]
     pub fn swi16(&mut self) -> Swi16W<Swier1Spec> {
         Swi16W::new(self, 16)
     }
     #[doc = "Bit 17 - Software Interrupt on line 17"]
     #[inline(always)]
-    #[must_use]
     pub fn swi17(&mut self) -> Swi17W<Swier1Spec> {
         Swi17W::new(self, 17)
     }
     #[doc = "Bit 19 - Software Interrupt on line 19"]
     #[inline(always)]
-    #[must_use]
     pub fn swi19(&mut self) -> Swi19W<Swier1Spec> {
         Swi19W::new(self, 19)
     }
     #[doc = "Bit 20 - Software Interrupt on line 20"]
     #[inline(always)]
-    #[must_use]
     pub fn swi20(&mut self) -> Swi20W<Swier1Spec> {
         Swi20W::new(self, 20)
     }
     #[doc = "Bit 21 - Software Interrupt on line 21"]
     #[inline(always)]
-    #[must_use]
     pub fn swi21(&mut self) -> Swi21W<Swier1Spec> {
         Swi21W::new(self, 21)
     }
     #[doc = "Bit 22 - Software Interrupt on line 22"]
     #[inline(always)]
-    #[must_use]
     pub fn swi22(&mut self) -> Swi22W<Swier1Spec> {
         Swi22W::new(self, 22)
     }

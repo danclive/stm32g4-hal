@@ -20,37 +20,31 @@ impl core::fmt::Debug for crate::generic::Reg<BclrfrSpec> {
 impl W {
     #[doc = "Bit 0 - Clear overrun / underrun"]
     #[inline(always)]
-    #[must_use]
     pub fn ovrudr(&mut self) -> OvrudrW<BclrfrSpec> {
         OvrudrW::new(self, 0)
     }
     #[doc = "Bit 1 - Mute detection flag"]
     #[inline(always)]
-    #[must_use]
     pub fn mutedet(&mut self) -> MutedetW<BclrfrSpec> {
         MutedetW::new(self, 1)
     }
     #[doc = "Bit 2 - Clear wrong clock configuration flag"]
     #[inline(always)]
-    #[must_use]
     pub fn wckcfg(&mut self) -> WckcfgW<BclrfrSpec> {
         WckcfgW::new(self, 2)
     }
     #[doc = "Bit 4 - Clear codec not ready flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cnrdy(&mut self) -> CnrdyW<BclrfrSpec> {
         CnrdyW::new(self, 4)
     }
     #[doc = "Bit 5 - Clear anticipated frame synchronization detection flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cafsdet(&mut self) -> CafsdetW<BclrfrSpec> {
         CafsdetW::new(self, 5)
     }
     #[doc = "Bit 6 - Clear late frame synchronization detection flag"]
     #[inline(always)]
-    #[must_use]
     pub fn lfsdet(&mut self) -> LfsdetW<BclrfrSpec> {
         LfsdetW::new(self, 6)
     }

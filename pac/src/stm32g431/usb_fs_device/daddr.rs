@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:6 - ADD"]
     #[inline(always)]
-    #[must_use]
     pub fn add(&mut self) -> AddW<DaddrSpec> {
         AddW::new(self, 0)
     }
     #[doc = "Bit 7 - EF"]
     #[inline(always)]
-    #[must_use]
     pub fn ef(&mut self) -> EfW<DaddrSpec> {
         EfW::new(self, 7)
     }

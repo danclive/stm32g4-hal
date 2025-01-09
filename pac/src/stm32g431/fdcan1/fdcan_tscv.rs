@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - Timestamp counter"]
     #[inline(always)]
-    #[must_use]
     pub fn tsc(&mut self) -> TscW<FdcanTscvSpec> {
         TscW::new(self, 0)
     }

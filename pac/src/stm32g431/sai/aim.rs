@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Overrun/underrun interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ovrudrie(&mut self) -> OvrudrieW<AimSpec> {
         OvrudrieW::new(self, 0)
     }
     #[doc = "Bit 1 - Mute detection interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mutedet(&mut self) -> MutedetW<AimSpec> {
         MutedetW::new(self, 1)
     }
     #[doc = "Bit 2 - Wrong clock configuration interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wckcfg(&mut self) -> WckcfgW<AimSpec> {
         WckcfgW::new(self, 2)
     }
     #[doc = "Bit 3 - FIFO request interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn freqie(&mut self) -> FreqieW<AimSpec> {
         FreqieW::new(self, 3)
     }
     #[doc = "Bit 4 - Codec not ready interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cnrdyie(&mut self) -> CnrdyieW<AimSpec> {
         CnrdyieW::new(self, 4)
     }
     #[doc = "Bit 5 - Anticipated frame synchronization detection interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn afsdetie(&mut self) -> AfsdetieW<AimSpec> {
         AfsdetieW::new(self, 5)
     }
     #[doc = "Bit 6 - Late frame synchronization detection interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn lfsdet(&mut self) -> LfsdetW<AimSpec> {
         LfsdetW::new(self, 6)
     }

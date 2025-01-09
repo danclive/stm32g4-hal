@@ -38,91 +38,76 @@ impl core::fmt::Debug for crate::generic::Reg<IcrSpec> {
 impl W {
     #[doc = "Bit 0 - Parity error clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn pecf(&mut self) -> PecfW<IcrSpec> {
         PecfW::new(self, 0)
     }
     #[doc = "Bit 1 - Framing error clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn fecf(&mut self) -> FecfW<IcrSpec> {
         FecfW::new(self, 1)
     }
     #[doc = "Bit 2 - Noise detected clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn ncf(&mut self) -> NcfW<IcrSpec> {
         NcfW::new(self, 2)
     }
     #[doc = "Bit 3 - Overrun error clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn orecf(&mut self) -> OrecfW<IcrSpec> {
         OrecfW::new(self, 3)
     }
     #[doc = "Bit 4 - Idle line detected clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn idlecf(&mut self) -> IdlecfW<IcrSpec> {
         IdlecfW::new(self, 4)
     }
     #[doc = "Bit 5 - TXFECF"]
     #[inline(always)]
-    #[must_use]
     pub fn txfecf(&mut self) -> TxfecfW<IcrSpec> {
         TxfecfW::new(self, 5)
     }
     #[doc = "Bit 6 - Transmission complete clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tccf(&mut self) -> TccfW<IcrSpec> {
         TccfW::new(self, 6)
     }
     #[doc = "Bit 7 - TCBGTCF"]
     #[inline(always)]
-    #[must_use]
     pub fn tcbgtcf(&mut self) -> TcbgtcfW<IcrSpec> {
         TcbgtcfW::new(self, 7)
     }
     #[doc = "Bit 8 - LIN break detection clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn lbdcf(&mut self) -> LbdcfW<IcrSpec> {
         LbdcfW::new(self, 8)
     }
     #[doc = "Bit 9 - CTS clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn ctscf(&mut self) -> CtscfW<IcrSpec> {
         CtscfW::new(self, 9)
     }
     #[doc = "Bit 11 - Receiver timeout clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rtocf(&mut self) -> RtocfW<IcrSpec> {
         RtocfW::new(self, 11)
     }
     #[doc = "Bit 12 - End of block clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn eobcf(&mut self) -> EobcfW<IcrSpec> {
         EobcfW::new(self, 12)
     }
     #[doc = "Bit 13 - UDRCF"]
     #[inline(always)]
-    #[must_use]
     pub fn udrcf(&mut self) -> UdrcfW<IcrSpec> {
         UdrcfW::new(self, 13)
     }
     #[doc = "Bit 17 - Character match clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cmcf(&mut self) -> CmcfW<IcrSpec> {
         CmcfW::new(self, 17)
     }
     #[doc = "Bit 20 - Wakeup from Stop mode clear flag"]
     #[inline(always)]
-    #[must_use]
     pub fn wucf(&mut self) -> WucfW<IcrSpec> {
         WucfW::new(self, 20)
     }

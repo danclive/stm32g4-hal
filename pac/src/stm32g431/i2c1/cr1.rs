@@ -213,121 +213,101 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Peripheral enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pe(&mut self) -> PeW<Cr1Spec> {
         PeW::new(self, 0)
     }
     #[doc = "Bit 1 - TX Interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn txie(&mut self) -> TxieW<Cr1Spec> {
         TxieW::new(self, 1)
     }
     #[doc = "Bit 2 - RX Interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rxie(&mut self) -> RxieW<Cr1Spec> {
         RxieW::new(self, 2)
     }
     #[doc = "Bit 3 - Address match interrupt enable (slave only)"]
     #[inline(always)]
-    #[must_use]
     pub fn addrie(&mut self) -> AddrieW<Cr1Spec> {
         AddrieW::new(self, 3)
     }
     #[doc = "Bit 4 - Not acknowledge received interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn nackie(&mut self) -> NackieW<Cr1Spec> {
         NackieW::new(self, 4)
     }
     #[doc = "Bit 5 - STOP detection Interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn stopie(&mut self) -> StopieW<Cr1Spec> {
         StopieW::new(self, 5)
     }
     #[doc = "Bit 6 - Transfer Complete interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tcie(&mut self) -> TcieW<Cr1Spec> {
         TcieW::new(self, 6)
     }
     #[doc = "Bit 7 - Error interrupts enable"]
     #[inline(always)]
-    #[must_use]
     pub fn errie(&mut self) -> ErrieW<Cr1Spec> {
         ErrieW::new(self, 7)
     }
     #[doc = "Bits 8:11 - Digital noise filter"]
     #[inline(always)]
-    #[must_use]
     pub fn dnf(&mut self) -> DnfW<Cr1Spec> {
         DnfW::new(self, 8)
     }
     #[doc = "Bit 12 - Analog noise filter OFF"]
     #[inline(always)]
-    #[must_use]
     pub fn anfoff(&mut self) -> AnfoffW<Cr1Spec> {
         AnfoffW::new(self, 12)
     }
     #[doc = "Bit 14 - DMA transmission requests enable"]
     #[inline(always)]
-    #[must_use]
     pub fn txdmaen(&mut self) -> TxdmaenW<Cr1Spec> {
         TxdmaenW::new(self, 14)
     }
     #[doc = "Bit 15 - DMA reception requests enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rxdmaen(&mut self) -> RxdmaenW<Cr1Spec> {
         RxdmaenW::new(self, 15)
     }
     #[doc = "Bit 16 - Slave byte control"]
     #[inline(always)]
-    #[must_use]
     pub fn sbc(&mut self) -> SbcW<Cr1Spec> {
         SbcW::new(self, 16)
     }
     #[doc = "Bit 17 - Clock stretching disable"]
     #[inline(always)]
-    #[must_use]
     pub fn nostretch(&mut self) -> NostretchW<Cr1Spec> {
         NostretchW::new(self, 17)
     }
     #[doc = "Bit 18 - Wakeup from STOP enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wupen(&mut self) -> WupenW<Cr1Spec> {
         WupenW::new(self, 18)
     }
     #[doc = "Bit 19 - General call enable"]
     #[inline(always)]
-    #[must_use]
     pub fn gcen(&mut self) -> GcenW<Cr1Spec> {
         GcenW::new(self, 19)
     }
     #[doc = "Bit 20 - SMBus Host address enable"]
     #[inline(always)]
-    #[must_use]
     pub fn smbhen(&mut self) -> SmbhenW<Cr1Spec> {
         SmbhenW::new(self, 20)
     }
     #[doc = "Bit 21 - SMBus Device Default address enable"]
     #[inline(always)]
-    #[must_use]
     pub fn smbden(&mut self) -> SmbdenW<Cr1Spec> {
         SmbdenW::new(self, 21)
     }
     #[doc = "Bit 22 - SMBUS alert enable"]
     #[inline(always)]
-    #[must_use]
     pub fn alerten(&mut self) -> AlertenW<Cr1Spec> {
         AlertenW::new(self, 22)
     }
     #[doc = "Bit 23 - PEC enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pecen(&mut self) -> PecenW<Cr1Spec> {
         PecenW::new(self, 23)
     }

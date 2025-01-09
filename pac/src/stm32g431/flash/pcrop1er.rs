@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:14 - Bank 1 PCROP area end offset"]
     #[inline(always)]
-    #[must_use]
     pub fn pcrop1_end(&mut self) -> Pcrop1EndW<Pcrop1erSpec> {
         Pcrop1EndW::new(self, 0)
     }
     #[doc = "Bit 31 - PCROP area preserved when RDP level decreased"]
     #[inline(always)]
-    #[must_use]
     pub fn pcrop_rdp(&mut self) -> PcropRdpW<Pcrop1erSpec> {
         PcropRdpW::new(self, 31)
     }

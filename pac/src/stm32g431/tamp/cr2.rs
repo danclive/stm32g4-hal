@@ -103,55 +103,46 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - TAMP1NOER"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp1noer(&mut self) -> Tamp1noerW<Cr2Spec> {
         Tamp1noerW::new(self, 0)
     }
     #[doc = "Bit 1 - TAMP2NOER"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp2noer(&mut self) -> Tamp2noerW<Cr2Spec> {
         Tamp2noerW::new(self, 1)
     }
     #[doc = "Bit 2 - TAMP3NOER"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp3noer(&mut self) -> Tamp3noerW<Cr2Spec> {
         Tamp3noerW::new(self, 2)
     }
     #[doc = "Bit 16 - TAMP1MSK"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp1msk(&mut self) -> Tamp1mskW<Cr2Spec> {
         Tamp1mskW::new(self, 16)
     }
     #[doc = "Bit 17 - TAMP2MSK"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp2msk(&mut self) -> Tamp2mskW<Cr2Spec> {
         Tamp2mskW::new(self, 17)
     }
     #[doc = "Bit 18 - TAMP3MSK"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp3msk(&mut self) -> Tamp3mskW<Cr2Spec> {
         Tamp3mskW::new(self, 18)
     }
     #[doc = "Bit 24 - TAMP1TRG"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp1trg(&mut self) -> Tamp1trgW<Cr2Spec> {
         Tamp1trgW::new(self, 24)
     }
     #[doc = "Bit 25 - TAMP2TRG"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp2trg(&mut self) -> Tamp2trgW<Cr2Spec> {
         Tamp2trgW::new(self, 25)
     }
     #[doc = "Bit 26 - TAMP3TRG"]
     #[inline(always)]
-    #[must_use]
     pub fn tamp3trg(&mut self) -> Tamp3trgW<Cr2Spec> {
         Tamp3trgW::new(self, 26)
     }

@@ -114,24 +114,28 @@ macro_rules! tim_hal {
             // 2. Select the active input for TIMx_CCR1: write the CC1S bits to 01 in the TIMx_CCMR1
             // register (TI1 selected).
             match ch {
-                C1::CH => tim
-                    .ccmr1_input()
-                    .modify(|_, w| unsafe { w.cc1s().bits(0b01) }),
-                C2::CH => tim
-                    .ccmr1_input()
-                    .modify(|_, w| unsafe { w.cc2s().bits(0b01) }),
+                C1::CH => {
+                    tim.ccmr1_input()
+                        .modify(|_, w| unsafe { w.cc1s().bits(0b01) });
+                }
+                C2::CH => {
+                    tim.ccmr1_input()
+                        .modify(|_, w| unsafe { w.cc2s().bits(0b01) });
+                }
                 _ => unreachable!(),
             }
 
             // 3. Select the active polarity for TI1FP1 (used both for capture in TIMx_CCR1 and counter
             // clear): write the CC1P and CC1NP bits to ‘0’ (active on rising edge).
             match ch {
-                C1::CH => tim
-                    .ccer()
-                    .modify(|_, w| w.cc1p().clear_bit().cc1np().clear_bit()),
-                C2::CH => tim
-                    .ccer()
-                    .modify(|_, w| w.cc2p().clear_bit().cc2np().clear_bit()),
+                C1::CH => {
+                    tim.ccer()
+                        .modify(|_, w| w.cc1p().clear_bit().cc1np().clear_bit());
+                }
+                C2::CH => {
+                    tim.ccer()
+                        .modify(|_, w| w.cc2p().clear_bit().cc2np().clear_bit());
+                }
                 _ => unreachable!(),
             }
 
@@ -144,32 +148,40 @@ macro_rules! tim_hal {
             // 4. Select the active input for TIMx_CCR2: write the CC2S bits to 10 in the TIMx_CCMR1
             // register (TI1 selected)
             match ch {
-                C1::CH => tim
-                    .ccmr1_input()
-                    .modify(|_, w| unsafe { w.cc2s().bits(0b10) }),
-                C2::CH => tim
-                    .ccmr1_input()
-                    .modify(|_, w| unsafe { w.cc1s().bits(0b10) }),
+                C1::CH => {
+                    tim.ccmr1_input()
+                        .modify(|_, w| unsafe { w.cc2s().bits(0b10) });
+                }
+                C2::CH => {
+                    tim.ccmr1_input()
+                        .modify(|_, w| unsafe { w.cc1s().bits(0b10) });
+                }
                 _ => unreachable!(),
             }
 
             // 5. Select the active polarity for TI1FP2 (used for capture in TIMx_CCR2): write the CC2P
             // and CC2NP bits to ‘1’ (active on falling edge).
             match ch {
-                C1::CH => tim
-                    .ccer()
-                    .modify(|_, w| w.cc2p().set_bit().cc2np().set_bit()),
-                C2::CH => tim
-                    .ccer()
-                    .modify(|_, w| w.cc1p().set_bit().cc1np().set_bit()),
+                C1::CH => {
+                    tim.ccer()
+                        .modify(|_, w| w.cc2p().set_bit().cc2np().set_bit());
+                }
+                C2::CH => {
+                    tim.ccer()
+                        .modify(|_, w| w.cc1p().set_bit().cc1np().set_bit());
+                }
                 _ => unreachable!(),
             }
 
             // 6. Select the valid trigger input: write the TS bits to 101 in the TIMx_SMCR register
             // (TI1FP1 selected).
             match ch {
-                C1::CH => tim.smcr().modify(|_, w| unsafe { w.ts().bits(0b101) }),
-                C2::CH => tim.smcr().modify(|_, w| unsafe { w.ts().bits(0b110) }),
+                C1::CH => {
+                    tim.smcr().modify(|_, w| unsafe { w.ts().bits(0b101) });
+                }
+                C2::CH => {
+                    tim.smcr().modify(|_, w| unsafe { w.ts().bits(0b110) });
+                }
                 _ => unreachable!(),
             }
 
@@ -183,8 +195,12 @@ macro_rules! tim_hal {
 
             // enable interrupts.
             match ch {
-                C1::CH => tim.dier().modify(|_, w| w.cc2ie().set_bit()),
-                C2::CH => tim.dier().modify(|_, w| w.cc1ie().set_bit()),
+                C1::CH => {
+                    tim.dier().modify(|_, w| w.cc2ie().set_bit());
+                }
+                C2::CH => {
+                    tim.dier().modify(|_, w| w.cc1ie().set_bit());
+                }
                 _ => unreachable!(),
             }
 

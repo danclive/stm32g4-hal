@@ -203,115 +203,96 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - DMAEN"]
     #[inline(always)]
-    #[must_use]
     pub fn dmaen(&mut self) -> DmaenW<CfgrSpec> {
         DmaenW::new(self, 0)
     }
     #[doc = "Bit 1 - DMACFG"]
     #[inline(always)]
-    #[must_use]
     pub fn dmacfg(&mut self) -> DmacfgW<CfgrSpec> {
         DmacfgW::new(self, 1)
     }
     #[doc = "Bits 3:4 - RES"]
     #[inline(always)]
-    #[must_use]
     pub fn res(&mut self) -> ResW<CfgrSpec> {
         ResW::new(self, 3)
     }
     #[doc = "Bits 5:9 - External trigger selection for regular group"]
     #[inline(always)]
-    #[must_use]
     pub fn extsel(&mut self) -> ExtselW<CfgrSpec> {
         ExtselW::new(self, 5)
     }
     #[doc = "Bits 10:11 - EXTEN"]
     #[inline(always)]
-    #[must_use]
     pub fn exten(&mut self) -> ExtenW<CfgrSpec> {
         ExtenW::new(self, 10)
     }
     #[doc = "Bit 12 - OVRMOD"]
     #[inline(always)]
-    #[must_use]
     pub fn ovrmod(&mut self) -> OvrmodW<CfgrSpec> {
         OvrmodW::new(self, 12)
     }
     #[doc = "Bit 13 - CONT"]
     #[inline(always)]
-    #[must_use]
     pub fn cont(&mut self) -> ContW<CfgrSpec> {
         ContW::new(self, 13)
     }
     #[doc = "Bit 14 - AUTDLY"]
     #[inline(always)]
-    #[must_use]
     pub fn autdly(&mut self) -> AutdlyW<CfgrSpec> {
         AutdlyW::new(self, 14)
     }
     #[doc = "Bit 15 - ALIGN"]
     #[inline(always)]
-    #[must_use]
     pub fn align(&mut self) -> AlignW<CfgrSpec> {
         AlignW::new(self, 15)
     }
     #[doc = "Bit 16 - DISCEN"]
     #[inline(always)]
-    #[must_use]
     pub fn discen(&mut self) -> DiscenW<CfgrSpec> {
         DiscenW::new(self, 16)
     }
     #[doc = "Bits 17:19 - DISCNUM"]
     #[inline(always)]
-    #[must_use]
     pub fn discnum(&mut self) -> DiscnumW<CfgrSpec> {
         DiscnumW::new(self, 17)
     }
     #[doc = "Bit 20 - JDISCEN"]
     #[inline(always)]
-    #[must_use]
     pub fn jdiscen(&mut self) -> JdiscenW<CfgrSpec> {
         JdiscenW::new(self, 20)
     }
     #[doc = "Bit 21 - JQM"]
     #[inline(always)]
-    #[must_use]
     pub fn jqm(&mut self) -> JqmW<CfgrSpec> {
         JqmW::new(self, 21)
     }
     #[doc = "Bit 22 - AWD1SGL"]
     #[inline(always)]
-    #[must_use]
     pub fn awd1sgl(&mut self) -> Awd1sglW<CfgrSpec> {
         Awd1sglW::new(self, 22)
     }
     #[doc = "Bit 23 - AWD1EN"]
     #[inline(always)]
-    #[must_use]
     pub fn awd1en(&mut self) -> Awd1enW<CfgrSpec> {
         Awd1enW::new(self, 23)
     }
     #[doc = "Bit 24 - JAWD1EN"]
     #[inline(always)]
-    #[must_use]
     pub fn jawd1en(&mut self) -> Jawd1enW<CfgrSpec> {
         Jawd1enW::new(self, 24)
     }
     #[doc = "Bit 25 - JAUTO"]
     #[inline(always)]
-    #[must_use]
     pub fn jauto(&mut self) -> JautoW<CfgrSpec> {
         JautoW::new(self, 25)
     }
     #[doc = "Bits 26:30 - Analog watchdog 1 channel selection"]
     #[inline(always)]
-    #[must_use]
     pub fn awd1ch(&mut self) -> Awd1chW<CfgrSpec> {
         Awd1chW::new(self, 26)
     }
     #[doc = "Bit 31 - Injected Queue disable"]
     #[inline(always)]
-    #[must_use]
     pub fn jqdis(&mut self) -> JqdisW<CfgrSpec> {
         JqdisW::new(self, 31)
     }

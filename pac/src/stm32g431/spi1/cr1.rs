@@ -153,85 +153,71 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Clock phase"]
     #[inline(always)]
-    #[must_use]
     pub fn cpha(&mut self) -> CphaW<Cr1Spec> {
         CphaW::new(self, 0)
     }
     #[doc = "Bit 1 - Clock polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn cpol(&mut self) -> CpolW<Cr1Spec> {
         CpolW::new(self, 1)
     }
     #[doc = "Bit 2 - Master selection"]
     #[inline(always)]
-    #[must_use]
     pub fn mstr(&mut self) -> MstrW<Cr1Spec> {
         MstrW::new(self, 2)
     }
     #[doc = "Bits 3:5 - Baud rate control"]
     #[inline(always)]
-    #[must_use]
     pub fn br(&mut self) -> BrW<Cr1Spec> {
         BrW::new(self, 3)
     }
     #[doc = "Bit 6 - SPI enable"]
     #[inline(always)]
-    #[must_use]
     pub fn spe(&mut self) -> SpeW<Cr1Spec> {
         SpeW::new(self, 6)
     }
     #[doc = "Bit 7 - Frame format"]
     #[inline(always)]
-    #[must_use]
     pub fn lsbfirst(&mut self) -> LsbfirstW<Cr1Spec> {
         LsbfirstW::new(self, 7)
     }
     #[doc = "Bit 8 - Internal slave select"]
     #[inline(always)]
-    #[must_use]
     pub fn ssi(&mut self) -> SsiW<Cr1Spec> {
         SsiW::new(self, 8)
     }
     #[doc = "Bit 9 - Software slave management"]
     #[inline(always)]
-    #[must_use]
     pub fn ssm(&mut self) -> SsmW<Cr1Spec> {
         SsmW::new(self, 9)
     }
     #[doc = "Bit 10 - Receive only"]
     #[inline(always)]
-    #[must_use]
     pub fn rxonly(&mut self) -> RxonlyW<Cr1Spec> {
         RxonlyW::new(self, 10)
     }
     #[doc = "Bit 11 - Data frame format"]
     #[inline(always)]
-    #[must_use]
     pub fn dff(&mut self) -> DffW<Cr1Spec> {
         DffW::new(self, 11)
     }
     #[doc = "Bit 12 - CRC transfer next"]
     #[inline(always)]
-    #[must_use]
     pub fn crcnext(&mut self) -> CrcnextW<Cr1Spec> {
         CrcnextW::new(self, 12)
     }
     #[doc = "Bit 13 - Hardware CRC calculation enable"]
     #[inline(always)]
-    #[must_use]
     pub fn crcen(&mut self) -> CrcenW<Cr1Spec> {
         CrcenW::new(self, 13)
     }
     #[doc = "Bit 14 - Output enable in bidirectional mode"]
     #[inline(always)]
-    #[must_use]
     pub fn bidioe(&mut self) -> BidioeW<Cr1Spec> {
         BidioeW::new(self, 14)
     }
     #[doc = "Bit 15 - Bidirectional data mode enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bidimode(&mut self) -> BidimodeW<Cr1Spec> {
         BidimodeW::new(self, 15)
     }

@@ -18,31 +18,26 @@ impl core::fmt::Debug for crate::generic::Reg<RqrSpec> {
 impl W {
     #[doc = "Bit 0 - Auto baud rate request"]
     #[inline(always)]
-    #[must_use]
     pub fn abrrq(&mut self) -> AbrrqW<RqrSpec> {
         AbrrqW::new(self, 0)
     }
     #[doc = "Bit 1 - Send break request"]
     #[inline(always)]
-    #[must_use]
     pub fn sbkrq(&mut self) -> SbkrqW<RqrSpec> {
         SbkrqW::new(self, 1)
     }
     #[doc = "Bit 2 - Mute mode request"]
     #[inline(always)]
-    #[must_use]
     pub fn mmrq(&mut self) -> MmrqW<RqrSpec> {
         MmrqW::new(self, 2)
     }
     #[doc = "Bit 3 - Receive data flush request"]
     #[inline(always)]
-    #[must_use]
     pub fn rxfrq(&mut self) -> RxfrqW<RqrSpec> {
         RxfrqW::new(self, 3)
     }
     #[doc = "Bit 4 - Transmit data flush request"]
     #[inline(always)]
-    #[must_use]
     pub fn txfrq(&mut self) -> TxfrqW<RqrSpec> {
         TxfrqW::new(self, 4)
     }

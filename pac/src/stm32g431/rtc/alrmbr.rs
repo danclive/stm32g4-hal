@@ -153,85 +153,71 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - Second units in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn su(&mut self) -> SuW<AlrmbrSpec> {
         SuW::new(self, 0)
     }
     #[doc = "Bits 4:6 - Second tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn st(&mut self) -> StW<AlrmbrSpec> {
         StW::new(self, 4)
     }
     #[doc = "Bit 7 - Alarm B seconds mask"]
     #[inline(always)]
-    #[must_use]
     pub fn msk1(&mut self) -> Msk1W<AlrmbrSpec> {
         Msk1W::new(self, 7)
     }
     #[doc = "Bits 8:11 - Minute units in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn mnu(&mut self) -> MnuW<AlrmbrSpec> {
         MnuW::new(self, 8)
     }
     #[doc = "Bits 12:14 - Minute tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn mnt(&mut self) -> MntW<AlrmbrSpec> {
         MntW::new(self, 12)
     }
     #[doc = "Bit 15 - Alarm B minutes mask"]
     #[inline(always)]
-    #[must_use]
     pub fn msk2(&mut self) -> Msk2W<AlrmbrSpec> {
         Msk2W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Hour units in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn hu(&mut self) -> HuW<AlrmbrSpec> {
         HuW::new(self, 16)
     }
     #[doc = "Bits 20:21 - Hour tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn ht(&mut self) -> HtW<AlrmbrSpec> {
         HtW::new(self, 20)
     }
     #[doc = "Bit 22 - AM/PM notation"]
     #[inline(always)]
-    #[must_use]
     pub fn pm(&mut self) -> PmW<AlrmbrSpec> {
         PmW::new(self, 22)
     }
     #[doc = "Bit 23 - Alarm B hours mask"]
     #[inline(always)]
-    #[must_use]
     pub fn msk3(&mut self) -> Msk3W<AlrmbrSpec> {
         Msk3W::new(self, 23)
     }
     #[doc = "Bits 24:27 - Date units or day in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn du(&mut self) -> DuW<AlrmbrSpec> {
         DuW::new(self, 24)
     }
     #[doc = "Bits 28:29 - Date tens in BCD format"]
     #[inline(always)]
-    #[must_use]
     pub fn dt(&mut self) -> DtW<AlrmbrSpec> {
         DtW::new(self, 28)
     }
     #[doc = "Bit 30 - Week day selection"]
     #[inline(always)]
-    #[must_use]
     pub fn wdsel(&mut self) -> WdselW<AlrmbrSpec> {
         WdselW::new(self, 30)
     }
     #[doc = "Bit 31 - Alarm B date mask"]
     #[inline(always)]
-    #[must_use]
     pub fn msk4(&mut self) -> Msk4W<AlrmbrSpec> {
         Msk4W::new(self, 31)
     }

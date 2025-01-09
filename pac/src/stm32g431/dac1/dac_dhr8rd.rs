@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - DAC channel1 8-bit right-aligned data These bits are written by software which specifies 8-bit data for DAC channel1."]
     #[inline(always)]
-    #[must_use]
     pub fn dacc1dhr(&mut self) -> Dacc1dhrW<DacDhr8rdSpec> {
         Dacc1dhrW::new(self, 0)
     }
     #[doc = "Bits 8:15 - DAC channel2 8-bit right-aligned data These bits are written by software which specifies 8-bit data for DAC channel2."]
     #[inline(always)]
-    #[must_use]
     pub fn dacc2dhr(&mut self) -> Dacc2dhrW<DacDhr8rdSpec> {
         Dacc2dhrW::new(self, 8)
     }

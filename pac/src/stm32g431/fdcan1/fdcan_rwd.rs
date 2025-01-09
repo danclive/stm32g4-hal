@@ -39,7 +39,6 @@ impl W {
 and bit 0 \\[INIT\\]
 of FDCAN_CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn wdc(&mut self) -> WdcW<FdcanRwdSpec> {
         WdcW::new(self, 0)
     }

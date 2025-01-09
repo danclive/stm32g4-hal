@@ -80,7 +80,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Transmission interrupt enable Each Tx buffer has its own TIE bit."]
     #[inline(always)]
-    #[must_use]
     pub fn tie(&mut self) -> TieW<FdcanTxbtieSpec> {
         TieW::new(self, 0)
     }

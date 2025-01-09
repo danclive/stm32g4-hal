@@ -273,157 +273,131 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Wakeup clock selection"]
     #[inline(always)]
-    #[must_use]
     pub fn wcksel(&mut self) -> WckselW<CrSpec> {
         WckselW::new(self, 0)
     }
     #[doc = "Bit 3 - Time-stamp event active edge"]
     #[inline(always)]
-    #[must_use]
     pub fn tsedge(&mut self) -> TsedgeW<CrSpec> {
         TsedgeW::new(self, 3)
     }
     #[doc = "Bit 4 - Reference clock detection enable (50 or 60 Hz)"]
     #[inline(always)]
-    #[must_use]
     pub fn refckon(&mut self) -> RefckonW<CrSpec> {
         RefckonW::new(self, 4)
     }
     #[doc = "Bit 5 - Bypass the shadow registers"]
     #[inline(always)]
-    #[must_use]
     pub fn bypshad(&mut self) -> BypshadW<CrSpec> {
         BypshadW::new(self, 5)
     }
     #[doc = "Bit 6 - Hour format"]
     #[inline(always)]
-    #[must_use]
     pub fn fmt(&mut self) -> FmtW<CrSpec> {
         FmtW::new(self, 6)
     }
     #[doc = "Bit 8 - Alarm A enable"]
     #[inline(always)]
-    #[must_use]
     pub fn alrae(&mut self) -> AlraeW<CrSpec> {
         AlraeW::new(self, 8)
     }
     #[doc = "Bit 9 - Alarm B enable"]
     #[inline(always)]
-    #[must_use]
     pub fn alrbe(&mut self) -> AlrbeW<CrSpec> {
         AlrbeW::new(self, 9)
     }
     #[doc = "Bit 10 - Wakeup timer enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wute(&mut self) -> WuteW<CrSpec> {
         WuteW::new(self, 10)
     }
     #[doc = "Bit 11 - Time stamp enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tse(&mut self) -> TseW<CrSpec> {
         TseW::new(self, 11)
     }
     #[doc = "Bit 12 - Alarm A interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn alraie(&mut self) -> AlraieW<CrSpec> {
         AlraieW::new(self, 12)
     }
     #[doc = "Bit 13 - Alarm B interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn alrbie(&mut self) -> AlrbieW<CrSpec> {
         AlrbieW::new(self, 13)
     }
     #[doc = "Bit 14 - Wakeup timer interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wutie(&mut self) -> WutieW<CrSpec> {
         WutieW::new(self, 14)
     }
     #[doc = "Bit 15 - Time-stamp interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tsie(&mut self) -> TsieW<CrSpec> {
         TsieW::new(self, 15)
     }
     #[doc = "Bit 16 - Add 1 hour (summer time change)"]
     #[inline(always)]
-    #[must_use]
     pub fn add1h(&mut self) -> Add1hW<CrSpec> {
         Add1hW::new(self, 16)
     }
     #[doc = "Bit 17 - Subtract 1 hour (winter time change)"]
     #[inline(always)]
-    #[must_use]
     pub fn sub1h(&mut self) -> Sub1hW<CrSpec> {
         Sub1hW::new(self, 17)
     }
     #[doc = "Bit 18 - Backup"]
     #[inline(always)]
-    #[must_use]
     pub fn bkp(&mut self) -> BkpW<CrSpec> {
         BkpW::new(self, 18)
     }
     #[doc = "Bit 19 - Calibration output selection"]
     #[inline(always)]
-    #[must_use]
     pub fn cosel(&mut self) -> CoselW<CrSpec> {
         CoselW::new(self, 19)
     }
     #[doc = "Bit 20 - Output polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn pol(&mut self) -> PolW<CrSpec> {
         PolW::new(self, 20)
     }
     #[doc = "Bits 21:22 - Output selection"]
     #[inline(always)]
-    #[must_use]
     pub fn osel(&mut self) -> OselW<CrSpec> {
         OselW::new(self, 21)
     }
     #[doc = "Bit 23 - Calibration output enable"]
     #[inline(always)]
-    #[must_use]
     pub fn coe(&mut self) -> CoeW<CrSpec> {
         CoeW::new(self, 23)
     }
     #[doc = "Bit 24 - timestamp on internal event enable"]
     #[inline(always)]
-    #[must_use]
     pub fn itse(&mut self) -> ItseW<CrSpec> {
         ItseW::new(self, 24)
     }
     #[doc = "Bit 25 - TAMPTS"]
     #[inline(always)]
-    #[must_use]
     pub fn tampts(&mut self) -> TamptsW<CrSpec> {
         TamptsW::new(self, 25)
     }
     #[doc = "Bit 26 - TAMPOE"]
     #[inline(always)]
-    #[must_use]
     pub fn tampoe(&mut self) -> TampoeW<CrSpec> {
         TampoeW::new(self, 26)
     }
     #[doc = "Bit 29 - TAMPALRM_PU"]
     #[inline(always)]
-    #[must_use]
     pub fn tampalrm_pu(&mut self) -> TampalrmPuW<CrSpec> {
         TampalrmPuW::new(self, 29)
     }
     #[doc = "Bit 30 - TAMPALRM_TYPE"]
     #[inline(always)]
-    #[must_use]
     pub fn tampalrm_type(&mut self) -> TampalrmTypeW<CrSpec> {
         TampalrmTypeW::new(self, 30)
     }
     #[doc = "Bit 31 - OUT2EN"]
     #[inline(always)]
-    #[must_use]
     pub fn out2en(&mut self) -> Out2enW<CrSpec> {
         Out2enW::new(self, 31)
     }

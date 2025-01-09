@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<WprSpec> {
 impl W {
     #[doc = "Bits 0:7 - Write protection key"]
     #[inline(always)]
-    #[must_use]
     pub fn key(&mut self) -> KeyW<WprSpec> {
         KeyW::new(self, 0)
     }

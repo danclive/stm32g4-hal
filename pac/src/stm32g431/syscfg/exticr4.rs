@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - EXTI x configuration (x = 12 to 15)"]
     #[inline(always)]
-    #[must_use]
     pub fn exti12(&mut self) -> Exti12W<Exticr4Spec> {
         Exti12W::new(self, 0)
     }
     #[doc = "Bits 4:7 - EXTI x configuration (x = 12 to 15)"]
     #[inline(always)]
-    #[must_use]
     pub fn exti13(&mut self) -> Exti13W<Exticr4Spec> {
         Exti13W::new(self, 4)
     }
     #[doc = "Bits 8:11 - EXTI x configuration (x = 12 to 15)"]
     #[inline(always)]
-    #[must_use]
     pub fn exti14(&mut self) -> Exti14W<Exticr4Spec> {
         Exti14W::new(self, 8)
     }
     #[doc = "Bits 12:15 - EXTI x configuration (x = 12 to 15)"]
     #[inline(always)]
-    #[must_use]
     pub fn exti15(&mut self) -> Exti15W<Exticr4Spec> {
         Exti15W::new(self, 12)
     }

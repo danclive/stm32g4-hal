@@ -40,97 +40,81 @@ impl core::fmt::Debug for crate::generic::Reg<BrrSpec> {
 impl W {
     #[doc = "Bit 0 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br0(&mut self) -> Br0W<BrrSpec> {
         Br0W::new(self, 0)
     }
     #[doc = "Bit 1 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br1(&mut self) -> Br1W<BrrSpec> {
         Br1W::new(self, 1)
     }
     #[doc = "Bit 2 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br2(&mut self) -> Br2W<BrrSpec> {
         Br2W::new(self, 2)
     }
     #[doc = "Bit 3 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br3(&mut self) -> Br3W<BrrSpec> {
         Br3W::new(self, 3)
     }
     #[doc = "Bit 4 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br4(&mut self) -> Br4W<BrrSpec> {
         Br4W::new(self, 4)
     }
     #[doc = "Bit 5 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br5(&mut self) -> Br5W<BrrSpec> {
         Br5W::new(self, 5)
     }
     #[doc = "Bit 6 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br6(&mut self) -> Br6W<BrrSpec> {
         Br6W::new(self, 6)
     }
     #[doc = "Bit 7 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br7(&mut self) -> Br7W<BrrSpec> {
         Br7W::new(self, 7)
     }
     #[doc = "Bit 8 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br8(&mut self) -> Br8W<BrrSpec> {
         Br8W::new(self, 8)
     }
     #[doc = "Bit 9 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br9(&mut self) -> Br9W<BrrSpec> {
         Br9W::new(self, 9)
     }
     #[doc = "Bit 10 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br10(&mut self) -> Br10W<BrrSpec> {
         Br10W::new(self, 10)
     }
     #[doc = "Bit 11 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br11(&mut self) -> Br11W<BrrSpec> {
         Br11W::new(self, 11)
     }
     #[doc = "Bit 12 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br12(&mut self) -> Br12W<BrrSpec> {
         Br12W::new(self, 12)
     }
     #[doc = "Bit 13 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br13(&mut self) -> Br13W<BrrSpec> {
         Br13W::new(self, 13)
     }
     #[doc = "Bit 14 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br14(&mut self) -> Br14W<BrrSpec> {
         Br14W::new(self, 14)
     }
     #[doc = "Bit 15 - Port Reset bit"]
     #[inline(always)]
-    #[must_use]
     pub fn br15(&mut self) -> Br15W<BrrSpec> {
         Br15W::new(self, 15)
     }

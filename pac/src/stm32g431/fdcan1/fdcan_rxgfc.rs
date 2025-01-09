@@ -509,7 +509,6 @@ impl W {
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn rrfe(&mut self) -> RrfeW<FdcanRxgfcSpec> {
         RrfeW::new(self, 0)
     }
@@ -517,7 +516,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn rrfs(&mut self) -> RrfsW<FdcanRxgfcSpec> {
         RrfsW::new(self, 1)
     }
@@ -525,7 +523,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn anfe(&mut self) -> AnfeW<FdcanRxgfcSpec> {
         AnfeW::new(self, 2)
     }
@@ -533,7 +530,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn anfs(&mut self) -> AnfsW<FdcanRxgfcSpec> {
         AnfsW::new(self, 4)
     }
@@ -541,7 +537,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn f1om(&mut self) -> F1omW<FdcanRxgfcSpec> {
         F1omW::new(self, 8)
     }
@@ -549,7 +544,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn f0om(&mut self) -> F0omW<FdcanRxgfcSpec> {
         F0omW::new(self, 9)
     }
@@ -557,7 +551,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn lss(&mut self) -> LssW<FdcanRxgfcSpec> {
         LssW::new(self, 16)
     }
@@ -565,7 +558,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn lse(&mut self) -> LseW<FdcanRxgfcSpec> {
         LseW::new(self, 24)
     }

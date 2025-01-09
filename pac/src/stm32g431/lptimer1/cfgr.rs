@@ -143,79 +143,66 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Clock selector"]
     #[inline(always)]
-    #[must_use]
     pub fn cksel(&mut self) -> CkselW<CfgrSpec> {
         CkselW::new(self, 0)
     }
     #[doc = "Bits 1:2 - Clock Polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn ckpol(&mut self) -> CkpolW<CfgrSpec> {
         CkpolW::new(self, 1)
     }
     #[doc = "Bits 3:4 - Configurable digital filter for external clock"]
     #[inline(always)]
-    #[must_use]
     pub fn ckflt(&mut self) -> CkfltW<CfgrSpec> {
         CkfltW::new(self, 3)
     }
     #[doc = "Bits 6:7 - Configurable digital filter for trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn trgflt(&mut self) -> TrgfltW<CfgrSpec> {
         TrgfltW::new(self, 6)
     }
     #[doc = "Bits 9:11 - Clock prescaler"]
     #[inline(always)]
-    #[must_use]
     pub fn presc(&mut self) -> PrescW<CfgrSpec> {
         PrescW::new(self, 9)
     }
     #[doc = "Bits 13:16 - Trigger selector"]
     #[inline(always)]
-    #[must_use]
     pub fn trigsel(&mut self) -> TrigselW<CfgrSpec> {
         TrigselW::new(self, 13)
     }
     #[doc = "Bits 17:18 - Trigger enable and polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn trigen(&mut self) -> TrigenW<CfgrSpec> {
         TrigenW::new(self, 17)
     }
     #[doc = "Bit 19 - Timeout enable"]
     #[inline(always)]
-    #[must_use]
     pub fn timout(&mut self) -> TimoutW<CfgrSpec> {
         TimoutW::new(self, 19)
     }
     #[doc = "Bit 20 - Waveform shape"]
     #[inline(always)]
-    #[must_use]
     pub fn wave(&mut self) -> WaveW<CfgrSpec> {
         WaveW::new(self, 20)
     }
     #[doc = "Bit 21 - Waveform shape polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn wavpol(&mut self) -> WavpolW<CfgrSpec> {
         WavpolW::new(self, 21)
     }
     #[doc = "Bit 22 - Registers update mode"]
     #[inline(always)]
-    #[must_use]
     pub fn preload(&mut self) -> PreloadW<CfgrSpec> {
         PreloadW::new(self, 22)
     }
     #[doc = "Bit 23 - counter mode enabled"]
     #[inline(always)]
-    #[must_use]
     pub fn countmode(&mut self) -> CountmodeW<CfgrSpec> {
         CountmodeW::new(self, 23)
     }
     #[doc = "Bit 24 - Encoder mode enable"]
     #[inline(always)]
-    #[must_use]
     pub fn enc(&mut self) -> EncW<CfgrSpec> {
         EncW::new(self, 24)
     }

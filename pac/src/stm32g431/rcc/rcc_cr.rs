@@ -56,7 +56,7 @@ where
         self.variant(Hsion::B0x1)
     }
 }
-#[doc = "HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I&lt;sup>2&lt;/sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value.\n\nValue on reset: 0"]
+#[doc = "HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I<sup>2</sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsikeron {
@@ -71,7 +71,7 @@ impl From<Hsikeron> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HSIKERON` reader - HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I&lt;sup>2&lt;/sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value."]
+#[doc = "Field `HSIKERON` reader - HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I<sup>2</sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value."]
 pub type HsikeronR = crate::BitReader<Hsikeron>;
 impl HsikeronR {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +93,7 @@ impl HsikeronR {
         *self == Hsikeron::B0x1
     }
 }
-#[doc = "Field `HSIKERON` writer - HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I&lt;sup>2&lt;/sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value."]
+#[doc = "Field `HSIKERON` writer - HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I<sup>2</sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value."]
 pub type HsikeronW<'a, REG> = crate::BitWriter<'a, REG, Hsikeron>;
 impl<'a, REG> HsikeronW<'a, REG>
 where
@@ -443,7 +443,7 @@ impl R {
     pub fn hsion(&self) -> HsionR {
         HsionR::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I&lt;sup>2&lt;/sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value."]
+    #[doc = "Bit 9 - HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I<sup>2</sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value."]
     #[inline(always)]
     pub fn hsikeron(&self) -> HsikeronR {
         HsikeronR::new(((self.bits >> 9) & 1) != 0)
@@ -502,37 +502,31 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 8 - HSI16 clock enable Set and cleared by software. Cleared by hardware to stop the HSI16 oscillator when entering Stop, Standby or Shutdown mode. Set by hardware to force the HSI16 oscillator ON when STOPWUCK=1 or HSIASFS = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator. This bit is set by hardware if the HSI16 is used directly or indirectly as system clock."]
     #[inline(always)]
-    #[must_use]
     pub fn hsion(&mut self) -> HsionW<RccCrSpec> {
         HsionW::new(self, 8)
     }
-    #[doc = "Bit 9 - HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I&lt;sup>2&lt;/sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value."]
+    #[doc = "Bit 9 - HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I<sup>2</sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value."]
     #[inline(always)]
-    #[must_use]
     pub fn hsikeron(&mut self) -> HsikeronW<RccCrSpec> {
         HsikeronW::new(self, 9)
     }
     #[doc = "Bit 16 - HSE clock enable Set and cleared by software. Cleared by hardware to stop the HSE oscillator when entering Stop, Standby or Shutdown mode. This bit cannot be reset if the HSE oscillator is used directly or indirectly as the system clock."]
     #[inline(always)]
-    #[must_use]
     pub fn hseon(&mut self) -> HseonW<RccCrSpec> {
         HseonW::new(self, 16)
     }
     #[doc = "Bit 18 - HSE crystal oscillator bypass Set and cleared by software to bypass the oscillator with an external clock. The external clock must be enabled with the HSEON bit set, to be used by the device. The HSEBYP bit can be written only if the HSE oscillator is disabled."]
     #[inline(always)]
-    #[must_use]
     pub fn hsebyp(&mut self) -> HsebypW<RccCrSpec> {
         HsebypW::new(self, 18)
     }
     #[doc = "Bit 19 - Clock security system enable Set by software to enable the clock security system. When CSSON is set, the clock detector is enabled by hardware when the HSE oscillator is ready, and disabled by hardware if a HSE clock failure is detected. This bit is set only and is cleared by reset."]
     #[inline(always)]
-    #[must_use]
     pub fn csson(&mut self) -> CssonW<RccCrSpec> {
         CssonW::new(self, 19)
     }
     #[doc = "Bit 24 - Main PLL enable Set and cleared by software to enable the main PLL. Cleared by hardware when entering Stop, Standby or Shutdown mode. This bit cannot be reset if the PLL clock is used as the system clock."]
     #[inline(always)]
-    #[must_use]
     pub fn pllon(&mut self) -> PllonW<RccCrSpec> {
         PllonW::new(self, 24)
     }

@@ -71,7 +71,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:6 - Nominal time segment after sample point Valid values are 0 to 127. The actual interpretation by the hardware of this value is such that one more than the programmed value is used."]
     #[inline(always)]
-    #[must_use]
     pub fn ntseg2(&mut self) -> Ntseg2W<FdcanNbtpSpec> {
         Ntseg2W::new(self, 0)
     }
@@ -79,7 +78,6 @@ impl W {
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn ntseg1(&mut self) -> Ntseg1W<FdcanNbtpSpec> {
         Ntseg1W::new(self, 8)
     }
@@ -87,7 +85,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn nbrp(&mut self) -> NbrpW<FdcanNbtpSpec> {
         NbrpW::new(self, 16)
     }
@@ -95,7 +92,6 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn nsjw(&mut self) -> NsjwW<FdcanNbtpSpec> {
         NsjwW::new(self, 25)
     }

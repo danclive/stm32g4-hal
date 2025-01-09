@@ -113,61 +113,51 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - EA"]
     #[inline(always)]
-    #[must_use]
     pub fn ea(&mut self) -> EaW<Ep5rSpec> {
         EaW::new(self, 0)
     }
     #[doc = "Bits 4:5 - STAT_TX"]
     #[inline(always)]
-    #[must_use]
     pub fn stat_tx(&mut self) -> StatTxW<Ep5rSpec> {
         StatTxW::new(self, 4)
     }
     #[doc = "Bit 6 - DTOG_TX"]
     #[inline(always)]
-    #[must_use]
     pub fn dtog_tx(&mut self) -> DtogTxW<Ep5rSpec> {
         DtogTxW::new(self, 6)
     }
     #[doc = "Bit 7 - CTR_TX"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr_tx(&mut self) -> CtrTxW<Ep5rSpec> {
         CtrTxW::new(self, 7)
     }
     #[doc = "Bit 8 - EP_KIND"]
     #[inline(always)]
-    #[must_use]
     pub fn ep_kind(&mut self) -> EpKindW<Ep5rSpec> {
         EpKindW::new(self, 8)
     }
     #[doc = "Bits 9:10 - EP_TYPE"]
     #[inline(always)]
-    #[must_use]
     pub fn ep_type(&mut self) -> EpTypeW<Ep5rSpec> {
         EpTypeW::new(self, 9)
     }
     #[doc = "Bit 11 - SETUP"]
     #[inline(always)]
-    #[must_use]
     pub fn setup(&mut self) -> SetupW<Ep5rSpec> {
         SetupW::new(self, 11)
     }
     #[doc = "Bits 12:13 - STAT_RX"]
     #[inline(always)]
-    #[must_use]
     pub fn stat_rx(&mut self) -> StatRxW<Ep5rSpec> {
         StatRxW::new(self, 12)
     }
     #[doc = "Bit 14 - DTOG_RX"]
     #[inline(always)]
-    #[must_use]
     pub fn dtog_rx(&mut self) -> DtogRxW<Ep5rSpec> {
         DtogRxW::new(self, 14)
     }
     #[doc = "Bit 15 - CTR_RX"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr_rx(&mut self) -> CtrRxW<Ep5rSpec> {
         CtrRxW::new(self, 15)
     }

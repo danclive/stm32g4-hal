@@ -20,37 +20,31 @@ impl core::fmt::Debug for crate::generic::Reg<ScrSpec> {
 impl W {
     #[doc = "Bit 0 - CALRAF"]
     #[inline(always)]
-    #[must_use]
     pub fn calraf(&mut self) -> CalrafW<ScrSpec> {
         CalrafW::new(self, 0)
     }
     #[doc = "Bit 1 - CALRBF"]
     #[inline(always)]
-    #[must_use]
     pub fn calrbf(&mut self) -> CalrbfW<ScrSpec> {
         CalrbfW::new(self, 1)
     }
     #[doc = "Bit 2 - CWUTF"]
     #[inline(always)]
-    #[must_use]
     pub fn cwutf(&mut self) -> CwutfW<ScrSpec> {
         CwutfW::new(self, 2)
     }
     #[doc = "Bit 3 - CTSF"]
     #[inline(always)]
-    #[must_use]
     pub fn ctsf(&mut self) -> CtsfW<ScrSpec> {
         CtsfW::new(self, 3)
     }
     #[doc = "Bit 4 - CTSOVF"]
     #[inline(always)]
-    #[must_use]
     pub fn ctsovf(&mut self) -> CtsovfW<ScrSpec> {
         CtsovfW::new(self, 4)
     }
     #[doc = "Bit 5 - CITSF"]
     #[inline(always)]
-    #[must_use]
     pub fn citsf(&mut self) -> CitsfW<ScrSpec> {
         CitsfW::new(self, 5)
     }

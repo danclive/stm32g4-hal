@@ -433,43 +433,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - DMA1 reset Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn dma1rst(&mut self) -> Dma1rstW<RccAhb1rstrSpec> {
         Dma1rstW::new(self, 0)
     }
     #[doc = "Bit 1 - DMA2 reset Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn dma2rst(&mut self) -> Dma2rstW<RccAhb1rstrSpec> {
         Dma2rstW::new(self, 1)
     }
     #[doc = "Bit 2 - Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn dmamux1rst(&mut self) -> Dmamux1rstW<RccAhb1rstrSpec> {
         Dmamux1rstW::new(self, 2)
     }
     #[doc = "Bit 3 - Set and cleared by software"]
     #[inline(always)]
-    #[must_use]
     pub fn cordicrst(&mut self) -> CordicrstW<RccAhb1rstrSpec> {
         CordicrstW::new(self, 3)
     }
     #[doc = "Bit 4 - Set and cleared by software"]
     #[inline(always)]
-    #[must_use]
     pub fn fmacrst(&mut self) -> FmacrstW<RccAhb1rstrSpec> {
         FmacrstW::new(self, 4)
     }
     #[doc = "Bit 8 - Flash memory interface reset Set and cleared by software. This bit can be activated only when the Flash memory is in power down mode."]
     #[inline(always)]
-    #[must_use]
     pub fn flashrst(&mut self) -> FlashrstW<RccAhb1rstrSpec> {
         FlashrstW::new(self, 8)
     }
     #[doc = "Bit 12 - CRC reset Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn crcrst(&mut self) -> CrcrstW<RccAhb1rstrSpec> {
         CrcrstW::new(self, 12)
     }

@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - AES suspend"]
     #[inline(always)]
-    #[must_use]
     pub fn susp(&mut self) -> SuspW<Susp3rSpec> {
         SuspW::new(self, 0)
     }

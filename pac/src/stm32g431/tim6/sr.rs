@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Update interrupt flag"]
     #[inline(always)]
-    #[must_use]
     pub fn uif(&mut self) -> UifW<SrSpec> {
         UifW::new(self, 0)
     }

@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<CfrSpec> {
 impl W {
     #[doc = "Bits 0:15 - Clear synchronization overrun event flag"]
     #[inline(always)]
-    #[must_use]
     pub fn csof(&mut self) -> CsofW<CfrSpec> {
         CsofW::new(self, 0)
     }

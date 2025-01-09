@@ -264,49 +264,41 @@ impl core::fmt::Debug for crate::generic::Reg<RccCicrSpec> {
 impl W {
     #[doc = "Bit 0 - LSI ready interrupt clear This bit is set by software to clear the LSIRDYF flag."]
     #[inline(always)]
-    #[must_use]
     pub fn lsirdyc(&mut self) -> LsirdycW<RccCicrSpec> {
         LsirdycW::new(self, 0)
     }
     #[doc = "Bit 1 - LSE ready interrupt clear This bit is set by software to clear the LSERDYF flag."]
     #[inline(always)]
-    #[must_use]
     pub fn lserdyc(&mut self) -> LserdycW<RccCicrSpec> {
         LserdycW::new(self, 1)
     }
     #[doc = "Bit 3 - HSI16 ready interrupt clear This bit is set software to clear the HSIRDYF flag."]
     #[inline(always)]
-    #[must_use]
     pub fn hsirdyc(&mut self) -> HsirdycW<RccCicrSpec> {
         HsirdycW::new(self, 3)
     }
     #[doc = "Bit 4 - HSE ready interrupt clear This bit is set by software to clear the HSERDYF flag."]
     #[inline(always)]
-    #[must_use]
     pub fn hserdyc(&mut self) -> HserdycW<RccCicrSpec> {
         HserdycW::new(self, 4)
     }
     #[doc = "Bit 5 - PLL ready interrupt clear This bit is set by software to clear the PLLRDYF flag."]
     #[inline(always)]
-    #[must_use]
     pub fn pllrdyc(&mut self) -> PllrdycW<RccCicrSpec> {
         PllrdycW::new(self, 5)
     }
     #[doc = "Bit 8 - Clock security system interrupt clear This bit is set by software to clear the CSSF flag."]
     #[inline(always)]
-    #[must_use]
     pub fn cssc(&mut self) -> CsscW<RccCicrSpec> {
         CsscW::new(self, 8)
     }
     #[doc = "Bit 9 - LSE Clock security system interrupt clear This bit is set by software to clear the LSECSSF flag."]
     #[inline(always)]
-    #[must_use]
     pub fn lsecssc(&mut self) -> LsecsscW<RccCicrSpec> {
         LsecsscW::new(self, 9)
     }
     #[doc = "Bit 10 - HSI48 oscillator ready interrupt clear This bit is set by software to clear the HSI48RDYF flag."]
     #[inline(always)]
-    #[must_use]
     pub fn hsi48rdyc(&mut self) -> Hsi48rdycW<RccCicrSpec> {
         Hsi48rdycW::new(self, 10)
     }

@@ -260,22 +260,42 @@ macro_rules! uart_hal_shared {
             /// Starts listening for an interrupt event
             pub fn listen(&mut self, event: Event) {
                 match event {
-                    Event::Rxne => self.usart.cr1().modify(|_, w| w.rxneie().set_bit()),
-                    Event::Txe => self.usart.cr1().modify(|_, w| w.txeie().set_bit()),
-                    Event::Idle => self.usart.cr1().modify(|_, w| w.idleie().set_bit()),
-                    Event::Txftie => self.usart.cr3().modify(|_, w| w.txftie().set_bit()),
-                    Event::Rxftie => self.usart.cr3().modify(|_, w| w.rxftie().set_bit()),
+                    Event::Rxne => {
+                        self.usart.cr1().modify(|_, w| w.rxneie().set_bit());
+                    }
+                    Event::Txe => {
+                        self.usart.cr1().modify(|_, w| w.txeie().set_bit());
+                    }
+                    Event::Idle => {
+                        self.usart.cr1().modify(|_, w| w.idleie().set_bit());
+                    }
+                    Event::Txftie => {
+                        self.usart.cr3().modify(|_, w| w.txftie().set_bit());
+                    }
+                    Event::Rxftie => {
+                        self.usart.cr3().modify(|_, w| w.rxftie().set_bit());
+                    }
                 }
             }
 
             /// Stop listening for an interrupt event
             pub fn unlisten(&mut self, event: Event) {
                 match event {
-                    Event::Rxne => self.usart.cr1().modify(|_, w| w.rxneie().clear_bit()),
-                    Event::Txe => self.usart.cr1().modify(|_, w| w.txeie().clear_bit()),
-                    Event::Idle => self.usart.cr1().modify(|_, w| w.idleie().clear_bit()),
-                    Event::Txftie => self.usart.cr3().modify(|_, w| w.txftie().clear_bit()),
-                    Event::Rxftie => self.usart.cr3().modify(|_, w| w.rxftie().clear_bit()),
+                    Event::Rxne => {
+                        self.usart.cr1().modify(|_, w| w.rxneie().clear_bit());
+                    }
+                    Event::Txe => {
+                        self.usart.cr1().modify(|_, w| w.txeie().clear_bit());
+                    }
+                    Event::Idle => {
+                        self.usart.cr1().modify(|_, w| w.idleie().clear_bit());
+                    }
+                    Event::Txftie => {
+                        self.usart.cr3().modify(|_, w| w.txftie().clear_bit());
+                    }
+                    Event::Rxftie => {
+                        self.usart.cr3().modify(|_, w| w.rxftie().clear_bit());
+                    }
                 }
                 let _ = self.usart.cr1().read();
                 let _ = self.usart.cr1().read(); // Delay 2 peripheral clocks
@@ -291,7 +311,9 @@ macro_rules! uart_hal_shared {
 
             /// Clear the line idle status bit
             pub fn clear_idle(&mut self) {
-                unsafe { (*<pac::$UARTX>::PTR).icr().write(|w| w.idlecf().set_bit()) }
+                unsafe {
+                    (*<pac::$UARTX>::PTR).icr().write(|w| w.idlecf().set_bit());
+                }
                 let _ = self.usart.isr().read();
                 let _ = self.usart.isr().read(); // Delay 2 peripheral clocks
             }

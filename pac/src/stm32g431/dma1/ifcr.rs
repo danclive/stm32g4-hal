@@ -72,193 +72,161 @@ impl core::fmt::Debug for crate::generic::Reg<IfcrSpec> {
 impl W {
     #[doc = "Bit 0 - GIF1"]
     #[inline(always)]
-    #[must_use]
     pub fn gif1(&mut self) -> Gif1W<IfcrSpec> {
         Gif1W::new(self, 0)
     }
     #[doc = "Bit 1 - TCIF1"]
     #[inline(always)]
-    #[must_use]
     pub fn tcif1(&mut self) -> Tcif1W<IfcrSpec> {
         Tcif1W::new(self, 1)
     }
     #[doc = "Bit 2 - HTIF1"]
     #[inline(always)]
-    #[must_use]
     pub fn htif1(&mut self) -> Htif1W<IfcrSpec> {
         Htif1W::new(self, 2)
     }
     #[doc = "Bit 3 - TEIF1"]
     #[inline(always)]
-    #[must_use]
     pub fn teif1(&mut self) -> Teif1W<IfcrSpec> {
         Teif1W::new(self, 3)
     }
     #[doc = "Bit 4 - GIF2"]
     #[inline(always)]
-    #[must_use]
     pub fn gif2(&mut self) -> Gif2W<IfcrSpec> {
         Gif2W::new(self, 4)
     }
     #[doc = "Bit 5 - TCIF2"]
     #[inline(always)]
-    #[must_use]
     pub fn tcif2(&mut self) -> Tcif2W<IfcrSpec> {
         Tcif2W::new(self, 5)
     }
     #[doc = "Bit 6 - HTIF2"]
     #[inline(always)]
-    #[must_use]
     pub fn htif2(&mut self) -> Htif2W<IfcrSpec> {
         Htif2W::new(self, 6)
     }
     #[doc = "Bit 7 - TEIF2"]
     #[inline(always)]
-    #[must_use]
     pub fn teif2(&mut self) -> Teif2W<IfcrSpec> {
         Teif2W::new(self, 7)
     }
     #[doc = "Bit 8 - GIF3"]
     #[inline(always)]
-    #[must_use]
     pub fn gif3(&mut self) -> Gif3W<IfcrSpec> {
         Gif3W::new(self, 8)
     }
     #[doc = "Bit 9 - TCIF3"]
     #[inline(always)]
-    #[must_use]
     pub fn tcif3(&mut self) -> Tcif3W<IfcrSpec> {
         Tcif3W::new(self, 9)
     }
     #[doc = "Bit 10 - HTIF3"]
     #[inline(always)]
-    #[must_use]
     pub fn htif3(&mut self) -> Htif3W<IfcrSpec> {
         Htif3W::new(self, 10)
     }
     #[doc = "Bit 11 - TEIF3"]
     #[inline(always)]
-    #[must_use]
     pub fn teif3(&mut self) -> Teif3W<IfcrSpec> {
         Teif3W::new(self, 11)
     }
     #[doc = "Bit 12 - GIF4"]
     #[inline(always)]
-    #[must_use]
     pub fn gif4(&mut self) -> Gif4W<IfcrSpec> {
         Gif4W::new(self, 12)
     }
     #[doc = "Bit 13 - TCIF4"]
     #[inline(always)]
-    #[must_use]
     pub fn tcif4(&mut self) -> Tcif4W<IfcrSpec> {
         Tcif4W::new(self, 13)
     }
     #[doc = "Bit 14 - HTIF4"]
     #[inline(always)]
-    #[must_use]
     pub fn htif4(&mut self) -> Htif4W<IfcrSpec> {
         Htif4W::new(self, 14)
     }
     #[doc = "Bit 15 - TEIF4"]
     #[inline(always)]
-    #[must_use]
     pub fn teif4(&mut self) -> Teif4W<IfcrSpec> {
         Teif4W::new(self, 15)
     }
     #[doc = "Bit 16 - GIF5"]
     #[inline(always)]
-    #[must_use]
     pub fn gif5(&mut self) -> Gif5W<IfcrSpec> {
         Gif5W::new(self, 16)
     }
     #[doc = "Bit 17 - TCIF5"]
     #[inline(always)]
-    #[must_use]
     pub fn tcif5(&mut self) -> Tcif5W<IfcrSpec> {
         Tcif5W::new(self, 17)
     }
     #[doc = "Bit 18 - HTIF5"]
     #[inline(always)]
-    #[must_use]
     pub fn htif5(&mut self) -> Htif5W<IfcrSpec> {
         Htif5W::new(self, 18)
     }
     #[doc = "Bit 19 - TEIF5"]
     #[inline(always)]
-    #[must_use]
     pub fn teif5(&mut self) -> Teif5W<IfcrSpec> {
         Teif5W::new(self, 19)
     }
     #[doc = "Bit 20 - GIF6"]
     #[inline(always)]
-    #[must_use]
     pub fn gif6(&mut self) -> Gif6W<IfcrSpec> {
         Gif6W::new(self, 20)
     }
     #[doc = "Bit 21 - TCIF6"]
     #[inline(always)]
-    #[must_use]
     pub fn tcif6(&mut self) -> Tcif6W<IfcrSpec> {
         Tcif6W::new(self, 21)
     }
     #[doc = "Bit 22 - HTIF6"]
     #[inline(always)]
-    #[must_use]
     pub fn htif6(&mut self) -> Htif6W<IfcrSpec> {
         Htif6W::new(self, 22)
     }
     #[doc = "Bit 23 - TEIF6"]
     #[inline(always)]
-    #[must_use]
     pub fn teif6(&mut self) -> Teif6W<IfcrSpec> {
         Teif6W::new(self, 23)
     }
     #[doc = "Bit 24 - GIF7"]
     #[inline(always)]
-    #[must_use]
     pub fn gif7(&mut self) -> Gif7W<IfcrSpec> {
         Gif7W::new(self, 24)
     }
     #[doc = "Bit 25 - TCIF7"]
     #[inline(always)]
-    #[must_use]
     pub fn tcif7(&mut self) -> Tcif7W<IfcrSpec> {
         Tcif7W::new(self, 25)
     }
     #[doc = "Bit 26 - HTIF7"]
     #[inline(always)]
-    #[must_use]
     pub fn htif7(&mut self) -> Htif7W<IfcrSpec> {
         Htif7W::new(self, 26)
     }
     #[doc = "Bit 27 - TEIF7"]
     #[inline(always)]
-    #[must_use]
     pub fn teif7(&mut self) -> Teif7W<IfcrSpec> {
         Teif7W::new(self, 27)
     }
     #[doc = "Bit 28 - GIF8"]
     #[inline(always)]
-    #[must_use]
     pub fn gif8(&mut self) -> Gif8W<IfcrSpec> {
         Gif8W::new(self, 28)
     }
     #[doc = "Bit 29 - TCIF8"]
     #[inline(always)]
-    #[must_use]
     pub fn tcif8(&mut self) -> Tcif8W<IfcrSpec> {
         Tcif8W::new(self, 29)
     }
     #[doc = "Bit 30 - HTIF8"]
     #[inline(always)]
-    #[must_use]
     pub fn htif8(&mut self) -> Htif8W<IfcrSpec> {
         Htif8W::new(self, 30)
     }
     #[doc = "Bit 31 - TEIF8"]
     #[inline(always)]
-    #[must_use]
     pub fn teif8(&mut self) -> Teif8W<IfcrSpec> {
         Teif8W::new(self, 31)
     }

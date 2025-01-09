@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - Regular channel sequence length"]
     #[inline(always)]
-    #[must_use]
     pub fn l(&mut self) -> LW<Sqr1Spec> {
         LW::new(self, 0)
     }
     #[doc = "Bits 6:10 - SQ1"]
     #[inline(always)]
-    #[must_use]
     pub fn sq1(&mut self) -> Sq1W<Sqr1Spec> {
         Sq1W::new(self, 6)
     }
     #[doc = "Bits 12:16 - SQ2"]
     #[inline(always)]
-    #[must_use]
     pub fn sq2(&mut self) -> Sq2W<Sqr1Spec> {
         Sq2W::new(self, 12)
     }
     #[doc = "Bits 18:22 - SQ3"]
     #[inline(always)]
-    #[must_use]
     pub fn sq3(&mut self) -> Sq3W<Sqr1Spec> {
         Sq3W::new(self, 18)
     }
     #[doc = "Bits 24:28 - SQ4"]
     #[inline(always)]
-    #[must_use]
     pub fn sq4(&mut self) -> Sq4W<Sqr1Spec> {
         Sq4W::new(self, 24)
     }

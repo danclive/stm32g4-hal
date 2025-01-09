@@ -123,67 +123,56 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - ADRDYIE"]
     #[inline(always)]
-    #[must_use]
     pub fn adrdyie(&mut self) -> AdrdyieW<IerSpec> {
         AdrdyieW::new(self, 0)
     }
     #[doc = "Bit 1 - EOSMPIE"]
     #[inline(always)]
-    #[must_use]
     pub fn eosmpie(&mut self) -> EosmpieW<IerSpec> {
         EosmpieW::new(self, 1)
     }
     #[doc = "Bit 2 - EOCIE"]
     #[inline(always)]
-    #[must_use]
     pub fn eocie(&mut self) -> EocieW<IerSpec> {
         EocieW::new(self, 2)
     }
     #[doc = "Bit 3 - EOSIE"]
     #[inline(always)]
-    #[must_use]
     pub fn eosie(&mut self) -> EosieW<IerSpec> {
         EosieW::new(self, 3)
     }
     #[doc = "Bit 4 - OVRIE"]
     #[inline(always)]
-    #[must_use]
     pub fn ovrie(&mut self) -> OvrieW<IerSpec> {
         OvrieW::new(self, 4)
     }
     #[doc = "Bit 5 - JEOCIE"]
     #[inline(always)]
-    #[must_use]
     pub fn jeocie(&mut self) -> JeocieW<IerSpec> {
         JeocieW::new(self, 5)
     }
     #[doc = "Bit 6 - JEOSIE"]
     #[inline(always)]
-    #[must_use]
     pub fn jeosie(&mut self) -> JeosieW<IerSpec> {
         JeosieW::new(self, 6)
     }
     #[doc = "Bit 7 - AWD1IE"]
     #[inline(always)]
-    #[must_use]
     pub fn awd1ie(&mut self) -> Awd1ieW<IerSpec> {
         Awd1ieW::new(self, 7)
     }
     #[doc = "Bit 8 - AWD2IE"]
     #[inline(always)]
-    #[must_use]
     pub fn awd2ie(&mut self) -> Awd2ieW<IerSpec> {
         Awd2ieW::new(self, 8)
     }
     #[doc = "Bit 9 - AWD3IE"]
     #[inline(always)]
-    #[must_use]
     pub fn awd3ie(&mut self) -> Awd3ieW<IerSpec> {
         Awd3ieW::new(self, 9)
     }
     #[doc = "Bit 10 - JQOVFIE"]
     #[inline(always)]
-    #[must_use]
     pub fn jqovfie(&mut self) -> JqovfieW<IerSpec> {
         JqovfieW::new(self, 10)
     }

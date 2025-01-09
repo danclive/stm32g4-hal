@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - General-purpose 8-bit data register bits"]
     #[inline(always)]
-    #[must_use]
     pub fn idr(&mut self) -> IdrW<IdrSpec> {
         IdrW::new(self, 0)
     }

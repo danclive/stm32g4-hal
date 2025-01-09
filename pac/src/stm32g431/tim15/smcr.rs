@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Slave mode selection"]
     #[inline(always)]
-    #[must_use]
     pub fn sms(&mut self) -> SmsW<SmcrSpec> {
         SmsW::new(self, 0)
     }
     #[doc = "Bits 4:6 - Trigger selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ts(&mut self) -> TsW<SmcrSpec> {
         TsW::new(self, 4)
     }
     #[doc = "Bit 7 - Master/Slave mode"]
     #[inline(always)]
-    #[must_use]
     pub fn msm(&mut self) -> MsmW<SmcrSpec> {
         MsmW::new(self, 7)
     }
     #[doc = "Bit 16 - Slave mode selection - bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn sms_3(&mut self) -> Sms3W<SmcrSpec> {
         Sms3W::new(self, 16)
     }
     #[doc = "Bits 20:21 - Trigger selection - bit 4:3"]
     #[inline(always)]
-    #[must_use]
     pub fn ts_4_3(&mut self) -> Ts4_3W<SmcrSpec> {
         Ts4_3W::new(self, 20)
     }

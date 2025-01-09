@@ -16,25 +16,21 @@ impl core::fmt::Debug for crate::generic::Reg<DacSwtrgrSpec> {
 impl W {
     #[doc = "Bit 0 - DAC channel1 software trigger This bit is set by software to trigger the DAC in software trigger mode. Note: This bit is cleared by hardware (one APB1 clock cycle later) once the DAC_DHR1 register value has been loaded into the DAC_DOR1 register."]
     #[inline(always)]
-    #[must_use]
     pub fn swtrig1(&mut self) -> Swtrig1W<DacSwtrgrSpec> {
         Swtrig1W::new(self, 0)
     }
     #[doc = "Bit 1 - DAC channel2 software trigger This bit is set by software to trigger the DAC in software trigger mode. Note: This bit is cleared by hardware (one APB1 clock cycle later) once the DAC_DHR2 register value has been loaded into the DAC_DOR2 register."]
     #[inline(always)]
-    #[must_use]
     pub fn swtrig2(&mut self) -> Swtrig2W<DacSwtrgrSpec> {
         Swtrig2W::new(self, 1)
     }
     #[doc = "Bit 16 - DAC channel1 software trigger B"]
     #[inline(always)]
-    #[must_use]
     pub fn swtrigb1(&mut self) -> Swtrigb1W<DacSwtrgrSpec> {
         Swtrigb1W::new(self, 16)
     }
     #[doc = "Bit 17 - DAC channel2 software trigger B"]
     #[inline(always)]
-    #[must_use]
     pub fn swtrigb2(&mut self) -> Swtrigb2W<DacSwtrgrSpec> {
         Swtrigb2W::new(self, 17)
     }

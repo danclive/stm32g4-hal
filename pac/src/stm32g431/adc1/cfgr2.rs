@@ -113,61 +113,51 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - DMAEN"]
     #[inline(always)]
-    #[must_use]
     pub fn rovse(&mut self) -> RovseW<Cfgr2Spec> {
         RovseW::new(self, 0)
     }
     #[doc = "Bit 1 - DMACFG"]
     #[inline(always)]
-    #[must_use]
     pub fn jovse(&mut self) -> JovseW<Cfgr2Spec> {
         JovseW::new(self, 1)
     }
     #[doc = "Bits 2:4 - RES"]
     #[inline(always)]
-    #[must_use]
     pub fn ovsr(&mut self) -> OvsrW<Cfgr2Spec> {
         OvsrW::new(self, 2)
     }
     #[doc = "Bits 5:8 - ALIGN"]
     #[inline(always)]
-    #[must_use]
     pub fn ovss(&mut self) -> OvssW<Cfgr2Spec> {
         OvssW::new(self, 5)
     }
     #[doc = "Bit 9 - Triggered Regular Oversampling"]
     #[inline(always)]
-    #[must_use]
     pub fn trovs(&mut self) -> TrovsW<Cfgr2Spec> {
         TrovsW::new(self, 9)
     }
     #[doc = "Bit 10 - EXTEN"]
     #[inline(always)]
-    #[must_use]
     pub fn rovsm(&mut self) -> RovsmW<Cfgr2Spec> {
         RovsmW::new(self, 10)
     }
     #[doc = "Bit 16 - GCOMP"]
     #[inline(always)]
-    #[must_use]
     pub fn gcomp(&mut self) -> GcompW<Cfgr2Spec> {
         GcompW::new(self, 16)
     }
     #[doc = "Bit 25 - SWTRIG"]
     #[inline(always)]
-    #[must_use]
     pub fn swtrig(&mut self) -> SwtrigW<Cfgr2Spec> {
         SwtrigW::new(self, 25)
     }
     #[doc = "Bit 26 - BULB"]
     #[inline(always)]
-    #[must_use]
     pub fn bulb(&mut self) -> BulbW<Cfgr2Spec> {
         BulbW::new(self, 26)
     }
     #[doc = "Bit 27 - SMPTRIG"]
     #[inline(always)]
-    #[must_use]
     pub fn smptrig(&mut self) -> SmptrigW<Cfgr2Spec> {
         SmptrigW::new(self, 27)
     }

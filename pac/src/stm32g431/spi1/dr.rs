@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - Data register"]
     #[inline(always)]
-    #[must_use]
     pub fn dr(&mut self) -> DrW<DrSpec> {
         DrW::new(self, 0)
     }

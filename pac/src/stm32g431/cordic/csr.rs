@@ -123,67 +123,56 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - FUNC"]
     #[inline(always)]
-    #[must_use]
     pub fn func(&mut self) -> FuncW<CsrSpec> {
         FuncW::new(self, 0)
     }
     #[doc = "Bits 4:7 - PRECISION"]
     #[inline(always)]
-    #[must_use]
     pub fn precision(&mut self) -> PrecisionW<CsrSpec> {
         PrecisionW::new(self, 4)
     }
     #[doc = "Bits 8:10 - SCALE"]
     #[inline(always)]
-    #[must_use]
     pub fn scale(&mut self) -> ScaleW<CsrSpec> {
         ScaleW::new(self, 8)
     }
     #[doc = "Bit 16 - IEN"]
     #[inline(always)]
-    #[must_use]
     pub fn ien(&mut self) -> IenW<CsrSpec> {
         IenW::new(self, 16)
     }
     #[doc = "Bit 17 - DMAREN"]
     #[inline(always)]
-    #[must_use]
     pub fn dmaren(&mut self) -> DmarenW<CsrSpec> {
         DmarenW::new(self, 17)
     }
     #[doc = "Bit 18 - DMAWEN"]
     #[inline(always)]
-    #[must_use]
     pub fn dmawen(&mut self) -> DmawenW<CsrSpec> {
         DmawenW::new(self, 18)
     }
     #[doc = "Bit 19 - NRES"]
     #[inline(always)]
-    #[must_use]
     pub fn nres(&mut self) -> NresW<CsrSpec> {
         NresW::new(self, 19)
     }
     #[doc = "Bit 20 - NARGS"]
     #[inline(always)]
-    #[must_use]
     pub fn nargs(&mut self) -> NargsW<CsrSpec> {
         NargsW::new(self, 20)
     }
     #[doc = "Bit 21 - RESSIZE"]
     #[inline(always)]
-    #[must_use]
     pub fn ressize(&mut self) -> RessizeW<CsrSpec> {
         RessizeW::new(self, 21)
     }
     #[doc = "Bit 22 - ARGSIZE"]
     #[inline(always)]
-    #[must_use]
     pub fn argsize(&mut self) -> ArgsizeW<CsrSpec> {
         ArgsizeW::new(self, 22)
     }
     #[doc = "Bit 31 - RRDY"]
     #[inline(always)]
-    #[must_use]
     pub fn rrdy(&mut self) -> RrdyW<CsrSpec> {
         RrdyW::new(self, 31)
     }

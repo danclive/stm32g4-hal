@@ -123,67 +123,56 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 8 - BOOSTEN"]
     #[inline(always)]
-    #[must_use]
     pub fn boosten(&mut self) -> BoostenW<Cfgr1Spec> {
         BoostenW::new(self, 8)
     }
     #[doc = "Bit 9 - GPIO analog switch control voltage selection"]
     #[inline(always)]
-    #[must_use]
     pub fn anaswvdd(&mut self) -> AnaswvddW<Cfgr1Spec> {
         AnaswvddW::new(self, 9)
     }
     #[doc = "Bit 16 - FM+ drive capability on PB6"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c_pb6_fmp(&mut self) -> I2cPb6FmpW<Cfgr1Spec> {
         I2cPb6FmpW::new(self, 16)
     }
     #[doc = "Bit 17 - FM+ drive capability on PB6"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c_pb7_fmp(&mut self) -> I2cPb7FmpW<Cfgr1Spec> {
         I2cPb7FmpW::new(self, 17)
     }
     #[doc = "Bit 18 - FM+ drive capability on PB6"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c_pb8_fmp(&mut self) -> I2cPb8FmpW<Cfgr1Spec> {
         I2cPb8FmpW::new(self, 18)
     }
     #[doc = "Bit 19 - FM+ drive capability on PB6"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c_pb9_fmp(&mut self) -> I2cPb9FmpW<Cfgr1Spec> {
         I2cPb9FmpW::new(self, 19)
     }
     #[doc = "Bit 20 - I2C1 FM+ drive capability enable"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c1_fmp(&mut self) -> I2c1FmpW<Cfgr1Spec> {
         I2c1FmpW::new(self, 20)
     }
     #[doc = "Bit 21 - I2C1 FM+ drive capability enable"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c2_fmp(&mut self) -> I2c2FmpW<Cfgr1Spec> {
         I2c2FmpW::new(self, 21)
     }
     #[doc = "Bit 22 - I2C1 FM+ drive capability enable"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c3_fmp(&mut self) -> I2c3FmpW<Cfgr1Spec> {
         I2c3FmpW::new(self, 22)
     }
     #[doc = "Bit 23 - I2C1 FM+ drive capability enable"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c4_fmp(&mut self) -> I2c4FmpW<Cfgr1Spec> {
         I2c4FmpW::new(self, 23)
     }
     #[doc = "Bits 26:31 - FPU Interrupts Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn fpu_ie(&mut self) -> FpuIeW<Cfgr1Spec> {
         FpuIeW::new(self, 26)
     }

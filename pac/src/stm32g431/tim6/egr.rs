@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<EgrSpec> {
 impl W {
     #[doc = "Bit 0 - Update generation"]
     #[inline(always)]
-    #[must_use]
     pub fn ug(&mut self) -> UgW<EgrSpec> {
         UgW::new(self, 0)
     }

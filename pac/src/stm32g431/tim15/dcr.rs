@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:4 - DMA base address"]
     #[inline(always)]
-    #[must_use]
     pub fn dba(&mut self) -> DbaW<DcrSpec> {
         DbaW::new(self, 0)
     }
     #[doc = "Bits 8:12 - DMA burst length"]
     #[inline(always)]
-    #[must_use]
     pub fn dbl(&mut self) -> DblW<DcrSpec> {
         DblW::new(self, 8)
     }

@@ -126,13 +126,11 @@ impl W {
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
     #[inline(always)]
-    #[must_use]
     pub fn tss(&mut self) -> TssW<FdcanTsccSpec> {
         TssW::new(self, 0)
     }
     #[doc = "Bits 16:19 - Timestamp counter prescaler"]
     #[inline(always)]
-    #[must_use]
     pub fn tcp(&mut self) -> TcpW<FdcanTsccSpec> {
         TcpW::new(self, 16)
     }

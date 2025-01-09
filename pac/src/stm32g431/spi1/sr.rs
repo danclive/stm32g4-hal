@@ -87,7 +87,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 4 - CRC error flag"]
     #[inline(always)]
-    #[must_use]
     pub fn crcerr(&mut self) -> CrcerrW<SrSpec> {
         CrcerrW::new(self, 4)
     }

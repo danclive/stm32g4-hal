@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:5 - Trimming code"]
     #[inline(always)]
-    #[must_use]
     pub fn trim(&mut self) -> TrimW<VrefbufCcrSpec> {
         TrimW::new(self, 0)
     }

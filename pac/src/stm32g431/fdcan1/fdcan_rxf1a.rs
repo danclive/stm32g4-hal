@@ -27,7 +27,6 @@ impl W {
     #[doc = "Bits 0:2 - Rx FIFO 1 acknowledge index After the Host has read a message or a sequence of messages from Rx FIFO 1 it has to write the buffer index of the last element read from Rx FIFO 1 to F1AI. This sets the Rx FIFO 1 get index RXF1S\\[F1GI\\]
 to F1AI + 1 and update the FIFO 1 Fill Level RXF1S\\[F1FL\\]."]
     #[inline(always)]
-    #[must_use]
     pub fn f1ai(&mut self) -> F1aiW<FdcanRxf1aSpec> {
         F1aiW::new(self, 0)
     }

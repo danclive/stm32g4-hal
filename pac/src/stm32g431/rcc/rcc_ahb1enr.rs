@@ -433,43 +433,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - DMA1 clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn dma1en(&mut self) -> Dma1enW<RccAhb1enrSpec> {
         Dma1enW::new(self, 0)
     }
     #[doc = "Bit 1 - DMA2 clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn dma2en(&mut self) -> Dma2enW<RccAhb1enrSpec> {
         Dma2enW::new(self, 1)
     }
     #[doc = "Bit 2 - DMAMUX1 clock enable Set and reset by software."]
     #[inline(always)]
-    #[must_use]
     pub fn dmamux1en(&mut self) -> Dmamux1enW<RccAhb1enrSpec> {
         Dmamux1enW::new(self, 2)
     }
     #[doc = "Bit 3 - CORDIC clock enable Set and reset by software."]
     #[inline(always)]
-    #[must_use]
     pub fn cordicen(&mut self) -> CordicenW<RccAhb1enrSpec> {
         CordicenW::new(self, 3)
     }
     #[doc = "Bit 4 - FMAC enable Set and reset by software."]
     #[inline(always)]
-    #[must_use]
     pub fn fmacen(&mut self) -> FmacenW<RccAhb1enrSpec> {
         FmacenW::new(self, 4)
     }
     #[doc = "Bit 8 - Flash memory interface clock enable Set and cleared by software. This bit can be disabled only when the Flash is in power down mode."]
     #[inline(always)]
-    #[must_use]
     pub fn flashen(&mut self) -> FlashenW<RccAhb1enrSpec> {
         FlashenW::new(self, 8)
     }
     #[doc = "Bit 12 - CRC clock enable Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn crcen(&mut self) -> CrcenW<RccAhb1enrSpec> {
         CrcenW::new(self, 12)
     }

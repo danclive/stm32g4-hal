@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - Auto-reload value"]
     #[inline(always)]
-    #[must_use]
     pub fn arr(&mut self) -> ArrW<ArrSpec> {
         ArrW::new(self, 0)
     }

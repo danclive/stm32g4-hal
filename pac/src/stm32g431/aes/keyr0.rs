@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - Data Output Register (LSB key \\[31:0\\])"]
     #[inline(always)]
-    #[must_use]
     pub fn aes_keyr0(&mut self) -> AesKeyr0W<Keyr0Spec> {
         AesKeyr0W::new(self, 0)
     }

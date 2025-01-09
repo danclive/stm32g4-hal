@@ -93,49 +93,41 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:5 - HBITCLKDIV"]
     #[inline(always)]
-    #[must_use]
     pub fn hbitclkdiv(&mut self) -> HbitclkdivW<Cfg1Spec> {
         HbitclkdivW::new(self, 0)
     }
     #[doc = "Bits 6:10 - IFRGAP"]
     #[inline(always)]
-    #[must_use]
     pub fn ifrgap(&mut self) -> IfrgapW<Cfg1Spec> {
         IfrgapW::new(self, 6)
     }
     #[doc = "Bits 11:15 - TRANSWIN"]
     #[inline(always)]
-    #[must_use]
     pub fn transwin(&mut self) -> TranswinW<Cfg1Spec> {
         TranswinW::new(self, 11)
     }
     #[doc = "Bits 17:19 - PSC_USBPDCLK"]
     #[inline(always)]
-    #[must_use]
     pub fn psc_usbpdclk(&mut self) -> PscUsbpdclkW<Cfg1Spec> {
         PscUsbpdclkW::new(self, 17)
     }
     #[doc = "Bits 20:28 - RXORDSETEN"]
     #[inline(always)]
-    #[must_use]
     pub fn rxordseten(&mut self) -> RxordsetenW<Cfg1Spec> {
         RxordsetenW::new(self, 20)
     }
     #[doc = "Bit 29 - TXDMAEN"]
     #[inline(always)]
-    #[must_use]
     pub fn txdmaen(&mut self) -> TxdmaenW<Cfg1Spec> {
         TxdmaenW::new(self, 29)
     }
     #[doc = "Bit 30 - RXDMAEN"]
     #[inline(always)]
-    #[must_use]
     pub fn rxdmaen(&mut self) -> RxdmaenW<Cfg1Spec> {
         RxdmaenW::new(self, 30)
     }
     #[doc = "Bit 31 - UCPDEN"]
     #[inline(always)]
-    #[must_use]
     pub fn ucpden(&mut self) -> UcpdenW<Cfg1Spec> {
         UcpdenW::new(self, 31)
     }

@@ -57,13 +57,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 5 - Clock error interrupt status"]
     #[inline(always)]
-    #[must_use]
     pub fn ceis(&mut self) -> CeisW<SrSpec> {
         CeisW::new(self, 5)
     }
     #[doc = "Bit 6 - Seed error interrupt status"]
     #[inline(always)]
-    #[must_use]
     pub fn seis(&mut self) -> SeisW<SrSpec> {
         SeisW::new(self, 6)
     }

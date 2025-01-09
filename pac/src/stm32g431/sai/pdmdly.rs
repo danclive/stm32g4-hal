@@ -93,49 +93,41 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - DLYM1L"]
     #[inline(always)]
-    #[must_use]
     pub fn dlym1l(&mut self) -> Dlym1lW<PdmdlySpec> {
         Dlym1lW::new(self, 0)
     }
     #[doc = "Bits 4:6 - DLYM1R"]
     #[inline(always)]
-    #[must_use]
     pub fn dlym1r(&mut self) -> Dlym1rW<PdmdlySpec> {
         Dlym1rW::new(self, 4)
     }
     #[doc = "Bits 8:10 - DLYM2L"]
     #[inline(always)]
-    #[must_use]
     pub fn dlym2l(&mut self) -> Dlym2lW<PdmdlySpec> {
         Dlym2lW::new(self, 8)
     }
     #[doc = "Bits 12:14 - DLYM2R"]
     #[inline(always)]
-    #[must_use]
     pub fn dlym2r(&mut self) -> Dlym2rW<PdmdlySpec> {
         Dlym2rW::new(self, 12)
     }
     #[doc = "Bits 16:18 - DLYM3L"]
     #[inline(always)]
-    #[must_use]
     pub fn dlym3l(&mut self) -> Dlym3lW<PdmdlySpec> {
         Dlym3lW::new(self, 16)
     }
     #[doc = "Bits 20:22 - DLYM3R"]
     #[inline(always)]
-    #[must_use]
     pub fn dlym3r(&mut self) -> Dlym3rW<PdmdlySpec> {
         Dlym3rW::new(self, 20)
     }
     #[doc = "Bits 24:26 - DLYM4L"]
     #[inline(always)]
-    #[must_use]
     pub fn dlym4l(&mut self) -> Dlym4lW<PdmdlySpec> {
         Dlym4lW::new(self, 24)
     }
     #[doc = "Bits 28:30 - DLYM4R"]
     #[inline(always)]
-    #[must_use]
     pub fn dlym4r(&mut self) -> Dlym4rW<PdmdlySpec> {
         Dlym4rW::new(self, 28)
     }

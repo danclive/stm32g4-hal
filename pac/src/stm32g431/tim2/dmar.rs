@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - DMA register for burst accesses"]
     #[inline(always)]
-    #[must_use]
     pub fn dmab(&mut self) -> DmabW<DmarSpec> {
         DmabW::new(self, 0)
     }

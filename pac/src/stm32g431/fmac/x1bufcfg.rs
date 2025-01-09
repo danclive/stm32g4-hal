@@ -43,19 +43,16 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - X1_BASE"]
     #[inline(always)]
-    #[must_use]
     pub fn x1_base(&mut self) -> X1BaseW<X1bufcfgSpec> {
         X1BaseW::new(self, 0)
     }
     #[doc = "Bits 8:15 - X1_BUF_SIZE"]
     #[inline(always)]
-    #[must_use]
     pub fn x1_buf_size(&mut self) -> X1BufSizeW<X1bufcfgSpec> {
         X1BufSizeW::new(self, 8)
     }
     #[doc = "Bits 24:25 - FULL_WM"]
     #[inline(always)]
-    #[must_use]
     pub fn full_wm(&mut self) -> FullWmW<X1bufcfgSpec> {
         FullWmW::new(self, 24)
     }

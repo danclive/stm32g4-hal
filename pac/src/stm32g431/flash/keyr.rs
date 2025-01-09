@@ -10,7 +10,6 @@ impl core::fmt::Debug for crate::generic::Reg<KeyrSpec> {
 impl W {
     #[doc = "Bits 0:31 - KEYR"]
     #[inline(always)]
-    #[must_use]
     pub fn keyr(&mut self) -> KeyrW<KeyrSpec> {
         KeyrW::new(self, 0)
     }

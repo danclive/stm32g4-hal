@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Capture/compare preloaded control"]
     #[inline(always)]
-    #[must_use]
     pub fn ccpc(&mut self) -> CcpcW<Cr2Spec> {
         CcpcW::new(self, 0)
     }
     #[doc = "Bit 2 - Capture/compare control update selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ccus(&mut self) -> CcusW<Cr2Spec> {
         CcusW::new(self, 2)
     }
     #[doc = "Bit 3 - Capture/compare DMA selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ccds(&mut self) -> CcdsW<Cr2Spec> {
         CcdsW::new(self, 3)
     }
     #[doc = "Bit 8 - Output Idle state 1"]
     #[inline(always)]
-    #[must_use]
     pub fn ois1(&mut self) -> Ois1W<Cr2Spec> {
         Ois1W::new(self, 8)
     }
     #[doc = "Bit 9 - Output Idle state 1"]
     #[inline(always)]
-    #[must_use]
     pub fn ois1n(&mut self) -> Ois1nW<Cr2Spec> {
         Ois1nW::new(self, 9)
     }

@@ -610,37 +610,31 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Last error code The LEC indicates the type of the last error to occur on the CAN bus. This field is cleared to 0 when a message has been transferred (reception or transmission) without error. Access type is RS: set on read."]
     #[inline(always)]
-    #[must_use]
     pub fn lec(&mut self) -> LecW<FdcanPsrSpec> {
         LecW::new(self, 0)
     }
     #[doc = "Bits 8:10 - Data last error code Type of last error that occurred in the data phase of a FDCAN format frame with its BRS flag set. Coding is the same as for LEC. This field is cleared to 0 when a FDCAN format frame with its BRS flag set has been transferred (reception or transmission) without error. Access type is RS: set on read."]
     #[inline(always)]
-    #[must_use]
     pub fn dlec(&mut self) -> DlecW<FdcanPsrSpec> {
         DlecW::new(self, 8)
     }
     #[doc = "Bit 11 - ESI flag of last received FDCAN message This bit is set together with REDL, independent of acceptance filtering. Access type is RX: reset on read."]
     #[inline(always)]
-    #[must_use]
     pub fn resi(&mut self) -> ResiW<FdcanPsrSpec> {
         ResiW::new(self, 11)
     }
     #[doc = "Bit 12 - BRS flag of last received FDCAN message This bit is set together with REDL, independent of acceptance filtering. Access type is RX: reset on read."]
     #[inline(always)]
-    #[must_use]
     pub fn rbrs(&mut self) -> RbrsW<FdcanPsrSpec> {
         RbrsW::new(self, 12)
     }
     #[doc = "Bit 13 - Received FDCAN message This bit is set independent of acceptance filtering. Access type is RX: reset on read."]
     #[inline(always)]
-    #[must_use]
     pub fn redl(&mut self) -> RedlW<FdcanPsrSpec> {
         RedlW::new(self, 13)
     }
     #[doc = "Bit 14 - Protocol exception event"]
     #[inline(always)]
-    #[must_use]
     pub fn pxe(&mut self) -> PxeW<FdcanPsrSpec> {
         PxeW::new(self, 14)
     }

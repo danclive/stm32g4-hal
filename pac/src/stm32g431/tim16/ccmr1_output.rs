@@ -63,31 +63,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Capture/Compare 1 selection"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1s(&mut self) -> Cc1sW<Ccmr1OutputSpec> {
         Cc1sW::new(self, 0)
     }
     #[doc = "Bit 2 - Output Compare 1 fast enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc1fe(&mut self) -> Oc1feW<Ccmr1OutputSpec> {
         Oc1feW::new(self, 2)
     }
     #[doc = "Bit 3 - Output Compare 1 preload enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc1pe(&mut self) -> Oc1peW<Ccmr1OutputSpec> {
         Oc1peW::new(self, 3)
     }
     #[doc = "Bits 4:6 - Output Compare 1 mode"]
     #[inline(always)]
-    #[must_use]
     pub fn oc1m(&mut self) -> Oc1mW<Ccmr1OutputSpec> {
         Oc1mW::new(self, 4)
     }
     #[doc = "Bit 16 - Output Compare 1 mode"]
     #[inline(always)]
-    #[must_use]
     pub fn oc1m_3(&mut self) -> Oc1m3W<Ccmr1OutputSpec> {
         Oc1m3W::new(self, 16)
     }

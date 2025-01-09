@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - VMS_SEL"]
     #[inline(always)]
-    #[must_use]
     pub fn vms_sel(&mut self) -> VmsSelW<Opamp1TcmrSpec> {
         VmsSelW::new(self, 0)
     }
     #[doc = "Bits 1:2 - VPS_SEL"]
     #[inline(always)]
-    #[must_use]
     pub fn vps_sel(&mut self) -> VpsSelW<Opamp1TcmrSpec> {
         VpsSelW::new(self, 1)
     }
     #[doc = "Bit 3 - T1CM_EN"]
     #[inline(always)]
-    #[must_use]
     pub fn t1cm_en(&mut self) -> T1cmEnW<Opamp1TcmrSpec> {
         T1cmEnW::new(self, 3)
     }
     #[doc = "Bit 4 - T8CM_EN"]
     #[inline(always)]
-    #[must_use]
     pub fn t8cm_en(&mut self) -> T8cmEnW<Opamp1TcmrSpec> {
         T8cmEnW::new(self, 4)
     }
     #[doc = "Bit 5 - T20CM_EN"]
     #[inline(always)]
-    #[must_use]
     pub fn t20cm_en(&mut self) -> T20cmEnW<Opamp1TcmrSpec> {
         T20cmEnW::new(self, 5)
     }
     #[doc = "Bit 31 - LOCK"]
     #[inline(always)]
-    #[must_use]
     pub fn lock(&mut self) -> LockW<Opamp1TcmrSpec> {
         LockW::new(self, 31)
     }

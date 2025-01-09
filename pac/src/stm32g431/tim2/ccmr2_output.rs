@@ -133,73 +133,61 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Capture/Compare 3 selection"]
     #[inline(always)]
-    #[must_use]
     pub fn cc3s(&mut self) -> Cc3sW<Ccmr2OutputSpec> {
         Cc3sW::new(self, 0)
     }
     #[doc = "Bit 2 - Output compare 3 fast enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc3fe(&mut self) -> Oc3feW<Ccmr2OutputSpec> {
         Oc3feW::new(self, 2)
     }
     #[doc = "Bit 3 - Output compare 3 preload enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc3pe(&mut self) -> Oc3peW<Ccmr2OutputSpec> {
         Oc3peW::new(self, 3)
     }
     #[doc = "Bits 4:6 - Output compare 3 mode"]
     #[inline(always)]
-    #[must_use]
     pub fn oc3m(&mut self) -> Oc3mW<Ccmr2OutputSpec> {
         Oc3mW::new(self, 4)
     }
     #[doc = "Bit 7 - Output compare 3 clear enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc3ce(&mut self) -> Oc3ceW<Ccmr2OutputSpec> {
         Oc3ceW::new(self, 7)
     }
     #[doc = "Bits 8:9 - Capture/Compare 4 selection"]
     #[inline(always)]
-    #[must_use]
     pub fn cc4s(&mut self) -> Cc4sW<Ccmr2OutputSpec> {
         Cc4sW::new(self, 8)
     }
     #[doc = "Bit 10 - Output compare 4 fast enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc4fe(&mut self) -> Oc4feW<Ccmr2OutputSpec> {
         Oc4feW::new(self, 10)
     }
     #[doc = "Bit 11 - Output compare 4 preload enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc4pe(&mut self) -> Oc4peW<Ccmr2OutputSpec> {
         Oc4peW::new(self, 11)
     }
     #[doc = "Bits 12:14 - Output compare 4 mode"]
     #[inline(always)]
-    #[must_use]
     pub fn oc4m(&mut self) -> Oc4mW<Ccmr2OutputSpec> {
         Oc4mW::new(self, 12)
     }
     #[doc = "Bit 15 - Output compare 4 clear enable"]
     #[inline(always)]
-    #[must_use]
     pub fn oc4ce(&mut self) -> Oc4ceW<Ccmr2OutputSpec> {
         Oc4ceW::new(self, 15)
     }
     #[doc = "Bit 16 - Output Compare 3 mode - bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn oc3m_3(&mut self) -> Oc3m3W<Ccmr2OutputSpec> {
         Oc3m3W::new(self, 16)
     }
     #[doc = "Bit 24 - Output Compare 4 mode - bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn oc4m_3(&mut self) -> Oc4m3W<Ccmr2OutputSpec> {
         Oc4m3W::new(self, 24)
     }

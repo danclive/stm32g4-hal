@@ -63,12 +63,12 @@ impl RegisterBlock {
     #[doc = "0x18 - capture/compare mode register 1 (input mode)"]
     #[inline(always)]
     pub const fn ccmr1_input(&self) -> &Ccmr1Input {
-        unsafe { &*(self as *const Self).cast::<u8>().add(24).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(24).cast() }
     }
     #[doc = "0x18 - capture/compare mode register (output mode)"]
     #[inline(always)]
     pub const fn ccmr1_output(&self) -> &Ccmr1Output {
-        unsafe { &*(self as *const Self).cast::<u8>().add(24).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(24).cast() }
     }
     #[doc = "0x20 - capture/compare enable register"]
     #[inline(always)]

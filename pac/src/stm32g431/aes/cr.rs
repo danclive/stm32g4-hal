@@ -153,85 +153,71 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - AES enable"]
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EnW<CrSpec> {
         EnW::new(self, 0)
     }
     #[doc = "Bits 1:2 - Data type selection (for data in and data out to/from the cryptographic block)"]
     #[inline(always)]
-    #[must_use]
     pub fn datatype(&mut self) -> DatatypeW<CrSpec> {
         DatatypeW::new(self, 1)
     }
     #[doc = "Bits 3:4 - AES operating mode"]
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> ModeW<CrSpec> {
         ModeW::new(self, 3)
     }
     #[doc = "Bits 5:6 - AES chaining mode"]
     #[inline(always)]
-    #[must_use]
     pub fn chmod(&mut self) -> ChmodW<CrSpec> {
         ChmodW::new(self, 5)
     }
     #[doc = "Bit 7 - Computation Complete Flag Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ccfc(&mut self) -> CcfcW<CrSpec> {
         CcfcW::new(self, 7)
     }
     #[doc = "Bit 8 - Error clear"]
     #[inline(always)]
-    #[must_use]
     pub fn errc(&mut self) -> ErrcW<CrSpec> {
         ErrcW::new(self, 8)
     }
     #[doc = "Bit 9 - CCF flag interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ccfie(&mut self) -> CcfieW<CrSpec> {
         CcfieW::new(self, 9)
     }
     #[doc = "Bit 10 - Error interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn errie(&mut self) -> ErrieW<CrSpec> {
         ErrieW::new(self, 10)
     }
     #[doc = "Bit 11 - Enable DMA management of data input phase"]
     #[inline(always)]
-    #[must_use]
     pub fn dmainen(&mut self) -> DmainenW<CrSpec> {
         DmainenW::new(self, 11)
     }
     #[doc = "Bit 12 - Enable DMA management of data output phase"]
     #[inline(always)]
-    #[must_use]
     pub fn dmaouten(&mut self) -> DmaoutenW<CrSpec> {
         DmaoutenW::new(self, 12)
     }
     #[doc = "Bits 13:14 - GCMPH"]
     #[inline(always)]
-    #[must_use]
     pub fn gcmph(&mut self) -> GcmphW<CrSpec> {
         GcmphW::new(self, 13)
     }
     #[doc = "Bit 16 - CHMOD_2"]
     #[inline(always)]
-    #[must_use]
     pub fn chmod_2(&mut self) -> Chmod2W<CrSpec> {
         Chmod2W::new(self, 16)
     }
     #[doc = "Bit 18 - KEYSIZE"]
     #[inline(always)]
-    #[must_use]
     pub fn keysize(&mut self) -> KeysizeW<CrSpec> {
         KeysizeW::new(self, 18)
     }
     #[doc = "Bits 20:23 - NPBLB"]
     #[inline(always)]
-    #[must_use]
     pub fn npblb(&mut self) -> NpblbW<CrSpec> {
         NpblbW::new(self, 20)
     }

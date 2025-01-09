@@ -183,103 +183,86 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck0(&mut self) -> Lck0W<LckrSpec> {
         Lck0W::new(self, 0)
     }
     #[doc = "Bit 1 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck1(&mut self) -> Lck1W<LckrSpec> {
         Lck1W::new(self, 1)
     }
     #[doc = "Bit 2 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck2(&mut self) -> Lck2W<LckrSpec> {
         Lck2W::new(self, 2)
     }
     #[doc = "Bit 3 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck3(&mut self) -> Lck3W<LckrSpec> {
         Lck3W::new(self, 3)
     }
     #[doc = "Bit 4 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck4(&mut self) -> Lck4W<LckrSpec> {
         Lck4W::new(self, 4)
     }
     #[doc = "Bit 5 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck5(&mut self) -> Lck5W<LckrSpec> {
         Lck5W::new(self, 5)
     }
     #[doc = "Bit 6 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck6(&mut self) -> Lck6W<LckrSpec> {
         Lck6W::new(self, 6)
     }
     #[doc = "Bit 7 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck7(&mut self) -> Lck7W<LckrSpec> {
         Lck7W::new(self, 7)
     }
     #[doc = "Bit 8 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck8(&mut self) -> Lck8W<LckrSpec> {
         Lck8W::new(self, 8)
     }
     #[doc = "Bit 9 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck9(&mut self) -> Lck9W<LckrSpec> {
         Lck9W::new(self, 9)
     }
     #[doc = "Bit 10 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck10(&mut self) -> Lck10W<LckrSpec> {
         Lck10W::new(self, 10)
     }
     #[doc = "Bit 11 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck11(&mut self) -> Lck11W<LckrSpec> {
         Lck11W::new(self, 11)
     }
     #[doc = "Bit 12 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck12(&mut self) -> Lck12W<LckrSpec> {
         Lck12W::new(self, 12)
     }
     #[doc = "Bit 13 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck13(&mut self) -> Lck13W<LckrSpec> {
         Lck13W::new(self, 13)
     }
     #[doc = "Bit 14 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck14(&mut self) -> Lck14W<LckrSpec> {
         Lck14W::new(self, 14)
     }
     #[doc = "Bit 15 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lck15(&mut self) -> Lck15W<LckrSpec> {
         Lck15W::new(self, 15)
     }
     #[doc = "Bit 16 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    #[must_use]
     pub fn lckk(&mut self) -> LckkW<LckrSpec> {
         LckkW::new(self, 16)
     }

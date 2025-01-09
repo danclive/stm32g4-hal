@@ -31,7 +31,6 @@ impl W {
 to TI1\\[15\\]
 input selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ti1sel(&mut self) -> Ti1selW<TiselSpec> {
         Ti1selW::new(self, 0)
     }

@@ -72,7 +72,7 @@ macro_rules! tim_hal {
             // configure as quadrature encoder
             tim.smcr().write(|w| unsafe { w.sms().bits(0x011) });
 
-            tim.arr().write(|w| unsafe { w.bits(core::u32::MAX) });
+            tim.arr().write(|w| unsafe { w.bits(u32::MAX) });
             tim.cr1().write(|w| w.cen().set_bit());
 
             Qei { tim }

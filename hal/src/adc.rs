@@ -191,7 +191,7 @@ macro_rules! adc_hal {
 
                 let freq = freq.raw();
 
-                let (divider, presc) = match (clk.raw() + freq - 1) / freq {
+                let (divider, presc) = match clk.raw().div_ceil(freq) {
                     1 => (1, Clock::DIV_1),
                     2 => (2, Clock::DIV_2),
                     3..=4 => (4, Clock::DIV_4),
@@ -597,34 +597,41 @@ macro_rules! adc_hal {
                 // Set the channel in the right sequence field
                 let seq = sequence as u8;
                 match seq {
-                    0..=3 => self.rb.sqr1().modify(|_, w| match seq {
+                    0..=3 => {self.rb.sqr1().modify(|_, w| match seq {
                         0 => unsafe { w.sq1().bits(chan) },
                         1 => unsafe { w.sq2().bits(chan) },
                         2 => unsafe { w.sq3().bits(chan) },
                         3 => unsafe { w.sq4().bits(chan) },
+                            _ => unreachable!(),
+                        });
+                    }
+                    4..=8 => {
+                        self.rb.sqr2().modify(|_, w| match seq {
+                            4 => unsafe { w.sq5().bits(chan) },
+                            5 => unsafe { w.sq6().bits(chan) },
+                            6 => unsafe { w.sq7().bits(chan) },
+                            7 => unsafe { w.sq8().bits(chan) },
+                            8 => unsafe { w.sq9().bits(chan) },
                         _ => unreachable!(),
-                    }),
-                    4..=8 => self.rb.sqr2().modify(|_, w| match seq {
-                        4 => unsafe { w.sq5().bits(chan) },
-                        5 => unsafe { w.sq6().bits(chan) },
-                        6 => unsafe { w.sq7().bits(chan) },
-                        7 => unsafe { w.sq8().bits(chan) },
-                        8 => unsafe { w.sq9().bits(chan) },
+                        });
+                    }
+                    9..=13 => {
+                        self.rb.sqr3().modify(|_, w| match seq {
+                            9 => unsafe { w.sq10().bits(chan) },
+                            10 => unsafe { w.sq11().bits(chan) },
+                            11 => unsafe { w.sq12().bits(chan) },
+                            12 => unsafe { w.sq13().bits(chan) },
+                            13 => unsafe { w.sq14().bits(chan) },
                         _ => unreachable!(),
-                    }),
-                    9..=13 => self.rb.sqr3().modify(|_, w| match seq {
-                        9 => unsafe { w.sq10().bits(chan) },
-                        10 => unsafe { w.sq11().bits(chan) },
-                        11 => unsafe { w.sq12().bits(chan) },
-                        12 => unsafe { w.sq13().bits(chan) },
-                        13 => unsafe { w.sq14().bits(chan) },
-                        _ => unreachable!(),
-                    }),
-                    14..=16 => self.rb.sqr4().modify(|_, w| match seq {
-                        14 => unsafe { w.sq15().bits(chan) },
-                        15 => unsafe { w.sq16().bits(chan) },
-                        _ => unreachable!(),
-                    }),
+                        });
+                    }
+                    14..=16 => {
+                        self.rb.sqr4().modify(|_, w| match seq {
+                            14 => unsafe { w.sq15().bits(chan) },
+                            15 => unsafe { w.sq16().bits(chan) },
+                            _ => unreachable!(),
+                        });
+                    }
                     _ => unreachable!(),
                 }
 
@@ -644,7 +651,7 @@ macro_rules! adc_hal {
                         8 => unsafe { w.smp8().bits(st) },
                         9 => unsafe { w.smp9().bits(st) },
                         _ => unreachable!(),
-                    })
+                    });
                 } else {
                     self.rb.smpr2().modify(|_, w| match chan {
                         10 => unsafe { w.smp10().bits(st) },
@@ -657,7 +664,7 @@ macro_rules! adc_hal {
                         17 => unsafe { w.smp17().bits(st) },
                         18 => unsafe { w.smp18().bits(st) },
                         _ => unreachable!(),
-                    })
+                    });
                 }
             }
 
@@ -867,7 +874,7 @@ macro_rules! adc_hal {
 
                 self.rb
                     .cfgr()
-                    .modify(|_, w| unsafe { w.discnum().bits(subgroup_len as u8) })
+                    .modify(|_, w| unsafe { w.discnum().bits(subgroup_len as u8) });
             }
 
             /// Sets if the end-of-conversion behaviour.

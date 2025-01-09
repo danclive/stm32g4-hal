@@ -203,115 +203,96 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Update interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn uie(&mut self) -> UieW<DierSpec> {
         UieW::new(self, 0)
     }
     #[doc = "Bit 1 - Capture/Compare 1 interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1ie(&mut self) -> Cc1ieW<DierSpec> {
         Cc1ieW::new(self, 1)
     }
     #[doc = "Bit 2 - Capture/Compare 2 interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc2ie(&mut self) -> Cc2ieW<DierSpec> {
         Cc2ieW::new(self, 2)
     }
     #[doc = "Bit 3 - Capture/Compare 3 interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc3ie(&mut self) -> Cc3ieW<DierSpec> {
         Cc3ieW::new(self, 3)
     }
     #[doc = "Bit 4 - Capture/Compare 4 interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc4ie(&mut self) -> Cc4ieW<DierSpec> {
         Cc4ieW::new(self, 4)
     }
     #[doc = "Bit 5 - COM interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn comie(&mut self) -> ComieW<DierSpec> {
         ComieW::new(self, 5)
     }
     #[doc = "Bit 6 - Trigger interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tie(&mut self) -> TieW<DierSpec> {
         TieW::new(self, 6)
     }
     #[doc = "Bit 7 - Break interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bie(&mut self) -> BieW<DierSpec> {
         BieW::new(self, 7)
     }
     #[doc = "Bit 8 - Update DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ude(&mut self) -> UdeW<DierSpec> {
         UdeW::new(self, 8)
     }
     #[doc = "Bit 9 - Capture/Compare 1 DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1de(&mut self) -> Cc1deW<DierSpec> {
         Cc1deW::new(self, 9)
     }
     #[doc = "Bit 10 - Capture/Compare 2 DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc2de(&mut self) -> Cc2deW<DierSpec> {
         Cc2deW::new(self, 10)
     }
     #[doc = "Bit 11 - Capture/Compare 3 DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc3de(&mut self) -> Cc3deW<DierSpec> {
         Cc3deW::new(self, 11)
     }
     #[doc = "Bit 12 - Capture/Compare 4 DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc4de(&mut self) -> Cc4deW<DierSpec> {
         Cc4deW::new(self, 12)
     }
     #[doc = "Bit 13 - COM DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn comde(&mut self) -> ComdeW<DierSpec> {
         ComdeW::new(self, 13)
     }
     #[doc = "Bit 14 - Trigger DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tde(&mut self) -> TdeW<DierSpec> {
         TdeW::new(self, 14)
     }
     #[doc = "Bit 20 - Index interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn idxie(&mut self) -> IdxieW<DierSpec> {
         IdxieW::new(self, 20)
     }
     #[doc = "Bit 21 - Direction Change interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dirie(&mut self) -> DirieW<DierSpec> {
         DirieW::new(self, 21)
     }
     #[doc = "Bit 22 - Index Error interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ierrie(&mut self) -> IerrieW<DierSpec> {
         IerrieW::new(self, 22)
     }
     #[doc = "Bit 23 - Transition Error interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn terrie(&mut self) -> TerrieW<DierSpec> {
         TerrieW::new(self, 23)
     }

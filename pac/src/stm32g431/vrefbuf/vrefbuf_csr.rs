@@ -51,19 +51,16 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Enable Voltage Reference"]
     #[inline(always)]
-    #[must_use]
     pub fn envr(&mut self) -> EnvrW<VrefbufCsrSpec> {
         EnvrW::new(self, 0)
     }
     #[doc = "Bit 1 - High impedence mode for the VREF_BUF"]
     #[inline(always)]
-    #[must_use]
     pub fn hiz(&mut self) -> HizW<VrefbufCsrSpec> {
         HizW::new(self, 1)
     }
     #[doc = "Bits 4:5 - Voltage reference scale"]
     #[inline(always)]
-    #[must_use]
     pub fn vrs(&mut self) -> VrsW<VrefbufCsrSpec> {
         VrsW::new(self, 4)
     }

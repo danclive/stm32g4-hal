@@ -73,37 +73,31 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - PDMEN"]
     #[inline(always)]
-    #[must_use]
     pub fn pdmen(&mut self) -> PdmenW<PdmcrSpec> {
         PdmenW::new(self, 0)
     }
     #[doc = "Bits 4:5 - MICNBR"]
     #[inline(always)]
-    #[must_use]
     pub fn micnbr(&mut self) -> MicnbrW<PdmcrSpec> {
         MicnbrW::new(self, 4)
     }
     #[doc = "Bit 8 - CKEN1"]
     #[inline(always)]
-    #[must_use]
     pub fn cken1(&mut self) -> Cken1W<PdmcrSpec> {
         Cken1W::new(self, 8)
     }
     #[doc = "Bit 9 - CKEN2"]
     #[inline(always)]
-    #[must_use]
     pub fn cken2(&mut self) -> Cken2W<PdmcrSpec> {
         Cken2W::new(self, 9)
     }
     #[doc = "Bit 10 - CKEN3"]
     #[inline(always)]
-    #[must_use]
     pub fn cken3(&mut self) -> Cken3W<PdmcrSpec> {
         Cken3W::new(self, 10)
     }
     #[doc = "Bit 11 - CKEN4"]
     #[inline(always)]
-    #[must_use]
     pub fn cken4(&mut self) -> Cken4W<PdmcrSpec> {
         Cken4W::new(self, 11)
     }

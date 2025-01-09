@@ -153,85 +153,71 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Audio block mode"]
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> ModeW<Bcr1Spec> {
         ModeW::new(self, 0)
     }
     #[doc = "Bits 2:3 - Protocol configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn prtcfg(&mut self) -> PrtcfgW<Bcr1Spec> {
         PrtcfgW::new(self, 2)
     }
     #[doc = "Bits 5:7 - Data size"]
     #[inline(always)]
-    #[must_use]
     pub fn ds(&mut self) -> DsW<Bcr1Spec> {
         DsW::new(self, 5)
     }
     #[doc = "Bit 8 - Least significant bit first"]
     #[inline(always)]
-    #[must_use]
     pub fn lsbfirst(&mut self) -> LsbfirstW<Bcr1Spec> {
         LsbfirstW::new(self, 8)
     }
     #[doc = "Bit 9 - Clock strobing edge"]
     #[inline(always)]
-    #[must_use]
     pub fn ckstr(&mut self) -> CkstrW<Bcr1Spec> {
         CkstrW::new(self, 9)
     }
     #[doc = "Bits 10:11 - Synchronization enable"]
     #[inline(always)]
-    #[must_use]
     pub fn syncen(&mut self) -> SyncenW<Bcr1Spec> {
         SyncenW::new(self, 10)
     }
     #[doc = "Bit 12 - Mono mode"]
     #[inline(always)]
-    #[must_use]
     pub fn mono(&mut self) -> MonoW<Bcr1Spec> {
         MonoW::new(self, 12)
     }
     #[doc = "Bit 13 - Output drive"]
     #[inline(always)]
-    #[must_use]
     pub fn out_dri(&mut self) -> OutDriW<Bcr1Spec> {
         OutDriW::new(self, 13)
     }
     #[doc = "Bit 16 - Audio block B enable"]
     #[inline(always)]
-    #[must_use]
     pub fn saiben(&mut self) -> SaibenW<Bcr1Spec> {
         SaibenW::new(self, 16)
     }
     #[doc = "Bit 17 - DMA enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dmaen(&mut self) -> DmaenW<Bcr1Spec> {
         DmaenW::new(self, 17)
     }
     #[doc = "Bit 19 - No divider"]
     #[inline(always)]
-    #[must_use]
     pub fn nodiv(&mut self) -> NodivW<Bcr1Spec> {
         NodivW::new(self, 19)
     }
     #[doc = "Bits 20:25 - Master clock divider"]
     #[inline(always)]
-    #[must_use]
     pub fn mcjdiv(&mut self) -> McjdivW<Bcr1Spec> {
         McjdivW::new(self, 20)
     }
     #[doc = "Bit 26 - OSR"]
     #[inline(always)]
-    #[must_use]
     pub fn osr(&mut self) -> OsrW<Bcr1Spec> {
         OsrW::new(self, 26)
     }
     #[doc = "Bit 27 - MCKEN"]
     #[inline(always)]
-    #[must_use]
     pub fn mcken(&mut self) -> MckenW<Bcr1Spec> {
         MckenW::new(self, 27)
     }

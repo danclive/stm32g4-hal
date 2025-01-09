@@ -33,13 +33,11 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:6 - CALFACT_S"]
     #[inline(always)]
-    #[must_use]
     pub fn calfact_s(&mut self) -> CalfactSW<CalfactSpec> {
         CalfactSW::new(self, 0)
     }
     #[doc = "Bits 16:22 - CALFACT_D"]
     #[inline(always)]
-    #[must_use]
     pub fn calfact_d(&mut self) -> CalfactDW<CalfactSpec> {
         CalfactDW::new(self, 16)
     }

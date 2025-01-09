@@ -157,77 +157,66 @@ impl W {
     #[doc = "Bit 0 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu0(&mut self) -> Pu0W<PwrPucrgSpec> {
         Pu0W::new(self, 0)
     }
     #[doc = "Bit 1 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu1(&mut self) -> Pu1W<PwrPucrgSpec> {
         Pu1W::new(self, 1)
     }
     #[doc = "Bit 2 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu2(&mut self) -> Pu2W<PwrPucrgSpec> {
         Pu2W::new(self, 2)
     }
     #[doc = "Bit 3 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu3(&mut self) -> Pu3W<PwrPucrgSpec> {
         Pu3W::new(self, 3)
     }
     #[doc = "Bit 4 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu4(&mut self) -> Pu4W<PwrPucrgSpec> {
         Pu4W::new(self, 4)
     }
     #[doc = "Bit 5 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu5(&mut self) -> Pu5W<PwrPucrgSpec> {
         Pu5W::new(self, 5)
     }
     #[doc = "Bit 6 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu6(&mut self) -> Pu6W<PwrPucrgSpec> {
         Pu6W::new(self, 6)
     }
     #[doc = "Bit 7 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu7(&mut self) -> Pu7W<PwrPucrgSpec> {
         Pu7W::new(self, 7)
     }
     #[doc = "Bit 8 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu8(&mut self) -> Pu8W<PwrPucrgSpec> {
         Pu8W::new(self, 8)
     }
     #[doc = "Bit 9 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu9(&mut self) -> Pu9W<PwrPucrgSpec> {
         Pu9W::new(self, 9)
     }
     #[doc = "Bit 10 - Port G pull-up bit y (y=0..10) When set, this bit activates the pull-up on PG\\[y\\]
 when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    #[must_use]
     pub fn pu10(&mut self) -> Pu10W<PwrPucrgSpec> {
         Pu10W::new(self, 10)
     }

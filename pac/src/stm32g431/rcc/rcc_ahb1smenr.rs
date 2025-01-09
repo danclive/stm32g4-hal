@@ -6,9 +6,9 @@ pub type W = crate::W<RccAhb1smenrSpec>;
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dma1smen {
-    #[doc = "0: DMA1 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "0: DMA1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: DMA1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: DMA1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Dma1smen> for bool {
@@ -28,12 +28,12 @@ impl Dma1smenR {
             true => Dma1smen::B0x1,
         }
     }
-    #[doc = "DMA1 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMA1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Dma1smen::B0x0
     }
-    #[doc = "DMA1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMA1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Dma1smen::B0x1
@@ -45,12 +45,12 @@ impl<'a, REG> Dma1smenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "DMA1 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMA1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Dma1smen::B0x0)
     }
-    #[doc = "DMA1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMA1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Dma1smen::B0x1)
@@ -60,9 +60,9 @@ where
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dma2smen {
-    #[doc = "0: DMA2 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "0: DMA2 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: DMA2 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: DMA2 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Dma2smen> for bool {
@@ -82,12 +82,12 @@ impl Dma2smenR {
             true => Dma2smen::B0x1,
         }
     }
-    #[doc = "DMA2 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMA2 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Dma2smen::B0x0
     }
-    #[doc = "DMA2 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMA2 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Dma2smen::B0x1
@@ -99,12 +99,12 @@ impl<'a, REG> Dma2smenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "DMA2 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMA2 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Dma2smen::B0x0)
     }
-    #[doc = "DMA2 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMA2 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Dma2smen::B0x1)
@@ -114,9 +114,9 @@ where
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmamux1smen {
-    #[doc = "0: DMAMUX1 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "0: DMAMUX1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: DMAMUX1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: DMAMUX1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Dmamux1smen> for bool {
@@ -136,12 +136,12 @@ impl Dmamux1smenR {
             true => Dmamux1smen::B0x1,
         }
     }
-    #[doc = "DMAMUX1 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMAMUX1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Dmamux1smen::B0x0
     }
-    #[doc = "DMAMUX1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMAMUX1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Dmamux1smen::B0x1
@@ -153,12 +153,12 @@ impl<'a, REG> Dmamux1smenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "DMAMUX1 clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMAMUX1 clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Dmamux1smen::B0x0)
     }
-    #[doc = "DMAMUX1 clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "DMAMUX1 clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Dmamux1smen::B0x1)
@@ -222,9 +222,9 @@ where
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fmacsmen {
-    #[doc = "0: FMACSM clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "0: FMACSM clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: FMACSM clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: FMACSM clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Fmacsmen> for bool {
@@ -244,12 +244,12 @@ impl FmacsmenR {
             true => Fmacsmen::B0x1,
         }
     }
-    #[doc = "FMACSM clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "FMACSM clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Fmacsmen::B0x0
     }
-    #[doc = "FMACSM clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "FMACSM clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Fmacsmen::B0x1
@@ -261,12 +261,12 @@ impl<'a, REG> FmacsmenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "FMACSM clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "FMACSM clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Fmacsmen::B0x0)
     }
-    #[doc = "FMACSM clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "FMACSM clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Fmacsmen::B0x1)
@@ -276,9 +276,9 @@ where
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flashsmen {
-    #[doc = "0: Flash memory interface clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "0: Flash memory interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: Flash memory interface clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: Flash memory interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Flashsmen> for bool {
@@ -298,12 +298,12 @@ impl FlashsmenR {
             true => Flashsmen::B0x1,
         }
     }
-    #[doc = "Flash memory interface clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "Flash memory interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Flashsmen::B0x0
     }
-    #[doc = "Flash memory interface clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "Flash memory interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Flashsmen::B0x1
@@ -315,12 +315,12 @@ impl<'a, REG> FlashsmenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Flash memory interface clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "Flash memory interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Flashsmen::B0x0)
     }
-    #[doc = "Flash memory interface clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "Flash memory interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Flashsmen::B0x1)
@@ -330,9 +330,9 @@ where
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram1smen {
-    #[doc = "0: SRAM1 interface clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "0: SRAM1 interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: SRAM1 interface clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: SRAM1 interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Sram1smen> for bool {
@@ -352,12 +352,12 @@ impl Sram1smenR {
             true => Sram1smen::B0x1,
         }
     }
-    #[doc = "SRAM1 interface clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "SRAM1 interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x0(&self) -> bool {
         *self == Sram1smen::B0x0
     }
-    #[doc = "SRAM1 interface clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "SRAM1 interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Sram1smen::B0x1
@@ -369,12 +369,12 @@ impl<'a, REG> Sram1smenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "SRAM1 interface clocks disabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "SRAM1 interface clocks disabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Sram1smen::B0x0)
     }
-    #[doc = "SRAM1 interface clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "SRAM1 interface clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Sram1smen::B0x1)
@@ -386,7 +386,7 @@ where
 pub enum Crcsmen {
     #[doc = "0: CRC clocks disabled by the clock gating during Sleep and Stop modes"]
     B0x0 = 0,
-    #[doc = "1: CRC clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "1: CRC clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     B0x1 = 1,
 }
 impl From<Crcsmen> for bool {
@@ -411,7 +411,7 @@ impl CrcsmenR {
     pub fn is_b_0x0(&self) -> bool {
         *self == Crcsmen::B0x0
     }
-    #[doc = "CRC clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "CRC clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn is_b_0x1(&self) -> bool {
         *self == Crcsmen::B0x1
@@ -428,7 +428,7 @@ where
     pub fn b_0x0(self) -> &'a mut crate::W<REG> {
         self.variant(Crcsmen::B0x0)
     }
-    #[doc = "CRC clocks enabled by the clock gating&lt;sup>(1)&lt;/sup> during Sleep and Stop modes"]
+    #[doc = "CRC clocks enabled by the clock gating<sup>(1)</sup> during Sleep and Stop modes"]
     #[inline(always)]
     pub fn b_0x1(self) -> &'a mut crate::W<REG> {
         self.variant(Crcsmen::B0x1)
@@ -493,49 +493,41 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - DMA1 clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn dma1smen(&mut self) -> Dma1smenW<RccAhb1smenrSpec> {
         Dma1smenW::new(self, 0)
     }
     #[doc = "Bit 1 - DMA2 clocks enable during Sleep and Stop modes Set and cleared by software during Sleep mode."]
     #[inline(always)]
-    #[must_use]
     pub fn dma2smen(&mut self) -> Dma2smenW<RccAhb1smenrSpec> {
         Dma2smenW::new(self, 1)
     }
     #[doc = "Bit 2 - DMAMUX1 clock enable during Sleep and Stop modes. Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn dmamux1smen(&mut self) -> Dmamux1smenW<RccAhb1smenrSpec> {
         Dmamux1smenW::new(self, 2)
     }
     #[doc = "Bit 3 - CORDICSM clock enable. Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn cordicsmen(&mut self) -> CordicsmenW<RccAhb1smenrSpec> {
         CordicsmenW::new(self, 3)
     }
     #[doc = "Bit 4 - FMACSM clock enable. Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn fmacsmen(&mut self) -> FmacsmenW<RccAhb1smenrSpec> {
         FmacsmenW::new(self, 4)
     }
     #[doc = "Bit 8 - Flash memory interface clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn flashsmen(&mut self) -> FlashsmenW<RccAhb1smenrSpec> {
         FlashsmenW::new(self, 8)
     }
     #[doc = "Bit 9 - SRAM1 interface clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn sram1smen(&mut self) -> Sram1smenW<RccAhb1smenrSpec> {
         Sram1smenW::new(self, 9)
     }
     #[doc = "Bit 12 - CRC clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    #[must_use]
     pub fn crcsmen(&mut self) -> CrcsmenW<RccAhb1smenrSpec> {
         CrcsmenW::new(self, 12)
     }

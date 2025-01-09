@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - HSE Divided by 32 enable"]
     #[inline(always)]
-    #[must_use]
     pub fn hse32en(&mut self) -> Hse32enW<Or1Spec> {
         Hse32enW::new(self, 0)
     }

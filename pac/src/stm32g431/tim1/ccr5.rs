@@ -53,25 +53,21 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:19 - Capture/Compare value"]
     #[inline(always)]
-    #[must_use]
     pub fn ccr5(&mut self) -> Ccr5W<Ccr5Spec> {
         Ccr5W::new(self, 0)
     }
     #[doc = "Bit 29 - Group Channel 5 and Channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn gc5c1(&mut self) -> Gc5c1W<Ccr5Spec> {
         Gc5c1W::new(self, 29)
     }
     #[doc = "Bit 30 - Group Channel 5 and Channel 2"]
     #[inline(always)]
-    #[must_use]
     pub fn gc5c2(&mut self) -> Gc5c2W<Ccr5Spec> {
         Gc5c2W::new(self, 30)
     }
     #[doc = "Bit 31 - Group Channel 5 and Channel 3"]
     #[inline(always)]
-    #[must_use]
     pub fn gc5c3(&mut self) -> Gc5c3W<Ccr5Spec> {
         Gc5c3W::new(self, 31)
     }

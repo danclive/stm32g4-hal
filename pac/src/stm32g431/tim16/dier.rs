@@ -83,43 +83,36 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Update interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn uie(&mut self) -> UieW<DierSpec> {
         UieW::new(self, 0)
     }
     #[doc = "Bit 1 - Capture/Compare 1 interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1ie(&mut self) -> Cc1ieW<DierSpec> {
         Cc1ieW::new(self, 1)
     }
     #[doc = "Bit 5 - COM interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn comie(&mut self) -> ComieW<DierSpec> {
         ComieW::new(self, 5)
     }
     #[doc = "Bit 7 - Break interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bie(&mut self) -> BieW<DierSpec> {
         BieW::new(self, 7)
     }
     #[doc = "Bit 8 - Update DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ude(&mut self) -> UdeW<DierSpec> {
         UdeW::new(self, 8)
     }
     #[doc = "Bit 9 - Capture/Compare 1 DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cc1de(&mut self) -> Cc1deW<DierSpec> {
         Cc1deW::new(self, 9)
     }
     #[doc = "Bit 13 - COM DMA request enable"]
     #[inline(always)]
-    #[must_use]
     pub fn comde(&mut self) -> ComdeW<DierSpec> {
         ComdeW::new(self, 13)
     }

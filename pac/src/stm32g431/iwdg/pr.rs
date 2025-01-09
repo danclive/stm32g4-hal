@@ -21,7 +21,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Prescaler divider"]
     #[inline(always)]
-    #[must_use]
     pub fn pr(&mut self) -> PrW<PrSpec> {
         PrW::new(self, 0)
     }

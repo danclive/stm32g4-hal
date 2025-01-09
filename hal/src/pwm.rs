@@ -264,9 +264,15 @@ macro_rules! tim_adv_hal {
                         let (dtg, ckd) = calculate_deadtime(self.base_freq, self.deadtime);
 
                         match ckd {
-                            1 => tim.cr1().modify(|_, w| unsafe { w.ckd().bits(0) }),
-                            2 => tim.cr1().modify(|_, w| unsafe { w.ckd().bits(1) }),
-                            4 => tim.cr1().modify(|_, w| unsafe { w.ckd().bits(2) }),
+                            1 => {
+                                tim.cr1().modify(|_, w| unsafe { w.ckd().bits(0) });
+                            }
+                            2 => {
+                                tim.cr1().modify(|_, w| unsafe { w.ckd().bits(1) });
+                            }
+                            4 => {
+                                tim.cr1().modify(|_, w| unsafe { w.ckd().bits(2) });
+                            }
                             _ => panic!("Should be unreachable, invalid deadtime prescaler"),
                         }
 

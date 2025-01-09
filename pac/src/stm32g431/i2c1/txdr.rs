@@ -23,7 +23,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - 8-bit transmit data"]
     #[inline(always)]
-    #[must_use]
     pub fn txdata(&mut self) -> TxdataW<TxdrSpec> {
         TxdataW::new(self, 0)
     }
