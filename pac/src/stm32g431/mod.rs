@@ -11,7 +11,7 @@ pub use cortex_m::peripheral::{CBP, CPUID, DCB, DWT, FPB, FPU, ITM, MPU, NVIC, S
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
 #[cfg(feature = "rt")]
-extern "C" {
+unsafe extern "C" {
     fn WWDG();
     fn PVD_PVM();
     fn RTC_TAMP_CSS_LSE();
@@ -97,8 +97,8 @@ pub union Vector {
 }
 #[cfg(feature = "rt")]
 #[doc(hidden)]
-#[link_section = ".vector_table.interrupts"]
-#[no_mangle]
+#[unsafe(link_section = ".vector_table.interrupts")]
+#[unsafe(no_mangle)]
 pub static __INTERRUPTS: [Vector; 102] = [
     Vector { _handler: WWDG },
     Vector { _handler: PVD_PVM },
@@ -3343,7 +3343,7 @@ impl core::fmt::Debug for Dbgmcu {
 }
 #[doc = "Debug support"]
 pub mod dbgmcu;
-#[no_mangle]
+#[unsafe(no_mangle)]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
 #[allow(non_snake_case)]
@@ -3495,7 +3495,7 @@ impl Peripherals {
     #[doc = r""]
     #[doc = r" Each of the returned peripherals must be used at most once."]
     #[inline]
-    pub unsafe fn steal() -> Self {
+    pub unsafe fn steal() -> Self { unsafe {
         DEVICE_PERIPHERALS = true;
         Peripherals {
             gpiod: Gpiod::steal(),
@@ -3563,5 +3563,5 @@ impl Peripherals {
             ucpd1: Ucpd1::steal(),
             dbgmcu: Dbgmcu::steal(),
         }
-    }
+    }}
 }

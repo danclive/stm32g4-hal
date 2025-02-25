@@ -97,7 +97,7 @@ pub trait Resettable: RegisterSpec {
 
 #[doc(hidden)]
 pub mod raw {
-    use super::{BitM, FieldSpec, RegisterSpec, Unsafe, Writable, marker};
+    use super::{marker, BitM, FieldSpec, RegisterSpec, Unsafe, Writable};
 
     pub struct R<REG: RegisterSpec> {
         pub(crate) bits: REG::Ux,
@@ -341,7 +341,7 @@ pub struct RangeTo<const MAX: u64>;
 pub type FieldWriter<'a, REG, const WI: u8, FI = u8, Safety = Unsafe> =
     raw::FieldWriter<'a, REG, WI, FI, Safety>;
 
-impl<'a, REG, const WI: u8, FI, Safety> FieldWriter<'a, REG, WI, FI, Safety>
+impl<REG, const WI: u8, FI, Safety> FieldWriter<'_, REG, WI, FI, Safety>
 where
     REG: Writable + RegisterSpec,
     FI: FieldSpec,
@@ -908,7 +908,6 @@ where
 }
 
 #[cfg(feature = "atomics")]
-
 mod atomic {
     use super::*;
     use portable_atomic::Ordering;
@@ -923,15 +922,21 @@ mod atomic {
         ($U:ty, $Atomic:ty) => {
             impl AtomicOperations for $U {
                 unsafe fn atomic_or(ptr: *mut Self, val: Self) {
-                    (*(ptr as *const $Atomic)).or(val, Ordering::SeqCst);
+                    unsafe {
+                        (*(ptr as *const $Atomic)).or(val, Ordering::SeqCst);
+                    }
                 }
 
                 unsafe fn atomic_and(ptr: *mut Self, val: Self) {
-                    (*(ptr as *const $Atomic)).and(val, Ordering::SeqCst);
+                    unsafe {
+                        (*(ptr as *const $Atomic)).and(val, Ordering::SeqCst);
+                    }
                 }
 
                 unsafe fn atomic_xor(ptr: *mut Self, val: Self) {
-                    (*(ptr as *const $Atomic)).xor(val, Ordering::SeqCst);
+                    unsafe {
+                        (*(ptr as *const $Atomic)).xor(val, Ordering::SeqCst);
+                    }
                 }
             }
         };
@@ -963,12 +968,14 @@ mod atomic {
         where
             F: FnOnce(&mut W<REG>) -> &mut W<REG>,
         {
-            let bits = f(&mut W {
-                bits: Default::default(),
-                _reg: marker::PhantomData,
-            })
-            .bits;
-            REG::Ux::atomic_or(self.register.as_ptr(), bits);
+            unsafe {
+                let bits = f(&mut W {
+                    bits: Default::default(),
+                    _reg: marker::PhantomData,
+                })
+                .bits;
+                REG::Ux::atomic_or(self.register.as_ptr(), bits);
+            }
         }
 
         /// Clear every bit in the register that was cleared in the write proxy. Leave other bits
@@ -982,12 +989,14 @@ mod atomic {
         where
             F: FnOnce(&mut W<REG>) -> &mut W<REG>,
         {
-            let bits = f(&mut W {
-                bits: !REG::Ux::default(),
-                _reg: marker::PhantomData,
-            })
-            .bits;
-            REG::Ux::atomic_and(self.register.as_ptr(), bits);
+            unsafe {
+                let bits = f(&mut W {
+                    bits: !REG::Ux::default(),
+                    _reg: marker::PhantomData,
+                })
+                .bits;
+                REG::Ux::atomic_and(self.register.as_ptr(), bits);
+            }
         }
 
         /// Toggle every bit in the register that was set in the write proxy. Leave other bits
@@ -1001,12 +1010,14 @@ mod atomic {
         where
             F: FnOnce(&mut W<REG>) -> &mut W<REG>,
         {
-            let bits = f(&mut W {
-                bits: Default::default(),
-                _reg: marker::PhantomData,
-            })
-            .bits;
-            REG::Ux::atomic_xor(self.register.as_ptr(), bits);
+            unsafe {
+                let bits = f(&mut W {
+                    bits: Default::default(),
+                    _reg: marker::PhantomData,
+                })
+                .bits;
+                REG::Ux::atomic_xor(self.register.as_ptr(), bits);
+            }
         }
     }
 }
