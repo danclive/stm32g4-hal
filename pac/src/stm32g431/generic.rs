@@ -97,7 +97,7 @@ pub trait Resettable: RegisterSpec {
 
 #[doc(hidden)]
 pub mod raw {
-    use super::{marker, BitM, FieldSpec, RegisterSpec, Unsafe, Writable};
+    use super::{BitM, FieldSpec, RegisterSpec, Unsafe, Writable, marker};
 
     pub struct R<REG: RegisterSpec> {
         pub(crate) bits: REG::Ux,
@@ -341,7 +341,7 @@ pub struct RangeTo<const MAX: u64>;
 pub type FieldWriter<'a, REG, const WI: u8, FI = u8, Safety = Unsafe> =
     raw::FieldWriter<'a, REG, WI, FI, Safety>;
 
-impl<REG, const WI: u8, FI, Safety> FieldWriter<'_, REG, WI, FI, Safety>
+impl<'a, REG, const WI: u8, FI, Safety> FieldWriter<'a, REG, WI, FI, Safety>
 where
     REG: Writable + RegisterSpec,
     FI: FieldSpec,
@@ -908,6 +908,7 @@ where
 }
 
 #[cfg(feature = "atomics")]
+
 mod atomic {
     use super::*;
     use portable_atomic::Ordering;
