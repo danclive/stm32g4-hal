@@ -20,7 +20,7 @@ const PERI_BIT_BAND_BASE: usize = 0x4200_0000;
 /// Some registers have reserved bits which should not be modified.
 #[inline]
 pub unsafe fn clear<T>(register: *const T, bit: u8) {
-    write(register, bit, false);
+    unsafe { write(register, bit, false) };
 }
 
 /// Sets the bit on the provided register without modifying other bits.
@@ -30,7 +30,7 @@ pub unsafe fn clear<T>(register: *const T, bit: u8) {
 /// Some registers have reserved bits which should not be modified.
 #[inline]
 pub unsafe fn set<T>(register: *const T, bit: u8) {
-    write(register, bit, true);
+    unsafe { write(register, bit, true) };
 }
 
 /// Sets or clears the bit on the provided register without modifying other bits.
@@ -47,5 +47,5 @@ pub unsafe fn write<T>(register: *const T, bit: u8, set: bool) {
 
     let bit = bit as usize;
     let bb_addr = (PERI_BIT_BAND_BASE + (addr - PERI_ADDRESS_START) * 32) + 4 * bit;
-    ptr::write_volatile(bb_addr as *mut u32, u32::from(set));
+    unsafe { ptr::write_volatile(bb_addr as *mut u32, u32::from(set)) };
 }

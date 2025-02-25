@@ -139,7 +139,7 @@ pub(crate) unsafe fn set_vos(vos: VoltageScale) {
         VoltageScale::Range1 { .. } => 0b01,
         VoltageScale::Range2 => 0b10,
     };
-    pwr.pwr_cr1().modify(|_r, w| w.vos().bits(vos));
+    pwr.pwr_cr1().modify(|_r, w| unsafe { w.vos().bits(vos) });
 
     // Wait for ready
     while pwr.pwr_sr2().read().vosf().bit() {}

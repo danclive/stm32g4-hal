@@ -6,8 +6,8 @@ pub mod systick;
 pub mod timer;
 
 pub use rtic_time::{
-    self, monotonic::TimerQueueBasedMonotonic, timer_queue::TimerQueueBackend, Monotonic,
-    TimeoutError,
+    self, Monotonic, TimeoutError, monotonic::TimerQueueBasedMonotonic,
+    timer_queue::TimerQueueBackend,
 };
 
 pub(crate) unsafe fn set_monotonic_prio(
@@ -15,15 +15,15 @@ pub(crate) unsafe fn set_monotonic_prio(
     prio_bits: u8,
     interrupt: impl cortex_m::interrupt::InterruptNumber,
 ) {
-    extern "C" {
+    unsafe extern "C" {
         static RTIC_ASYNC_MAX_LOGICAL_PRIO: u8;
     }
 
-    let max_prio = RTIC_ASYNC_MAX_LOGICAL_PRIO.max(1).min(1 << prio_bits);
+    let max_prio = unsafe { RTIC_ASYNC_MAX_LOGICAL_PRIO.max(1).min(1 << prio_bits) };
 
     let hw_prio = cortex_logical2hw(max_prio, prio_bits);
 
-    nvic.set_priority(interrupt, hw_prio);
+    unsafe { nvic.set_priority(interrupt, hw_prio) };
 }
 
 pub(crate) const fn cortex_logical2hw(logical: u8, nvic_prio_bits: u8) -> u8 {

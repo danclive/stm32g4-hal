@@ -710,7 +710,7 @@ pub trait Enable: RccBus {
     ///
     /// Enables peripheral. Takes access to RCC internally
     unsafe fn enable_unchecked() {
-        let rcc = &*pac::Rcc::PTR;
+        let rcc = unsafe { &*pac::Rcc::PTR };
         Self::enable(rcc);
     }
 
@@ -718,8 +718,8 @@ pub trait Enable: RccBus {
     ///
     /// Disables peripheral. Takes access to RCC internally
     unsafe fn disable_unchecked() {
-        let rcc = pac::Rcc::PTR;
-        Self::disable(&*rcc);
+        let rcc = unsafe { &*pac::Rcc::PTR };
+        Self::disable(rcc);
     }
 }
 
@@ -733,8 +733,8 @@ pub trait Reset: RccBus {
     ///
     /// Resets peripheral. Takes access to RCC internally
     unsafe fn reset_unchecked() {
-        let rcc = pac::Rcc::PTR;
-        Self::reset(&*rcc);
+        let rcc = unsafe { &*pac::Rcc::PTR };
+        Self::reset(rcc);
     }
 }
 

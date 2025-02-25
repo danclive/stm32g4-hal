@@ -87,7 +87,7 @@ impl core::iter::Iterator for Rng {
 }
 
 pub trait RngCore<W> {
-    fn gen(&mut self) -> Result<W, ErrorKind>;
+    fn random(&mut self) -> Result<W, ErrorKind>;
     fn fill(&mut self, dest: &mut [W]) -> Result<(), ErrorKind>;
 }
 
@@ -96,7 +96,7 @@ macro_rules! rng_core {
         $(
             impl RngCore<$type> for Rng {
                 /// Returns a single element with random value, or error
-                fn gen(&mut self) -> Result<$type, ErrorKind> {
+                fn random(&mut self) -> Result<$type, ErrorKind> {
                     let val = self.value()?;
                     Ok(val as $type)
                 }
@@ -128,7 +128,7 @@ macro_rules! rng_core_large {
     ($($type:ty),+) => {
         $(
             impl RngCore<$type> for Rng {
-                fn gen(&mut self) -> Result<$type, ErrorKind> {
+                fn random(&mut self) -> Result<$type, ErrorKind> {
                     const WORDS: usize = mem::size_of::<$type>() / mem::size_of::<u32>();
                     let mut res: $type = 0;
 
@@ -154,8 +154,8 @@ macro_rules! rng_core_transmute {
     ($($type:ty = $from:ty),+) => {
         $(
             impl RngCore<$type> for Rng {
-                fn gen(&mut self) -> Result<$type, ErrorKind> {
-                    let num = <Self as RngCore<$from>>::gen(self)?;
+                fn random(&mut self) -> Result<$type, ErrorKind> {
+                    let num = <Self as RngCore<$from>>::random(self)?;
                     Ok(unsafe { mem::transmute::<$from, $type>(num) })
                 }
 
