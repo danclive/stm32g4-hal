@@ -7,7 +7,7 @@ description = "Peripheral access API for STM32G4 series microcontrollers"
 keywords = ["arm", "cortex-m", "stm32g4", "stm32g4xx", "hal"]
 documentation = "https://docs.rs/stm32g4-hal"
 repository = "https://github.com/danclive/stm32g4-hal"
-edition = "2021"
+edition = "2024"
 license = "MIT/Apache-2.0"
 readme = "README.md"
 
