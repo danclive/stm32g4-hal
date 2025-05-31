@@ -1,6 +1,6 @@
 //! Real-Time Clock
 
-use cast::{f32, i32, u16, u32, u8};
+use cast::{f32, i32, u8, u16, u32};
 use chrono::prelude::*;
 
 use crate::pac;
@@ -140,7 +140,7 @@ pub fn init(rtc: pac::Rtc, clock_source: RtcClock, clocks: &Clocks) -> Rtc {
 
     // Select RTC kernel clock
     rcc::rtc::Rtc::kernel_clk_mux(match clock_source {
-        RtcClock::Hse { .. } => rcc::rtc::RtcClkSel::B0x3,
+        RtcClock::Hse => rcc::rtc::RtcClkSel::B0x3,
         RtcClock::Lsi => rcc::rtc::RtcClkSel::B0x2,
         RtcClock::Lse { .. } => rcc::rtc::RtcClkSel::B0x1,
     });

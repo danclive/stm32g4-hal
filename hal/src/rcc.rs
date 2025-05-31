@@ -353,6 +353,7 @@ impl Rcc {
                 None => w,
             };
 
+            #[allow(clippy::let_and_return)]
             w
         });
 
