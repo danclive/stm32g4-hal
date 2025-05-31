@@ -35,10 +35,6 @@ impl crate::Readable for PrSpec {}
 #[doc = "`write(|w| ..)` method takes [`pr::W`](W) writer structure"]
 impl crate::Writable for PrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PR to value 0"]
-impl crate::Resettable for PrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PrSpec {}

@@ -360,6 +360,4 @@ impl crate::RegisterSpec for RccCifrSpec {
 #[doc = "`read()` method returns [`rcc_cifr::R`](R) reader structure"]
 impl crate::Readable for RccCifrSpec {}
 #[doc = "`reset()` method sets RCC_CIFR to value 0"]
-impl crate::Resettable for RccCifrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RccCifrSpec {}

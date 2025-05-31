@@ -45,10 +45,6 @@ impl crate::Readable for ScsrSpec {}
 #[doc = "`write(|w| ..)` method takes [`scsr::W`](W) writer structure"]
 impl crate::Writable for ScsrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SCSR to value 0"]
-impl crate::Resettable for ScsrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ScsrSpec {}

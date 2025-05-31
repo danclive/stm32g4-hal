@@ -18,11 +18,9 @@ pub type Tsel1W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Wave1R = crate::FieldReader;
 #[doc = "Field `WAVE1` writer - DAC channel1 noise/triangle wave generation enable These bits are set and cleared by software. Note: Only used if bit TEN1 = 1 (DAC channel1 trigger enabled)."]
 pub type Wave1W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `MAMP1` reader - DAC channel1 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\]
-of LFSR/ triangle amplitude equal to 4095"]
+#[doc = "Field `MAMP1` reader - DAC channel1 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
 pub type Mamp1R = crate::FieldReader;
-#[doc = "Field `MAMP1` writer - DAC channel1 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\]
-of LFSR/ triangle amplitude equal to 4095"]
+#[doc = "Field `MAMP1` writer - DAC channel1 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
 pub type Mamp1W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DMAEN1` reader - DAC channel1 DMA enable This bit is set and cleared by software."]
 pub type Dmaen1R = crate::BitReader;
@@ -52,11 +50,9 @@ pub type Tsel2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 pub type Wave2R = crate::FieldReader;
 #[doc = "Field `WAVE2` writer - DAC channel2 noise/triangle wave generation enable These bits are set/reset by software. 1x: Triangle wave generation enabled Note: Only used if bit TEN2 = 1 (DAC channel2 trigger enabled)"]
 pub type Wave2W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `MAMP2` reader - DAC channel2 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\]
-of LFSR/ triangle amplitude equal to 4095"]
+#[doc = "Field `MAMP2` reader - DAC channel2 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
 pub type Mamp2R = crate::FieldReader;
-#[doc = "Field `MAMP2` writer - DAC channel2 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\]
-of LFSR/ triangle amplitude equal to 4095"]
+#[doc = "Field `MAMP2` writer - DAC channel2 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
 pub type Mamp2W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DMAEN2` reader - DAC channel2 DMA enable This bit is set and cleared by software."]
 pub type Dmaen2R = crate::BitReader;
@@ -91,8 +87,7 @@ impl R {
     pub fn wave1(&self) -> Wave1R {
         Wave1R::new(((self.bits >> 6) & 3) as u8)
     }
-    #[doc = "Bits 8:11 - DAC channel1 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\]
-of LFSR/ triangle amplitude equal to 4095"]
+    #[doc = "Bits 8:11 - DAC channel1 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
     #[inline(always)]
     pub fn mamp1(&self) -> Mamp1R {
         Mamp1R::new(((self.bits >> 8) & 0x0f) as u8)
@@ -132,8 +127,7 @@ of LFSR/ triangle amplitude equal to 4095"]
     pub fn wave2(&self) -> Wave2R {
         Wave2R::new(((self.bits >> 22) & 3) as u8)
     }
-    #[doc = "Bits 24:27 - DAC channel2 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\]
-of LFSR/ triangle amplitude equal to 4095"]
+    #[doc = "Bits 24:27 - DAC channel2 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
     #[inline(always)]
     pub fn mamp2(&self) -> Mamp2R {
         Mamp2R::new(((self.bits >> 24) & 0x0f) as u8)
@@ -197,8 +191,7 @@ impl W {
     pub fn wave1(&mut self) -> Wave1W<DacCrSpec> {
         Wave1W::new(self, 6)
     }
-    #[doc = "Bits 8:11 - DAC channel1 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\]
-of LFSR/ triangle amplitude equal to 4095"]
+    #[doc = "Bits 8:11 - DAC channel1 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
     #[inline(always)]
     pub fn mamp1(&mut self) -> Mamp1W<DacCrSpec> {
         Mamp1W::new(self, 8)
@@ -238,8 +231,7 @@ of LFSR/ triangle amplitude equal to 4095"]
     pub fn wave2(&mut self) -> Wave2W<DacCrSpec> {
         Wave2W::new(self, 22)
     }
-    #[doc = "Bits 24:27 - DAC channel2 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\]
-of LFSR/ triangle amplitude equal to 4095"]
+    #[doc = "Bits 24:27 - DAC channel2 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
     #[inline(always)]
     pub fn mamp2(&mut self) -> Mamp2W<DacCrSpec> {
         Mamp2W::new(self, 24)
@@ -270,10 +262,6 @@ impl crate::Readable for DacCrSpec {}
 #[doc = "`write(|w| ..)` method takes [`dac_cr::W`](W) writer structure"]
 impl crate::Writable for DacCrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC_CR to value 0"]
-impl crate::Resettable for DacCrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DacCrSpec {}

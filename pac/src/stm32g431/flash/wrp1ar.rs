@@ -52,10 +52,6 @@ impl crate::Readable for Wrp1arSpec {}
 #[doc = "`write(|w| ..)` method takes [`wrp1ar::W`](W) writer structure"]
 impl crate::Writable for Wrp1arSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets WRP1AR to value 0"]
-impl crate::Resettable for Wrp1arSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Wrp1arSpec {}

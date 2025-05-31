@@ -56,6 +56,4 @@ impl crate::RegisterSpec for FnrSpec {
 #[doc = "`read()` method returns [`fnr::R`](R) reader structure"]
 impl crate::Readable for FnrSpec {}
 #[doc = "`reset()` method sets FNR to value 0"]
-impl crate::Resettable for FnrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FnrSpec {}

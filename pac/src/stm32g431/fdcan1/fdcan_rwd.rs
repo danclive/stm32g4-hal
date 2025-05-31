@@ -2,20 +2,14 @@
 pub type R = crate::R<FdcanRwdSpec>;
 #[doc = "Register `FDCAN_RWD` writer"]
 pub type W = crate::W<FdcanRwdSpec>;
-#[doc = "Field `WDC` reader - Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of FDCAN_CCCR register are set to 1."]
+#[doc = "Field `WDC` reader - Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of FDCAN_CCCR register are set to 1."]
 pub type WdcR = crate::FieldReader;
-#[doc = "Field `WDC` writer - Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of FDCAN_CCCR register are set to 1."]
+#[doc = "Field `WDC` writer - Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of FDCAN_CCCR register are set to 1."]
 pub type WdcW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `WDV` reader - Watchdog value Actual message RAM watchdog counter value."]
 pub type WdvR = crate::FieldReader;
 impl R {
-    #[doc = "Bits 0:7 - Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of FDCAN_CCCR register are set to 1."]
+    #[doc = "Bits 0:7 - Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of FDCAN_CCCR register are set to 1."]
     #[inline(always)]
     pub fn wdc(&self) -> WdcR {
         WdcR::new((self.bits & 0xff) as u8)
@@ -35,9 +29,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of FDCAN_CCCR register are set to 1."]
+    #[doc = "Bits 0:7 - Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of FDCAN_CCCR register are set to 1."]
     #[inline(always)]
     pub fn wdc(&mut self) -> WdcW<FdcanRwdSpec> {
         WdcW::new(self, 0)
@@ -53,10 +45,6 @@ impl crate::Readable for FdcanRwdSpec {}
 #[doc = "`write(|w| ..)` method takes [`fdcan_rwd::W`](W) writer structure"]
 impl crate::Writable for FdcanRwdSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FDCAN_RWD to value 0"]
-impl crate::Resettable for FdcanRwdSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FdcanRwdSpec {}

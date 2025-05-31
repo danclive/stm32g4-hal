@@ -52,8 +52,6 @@ impl crate::Readable for DacShrrSpec {}
 #[doc = "`write(|w| ..)` method takes [`dac_shrr::W`](W) writer structure"]
 impl crate::Writable for DacShrrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC_SHRR to value 0x0001_0001"]
 impl crate::Resettable for DacShrrSpec {

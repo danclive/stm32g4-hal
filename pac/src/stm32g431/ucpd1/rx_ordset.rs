@@ -40,6 +40,4 @@ impl crate::RegisterSpec for RxOrdsetSpec {
 #[doc = "`read()` method returns [`rx_ordset::R`](R) reader structure"]
 impl crate::Readable for RxOrdsetSpec {}
 #[doc = "`reset()` method sets RX_ORDSET to value 0"]
-impl crate::Resettable for RxOrdsetSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RxOrdsetSpec {}

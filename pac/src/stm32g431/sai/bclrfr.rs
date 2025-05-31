@@ -57,10 +57,6 @@ impl crate::RegisterSpec for BclrfrSpec {
 #[doc = "`write(|w| ..)` method takes [`bclrfr::W`](W) writer structure"]
 impl crate::Writable for BclrfrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BCLRFR to value 0"]
-impl crate::Resettable for BclrfrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BclrfrSpec {}

@@ -127,10 +127,6 @@ impl crate::Readable for C9crSpec {}
 #[doc = "`write(|w| ..)` method takes [`c9cr::W`](W) writer structure"]
 impl crate::Writable for C9crSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets C9CR to value 0"]
-impl crate::Resettable for C9crSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for C9crSpec {}

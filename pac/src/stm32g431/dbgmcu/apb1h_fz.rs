@@ -37,10 +37,6 @@ impl crate::Readable for Apb1hFzSpec {}
 #[doc = "`write(|w| ..)` method takes [`apb1h_fz::W`](W) writer structure"]
 impl crate::Writable for Apb1hFzSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets APB1H_FZ to value 0"]
-impl crate::Resettable for Apb1hFzSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Apb1hFzSpec {}

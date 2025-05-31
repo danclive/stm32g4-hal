@@ -97,10 +97,6 @@ impl crate::Readable for TimeoutrSpec {}
 #[doc = "`write(|w| ..)` method takes [`timeoutr::W`](W) writer structure"]
 impl crate::Writable for TimeoutrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TIMEOUTR to value 0"]
-impl crate::Resettable for TimeoutrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TimeoutrSpec {}

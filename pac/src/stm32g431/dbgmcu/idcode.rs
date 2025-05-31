@@ -32,6 +32,4 @@ impl crate::RegisterSpec for IdcodeSpec {
 #[doc = "`read()` method returns [`idcode::R`](R) reader structure"]
 impl crate::Readable for IdcodeSpec {}
 #[doc = "`reset()` method sets IDCODE to value 0"]
-impl crate::Resettable for IdcodeSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IdcodeSpec {}

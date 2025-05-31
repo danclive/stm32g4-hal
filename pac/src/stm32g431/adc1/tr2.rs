@@ -52,8 +52,6 @@ impl crate::Readable for Tr2Spec {}
 #[doc = "`write(|w| ..)` method takes [`tr2::W`](W) writer structure"]
 impl crate::Writable for Tr2Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TR2 to value 0x00ff_0000"]
 impl crate::Resettable for Tr2Spec {

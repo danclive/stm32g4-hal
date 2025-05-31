@@ -187,8 +187,6 @@ impl crate::Readable for Cfgr1Spec {}
 #[doc = "`write(|w| ..)` method takes [`cfgr1::W`](W) writer structure"]
 impl crate::Writable for Cfgr1Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CFGR1 to value 0x7c00_0001"]
 impl crate::Resettable for Cfgr1Spec {

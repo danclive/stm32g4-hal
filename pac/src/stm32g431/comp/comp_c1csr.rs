@@ -165,10 +165,6 @@ impl crate::Readable for CompC1csrSpec {}
 #[doc = "`write(|w| ..)` method takes [`comp_c1csr::W`](W) writer structure"]
 impl crate::Writable for CompC1csrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets COMP_C1CSR to value 0"]
-impl crate::Resettable for CompC1csrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CompC1csrSpec {}

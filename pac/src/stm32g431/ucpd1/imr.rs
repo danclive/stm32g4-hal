@@ -247,10 +247,6 @@ impl crate::Readable for ImrSpec {}
 #[doc = "`write(|w| ..)` method takes [`imr::W`](W) writer structure"]
 impl crate::Writable for ImrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IMR to value 0"]
-impl crate::Resettable for ImrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ImrSpec {}

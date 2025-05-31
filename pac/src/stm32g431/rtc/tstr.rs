@@ -72,6 +72,4 @@ impl crate::RegisterSpec for TstrSpec {
 #[doc = "`read()` method returns [`tstr::R`](R) reader structure"]
 impl crate::Readable for TstrSpec {}
 #[doc = "`reset()` method sets TSTR to value 0"]
-impl crate::Resettable for TstrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TstrSpec {}

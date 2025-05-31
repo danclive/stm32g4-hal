@@ -114,110 +114,92 @@ impl RegisterBlock {
         &self.pdmdly
     }
 }
-#[doc = "BCR1 (rw) register accessor: BConfiguration register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`bcr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bcr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bcr1`]
-module"]
+#[doc = "BCR1 (rw) register accessor: BConfiguration register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`bcr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bcr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bcr1`] module"]
 #[doc(alias = "BCR1")]
 pub type Bcr1 = crate::Reg<bcr1::Bcr1Spec>;
 #[doc = "BConfiguration register 1"]
 pub mod bcr1;
-#[doc = "BCR2 (rw) register accessor: BConfiguration register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`bcr2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bcr2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bcr2`]
-module"]
+#[doc = "BCR2 (rw) register accessor: BConfiguration register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`bcr2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bcr2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bcr2`] module"]
 #[doc(alias = "BCR2")]
 pub type Bcr2 = crate::Reg<bcr2::Bcr2Spec>;
 #[doc = "BConfiguration register 2"]
 pub mod bcr2;
-#[doc = "BFRCR (rw) register accessor: BFRCR\n\nYou can [`read`](crate::Reg::read) this register and get [`bfrcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bfrcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bfrcr`]
-module"]
+#[doc = "BFRCR (rw) register accessor: BFRCR\n\nYou can [`read`](crate::Reg::read) this register and get [`bfrcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bfrcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bfrcr`] module"]
 #[doc(alias = "BFRCR")]
 pub type Bfrcr = crate::Reg<bfrcr::BfrcrSpec>;
 #[doc = "BFRCR"]
 pub mod bfrcr;
-#[doc = "BSLOTR (rw) register accessor: BSlot register\n\nYou can [`read`](crate::Reg::read) this register and get [`bslotr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bslotr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bslotr`]
-module"]
+#[doc = "BSLOTR (rw) register accessor: BSlot register\n\nYou can [`read`](crate::Reg::read) this register and get [`bslotr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bslotr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bslotr`] module"]
 #[doc(alias = "BSLOTR")]
 pub type Bslotr = crate::Reg<bslotr::BslotrSpec>;
 #[doc = "BSlot register"]
 pub mod bslotr;
-#[doc = "BIM (rw) register accessor: BInterrupt mask register2\n\nYou can [`read`](crate::Reg::read) this register and get [`bim::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bim::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bim`]
-module"]
+#[doc = "BIM (rw) register accessor: BInterrupt mask register2\n\nYou can [`read`](crate::Reg::read) this register and get [`bim::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bim::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bim`] module"]
 #[doc(alias = "BIM")]
 pub type Bim = crate::Reg<bim::BimSpec>;
 #[doc = "BInterrupt mask register2"]
 pub mod bim;
-#[doc = "BSR (r) register accessor: BStatus register\n\nYou can [`read`](crate::Reg::read) this register and get [`bsr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bsr`]
-module"]
+#[doc = "BSR (r) register accessor: BStatus register\n\nYou can [`read`](crate::Reg::read) this register and get [`bsr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bsr`] module"]
 #[doc(alias = "BSR")]
 pub type Bsr = crate::Reg<bsr::BsrSpec>;
 #[doc = "BStatus register"]
 pub mod bsr;
-#[doc = "BCLRFR (w) register accessor: BClear flag register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bclrfr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bclrfr`]
-module"]
+#[doc = "BCLRFR (w) register accessor: BClear flag register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bclrfr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bclrfr`] module"]
 #[doc(alias = "BCLRFR")]
 pub type Bclrfr = crate::Reg<bclrfr::BclrfrSpec>;
 #[doc = "BClear flag register"]
 pub mod bclrfr;
-#[doc = "BDR (rw) register accessor: BData register\n\nYou can [`read`](crate::Reg::read) this register and get [`bdr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bdr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bdr`]
-module"]
+#[doc = "BDR (rw) register accessor: BData register\n\nYou can [`read`](crate::Reg::read) this register and get [`bdr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bdr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@bdr`] module"]
 #[doc(alias = "BDR")]
 pub type Bdr = crate::Reg<bdr::BdrSpec>;
 #[doc = "BData register"]
 pub mod bdr;
-#[doc = "ACR1 (rw) register accessor: AConfiguration register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`acr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`acr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acr1`]
-module"]
+#[doc = "ACR1 (rw) register accessor: AConfiguration register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`acr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`acr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acr1`] module"]
 #[doc(alias = "ACR1")]
 pub type Acr1 = crate::Reg<acr1::Acr1Spec>;
 #[doc = "AConfiguration register 1"]
 pub mod acr1;
-#[doc = "ACR2 (rw) register accessor: AConfiguration register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`acr2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`acr2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acr2`]
-module"]
+#[doc = "ACR2 (rw) register accessor: AConfiguration register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`acr2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`acr2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acr2`] module"]
 #[doc(alias = "ACR2")]
 pub type Acr2 = crate::Reg<acr2::Acr2Spec>;
 #[doc = "AConfiguration register 2"]
 pub mod acr2;
-#[doc = "AFRCR (rw) register accessor: AFRCR\n\nYou can [`read`](crate::Reg::read) this register and get [`afrcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`afrcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@afrcr`]
-module"]
+#[doc = "AFRCR (rw) register accessor: AFRCR\n\nYou can [`read`](crate::Reg::read) this register and get [`afrcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`afrcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@afrcr`] module"]
 #[doc(alias = "AFRCR")]
 pub type Afrcr = crate::Reg<afrcr::AfrcrSpec>;
 #[doc = "AFRCR"]
 pub mod afrcr;
-#[doc = "ASLOTR (rw) register accessor: ASlot register\n\nYou can [`read`](crate::Reg::read) this register and get [`aslotr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aslotr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aslotr`]
-module"]
+#[doc = "ASLOTR (rw) register accessor: ASlot register\n\nYou can [`read`](crate::Reg::read) this register and get [`aslotr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aslotr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aslotr`] module"]
 #[doc(alias = "ASLOTR")]
 pub type Aslotr = crate::Reg<aslotr::AslotrSpec>;
 #[doc = "ASlot register"]
 pub mod aslotr;
-#[doc = "AIM (rw) register accessor: AInterrupt mask register2\n\nYou can [`read`](crate::Reg::read) this register and get [`aim::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aim::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aim`]
-module"]
+#[doc = "AIM (rw) register accessor: AInterrupt mask register2\n\nYou can [`read`](crate::Reg::read) this register and get [`aim::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aim::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aim`] module"]
 #[doc(alias = "AIM")]
 pub type Aim = crate::Reg<aim::AimSpec>;
 #[doc = "AInterrupt mask register2"]
 pub mod aim;
-#[doc = "ASR (rw) register accessor: AStatus register\n\nYou can [`read`](crate::Reg::read) this register and get [`asr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`asr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@asr`]
-module"]
+#[doc = "ASR (rw) register accessor: AStatus register\n\nYou can [`read`](crate::Reg::read) this register and get [`asr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`asr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@asr`] module"]
 #[doc(alias = "ASR")]
 pub type Asr = crate::Reg<asr::AsrSpec>;
 #[doc = "AStatus register"]
 pub mod asr;
-#[doc = "ACLRFR (rw) register accessor: AClear flag register\n\nYou can [`read`](crate::Reg::read) this register and get [`aclrfr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aclrfr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aclrfr`]
-module"]
+#[doc = "ACLRFR (rw) register accessor: AClear flag register\n\nYou can [`read`](crate::Reg::read) this register and get [`aclrfr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aclrfr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aclrfr`] module"]
 #[doc(alias = "ACLRFR")]
 pub type Aclrfr = crate::Reg<aclrfr::AclrfrSpec>;
 #[doc = "AClear flag register"]
 pub mod aclrfr;
-#[doc = "ADR (rw) register accessor: AData register\n\nYou can [`read`](crate::Reg::read) this register and get [`adr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@adr`]
-module"]
+#[doc = "ADR (rw) register accessor: AData register\n\nYou can [`read`](crate::Reg::read) this register and get [`adr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@adr`] module"]
 #[doc(alias = "ADR")]
 pub type Adr = crate::Reg<adr::AdrSpec>;
 #[doc = "AData register"]
 pub mod adr;
-#[doc = "PDMCR (rw) register accessor: PDM control register\n\nYou can [`read`](crate::Reg::read) this register and get [`pdmcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pdmcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pdmcr`]
-module"]
+#[doc = "PDMCR (rw) register accessor: PDM control register\n\nYou can [`read`](crate::Reg::read) this register and get [`pdmcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pdmcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pdmcr`] module"]
 #[doc(alias = "PDMCR")]
 pub type Pdmcr = crate::Reg<pdmcr::PdmcrSpec>;
 #[doc = "PDM control register"]
 pub mod pdmcr;
-#[doc = "PDMDLY (rw) register accessor: PDM delay register\n\nYou can [`read`](crate::Reg::read) this register and get [`pdmdly::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pdmdly::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pdmdly`]
-module"]
+#[doc = "PDMDLY (rw) register accessor: PDM delay register\n\nYou can [`read`](crate::Reg::read) this register and get [`pdmdly::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pdmdly::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pdmdly`] module"]
 #[doc(alias = "PDMDLY")]
 pub type Pdmdly = crate::Reg<pdmdly::PdmdlySpec>;
 #[doc = "PDM delay register"]

@@ -421,8 +421,7 @@ where
         self.variant(Pllpen::B0x1)
     }
 }
-#[doc = "Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\]
-is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain.\n\nValue on reset: 0"]
+#[doc = "Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\] is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pllp {
@@ -437,8 +436,7 @@ impl From<Pllp> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PLLP` reader - Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\]
-is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
+#[doc = "Field `PLLP` reader - Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\] is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
 pub type PllpR = crate::BitReader<Pllp>;
 impl PllpR {
     #[doc = "Get enumerated values variant"]
@@ -460,8 +458,7 @@ impl PllpR {
         *self == Pllp::B0x1
     }
 }
-#[doc = "Field `PLLP` writer - Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\]
-is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
+#[doc = "Field `PLLP` writer - Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\] is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
 pub type PllpW<'a, REG> = crate::BitWriter<'a, REG, Pllp>;
 impl<'a, REG> PllpW<'a, REG>
 where
@@ -868,8 +865,7 @@ impl R {
     pub fn pllpen(&self) -> PllpenR {
         PllpenR::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 17 - Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\]
-is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
+    #[doc = "Bit 17 - Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\] is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
     #[inline(always)]
     pub fn pllp(&self) -> PllpR {
         PllpR::new(((self.bits >> 17) & 1) != 0)
@@ -937,8 +933,7 @@ impl W {
     pub fn pllpen(&mut self) -> PllpenW<RccPllcfgrSpec> {
         PllpenW::new(self, 16)
     }
-    #[doc = "Bit 17 - Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\]
-is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
+    #[doc = "Bit 17 - Main PLL division factor for PLL P clock. Set and cleared by software to control the frequency of the main PLL output clock PLL P clock. These bits can be written only if PLL is disabled. When the PLLPDIV\\[4:0\\] is set to 00000PLL P output clock frequency = VCO frequency / PLLP with PLLP =7, or 17 Note: The software has to set these bits correctly not to exceed 170 MHz on this domain."]
     #[inline(always)]
     pub fn pllp(&mut self) -> PllpW<RccPllcfgrSpec> {
         PllpW::new(self, 17)
@@ -979,8 +974,6 @@ impl crate::Readable for RccPllcfgrSpec {}
 #[doc = "`write(|w| ..)` method takes [`rcc_pllcfgr::W`](W) writer structure"]
 impl crate::Writable for RccPllcfgrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RCC_PLLCFGR to value 0x1000"]
 impl crate::Resettable for RccPllcfgrSpec {

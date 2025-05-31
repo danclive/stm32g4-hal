@@ -649,8 +649,6 @@ impl crate::Readable for FdcanPsrSpec {}
 #[doc = "`write(|w| ..)` method takes [`fdcan_psr::W`](W) writer structure"]
 impl crate::Writable for FdcanPsrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FDCAN_PSR to value 0x0707"]
 impl crate::Resettable for FdcanPsrSpec {

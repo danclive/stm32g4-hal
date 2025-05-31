@@ -1,6 +1,6 @@
 [package]
 name = "stm32g4-hal"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["danc <dangcheng@hotmail.com>"]
 categories = ["embedded", "hardware-support", "no-std"]
 description = "Peripheral access API for STM32G4 series microcontrollers"
@@ -15,7 +15,7 @@ readme = "README.md"
 cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
 cortex-m-rt = "0.7.5"
 critical-section = "1.2"
-defmt = { version = "0.3.10", optional = true }
+defmt = { version = "1.0.1", optional = true }
 stm32g4-pac = { path = "../pac" }
 fugit = "0.3.7"
 enumflags2 = "0.7.11"
@@ -29,17 +29,17 @@ chrono = { version = "0.4", default-features = false }
 cast = "0.3.0"
 
 [dev-dependencies]
-defmt-rtt = "0.4.1"
-panic-probe = "0.3.2"
-rtic = { version = "2.1.1", features = ["thumbv7-backend"] }
+defmt-rtt = "1.0.0"
+panic-probe = "1.0.0"
+rtic = { version = "2.1.2", features = ["thumbv7-backend"] }
 
 [features]
 default = ["stm32g431", "defmt", "rtic-tim2", "rtic-systick"]
 defmt = [
     "dep:defmt",
     "stm32g4-pac/defmt",
-    "fugit/defmt",
-    "embedded-hal/defmt-03",
+    # "fugit/defmt",
+    # "embedded-hal/defmt-03",
 ]
 rtic = ["rtic-time", "portable-atomic"]
 rtic-systick = ["rtic"]

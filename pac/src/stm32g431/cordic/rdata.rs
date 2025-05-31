@@ -22,6 +22,4 @@ impl crate::RegisterSpec for RdataSpec {
 #[doc = "`read()` method returns [`rdata::R`](R) reader structure"]
 impl crate::Readable for RdataSpec {}
 #[doc = "`reset()` method sets RDATA to value 0"]
-impl crate::Resettable for RdataSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RdataSpec {}

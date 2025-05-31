@@ -142,10 +142,6 @@ impl crate::Readable for AsrSpec {}
 #[doc = "`write(|w| ..)` method takes [`asr::W`](W) writer structure"]
 impl crate::Writable for AsrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ASR to value 0"]
-impl crate::Resettable for AsrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for AsrSpec {}

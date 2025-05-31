@@ -2,9 +2,7 @@
 pub type R = crate::R<FdcanTsccSpec>;
 #[doc = "Register `FDCAN_TSCC` writer"]
 pub type W = crate::W<FdcanTsccSpec>;
-#[doc = "Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1.\n\nValue on reset: 0"]
+#[doc = "Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -28,9 +26,7 @@ impl crate::FieldSpec for Tss {
     type Ux = u8;
 }
 impl crate::IsEnum for Tss {}
-#[doc = "Field `TSS` reader - Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+#[doc = "Field `TSS` reader - Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
 pub type TssR = crate::FieldReader<Tss>;
 impl TssR {
     #[doc = "Get enumerated values variant"]
@@ -65,9 +61,7 @@ impl TssR {
         *self == Tss::B0x3
     }
 }
-#[doc = "Field `TSS` writer - Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+#[doc = "Field `TSS` writer - Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
 pub type TssW<'a, REG> = crate::FieldWriter<'a, REG, 2, Tss, crate::Safe>;
 impl<'a, REG> TssW<'a, REG>
 where
@@ -100,9 +94,7 @@ pub type TcpR = crate::FieldReader;
 #[doc = "Field `TCP` writer - Timestamp counter prescaler"]
 pub type TcpW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:1 - Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+    #[doc = "Bits 0:1 - Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
     pub fn tss(&self) -> TssR {
         TssR::new((self.bits & 3) as u8)
@@ -122,9 +114,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+    #[doc = "Bits 0:1 - Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
     pub fn tss(&mut self) -> TssW<FdcanTsccSpec> {
         TssW::new(self, 0)
@@ -145,10 +135,6 @@ impl crate::Readable for FdcanTsccSpec {}
 #[doc = "`write(|w| ..)` method takes [`fdcan_tscc::W`](W) writer structure"]
 impl crate::Writable for FdcanTsccSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FDCAN_TSCC to value 0"]
-impl crate::Resettable for FdcanTsccSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FdcanTsccSpec {}

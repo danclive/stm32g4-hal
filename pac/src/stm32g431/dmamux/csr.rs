@@ -22,6 +22,4 @@ impl crate::RegisterSpec for CsrSpec {
 #[doc = "`read()` method returns [`csr::R`](R) reader structure"]
 impl crate::Readable for CsrSpec {}
 #[doc = "`reset()` method sets CSR to value 0"]
-impl crate::Resettable for CsrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CsrSpec {}

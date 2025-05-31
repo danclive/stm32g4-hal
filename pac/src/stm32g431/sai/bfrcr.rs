@@ -97,8 +97,6 @@ impl crate::Readable for BfrcrSpec {}
 #[doc = "`write(|w| ..)` method takes [`bfrcr::W`](W) writer structure"]
 impl crate::Writable for BfrcrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BFRCR to value 0x07"]
 impl crate::Resettable for BfrcrSpec {

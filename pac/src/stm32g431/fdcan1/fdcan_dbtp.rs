@@ -147,8 +147,6 @@ impl crate::Readable for FdcanDbtpSpec {}
 #[doc = "`write(|w| ..)` method takes [`fdcan_dbtp::W`](W) writer structure"]
 impl crate::Writable for FdcanDbtpSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FDCAN_DBTP to value 0x0a33"]
 impl crate::Resettable for FdcanDbtpSpec {

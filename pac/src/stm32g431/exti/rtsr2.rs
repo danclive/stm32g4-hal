@@ -112,10 +112,6 @@ impl crate::Readable for Rtsr2Spec {}
 #[doc = "`write(|w| ..)` method takes [`rtsr2::W`](W) writer structure"]
 impl crate::Writable for Rtsr2Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RTSR2 to value 0"]
-impl crate::Resettable for Rtsr2Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Rtsr2Spec {}

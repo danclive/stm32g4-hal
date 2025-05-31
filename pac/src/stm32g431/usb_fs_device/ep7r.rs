@@ -172,10 +172,6 @@ impl crate::Readable for Ep7rSpec {}
 #[doc = "`write(|w| ..)` method takes [`ep7r::W`](W) writer structure"]
 impl crate::Writable for Ep7rSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EP7R to value 0"]
-impl crate::Resettable for Ep7rSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Ep7rSpec {}

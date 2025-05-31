@@ -127,10 +127,6 @@ impl crate::RegisterSpec for BrrSpec {
 #[doc = "`write(|w| ..)` method takes [`brr::W`](W) writer structure"]
 impl crate::Writable for BrrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BRR to value 0"]
-impl crate::Resettable for BrrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BrrSpec {}

@@ -35,10 +35,6 @@ impl crate::Readable for Keyr4Spec {}
 #[doc = "`write(|w| ..)` method takes [`keyr4::W`](W) writer structure"]
 impl crate::Writable for Keyr4Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets KEYR4 to value 0"]
-impl crate::Resettable for Keyr4Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Keyr4Spec {}

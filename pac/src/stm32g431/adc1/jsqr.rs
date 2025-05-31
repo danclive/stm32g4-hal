@@ -127,10 +127,6 @@ impl crate::Readable for JsqrSpec {}
 #[doc = "`write(|w| ..)` method takes [`jsqr::W`](W) writer structure"]
 impl crate::Writable for JsqrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets JSQR to value 0"]
-impl crate::Resettable for JsqrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for JsqrSpec {}

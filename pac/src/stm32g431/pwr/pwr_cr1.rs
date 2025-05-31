@@ -300,8 +300,6 @@ impl crate::Readable for PwrCr1Spec {}
 #[doc = "`write(|w| ..)` method takes [`pwr_cr1::W`](W) writer structure"]
 impl crate::Writable for PwrCr1Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PWR_CR1 to value 0x0200"]
 impl crate::Resettable for PwrCr1Spec {

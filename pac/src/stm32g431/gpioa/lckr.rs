@@ -277,10 +277,6 @@ impl crate::Readable for LckrSpec {}
 #[doc = "`write(|w| ..)` method takes [`lckr::W`](W) writer structure"]
 impl crate::Writable for LckrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LCKR to value 0"]
-impl crate::Resettable for LckrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LckrSpec {}

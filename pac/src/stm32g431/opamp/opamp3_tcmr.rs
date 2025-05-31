@@ -112,10 +112,6 @@ impl crate::Readable for Opamp3TcmrSpec {}
 #[doc = "`write(|w| ..)` method takes [`opamp3_tcmr::W`](W) writer structure"]
 impl crate::Writable for Opamp3TcmrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OPAMP3_TCMR to value 0"]
-impl crate::Resettable for Opamp3TcmrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Opamp3TcmrSpec {}

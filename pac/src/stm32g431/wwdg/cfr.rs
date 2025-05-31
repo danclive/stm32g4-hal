@@ -67,8 +67,6 @@ impl crate::Readable for CfrSpec {}
 #[doc = "`write(|w| ..)` method takes [`cfr::W`](W) writer structure"]
 impl crate::Writable for CfrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CFR to value 0x7f"]
 impl crate::Resettable for CfrSpec {

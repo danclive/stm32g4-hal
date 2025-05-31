@@ -142,10 +142,6 @@ impl crate::Readable for I2scfgrSpec {}
 #[doc = "`write(|w| ..)` method takes [`i2scfgr::W`](W) writer structure"]
 impl crate::Writable for I2scfgrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets I2SCFGR to value 0"]
-impl crate::Resettable for I2scfgrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for I2scfgrSpec {}

@@ -142,10 +142,6 @@ impl crate::Readable for AfrlSpec {}
 #[doc = "`write(|w| ..)` method takes [`afrl::W`](W) writer structure"]
 impl crate::Writable for AfrlSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets AFRL to value 0"]
-impl crate::Resettable for AfrlSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for AfrlSpec {}

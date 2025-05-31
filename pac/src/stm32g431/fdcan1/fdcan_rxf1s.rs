@@ -43,8 +43,7 @@ impl F1fR {
         *self == F1f::B0x1
     }
 }
-#[doc = "Rx FIFO 1 message lost This bit is a copy of interrupt flag IR\\[RF1L\\]. When IR\\[RF1L\\]
-is reset, this bit is also reset.\n\nValue on reset: 0"]
+#[doc = "Rx FIFO 1 message lost This bit is a copy of interrupt flag IR\\[RF1L\\]. When IR\\[RF1L\\] is reset, this bit is also reset.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rf1l {
@@ -59,8 +58,7 @@ impl From<Rf1l> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RF1L` reader - Rx FIFO 1 message lost This bit is a copy of interrupt flag IR\\[RF1L\\]. When IR\\[RF1L\\]
-is reset, this bit is also reset."]
+#[doc = "Field `RF1L` reader - Rx FIFO 1 message lost This bit is a copy of interrupt flag IR\\[RF1L\\]. When IR\\[RF1L\\] is reset, this bit is also reset."]
 pub type Rf1lR = crate::BitReader<Rf1l>;
 impl Rf1lR {
     #[doc = "Get enumerated values variant"]
@@ -103,8 +101,7 @@ impl R {
     pub fn f1f(&self) -> F1fR {
         F1fR::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 25 - Rx FIFO 1 message lost This bit is a copy of interrupt flag IR\\[RF1L\\]. When IR\\[RF1L\\]
-is reset, this bit is also reset."]
+    #[doc = "Bit 25 - Rx FIFO 1 message lost This bit is a copy of interrupt flag IR\\[RF1L\\]. When IR\\[RF1L\\] is reset, this bit is also reset."]
     #[inline(always)]
     pub fn rf1l(&self) -> Rf1lR {
         Rf1lR::new(((self.bits >> 25) & 1) != 0)
@@ -129,6 +126,4 @@ impl crate::RegisterSpec for FdcanRxf1sSpec {
 #[doc = "`read()` method returns [`fdcan_rxf1s::R`](R) reader structure"]
 impl crate::Readable for FdcanRxf1sSpec {}
 #[doc = "`reset()` method sets FDCAN_RXF1S to value 0"]
-impl crate::Resettable for FdcanRxf1sSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FdcanRxf1sSpec {}

@@ -37,8 +37,6 @@ impl crate::Readable for FdcanTocvSpec {}
 #[doc = "`write(|w| ..)` method takes [`fdcan_tocv::W`](W) writer structure"]
 impl crate::Writable for FdcanTocvSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FDCAN_TOCV to value 0xffff"]
 impl crate::Resettable for FdcanTocvSpec {

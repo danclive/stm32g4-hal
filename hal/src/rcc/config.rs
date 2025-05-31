@@ -6,7 +6,7 @@ use crate::pwr::PowerConfiguration;
 use super::lsco::LSCOConfig;
 use super::mco::MCOConfig;
 
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+// #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub(super) struct Config {
     pub(super) hse: Option<(Hertz, bool)>, // frequency, bypass

@@ -262,8 +262,6 @@ impl crate::Readable for PupdrSpec {}
 #[doc = "`write(|w| ..)` method takes [`pupdr::W`](W) writer structure"]
 impl crate::Writable for PupdrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PUPDR to value 0x6400_0000"]
 impl crate::Resettable for PupdrSpec {

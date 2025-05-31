@@ -121,10 +121,6 @@ impl crate::Readable for EccrSpec {}
 #[doc = "`write(|w| ..)` method takes [`eccr::W`](W) writer structure"]
 impl crate::Writable for EccrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ECCR to value 0"]
-impl crate::Resettable for EccrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EccrSpec {}

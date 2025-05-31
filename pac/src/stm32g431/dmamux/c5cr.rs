@@ -127,10 +127,6 @@ impl crate::Readable for C5crSpec {}
 #[doc = "`write(|w| ..)` method takes [`c5cr::W`](W) writer structure"]
 impl crate::Writable for C5crSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets C5CR to value 0"]
-impl crate::Resettable for C5crSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for C5crSpec {}

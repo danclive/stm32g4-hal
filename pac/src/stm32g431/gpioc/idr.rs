@@ -144,6 +144,4 @@ impl crate::RegisterSpec for IdrSpec {
 #[doc = "`read()` method returns [`idr::R`](R) reader structure"]
 impl crate::Readable for IdrSpec {}
 #[doc = "`reset()` method sets IDR to value 0"]
-impl crate::Resettable for IdrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IdrSpec {}

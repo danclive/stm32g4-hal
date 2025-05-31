@@ -52,10 +52,6 @@ impl crate::Readable for DacDhr12r1Spec {}
 #[doc = "`write(|w| ..)` method takes [`dac_dhr12r1::W`](W) writer structure"]
 impl crate::Writable for DacDhr12r1Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC_DHR12R1 to value 0"]
-impl crate::Resettable for DacDhr12r1Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DacDhr12r1Spec {}

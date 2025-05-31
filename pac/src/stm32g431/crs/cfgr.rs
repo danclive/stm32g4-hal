@@ -6,11 +6,9 @@ pub type W = crate::W<CfgrSpec>;
 pub type ReloadR = crate::FieldReader<u16>;
 #[doc = "Field `RELOAD` writer - Counter reload value RELOAD is the value to be loaded in the frequency error counter with each SYNC event. Refer to Section7.3.3: Frequency error measurement for more details about counter behavior."]
 pub type ReloadW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
-#[doc = "Field `FELIM` reader - Frequency error limit FELIM contains the value to be used to evaluate the captured frequency error value latched in the FECAP\\[15:0\\]
-bits of the CRS_ISR register. Refer to Section7.3.4: Frequency error evaluation and automatic trimming for more details about FECAP evaluation."]
+#[doc = "Field `FELIM` reader - Frequency error limit FELIM contains the value to be used to evaluate the captured frequency error value latched in the FECAP\\[15:0\\] bits of the CRS_ISR register. Refer to Section7.3.4: Frequency error evaluation and automatic trimming for more details about FECAP evaluation."]
 pub type FelimR = crate::FieldReader;
-#[doc = "Field `FELIM` writer - Frequency error limit FELIM contains the value to be used to evaluate the captured frequency error value latched in the FECAP\\[15:0\\]
-bits of the CRS_ISR register. Refer to Section7.3.4: Frequency error evaluation and automatic trimming for more details about FECAP evaluation."]
+#[doc = "Field `FELIM` writer - Frequency error limit FELIM contains the value to be used to evaluate the captured frequency error value latched in the FECAP\\[15:0\\] bits of the CRS_ISR register. Refer to Section7.3.4: Frequency error evaluation and automatic trimming for more details about FECAP evaluation."]
 pub type FelimW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `SYNCDIV` reader - SYNC divider These bits are set and cleared by software to control the division factor of the SYNC signal."]
 pub type SyncdivR = crate::FieldReader;
@@ -30,8 +28,7 @@ impl R {
     pub fn reload(&self) -> ReloadR {
         ReloadR::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:23 - Frequency error limit FELIM contains the value to be used to evaluate the captured frequency error value latched in the FECAP\\[15:0\\]
-bits of the CRS_ISR register. Refer to Section7.3.4: Frequency error evaluation and automatic trimming for more details about FECAP evaluation."]
+    #[doc = "Bits 16:23 - Frequency error limit FELIM contains the value to be used to evaluate the captured frequency error value latched in the FECAP\\[15:0\\] bits of the CRS_ISR register. Refer to Section7.3.4: Frequency error evaluation and automatic trimming for more details about FECAP evaluation."]
     #[inline(always)]
     pub fn felim(&self) -> FelimR {
         FelimR::new(((self.bits >> 16) & 0xff) as u8)
@@ -69,8 +66,7 @@ impl W {
     pub fn reload(&mut self) -> ReloadW<CfgrSpec> {
         ReloadW::new(self, 0)
     }
-    #[doc = "Bits 16:23 - Frequency error limit FELIM contains the value to be used to evaluate the captured frequency error value latched in the FECAP\\[15:0\\]
-bits of the CRS_ISR register. Refer to Section7.3.4: Frequency error evaluation and automatic trimming for more details about FECAP evaluation."]
+    #[doc = "Bits 16:23 - Frequency error limit FELIM contains the value to be used to evaluate the captured frequency error value latched in the FECAP\\[15:0\\] bits of the CRS_ISR register. Refer to Section7.3.4: Frequency error evaluation and automatic trimming for more details about FECAP evaluation."]
     #[inline(always)]
     pub fn felim(&mut self) -> FelimW<CfgrSpec> {
         FelimW::new(self, 16)
@@ -101,8 +97,6 @@ impl crate::Readable for CfgrSpec {}
 #[doc = "`write(|w| ..)` method takes [`cfgr::W`](W) writer structure"]
 impl crate::Writable for CfgrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CFGR to value 0x2022_bb7f"]
 impl crate::Resettable for CfgrSpec {

@@ -37,10 +37,6 @@ impl crate::Readable for Susp6rSpec {}
 #[doc = "`write(|w| ..)` method takes [`susp6r::W`](W) writer structure"]
 impl crate::Writable for Susp6rSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SUSP6R to value 0"]
-impl crate::Resettable for Susp6rSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Susp6rSpec {}

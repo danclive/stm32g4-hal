@@ -2,9 +2,7 @@
 pub type R = crate::R<FdcanTxbcSpec>;
 #[doc = "Register `FDCAN_TXBC` writer"]
 pub type W = crate::W<FdcanTxbcSpec>;
-#[doc = "Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1.\n\nValue on reset: 0"]
+#[doc = "Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tfqm {
@@ -19,9 +17,7 @@ impl From<Tfqm> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TFQM` reader - Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+#[doc = "Field `TFQM` reader - Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
 pub type TfqmR = crate::BitReader<Tfqm>;
 impl TfqmR {
     #[doc = "Get enumerated values variant"]
@@ -43,9 +39,7 @@ impl TfqmR {
         *self == Tfqm::B0x1
     }
 }
-#[doc = "Field `TFQM` writer - Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+#[doc = "Field `TFQM` writer - Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
 pub type TfqmW<'a, REG> = crate::BitWriter<'a, REG, Tfqm>;
 impl<'a, REG> TfqmW<'a, REG>
 where
@@ -63,9 +57,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bit 24 - Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+    #[doc = "Bit 24 - Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
     pub fn tfqm(&self) -> TfqmR {
         TfqmR::new(((self.bits >> 24) & 1) != 0)
@@ -79,9 +71,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bit 24 - Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+    #[doc = "Bit 24 - Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
     pub fn tfqm(&mut self) -> TfqmW<FdcanTxbcSpec> {
         TfqmW::new(self, 24)
@@ -97,10 +87,6 @@ impl crate::Readable for FdcanTxbcSpec {}
 #[doc = "`write(|w| ..)` method takes [`fdcan_txbc::W`](W) writer structure"]
 impl crate::Writable for FdcanTxbcSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FDCAN_TXBC to value 0"]
-impl crate::Resettable for FdcanTxbcSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FdcanTxbcSpec {}

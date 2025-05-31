@@ -262,10 +262,6 @@ impl crate::Readable for OdrSpec {}
 #[doc = "`write(|w| ..)` method takes [`odr::W`](W) writer structure"]
 impl crate::Writable for OdrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ODR to value 0"]
-impl crate::Resettable for OdrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for OdrSpec {}

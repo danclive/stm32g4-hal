@@ -187,10 +187,6 @@ impl crate::Readable for Smpr1Spec {}
 #[doc = "`write(|w| ..)` method takes [`smpr1::W`](W) writer structure"]
 impl crate::Writable for Smpr1Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SMPR1 to value 0"]
-impl crate::Resettable for Smpr1Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Smpr1Spec {}

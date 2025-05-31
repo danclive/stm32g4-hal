@@ -2,33 +2,21 @@
 pub type R = crate::R<TiselSpec>;
 #[doc = "Register `TISEL` writer"]
 pub type W = crate::W<TiselSpec>;
-#[doc = "Field `TI1SEL` reader - TI1\\[0\\]
-to TI1\\[15\\]
-input selection"]
+#[doc = "Field `TI1SEL` reader - TI1\\[0\\] to TI1\\[15\\] input selection"]
 pub type Ti1selR = crate::FieldReader;
-#[doc = "Field `TI1SEL` writer - TI1\\[0\\]
-to TI1\\[15\\]
-input selection"]
+#[doc = "Field `TI1SEL` writer - TI1\\[0\\] to TI1\\[15\\] input selection"]
 pub type Ti1selW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
-#[doc = "Field `TI2SEL` reader - TI2\\[0\\]
-to TI2\\[15\\]
-input selection"]
+#[doc = "Field `TI2SEL` reader - TI2\\[0\\] to TI2\\[15\\] input selection"]
 pub type Ti2selR = crate::FieldReader;
-#[doc = "Field `TI2SEL` writer - TI2\\[0\\]
-to TI2\\[15\\]
-input selection"]
+#[doc = "Field `TI2SEL` writer - TI2\\[0\\] to TI2\\[15\\] input selection"]
 pub type Ti2selW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:3 - TI1\\[0\\]
-to TI1\\[15\\]
-input selection"]
+    #[doc = "Bits 0:3 - TI1\\[0\\] to TI1\\[15\\] input selection"]
     #[inline(always)]
     pub fn ti1sel(&self) -> Ti1selR {
         Ti1selR::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 8:11 - TI2\\[0\\]
-to TI2\\[15\\]
-input selection"]
+    #[doc = "Bits 8:11 - TI2\\[0\\] to TI2\\[15\\] input selection"]
     #[inline(always)]
     pub fn ti2sel(&self) -> Ti2selR {
         Ti2selR::new(((self.bits >> 8) & 0x0f) as u8)
@@ -43,16 +31,12 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - TI1\\[0\\]
-to TI1\\[15\\]
-input selection"]
+    #[doc = "Bits 0:3 - TI1\\[0\\] to TI1\\[15\\] input selection"]
     #[inline(always)]
     pub fn ti1sel(&mut self) -> Ti1selW<TiselSpec> {
         Ti1selW::new(self, 0)
     }
-    #[doc = "Bits 8:11 - TI2\\[0\\]
-to TI2\\[15\\]
-input selection"]
+    #[doc = "Bits 8:11 - TI2\\[0\\] to TI2\\[15\\] input selection"]
     #[inline(always)]
     pub fn ti2sel(&mut self) -> Ti2selW<TiselSpec> {
         Ti2selW::new(self, 8)
@@ -68,10 +52,6 @@ impl crate::Readable for TiselSpec {}
 #[doc = "`write(|w| ..)` method takes [`tisel::W`](W) writer structure"]
 impl crate::Writable for TiselSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TISEL to value 0"]
-impl crate::Resettable for TiselSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TiselSpec {}

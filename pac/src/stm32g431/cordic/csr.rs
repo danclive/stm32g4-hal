@@ -187,10 +187,6 @@ impl crate::Readable for CsrSpec {}
 #[doc = "`write(|w| ..)` method takes [`csr::W`](W) writer structure"]
 impl crate::Writable for CsrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CSR to value 0"]
-impl crate::Resettable for CsrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CsrSpec {}

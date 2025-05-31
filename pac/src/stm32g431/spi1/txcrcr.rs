@@ -24,6 +24,4 @@ impl crate::RegisterSpec for TxcrcrSpec {
 #[doc = "`read()` method returns [`txcrcr::R`](R) reader structure"]
 impl crate::Readable for TxcrcrSpec {}
 #[doc = "`reset()` method sets TXCRCR to value 0"]
-impl crate::Resettable for TxcrcrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TxcrcrSpec {}

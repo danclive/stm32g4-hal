@@ -127,10 +127,6 @@ impl crate::Readable for FdcanIlsSpec {}
 #[doc = "`write(|w| ..)` method takes [`fdcan_ils::W`](W) writer structure"]
 impl crate::Writable for FdcanIlsSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FDCAN_ILS to value 0"]
-impl crate::Resettable for FdcanIlsSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FdcanIlsSpec {}

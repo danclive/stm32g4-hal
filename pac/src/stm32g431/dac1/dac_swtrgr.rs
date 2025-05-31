@@ -43,10 +43,6 @@ impl crate::RegisterSpec for DacSwtrgrSpec {
 #[doc = "`write(|w| ..)` method takes [`dac_swtrgr::W`](W) writer structure"]
 impl crate::Writable for DacSwtrgrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC_SWTRGR to value 0"]
-impl crate::Resettable for DacSwtrgrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DacSwtrgrSpec {}

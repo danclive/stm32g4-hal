@@ -82,10 +82,6 @@ impl crate::Readable for Exticr3Spec {}
 #[doc = "`write(|w| ..)` method takes [`exticr3::W`](W) writer structure"]
 impl crate::Writable for Exticr3Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EXTICR3 to value 0"]
-impl crate::Resettable for Exticr3Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Exticr3Spec {}

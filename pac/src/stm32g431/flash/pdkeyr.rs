@@ -22,10 +22,6 @@ impl crate::RegisterSpec for PdkeyrSpec {
 #[doc = "`write(|w| ..)` method takes [`pdkeyr::W`](W) writer structure"]
 impl crate::Writable for PdkeyrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PDKEYR to value 0"]
-impl crate::Resettable for PdkeyrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PdkeyrSpec {}

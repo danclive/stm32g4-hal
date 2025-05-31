@@ -274,6 +274,4 @@ impl crate::RegisterSpec for PwrSr2Spec {
 #[doc = "`read()` method returns [`pwr_sr2::R`](R) reader structure"]
 impl crate::Readable for PwrSr2Spec {}
 #[doc = "`reset()` method sets PWR_SR2 to value 0"]
-impl crate::Resettable for PwrSr2Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PwrSr2Spec {}

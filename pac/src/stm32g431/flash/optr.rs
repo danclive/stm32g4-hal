@@ -262,8 +262,6 @@ impl crate::Readable for OptrSpec {}
 #[doc = "`write(|w| ..)` method takes [`optr::W`](W) writer structure"]
 impl crate::Writable for OptrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OPTR to value 0xf000_0000"]
 impl crate::Resettable for OptrSpec {

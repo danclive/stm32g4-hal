@@ -144,140 +144,117 @@ impl RegisterBlock {
         &self.dac_stmodr
     }
 }
-#[doc = "DAC_CR (rw) register accessor: DAC control register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_cr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_cr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_cr`]
-module"]
+#[doc = "DAC_CR (rw) register accessor: DAC control register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_cr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_cr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_cr`] module"]
 #[doc(alias = "DAC_CR")]
 pub type DacCr = crate::Reg<dac_cr::DacCrSpec>;
 #[doc = "DAC control register"]
 pub mod dac_cr;
-#[doc = "DAC_SWTRGR (w) register accessor: DAC software trigger register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_swtrgr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_swtrgr`]
-module"]
+#[doc = "DAC_SWTRGR (w) register accessor: DAC software trigger register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_swtrgr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_swtrgr`] module"]
 #[doc(alias = "DAC_SWTRGR")]
 pub type DacSwtrgr = crate::Reg<dac_swtrgr::DacSwtrgrSpec>;
 #[doc = "DAC software trigger register"]
 pub mod dac_swtrgr;
-#[doc = "DAC_DHR12R1 (rw) register accessor: DAC channel1 12-bit right-aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12r1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12r1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12r1`]
-module"]
+#[doc = "DAC_DHR12R1 (rw) register accessor: DAC channel1 12-bit right-aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12r1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12r1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12r1`] module"]
 #[doc(alias = "DAC_DHR12R1")]
 pub type DacDhr12r1 = crate::Reg<dac_dhr12r1::DacDhr12r1Spec>;
 #[doc = "DAC channel1 12-bit right-aligned data holding register"]
 pub mod dac_dhr12r1;
-#[doc = "DAC_DHR12L1 (rw) register accessor: DAC channel1 12-bit left aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12l1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12l1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12l1`]
-module"]
+#[doc = "DAC_DHR12L1 (rw) register accessor: DAC channel1 12-bit left aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12l1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12l1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12l1`] module"]
 #[doc(alias = "DAC_DHR12L1")]
 pub type DacDhr12l1 = crate::Reg<dac_dhr12l1::DacDhr12l1Spec>;
 #[doc = "DAC channel1 12-bit left aligned data holding register"]
 pub mod dac_dhr12l1;
-#[doc = "DAC_DHR8R1 (rw) register accessor: DAC channel1 8-bit right aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr8r1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr8r1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr8r1`]
-module"]
+#[doc = "DAC_DHR8R1 (rw) register accessor: DAC channel1 8-bit right aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr8r1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr8r1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr8r1`] module"]
 #[doc(alias = "DAC_DHR8R1")]
 pub type DacDhr8r1 = crate::Reg<dac_dhr8r1::DacDhr8r1Spec>;
 #[doc = "DAC channel1 8-bit right aligned data holding register"]
 pub mod dac_dhr8r1;
-#[doc = "DAC_DHR12R2 (rw) register accessor: DAC channel2 12-bit right aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12r2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12r2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12r2`]
-module"]
+#[doc = "DAC_DHR12R2 (rw) register accessor: DAC channel2 12-bit right aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12r2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12r2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12r2`] module"]
 #[doc(alias = "DAC_DHR12R2")]
 pub type DacDhr12r2 = crate::Reg<dac_dhr12r2::DacDhr12r2Spec>;
 #[doc = "DAC channel2 12-bit right aligned data holding register"]
 pub mod dac_dhr12r2;
-#[doc = "DAC_DHR12L2 (rw) register accessor: DAC channel2 12-bit left aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12l2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12l2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12l2`]
-module"]
+#[doc = "DAC_DHR12L2 (rw) register accessor: DAC channel2 12-bit left aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12l2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12l2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12l2`] module"]
 #[doc(alias = "DAC_DHR12L2")]
 pub type DacDhr12l2 = crate::Reg<dac_dhr12l2::DacDhr12l2Spec>;
 #[doc = "DAC channel2 12-bit left aligned data holding register"]
 pub mod dac_dhr12l2;
-#[doc = "DAC_DHR8R2 (rw) register accessor: DAC channel2 8-bit right-aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr8r2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr8r2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr8r2`]
-module"]
+#[doc = "DAC_DHR8R2 (rw) register accessor: DAC channel2 8-bit right-aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr8r2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr8r2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr8r2`] module"]
 #[doc(alias = "DAC_DHR8R2")]
 pub type DacDhr8r2 = crate::Reg<dac_dhr8r2::DacDhr8r2Spec>;
 #[doc = "DAC channel2 8-bit right-aligned data holding register"]
 pub mod dac_dhr8r2;
-#[doc = "DAC_DHR12RD (rw) register accessor: Dual DAC 12-bit right-aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12rd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12rd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12rd`]
-module"]
+#[doc = "DAC_DHR12RD (rw) register accessor: Dual DAC 12-bit right-aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12rd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12rd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12rd`] module"]
 #[doc(alias = "DAC_DHR12RD")]
 pub type DacDhr12rd = crate::Reg<dac_dhr12rd::DacDhr12rdSpec>;
 #[doc = "Dual DAC 12-bit right-aligned data holding register"]
 pub mod dac_dhr12rd;
-#[doc = "DAC_DHR12LD (rw) register accessor: DUAL DAC 12-bit left aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12ld::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12ld::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12ld`]
-module"]
+#[doc = "DAC_DHR12LD (rw) register accessor: DUAL DAC 12-bit left aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr12ld::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr12ld::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr12ld`] module"]
 #[doc(alias = "DAC_DHR12LD")]
 pub type DacDhr12ld = crate::Reg<dac_dhr12ld::DacDhr12ldSpec>;
 #[doc = "DUAL DAC 12-bit left aligned data holding register"]
 pub mod dac_dhr12ld;
-#[doc = "DAC_DHR8RD (rw) register accessor: DUAL DAC 8-bit right aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr8rd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr8rd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr8rd`]
-module"]
+#[doc = "DAC_DHR8RD (rw) register accessor: DUAL DAC 8-bit right aligned data holding register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dhr8rd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_dhr8rd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dhr8rd`] module"]
 #[doc(alias = "DAC_DHR8RD")]
 pub type DacDhr8rd = crate::Reg<dac_dhr8rd::DacDhr8rdSpec>;
 #[doc = "DUAL DAC 8-bit right aligned data holding register"]
 pub mod dac_dhr8rd;
-#[doc = "DAC_DOR1 (r) register accessor: DAC channel1 data output register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dor1::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dor1`]
-module"]
+#[doc = "DAC_DOR1 (r) register accessor: DAC channel1 data output register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dor1::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dor1`] module"]
 #[doc(alias = "DAC_DOR1")]
 pub type DacDor1 = crate::Reg<dac_dor1::DacDor1Spec>;
 #[doc = "DAC channel1 data output register"]
 pub mod dac_dor1;
-#[doc = "DAC_DOR2 (r) register accessor: DAC channel2 data output register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dor2::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dor2`]
-module"]
+#[doc = "DAC_DOR2 (r) register accessor: DAC channel2 data output register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_dor2::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_dor2`] module"]
 #[doc(alias = "DAC_DOR2")]
 pub type DacDor2 = crate::Reg<dac_dor2::DacDor2Spec>;
 #[doc = "DAC channel2 data output register"]
 pub mod dac_dor2;
-#[doc = "DAC_SR (rw) register accessor: DAC status register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_sr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_sr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_sr`]
-module"]
+#[doc = "DAC_SR (rw) register accessor: DAC status register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_sr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_sr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_sr`] module"]
 #[doc(alias = "DAC_SR")]
 pub type DacSr = crate::Reg<dac_sr::DacSrSpec>;
 #[doc = "DAC status register"]
 pub mod dac_sr;
-#[doc = "DAC_CCR (rw) register accessor: DAC calibration control register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_ccr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_ccr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_ccr`]
-module"]
+#[doc = "DAC_CCR (rw) register accessor: DAC calibration control register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_ccr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_ccr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_ccr`] module"]
 #[doc(alias = "DAC_CCR")]
 pub type DacCcr = crate::Reg<dac_ccr::DacCcrSpec>;
 #[doc = "DAC calibration control register"]
 pub mod dac_ccr;
-#[doc = "DAC_MCR (rw) register accessor: DAC mode control register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_mcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_mcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_mcr`]
-module"]
+#[doc = "DAC_MCR (rw) register accessor: DAC mode control register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_mcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_mcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_mcr`] module"]
 #[doc(alias = "DAC_MCR")]
 pub type DacMcr = crate::Reg<dac_mcr::DacMcrSpec>;
 #[doc = "DAC mode control register"]
 pub mod dac_mcr;
-#[doc = "DAC_SHSR1 (rw) register accessor: DAC Sample and Hold sample time register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_shsr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_shsr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_shsr1`]
-module"]
+#[doc = "DAC_SHSR1 (rw) register accessor: DAC Sample and Hold sample time register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_shsr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_shsr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_shsr1`] module"]
 #[doc(alias = "DAC_SHSR1")]
 pub type DacShsr1 = crate::Reg<dac_shsr1::DacShsr1Spec>;
 #[doc = "DAC Sample and Hold sample time register 1"]
 pub mod dac_shsr1;
-#[doc = "DAC_SHSR2 (rw) register accessor: DAC Sample and Hold sample time register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_shsr2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_shsr2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_shsr2`]
-module"]
+#[doc = "DAC_SHSR2 (rw) register accessor: DAC Sample and Hold sample time register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_shsr2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_shsr2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_shsr2`] module"]
 #[doc(alias = "DAC_SHSR2")]
 pub type DacShsr2 = crate::Reg<dac_shsr2::DacShsr2Spec>;
 #[doc = "DAC Sample and Hold sample time register 2"]
 pub mod dac_shsr2;
-#[doc = "DAC_SHHR (rw) register accessor: DAC Sample and Hold hold time register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_shhr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_shhr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_shhr`]
-module"]
+#[doc = "DAC_SHHR (rw) register accessor: DAC Sample and Hold hold time register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_shhr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_shhr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_shhr`] module"]
 #[doc(alias = "DAC_SHHR")]
 pub type DacShhr = crate::Reg<dac_shhr::DacShhrSpec>;
 #[doc = "DAC Sample and Hold hold time register"]
 pub mod dac_shhr;
-#[doc = "DAC_SHRR (rw) register accessor: DAC Sample and Hold refresh time register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_shrr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_shrr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_shrr`]
-module"]
+#[doc = "DAC_SHRR (rw) register accessor: DAC Sample and Hold refresh time register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_shrr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_shrr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_shrr`] module"]
 #[doc(alias = "DAC_SHRR")]
 pub type DacShrr = crate::Reg<dac_shrr::DacShrrSpec>;
 #[doc = "DAC Sample and Hold refresh time register"]
 pub mod dac_shrr;
-#[doc = "DAC_STR1 (rw) register accessor: Sawtooth register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_str1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_str1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_str1`]
-module"]
+#[doc = "DAC_STR1 (rw) register accessor: Sawtooth register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_str1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_str1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_str1`] module"]
 #[doc(alias = "DAC_STR1")]
 pub type DacStr1 = crate::Reg<dac_str1::DacStr1Spec>;
 #[doc = "Sawtooth register"]
 pub mod dac_str1;
-#[doc = "DAC_STR2 (rw) register accessor: Sawtooth register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_str2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_str2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_str2`]
-module"]
+#[doc = "DAC_STR2 (rw) register accessor: Sawtooth register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_str2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_str2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_str2`] module"]
 #[doc(alias = "DAC_STR2")]
 pub type DacStr2 = crate::Reg<dac_str2::DacStr2Spec>;
 #[doc = "Sawtooth register"]
 pub mod dac_str2;
-#[doc = "DAC_STMODR (rw) register accessor: Sawtooth Mode register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_stmodr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_stmodr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_stmodr`]
-module"]
+#[doc = "DAC_STMODR (rw) register accessor: Sawtooth Mode register\n\nYou can [`read`](crate::Reg::read) this register and get [`dac_stmodr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac_stmodr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dac_stmodr`] module"]
 #[doc(alias = "DAC_STMODR")]
 pub type DacStmodr = crate::Reg<dac_stmodr::DacStmodrSpec>;
 #[doc = "Sawtooth Mode register"]

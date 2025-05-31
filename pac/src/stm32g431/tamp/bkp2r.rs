@@ -35,10 +35,6 @@ impl crate::Readable for Bkp2rSpec {}
 #[doc = "`write(|w| ..)` method takes [`bkp2r::W`](W) writer structure"]
 impl crate::Writable for Bkp2rSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BKP2R to value 0"]
-impl crate::Resettable for Bkp2rSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Bkp2rSpec {}

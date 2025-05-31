@@ -67,10 +67,6 @@ impl crate::Readable for YbufcfgSpec {}
 #[doc = "`write(|w| ..)` method takes [`ybufcfg::W`](W) writer structure"]
 impl crate::Writable for YbufcfgSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets YBUFCFG to value 0"]
-impl crate::Resettable for YbufcfgSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for YbufcfgSpec {}

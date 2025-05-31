@@ -97,10 +97,6 @@ impl crate::Readable for TimingrSpec {}
 #[doc = "`write(|w| ..)` method takes [`timingr::W`](W) writer structure"]
 impl crate::Writable for TimingrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TIMINGR to value 0"]
-impl crate::Resettable for TimingrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TimingrSpec {}

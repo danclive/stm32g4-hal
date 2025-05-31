@@ -52,10 +52,6 @@ impl crate::Readable for RtorSpec {}
 #[doc = "`write(|w| ..)` method takes [`rtor::W`](W) writer structure"]
 impl crate::Writable for RtorSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RTOR to value 0"]
-impl crate::Resettable for RtorSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RtorSpec {}

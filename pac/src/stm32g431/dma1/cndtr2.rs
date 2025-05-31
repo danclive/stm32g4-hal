@@ -35,10 +35,6 @@ impl crate::Readable for Cndtr2Spec {}
 #[doc = "`write(|w| ..)` method takes [`cndtr2::W`](W) writer structure"]
 impl crate::Writable for Cndtr2Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CNDTR2 to value 0"]
-impl crate::Resettable for Cndtr2Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Cndtr2Spec {}

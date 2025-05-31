@@ -35,10 +35,6 @@ impl crate::Readable for DmarSpec {}
 #[doc = "`write(|w| ..)` method takes [`dmar::W`](W) writer structure"]
 impl crate::Writable for DmarSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DMAR to value 0"]
-impl crate::Resettable for DmarSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DmarSpec {}

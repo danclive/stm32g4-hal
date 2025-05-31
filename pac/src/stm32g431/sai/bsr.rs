@@ -80,6 +80,4 @@ impl crate::RegisterSpec for BsrSpec {
 #[doc = "`read()` method returns [`bsr::R`](R) reader structure"]
 impl crate::Readable for BsrSpec {}
 #[doc = "`reset()` method sets BSR to value 0"]
-impl crate::Resettable for BsrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BsrSpec {}

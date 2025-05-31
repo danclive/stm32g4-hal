@@ -2,9 +2,7 @@
 pub type R = crate::R<FdcanCkdivSpec>;
 #[doc = "Register `FDCAN_CKDIV` writer"]
 pub type W = crate::W<FdcanCkdivSpec>;
-#[doc = "input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1.\n\nValue on reset: 0"]
+#[doc = "input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -52,9 +50,7 @@ impl crate::FieldSpec for Pdiv {
     type Ux = u8;
 }
 impl crate::IsEnum for Pdiv {}
-#[doc = "Field `PDIV` reader - input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+#[doc = "Field `PDIV` reader - input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
 pub type PdivR = crate::FieldReader<Pdiv>;
 impl PdivR {
     #[doc = "Get enumerated values variant"]
@@ -161,9 +157,7 @@ impl PdivR {
         *self == Pdiv::B0xF
     }
 }
-#[doc = "Field `PDIV` writer - input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+#[doc = "Field `PDIV` writer - input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
 pub type PdivW<'a, REG> = crate::FieldWriter<'a, REG, 4, Pdiv, crate::Safe>;
 impl<'a, REG> PdivW<'a, REG>
 where
@@ -252,9 +246,7 @@ where
     }
 }
 impl R {
-    #[doc = "Bits 0:3 - input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+    #[doc = "Bits 0:3 - input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
     pub fn pdiv(&self) -> PdivR {
         PdivR::new((self.bits & 0x0f) as u8)
@@ -268,9 +260,7 @@ impl core::fmt::Debug for R {
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
-and bit 0 \\[INIT\\]
-of CCCR register are set to 1."]
+    #[doc = "Bits 0:3 - input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
     pub fn pdiv(&mut self) -> PdivW<FdcanCkdivSpec> {
         PdivW::new(self, 0)
@@ -286,10 +276,6 @@ impl crate::Readable for FdcanCkdivSpec {}
 #[doc = "`write(|w| ..)` method takes [`fdcan_ckdiv::W`](W) writer structure"]
 impl crate::Writable for FdcanCkdivSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FDCAN_CKDIV to value 0"]
-impl crate::Resettable for FdcanCkdivSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FdcanCkdivSpec {}

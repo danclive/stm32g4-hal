@@ -43,8 +43,7 @@ impl EffR {
         *self == Eff::B0x1
     }
 }
-#[doc = "Field `TEFL` reader - Tx event FIFO element lost This bit is a copy of interrupt flag IR\\[TEFL\\]. When IR\\[TEFL\\]
-is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIFO element lost, also set after write attempt to Tx event FIFO of size 0."]
+#[doc = "Field `TEFL` reader - Tx event FIFO element lost This bit is a copy of interrupt flag IR\\[TEFL\\]. When IR\\[TEFL\\] is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIFO element lost, also set after write attempt to Tx event FIFO of size 0."]
 pub type TeflR = crate::BitReader;
 impl R {
     #[doc = "Bits 0:2 - Event FIFO fill level Number of elements stored in Tx event FIFO, range 0 to 3."]
@@ -67,8 +66,7 @@ impl R {
     pub fn eff(&self) -> EffR {
         EffR::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 25 - Tx event FIFO element lost This bit is a copy of interrupt flag IR\\[TEFL\\]. When IR\\[TEFL\\]
-is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIFO element lost, also set after write attempt to Tx event FIFO of size 0."]
+    #[doc = "Bit 25 - Tx event FIFO element lost This bit is a copy of interrupt flag IR\\[TEFL\\]. When IR\\[TEFL\\] is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIFO element lost, also set after write attempt to Tx event FIFO of size 0."]
     #[inline(always)]
     pub fn tefl(&self) -> TeflR {
         TeflR::new(((self.bits >> 25) & 1) != 0)
@@ -93,6 +91,4 @@ impl crate::RegisterSpec for FdcanTxefsSpec {
 #[doc = "`read()` method returns [`fdcan_txefs::R`](R) reader structure"]
 impl crate::Readable for FdcanTxefsSpec {}
 #[doc = "`reset()` method sets FDCAN_TXEFS to value 0"]
-impl crate::Resettable for FdcanTxefsSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FdcanTxefsSpec {}

@@ -202,10 +202,6 @@ impl crate::Readable for Ccmr2OutputSpec {}
 #[doc = "`write(|w| ..)` method takes [`ccmr2_output::W`](W) writer structure"]
 impl crate::Writable for Ccmr2OutputSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CCMR2_Output to value 0"]
-impl crate::Resettable for Ccmr2OutputSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Ccmr2OutputSpec {}

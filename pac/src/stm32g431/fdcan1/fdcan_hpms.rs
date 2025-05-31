@@ -1,7 +1,6 @@
 #[doc = "Register `FDCAN_HPMS` reader"]
 pub type R = crate::R<FdcanHpmsSpec>;
-#[doc = "Field `BIDX` reader - Buffer index Index of Rx FIFO element to which the message was stored. Only valid when MSI\\[1\\]
-= 1."]
+#[doc = "Field `BIDX` reader - Buffer index Index of Rx FIFO element to which the message was stored. Only valid when MSI\\[1\\] = 1."]
 pub type BidxR = crate::FieldReader;
 #[doc = "Message storage indicator\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
@@ -62,9 +61,7 @@ impl MsiR {
         *self == Msi::B0x3
     }
 }
-#[doc = "Field `FIDX` reader - Filter index Index of matching filter element. Range is 0 to RXGFC\\[LSS\\]
-- 1 or RXGFC\\[LSE\\]
-- 1."]
+#[doc = "Field `FIDX` reader - Filter index Index of matching filter element. Range is 0 to RXGFC\\[LSS\\] - 1 or RXGFC\\[LSE\\] - 1."]
 pub type FidxR = crate::FieldReader;
 #[doc = "Filter list Indicates the filter list of the matching filter element.\n\nValue on reset: 0"]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
@@ -104,8 +101,7 @@ impl FlstR {
     }
 }
 impl R {
-    #[doc = "Bits 0:2 - Buffer index Index of Rx FIFO element to which the message was stored. Only valid when MSI\\[1\\]
-= 1."]
+    #[doc = "Bits 0:2 - Buffer index Index of Rx FIFO element to which the message was stored. Only valid when MSI\\[1\\] = 1."]
     #[inline(always)]
     pub fn bidx(&self) -> BidxR {
         BidxR::new((self.bits & 7) as u8)
@@ -115,9 +111,7 @@ impl R {
     pub fn msi(&self) -> MsiR {
         MsiR::new(((self.bits >> 6) & 3) as u8)
     }
-    #[doc = "Bits 8:12 - Filter index Index of matching filter element. Range is 0 to RXGFC\\[LSS\\]
-- 1 or RXGFC\\[LSE\\]
-- 1."]
+    #[doc = "Bits 8:12 - Filter index Index of matching filter element. Range is 0 to RXGFC\\[LSS\\] - 1 or RXGFC\\[LSE\\] - 1."]
     #[inline(always)]
     pub fn fidx(&self) -> FidxR {
         FidxR::new(((self.bits >> 8) & 0x1f) as u8)
@@ -146,6 +140,4 @@ impl crate::RegisterSpec for FdcanHpmsSpec {
 #[doc = "`read()` method returns [`fdcan_hpms::R`](R) reader structure"]
 impl crate::Readable for FdcanHpmsSpec {}
 #[doc = "`reset()` method sets FDCAN_HPMS to value 0"]
-impl crate::Resettable for FdcanHpmsSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FdcanHpmsSpec {}

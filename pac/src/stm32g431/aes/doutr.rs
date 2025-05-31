@@ -24,6 +24,4 @@ impl crate::RegisterSpec for DoutrSpec {
 #[doc = "`read()` method returns [`doutr::R`](R) reader structure"]
 impl crate::Readable for DoutrSpec {}
 #[doc = "`reset()` method sets DOUTR to value 0"]
-impl crate::Resettable for DoutrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DoutrSpec {}

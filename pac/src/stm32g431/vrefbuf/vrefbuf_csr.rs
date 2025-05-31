@@ -75,8 +75,6 @@ impl crate::Readable for VrefbufCsrSpec {}
 #[doc = "`write(|w| ..)` method takes [`vrefbuf_csr::W`](W) writer structure"]
 impl crate::Writable for VrefbufCsrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets VREFBUF_CSR to value 0x02"]
 impl crate::Resettable for VrefbufCsrSpec {

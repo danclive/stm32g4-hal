@@ -97,10 +97,6 @@ impl crate::Readable for Rg2crSpec {}
 #[doc = "`write(|w| ..)` method takes [`rg2cr::W`](W) writer structure"]
 impl crate::Writable for Rg2crSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RG2CR to value 0"]
-impl crate::Resettable for Rg2crSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Rg2crSpec {}

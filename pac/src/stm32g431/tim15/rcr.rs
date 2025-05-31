@@ -35,10 +35,6 @@ impl crate::Readable for RcrSpec {}
 #[doc = "`write(|w| ..)` method takes [`rcr::W`](W) writer structure"]
 impl crate::Writable for RcrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RCR to value 0"]
-impl crate::Resettable for RcrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RcrSpec {}

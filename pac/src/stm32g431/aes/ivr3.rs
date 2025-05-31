@@ -37,10 +37,6 @@ impl crate::Readable for Ivr3Spec {}
 #[doc = "`write(|w| ..)` method takes [`ivr3::W`](W) writer structure"]
 impl crate::Writable for Ivr3Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IVR3 to value 0"]
-impl crate::Resettable for Ivr3Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Ivr3Spec {}

@@ -1452,8 +1452,6 @@ impl crate::Readable for RccApb1enr1Spec {}
 #[doc = "`write(|w| ..)` method takes [`rcc_apb1enr1::W`](W) writer structure"]
 impl crate::Writable for RccApb1enr1Spec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RCC_APB1ENR1 to value 0x0400"]
 impl crate::Resettable for RccApb1enr1Spec {

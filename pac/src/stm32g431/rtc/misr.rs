@@ -64,6 +64,4 @@ impl crate::RegisterSpec for MisrSpec {
 #[doc = "`read()` method returns [`misr::R`](R) reader structure"]
 impl crate::Readable for MisrSpec {}
 #[doc = "`reset()` method sets MISR to value 0"]
-impl crate::Resettable for MisrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MisrSpec {}

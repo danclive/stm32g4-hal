@@ -67,8 +67,6 @@ impl crate::Readable for I2sprSpec {}
 #[doc = "`write(|w| ..)` method takes [`i2spr::W`](W) writer structure"]
 impl crate::Writable for I2sprSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets I2SPR to value 0x02"]
 impl crate::Resettable for I2sprSpec {

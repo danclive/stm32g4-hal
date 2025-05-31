@@ -32,6 +32,4 @@ impl crate::RegisterSpec for DacDor1Spec {
 #[doc = "`read()` method returns [`dac_dor1::R`](R) reader structure"]
 impl crate::Readable for DacDor1Spec {}
 #[doc = "`reset()` method sets DAC_DOR1 to value 0"]
-impl crate::Resettable for DacDor1Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DacDor1Spec {}

@@ -24,6 +24,4 @@ impl crate::RegisterSpec for Jdr2Spec {
 #[doc = "`read()` method returns [`jdr2::R`](R) reader structure"]
 impl crate::Readable for Jdr2Spec {}
 #[doc = "`reset()` method sets JDR2 to value 0"]
-impl crate::Resettable for Jdr2Spec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Jdr2Spec {}

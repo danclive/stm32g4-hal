@@ -22,6 +22,4 @@ impl crate::RegisterSpec for PecrSpec {
 #[doc = "`read()` method returns [`pecr::R`](R) reader structure"]
 impl crate::Readable for PecrSpec {}
 #[doc = "`reset()` method sets PECR to value 0"]
-impl crate::Resettable for PecrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PecrSpec {}

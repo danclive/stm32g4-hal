@@ -22,10 +22,6 @@ impl crate::RegisterSpec for KeyrSpec {
 #[doc = "`write(|w| ..)` method takes [`keyr::W`](W) writer structure"]
 impl crate::Writable for KeyrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets KEYR to value 0"]
-impl crate::Resettable for KeyrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for KeyrSpec {}

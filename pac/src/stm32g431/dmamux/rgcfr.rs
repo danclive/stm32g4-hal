@@ -22,10 +22,6 @@ impl crate::RegisterSpec for RgcfrSpec {
 #[doc = "`write(|w| ..)` method takes [`rgcfr::W`](W) writer structure"]
 impl crate::Writable for RgcfrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RGCFR to value 0"]
-impl crate::Resettable for RgcfrSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RgcfrSpec {}

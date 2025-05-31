@@ -24,6 +24,4 @@ impl crate::RegisterSpec for RxPayszSpec {
 #[doc = "`read()` method returns [`rx_paysz::R`](R) reader structure"]
 impl crate::Readable for RxPayszSpec {}
 #[doc = "`reset()` method sets RX_PAYSZ to value 0"]
-impl crate::Resettable for RxPayszSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RxPayszSpec {}

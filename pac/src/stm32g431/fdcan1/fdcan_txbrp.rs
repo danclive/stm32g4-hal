@@ -65,6 +65,4 @@ impl crate::RegisterSpec for FdcanTxbrpSpec {
 #[doc = "`read()` method returns [`fdcan_txbrp::R`](R) reader structure"]
 impl crate::Readable for FdcanTxbrpSpec {}
 #[doc = "`reset()` method sets FDCAN_TXBRP to value 0"]
-impl crate::Resettable for FdcanTxbrpSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FdcanTxbrpSpec {}

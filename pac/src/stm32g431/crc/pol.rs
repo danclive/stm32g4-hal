@@ -35,8 +35,6 @@ impl crate::Readable for PolSpec {}
 #[doc = "`write(|w| ..)` method takes [`pol::W`](W) writer structure"]
 impl crate::Writable for PolSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets POL to value 0x04c1_1db7"]
 impl crate::Resettable for PolSpec {

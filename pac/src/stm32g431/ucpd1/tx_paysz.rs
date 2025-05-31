@@ -37,10 +37,6 @@ impl crate::Readable for TxPayszSpec {}
 #[doc = "`write(|w| ..)` method takes [`tx_paysz::W`](W) writer structure"]
 impl crate::Writable for TxPayszSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TX_PAYSZ to value 0"]
-impl crate::Resettable for TxPayszSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TxPayszSpec {}

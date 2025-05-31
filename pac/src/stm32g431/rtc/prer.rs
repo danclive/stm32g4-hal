@@ -52,8 +52,6 @@ impl crate::Readable for PrerSpec {}
 #[doc = "`write(|w| ..)` method takes [`prer::W`](W) writer structure"]
 impl crate::Writable for PrerSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRER to value 0x007f_00ff"]
 impl crate::Resettable for PrerSpec {

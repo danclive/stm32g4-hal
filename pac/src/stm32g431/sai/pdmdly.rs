@@ -142,10 +142,6 @@ impl crate::Readable for PdmdlySpec {}
 #[doc = "`write(|w| ..)` method takes [`pdmdly::W`](W) writer structure"]
 impl crate::Writable for PdmdlySpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PDMDLY to value 0"]
-impl crate::Resettable for PdmdlySpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PdmdlySpec {}

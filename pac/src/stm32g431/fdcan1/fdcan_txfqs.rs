@@ -1,7 +1,6 @@
 #[doc = "Register `FDCAN_TXFQS` reader"]
 pub type R = crate::R<FdcanTxfqsSpec>;
-#[doc = "Field `TFFL` reader - Tx FIFO free level Number of consecutive free Tx FIFO elements starting from TFGI, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC\\[TFQM\\]
-= 1)."]
+#[doc = "Field `TFFL` reader - Tx FIFO free level Number of consecutive free Tx FIFO elements starting from TFGI, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC\\[TFQM\\] = 1)."]
 pub type TfflR = crate::FieldReader;
 #[doc = "Field `TFGI` reader - Tx FIFO get index Tx FIFO read index pointer, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC.TFQM = 1)"]
 pub type TfgiR = crate::FieldReader;
@@ -45,8 +44,7 @@ impl TfqfR {
     }
 }
 impl R {
-    #[doc = "Bits 0:2 - Tx FIFO free level Number of consecutive free Tx FIFO elements starting from TFGI, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC\\[TFQM\\]
-= 1)."]
+    #[doc = "Bits 0:2 - Tx FIFO free level Number of consecutive free Tx FIFO elements starting from TFGI, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC\\[TFQM\\] = 1)."]
     #[inline(always)]
     pub fn tffl(&self) -> TfflR {
         TfflR::new((self.bits & 7) as u8)

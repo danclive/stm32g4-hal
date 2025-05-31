@@ -542,8 +542,6 @@ impl crate::Readable for RccAhb1smenrSpec {}
 #[doc = "`write(|w| ..)` method takes [`rcc_ahb1smenr::W`](W) writer structure"]
 impl crate::Writable for RccAhb1smenrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RCC_AHB1SMENR to value 0x130f"]
 impl crate::Resettable for RccAhb1smenrSpec {

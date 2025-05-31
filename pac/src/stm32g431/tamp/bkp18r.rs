@@ -35,10 +35,6 @@ impl crate::Readable for Bkp18rSpec {}
 #[doc = "`write(|w| ..)` method takes [`bkp18r::W`](W) writer structure"]
 impl crate::Writable for Bkp18rSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BKP18R to value 0"]
-impl crate::Resettable for Bkp18rSpec {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for Bkp18rSpec {}

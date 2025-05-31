@@ -550,7 +550,7 @@ pub struct ResetReason {
 }
 
 /// Clock frequencies
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+// #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub struct Clocks {
     /// System frequency
@@ -646,7 +646,7 @@ impl Clocks {
 }
 
 /// PLL Clock frequencies
-#[cfg_attr(feature = "defmt", derive(defmt::Format))]
+// #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub struct PLLClocks {
     /// R frequency

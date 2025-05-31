@@ -35,8 +35,6 @@ impl crate::Readable for DrSpec {}
 #[doc = "`write(|w| ..)` method takes [`dr::W`](W) writer structure"]
 impl crate::Writable for DrSpec {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DR to value 0xffff_ffff"]
 impl crate::Resettable for DrSpec {
