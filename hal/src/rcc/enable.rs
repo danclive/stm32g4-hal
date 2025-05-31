@@ -52,7 +52,7 @@ macro_rules! bus_reset {
 }
 
 macro_rules! bus {
-    ($($PER:ident => ($busX:ty, $bit:literal),)+) => {
+    ($busX:ty: { $($PER:ident: $bit:literal),+ $(,)*}) => {
         $(
             impl crate::Sealed for crate::pac::$PER {}
             impl RccBus for crate::pac::$PER {
@@ -61,38 +61,42 @@ macro_rules! bus {
             bus_enable!($PER => $bit);
             bus_reset!($PER => $bit);
         )+
+    };
+}
+
+bus! {
+    APB2: { Syscfg: 0 }
+}
+
+bus! {
+    AHB1: {
+        Dma1: 0,
+        Dma2: 1,
+        Dmamux: 2,
+        Cordic: 3,
+        Fmac: 4,
+        Flash: 5,
+        Crc: 12,
     }
 }
 
 bus! {
-    Syscfg => (APB2, 0),
-}
-
-bus! {
-    Dma1 => (AHB1, 0),
-    Dma2 => (AHB1, 1),
-    Dmamux => (AHB1, 2),
-    Cordic => (AHB1, 3),
-    Fmac => (AHB1, 4),
-    Flash => (AHB1, 5),
-    Crc => (AHB1, 12),
-}
-
-bus! {
-    Gpioa => (AHB2, 0),
-    Gpiob => (AHB2, 1),
-    Gpioc => (AHB2, 2),
-    Gpiod => (AHB2, 3),
-    Gpioe => (AHB2, 4),
-    Gpiof => (AHB2, 5),
-    Gpiog => (AHB2, 6),
-    Adc1 => (AHB2, 13),
-    Adc2 => (AHB2, 13),
-    Dac1 => (AHB2, 16),
-    Dac2 => (AHB2, 17),
-    Dac3 => (AHB2, 18),
-    Dac4 => (AHB2, 19),
-    Rng => (AHB2, 26),
+    AHB2: {
+        Gpioa: 0,
+        Gpiob: 1,
+        Gpioc: 2,
+        Gpiod: 3,
+        Gpioe: 4,
+        Gpiof: 5,
+        Gpiog: 6,
+        Adc1: 13,
+        Adc2: 13,
+        Dac1: 16,
+        Dac2: 17,
+        Dac3: 18,
+        Dac4: 19,
+        Rng: 26,
+    }
 }
 
 #[cfg(any(
@@ -103,7 +107,9 @@ bus! {
     feature = "stm32g484"
 ))]
 bus! {
-    Adc3 => (AHB2, 14),
+    AHB2: {
+        Adc3: 14,
+    }
 }
 
 #[cfg(any(
@@ -113,13 +119,17 @@ bus! {
     feature = "stm32g484"
 ))]
 bus! {
-    Adc4 => (AHB2, 14),
-    Adc5 => (AHB2, 14),
+    AHB2: {
+        Adc4: 14,
+        Adc5: 14,
+    }
 }
 
 #[cfg(any(feature = "stm32g431", feature = "stm32g441", feature = "stm32g484",))]
 bus! {
-    Aes => (AHB2, 24),
+    AHB2: {
+        Aes: 24,
+    }
 }
 
 #[cfg(any(
@@ -129,31 +139,40 @@ bus! {
     feature = "stm32g484"
 ))]
 bus! {
-    Fmc => (AHB3, 0),
-    Quadspi => (AHB3, 8),
+    AHB3: {
+        Fmc: 0,
+        Quadspi: 8,
+    }
 }
 
 bus! {
-    Tim2 => (APB1_1, 0),
-    Tim3 => (APB1_1, 1),
-    Tim4 => (APB1_1, 2),
-    Tim6 => (APB1_1, 4),
-    Tim7 => (APB1_1, 5),
-    Crs => (APB1_1, 8),
-    Spi2 => (APB1_1, 14),
-    Spi3 => (APB1_1, 15),
-    Usart2 => (APB1_1, 17),
-    Usart3 => (APB1_1, 18),
-    Uart4 => (APB1_1, 19),
-    I2c1 => (APB1_1, 21),
-    I2c2 => (APB1_1, 22),
-    UsbFsDevice => (APB1_1, 23),
-    Fdcan1 => (APB1_1, 25),
-    Pwr => (APB1_1, 28),
-    I2c3 => (APB1_1, 30),
-    Lptimer1 => (APB1_1, 31),
-    Lpuart1 => (APB1_2, 0),
-    Ucpd1 => (APB1_2, 8),
+    APB1_1: {
+        Tim2: 0,
+        Tim3: 1,
+        Tim4: 2,
+        Tim6: 4,
+        Tim7: 5,
+        Crs: 8,
+        Spi2: 14,
+        Spi3: 15,
+        Usart2: 17,
+        Usart3: 18,
+        Uart4: 19,
+        I2c1: 21,
+        I2c2: 22,
+        UsbFsDevice: 23,
+        Fdcan1: 25,
+        Pwr: 28,
+        I2c3: 30,
+        Lptimer1: 31,
+    }
+}
+
+bus! {
+    APB1_2: {
+        Lpuart1: 0,
+        Ucpd1: 8,
+    }
 }
 
 #[cfg(any(
@@ -165,7 +184,9 @@ bus! {
     feature = "stm32g491",
 ))]
 bus! {
-    Fdcan2 => (APB1_1, 25),
+    APB1_1: {
+        Fdcan2: 25,
+    }
 }
 
 #[cfg(any(
@@ -176,20 +197,10 @@ bus! {
     feature = "stm32g484"
 ))]
 bus! {
-    Tim5 => (APB1_1, 3),
-    Uart5 => (APB1_1, 20),
-    I2c4 => (APB1_2, 1),
-}
-
-bus! {
-    Tim1 => (APB2, 11),
-    Spi1 => (APB2, 12),
-    Tim8 => (APB2, 13),
-    Usart1 => (APB2, 14),
-    Tim15 => (APB2, 16),
-    Tim16 => (APB2, 17),
-    Tim17 => (APB2, 18),
-    Sai => (APB2, 21),
+    APB1_1: {
+        Tim5: 3,
+        Uart5: 20,
+    }
 }
 
 #[cfg(any(
@@ -200,7 +211,35 @@ bus! {
     feature = "stm32g484"
 ))]
 bus! {
-    Spi4 => (APB2, 15),
+    APB1_2: {
+        I2c4: 1,
+    }
+}
+
+bus! {
+    APB2: {
+        Tim1: 11,
+        Spi1: 12,
+        Tim8: 13,
+        Usart1: 14,
+        Tim15: 16,
+        Tim16: 17,
+        Tim17: 18,
+        Sai: 21,
+    }
+}
+
+#[cfg(any(
+    feature = "stm32g471",
+    feature = "stm32g473",
+    feature = "stm32g474",
+    feature = "stm32g483",
+    feature = "stm32g484"
+))]
+bus! {
+    APB2: {
+        Spi4: 15,
+    }
 }
 
 #[cfg(any(
@@ -210,16 +249,31 @@ bus! {
     feature = "stm32g484"
 ))]
 bus! {
-    Fdcan3 => (APB1_1, 25),
-    Tim20 => (APB2, 20),
+    APB1_1: {
+        Fdcan3: 25,
+    }
+}
+
+#[cfg(any(
+    feature = "stm32g473",
+    feature = "stm32g474",
+    feature = "stm32g483",
+    feature = "stm32g484"
+))]
+bus! {
+    APB2: {
+        Tim20: 20,
+    }
 }
 
 #[cfg(any(feature = "stm32g474", feature = "stm32g484"))]
 bus! {
-    HrtimTima => (APB2, 26),
-    HrtimTimb => (APB2, 26),
-    HrtimTimc => (APB2, 26),
-    HrtimTimd => (APB2, 26),
-    HrtimTime => (APB2, 26),
-    HrtimTimf => (APB2, 26),
+    APB2: {
+        HrtimTima: 26,
+        HrtimTimb: 26,
+        HrtimTimc: 26,
+        HrtimTimd: 26,
+        HrtimTime: 26,
+        HrtimTimf: 26,
+    }
 }

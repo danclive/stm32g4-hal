@@ -500,9 +500,9 @@ pub trait PwmPinEnable {
 // Implement PwmPin for timer channels
 macro_rules! tim_pin_hal {
     // Standard pins (no complementary functionality)
-    ($($TIMX:ident:
-       ($CH:ident, $ccxe:ident, $ccxp:ident, $ccmrx_output:ident, $ocxpe:ident, $ocxm:ident, $ocxm_3:ident,
-        $ccrx:ident, $typ:ident $(,$ccxne:ident, $ccxnp:ident)*),)+
+    ($TIMX:ident: {
+        $($CH:ident: ($ccxe:ident, $ccxp:ident, $ccmrx_output:ident, $ocxpe:ident, $ocxm:ident, $ocxm_3:ident,
+        $ccrx:ident, $typ:ident $(,$ccxne:ident, $ccxnp:ident)*)),+ $(,)* }
     ) => {
         $(
             impl<COMP, POL, NPOL> Pwm<pac::$TIMX, $CH, COMP, POL, NPOL>
@@ -700,54 +700,68 @@ macro_rules! tim_pin_hal {
 }
 
 tim_pin_hal! {
-    Tim1: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
-    Tim1: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
-    Tim1: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
-    Tim1: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
+    Tim1: {
+        C1: (cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
+        C2: (cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
+        C3: (cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
+        C4: (cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
+    }
 }
 
 tim_pin_hal! {
-    Tim2: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u32),
-    Tim2: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u32),
-    Tim2: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u32),
-    Tim2: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u32),
+    Tim2: {
+        C1: (cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u32),
+        C2: (cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u32),
+        C3: (cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u32),
+        C4: (cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u32),
+    }
 }
 
 tim_pin_hal! {
-    Tim3: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16),
-    Tim3: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16),
-    Tim3: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16),
-    Tim3: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16),
+    Tim3: {
+        C1: (cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16),
+        C2: (cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16),
+        C3: (cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16),
+        C4: (cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16),
+    }
 }
 
 tim_pin_hal! {
-    Tim4: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16),
-    Tim4: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16),
-    Tim4: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16),
-    Tim4: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16),
+    Tim4: {
+        C1: (cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16),
+        C2: (cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16),
+        C3: (cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16),
+        C4: (cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16),
+    }
 }
 
 #[cfg(feature = "tim5")]
 tim_pin_hal! {
-    Tim5: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u32),
-    Tim5: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc1m_3, ccr2, u32),
-    Tim5: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc1m_3, ccr3, u32),
-    Tim5: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc1m_3, ccr4, u32),
+    Tim5: {
+        C1: (cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u32),
+        C2: (cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc1m_3, ccr2, u32),
+        C3: (cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc1m_3, ccr3, u32),
+        C4: (cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc1m_3, ccr4, u32),
+    }
 }
 
 tim_pin_hal! {
-    Tim8: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
-    Tim8: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
-    Tim8: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
-    Tim8: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
+    Tim8: {
+        C1: (cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
+        C2: (cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
+        C3: (cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
+        C4: (cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
+    }
 }
 
 #[cfg(feature = "tim20")]
 tim_pin_hal! {
-    Tim20: (C1, cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
-    Tim20: (C2, cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
-    Tim20: (C3, cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
-    Tim20: (C4, cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
+    Tim20: {
+        C1: (cc1e, cc1p, ccmr1_output, oc1pe, oc1m, oc1m_3, ccr1, u16, cc1ne, cc1np),
+        C2: (cc2e, cc2p, ccmr1_output, oc2pe, oc2m, oc2m_3, ccr2, u16, cc2ne, cc2np),
+        C3: (cc3e, cc3p, ccmr2_output, oc3pe, oc3m, oc3m_3, ccr3, u16, cc3ne, cc3np),
+        C4: (cc4e, cc4p, ccmr2_output, oc4pe, oc4m, oc4m_3, ccr4, u16, cc4ne, cc4np),
+    }
 }
 
 // Period and prescaler calculator for 32-bit timers
