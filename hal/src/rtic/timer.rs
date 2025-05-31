@@ -12,7 +12,7 @@ use super::*;
 #[macro_export]
 macro_rules! __internal_create_timer_interrupt {
     ($interrupt_name:ident, $mono_backend:ident) => {
-        #[no_mangle]
+        #[unsafe(no_mangle)]
         #[allow(non_snake_case)]
         unsafe extern "C" fn $interrupt_name() {
             use $crate::rtic::TimerQueueBackend;

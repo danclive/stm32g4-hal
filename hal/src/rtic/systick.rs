@@ -117,7 +117,7 @@ macro_rules! systick_monotonic {
             ///
             /// This method must be called only once.
             pub fn start(systick: $crate::pac::SYST, clocks: &$crate::rcc::Clocks) {
-                #[no_mangle]
+                #[unsafe(no_mangle)]
                 #[allow(non_snake_case)]
                 unsafe extern "C" fn SysTick() {
                     use $crate::rtic::TimerQueueBackend;
