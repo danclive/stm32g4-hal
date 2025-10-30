@@ -193,17 +193,17 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Low-power UART 1 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn lpuart1rst(&mut self) -> Lpuart1rstW<RccApb1rstr2Spec> {
+    pub fn lpuart1rst(&mut self) -> Lpuart1rstW<'_, RccApb1rstr2Spec> {
         Lpuart1rstW::new(self, 0)
     }
     #[doc = "Bit 1 - I2C4 reset Set and cleared by software"]
     #[inline(always)]
-    pub fn i2c4rst(&mut self) -> I2c4rstW<RccApb1rstr2Spec> {
+    pub fn i2c4rst(&mut self) -> I2c4rstW<'_, RccApb1rstr2Spec> {
         I2c4rstW::new(self, 1)
     }
     #[doc = "Bit 8 - UCPD1 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn ucpd1rst(&mut self) -> Ucpd1rstW<RccApb1rstr2Spec> {
+    pub fn ucpd1rst(&mut self) -> Ucpd1rstW<'_, RccApb1rstr2Spec> {
         Ucpd1rstW::new(self, 8)
     }
 }

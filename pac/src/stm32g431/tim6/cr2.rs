@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 4:6 - Master mode selection"]
     #[inline(always)]
-    pub fn mms(&mut self) -> MmsW<Cr2Spec> {
+    pub fn mms(&mut self) -> MmsW<'_, Cr2Spec> {
         MmsW::new(self, 4)
     }
 }

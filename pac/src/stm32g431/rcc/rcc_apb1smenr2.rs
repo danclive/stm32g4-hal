@@ -193,17 +193,17 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Low power UART 1 clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn lpuart1smen(&mut self) -> Lpuart1smenW<RccApb1smenr2Spec> {
+    pub fn lpuart1smen(&mut self) -> Lpuart1smenW<'_, RccApb1smenr2Spec> {
         Lpuart1smenW::new(self, 0)
     }
     #[doc = "Bit 1 - I2C4 clocks enable during Sleep and Stop modes Set and cleared by software"]
     #[inline(always)]
-    pub fn i2c4smen(&mut self) -> I2c4smenW<RccApb1smenr2Spec> {
+    pub fn i2c4smen(&mut self) -> I2c4smenW<'_, RccApb1smenr2Spec> {
         I2c4smenW::new(self, 1)
     }
     #[doc = "Bit 8 - UCPD1 clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn ucpd1smen(&mut self) -> Ucpd1smenW<RccApb1smenr2Spec> {
+    pub fn ucpd1smen(&mut self) -> Ucpd1smenW<'_, RccApb1smenr2Spec> {
         Ucpd1smenW::new(self, 8)
     }
 }

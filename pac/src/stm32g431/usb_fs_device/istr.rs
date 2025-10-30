@@ -123,57 +123,57 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - EP_ID"]
     #[inline(always)]
-    pub fn ep_id(&mut self) -> EpIdW<IstrSpec> {
+    pub fn ep_id(&mut self) -> EpIdW<'_, IstrSpec> {
         EpIdW::new(self, 0)
     }
     #[doc = "Bit 4 - DIR"]
     #[inline(always)]
-    pub fn dir(&mut self) -> DirW<IstrSpec> {
+    pub fn dir(&mut self) -> DirW<'_, IstrSpec> {
         DirW::new(self, 4)
     }
     #[doc = "Bit 7 - L1REQ"]
     #[inline(always)]
-    pub fn l1req(&mut self) -> L1reqW<IstrSpec> {
+    pub fn l1req(&mut self) -> L1reqW<'_, IstrSpec> {
         L1reqW::new(self, 7)
     }
     #[doc = "Bit 8 - ESOF"]
     #[inline(always)]
-    pub fn esof(&mut self) -> EsofW<IstrSpec> {
+    pub fn esof(&mut self) -> EsofW<'_, IstrSpec> {
         EsofW::new(self, 8)
     }
     #[doc = "Bit 9 - SOF"]
     #[inline(always)]
-    pub fn sof(&mut self) -> SofW<IstrSpec> {
+    pub fn sof(&mut self) -> SofW<'_, IstrSpec> {
         SofW::new(self, 9)
     }
     #[doc = "Bit 10 - RESET"]
     #[inline(always)]
-    pub fn reset(&mut self) -> ResetW<IstrSpec> {
+    pub fn reset(&mut self) -> ResetW<'_, IstrSpec> {
         ResetW::new(self, 10)
     }
     #[doc = "Bit 11 - SUSP"]
     #[inline(always)]
-    pub fn susp(&mut self) -> SuspW<IstrSpec> {
+    pub fn susp(&mut self) -> SuspW<'_, IstrSpec> {
         SuspW::new(self, 11)
     }
     #[doc = "Bit 12 - WKUP"]
     #[inline(always)]
-    pub fn wkup(&mut self) -> WkupW<IstrSpec> {
+    pub fn wkup(&mut self) -> WkupW<'_, IstrSpec> {
         WkupW::new(self, 12)
     }
     #[doc = "Bit 13 - ERR"]
     #[inline(always)]
-    pub fn err(&mut self) -> ErrW<IstrSpec> {
+    pub fn err(&mut self) -> ErrW<'_, IstrSpec> {
         ErrW::new(self, 13)
     }
     #[doc = "Bit 14 - PMAOVR"]
     #[inline(always)]
-    pub fn pmaovr(&mut self) -> PmaovrW<IstrSpec> {
+    pub fn pmaovr(&mut self) -> PmaovrW<'_, IstrSpec> {
         PmaovrW::new(self, 14)
     }
     #[doc = "Bit 15 - CTR"]
     #[inline(always)]
-    pub fn ctr(&mut self) -> CtrW<IstrSpec> {
+    pub fn ctr(&mut self) -> CtrW<'_, IstrSpec> {
         CtrW::new(self, 15)
     }
 }

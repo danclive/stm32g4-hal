@@ -173,12 +173,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - I2C4 clock source selection These bits are set and cleared by software to select the I2C4 clock source."]
     #[inline(always)]
-    pub fn i2c4sel(&mut self) -> I2c4selW<RccCcipr2Spec> {
+    pub fn i2c4sel(&mut self) -> I2c4selW<'_, RccCcipr2Spec> {
         I2c4selW::new(self, 0)
     }
     #[doc = "Bits 20:21 - QUADSPI clock source selection Set and reset by software."]
     #[inline(always)]
-    pub fn qspisel(&mut self) -> QspiselW<RccCcipr2Spec> {
+    pub fn qspisel(&mut self) -> QspiselW<'_, RccCcipr2Spec> {
         QspiselW::new(self, 20)
     }
 }

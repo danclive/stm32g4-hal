@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - Number of data items to transfer"]
     #[inline(always)]
-    pub fn ndt(&mut self) -> NdtW<Cndtr4Spec> {
+    pub fn ndt(&mut self) -> NdtW<'_, Cndtr4Spec> {
         NdtW::new(self, 0)
     }
 }

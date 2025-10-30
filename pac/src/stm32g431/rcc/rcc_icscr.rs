@@ -31,7 +31,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 24:30 - HSI16 clock trimming These bits provide an additional user-programmable trimming value that is added to the HSICAL\\[7:0\\] bits. It can be programmed to adjust to variations in voltage and temperature that influence the frequency of the HSI16. The default value is 16, which, when added to the HSICAL value, should trim the HSI16 to 16 MHz 1 %."]
     #[inline(always)]
-    pub fn hsitrim(&mut self) -> HsitrimW<RccIcscrSpec> {
+    pub fn hsitrim(&mut self) -> HsitrimW<'_, RccIcscrSpec> {
         HsitrimW::new(self, 24)
     }
 }

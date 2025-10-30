@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Overrun/underrun interrupt enable"]
     #[inline(always)]
-    pub fn ovrudrie(&mut self) -> OvrudrieW<BimSpec> {
+    pub fn ovrudrie(&mut self) -> OvrudrieW<'_, BimSpec> {
         OvrudrieW::new(self, 0)
     }
     #[doc = "Bit 1 - Mute detection interrupt enable"]
     #[inline(always)]
-    pub fn mutedet(&mut self) -> MutedetW<BimSpec> {
+    pub fn mutedet(&mut self) -> MutedetW<'_, BimSpec> {
         MutedetW::new(self, 1)
     }
     #[doc = "Bit 2 - Wrong clock configuration interrupt enable"]
     #[inline(always)]
-    pub fn wckcfg(&mut self) -> WckcfgW<BimSpec> {
+    pub fn wckcfg(&mut self) -> WckcfgW<'_, BimSpec> {
         WckcfgW::new(self, 2)
     }
     #[doc = "Bit 3 - FIFO request interrupt enable"]
     #[inline(always)]
-    pub fn freqie(&mut self) -> FreqieW<BimSpec> {
+    pub fn freqie(&mut self) -> FreqieW<'_, BimSpec> {
         FreqieW::new(self, 3)
     }
     #[doc = "Bit 4 - Codec not ready interrupt enable"]
     #[inline(always)]
-    pub fn cnrdyie(&mut self) -> CnrdyieW<BimSpec> {
+    pub fn cnrdyie(&mut self) -> CnrdyieW<'_, BimSpec> {
         CnrdyieW::new(self, 4)
     }
     #[doc = "Bit 5 - Anticipated frame synchronization detection interrupt enable"]
     #[inline(always)]
-    pub fn afsdetie(&mut self) -> AfsdetieW<BimSpec> {
+    pub fn afsdetie(&mut self) -> AfsdetieW<'_, BimSpec> {
         AfsdetieW::new(self, 5)
     }
     #[doc = "Bit 6 - Late frame synchronization detection interrupt enable"]
     #[inline(always)]
-    pub fn lfsdetie(&mut self) -> LfsdetieW<BimSpec> {
+    pub fn lfsdetie(&mut self) -> LfsdetieW<'_, BimSpec> {
         LfsdetieW::new(self, 6)
     }
 }

@@ -266,27 +266,27 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Low-power mode selection These bits select the low-power mode entered when CPU enters the deepsleep mode. 1xx: Shutdown mode Note: In Standby mode, SRAM2 can be preserved or not, depending on RRS bit configuration in PWR_CR3."]
     #[inline(always)]
-    pub fn lpms(&mut self) -> LpmsW<PwrCr1Spec> {
+    pub fn lpms(&mut self) -> LpmsW<'_, PwrCr1Spec> {
         LpmsW::new(self, 0)
     }
     #[doc = "Bit 3 - FPD_STOP"]
     #[inline(always)]
-    pub fn fpd_stop(&mut self) -> FpdStopW<PwrCr1Spec> {
+    pub fn fpd_stop(&mut self) -> FpdStopW<'_, PwrCr1Spec> {
         FpdStopW::new(self, 3)
     }
     #[doc = "Bit 8 - Disable backup domain write protection In reset state, the RTC and backup registers are protected against parasitic write access. This bit must be set to enable write access to these registers."]
     #[inline(always)]
-    pub fn dbp(&mut self) -> DbpW<PwrCr1Spec> {
+    pub fn dbp(&mut self) -> DbpW<'_, PwrCr1Spec> {
         DbpW::new(self, 8)
     }
     #[doc = "Bits 9:10 - Voltage scaling range selection"]
     #[inline(always)]
-    pub fn vos(&mut self) -> VosW<PwrCr1Spec> {
+    pub fn vos(&mut self) -> VosW<'_, PwrCr1Spec> {
         VosW::new(self, 9)
     }
     #[doc = "Bit 14 - Low-power run When this bit is set, the regulator is switched from main mode (MR) to low-power mode (LPR)."]
     #[inline(always)]
-    pub fn lpr(&mut self) -> LprW<PwrCr1Spec> {
+    pub fn lpr(&mut self) -> LprW<'_, PwrCr1Spec> {
         LprW::new(self, 14)
     }
 }

@@ -133,12 +133,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Flexible static memory controller reset Set and cleared by software."]
     #[inline(always)]
-    pub fn fmcrst(&mut self) -> FmcrstW<RccAhb3rstrSpec> {
+    pub fn fmcrst(&mut self) -> FmcrstW<'_, RccAhb3rstrSpec> {
         FmcrstW::new(self, 0)
     }
     #[doc = "Bit 8 - QUADSPI reset Set and cleared by software."]
     #[inline(always)]
-    pub fn qspirst(&mut self) -> QspirstW<RccAhb3rstrSpec> {
+    pub fn qspirst(&mut self) -> QspirstW<'_, RccAhb3rstrSpec> {
         QspirstW::new(self, 8)
     }
 }

@@ -447,42 +447,42 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Reject remote frames extended These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn rrfe(&mut self) -> RrfeW<FdcanRxgfcSpec> {
+    pub fn rrfe(&mut self) -> RrfeW<'_, FdcanRxgfcSpec> {
         RrfeW::new(self, 0)
     }
     #[doc = "Bit 1 - Reject remote frames standard These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn rrfs(&mut self) -> RrfsW<FdcanRxgfcSpec> {
+    pub fn rrfs(&mut self) -> RrfsW<'_, FdcanRxgfcSpec> {
         RrfsW::new(self, 1)
     }
     #[doc = "Bits 2:3 - Accept non-matching frames extended Defines how received messages with 29-bit IDs that do not match any element of the filter list are treated. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn anfe(&mut self) -> AnfeW<FdcanRxgfcSpec> {
+    pub fn anfe(&mut self) -> AnfeW<'_, FdcanRxgfcSpec> {
         AnfeW::new(self, 2)
     }
     #[doc = "Bits 4:5 - Accept Non-matching frames standard Defines how received messages with 11-bit IDs that do not match any element of the filter list are treated. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn anfs(&mut self) -> AnfsW<FdcanRxgfcSpec> {
+    pub fn anfs(&mut self) -> AnfsW<'_, FdcanRxgfcSpec> {
         AnfsW::new(self, 4)
     }
     #[doc = "Bit 8 - FIFO 1 operation mode (overwrite or blocking) This is a protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn f1om(&mut self) -> F1omW<FdcanRxgfcSpec> {
+    pub fn f1om(&mut self) -> F1omW<'_, FdcanRxgfcSpec> {
         F1omW::new(self, 8)
     }
     #[doc = "Bit 9 - FIFO 0 operation mode (overwrite or blocking) This is protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn f0om(&mut self) -> F0omW<FdcanRxgfcSpec> {
+    pub fn f0om(&mut self) -> F0omW<'_, FdcanRxgfcSpec> {
         F0omW::new(self, 9)
     }
     #[doc = "Bits 16:20 - List size standard 1 to 28: Number of standard message ID filter elements >28: Values greater than 28 are interpreted as 28. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn lss(&mut self) -> LssW<FdcanRxgfcSpec> {
+    pub fn lss(&mut self) -> LssW<'_, FdcanRxgfcSpec> {
         LssW::new(self, 16)
     }
     #[doc = "Bits 24:27 - List size extended 1 to 8: Number of extended message ID filter elements >8: Values greater than 8 are interpreted as 8. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn lse(&mut self) -> LseW<FdcanRxgfcSpec> {
+    pub fn lse(&mut self) -> LseW<'_, FdcanRxgfcSpec> {
         LseW::new(self, 24)
     }
 }

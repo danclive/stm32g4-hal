@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - Dead-time generator setup"]
     #[inline(always)]
-    pub fn dtg(&mut self) -> DtgW<BdtrSpec> {
+    pub fn dtg(&mut self) -> DtgW<'_, BdtrSpec> {
         DtgW::new(self, 0)
     }
     #[doc = "Bits 8:9 - Lock configuration"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LockW<BdtrSpec> {
+    pub fn lock(&mut self) -> LockW<'_, BdtrSpec> {
         LockW::new(self, 8)
     }
     #[doc = "Bit 10 - Off-state selection for Idle mode"]
     #[inline(always)]
-    pub fn ossi(&mut self) -> OssiW<BdtrSpec> {
+    pub fn ossi(&mut self) -> OssiW<'_, BdtrSpec> {
         OssiW::new(self, 10)
     }
     #[doc = "Bit 11 - Off-state selection for Run mode"]
     #[inline(always)]
-    pub fn ossr(&mut self) -> OssrW<BdtrSpec> {
+    pub fn ossr(&mut self) -> OssrW<'_, BdtrSpec> {
         OssrW::new(self, 11)
     }
     #[doc = "Bit 12 - Break enable"]
     #[inline(always)]
-    pub fn bke(&mut self) -> BkeW<BdtrSpec> {
+    pub fn bke(&mut self) -> BkeW<'_, BdtrSpec> {
         BkeW::new(self, 12)
     }
     #[doc = "Bit 13 - Break polarity"]
     #[inline(always)]
-    pub fn bkp(&mut self) -> BkpW<BdtrSpec> {
+    pub fn bkp(&mut self) -> BkpW<'_, BdtrSpec> {
         BkpW::new(self, 13)
     }
     #[doc = "Bit 14 - Automatic output enable"]
     #[inline(always)]
-    pub fn aoe(&mut self) -> AoeW<BdtrSpec> {
+    pub fn aoe(&mut self) -> AoeW<'_, BdtrSpec> {
         AoeW::new(self, 14)
     }
     #[doc = "Bit 15 - Main output enable"]
     #[inline(always)]
-    pub fn moe(&mut self) -> MoeW<BdtrSpec> {
+    pub fn moe(&mut self) -> MoeW<'_, BdtrSpec> {
         MoeW::new(self, 15)
     }
     #[doc = "Bits 16:19 - Break filter"]
     #[inline(always)]
-    pub fn bkf(&mut self) -> BkfW<BdtrSpec> {
+    pub fn bkf(&mut self) -> BkfW<'_, BdtrSpec> {
         BkfW::new(self, 16)
     }
     #[doc = "Bits 20:23 - Break 2 filter"]
     #[inline(always)]
-    pub fn bk2f(&mut self) -> Bk2fW<BdtrSpec> {
+    pub fn bk2f(&mut self) -> Bk2fW<'_, BdtrSpec> {
         Bk2fW::new(self, 20)
     }
     #[doc = "Bit 24 - Break 2 Enable"]
     #[inline(always)]
-    pub fn bk2e(&mut self) -> Bk2eW<BdtrSpec> {
+    pub fn bk2e(&mut self) -> Bk2eW<'_, BdtrSpec> {
         Bk2eW::new(self, 24)
     }
     #[doc = "Bit 25 - Break 2 polarity"]
     #[inline(always)]
-    pub fn bk2p(&mut self) -> Bk2pW<BdtrSpec> {
+    pub fn bk2p(&mut self) -> Bk2pW<'_, BdtrSpec> {
         Bk2pW::new(self, 25)
     }
     #[doc = "Bit 26 - BKDSRM"]
     #[inline(always)]
-    pub fn bkdsrm(&mut self) -> BkdsrmW<BdtrSpec> {
+    pub fn bkdsrm(&mut self) -> BkdsrmW<'_, BdtrSpec> {
         BkdsrmW::new(self, 26)
     }
     #[doc = "Bit 27 - BK2DSRM"]
     #[inline(always)]
-    pub fn bk2dsrm(&mut self) -> Bk2dsrmW<BdtrSpec> {
+    pub fn bk2dsrm(&mut self) -> Bk2dsrmW<'_, BdtrSpec> {
         Bk2dsrmW::new(self, 27)
     }
     #[doc = "Bit 28 - BKBID"]
     #[inline(always)]
-    pub fn bkbid(&mut self) -> BkbidW<BdtrSpec> {
+    pub fn bkbid(&mut self) -> BkbidW<'_, BdtrSpec> {
         BkbidW::new(self, 28)
     }
     #[doc = "Bit 29 - BK2ID"]
     #[inline(always)]
-    pub fn bk2id(&mut self) -> Bk2idW<BdtrSpec> {
+    pub fn bk2id(&mut self) -> Bk2idW<'_, BdtrSpec> {
         Bk2idW::new(self, 29)
     }
 }

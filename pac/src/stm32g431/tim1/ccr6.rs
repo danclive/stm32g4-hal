@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:19 - Capture/Compare value"]
     #[inline(always)]
-    pub fn ccr6(&mut self) -> Ccr6W<Ccr6Spec> {
+    pub fn ccr6(&mut self) -> Ccr6W<'_, Ccr6Spec> {
         Ccr6W::new(self, 0)
     }
 }

@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Memory mapping selection"]
     #[inline(always)]
-    pub fn mem_mode(&mut self) -> MemModeW<MemrmpSpec> {
+    pub fn mem_mode(&mut self) -> MemModeW<'_, MemrmpSpec> {
         MemModeW::new(self, 0)
     }
     #[doc = "Bit 8 - User Flash Bank mode"]
     #[inline(always)]
-    pub fn fb_mode(&mut self) -> FbModeW<MemrmpSpec> {
+    pub fn fb_mode(&mut self) -> FbModeW<'_, MemrmpSpec> {
         FbModeW::new(self, 8)
     }
 }

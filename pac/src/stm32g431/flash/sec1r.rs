@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - SEC_SIZE1"]
     #[inline(always)]
-    pub fn sec_size1(&mut self) -> SecSize1W<Sec1rSpec> {
+    pub fn sec_size1(&mut self) -> SecSize1W<'_, Sec1rSpec> {
         SecSize1W::new(self, 0)
     }
     #[doc = "Bit 16 - BOOT_LOCK"]
     #[inline(always)]
-    pub fn boot_lock(&mut self) -> BootLockW<Sec1rSpec> {
+    pub fn boot_lock(&mut self) -> BootLockW<'_, Sec1rSpec> {
         BootLockW::new(self, 16)
     }
 }

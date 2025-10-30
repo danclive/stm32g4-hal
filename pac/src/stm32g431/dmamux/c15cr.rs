@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:6 - Input DMA request line selected"]
     #[inline(always)]
-    pub fn dmareq_id(&mut self) -> DmareqIdW<C15crSpec> {
+    pub fn dmareq_id(&mut self) -> DmareqIdW<'_, C15crSpec> {
         DmareqIdW::new(self, 0)
     }
     #[doc = "Bit 8 - Interrupt enable at synchronization event overrun"]
     #[inline(always)]
-    pub fn soie(&mut self) -> SoieW<C15crSpec> {
+    pub fn soie(&mut self) -> SoieW<'_, C15crSpec> {
         SoieW::new(self, 8)
     }
     #[doc = "Bit 9 - Event generation enable/disable"]
     #[inline(always)]
-    pub fn ege(&mut self) -> EgeW<C15crSpec> {
+    pub fn ege(&mut self) -> EgeW<'_, C15crSpec> {
         EgeW::new(self, 9)
     }
     #[doc = "Bit 16 - Synchronous operating mode enable/disable"]
     #[inline(always)]
-    pub fn se(&mut self) -> SeW<C15crSpec> {
+    pub fn se(&mut self) -> SeW<'_, C15crSpec> {
         SeW::new(self, 16)
     }
     #[doc = "Bits 17:18 - Synchronization event type selector Defines the synchronization event on the selected synchronization input:"]
     #[inline(always)]
-    pub fn spol(&mut self) -> SpolW<C15crSpec> {
+    pub fn spol(&mut self) -> SpolW<'_, C15crSpec> {
         SpolW::new(self, 17)
     }
     #[doc = "Bits 19:23 - Number of DMA requests to forward Defines the number of DMA requests forwarded before output event is generated. In synchronous mode, it also defines the number of DMA requests to forward after a synchronization event, then stop forwarding. The actual number of DMA requests forwarded is NBREQ+1. Note: This field can only be written when both SE and EGE bits are reset."]
     #[inline(always)]
-    pub fn nbreq(&mut self) -> NbreqW<C15crSpec> {
+    pub fn nbreq(&mut self) -> NbreqW<'_, C15crSpec> {
         NbreqW::new(self, 19)
     }
     #[doc = "Bits 24:28 - Synchronization input selected"]
     #[inline(always)]
-    pub fn sync_id(&mut self) -> SyncIdW<C15crSpec> {
+    pub fn sync_id(&mut self) -> SyncIdW<'_, C15crSpec> {
         SyncIdW::new(self, 24)
     }
 }

@@ -163,77 +163,77 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - FRES"]
     #[inline(always)]
-    pub fn fres(&mut self) -> FresW<CntrSpec> {
+    pub fn fres(&mut self) -> FresW<'_, CntrSpec> {
         FresW::new(self, 0)
     }
     #[doc = "Bit 1 - PDWN"]
     #[inline(always)]
-    pub fn pdwn(&mut self) -> PdwnW<CntrSpec> {
+    pub fn pdwn(&mut self) -> PdwnW<'_, CntrSpec> {
         PdwnW::new(self, 1)
     }
     #[doc = "Bit 2 - LP_MODE"]
     #[inline(always)]
-    pub fn lp_mode(&mut self) -> LpModeW<CntrSpec> {
+    pub fn lp_mode(&mut self) -> LpModeW<'_, CntrSpec> {
         LpModeW::new(self, 2)
     }
     #[doc = "Bit 3 - FSUSP"]
     #[inline(always)]
-    pub fn fsusp(&mut self) -> FsuspW<CntrSpec> {
+    pub fn fsusp(&mut self) -> FsuspW<'_, CntrSpec> {
         FsuspW::new(self, 3)
     }
     #[doc = "Bit 4 - RESUME"]
     #[inline(always)]
-    pub fn resume(&mut self) -> ResumeW<CntrSpec> {
+    pub fn resume(&mut self) -> ResumeW<'_, CntrSpec> {
         ResumeW::new(self, 4)
     }
     #[doc = "Bit 5 - L1RESUME"]
     #[inline(always)]
-    pub fn l1resume(&mut self) -> L1resumeW<CntrSpec> {
+    pub fn l1resume(&mut self) -> L1resumeW<'_, CntrSpec> {
         L1resumeW::new(self, 5)
     }
     #[doc = "Bit 7 - L1REQM"]
     #[inline(always)]
-    pub fn l1reqm(&mut self) -> L1reqmW<CntrSpec> {
+    pub fn l1reqm(&mut self) -> L1reqmW<'_, CntrSpec> {
         L1reqmW::new(self, 7)
     }
     #[doc = "Bit 8 - ESOFM"]
     #[inline(always)]
-    pub fn esofm(&mut self) -> EsofmW<CntrSpec> {
+    pub fn esofm(&mut self) -> EsofmW<'_, CntrSpec> {
         EsofmW::new(self, 8)
     }
     #[doc = "Bit 9 - SOFM"]
     #[inline(always)]
-    pub fn sofm(&mut self) -> SofmW<CntrSpec> {
+    pub fn sofm(&mut self) -> SofmW<'_, CntrSpec> {
         SofmW::new(self, 9)
     }
     #[doc = "Bit 10 - RESETM"]
     #[inline(always)]
-    pub fn resetm(&mut self) -> ResetmW<CntrSpec> {
+    pub fn resetm(&mut self) -> ResetmW<'_, CntrSpec> {
         ResetmW::new(self, 10)
     }
     #[doc = "Bit 11 - SUSPM"]
     #[inline(always)]
-    pub fn suspm(&mut self) -> SuspmW<CntrSpec> {
+    pub fn suspm(&mut self) -> SuspmW<'_, CntrSpec> {
         SuspmW::new(self, 11)
     }
     #[doc = "Bit 12 - WKUPM"]
     #[inline(always)]
-    pub fn wkupm(&mut self) -> WkupmW<CntrSpec> {
+    pub fn wkupm(&mut self) -> WkupmW<'_, CntrSpec> {
         WkupmW::new(self, 12)
     }
     #[doc = "Bit 13 - ERRM"]
     #[inline(always)]
-    pub fn errm(&mut self) -> ErrmW<CntrSpec> {
+    pub fn errm(&mut self) -> ErrmW<'_, CntrSpec> {
         ErrmW::new(self, 13)
     }
     #[doc = "Bit 14 - PMAOVRM"]
     #[inline(always)]
-    pub fn pmaovrm(&mut self) -> PmaovrmW<CntrSpec> {
+    pub fn pmaovrm(&mut self) -> PmaovrmW<'_, CntrSpec> {
         PmaovrmW::new(self, 14)
     }
     #[doc = "Bit 15 - CTRM"]
     #[inline(always)]
-    pub fn ctrm(&mut self) -> CtrmW<CntrSpec> {
+    pub fn ctrm(&mut self) -> CtrmW<'_, CntrSpec> {
         CtrmW::new(self, 15)
     }
 }

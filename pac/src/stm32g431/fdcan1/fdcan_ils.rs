@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - RX FIFO bit grouping the following interruption RF0LL: Rx FIFO 0 message lost interrupt line RF0FL: Rx FIFO 0 full interrupt line RF0NL: Rx FIFO 0 new message interrupt line"]
     #[inline(always)]
-    pub fn rxfifo0(&mut self) -> Rxfifo0W<FdcanIlsSpec> {
+    pub fn rxfifo0(&mut self) -> Rxfifo0W<'_, FdcanIlsSpec> {
         Rxfifo0W::new(self, 0)
     }
     #[doc = "Bit 1 - RX FIFO bit grouping the following interruption RF1LL: Rx FIFO 1 message lost interrupt line RF1FL: Rx FIFO 1 full interrupt line RF1NL: Rx FIFO 1 new message interrupt line"]
     #[inline(always)]
-    pub fn rxfifo1(&mut self) -> Rxfifo1W<FdcanIlsSpec> {
+    pub fn rxfifo1(&mut self) -> Rxfifo1W<'_, FdcanIlsSpec> {
         Rxfifo1W::new(self, 1)
     }
     #[doc = "Bit 2 - Status message bit grouping the following interruption TCFL: Transmission cancellation finished interrupt line TCL: Transmission completed interrupt line HPML: High-priority message interrupt line"]
     #[inline(always)]
-    pub fn smsg(&mut self) -> SmsgW<FdcanIlsSpec> {
+    pub fn smsg(&mut self) -> SmsgW<'_, FdcanIlsSpec> {
         SmsgW::new(self, 2)
     }
     #[doc = "Bit 3 - Tx FIFO ERROR grouping the following interruption TEFLL: Tx event FIFO element lost interrupt line TEFFL: Tx event FIFO full interrupt line TEFNL: Tx event FIFO new entry interrupt line TFEL: Tx FIFO empty interrupt line"]
     #[inline(always)]
-    pub fn tferr(&mut self) -> TferrW<FdcanIlsSpec> {
+    pub fn tferr(&mut self) -> TferrW<'_, FdcanIlsSpec> {
         TferrW::new(self, 3)
     }
     #[doc = "Bit 4 - Interrupt regrouping the following interruption TOOL: Timeout occurred interrupt line MRAFL: Message RAM access failure interrupt line TSWL: Timestamp wraparound interrupt line"]
     #[inline(always)]
-    pub fn misc(&mut self) -> MiscW<FdcanIlsSpec> {
+    pub fn misc(&mut self) -> MiscW<'_, FdcanIlsSpec> {
         MiscW::new(self, 4)
     }
     #[doc = "Bit 5 - Bit and line error grouping the following interruption EPL Error passive interrupt line ELOL: Error logging overflow interrupt line"]
     #[inline(always)]
-    pub fn berr(&mut self) -> BerrW<FdcanIlsSpec> {
+    pub fn berr(&mut self) -> BerrW<'_, FdcanIlsSpec> {
         BerrW::new(self, 5)
     }
     #[doc = "Bit 6 - Protocol error grouping the following interruption ARAL: Access to reserved address line PEDL: Protocol error in data phase line PEAL: Protocol error in arbitration phase line WDIL: Watchdog interrupt line BOL: Bus_Off status EWL: Warning status interrupt line"]
     #[inline(always)]
-    pub fn perr(&mut self) -> PerrW<FdcanIlsSpec> {
+    pub fn perr(&mut self) -> PerrW<'_, FdcanIlsSpec> {
         PerrW::new(self, 6)
     }
 }

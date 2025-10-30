@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - ARG"]
     #[inline(always)]
-    pub fn arg(&mut self) -> ArgW<WdataSpec> {
+    pub fn arg(&mut self) -> ArgW<'_, WdataSpec> {
         ArgW::new(self, 0)
     }
 }

@@ -493,42 +493,42 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - DMA1 clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn dma1smen(&mut self) -> Dma1smenW<RccAhb1smenrSpec> {
+    pub fn dma1smen(&mut self) -> Dma1smenW<'_, RccAhb1smenrSpec> {
         Dma1smenW::new(self, 0)
     }
     #[doc = "Bit 1 - DMA2 clocks enable during Sleep and Stop modes Set and cleared by software during Sleep mode."]
     #[inline(always)]
-    pub fn dma2smen(&mut self) -> Dma2smenW<RccAhb1smenrSpec> {
+    pub fn dma2smen(&mut self) -> Dma2smenW<'_, RccAhb1smenrSpec> {
         Dma2smenW::new(self, 1)
     }
     #[doc = "Bit 2 - DMAMUX1 clock enable during Sleep and Stop modes. Set and cleared by software."]
     #[inline(always)]
-    pub fn dmamux1smen(&mut self) -> Dmamux1smenW<RccAhb1smenrSpec> {
+    pub fn dmamux1smen(&mut self) -> Dmamux1smenW<'_, RccAhb1smenrSpec> {
         Dmamux1smenW::new(self, 2)
     }
     #[doc = "Bit 3 - CORDICSM clock enable. Set and cleared by software."]
     #[inline(always)]
-    pub fn cordicsmen(&mut self) -> CordicsmenW<RccAhb1smenrSpec> {
+    pub fn cordicsmen(&mut self) -> CordicsmenW<'_, RccAhb1smenrSpec> {
         CordicsmenW::new(self, 3)
     }
     #[doc = "Bit 4 - FMACSM clock enable. Set and cleared by software."]
     #[inline(always)]
-    pub fn fmacsmen(&mut self) -> FmacsmenW<RccAhb1smenrSpec> {
+    pub fn fmacsmen(&mut self) -> FmacsmenW<'_, RccAhb1smenrSpec> {
         FmacsmenW::new(self, 4)
     }
     #[doc = "Bit 8 - Flash memory interface clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn flashsmen(&mut self) -> FlashsmenW<RccAhb1smenrSpec> {
+    pub fn flashsmen(&mut self) -> FlashsmenW<'_, RccAhb1smenrSpec> {
         FlashsmenW::new(self, 8)
     }
     #[doc = "Bit 9 - SRAM1 interface clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn sram1smen(&mut self) -> Sram1smenW<RccAhb1smenrSpec> {
+    pub fn sram1smen(&mut self) -> Sram1smenW<'_, RccAhb1smenrSpec> {
         Sram1smenW::new(self, 9)
     }
     #[doc = "Bit 12 - CRC clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn crcsmen(&mut self) -> CrcsmenW<RccAhb1smenrSpec> {
+    pub fn crcsmen(&mut self) -> CrcsmenW<'_, RccAhb1smenrSpec> {
         CrcsmenW::new(self, 12)
     }
 }

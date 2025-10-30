@@ -1033,87 +1033,87 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - IO port A clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn gpioasmen(&mut self) -> GpioasmenW<RccAhb2smenrSpec> {
+    pub fn gpioasmen(&mut self) -> GpioasmenW<'_, RccAhb2smenrSpec> {
         GpioasmenW::new(self, 0)
     }
     #[doc = "Bit 1 - IO port B clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiobsmen(&mut self) -> GpiobsmenW<RccAhb2smenrSpec> {
+    pub fn gpiobsmen(&mut self) -> GpiobsmenW<'_, RccAhb2smenrSpec> {
         GpiobsmenW::new(self, 1)
     }
     #[doc = "Bit 2 - IO port C clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiocsmen(&mut self) -> GpiocsmenW<RccAhb2smenrSpec> {
+    pub fn gpiocsmen(&mut self) -> GpiocsmenW<'_, RccAhb2smenrSpec> {
         GpiocsmenW::new(self, 2)
     }
     #[doc = "Bit 3 - IO port D clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiodsmen(&mut self) -> GpiodsmenW<RccAhb2smenrSpec> {
+    pub fn gpiodsmen(&mut self) -> GpiodsmenW<'_, RccAhb2smenrSpec> {
         GpiodsmenW::new(self, 3)
     }
     #[doc = "Bit 4 - IO port E clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn gpioesmen(&mut self) -> GpioesmenW<RccAhb2smenrSpec> {
+    pub fn gpioesmen(&mut self) -> GpioesmenW<'_, RccAhb2smenrSpec> {
         GpioesmenW::new(self, 4)
     }
     #[doc = "Bit 5 - IO port F clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiofsmen(&mut self) -> GpiofsmenW<RccAhb2smenrSpec> {
+    pub fn gpiofsmen(&mut self) -> GpiofsmenW<'_, RccAhb2smenrSpec> {
         GpiofsmenW::new(self, 5)
     }
     #[doc = "Bit 6 - IO port G clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiogsmen(&mut self) -> GpiogsmenW<RccAhb2smenrSpec> {
+    pub fn gpiogsmen(&mut self) -> GpiogsmenW<'_, RccAhb2smenrSpec> {
         GpiogsmenW::new(self, 6)
     }
     #[doc = "Bit 9 - CCM SRAM interface clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn ccmsramsmen(&mut self) -> CcmsramsmenW<RccAhb2smenrSpec> {
+    pub fn ccmsramsmen(&mut self) -> CcmsramsmenW<'_, RccAhb2smenrSpec> {
         CcmsramsmenW::new(self, 9)
     }
     #[doc = "Bit 10 - SRAM2 interface clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn sram2smen(&mut self) -> Sram2smenW<RccAhb2smenrSpec> {
+    pub fn sram2smen(&mut self) -> Sram2smenW<'_, RccAhb2smenrSpec> {
         Sram2smenW::new(self, 10)
     }
     #[doc = "Bit 13 - ADC12 clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn adc12smen(&mut self) -> Adc12smenW<RccAhb2smenrSpec> {
+    pub fn adc12smen(&mut self) -> Adc12smenW<'_, RccAhb2smenrSpec> {
         Adc12smenW::new(self, 13)
     }
     #[doc = "Bit 14 - ADC345 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn adc345smen(&mut self) -> Adc345smenW<RccAhb2smenrSpec> {
+    pub fn adc345smen(&mut self) -> Adc345smenW<'_, RccAhb2smenrSpec> {
         Adc345smenW::new(self, 14)
     }
     #[doc = "Bit 16 - DAC1 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn dac1smen(&mut self) -> Dac1smenW<RccAhb2smenrSpec> {
+    pub fn dac1smen(&mut self) -> Dac1smenW<'_, RccAhb2smenrSpec> {
         Dac1smenW::new(self, 16)
     }
     #[doc = "Bit 17 - DAC2 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn dac2smen(&mut self) -> Dac2smenW<RccAhb2smenrSpec> {
+    pub fn dac2smen(&mut self) -> Dac2smenW<'_, RccAhb2smenrSpec> {
         Dac2smenW::new(self, 17)
     }
     #[doc = "Bit 18 - DAC3 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn dac3smen(&mut self) -> Dac3smenW<RccAhb2smenrSpec> {
+    pub fn dac3smen(&mut self) -> Dac3smenW<'_, RccAhb2smenrSpec> {
         Dac3smenW::new(self, 18)
     }
     #[doc = "Bit 19 - DAC4 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn dac4smen(&mut self) -> Dac4smenW<RccAhb2smenrSpec> {
+    pub fn dac4smen(&mut self) -> Dac4smenW<'_, RccAhb2smenrSpec> {
         Dac4smenW::new(self, 19)
     }
     #[doc = "Bit 24 - AESM clocks enable Set and cleared by software."]
     #[inline(always)]
-    pub fn aessmen(&mut self) -> AessmenW<RccAhb2smenrSpec> {
+    pub fn aessmen(&mut self) -> AessmenW<'_, RccAhb2smenrSpec> {
         AessmenW::new(self, 24)
     }
     #[doc = "Bit 26 - RNG enable Set and cleared by software."]
     #[inline(always)]
-    pub fn rngen(&mut self) -> RngenW<RccAhb2smenrSpec> {
+    pub fn rngen(&mut self) -> RngenW<'_, RccAhb2smenrSpec> {
         RngenW::new(self, 26)
     }
 }

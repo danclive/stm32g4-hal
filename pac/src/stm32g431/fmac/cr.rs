@@ -103,47 +103,47 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - RIEN"]
     #[inline(always)]
-    pub fn rien(&mut self) -> RienW<CrSpec> {
+    pub fn rien(&mut self) -> RienW<'_, CrSpec> {
         RienW::new(self, 0)
     }
     #[doc = "Bit 1 - WIEN"]
     #[inline(always)]
-    pub fn wien(&mut self) -> WienW<CrSpec> {
+    pub fn wien(&mut self) -> WienW<'_, CrSpec> {
         WienW::new(self, 1)
     }
     #[doc = "Bit 2 - OVFLIEN"]
     #[inline(always)]
-    pub fn ovflien(&mut self) -> OvflienW<CrSpec> {
+    pub fn ovflien(&mut self) -> OvflienW<'_, CrSpec> {
         OvflienW::new(self, 2)
     }
     #[doc = "Bit 3 - UNFLIEN"]
     #[inline(always)]
-    pub fn unflien(&mut self) -> UnflienW<CrSpec> {
+    pub fn unflien(&mut self) -> UnflienW<'_, CrSpec> {
         UnflienW::new(self, 3)
     }
     #[doc = "Bit 4 - SATIEN"]
     #[inline(always)]
-    pub fn satien(&mut self) -> SatienW<CrSpec> {
+    pub fn satien(&mut self) -> SatienW<'_, CrSpec> {
         SatienW::new(self, 4)
     }
     #[doc = "Bit 8 - DMAREN"]
     #[inline(always)]
-    pub fn dmaren(&mut self) -> DmarenW<CrSpec> {
+    pub fn dmaren(&mut self) -> DmarenW<'_, CrSpec> {
         DmarenW::new(self, 8)
     }
     #[doc = "Bit 9 - DMAWEN"]
     #[inline(always)]
-    pub fn dmawen(&mut self) -> DmawenW<CrSpec> {
+    pub fn dmawen(&mut self) -> DmawenW<'_, CrSpec> {
         DmawenW::new(self, 9)
     }
     #[doc = "Bit 15 - CLIPEN"]
     #[inline(always)]
-    pub fn clipen(&mut self) -> ClipenW<CrSpec> {
+    pub fn clipen(&mut self) -> ClipenW<'_, CrSpec> {
         ClipenW::new(self, 15)
     }
     #[doc = "Bit 16 - RESET"]
     #[inline(always)]
-    pub fn reset(&mut self) -> ResetW<CrSpec> {
+    pub fn reset(&mut self) -> ResetW<'_, CrSpec> {
         ResetW::new(self, 16)
     }
 }

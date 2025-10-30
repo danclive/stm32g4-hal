@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - TAMP1E"]
     #[inline(always)]
-    pub fn tamp1e(&mut self) -> Tamp1eW<Cr1Spec> {
+    pub fn tamp1e(&mut self) -> Tamp1eW<'_, Cr1Spec> {
         Tamp1eW::new(self, 0)
     }
     #[doc = "Bit 1 - TAMP2E"]
     #[inline(always)]
-    pub fn tamp2e(&mut self) -> Tamp2eW<Cr1Spec> {
+    pub fn tamp2e(&mut self) -> Tamp2eW<'_, Cr1Spec> {
         Tamp2eW::new(self, 1)
     }
     #[doc = "Bit 2 - TAMP2E"]
     #[inline(always)]
-    pub fn tamp3e(&mut self) -> Tamp3eW<Cr1Spec> {
+    pub fn tamp3e(&mut self) -> Tamp3eW<'_, Cr1Spec> {
         Tamp3eW::new(self, 2)
     }
     #[doc = "Bit 18 - ITAMP3E"]
     #[inline(always)]
-    pub fn itamp3e(&mut self) -> Itamp3eW<Cr1Spec> {
+    pub fn itamp3e(&mut self) -> Itamp3eW<'_, Cr1Spec> {
         Itamp3eW::new(self, 18)
     }
     #[doc = "Bit 19 - ITAMP4E"]
     #[inline(always)]
-    pub fn itamp4e(&mut self) -> Itamp4eW<Cr1Spec> {
+    pub fn itamp4e(&mut self) -> Itamp4eW<'_, Cr1Spec> {
         Itamp4eW::new(self, 19)
     }
     #[doc = "Bit 20 - ITAMP5E"]
     #[inline(always)]
-    pub fn itamp5e(&mut self) -> Itamp5eW<Cr1Spec> {
+    pub fn itamp5e(&mut self) -> Itamp5eW<'_, Cr1Spec> {
         Itamp5eW::new(self, 20)
     }
     #[doc = "Bit 21 - ITAMP6E"]
     #[inline(always)]
-    pub fn itamp6e(&mut self) -> Itamp6eW<Cr1Spec> {
+    pub fn itamp6e(&mut self) -> Itamp6eW<'_, Cr1Spec> {
         Itamp6eW::new(self, 21)
     }
 }

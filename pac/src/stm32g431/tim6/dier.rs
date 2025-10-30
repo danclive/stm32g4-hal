@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Update interrupt enable"]
     #[inline(always)]
-    pub fn uie(&mut self) -> UieW<DierSpec> {
+    pub fn uie(&mut self) -> UieW<'_, DierSpec> {
         UieW::new(self, 0)
     }
     #[doc = "Bit 8 - Update DMA request enable"]
     #[inline(always)]
-    pub fn ude(&mut self) -> UdeW<DierSpec> {
+    pub fn ude(&mut self) -> UdeW<'_, DierSpec> {
         UdeW::new(self, 8)
     }
 }

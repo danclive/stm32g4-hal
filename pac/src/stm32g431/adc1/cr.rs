@@ -113,52 +113,52 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - ADEN"]
     #[inline(always)]
-    pub fn aden(&mut self) -> AdenW<CrSpec> {
+    pub fn aden(&mut self) -> AdenW<'_, CrSpec> {
         AdenW::new(self, 0)
     }
     #[doc = "Bit 1 - ADDIS"]
     #[inline(always)]
-    pub fn addis(&mut self) -> AddisW<CrSpec> {
+    pub fn addis(&mut self) -> AddisW<'_, CrSpec> {
         AddisW::new(self, 1)
     }
     #[doc = "Bit 2 - ADSTART"]
     #[inline(always)]
-    pub fn adstart(&mut self) -> AdstartW<CrSpec> {
+    pub fn adstart(&mut self) -> AdstartW<'_, CrSpec> {
         AdstartW::new(self, 2)
     }
     #[doc = "Bit 3 - JADSTART"]
     #[inline(always)]
-    pub fn jadstart(&mut self) -> JadstartW<CrSpec> {
+    pub fn jadstart(&mut self) -> JadstartW<'_, CrSpec> {
         JadstartW::new(self, 3)
     }
     #[doc = "Bit 4 - ADSTP"]
     #[inline(always)]
-    pub fn adstp(&mut self) -> AdstpW<CrSpec> {
+    pub fn adstp(&mut self) -> AdstpW<'_, CrSpec> {
         AdstpW::new(self, 4)
     }
     #[doc = "Bit 5 - JADSTP"]
     #[inline(always)]
-    pub fn jadstp(&mut self) -> JadstpW<CrSpec> {
+    pub fn jadstp(&mut self) -> JadstpW<'_, CrSpec> {
         JadstpW::new(self, 5)
     }
     #[doc = "Bit 28 - ADVREGEN"]
     #[inline(always)]
-    pub fn advregen(&mut self) -> AdvregenW<CrSpec> {
+    pub fn advregen(&mut self) -> AdvregenW<'_, CrSpec> {
         AdvregenW::new(self, 28)
     }
     #[doc = "Bit 29 - DEEPPWD"]
     #[inline(always)]
-    pub fn deeppwd(&mut self) -> DeeppwdW<CrSpec> {
+    pub fn deeppwd(&mut self) -> DeeppwdW<'_, CrSpec> {
         DeeppwdW::new(self, 29)
     }
     #[doc = "Bit 30 - ADCALDIF"]
     #[inline(always)]
-    pub fn adcaldif(&mut self) -> AdcaldifW<CrSpec> {
+    pub fn adcaldif(&mut self) -> AdcaldifW<'_, CrSpec> {
         AdcaldifW::new(self, 30)
     }
     #[doc = "Bit 31 - ADCAL"]
     #[inline(always)]
-    pub fn adcal(&mut self) -> AdcalW<CrSpec> {
+    pub fn adcal(&mut self) -> AdcalW<'_, CrSpec> {
         AdcalW::new(self, 31)
     }
 }

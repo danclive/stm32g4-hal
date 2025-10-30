@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:4 - DAC Channel 1 offset trimming value"]
     #[inline(always)]
-    pub fn otrim1(&mut self) -> Otrim1W<DacCcrSpec> {
+    pub fn otrim1(&mut self) -> Otrim1W<'_, DacCcrSpec> {
         Otrim1W::new(self, 0)
     }
     #[doc = "Bits 16:20 - DAC Channel 2 offset trimming value"]
     #[inline(always)]
-    pub fn otrim2(&mut self) -> Otrim2W<DacCcrSpec> {
+    pub fn otrim2(&mut self) -> Otrim2W<'_, DacCcrSpec> {
         Otrim2W::new(self, 16)
     }
 }

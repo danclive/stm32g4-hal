@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:6 - Transmitter delay compensation filter window length Defines the minimum value for the SSP position, dominant edges on FDCAN_RX that would result in an earlier SSP position are ignored for transmitter delay measurements. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn tdcf(&mut self) -> TdcfW<FdcanTdcrSpec> {
+    pub fn tdcf(&mut self) -> TdcfW<'_, FdcanTdcrSpec> {
         TdcfW::new(self, 0)
     }
     #[doc = "Bits 8:14 - Transmitter delay compensation offset Offset value defining the distance between the measured delay from FDCAN_TX to FDCAN_RX and the secondary sample point. Valid values are 0 to 127 mtq. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn tdco(&mut self) -> TdcoW<FdcanTdcrSpec> {
+    pub fn tdco(&mut self) -> TdcoW<'_, FdcanTdcrSpec> {
         TdcoW::new(self, 8)
     }
 }

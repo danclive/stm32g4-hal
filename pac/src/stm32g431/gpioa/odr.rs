@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr0(&mut self) -> Odr0W<OdrSpec> {
+    pub fn odr0(&mut self) -> Odr0W<'_, OdrSpec> {
         Odr0W::new(self, 0)
     }
     #[doc = "Bit 1 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr1(&mut self) -> Odr1W<OdrSpec> {
+    pub fn odr1(&mut self) -> Odr1W<'_, OdrSpec> {
         Odr1W::new(self, 1)
     }
     #[doc = "Bit 2 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr2(&mut self) -> Odr2W<OdrSpec> {
+    pub fn odr2(&mut self) -> Odr2W<'_, OdrSpec> {
         Odr2W::new(self, 2)
     }
     #[doc = "Bit 3 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr3(&mut self) -> Odr3W<OdrSpec> {
+    pub fn odr3(&mut self) -> Odr3W<'_, OdrSpec> {
         Odr3W::new(self, 3)
     }
     #[doc = "Bit 4 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr4(&mut self) -> Odr4W<OdrSpec> {
+    pub fn odr4(&mut self) -> Odr4W<'_, OdrSpec> {
         Odr4W::new(self, 4)
     }
     #[doc = "Bit 5 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr5(&mut self) -> Odr5W<OdrSpec> {
+    pub fn odr5(&mut self) -> Odr5W<'_, OdrSpec> {
         Odr5W::new(self, 5)
     }
     #[doc = "Bit 6 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr6(&mut self) -> Odr6W<OdrSpec> {
+    pub fn odr6(&mut self) -> Odr6W<'_, OdrSpec> {
         Odr6W::new(self, 6)
     }
     #[doc = "Bit 7 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr7(&mut self) -> Odr7W<OdrSpec> {
+    pub fn odr7(&mut self) -> Odr7W<'_, OdrSpec> {
         Odr7W::new(self, 7)
     }
     #[doc = "Bit 8 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr8(&mut self) -> Odr8W<OdrSpec> {
+    pub fn odr8(&mut self) -> Odr8W<'_, OdrSpec> {
         Odr8W::new(self, 8)
     }
     #[doc = "Bit 9 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr9(&mut self) -> Odr9W<OdrSpec> {
+    pub fn odr9(&mut self) -> Odr9W<'_, OdrSpec> {
         Odr9W::new(self, 9)
     }
     #[doc = "Bit 10 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr10(&mut self) -> Odr10W<OdrSpec> {
+    pub fn odr10(&mut self) -> Odr10W<'_, OdrSpec> {
         Odr10W::new(self, 10)
     }
     #[doc = "Bit 11 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr11(&mut self) -> Odr11W<OdrSpec> {
+    pub fn odr11(&mut self) -> Odr11W<'_, OdrSpec> {
         Odr11W::new(self, 11)
     }
     #[doc = "Bit 12 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr12(&mut self) -> Odr12W<OdrSpec> {
+    pub fn odr12(&mut self) -> Odr12W<'_, OdrSpec> {
         Odr12W::new(self, 12)
     }
     #[doc = "Bit 13 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr13(&mut self) -> Odr13W<OdrSpec> {
+    pub fn odr13(&mut self) -> Odr13W<'_, OdrSpec> {
         Odr13W::new(self, 13)
     }
     #[doc = "Bit 14 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr14(&mut self) -> Odr14W<OdrSpec> {
+    pub fn odr14(&mut self) -> Odr14W<'_, OdrSpec> {
         Odr14W::new(self, 14)
     }
     #[doc = "Bit 15 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr15(&mut self) -> Odr15W<OdrSpec> {
+    pub fn odr15(&mut self) -> Odr15W<'_, OdrSpec> {
         Odr15W::new(self, 15)
     }
 }

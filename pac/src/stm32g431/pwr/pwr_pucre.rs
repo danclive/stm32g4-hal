@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu0(&mut self) -> Pu0W<PwrPucreSpec> {
+    pub fn pu0(&mut self) -> Pu0W<'_, PwrPucreSpec> {
         Pu0W::new(self, 0)
     }
     #[doc = "Bit 1 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu1(&mut self) -> Pu1W<PwrPucreSpec> {
+    pub fn pu1(&mut self) -> Pu1W<'_, PwrPucreSpec> {
         Pu1W::new(self, 1)
     }
     #[doc = "Bit 2 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu2(&mut self) -> Pu2W<PwrPucreSpec> {
+    pub fn pu2(&mut self) -> Pu2W<'_, PwrPucreSpec> {
         Pu2W::new(self, 2)
     }
     #[doc = "Bit 3 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu3(&mut self) -> Pu3W<PwrPucreSpec> {
+    pub fn pu3(&mut self) -> Pu3W<'_, PwrPucreSpec> {
         Pu3W::new(self, 3)
     }
     #[doc = "Bit 4 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu4(&mut self) -> Pu4W<PwrPucreSpec> {
+    pub fn pu4(&mut self) -> Pu4W<'_, PwrPucreSpec> {
         Pu4W::new(self, 4)
     }
     #[doc = "Bit 5 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu5(&mut self) -> Pu5W<PwrPucreSpec> {
+    pub fn pu5(&mut self) -> Pu5W<'_, PwrPucreSpec> {
         Pu5W::new(self, 5)
     }
     #[doc = "Bit 6 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu6(&mut self) -> Pu6W<PwrPucreSpec> {
+    pub fn pu6(&mut self) -> Pu6W<'_, PwrPucreSpec> {
         Pu6W::new(self, 6)
     }
     #[doc = "Bit 7 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu7(&mut self) -> Pu7W<PwrPucreSpec> {
+    pub fn pu7(&mut self) -> Pu7W<'_, PwrPucreSpec> {
         Pu7W::new(self, 7)
     }
     #[doc = "Bit 8 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu8(&mut self) -> Pu8W<PwrPucreSpec> {
+    pub fn pu8(&mut self) -> Pu8W<'_, PwrPucreSpec> {
         Pu8W::new(self, 8)
     }
     #[doc = "Bit 9 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu9(&mut self) -> Pu9W<PwrPucreSpec> {
+    pub fn pu9(&mut self) -> Pu9W<'_, PwrPucreSpec> {
         Pu9W::new(self, 9)
     }
     #[doc = "Bit 10 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu10(&mut self) -> Pu10W<PwrPucreSpec> {
+    pub fn pu10(&mut self) -> Pu10W<'_, PwrPucreSpec> {
         Pu10W::new(self, 10)
     }
     #[doc = "Bit 11 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu11(&mut self) -> Pu11W<PwrPucreSpec> {
+    pub fn pu11(&mut self) -> Pu11W<'_, PwrPucreSpec> {
         Pu11W::new(self, 11)
     }
     #[doc = "Bit 12 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu12(&mut self) -> Pu12W<PwrPucreSpec> {
+    pub fn pu12(&mut self) -> Pu12W<'_, PwrPucreSpec> {
         Pu12W::new(self, 12)
     }
     #[doc = "Bit 13 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu13(&mut self) -> Pu13W<PwrPucreSpec> {
+    pub fn pu13(&mut self) -> Pu13W<'_, PwrPucreSpec> {
         Pu13W::new(self, 13)
     }
     #[doc = "Bit 14 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu14(&mut self) -> Pu14W<PwrPucreSpec> {
+    pub fn pu14(&mut self) -> Pu14W<'_, PwrPucreSpec> {
         Pu14W::new(self, 14)
     }
     #[doc = "Bit 15 - Port E pull-up bit y (y=0..15) When set, this bit activates the pull-up on PE\\[y\\] when APC bit is set in PWR_CR3 register. The pull-up is not activated if the corresponding PDy bit is also set."]
     #[inline(always)]
-    pub fn pu15(&mut self) -> Pu15W<PwrPucreSpec> {
+    pub fn pu15(&mut self) -> Pu15W<'_, PwrPucreSpec> {
         Pu15W::new(self, 15)
     }
 }

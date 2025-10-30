@@ -26,47 +26,47 @@ impl core::fmt::Debug for crate::generic::Reg<IcrSpec> {
 impl W {
     #[doc = "Bit 0 - Parity error clear flag"]
     #[inline(always)]
-    pub fn pecf(&mut self) -> PecfW<IcrSpec> {
+    pub fn pecf(&mut self) -> PecfW<'_, IcrSpec> {
         PecfW::new(self, 0)
     }
     #[doc = "Bit 1 - Framing error clear flag"]
     #[inline(always)]
-    pub fn fecf(&mut self) -> FecfW<IcrSpec> {
+    pub fn fecf(&mut self) -> FecfW<'_, IcrSpec> {
         FecfW::new(self, 1)
     }
     #[doc = "Bit 2 - Noise detected clear flag"]
     #[inline(always)]
-    pub fn ncf(&mut self) -> NcfW<IcrSpec> {
+    pub fn ncf(&mut self) -> NcfW<'_, IcrSpec> {
         NcfW::new(self, 2)
     }
     #[doc = "Bit 3 - Overrun error clear flag"]
     #[inline(always)]
-    pub fn orecf(&mut self) -> OrecfW<IcrSpec> {
+    pub fn orecf(&mut self) -> OrecfW<'_, IcrSpec> {
         OrecfW::new(self, 3)
     }
     #[doc = "Bit 4 - Idle line detected clear flag"]
     #[inline(always)]
-    pub fn idlecf(&mut self) -> IdlecfW<IcrSpec> {
+    pub fn idlecf(&mut self) -> IdlecfW<'_, IcrSpec> {
         IdlecfW::new(self, 4)
     }
     #[doc = "Bit 6 - Transmission complete clear flag"]
     #[inline(always)]
-    pub fn tccf(&mut self) -> TccfW<IcrSpec> {
+    pub fn tccf(&mut self) -> TccfW<'_, IcrSpec> {
         TccfW::new(self, 6)
     }
     #[doc = "Bit 9 - CTS clear flag"]
     #[inline(always)]
-    pub fn ctscf(&mut self) -> CtscfW<IcrSpec> {
+    pub fn ctscf(&mut self) -> CtscfW<'_, IcrSpec> {
         CtscfW::new(self, 9)
     }
     #[doc = "Bit 17 - Character match clear flag"]
     #[inline(always)]
-    pub fn cmcf(&mut self) -> CmcfW<IcrSpec> {
+    pub fn cmcf(&mut self) -> CmcfW<'_, IcrSpec> {
         CmcfW::new(self, 17)
     }
     #[doc = "Bit 20 - Wakeup from Stop mode clear flag"]
     #[inline(always)]
-    pub fn wucf(&mut self) -> WucfW<IcrSpec> {
+    pub fn wucf(&mut self) -> WucfW<'_, IcrSpec> {
         WucfW::new(self, 20)
     }
 }

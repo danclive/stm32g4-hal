@@ -91,17 +91,17 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 3 - Shift operation pending"]
     #[inline(always)]
-    pub fn shpf(&mut self) -> ShpfW<IcsrSpec> {
+    pub fn shpf(&mut self) -> ShpfW<'_, IcsrSpec> {
         ShpfW::new(self, 3)
     }
     #[doc = "Bit 5 - Registers synchronization flag"]
     #[inline(always)]
-    pub fn rsf(&mut self) -> RsfW<IcsrSpec> {
+    pub fn rsf(&mut self) -> RsfW<'_, IcsrSpec> {
         RsfW::new(self, 5)
     }
     #[doc = "Bit 7 - Initialization mode"]
     #[inline(always)]
-    pub fn init(&mut self) -> InitW<IcsrSpec> {
+    pub fn init(&mut self) -> InitW<'_, IcsrSpec> {
         InitW::new(self, 7)
     }
 }

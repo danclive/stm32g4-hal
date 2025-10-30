@@ -253,122 +253,122 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Error interrupt enable"]
     #[inline(always)]
-    pub fn eie(&mut self) -> EieW<Cr3Spec> {
+    pub fn eie(&mut self) -> EieW<'_, Cr3Spec> {
         EieW::new(self, 0)
     }
     #[doc = "Bit 1 - Ir mode enable"]
     #[inline(always)]
-    pub fn iren(&mut self) -> IrenW<Cr3Spec> {
+    pub fn iren(&mut self) -> IrenW<'_, Cr3Spec> {
         IrenW::new(self, 1)
     }
     #[doc = "Bit 2 - Ir low-power"]
     #[inline(always)]
-    pub fn irlp(&mut self) -> IrlpW<Cr3Spec> {
+    pub fn irlp(&mut self) -> IrlpW<'_, Cr3Spec> {
         IrlpW::new(self, 2)
     }
     #[doc = "Bit 3 - Half-duplex selection"]
     #[inline(always)]
-    pub fn hdsel(&mut self) -> HdselW<Cr3Spec> {
+    pub fn hdsel(&mut self) -> HdselW<'_, Cr3Spec> {
         HdselW::new(self, 3)
     }
     #[doc = "Bit 4 - Smartcard NACK enable"]
     #[inline(always)]
-    pub fn nack(&mut self) -> NackW<Cr3Spec> {
+    pub fn nack(&mut self) -> NackW<'_, Cr3Spec> {
         NackW::new(self, 4)
     }
     #[doc = "Bit 5 - Smartcard mode enable"]
     #[inline(always)]
-    pub fn scen(&mut self) -> ScenW<Cr3Spec> {
+    pub fn scen(&mut self) -> ScenW<'_, Cr3Spec> {
         ScenW::new(self, 5)
     }
     #[doc = "Bit 6 - DMA enable receiver"]
     #[inline(always)]
-    pub fn dmar(&mut self) -> DmarW<Cr3Spec> {
+    pub fn dmar(&mut self) -> DmarW<'_, Cr3Spec> {
         DmarW::new(self, 6)
     }
     #[doc = "Bit 7 - DMA enable transmitter"]
     #[inline(always)]
-    pub fn dmat(&mut self) -> DmatW<Cr3Spec> {
+    pub fn dmat(&mut self) -> DmatW<'_, Cr3Spec> {
         DmatW::new(self, 7)
     }
     #[doc = "Bit 8 - RTS enable"]
     #[inline(always)]
-    pub fn rtse(&mut self) -> RtseW<Cr3Spec> {
+    pub fn rtse(&mut self) -> RtseW<'_, Cr3Spec> {
         RtseW::new(self, 8)
     }
     #[doc = "Bit 9 - CTS enable"]
     #[inline(always)]
-    pub fn ctse(&mut self) -> CtseW<Cr3Spec> {
+    pub fn ctse(&mut self) -> CtseW<'_, Cr3Spec> {
         CtseW::new(self, 9)
     }
     #[doc = "Bit 10 - CTS interrupt enable"]
     #[inline(always)]
-    pub fn ctsie(&mut self) -> CtsieW<Cr3Spec> {
+    pub fn ctsie(&mut self) -> CtsieW<'_, Cr3Spec> {
         CtsieW::new(self, 10)
     }
     #[doc = "Bit 11 - One sample bit method enable"]
     #[inline(always)]
-    pub fn onebit(&mut self) -> OnebitW<Cr3Spec> {
+    pub fn onebit(&mut self) -> OnebitW<'_, Cr3Spec> {
         OnebitW::new(self, 11)
     }
     #[doc = "Bit 12 - Overrun Disable"]
     #[inline(always)]
-    pub fn ovrdis(&mut self) -> OvrdisW<Cr3Spec> {
+    pub fn ovrdis(&mut self) -> OvrdisW<'_, Cr3Spec> {
         OvrdisW::new(self, 12)
     }
     #[doc = "Bit 13 - DMA Disable on Reception Error"]
     #[inline(always)]
-    pub fn ddre(&mut self) -> DdreW<Cr3Spec> {
+    pub fn ddre(&mut self) -> DdreW<'_, Cr3Spec> {
         DdreW::new(self, 13)
     }
     #[doc = "Bit 14 - Driver enable mode"]
     #[inline(always)]
-    pub fn dem(&mut self) -> DemW<Cr3Spec> {
+    pub fn dem(&mut self) -> DemW<'_, Cr3Spec> {
         DemW::new(self, 14)
     }
     #[doc = "Bit 15 - Driver enable polarity selection"]
     #[inline(always)]
-    pub fn dep(&mut self) -> DepW<Cr3Spec> {
+    pub fn dep(&mut self) -> DepW<'_, Cr3Spec> {
         DepW::new(self, 15)
     }
     #[doc = "Bits 17:19 - Smartcard auto-retry count"]
     #[inline(always)]
-    pub fn scarcnt(&mut self) -> ScarcntW<Cr3Spec> {
+    pub fn scarcnt(&mut self) -> ScarcntW<'_, Cr3Spec> {
         ScarcntW::new(self, 17)
     }
     #[doc = "Bits 20:21 - Wakeup from Stop mode interrupt flag selection"]
     #[inline(always)]
-    pub fn wus(&mut self) -> WusW<Cr3Spec> {
+    pub fn wus(&mut self) -> WusW<'_, Cr3Spec> {
         WusW::new(self, 20)
     }
     #[doc = "Bit 22 - Wakeup from Stop mode interrupt enable"]
     #[inline(always)]
-    pub fn wufie(&mut self) -> WufieW<Cr3Spec> {
+    pub fn wufie(&mut self) -> WufieW<'_, Cr3Spec> {
         WufieW::new(self, 22)
     }
     #[doc = "Bit 23 - TXFTIE"]
     #[inline(always)]
-    pub fn txftie(&mut self) -> TxftieW<Cr3Spec> {
+    pub fn txftie(&mut self) -> TxftieW<'_, Cr3Spec> {
         TxftieW::new(self, 23)
     }
     #[doc = "Bit 24 - TCBGTIE"]
     #[inline(always)]
-    pub fn tcbgtie(&mut self) -> TcbgtieW<Cr3Spec> {
+    pub fn tcbgtie(&mut self) -> TcbgtieW<'_, Cr3Spec> {
         TcbgtieW::new(self, 24)
     }
     #[doc = "Bits 25:27 - RXFTCFG"]
     #[inline(always)]
-    pub fn rxftcfg(&mut self) -> RxftcfgW<Cr3Spec> {
+    pub fn rxftcfg(&mut self) -> RxftcfgW<'_, Cr3Spec> {
         RxftcfgW::new(self, 25)
     }
     #[doc = "Bit 28 - RXFTIE"]
     #[inline(always)]
-    pub fn rxftie(&mut self) -> RxftieW<Cr3Spec> {
+    pub fn rxftie(&mut self) -> RxftieW<'_, Cr3Spec> {
         RxftieW::new(self, 28)
     }
     #[doc = "Bits 29:31 - TXFTCFG"]
     #[inline(always)]
-    pub fn txftcfg(&mut self) -> TxftcfgW<Cr3Spec> {
+    pub fn txftcfg(&mut self) -> TxftcfgW<'_, Cr3Spec> {
         TxftcfgW::new(self, 29)
     }
 }

@@ -10,7 +10,7 @@ impl core::fmt::Debug for crate::generic::Reg<KrSpec> {
 impl W {
     #[doc = "Bits 0:15 - Key value (write only, read 0x0000)"]
     #[inline(always)]
-    pub fn key(&mut self) -> KeyW<KrSpec> {
+    pub fn key(&mut self) -> KeyW<'_, KrSpec> {
         KeyW::new(self, 0)
     }
 }

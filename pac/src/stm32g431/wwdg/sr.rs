@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Early wakeup interrupt flag"]
     #[inline(always)]
-    pub fn ewif(&mut self) -> EwifW<SrSpec> {
+    pub fn ewif(&mut self) -> EwifW<'_, SrSpec> {
         EwifW::new(self, 0)
     }
 }

@@ -20,32 +20,32 @@ impl core::fmt::Debug for crate::generic::Reg<ScrSpec> {
 impl W {
     #[doc = "Bit 0 - CALRAF"]
     #[inline(always)]
-    pub fn calraf(&mut self) -> CalrafW<ScrSpec> {
+    pub fn calraf(&mut self) -> CalrafW<'_, ScrSpec> {
         CalrafW::new(self, 0)
     }
     #[doc = "Bit 1 - CALRBF"]
     #[inline(always)]
-    pub fn calrbf(&mut self) -> CalrbfW<ScrSpec> {
+    pub fn calrbf(&mut self) -> CalrbfW<'_, ScrSpec> {
         CalrbfW::new(self, 1)
     }
     #[doc = "Bit 2 - CWUTF"]
     #[inline(always)]
-    pub fn cwutf(&mut self) -> CwutfW<ScrSpec> {
+    pub fn cwutf(&mut self) -> CwutfW<'_, ScrSpec> {
         CwutfW::new(self, 2)
     }
     #[doc = "Bit 3 - CTSF"]
     #[inline(always)]
-    pub fn ctsf(&mut self) -> CtsfW<ScrSpec> {
+    pub fn ctsf(&mut self) -> CtsfW<'_, ScrSpec> {
         CtsfW::new(self, 3)
     }
     #[doc = "Bit 4 - CTSOVF"]
     #[inline(always)]
-    pub fn ctsovf(&mut self) -> CtsovfW<ScrSpec> {
+    pub fn ctsovf(&mut self) -> CtsovfW<'_, ScrSpec> {
         CtsovfW::new(self, 4)
     }
     #[doc = "Bit 5 - CITSF"]
     #[inline(always)]
-    pub fn citsf(&mut self) -> CitsfW<ScrSpec> {
+    pub fn citsf(&mut self) -> CitsfW<'_, ScrSpec> {
         CitsfW::new(self, 5)
     }
 }

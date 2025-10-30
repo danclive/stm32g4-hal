@@ -143,67 +143,67 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 1 - TXMSGDISCCF"]
     #[inline(always)]
-    pub fn txmsgdisccf(&mut self) -> TxmsgdisccfW<IcrSpec> {
+    pub fn txmsgdisccf(&mut self) -> TxmsgdisccfW<'_, IcrSpec> {
         TxmsgdisccfW::new(self, 1)
     }
     #[doc = "Bit 2 - TXMSGSENTCF"]
     #[inline(always)]
-    pub fn txmsgsentcf(&mut self) -> TxmsgsentcfW<IcrSpec> {
+    pub fn txmsgsentcf(&mut self) -> TxmsgsentcfW<'_, IcrSpec> {
         TxmsgsentcfW::new(self, 2)
     }
     #[doc = "Bit 3 - TXMSGABTCF"]
     #[inline(always)]
-    pub fn txmsgabtcf(&mut self) -> TxmsgabtcfW<IcrSpec> {
+    pub fn txmsgabtcf(&mut self) -> TxmsgabtcfW<'_, IcrSpec> {
         TxmsgabtcfW::new(self, 3)
     }
     #[doc = "Bit 4 - HRSTDISCCF"]
     #[inline(always)]
-    pub fn hrstdisccf(&mut self) -> HrstdisccfW<IcrSpec> {
+    pub fn hrstdisccf(&mut self) -> HrstdisccfW<'_, IcrSpec> {
         HrstdisccfW::new(self, 4)
     }
     #[doc = "Bit 5 - HRSTSENTCF"]
     #[inline(always)]
-    pub fn hrstsentcf(&mut self) -> HrstsentcfW<IcrSpec> {
+    pub fn hrstsentcf(&mut self) -> HrstsentcfW<'_, IcrSpec> {
         HrstsentcfW::new(self, 5)
     }
     #[doc = "Bit 6 - TXUNDCF"]
     #[inline(always)]
-    pub fn txundcf(&mut self) -> TxundcfW<IcrSpec> {
+    pub fn txundcf(&mut self) -> TxundcfW<'_, IcrSpec> {
         TxundcfW::new(self, 6)
     }
     #[doc = "Bit 9 - RXORDDETCF"]
     #[inline(always)]
-    pub fn rxorddetcf(&mut self) -> RxorddetcfW<IcrSpec> {
+    pub fn rxorddetcf(&mut self) -> RxorddetcfW<'_, IcrSpec> {
         RxorddetcfW::new(self, 9)
     }
     #[doc = "Bit 10 - RXHRSTDETCF"]
     #[inline(always)]
-    pub fn rxhrstdetcf(&mut self) -> RxhrstdetcfW<IcrSpec> {
+    pub fn rxhrstdetcf(&mut self) -> RxhrstdetcfW<'_, IcrSpec> {
         RxhrstdetcfW::new(self, 10)
     }
     #[doc = "Bit 11 - RXOVRCF"]
     #[inline(always)]
-    pub fn rxovrcf(&mut self) -> RxovrcfW<IcrSpec> {
+    pub fn rxovrcf(&mut self) -> RxovrcfW<'_, IcrSpec> {
         RxovrcfW::new(self, 11)
     }
     #[doc = "Bit 12 - RXMSGENDCF"]
     #[inline(always)]
-    pub fn rxmsgendcf(&mut self) -> RxmsgendcfW<IcrSpec> {
+    pub fn rxmsgendcf(&mut self) -> RxmsgendcfW<'_, IcrSpec> {
         RxmsgendcfW::new(self, 12)
     }
     #[doc = "Bit 14 - TYPECEVT1CF"]
     #[inline(always)]
-    pub fn typecevt1cf(&mut self) -> Typecevt1cfW<IcrSpec> {
+    pub fn typecevt1cf(&mut self) -> Typecevt1cfW<'_, IcrSpec> {
         Typecevt1cfW::new(self, 14)
     }
     #[doc = "Bit 15 - TYPECEVT2CF"]
     #[inline(always)]
-    pub fn typecevt2cf(&mut self) -> Typecevt2cfW<IcrSpec> {
+    pub fn typecevt2cf(&mut self) -> Typecevt2cfW<'_, IcrSpec> {
         Typecevt2cfW::new(self, 15)
     }
     #[doc = "Bit 20 - FRSEVTCF"]
     #[inline(always)]
-    pub fn frsevtcf(&mut self) -> FrsevtcfW<IcrSpec> {
+    pub fn frsevtcf(&mut self) -> FrsevtcfW<'_, IcrSpec> {
         FrsevtcfW::new(self, 20)
     }
 }

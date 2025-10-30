@@ -63,27 +63,27 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:4 - DMA request trigger input selected"]
     #[inline(always)]
-    pub fn sig_id(&mut self) -> SigIdW<Rg2crSpec> {
+    pub fn sig_id(&mut self) -> SigIdW<'_, Rg2crSpec> {
         SigIdW::new(self, 0)
     }
     #[doc = "Bit 8 - Interrupt enable at trigger event overrun"]
     #[inline(always)]
-    pub fn oie(&mut self) -> OieW<Rg2crSpec> {
+    pub fn oie(&mut self) -> OieW<'_, Rg2crSpec> {
         OieW::new(self, 8)
     }
     #[doc = "Bit 16 - DMA request generator channel enable/disable"]
     #[inline(always)]
-    pub fn ge(&mut self) -> GeW<Rg2crSpec> {
+    pub fn ge(&mut self) -> GeW<'_, Rg2crSpec> {
         GeW::new(self, 16)
     }
     #[doc = "Bits 17:18 - DMA request generator trigger event type selection Defines the trigger event on the selected DMA request trigger input"]
     #[inline(always)]
-    pub fn gpol(&mut self) -> GpolW<Rg2crSpec> {
+    pub fn gpol(&mut self) -> GpolW<'_, Rg2crSpec> {
         GpolW::new(self, 17)
     }
     #[doc = "Bits 19:23 - Number of DMA requests to generate Defines the number of DMA requests generated after a trigger event, then stop generating. The actual number of generated DMA requests is GNBREQ+1. Note: This field can only be written when GE bit is reset."]
     #[inline(always)]
-    pub fn gnbreq(&mut self) -> GnbreqW<Rg2crSpec> {
+    pub fn gnbreq(&mut self) -> GnbreqW<'_, Rg2crSpec> {
         GnbreqW::new(self, 19)
     }
 }

@@ -433,37 +433,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - DMA1 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn dma1rst(&mut self) -> Dma1rstW<RccAhb1rstrSpec> {
+    pub fn dma1rst(&mut self) -> Dma1rstW<'_, RccAhb1rstrSpec> {
         Dma1rstW::new(self, 0)
     }
     #[doc = "Bit 1 - DMA2 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn dma2rst(&mut self) -> Dma2rstW<RccAhb1rstrSpec> {
+    pub fn dma2rst(&mut self) -> Dma2rstW<'_, RccAhb1rstrSpec> {
         Dma2rstW::new(self, 1)
     }
     #[doc = "Bit 2 - Set and cleared by software."]
     #[inline(always)]
-    pub fn dmamux1rst(&mut self) -> Dmamux1rstW<RccAhb1rstrSpec> {
+    pub fn dmamux1rst(&mut self) -> Dmamux1rstW<'_, RccAhb1rstrSpec> {
         Dmamux1rstW::new(self, 2)
     }
     #[doc = "Bit 3 - Set and cleared by software"]
     #[inline(always)]
-    pub fn cordicrst(&mut self) -> CordicrstW<RccAhb1rstrSpec> {
+    pub fn cordicrst(&mut self) -> CordicrstW<'_, RccAhb1rstrSpec> {
         CordicrstW::new(self, 3)
     }
     #[doc = "Bit 4 - Set and cleared by software"]
     #[inline(always)]
-    pub fn fmacrst(&mut self) -> FmacrstW<RccAhb1rstrSpec> {
+    pub fn fmacrst(&mut self) -> FmacrstW<'_, RccAhb1rstrSpec> {
         FmacrstW::new(self, 4)
     }
     #[doc = "Bit 8 - Flash memory interface reset Set and cleared by software. This bit can be activated only when the Flash memory is in power down mode."]
     #[inline(always)]
-    pub fn flashrst(&mut self) -> FlashrstW<RccAhb1rstrSpec> {
+    pub fn flashrst(&mut self) -> FlashrstW<'_, RccAhb1rstrSpec> {
         FlashrstW::new(self, 8)
     }
     #[doc = "Bit 12 - CRC reset Set and cleared by software."]
     #[inline(always)]
-    pub fn crcrst(&mut self) -> CrcrstW<RccAhb1rstrSpec> {
+    pub fn crcrst(&mut self) -> CrcrstW<'_, RccAhb1rstrSpec> {
         CrcrstW::new(self, 12)
     }
 }

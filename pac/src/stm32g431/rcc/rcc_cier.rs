@@ -433,37 +433,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - LSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSI oscillator stabilization."]
     #[inline(always)]
-    pub fn lsirdyie(&mut self) -> LsirdyieW<RccCierSpec> {
+    pub fn lsirdyie(&mut self) -> LsirdyieW<'_, RccCierSpec> {
         LsirdyieW::new(self, 0)
     }
     #[doc = "Bit 1 - LSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSE oscillator stabilization."]
     #[inline(always)]
-    pub fn lserdyie(&mut self) -> LserdyieW<RccCierSpec> {
+    pub fn lserdyie(&mut self) -> LserdyieW<'_, RccCierSpec> {
         LserdyieW::new(self, 1)
     }
     #[doc = "Bit 3 - HSI16 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI16 oscillator stabilization."]
     #[inline(always)]
-    pub fn hsirdyie(&mut self) -> HsirdyieW<RccCierSpec> {
+    pub fn hsirdyie(&mut self) -> HsirdyieW<'_, RccCierSpec> {
         HsirdyieW::new(self, 3)
     }
     #[doc = "Bit 4 - HSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSE oscillator stabilization."]
     #[inline(always)]
-    pub fn hserdyie(&mut self) -> HserdyieW<RccCierSpec> {
+    pub fn hserdyie(&mut self) -> HserdyieW<'_, RccCierSpec> {
         HserdyieW::new(self, 4)
     }
     #[doc = "Bit 5 - PLL ready interrupt enable Set and cleared by software to enable/disable interrupt caused by PLL lock."]
     #[inline(always)]
-    pub fn pllrdyie(&mut self) -> PllrdyieW<RccCierSpec> {
+    pub fn pllrdyie(&mut self) -> PllrdyieW<'_, RccCierSpec> {
         PllrdyieW::new(self, 5)
     }
     #[doc = "Bit 9 - LSE clock security system interrupt enable Set and cleared by software to enable/disable interrupt caused by the clock security system on LSE."]
     #[inline(always)]
-    pub fn lsecssie(&mut self) -> LsecssieW<RccCierSpec> {
+    pub fn lsecssie(&mut self) -> LsecssieW<'_, RccCierSpec> {
         LsecssieW::new(self, 9)
     }
     #[doc = "Bit 10 - HSI48 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the internal HSI48 oscillator."]
     #[inline(always)]
-    pub fn hsi48rdyie(&mut self) -> Hsi48rdyieW<RccCierSpec> {
+    pub fn hsi48rdyie(&mut self) -> Hsi48rdyieW<'_, RccCierSpec> {
         Hsi48rdyieW::new(self, 10)
     }
 }

@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder0(&mut self) -> Moder0W<ModerSpec> {
+    pub fn moder0(&mut self) -> Moder0W<'_, ModerSpec> {
         Moder0W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder1(&mut self) -> Moder1W<ModerSpec> {
+    pub fn moder1(&mut self) -> Moder1W<'_, ModerSpec> {
         Moder1W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder2(&mut self) -> Moder2W<ModerSpec> {
+    pub fn moder2(&mut self) -> Moder2W<'_, ModerSpec> {
         Moder2W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder3(&mut self) -> Moder3W<ModerSpec> {
+    pub fn moder3(&mut self) -> Moder3W<'_, ModerSpec> {
         Moder3W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder4(&mut self) -> Moder4W<ModerSpec> {
+    pub fn moder4(&mut self) -> Moder4W<'_, ModerSpec> {
         Moder4W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder5(&mut self) -> Moder5W<ModerSpec> {
+    pub fn moder5(&mut self) -> Moder5W<'_, ModerSpec> {
         Moder5W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder6(&mut self) -> Moder6W<ModerSpec> {
+    pub fn moder6(&mut self) -> Moder6W<'_, ModerSpec> {
         Moder6W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder7(&mut self) -> Moder7W<ModerSpec> {
+    pub fn moder7(&mut self) -> Moder7W<'_, ModerSpec> {
         Moder7W::new(self, 14)
     }
     #[doc = "Bits 16:17 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder8(&mut self) -> Moder8W<ModerSpec> {
+    pub fn moder8(&mut self) -> Moder8W<'_, ModerSpec> {
         Moder8W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder9(&mut self) -> Moder9W<ModerSpec> {
+    pub fn moder9(&mut self) -> Moder9W<'_, ModerSpec> {
         Moder9W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder10(&mut self) -> Moder10W<ModerSpec> {
+    pub fn moder10(&mut self) -> Moder10W<'_, ModerSpec> {
         Moder10W::new(self, 20)
     }
     #[doc = "Bits 22:23 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder11(&mut self) -> Moder11W<ModerSpec> {
+    pub fn moder11(&mut self) -> Moder11W<'_, ModerSpec> {
         Moder11W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder12(&mut self) -> Moder12W<ModerSpec> {
+    pub fn moder12(&mut self) -> Moder12W<'_, ModerSpec> {
         Moder12W::new(self, 24)
     }
     #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder13(&mut self) -> Moder13W<ModerSpec> {
+    pub fn moder13(&mut self) -> Moder13W<'_, ModerSpec> {
         Moder13W::new(self, 26)
     }
     #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder14(&mut self) -> Moder14W<ModerSpec> {
+    pub fn moder14(&mut self) -> Moder14W<'_, ModerSpec> {
         Moder14W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder15(&mut self) -> Moder15W<ModerSpec> {
+    pub fn moder15(&mut self) -> Moder15W<'_, ModerSpec> {
         Moder15W::new(self, 30)
     }
 }

@@ -262,7 +262,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - input clock divider The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn pdiv(&mut self) -> PdivW<FdcanCkdivSpec> {
+    pub fn pdiv(&mut self) -> PdivW<'_, FdcanCkdivSpec> {
         PdivW::new(self, 0)
     }
 }

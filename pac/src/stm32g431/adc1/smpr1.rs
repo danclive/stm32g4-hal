@@ -123,57 +123,57 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - SMP0"]
     #[inline(always)]
-    pub fn smp0(&mut self) -> Smp0W<Smpr1Spec> {
+    pub fn smp0(&mut self) -> Smp0W<'_, Smpr1Spec> {
         Smp0W::new(self, 0)
     }
     #[doc = "Bits 3:5 - SMP1"]
     #[inline(always)]
-    pub fn smp1(&mut self) -> Smp1W<Smpr1Spec> {
+    pub fn smp1(&mut self) -> Smp1W<'_, Smpr1Spec> {
         Smp1W::new(self, 3)
     }
     #[doc = "Bits 6:8 - SMP2"]
     #[inline(always)]
-    pub fn smp2(&mut self) -> Smp2W<Smpr1Spec> {
+    pub fn smp2(&mut self) -> Smp2W<'_, Smpr1Spec> {
         Smp2W::new(self, 6)
     }
     #[doc = "Bits 9:11 - SMP3"]
     #[inline(always)]
-    pub fn smp3(&mut self) -> Smp3W<Smpr1Spec> {
+    pub fn smp3(&mut self) -> Smp3W<'_, Smpr1Spec> {
         Smp3W::new(self, 9)
     }
     #[doc = "Bits 12:14 - SMP4"]
     #[inline(always)]
-    pub fn smp4(&mut self) -> Smp4W<Smpr1Spec> {
+    pub fn smp4(&mut self) -> Smp4W<'_, Smpr1Spec> {
         Smp4W::new(self, 12)
     }
     #[doc = "Bits 15:17 - SMP5"]
     #[inline(always)]
-    pub fn smp5(&mut self) -> Smp5W<Smpr1Spec> {
+    pub fn smp5(&mut self) -> Smp5W<'_, Smpr1Spec> {
         Smp5W::new(self, 15)
     }
     #[doc = "Bits 18:20 - SMP6"]
     #[inline(always)]
-    pub fn smp6(&mut self) -> Smp6W<Smpr1Spec> {
+    pub fn smp6(&mut self) -> Smp6W<'_, Smpr1Spec> {
         Smp6W::new(self, 18)
     }
     #[doc = "Bits 21:23 - SMP7"]
     #[inline(always)]
-    pub fn smp7(&mut self) -> Smp7W<Smpr1Spec> {
+    pub fn smp7(&mut self) -> Smp7W<'_, Smpr1Spec> {
         Smp7W::new(self, 21)
     }
     #[doc = "Bits 24:26 - SMP8"]
     #[inline(always)]
-    pub fn smp8(&mut self) -> Smp8W<Smpr1Spec> {
+    pub fn smp8(&mut self) -> Smp8W<'_, Smpr1Spec> {
         Smp8W::new(self, 24)
     }
     #[doc = "Bits 27:29 - SMP9"]
     #[inline(always)]
-    pub fn smp9(&mut self) -> Smp9W<Smpr1Spec> {
+    pub fn smp9(&mut self) -> Smp9W<'_, Smpr1Spec> {
         Smp9W::new(self, 27)
     }
     #[doc = "Bit 31 - Addition of one clock cycle to the sampling time"]
     #[inline(always)]
-    pub fn smpplus(&mut self) -> SmpplusW<Smpr1Spec> {
+    pub fn smpplus(&mut self) -> SmpplusW<'_, Smpr1Spec> {
         SmpplusW::new(self, 31)
     }
 }

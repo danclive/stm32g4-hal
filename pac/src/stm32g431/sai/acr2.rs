@@ -93,42 +93,42 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - FIFO threshold"]
     #[inline(always)]
-    pub fn fth(&mut self) -> FthW<Acr2Spec> {
+    pub fn fth(&mut self) -> FthW<'_, Acr2Spec> {
         FthW::new(self, 0)
     }
     #[doc = "Bit 3 - FIFO flush"]
     #[inline(always)]
-    pub fn fflus(&mut self) -> FflusW<Acr2Spec> {
+    pub fn fflus(&mut self) -> FflusW<'_, Acr2Spec> {
         FflusW::new(self, 3)
     }
     #[doc = "Bit 4 - Tristate management on data line"]
     #[inline(always)]
-    pub fn tris(&mut self) -> TrisW<Acr2Spec> {
+    pub fn tris(&mut self) -> TrisW<'_, Acr2Spec> {
         TrisW::new(self, 4)
     }
     #[doc = "Bit 5 - Mute"]
     #[inline(always)]
-    pub fn mute(&mut self) -> MuteW<Acr2Spec> {
+    pub fn mute(&mut self) -> MuteW<'_, Acr2Spec> {
         MuteW::new(self, 5)
     }
     #[doc = "Bit 6 - Mute value"]
     #[inline(always)]
-    pub fn muteval(&mut self) -> MutevalW<Acr2Spec> {
+    pub fn muteval(&mut self) -> MutevalW<'_, Acr2Spec> {
         MutevalW::new(self, 6)
     }
     #[doc = "Bits 7:12 - Mute counter"]
     #[inline(always)]
-    pub fn mutecn(&mut self) -> MutecnW<Acr2Spec> {
+    pub fn mutecn(&mut self) -> MutecnW<'_, Acr2Spec> {
         MutecnW::new(self, 7)
     }
     #[doc = "Bit 13 - Complement bit"]
     #[inline(always)]
-    pub fn cpl(&mut self) -> CplW<Acr2Spec> {
+    pub fn cpl(&mut self) -> CplW<'_, Acr2Spec> {
         CplW::new(self, 13)
     }
     #[doc = "Bits 14:15 - Companding mode"]
     #[inline(always)]
-    pub fn comp(&mut self) -> CompW<Acr2Spec> {
+    pub fn comp(&mut self) -> CompW<'_, Acr2Spec> {
         CompW::new(self, 14)
     }
 }

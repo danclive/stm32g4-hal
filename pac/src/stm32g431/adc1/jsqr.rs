@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - JL"]
     #[inline(always)]
-    pub fn jl(&mut self) -> JlW<JsqrSpec> {
+    pub fn jl(&mut self) -> JlW<'_, JsqrSpec> {
         JlW::new(self, 0)
     }
     #[doc = "Bits 2:6 - JEXTSEL"]
     #[inline(always)]
-    pub fn jextsel(&mut self) -> JextselW<JsqrSpec> {
+    pub fn jextsel(&mut self) -> JextselW<'_, JsqrSpec> {
         JextselW::new(self, 2)
     }
     #[doc = "Bits 7:8 - JEXTEN"]
     #[inline(always)]
-    pub fn jexten(&mut self) -> JextenW<JsqrSpec> {
+    pub fn jexten(&mut self) -> JextenW<'_, JsqrSpec> {
         JextenW::new(self, 7)
     }
     #[doc = "Bits 9:13 - JSQ1"]
     #[inline(always)]
-    pub fn jsq1(&mut self) -> Jsq1W<JsqrSpec> {
+    pub fn jsq1(&mut self) -> Jsq1W<'_, JsqrSpec> {
         Jsq1W::new(self, 9)
     }
     #[doc = "Bits 15:19 - JSQ2"]
     #[inline(always)]
-    pub fn jsq2(&mut self) -> Jsq2W<JsqrSpec> {
+    pub fn jsq2(&mut self) -> Jsq2W<'_, JsqrSpec> {
         Jsq2W::new(self, 15)
     }
     #[doc = "Bits 21:25 - JSQ3"]
     #[inline(always)]
-    pub fn jsq3(&mut self) -> Jsq3W<JsqrSpec> {
+    pub fn jsq3(&mut self) -> Jsq3W<'_, JsqrSpec> {
         Jsq3W::new(self, 21)
     }
     #[doc = "Bits 27:31 - JSQ4"]
     #[inline(always)]
-    pub fn jsq4(&mut self) -> Jsq4W<JsqrSpec> {
+    pub fn jsq4(&mut self) -> Jsq4W<'_, JsqrSpec> {
         Jsq4W::new(self, 27)
     }
 }

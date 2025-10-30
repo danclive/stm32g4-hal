@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - Data"]
     #[inline(always)]
-    pub fn data(&mut self) -> DataW<AdrSpec> {
+    pub fn data(&mut self) -> DataW<'_, AdrSpec> {
         DataW::new(self, 0)
     }
 }

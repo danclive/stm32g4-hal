@@ -1333,112 +1333,112 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - TIM2 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn tim2en(&mut self) -> Tim2enW<RccApb1enr1Spec> {
+    pub fn tim2en(&mut self) -> Tim2enW<'_, RccApb1enr1Spec> {
         Tim2enW::new(self, 0)
     }
     #[doc = "Bit 1 - TIM3 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn tim3en(&mut self) -> Tim3enW<RccApb1enr1Spec> {
+    pub fn tim3en(&mut self) -> Tim3enW<'_, RccApb1enr1Spec> {
         Tim3enW::new(self, 1)
     }
     #[doc = "Bit 2 - TIM4 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn tim4en(&mut self) -> Tim4enW<RccApb1enr1Spec> {
+    pub fn tim4en(&mut self) -> Tim4enW<'_, RccApb1enr1Spec> {
         Tim4enW::new(self, 2)
     }
     #[doc = "Bit 3 - TIM5 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn tim5en(&mut self) -> Tim5enW<RccApb1enr1Spec> {
+    pub fn tim5en(&mut self) -> Tim5enW<'_, RccApb1enr1Spec> {
         Tim5enW::new(self, 3)
     }
     #[doc = "Bit 4 - TIM6 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn tim6en(&mut self) -> Tim6enW<RccApb1enr1Spec> {
+    pub fn tim6en(&mut self) -> Tim6enW<'_, RccApb1enr1Spec> {
         Tim6enW::new(self, 4)
     }
     #[doc = "Bit 5 - TIM7 timer clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn tim7en(&mut self) -> Tim7enW<RccApb1enr1Spec> {
+    pub fn tim7en(&mut self) -> Tim7enW<'_, RccApb1enr1Spec> {
         Tim7enW::new(self, 5)
     }
     #[doc = "Bit 8 - CRS Recovery System clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn crsen(&mut self) -> CrsenW<RccApb1enr1Spec> {
+    pub fn crsen(&mut self) -> CrsenW<'_, RccApb1enr1Spec> {
         CrsenW::new(self, 8)
     }
     #[doc = "Bit 10 - RTC APB clock enable Set and cleared by software"]
     #[inline(always)]
-    pub fn rtcapben(&mut self) -> RtcapbenW<RccApb1enr1Spec> {
+    pub fn rtcapben(&mut self) -> RtcapbenW<'_, RccApb1enr1Spec> {
         RtcapbenW::new(self, 10)
     }
     #[doc = "Bit 11 - Window watchdog clock enable Set by software to enable the window watchdog clock. Reset by hardware system reset. This bit can also be set by hardware if the WWDG_SW option bit is reset."]
     #[inline(always)]
-    pub fn wwdgen(&mut self) -> WwdgenW<RccApb1enr1Spec> {
+    pub fn wwdgen(&mut self) -> WwdgenW<'_, RccApb1enr1Spec> {
         WwdgenW::new(self, 11)
     }
     #[doc = "Bit 14 - SPI2 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn spi2en(&mut self) -> Spi2enW<RccApb1enr1Spec> {
+    pub fn spi2en(&mut self) -> Spi2enW<'_, RccApb1enr1Spec> {
         Spi2enW::new(self, 14)
     }
     #[doc = "Bit 15 - SPI3 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn spi3en(&mut self) -> Spi3enW<RccApb1enr1Spec> {
+    pub fn spi3en(&mut self) -> Spi3enW<'_, RccApb1enr1Spec> {
         Spi3enW::new(self, 15)
     }
     #[doc = "Bit 17 - USART2 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn usart2en(&mut self) -> Usart2enW<RccApb1enr1Spec> {
+    pub fn usart2en(&mut self) -> Usart2enW<'_, RccApb1enr1Spec> {
         Usart2enW::new(self, 17)
     }
     #[doc = "Bit 18 - USART3 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn usart3en(&mut self) -> Usart3enW<RccApb1enr1Spec> {
+    pub fn usart3en(&mut self) -> Usart3enW<'_, RccApb1enr1Spec> {
         Usart3enW::new(self, 18)
     }
     #[doc = "Bit 19 - UART4 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn uart4en(&mut self) -> Uart4enW<RccApb1enr1Spec> {
+    pub fn uart4en(&mut self) -> Uart4enW<'_, RccApb1enr1Spec> {
         Uart4enW::new(self, 19)
     }
     #[doc = "Bit 20 - UART5 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn uart5en(&mut self) -> Uart5enW<RccApb1enr1Spec> {
+    pub fn uart5en(&mut self) -> Uart5enW<'_, RccApb1enr1Spec> {
         Uart5enW::new(self, 20)
     }
     #[doc = "Bit 21 - I2C1 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn i2c1en(&mut self) -> I2c1enW<RccApb1enr1Spec> {
+    pub fn i2c1en(&mut self) -> I2c1enW<'_, RccApb1enr1Spec> {
         I2c1enW::new(self, 21)
     }
     #[doc = "Bit 22 - I2C2 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn i2c2en(&mut self) -> I2c2enW<RccApb1enr1Spec> {
+    pub fn i2c2en(&mut self) -> I2c2enW<'_, RccApb1enr1Spec> {
         I2c2enW::new(self, 22)
     }
     #[doc = "Bit 23 - USB device clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn usben(&mut self) -> UsbenW<RccApb1enr1Spec> {
+    pub fn usben(&mut self) -> UsbenW<'_, RccApb1enr1Spec> {
         UsbenW::new(self, 23)
     }
     #[doc = "Bit 25 - FDCAN clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn fdcanen(&mut self) -> FdcanenW<RccApb1enr1Spec> {
+    pub fn fdcanen(&mut self) -> FdcanenW<'_, RccApb1enr1Spec> {
         FdcanenW::new(self, 25)
     }
     #[doc = "Bit 28 - Power interface clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn pwren(&mut self) -> PwrenW<RccApb1enr1Spec> {
+    pub fn pwren(&mut self) -> PwrenW<'_, RccApb1enr1Spec> {
         PwrenW::new(self, 28)
     }
     #[doc = "Bit 30 - I2C3 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn i2c3en(&mut self) -> I2c3enW<RccApb1enr1Spec> {
+    pub fn i2c3en(&mut self) -> I2c3enW<'_, RccApb1enr1Spec> {
         I2c3enW::new(self, 30)
     }
     #[doc = "Bit 31 - Low power timer 1 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn lptim1en(&mut self) -> Lptim1enW<RccApb1enr1Spec> {
+    pub fn lptim1en(&mut self) -> Lptim1enW<'_, RccApb1enr1Spec> {
         Lptim1enW::new(self, 31)
     }
 }

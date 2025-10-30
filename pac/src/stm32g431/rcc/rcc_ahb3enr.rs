@@ -133,12 +133,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Flexible static memory controller clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn fmcen(&mut self) -> FmcenW<RccAhb3enrSpec> {
+    pub fn fmcen(&mut self) -> FmcenW<'_, RccAhb3enrSpec> {
         FmcenW::new(self, 0)
     }
     #[doc = "Bit 8 - QUADSPI memory interface clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn qspien(&mut self) -> QspienW<RccAhb3enrSpec> {
+    pub fn qspien(&mut self) -> QspienW<'_, RccAhb3enrSpec> {
         QspienW::new(self, 8)
     }
 }

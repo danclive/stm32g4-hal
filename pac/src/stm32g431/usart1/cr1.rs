@@ -333,162 +333,162 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - USART enable"]
     #[inline(always)]
-    pub fn ue(&mut self) -> UeW<Cr1Spec> {
+    pub fn ue(&mut self) -> UeW<'_, Cr1Spec> {
         UeW::new(self, 0)
     }
     #[doc = "Bit 1 - USART enable in Stop mode"]
     #[inline(always)]
-    pub fn uesm(&mut self) -> UesmW<Cr1Spec> {
+    pub fn uesm(&mut self) -> UesmW<'_, Cr1Spec> {
         UesmW::new(self, 1)
     }
     #[doc = "Bit 2 - Receiver enable"]
     #[inline(always)]
-    pub fn re(&mut self) -> ReW<Cr1Spec> {
+    pub fn re(&mut self) -> ReW<'_, Cr1Spec> {
         ReW::new(self, 2)
     }
     #[doc = "Bit 3 - Transmitter enable"]
     #[inline(always)]
-    pub fn te(&mut self) -> TeW<Cr1Spec> {
+    pub fn te(&mut self) -> TeW<'_, Cr1Spec> {
         TeW::new(self, 3)
     }
     #[doc = "Bit 4 - IDLE interrupt enable"]
     #[inline(always)]
-    pub fn idleie(&mut self) -> IdleieW<Cr1Spec> {
+    pub fn idleie(&mut self) -> IdleieW<'_, Cr1Spec> {
         IdleieW::new(self, 4)
     }
     #[doc = "Bit 5 - RXNE interrupt enable"]
     #[inline(always)]
-    pub fn rxneie(&mut self) -> RxneieW<Cr1Spec> {
+    pub fn rxneie(&mut self) -> RxneieW<'_, Cr1Spec> {
         RxneieW::new(self, 5)
     }
     #[doc = "Bit 6 - Transmission complete interrupt enable"]
     #[inline(always)]
-    pub fn tcie(&mut self) -> TcieW<Cr1Spec> {
+    pub fn tcie(&mut self) -> TcieW<'_, Cr1Spec> {
         TcieW::new(self, 6)
     }
     #[doc = "Bit 7 - interrupt enable"]
     #[inline(always)]
-    pub fn txeie(&mut self) -> TxeieW<Cr1Spec> {
+    pub fn txeie(&mut self) -> TxeieW<'_, Cr1Spec> {
         TxeieW::new(self, 7)
     }
     #[doc = "Bit 8 - PE interrupt enable"]
     #[inline(always)]
-    pub fn peie(&mut self) -> PeieW<Cr1Spec> {
+    pub fn peie(&mut self) -> PeieW<'_, Cr1Spec> {
         PeieW::new(self, 8)
     }
     #[doc = "Bit 9 - Parity selection"]
     #[inline(always)]
-    pub fn ps(&mut self) -> PsW<Cr1Spec> {
+    pub fn ps(&mut self) -> PsW<'_, Cr1Spec> {
         PsW::new(self, 9)
     }
     #[doc = "Bit 10 - Parity control enable"]
     #[inline(always)]
-    pub fn pce(&mut self) -> PceW<Cr1Spec> {
+    pub fn pce(&mut self) -> PceW<'_, Cr1Spec> {
         PceW::new(self, 10)
     }
     #[doc = "Bit 11 - Receiver wakeup method"]
     #[inline(always)]
-    pub fn wake(&mut self) -> WakeW<Cr1Spec> {
+    pub fn wake(&mut self) -> WakeW<'_, Cr1Spec> {
         WakeW::new(self, 11)
     }
     #[doc = "Bit 12 - Word length"]
     #[inline(always)]
-    pub fn m0(&mut self) -> M0W<Cr1Spec> {
+    pub fn m0(&mut self) -> M0W<'_, Cr1Spec> {
         M0W::new(self, 12)
     }
     #[doc = "Bit 13 - Mute mode enable"]
     #[inline(always)]
-    pub fn mme(&mut self) -> MmeW<Cr1Spec> {
+    pub fn mme(&mut self) -> MmeW<'_, Cr1Spec> {
         MmeW::new(self, 13)
     }
     #[doc = "Bit 14 - Character match interrupt enable"]
     #[inline(always)]
-    pub fn cmie(&mut self) -> CmieW<Cr1Spec> {
+    pub fn cmie(&mut self) -> CmieW<'_, Cr1Spec> {
         CmieW::new(self, 14)
     }
     #[doc = "Bit 15 - Oversampling mode"]
     #[inline(always)]
-    pub fn over8(&mut self) -> Over8W<Cr1Spec> {
+    pub fn over8(&mut self) -> Over8W<'_, Cr1Spec> {
         Over8W::new(self, 15)
     }
     #[doc = "Bit 16 - DEDT0"]
     #[inline(always)]
-    pub fn dedt0(&mut self) -> Dedt0W<Cr1Spec> {
+    pub fn dedt0(&mut self) -> Dedt0W<'_, Cr1Spec> {
         Dedt0W::new(self, 16)
     }
     #[doc = "Bit 17 - DEDT1"]
     #[inline(always)]
-    pub fn dedt1(&mut self) -> Dedt1W<Cr1Spec> {
+    pub fn dedt1(&mut self) -> Dedt1W<'_, Cr1Spec> {
         Dedt1W::new(self, 17)
     }
     #[doc = "Bit 18 - DEDT2"]
     #[inline(always)]
-    pub fn dedt2(&mut self) -> Dedt2W<Cr1Spec> {
+    pub fn dedt2(&mut self) -> Dedt2W<'_, Cr1Spec> {
         Dedt2W::new(self, 18)
     }
     #[doc = "Bit 19 - DEDT3"]
     #[inline(always)]
-    pub fn dedt3(&mut self) -> Dedt3W<Cr1Spec> {
+    pub fn dedt3(&mut self) -> Dedt3W<'_, Cr1Spec> {
         Dedt3W::new(self, 19)
     }
     #[doc = "Bit 20 - Driver Enable de-assertion time"]
     #[inline(always)]
-    pub fn dedt4(&mut self) -> Dedt4W<Cr1Spec> {
+    pub fn dedt4(&mut self) -> Dedt4W<'_, Cr1Spec> {
         Dedt4W::new(self, 20)
     }
     #[doc = "Bit 21 - DEAT0"]
     #[inline(always)]
-    pub fn deat0(&mut self) -> Deat0W<Cr1Spec> {
+    pub fn deat0(&mut self) -> Deat0W<'_, Cr1Spec> {
         Deat0W::new(self, 21)
     }
     #[doc = "Bit 22 - DEAT1"]
     #[inline(always)]
-    pub fn deat1(&mut self) -> Deat1W<Cr1Spec> {
+    pub fn deat1(&mut self) -> Deat1W<'_, Cr1Spec> {
         Deat1W::new(self, 22)
     }
     #[doc = "Bit 23 - DEAT2"]
     #[inline(always)]
-    pub fn deat2(&mut self) -> Deat2W<Cr1Spec> {
+    pub fn deat2(&mut self) -> Deat2W<'_, Cr1Spec> {
         Deat2W::new(self, 23)
     }
     #[doc = "Bit 24 - DEAT3"]
     #[inline(always)]
-    pub fn deat3(&mut self) -> Deat3W<Cr1Spec> {
+    pub fn deat3(&mut self) -> Deat3W<'_, Cr1Spec> {
         Deat3W::new(self, 24)
     }
     #[doc = "Bit 25 - Driver Enable assertion time"]
     #[inline(always)]
-    pub fn deat4(&mut self) -> Deat4W<Cr1Spec> {
+    pub fn deat4(&mut self) -> Deat4W<'_, Cr1Spec> {
         Deat4W::new(self, 25)
     }
     #[doc = "Bit 26 - Receiver timeout interrupt enable"]
     #[inline(always)]
-    pub fn rtoie(&mut self) -> RtoieW<Cr1Spec> {
+    pub fn rtoie(&mut self) -> RtoieW<'_, Cr1Spec> {
         RtoieW::new(self, 26)
     }
     #[doc = "Bit 27 - End of Block interrupt enable"]
     #[inline(always)]
-    pub fn eobie(&mut self) -> EobieW<Cr1Spec> {
+    pub fn eobie(&mut self) -> EobieW<'_, Cr1Spec> {
         EobieW::new(self, 27)
     }
     #[doc = "Bit 28 - M1"]
     #[inline(always)]
-    pub fn m1(&mut self) -> M1W<Cr1Spec> {
+    pub fn m1(&mut self) -> M1W<'_, Cr1Spec> {
         M1W::new(self, 28)
     }
     #[doc = "Bit 29 - FIFOEN"]
     #[inline(always)]
-    pub fn fifoen(&mut self) -> FifoenW<Cr1Spec> {
+    pub fn fifoen(&mut self) -> FifoenW<'_, Cr1Spec> {
         FifoenW::new(self, 29)
     }
     #[doc = "Bit 30 - TXFEIE"]
     #[inline(always)]
-    pub fn txfeie(&mut self) -> TxfeieW<Cr1Spec> {
+    pub fn txfeie(&mut self) -> TxfeieW<'_, Cr1Spec> {
         TxfeieW::new(self, 30)
     }
     #[doc = "Bit 31 - RXFFIE"]
     #[inline(always)]
-    pub fn rxffie(&mut self) -> RxffieW<Cr1Spec> {
+    pub fn rxffie(&mut self) -> RxffieW<'_, Cr1Spec> {
         RxffieW::new(self, 31)
     }
 }

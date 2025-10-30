@@ -153,72 +153,72 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - Second units in BCD format"]
     #[inline(always)]
-    pub fn su(&mut self) -> SuW<AlrmbrSpec> {
+    pub fn su(&mut self) -> SuW<'_, AlrmbrSpec> {
         SuW::new(self, 0)
     }
     #[doc = "Bits 4:6 - Second tens in BCD format"]
     #[inline(always)]
-    pub fn st(&mut self) -> StW<AlrmbrSpec> {
+    pub fn st(&mut self) -> StW<'_, AlrmbrSpec> {
         StW::new(self, 4)
     }
     #[doc = "Bit 7 - Alarm B seconds mask"]
     #[inline(always)]
-    pub fn msk1(&mut self) -> Msk1W<AlrmbrSpec> {
+    pub fn msk1(&mut self) -> Msk1W<'_, AlrmbrSpec> {
         Msk1W::new(self, 7)
     }
     #[doc = "Bits 8:11 - Minute units in BCD format"]
     #[inline(always)]
-    pub fn mnu(&mut self) -> MnuW<AlrmbrSpec> {
+    pub fn mnu(&mut self) -> MnuW<'_, AlrmbrSpec> {
         MnuW::new(self, 8)
     }
     #[doc = "Bits 12:14 - Minute tens in BCD format"]
     #[inline(always)]
-    pub fn mnt(&mut self) -> MntW<AlrmbrSpec> {
+    pub fn mnt(&mut self) -> MntW<'_, AlrmbrSpec> {
         MntW::new(self, 12)
     }
     #[doc = "Bit 15 - Alarm B minutes mask"]
     #[inline(always)]
-    pub fn msk2(&mut self) -> Msk2W<AlrmbrSpec> {
+    pub fn msk2(&mut self) -> Msk2W<'_, AlrmbrSpec> {
         Msk2W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Hour units in BCD format"]
     #[inline(always)]
-    pub fn hu(&mut self) -> HuW<AlrmbrSpec> {
+    pub fn hu(&mut self) -> HuW<'_, AlrmbrSpec> {
         HuW::new(self, 16)
     }
     #[doc = "Bits 20:21 - Hour tens in BCD format"]
     #[inline(always)]
-    pub fn ht(&mut self) -> HtW<AlrmbrSpec> {
+    pub fn ht(&mut self) -> HtW<'_, AlrmbrSpec> {
         HtW::new(self, 20)
     }
     #[doc = "Bit 22 - AM/PM notation"]
     #[inline(always)]
-    pub fn pm(&mut self) -> PmW<AlrmbrSpec> {
+    pub fn pm(&mut self) -> PmW<'_, AlrmbrSpec> {
         PmW::new(self, 22)
     }
     #[doc = "Bit 23 - Alarm B hours mask"]
     #[inline(always)]
-    pub fn msk3(&mut self) -> Msk3W<AlrmbrSpec> {
+    pub fn msk3(&mut self) -> Msk3W<'_, AlrmbrSpec> {
         Msk3W::new(self, 23)
     }
     #[doc = "Bits 24:27 - Date units or day in BCD format"]
     #[inline(always)]
-    pub fn du(&mut self) -> DuW<AlrmbrSpec> {
+    pub fn du(&mut self) -> DuW<'_, AlrmbrSpec> {
         DuW::new(self, 24)
     }
     #[doc = "Bits 28:29 - Date tens in BCD format"]
     #[inline(always)]
-    pub fn dt(&mut self) -> DtW<AlrmbrSpec> {
+    pub fn dt(&mut self) -> DtW<'_, AlrmbrSpec> {
         DtW::new(self, 28)
     }
     #[doc = "Bit 30 - Week day selection"]
     #[inline(always)]
-    pub fn wdsel(&mut self) -> WdselW<AlrmbrSpec> {
+    pub fn wdsel(&mut self) -> WdselW<'_, AlrmbrSpec> {
         WdselW::new(self, 30)
     }
     #[doc = "Bit 31 - Alarm B date mask"]
     #[inline(always)]
-    pub fn msk4(&mut self) -> Msk4W<AlrmbrSpec> {
+    pub fn msk4(&mut self) -> Msk4W<'_, AlrmbrSpec> {
         Msk4W::new(self, 31)
     }
 }

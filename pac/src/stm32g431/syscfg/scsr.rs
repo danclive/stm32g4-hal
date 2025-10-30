@@ -31,7 +31,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - CCM SRAM Erase"]
     #[inline(always)]
-    pub fn ccmer(&mut self) -> CcmerW<ScsrSpec> {
+    pub fn ccmer(&mut self) -> CcmerW<'_, ScsrSpec> {
         CcmerW::new(self, 0)
     }
 }

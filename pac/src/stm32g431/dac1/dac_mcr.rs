@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - DAC Channel 1 mode These bits can be written only when the DAC is disabled and not in the calibration mode (when bit EN1=0 and bit CEN1 =0 in the DAC_CR register). If EN1=1 or CEN1 =1 the write operation is ignored. They can be set and cleared by software to select the DAC Channel 1 mode: DAC Channel 1 in normal Mode DAC Channel 1 in sample &amp; hold mode"]
     #[inline(always)]
-    pub fn mode1(&mut self) -> Mode1W<DacMcrSpec> {
+    pub fn mode1(&mut self) -> Mode1W<'_, DacMcrSpec> {
         Mode1W::new(self, 0)
     }
     #[doc = "Bit 8 - DAC Channel1 DMA double data mode"]
     #[inline(always)]
-    pub fn dmadouble1(&mut self) -> Dmadouble1W<DacMcrSpec> {
+    pub fn dmadouble1(&mut self) -> Dmadouble1W<'_, DacMcrSpec> {
         Dmadouble1W::new(self, 8)
     }
     #[doc = "Bit 9 - Enable signed format for DAC channel1"]
     #[inline(always)]
-    pub fn sinformat1(&mut self) -> Sinformat1W<DacMcrSpec> {
+    pub fn sinformat1(&mut self) -> Sinformat1W<'_, DacMcrSpec> {
         Sinformat1W::new(self, 9)
     }
     #[doc = "Bits 14:15 - High frequency interface mode selection"]
     #[inline(always)]
-    pub fn hfsel(&mut self) -> HfselW<DacMcrSpec> {
+    pub fn hfsel(&mut self) -> HfselW<'_, DacMcrSpec> {
         HfselW::new(self, 14)
     }
     #[doc = "Bits 16:18 - DAC Channel 2 mode These bits can be written only when the DAC is disabled and not in the calibration mode (when bit EN2=0 and bit CEN2 =0 in the DAC_CR register). If EN2=1 or CEN2 =1 the write operation is ignored. They can be set and cleared by software to select the DAC Channel 2 mode: DAC Channel 2 in normal Mode DAC Channel 2 in sample &amp; hold mode"]
     #[inline(always)]
-    pub fn mode2(&mut self) -> Mode2W<DacMcrSpec> {
+    pub fn mode2(&mut self) -> Mode2W<'_, DacMcrSpec> {
         Mode2W::new(self, 16)
     }
     #[doc = "Bit 24 - DAC Channel2 DMA double data mode"]
     #[inline(always)]
-    pub fn dmadouble2(&mut self) -> Dmadouble2W<DacMcrSpec> {
+    pub fn dmadouble2(&mut self) -> Dmadouble2W<'_, DacMcrSpec> {
         Dmadouble2W::new(self, 24)
     }
     #[doc = "Bit 25 - Enable signed format for DAC channel2"]
     #[inline(always)]
-    pub fn sinformat2(&mut self) -> Sinformat2W<DacMcrSpec> {
+    pub fn sinformat2(&mut self) -> Sinformat2W<'_, DacMcrSpec> {
         Sinformat2W::new(self, 25)
     }
 }

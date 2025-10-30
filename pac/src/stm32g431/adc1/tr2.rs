@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - LT2"]
     #[inline(always)]
-    pub fn lt2(&mut self) -> Lt2W<Tr2Spec> {
+    pub fn lt2(&mut self) -> Lt2W<'_, Tr2Spec> {
         Lt2W::new(self, 0)
     }
     #[doc = "Bits 16:23 - HT2"]
     #[inline(always)]
-    pub fn ht2(&mut self) -> Ht2W<Tr2Spec> {
+    pub fn ht2(&mut self) -> Ht2W<'_, Tr2Spec> {
         Ht2W::new(self, 16)
     }
 }

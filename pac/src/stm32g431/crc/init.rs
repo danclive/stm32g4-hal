@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - Programmable initial CRC value"]
     #[inline(always)]
-    pub fn crc_init(&mut self) -> CrcInitW<InitSpec> {
+    pub fn crc_init(&mut self) -> CrcInitW<'_, InitSpec> {
         CrcInitW::new(self, 0)
     }
 }

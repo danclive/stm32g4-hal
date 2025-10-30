@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr0(&mut self) -> Ospeedr0W<OspeedrSpec> {
+    pub fn ospeedr0(&mut self) -> Ospeedr0W<'_, OspeedrSpec> {
         Ospeedr0W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr1(&mut self) -> Ospeedr1W<OspeedrSpec> {
+    pub fn ospeedr1(&mut self) -> Ospeedr1W<'_, OspeedrSpec> {
         Ospeedr1W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr2(&mut self) -> Ospeedr2W<OspeedrSpec> {
+    pub fn ospeedr2(&mut self) -> Ospeedr2W<'_, OspeedrSpec> {
         Ospeedr2W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr3(&mut self) -> Ospeedr3W<OspeedrSpec> {
+    pub fn ospeedr3(&mut self) -> Ospeedr3W<'_, OspeedrSpec> {
         Ospeedr3W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr4(&mut self) -> Ospeedr4W<OspeedrSpec> {
+    pub fn ospeedr4(&mut self) -> Ospeedr4W<'_, OspeedrSpec> {
         Ospeedr4W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr5(&mut self) -> Ospeedr5W<OspeedrSpec> {
+    pub fn ospeedr5(&mut self) -> Ospeedr5W<'_, OspeedrSpec> {
         Ospeedr5W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr6(&mut self) -> Ospeedr6W<OspeedrSpec> {
+    pub fn ospeedr6(&mut self) -> Ospeedr6W<'_, OspeedrSpec> {
         Ospeedr6W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr7(&mut self) -> Ospeedr7W<OspeedrSpec> {
+    pub fn ospeedr7(&mut self) -> Ospeedr7W<'_, OspeedrSpec> {
         Ospeedr7W::new(self, 14)
     }
     #[doc = "Bits 16:17 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr8(&mut self) -> Ospeedr8W<OspeedrSpec> {
+    pub fn ospeedr8(&mut self) -> Ospeedr8W<'_, OspeedrSpec> {
         Ospeedr8W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr9(&mut self) -> Ospeedr9W<OspeedrSpec> {
+    pub fn ospeedr9(&mut self) -> Ospeedr9W<'_, OspeedrSpec> {
         Ospeedr9W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr10(&mut self) -> Ospeedr10W<OspeedrSpec> {
+    pub fn ospeedr10(&mut self) -> Ospeedr10W<'_, OspeedrSpec> {
         Ospeedr10W::new(self, 20)
     }
     #[doc = "Bits 22:23 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr11(&mut self) -> Ospeedr11W<OspeedrSpec> {
+    pub fn ospeedr11(&mut self) -> Ospeedr11W<'_, OspeedrSpec> {
         Ospeedr11W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr12(&mut self) -> Ospeedr12W<OspeedrSpec> {
+    pub fn ospeedr12(&mut self) -> Ospeedr12W<'_, OspeedrSpec> {
         Ospeedr12W::new(self, 24)
     }
     #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr13(&mut self) -> Ospeedr13W<OspeedrSpec> {
+    pub fn ospeedr13(&mut self) -> Ospeedr13W<'_, OspeedrSpec> {
         Ospeedr13W::new(self, 26)
     }
     #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr14(&mut self) -> Ospeedr14W<OspeedrSpec> {
+    pub fn ospeedr14(&mut self) -> Ospeedr14W<'_, OspeedrSpec> {
         Ospeedr14W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr15(&mut self) -> Ospeedr15W<OspeedrSpec> {
+    pub fn ospeedr15(&mut self) -> Ospeedr15W<'_, OspeedrSpec> {
         Ospeedr15W::new(self, 30)
     }
 }

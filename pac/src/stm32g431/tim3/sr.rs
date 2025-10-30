@@ -213,102 +213,102 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Update interrupt flag"]
     #[inline(always)]
-    pub fn uif(&mut self) -> UifW<SrSpec> {
+    pub fn uif(&mut self) -> UifW<'_, SrSpec> {
         UifW::new(self, 0)
     }
     #[doc = "Bit 1 - Capture/compare 1 interrupt flag"]
     #[inline(always)]
-    pub fn cc1if(&mut self) -> Cc1ifW<SrSpec> {
+    pub fn cc1if(&mut self) -> Cc1ifW<'_, SrSpec> {
         Cc1ifW::new(self, 1)
     }
     #[doc = "Bit 2 - Capture/Compare 2 interrupt flag"]
     #[inline(always)]
-    pub fn cc2if(&mut self) -> Cc2ifW<SrSpec> {
+    pub fn cc2if(&mut self) -> Cc2ifW<'_, SrSpec> {
         Cc2ifW::new(self, 2)
     }
     #[doc = "Bit 3 - Capture/Compare 3 interrupt flag"]
     #[inline(always)]
-    pub fn cc3if(&mut self) -> Cc3ifW<SrSpec> {
+    pub fn cc3if(&mut self) -> Cc3ifW<'_, SrSpec> {
         Cc3ifW::new(self, 3)
     }
     #[doc = "Bit 4 - Capture/Compare 4 interrupt flag"]
     #[inline(always)]
-    pub fn cc4if(&mut self) -> Cc4ifW<SrSpec> {
+    pub fn cc4if(&mut self) -> Cc4ifW<'_, SrSpec> {
         Cc4ifW::new(self, 4)
     }
     #[doc = "Bit 5 - COM interrupt flag"]
     #[inline(always)]
-    pub fn comif(&mut self) -> ComifW<SrSpec> {
+    pub fn comif(&mut self) -> ComifW<'_, SrSpec> {
         ComifW::new(self, 5)
     }
     #[doc = "Bit 6 - Trigger interrupt flag"]
     #[inline(always)]
-    pub fn tif(&mut self) -> TifW<SrSpec> {
+    pub fn tif(&mut self) -> TifW<'_, SrSpec> {
         TifW::new(self, 6)
     }
     #[doc = "Bit 7 - Break interrupt flag"]
     #[inline(always)]
-    pub fn bif(&mut self) -> BifW<SrSpec> {
+    pub fn bif(&mut self) -> BifW<'_, SrSpec> {
         BifW::new(self, 7)
     }
     #[doc = "Bit 8 - Break 2 interrupt flag"]
     #[inline(always)]
-    pub fn b2if(&mut self) -> B2ifW<SrSpec> {
+    pub fn b2if(&mut self) -> B2ifW<'_, SrSpec> {
         B2ifW::new(self, 8)
     }
     #[doc = "Bit 9 - Capture/Compare 1 overcapture flag"]
     #[inline(always)]
-    pub fn cc1of(&mut self) -> Cc1ofW<SrSpec> {
+    pub fn cc1of(&mut self) -> Cc1ofW<'_, SrSpec> {
         Cc1ofW::new(self, 9)
     }
     #[doc = "Bit 10 - Capture/compare 2 overcapture flag"]
     #[inline(always)]
-    pub fn cc2of(&mut self) -> Cc2ofW<SrSpec> {
+    pub fn cc2of(&mut self) -> Cc2ofW<'_, SrSpec> {
         Cc2ofW::new(self, 10)
     }
     #[doc = "Bit 11 - Capture/Compare 3 overcapture flag"]
     #[inline(always)]
-    pub fn cc3of(&mut self) -> Cc3ofW<SrSpec> {
+    pub fn cc3of(&mut self) -> Cc3ofW<'_, SrSpec> {
         Cc3ofW::new(self, 11)
     }
     #[doc = "Bit 12 - Capture/Compare 4 overcapture flag"]
     #[inline(always)]
-    pub fn cc4of(&mut self) -> Cc4ofW<SrSpec> {
+    pub fn cc4of(&mut self) -> Cc4ofW<'_, SrSpec> {
         Cc4ofW::new(self, 12)
     }
     #[doc = "Bit 13 - System Break interrupt flag"]
     #[inline(always)]
-    pub fn sbif(&mut self) -> SbifW<SrSpec> {
+    pub fn sbif(&mut self) -> SbifW<'_, SrSpec> {
         SbifW::new(self, 13)
     }
     #[doc = "Bit 16 - Compare 5 interrupt flag"]
     #[inline(always)]
-    pub fn cc5if(&mut self) -> Cc5ifW<SrSpec> {
+    pub fn cc5if(&mut self) -> Cc5ifW<'_, SrSpec> {
         Cc5ifW::new(self, 16)
     }
     #[doc = "Bit 17 - Compare 6 interrupt flag"]
     #[inline(always)]
-    pub fn cc6if(&mut self) -> Cc6ifW<SrSpec> {
+    pub fn cc6if(&mut self) -> Cc6ifW<'_, SrSpec> {
         Cc6ifW::new(self, 17)
     }
     #[doc = "Bit 20 - Index interrupt flag"]
     #[inline(always)]
-    pub fn idxf(&mut self) -> IdxfW<SrSpec> {
+    pub fn idxf(&mut self) -> IdxfW<'_, SrSpec> {
         IdxfW::new(self, 20)
     }
     #[doc = "Bit 21 - Direction Change interrupt flag"]
     #[inline(always)]
-    pub fn dirf(&mut self) -> DirfW<SrSpec> {
+    pub fn dirf(&mut self) -> DirfW<'_, SrSpec> {
         DirfW::new(self, 21)
     }
     #[doc = "Bit 22 - Index Error interrupt flag"]
     #[inline(always)]
-    pub fn ierrf(&mut self) -> IerrfW<SrSpec> {
+    pub fn ierrf(&mut self) -> IerrfW<'_, SrSpec> {
         IerrfW::new(self, 22)
     }
     #[doc = "Bit 23 - Transition Error interrupt flag"]
     #[inline(always)]
-    pub fn terrf(&mut self) -> TerrfW<SrSpec> {
+    pub fn terrf(&mut self) -> TerrfW<'_, SrSpec> {
         TerrfW::new(self, 23)
     }
 }

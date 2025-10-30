@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:9 - Interface address"]
     #[inline(always)]
-    pub fn oa1(&mut self) -> Oa1W<Oar1Spec> {
+    pub fn oa1(&mut self) -> Oa1W<'_, Oar1Spec> {
         Oa1W::new(self, 0)
     }
     #[doc = "Bit 10 - Own Address 1 10-bit mode"]
     #[inline(always)]
-    pub fn oa1mode(&mut self) -> Oa1modeW<Oar1Spec> {
+    pub fn oa1mode(&mut self) -> Oa1modeW<'_, Oar1Spec> {
         Oa1modeW::new(self, 10)
     }
     #[doc = "Bit 15 - Own Address 1 enable"]
     #[inline(always)]
-    pub fn oa1en(&mut self) -> Oa1enW<Oar1Spec> {
+    pub fn oa1en(&mut self) -> Oa1enW<'_, Oar1Spec> {
         Oa1enW::new(self, 15)
     }
 }

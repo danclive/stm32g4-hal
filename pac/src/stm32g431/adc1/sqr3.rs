@@ -63,27 +63,27 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:4 - SQ10"]
     #[inline(always)]
-    pub fn sq10(&mut self) -> Sq10W<Sqr3Spec> {
+    pub fn sq10(&mut self) -> Sq10W<'_, Sqr3Spec> {
         Sq10W::new(self, 0)
     }
     #[doc = "Bits 6:10 - SQ11"]
     #[inline(always)]
-    pub fn sq11(&mut self) -> Sq11W<Sqr3Spec> {
+    pub fn sq11(&mut self) -> Sq11W<'_, Sqr3Spec> {
         Sq11W::new(self, 6)
     }
     #[doc = "Bits 12:16 - SQ12"]
     #[inline(always)]
-    pub fn sq12(&mut self) -> Sq12W<Sqr3Spec> {
+    pub fn sq12(&mut self) -> Sq12W<'_, Sqr3Spec> {
         Sq12W::new(self, 12)
     }
     #[doc = "Bits 18:22 - SQ13"]
     #[inline(always)]
-    pub fn sq13(&mut self) -> Sq13W<Sqr3Spec> {
+    pub fn sq13(&mut self) -> Sq13W<'_, Sqr3Spec> {
         Sq13W::new(self, 18)
     }
     #[doc = "Bits 24:28 - SQ14"]
     #[inline(always)]
-    pub fn sq14(&mut self) -> Sq14W<Sqr3Spec> {
+    pub fn sq14(&mut self) -> Sq14W<'_, Sqr3Spec> {
         Sq14W::new(self, 24)
     }
 }

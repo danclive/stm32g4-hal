@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:6 - Nominal time segment after sample point Valid values are 0 to 127. The actual interpretation by the hardware of this value is such that one more than the programmed value is used."]
     #[inline(always)]
-    pub fn ntseg2(&mut self) -> Ntseg2W<FdcanNbtpSpec> {
+    pub fn ntseg2(&mut self) -> Ntseg2W<'_, FdcanNbtpSpec> {
         Ntseg2W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Nominal time segment before sample point Valid values are 0 to 255. The actual interpretation by the hardware of this value is such that one more than the programmed value is used. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn ntseg1(&mut self) -> Ntseg1W<FdcanNbtpSpec> {
+    pub fn ntseg1(&mut self) -> Ntseg1W<'_, FdcanNbtpSpec> {
         Ntseg1W::new(self, 8)
     }
     #[doc = "Bits 16:24 - Bit rate prescaler Value by which the oscillator frequency is divided for generating the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values are 0 to 511. The actual interpretation by the hardware of this value is such that one more than the value programmed here is used. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn nbrp(&mut self) -> NbrpW<FdcanNbtpSpec> {
+    pub fn nbrp(&mut self) -> NbrpW<'_, FdcanNbtpSpec> {
         NbrpW::new(self, 16)
     }
     #[doc = "Bits 25:31 - Nominal (re)synchronization jump width Valid values are 0 to 127. The actual interpretation by the hardware of this value is such that the used value is the one programmed incremented by one. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn nsjw(&mut self) -> NsjwW<FdcanNbtpSpec> {
+    pub fn nsjw(&mut self) -> NsjwW<'_, FdcanNbtpSpec> {
         NsjwW::new(self, 25)
     }
 }

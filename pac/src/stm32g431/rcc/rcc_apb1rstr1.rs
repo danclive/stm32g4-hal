@@ -1213,102 +1213,102 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - TIM2 timer reset Set and cleared by software."]
     #[inline(always)]
-    pub fn tim2rst(&mut self) -> Tim2rstW<RccApb1rstr1Spec> {
+    pub fn tim2rst(&mut self) -> Tim2rstW<'_, RccApb1rstr1Spec> {
         Tim2rstW::new(self, 0)
     }
     #[doc = "Bit 1 - TIM3 timer reset Set and cleared by software."]
     #[inline(always)]
-    pub fn tim3rst(&mut self) -> Tim3rstW<RccApb1rstr1Spec> {
+    pub fn tim3rst(&mut self) -> Tim3rstW<'_, RccApb1rstr1Spec> {
         Tim3rstW::new(self, 1)
     }
     #[doc = "Bit 2 - TIM3 timer reset Set and cleared by software."]
     #[inline(always)]
-    pub fn tim4rst(&mut self) -> Tim4rstW<RccApb1rstr1Spec> {
+    pub fn tim4rst(&mut self) -> Tim4rstW<'_, RccApb1rstr1Spec> {
         Tim4rstW::new(self, 2)
     }
     #[doc = "Bit 3 - TIM5 timer reset Set and cleared by software."]
     #[inline(always)]
-    pub fn tim5rst(&mut self) -> Tim5rstW<RccApb1rstr1Spec> {
+    pub fn tim5rst(&mut self) -> Tim5rstW<'_, RccApb1rstr1Spec> {
         Tim5rstW::new(self, 3)
     }
     #[doc = "Bit 4 - TIM6 timer reset Set and cleared by software."]
     #[inline(always)]
-    pub fn tim6rst(&mut self) -> Tim6rstW<RccApb1rstr1Spec> {
+    pub fn tim6rst(&mut self) -> Tim6rstW<'_, RccApb1rstr1Spec> {
         Tim6rstW::new(self, 4)
     }
     #[doc = "Bit 5 - TIM7 timer reset Set and cleared by software."]
     #[inline(always)]
-    pub fn tim7rst(&mut self) -> Tim7rstW<RccApb1rstr1Spec> {
+    pub fn tim7rst(&mut self) -> Tim7rstW<'_, RccApb1rstr1Spec> {
         Tim7rstW::new(self, 5)
     }
     #[doc = "Bit 8 - CRS reset Set and cleared by software."]
     #[inline(always)]
-    pub fn crsrst(&mut self) -> CrsrstW<RccApb1rstr1Spec> {
+    pub fn crsrst(&mut self) -> CrsrstW<'_, RccApb1rstr1Spec> {
         CrsrstW::new(self, 8)
     }
     #[doc = "Bit 14 - SPI2 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn spi2rst(&mut self) -> Spi2rstW<RccApb1rstr1Spec> {
+    pub fn spi2rst(&mut self) -> Spi2rstW<'_, RccApb1rstr1Spec> {
         Spi2rstW::new(self, 14)
     }
     #[doc = "Bit 15 - SPI3 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn spi3rst(&mut self) -> Spi3rstW<RccApb1rstr1Spec> {
+    pub fn spi3rst(&mut self) -> Spi3rstW<'_, RccApb1rstr1Spec> {
         Spi3rstW::new(self, 15)
     }
     #[doc = "Bit 17 - USART2 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn usart2rst(&mut self) -> Usart2rstW<RccApb1rstr1Spec> {
+    pub fn usart2rst(&mut self) -> Usart2rstW<'_, RccApb1rstr1Spec> {
         Usart2rstW::new(self, 17)
     }
     #[doc = "Bit 18 - USART3 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn usart3rst(&mut self) -> Usart3rstW<RccApb1rstr1Spec> {
+    pub fn usart3rst(&mut self) -> Usart3rstW<'_, RccApb1rstr1Spec> {
         Usart3rstW::new(self, 18)
     }
     #[doc = "Bit 19 - UART4 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn uart4rst(&mut self) -> Uart4rstW<RccApb1rstr1Spec> {
+    pub fn uart4rst(&mut self) -> Uart4rstW<'_, RccApb1rstr1Spec> {
         Uart4rstW::new(self, 19)
     }
     #[doc = "Bit 20 - UART5 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn uart5rst(&mut self) -> Uart5rstW<RccApb1rstr1Spec> {
+    pub fn uart5rst(&mut self) -> Uart5rstW<'_, RccApb1rstr1Spec> {
         Uart5rstW::new(self, 20)
     }
     #[doc = "Bit 21 - I2C1 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn i2c1rst(&mut self) -> I2c1rstW<RccApb1rstr1Spec> {
+    pub fn i2c1rst(&mut self) -> I2c1rstW<'_, RccApb1rstr1Spec> {
         I2c1rstW::new(self, 21)
     }
     #[doc = "Bit 22 - I2C2 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn i2c2rst(&mut self) -> I2c2rstW<RccApb1rstr1Spec> {
+    pub fn i2c2rst(&mut self) -> I2c2rstW<'_, RccApb1rstr1Spec> {
         I2c2rstW::new(self, 22)
     }
     #[doc = "Bit 23 - USB device reset Set and reset by software."]
     #[inline(always)]
-    pub fn usbrst(&mut self) -> UsbrstW<RccApb1rstr1Spec> {
+    pub fn usbrst(&mut self) -> UsbrstW<'_, RccApb1rstr1Spec> {
         UsbrstW::new(self, 23)
     }
     #[doc = "Bit 25 - FDCAN reset Set and reset by software."]
     #[inline(always)]
-    pub fn fdcanrst(&mut self) -> FdcanrstW<RccApb1rstr1Spec> {
+    pub fn fdcanrst(&mut self) -> FdcanrstW<'_, RccApb1rstr1Spec> {
         FdcanrstW::new(self, 25)
     }
     #[doc = "Bit 28 - Power interface reset Set and cleared by software."]
     #[inline(always)]
-    pub fn pwrrst(&mut self) -> PwrrstW<RccApb1rstr1Spec> {
+    pub fn pwrrst(&mut self) -> PwrrstW<'_, RccApb1rstr1Spec> {
         PwrrstW::new(self, 28)
     }
     #[doc = "Bit 30 - I2C3 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn i2c3rst(&mut self) -> I2c3rstW<RccApb1rstr1Spec> {
+    pub fn i2c3rst(&mut self) -> I2c3rstW<'_, RccApb1rstr1Spec> {
         I2c3rstW::new(self, 30)
     }
     #[doc = "Bit 31 - Low Power Timer 1 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn lptim1rst(&mut self) -> Lptim1rstW<RccApb1rstr1Spec> {
+    pub fn lptim1rst(&mut self) -> Lptim1rstW<'_, RccApb1rstr1Spec> {
         Lptim1rstW::new(self, 31)
     }
 }

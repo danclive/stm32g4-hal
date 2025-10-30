@@ -733,62 +733,62 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - SYSCFG + COMP + VREFBUF + OPAMP clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn syscfgsmen(&mut self) -> SyscfgsmenW<RccApb2smenrSpec> {
+    pub fn syscfgsmen(&mut self) -> SyscfgsmenW<'_, RccApb2smenrSpec> {
         SyscfgsmenW::new(self, 0)
     }
     #[doc = "Bit 11 - TIM1 timer clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn tim1smen(&mut self) -> Tim1smenW<RccApb2smenrSpec> {
+    pub fn tim1smen(&mut self) -> Tim1smenW<'_, RccApb2smenrSpec> {
         Tim1smenW::new(self, 11)
     }
     #[doc = "Bit 12 - SPI1 clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn spi1smen(&mut self) -> Spi1smenW<RccApb2smenrSpec> {
+    pub fn spi1smen(&mut self) -> Spi1smenW<'_, RccApb2smenrSpec> {
         Spi1smenW::new(self, 12)
     }
     #[doc = "Bit 13 - TIM8 timer clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn tim8smen(&mut self) -> Tim8smenW<RccApb2smenrSpec> {
+    pub fn tim8smen(&mut self) -> Tim8smenW<'_, RccApb2smenrSpec> {
         Tim8smenW::new(self, 13)
     }
     #[doc = "Bit 14 - USART1clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn usart1smen(&mut self) -> Usart1smenW<RccApb2smenrSpec> {
+    pub fn usart1smen(&mut self) -> Usart1smenW<'_, RccApb2smenrSpec> {
         Usart1smenW::new(self, 14)
     }
     #[doc = "Bit 15 - SPI4 timer clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn spi4smen(&mut self) -> Spi4smenW<RccApb2smenrSpec> {
+    pub fn spi4smen(&mut self) -> Spi4smenW<'_, RccApb2smenrSpec> {
         Spi4smenW::new(self, 15)
     }
     #[doc = "Bit 16 - TIM15 timer clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn tim15smen(&mut self) -> Tim15smenW<RccApb2smenrSpec> {
+    pub fn tim15smen(&mut self) -> Tim15smenW<'_, RccApb2smenrSpec> {
         Tim15smenW::new(self, 16)
     }
     #[doc = "Bit 17 - TIM16 timer clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn tim16smen(&mut self) -> Tim16smenW<RccApb2smenrSpec> {
+    pub fn tim16smen(&mut self) -> Tim16smenW<'_, RccApb2smenrSpec> {
         Tim16smenW::new(self, 17)
     }
     #[doc = "Bit 18 - TIM17 timer clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn tim17smen(&mut self) -> Tim17smenW<RccApb2smenrSpec> {
+    pub fn tim17smen(&mut self) -> Tim17smenW<'_, RccApb2smenrSpec> {
         Tim17smenW::new(self, 18)
     }
     #[doc = "Bit 20 - TIM20 timer clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn tim20smen(&mut self) -> Tim20smenW<RccApb2smenrSpec> {
+    pub fn tim20smen(&mut self) -> Tim20smenW<'_, RccApb2smenrSpec> {
         Tim20smenW::new(self, 20)
     }
     #[doc = "Bit 21 - SAI1 clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn sai1smen(&mut self) -> Sai1smenW<RccApb2smenrSpec> {
+    pub fn sai1smen(&mut self) -> Sai1smenW<'_, RccApb2smenrSpec> {
         Sai1smenW::new(self, 21)
     }
     #[doc = "Bit 26 - HRTIM1 timer clocks enable during Sleep and Stop modes Set and cleared by software."]
     #[inline(always)]
-    pub fn hrtim1smen(&mut self) -> Hrtim1smenW<RccApb2smenrSpec> {
+    pub fn hrtim1smen(&mut self) -> Hrtim1smenW<'_, RccApb2smenrSpec> {
         Hrtim1smenW::new(self, 26)
     }
 }

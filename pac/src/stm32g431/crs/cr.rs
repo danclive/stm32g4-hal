@@ -93,42 +93,42 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - SYNC event OK interrupt enable"]
     #[inline(always)]
-    pub fn syncokie(&mut self) -> SyncokieW<CrSpec> {
+    pub fn syncokie(&mut self) -> SyncokieW<'_, CrSpec> {
         SyncokieW::new(self, 0)
     }
     #[doc = "Bit 1 - SYNC warning interrupt enable"]
     #[inline(always)]
-    pub fn syncwarnie(&mut self) -> SyncwarnieW<CrSpec> {
+    pub fn syncwarnie(&mut self) -> SyncwarnieW<'_, CrSpec> {
         SyncwarnieW::new(self, 1)
     }
     #[doc = "Bit 2 - Synchronization or trimming error interrupt enable"]
     #[inline(always)]
-    pub fn errie(&mut self) -> ErrieW<CrSpec> {
+    pub fn errie(&mut self) -> ErrieW<'_, CrSpec> {
         ErrieW::new(self, 2)
     }
     #[doc = "Bit 3 - Expected SYNC interrupt enable"]
     #[inline(always)]
-    pub fn esyncie(&mut self) -> EsyncieW<CrSpec> {
+    pub fn esyncie(&mut self) -> EsyncieW<'_, CrSpec> {
         EsyncieW::new(self, 3)
     }
     #[doc = "Bit 5 - Frequency error counter enable This bit enables the oscillator clock for the frequency error counter. When this bit is set, the CRS_CFGR register is write-protected and cannot be modified."]
     #[inline(always)]
-    pub fn cen(&mut self) -> CenW<CrSpec> {
+    pub fn cen(&mut self) -> CenW<'_, CrSpec> {
         CenW::new(self, 5)
     }
     #[doc = "Bit 6 - Automatic trimming enable This bit enables the automatic hardware adjustment of TRIM bits according to the measured frequency error between two SYNC events. If this bit is set, the TRIM bits are read-only. The TRIM value can be adjusted by hardware by one or two steps at a time, depending on the measured frequency error value. Refer to Section7.3.4: Frequency error evaluation and automatic trimming for more details."]
     #[inline(always)]
-    pub fn autotrimen(&mut self) -> AutotrimenW<CrSpec> {
+    pub fn autotrimen(&mut self) -> AutotrimenW<'_, CrSpec> {
         AutotrimenW::new(self, 6)
     }
     #[doc = "Bit 7 - Generate software SYNC event This bit is set by software in order to generate a software SYNC event. It is automatically cleared by hardware."]
     #[inline(always)]
-    pub fn swsync(&mut self) -> SwsyncW<CrSpec> {
+    pub fn swsync(&mut self) -> SwsyncW<'_, CrSpec> {
         SwsyncW::new(self, 7)
     }
     #[doc = "Bits 8:14 - HSI48 oscillator smooth trimming These bits provide a user-programmable trimming value to the HSI48 oscillator. They can be programmed to adjust to variations in voltage and temperature that influence the frequency of the HSI48. The default value is 32, which corresponds to the middle of the trimming interval. The trimming step is around 67 kHz between two consecutive TRIM steps. A higher TRIM value corresponds to a higher output frequency. When the AUTOTRIMEN bit is set, this field is controlled by hardware and is read-only."]
     #[inline(always)]
-    pub fn trim(&mut self) -> TrimW<CrSpec> {
+    pub fn trim(&mut self) -> TrimW<'_, CrSpec> {
         TrimW::new(self, 8)
     }
 }

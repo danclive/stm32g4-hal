@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:6 - Bank 1 WRP first area start offset"]
     #[inline(always)]
-    pub fn wrp1a_strt(&mut self) -> Wrp1aStrtW<Wrp1arSpec> {
+    pub fn wrp1a_strt(&mut self) -> Wrp1aStrtW<'_, Wrp1arSpec> {
         Wrp1aStrtW::new(self, 0)
     }
     #[doc = "Bits 16:22 - Bank 1 WRP first area A end offset"]
     #[inline(always)]
-    pub fn wrp1a_end(&mut self) -> Wrp1aEndW<Wrp1arSpec> {
+    pub fn wrp1a_end(&mut self) -> Wrp1aEndW<'_, Wrp1arSpec> {
         Wrp1aEndW::new(self, 16)
     }
 }

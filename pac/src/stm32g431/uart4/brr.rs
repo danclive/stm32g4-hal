@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - DIV_Fraction"]
     #[inline(always)]
-    pub fn div_fraction(&mut self) -> DivFractionW<BrrSpec> {
+    pub fn div_fraction(&mut self) -> DivFractionW<'_, BrrSpec> {
         DivFractionW::new(self, 0)
     }
     #[doc = "Bits 4:15 - DIV_Mantissa"]
     #[inline(always)]
-    pub fn div_mantissa(&mut self) -> DivMantissaW<BrrSpec> {
+    pub fn div_mantissa(&mut self) -> DivMantissaW<'_, BrrSpec> {
         DivMantissaW::new(self, 4)
     }
 }

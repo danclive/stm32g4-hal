@@ -313,52 +313,52 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Enable Wakeup pin WKUP1 When this bit is set, the external wakeup pin WKUP1 is enabled and triggers a wakeup from Standby or Shutdown event when a rising or a falling edge occurs. The active edge is configured via the WP1 bit in the PWR_CR4 register."]
     #[inline(always)]
-    pub fn ewup1(&mut self) -> Ewup1W<PwrCr3Spec> {
+    pub fn ewup1(&mut self) -> Ewup1W<'_, PwrCr3Spec> {
         Ewup1W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable Wakeup pin WKUP2 When this bit is set, the external wakeup pin WKUP2 is enabled and triggers a wakeup from Standby or Shutdown event when a rising or a falling edge occurs. The active edge is configured via the WP2 bit in the PWR_CR4 register."]
     #[inline(always)]
-    pub fn ewup2(&mut self) -> Ewup2W<PwrCr3Spec> {
+    pub fn ewup2(&mut self) -> Ewup2W<'_, PwrCr3Spec> {
         Ewup2W::new(self, 1)
     }
     #[doc = "Bit 2 - Enable Wakeup pin WKUP3 When this bit is set, the external wakeup pin WKUP3 is enabled and triggers a wakeup from Standby or Shutdown event when a rising or a falling edge occurs. The active edge is configured via the WP3 bit in the PWR_CR4 register."]
     #[inline(always)]
-    pub fn ewup3(&mut self) -> Ewup3W<PwrCr3Spec> {
+    pub fn ewup3(&mut self) -> Ewup3W<'_, PwrCr3Spec> {
         Ewup3W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable Wakeup pin WKUP4 When this bit is set, the external wakeup pin WKUP4 is enabled and triggers a wakeup from Standby or Shutdown event when a rising or a falling edge occurs. The active edge is configured via the WP4 bit in the PWR_CR4 register."]
     #[inline(always)]
-    pub fn ewup4(&mut self) -> Ewup4W<PwrCr3Spec> {
+    pub fn ewup4(&mut self) -> Ewup4W<'_, PwrCr3Spec> {
         Ewup4W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable Wakeup pin WKUP5 When this bit is set, the external wakeup pin WKUP5 is enabled and triggers a wakeup from Standby or Shutdown event when a rising or a falling edge occurs.The active edge is configured via the WP5 bit in the PWR_CR4 register."]
     #[inline(always)]
-    pub fn ewup5(&mut self) -> Ewup5W<PwrCr3Spec> {
+    pub fn ewup5(&mut self) -> Ewup5W<'_, PwrCr3Spec> {
         Ewup5W::new(self, 4)
     }
     #[doc = "Bit 8 - SRAM2 retention in Standby mode"]
     #[inline(always)]
-    pub fn rrs(&mut self) -> RrsW<PwrCr3Spec> {
+    pub fn rrs(&mut self) -> RrsW<'_, PwrCr3Spec> {
         RrsW::new(self, 8)
     }
     #[doc = "Bit 10 - Apply pull-up and pull-down configuration When this bit is set, the I/O pull-up and pull-down configurations defined in the PWR_PUCRx and PWR_PDCRx registers are applied. When this bit is cleared, the PWR_PUCRx and PWR_PDCRx registers are not applied to the I/Os."]
     #[inline(always)]
-    pub fn apc(&mut self) -> ApcW<PwrCr3Spec> {
+    pub fn apc(&mut self) -> ApcW<'_, PwrCr3Spec> {
         ApcW::new(self, 10)
     }
     #[doc = "Bit 13 - UCPD1_STDBY USB Type-C and Power Delivery standby mode."]
     #[inline(always)]
-    pub fn ucpd1_stdby(&mut self) -> Ucpd1StdbyW<PwrCr3Spec> {
+    pub fn ucpd1_stdby(&mut self) -> Ucpd1StdbyW<'_, PwrCr3Spec> {
         Ucpd1StdbyW::new(self, 13)
     }
     #[doc = "Bit 14 - USB Type-C and Power Delivery Dead Battery disable. After exiting reset, the USB Type-C dead battery behavior is enabled, which may have a pull-down effect on CC1 and CC2 pins. It is recommended to disable it in all cases, either to stop this pull-down or to hand over control to the UCPD1 (which should therefore be initialized before doing the disable)."]
     #[inline(always)]
-    pub fn ucpd1_dbdis(&mut self) -> Ucpd1DbdisW<PwrCr3Spec> {
+    pub fn ucpd1_dbdis(&mut self) -> Ucpd1DbdisW<'_, PwrCr3Spec> {
         Ucpd1DbdisW::new(self, 14)
     }
     #[doc = "Bit 15 - Enable internal wakeup line"]
     #[inline(always)]
-    pub fn eiwul(&mut self) -> EiwulW<PwrCr3Spec> {
+    pub fn eiwul(&mut self) -> EiwulW<'_, PwrCr3Spec> {
         EiwulW::new(self, 15)
     }
 }

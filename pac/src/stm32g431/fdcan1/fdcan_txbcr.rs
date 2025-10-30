@@ -80,7 +80,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Cancellation request Each Tx buffer has its own cancellation request bit. Writing a 1 sets the corresponding CR bit; writing a 0 has no impact. This enables the Host to set cancellation requests for multiple Tx buffers with one write to TXBCR. The bits remain set until the corresponding TXBRP bit is reset."]
     #[inline(always)]
-    pub fn cr(&mut self) -> CrW<FdcanTxbcrSpec> {
+    pub fn cr(&mut self) -> CrW<'_, FdcanTxbcrSpec> {
         CrW::new(self, 0)
     }
 }

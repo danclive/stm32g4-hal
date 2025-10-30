@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:13 - GCOMPCOEFF"]
     #[inline(always)]
-    pub fn gcompcoeff(&mut self) -> GcompcoeffW<GcompSpec> {
+    pub fn gcompcoeff(&mut self) -> GcompcoeffW<'_, GcompSpec> {
         GcompcoeffW::new(self, 0)
     }
 }

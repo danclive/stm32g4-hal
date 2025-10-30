@@ -1,6 +1,6 @@
 [package]
 name = "stm32g4-pac"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["danc <dangcheng@hotmail.com>"]
 categories = ["embedded", "hardware-support", "no-std"]
 description = "Peripheral access API for STM32G4 series microcontrollers"

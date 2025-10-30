@@ -10,7 +10,7 @@ impl core::fmt::Debug for crate::generic::Reg<WdataSpec> {
 impl W {
     #[doc = "Bits 0:15 - WDATA"]
     #[inline(always)]
-    pub fn wdata(&mut self) -> WdataW<WdataSpec> {
+    pub fn wdata(&mut self) -> WdataW<'_, WdataSpec> {
         WdataW::new(self, 0)
     }
 }

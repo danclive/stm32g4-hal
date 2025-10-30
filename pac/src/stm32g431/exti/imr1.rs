@@ -333,162 +333,162 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Interrupt Mask on line 0"]
     #[inline(always)]
-    pub fn im0(&mut self) -> Im0W<Imr1Spec> {
+    pub fn im0(&mut self) -> Im0W<'_, Imr1Spec> {
         Im0W::new(self, 0)
     }
     #[doc = "Bit 1 - Interrupt Mask on line 1"]
     #[inline(always)]
-    pub fn im1(&mut self) -> Im1W<Imr1Spec> {
+    pub fn im1(&mut self) -> Im1W<'_, Imr1Spec> {
         Im1W::new(self, 1)
     }
     #[doc = "Bit 2 - Interrupt Mask on line 2"]
     #[inline(always)]
-    pub fn im2(&mut self) -> Im2W<Imr1Spec> {
+    pub fn im2(&mut self) -> Im2W<'_, Imr1Spec> {
         Im2W::new(self, 2)
     }
     #[doc = "Bit 3 - Interrupt Mask on line 3"]
     #[inline(always)]
-    pub fn im3(&mut self) -> Im3W<Imr1Spec> {
+    pub fn im3(&mut self) -> Im3W<'_, Imr1Spec> {
         Im3W::new(self, 3)
     }
     #[doc = "Bit 4 - Interrupt Mask on line 4"]
     #[inline(always)]
-    pub fn im4(&mut self) -> Im4W<Imr1Spec> {
+    pub fn im4(&mut self) -> Im4W<'_, Imr1Spec> {
         Im4W::new(self, 4)
     }
     #[doc = "Bit 5 - Interrupt Mask on line 5"]
     #[inline(always)]
-    pub fn im5(&mut self) -> Im5W<Imr1Spec> {
+    pub fn im5(&mut self) -> Im5W<'_, Imr1Spec> {
         Im5W::new(self, 5)
     }
     #[doc = "Bit 6 - Interrupt Mask on line 6"]
     #[inline(always)]
-    pub fn im6(&mut self) -> Im6W<Imr1Spec> {
+    pub fn im6(&mut self) -> Im6W<'_, Imr1Spec> {
         Im6W::new(self, 6)
     }
     #[doc = "Bit 7 - Interrupt Mask on line 7"]
     #[inline(always)]
-    pub fn im7(&mut self) -> Im7W<Imr1Spec> {
+    pub fn im7(&mut self) -> Im7W<'_, Imr1Spec> {
         Im7W::new(self, 7)
     }
     #[doc = "Bit 8 - Interrupt Mask on line 8"]
     #[inline(always)]
-    pub fn im8(&mut self) -> Im8W<Imr1Spec> {
+    pub fn im8(&mut self) -> Im8W<'_, Imr1Spec> {
         Im8W::new(self, 8)
     }
     #[doc = "Bit 9 - Interrupt Mask on line 9"]
     #[inline(always)]
-    pub fn im9(&mut self) -> Im9W<Imr1Spec> {
+    pub fn im9(&mut self) -> Im9W<'_, Imr1Spec> {
         Im9W::new(self, 9)
     }
     #[doc = "Bit 10 - Interrupt Mask on line 10"]
     #[inline(always)]
-    pub fn im10(&mut self) -> Im10W<Imr1Spec> {
+    pub fn im10(&mut self) -> Im10W<'_, Imr1Spec> {
         Im10W::new(self, 10)
     }
     #[doc = "Bit 11 - Interrupt Mask on line 11"]
     #[inline(always)]
-    pub fn im11(&mut self) -> Im11W<Imr1Spec> {
+    pub fn im11(&mut self) -> Im11W<'_, Imr1Spec> {
         Im11W::new(self, 11)
     }
     #[doc = "Bit 12 - Interrupt Mask on line 12"]
     #[inline(always)]
-    pub fn im12(&mut self) -> Im12W<Imr1Spec> {
+    pub fn im12(&mut self) -> Im12W<'_, Imr1Spec> {
         Im12W::new(self, 12)
     }
     #[doc = "Bit 13 - Interrupt Mask on line 13"]
     #[inline(always)]
-    pub fn im13(&mut self) -> Im13W<Imr1Spec> {
+    pub fn im13(&mut self) -> Im13W<'_, Imr1Spec> {
         Im13W::new(self, 13)
     }
     #[doc = "Bit 14 - Interrupt Mask on line 14"]
     #[inline(always)]
-    pub fn im14(&mut self) -> Im14W<Imr1Spec> {
+    pub fn im14(&mut self) -> Im14W<'_, Imr1Spec> {
         Im14W::new(self, 14)
     }
     #[doc = "Bit 15 - Interrupt Mask on line 15"]
     #[inline(always)]
-    pub fn im15(&mut self) -> Im15W<Imr1Spec> {
+    pub fn im15(&mut self) -> Im15W<'_, Imr1Spec> {
         Im15W::new(self, 15)
     }
     #[doc = "Bit 16 - Interrupt Mask on line 16"]
     #[inline(always)]
-    pub fn im16(&mut self) -> Im16W<Imr1Spec> {
+    pub fn im16(&mut self) -> Im16W<'_, Imr1Spec> {
         Im16W::new(self, 16)
     }
     #[doc = "Bit 17 - Interrupt Mask on line 17"]
     #[inline(always)]
-    pub fn im17(&mut self) -> Im17W<Imr1Spec> {
+    pub fn im17(&mut self) -> Im17W<'_, Imr1Spec> {
         Im17W::new(self, 17)
     }
     #[doc = "Bit 18 - Interrupt Mask on line 18"]
     #[inline(always)]
-    pub fn im18(&mut self) -> Im18W<Imr1Spec> {
+    pub fn im18(&mut self) -> Im18W<'_, Imr1Spec> {
         Im18W::new(self, 18)
     }
     #[doc = "Bit 19 - Interrupt Mask on line 19"]
     #[inline(always)]
-    pub fn im19(&mut self) -> Im19W<Imr1Spec> {
+    pub fn im19(&mut self) -> Im19W<'_, Imr1Spec> {
         Im19W::new(self, 19)
     }
     #[doc = "Bit 20 - Interrupt Mask on line 20"]
     #[inline(always)]
-    pub fn im20(&mut self) -> Im20W<Imr1Spec> {
+    pub fn im20(&mut self) -> Im20W<'_, Imr1Spec> {
         Im20W::new(self, 20)
     }
     #[doc = "Bit 21 - Interrupt Mask on line 21"]
     #[inline(always)]
-    pub fn im21(&mut self) -> Im21W<Imr1Spec> {
+    pub fn im21(&mut self) -> Im21W<'_, Imr1Spec> {
         Im21W::new(self, 21)
     }
     #[doc = "Bit 22 - Interrupt Mask on line 22"]
     #[inline(always)]
-    pub fn im22(&mut self) -> Im22W<Imr1Spec> {
+    pub fn im22(&mut self) -> Im22W<'_, Imr1Spec> {
         Im22W::new(self, 22)
     }
     #[doc = "Bit 23 - Interrupt Mask on line 23"]
     #[inline(always)]
-    pub fn im23(&mut self) -> Im23W<Imr1Spec> {
+    pub fn im23(&mut self) -> Im23W<'_, Imr1Spec> {
         Im23W::new(self, 23)
     }
     #[doc = "Bit 24 - Interrupt Mask on line 24"]
     #[inline(always)]
-    pub fn im24(&mut self) -> Im24W<Imr1Spec> {
+    pub fn im24(&mut self) -> Im24W<'_, Imr1Spec> {
         Im24W::new(self, 24)
     }
     #[doc = "Bit 25 - Interrupt Mask on line 25"]
     #[inline(always)]
-    pub fn im25(&mut self) -> Im25W<Imr1Spec> {
+    pub fn im25(&mut self) -> Im25W<'_, Imr1Spec> {
         Im25W::new(self, 25)
     }
     #[doc = "Bit 26 - Interrupt Mask on line 26"]
     #[inline(always)]
-    pub fn im26(&mut self) -> Im26W<Imr1Spec> {
+    pub fn im26(&mut self) -> Im26W<'_, Imr1Spec> {
         Im26W::new(self, 26)
     }
     #[doc = "Bit 27 - Interrupt Mask on line 27"]
     #[inline(always)]
-    pub fn im27(&mut self) -> Im27W<Imr1Spec> {
+    pub fn im27(&mut self) -> Im27W<'_, Imr1Spec> {
         Im27W::new(self, 27)
     }
     #[doc = "Bit 28 - Interrupt Mask on line 28"]
     #[inline(always)]
-    pub fn im28(&mut self) -> Im28W<Imr1Spec> {
+    pub fn im28(&mut self) -> Im28W<'_, Imr1Spec> {
         Im28W::new(self, 28)
     }
     #[doc = "Bit 29 - Interrupt Mask on line 29"]
     #[inline(always)]
-    pub fn im29(&mut self) -> Im29W<Imr1Spec> {
+    pub fn im29(&mut self) -> Im29W<'_, Imr1Spec> {
         Im29W::new(self, 29)
     }
     #[doc = "Bit 30 - Interrupt Mask on line 30"]
     #[inline(always)]
-    pub fn im30(&mut self) -> Im30W<Imr1Spec> {
+    pub fn im30(&mut self) -> Im30W<'_, Imr1Spec> {
         Im30W::new(self, 30)
     }
     #[doc = "Bit 31 - Interrupt Mask on line 31"]
     #[inline(always)]
-    pub fn im31(&mut self) -> Im31W<Imr1Spec> {
+    pub fn im31(&mut self) -> Im31W<'_, Imr1Spec> {
         Im31W::new(self, 31)
     }
 }

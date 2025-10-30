@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - X1_BASE"]
     #[inline(always)]
-    pub fn y_base(&mut self) -> YBaseW<YbufcfgSpec> {
+    pub fn y_base(&mut self) -> YBaseW<'_, YbufcfgSpec> {
         YBaseW::new(self, 0)
     }
     #[doc = "Bits 8:15 - X1_BUF_SIZE"]
     #[inline(always)]
-    pub fn y_buf_size(&mut self) -> YBufSizeW<YbufcfgSpec> {
+    pub fn y_buf_size(&mut self) -> YBufSizeW<'_, YbufcfgSpec> {
         YBufSizeW::new(self, 8)
     }
     #[doc = "Bits 24:25 - EMPTY_WM"]
     #[inline(always)]
-    pub fn empty_wm(&mut self) -> EmptyWmW<YbufcfgSpec> {
+    pub fn empty_wm(&mut self) -> EmptyWmW<'_, YbufcfgSpec> {
         EmptyWmW::new(self, 24)
     }
 }

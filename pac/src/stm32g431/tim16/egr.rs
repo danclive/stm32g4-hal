@@ -16,22 +16,22 @@ impl core::fmt::Debug for crate::generic::Reg<EgrSpec> {
 impl W {
     #[doc = "Bit 0 - Update generation"]
     #[inline(always)]
-    pub fn ug(&mut self) -> UgW<EgrSpec> {
+    pub fn ug(&mut self) -> UgW<'_, EgrSpec> {
         UgW::new(self, 0)
     }
     #[doc = "Bit 1 - Capture/compare 1 generation"]
     #[inline(always)]
-    pub fn cc1g(&mut self) -> Cc1gW<EgrSpec> {
+    pub fn cc1g(&mut self) -> Cc1gW<'_, EgrSpec> {
         Cc1gW::new(self, 1)
     }
     #[doc = "Bit 5 - Capture/Compare control update generation"]
     #[inline(always)]
-    pub fn comg(&mut self) -> ComgW<EgrSpec> {
+    pub fn comg(&mut self) -> ComgW<'_, EgrSpec> {
         ComgW::new(self, 5)
     }
     #[doc = "Bit 7 - Break generation"]
     #[inline(always)]
-    pub fn bg(&mut self) -> BgW<EgrSpec> {
+    pub fn bg(&mut self) -> BgW<'_, EgrSpec> {
         BgW::new(self, 7)
     }
 }

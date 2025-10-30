@@ -183,87 +183,87 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Capture/compare preloaded control"]
     #[inline(always)]
-    pub fn ccpc(&mut self) -> CcpcW<Cr2Spec> {
+    pub fn ccpc(&mut self) -> CcpcW<'_, Cr2Spec> {
         CcpcW::new(self, 0)
     }
     #[doc = "Bit 2 - Capture/compare control update selection"]
     #[inline(always)]
-    pub fn ccus(&mut self) -> CcusW<Cr2Spec> {
+    pub fn ccus(&mut self) -> CcusW<'_, Cr2Spec> {
         CcusW::new(self, 2)
     }
     #[doc = "Bit 3 - Capture/compare DMA selection"]
     #[inline(always)]
-    pub fn ccds(&mut self) -> CcdsW<Cr2Spec> {
+    pub fn ccds(&mut self) -> CcdsW<'_, Cr2Spec> {
         CcdsW::new(self, 3)
     }
     #[doc = "Bits 4:6 - Master mode selection"]
     #[inline(always)]
-    pub fn mms(&mut self) -> MmsW<Cr2Spec> {
+    pub fn mms(&mut self) -> MmsW<'_, Cr2Spec> {
         MmsW::new(self, 4)
     }
     #[doc = "Bit 7 - TI1 selection"]
     #[inline(always)]
-    pub fn ti1s(&mut self) -> Ti1sW<Cr2Spec> {
+    pub fn ti1s(&mut self) -> Ti1sW<'_, Cr2Spec> {
         Ti1sW::new(self, 7)
     }
     #[doc = "Bit 8 - Output Idle state 1"]
     #[inline(always)]
-    pub fn ois1(&mut self) -> Ois1W<Cr2Spec> {
+    pub fn ois1(&mut self) -> Ois1W<'_, Cr2Spec> {
         Ois1W::new(self, 8)
     }
     #[doc = "Bit 9 - Output Idle state 1"]
     #[inline(always)]
-    pub fn ois1n(&mut self) -> Ois1nW<Cr2Spec> {
+    pub fn ois1n(&mut self) -> Ois1nW<'_, Cr2Spec> {
         Ois1nW::new(self, 9)
     }
     #[doc = "Bit 10 - Output Idle state 2"]
     #[inline(always)]
-    pub fn ois2(&mut self) -> Ois2W<Cr2Spec> {
+    pub fn ois2(&mut self) -> Ois2W<'_, Cr2Spec> {
         Ois2W::new(self, 10)
     }
     #[doc = "Bit 11 - Output Idle state 2"]
     #[inline(always)]
-    pub fn ois2n(&mut self) -> Ois2nW<Cr2Spec> {
+    pub fn ois2n(&mut self) -> Ois2nW<'_, Cr2Spec> {
         Ois2nW::new(self, 11)
     }
     #[doc = "Bit 12 - Output Idle state 3"]
     #[inline(always)]
-    pub fn ois3(&mut self) -> Ois3W<Cr2Spec> {
+    pub fn ois3(&mut self) -> Ois3W<'_, Cr2Spec> {
         Ois3W::new(self, 12)
     }
     #[doc = "Bit 13 - Output Idle state 3"]
     #[inline(always)]
-    pub fn ois3n(&mut self) -> Ois3nW<Cr2Spec> {
+    pub fn ois3n(&mut self) -> Ois3nW<'_, Cr2Spec> {
         Ois3nW::new(self, 13)
     }
     #[doc = "Bit 14 - Output Idle state 4"]
     #[inline(always)]
-    pub fn ois4(&mut self) -> Ois4W<Cr2Spec> {
+    pub fn ois4(&mut self) -> Ois4W<'_, Cr2Spec> {
         Ois4W::new(self, 14)
     }
     #[doc = "Bit 15 - Output Idle state 4 (OC4N output)"]
     #[inline(always)]
-    pub fn ois4n(&mut self) -> Ois4nW<Cr2Spec> {
+    pub fn ois4n(&mut self) -> Ois4nW<'_, Cr2Spec> {
         Ois4nW::new(self, 15)
     }
     #[doc = "Bit 16 - Output Idle state 5 (OC5 output)"]
     #[inline(always)]
-    pub fn ois5(&mut self) -> Ois5W<Cr2Spec> {
+    pub fn ois5(&mut self) -> Ois5W<'_, Cr2Spec> {
         Ois5W::new(self, 16)
     }
     #[doc = "Bit 18 - Output Idle state 6 (OC6 output)"]
     #[inline(always)]
-    pub fn ois6(&mut self) -> Ois6W<Cr2Spec> {
+    pub fn ois6(&mut self) -> Ois6W<'_, Cr2Spec> {
         Ois6W::new(self, 18)
     }
     #[doc = "Bits 20:23 - Master mode selection 2"]
     #[inline(always)]
-    pub fn mms2(&mut self) -> Mms2W<Cr2Spec> {
+    pub fn mms2(&mut self) -> Mms2W<'_, Cr2Spec> {
         Mms2W::new(self, 20)
     }
     #[doc = "Bit 25 - Master mode selection - bit 3"]
     #[inline(always)]
-    pub fn mms_3(&mut self) -> Mms3W<Cr2Spec> {
+    pub fn mms_3(&mut self) -> Mms3W<'_, Cr2Spec> {
         Mms3W::new(self, 25)
     }
 }

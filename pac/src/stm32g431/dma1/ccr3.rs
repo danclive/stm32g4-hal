@@ -133,62 +133,62 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - channel enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<Ccr3Spec> {
+    pub fn en(&mut self) -> EnW<'_, Ccr3Spec> {
         EnW::new(self, 0)
     }
     #[doc = "Bit 1 - TCIE"]
     #[inline(always)]
-    pub fn tcie(&mut self) -> TcieW<Ccr3Spec> {
+    pub fn tcie(&mut self) -> TcieW<'_, Ccr3Spec> {
         TcieW::new(self, 1)
     }
     #[doc = "Bit 2 - HTIE"]
     #[inline(always)]
-    pub fn htie(&mut self) -> HtieW<Ccr3Spec> {
+    pub fn htie(&mut self) -> HtieW<'_, Ccr3Spec> {
         HtieW::new(self, 2)
     }
     #[doc = "Bit 3 - TEIE"]
     #[inline(always)]
-    pub fn teie(&mut self) -> TeieW<Ccr3Spec> {
+    pub fn teie(&mut self) -> TeieW<'_, Ccr3Spec> {
         TeieW::new(self, 3)
     }
     #[doc = "Bit 4 - DIR"]
     #[inline(always)]
-    pub fn dir(&mut self) -> DirW<Ccr3Spec> {
+    pub fn dir(&mut self) -> DirW<'_, Ccr3Spec> {
         DirW::new(self, 4)
     }
     #[doc = "Bit 5 - CIRC"]
     #[inline(always)]
-    pub fn circ(&mut self) -> CircW<Ccr3Spec> {
+    pub fn circ(&mut self) -> CircW<'_, Ccr3Spec> {
         CircW::new(self, 5)
     }
     #[doc = "Bit 6 - PINC"]
     #[inline(always)]
-    pub fn pinc(&mut self) -> PincW<Ccr3Spec> {
+    pub fn pinc(&mut self) -> PincW<'_, Ccr3Spec> {
         PincW::new(self, 6)
     }
     #[doc = "Bit 7 - MINC"]
     #[inline(always)]
-    pub fn minc(&mut self) -> MincW<Ccr3Spec> {
+    pub fn minc(&mut self) -> MincW<'_, Ccr3Spec> {
         MincW::new(self, 7)
     }
     #[doc = "Bits 8:9 - PSIZE"]
     #[inline(always)]
-    pub fn psize(&mut self) -> PsizeW<Ccr3Spec> {
+    pub fn psize(&mut self) -> PsizeW<'_, Ccr3Spec> {
         PsizeW::new(self, 8)
     }
     #[doc = "Bits 10:11 - MSIZE"]
     #[inline(always)]
-    pub fn msize(&mut self) -> MsizeW<Ccr3Spec> {
+    pub fn msize(&mut self) -> MsizeW<'_, Ccr3Spec> {
         MsizeW::new(self, 10)
     }
     #[doc = "Bits 12:13 - PL"]
     #[inline(always)]
-    pub fn pl(&mut self) -> PlW<Ccr3Spec> {
+    pub fn pl(&mut self) -> PlW<'_, Ccr3Spec> {
         PlW::new(self, 12)
     }
     #[doc = "Bit 14 - MEM2MEM"]
     #[inline(always)]
-    pub fn mem2mem(&mut self) -> Mem2memW<Ccr3Spec> {
+    pub fn mem2mem(&mut self) -> Mem2memW<'_, Ccr3Spec> {
         Mem2memW::new(self, 14)
     }
 }

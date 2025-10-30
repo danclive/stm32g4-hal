@@ -123,57 +123,57 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - ADRDYIE"]
     #[inline(always)]
-    pub fn adrdyie(&mut self) -> AdrdyieW<IerSpec> {
+    pub fn adrdyie(&mut self) -> AdrdyieW<'_, IerSpec> {
         AdrdyieW::new(self, 0)
     }
     #[doc = "Bit 1 - EOSMPIE"]
     #[inline(always)]
-    pub fn eosmpie(&mut self) -> EosmpieW<IerSpec> {
+    pub fn eosmpie(&mut self) -> EosmpieW<'_, IerSpec> {
         EosmpieW::new(self, 1)
     }
     #[doc = "Bit 2 - EOCIE"]
     #[inline(always)]
-    pub fn eocie(&mut self) -> EocieW<IerSpec> {
+    pub fn eocie(&mut self) -> EocieW<'_, IerSpec> {
         EocieW::new(self, 2)
     }
     #[doc = "Bit 3 - EOSIE"]
     #[inline(always)]
-    pub fn eosie(&mut self) -> EosieW<IerSpec> {
+    pub fn eosie(&mut self) -> EosieW<'_, IerSpec> {
         EosieW::new(self, 3)
     }
     #[doc = "Bit 4 - OVRIE"]
     #[inline(always)]
-    pub fn ovrie(&mut self) -> OvrieW<IerSpec> {
+    pub fn ovrie(&mut self) -> OvrieW<'_, IerSpec> {
         OvrieW::new(self, 4)
     }
     #[doc = "Bit 5 - JEOCIE"]
     #[inline(always)]
-    pub fn jeocie(&mut self) -> JeocieW<IerSpec> {
+    pub fn jeocie(&mut self) -> JeocieW<'_, IerSpec> {
         JeocieW::new(self, 5)
     }
     #[doc = "Bit 6 - JEOSIE"]
     #[inline(always)]
-    pub fn jeosie(&mut self) -> JeosieW<IerSpec> {
+    pub fn jeosie(&mut self) -> JeosieW<'_, IerSpec> {
         JeosieW::new(self, 6)
     }
     #[doc = "Bit 7 - AWD1IE"]
     #[inline(always)]
-    pub fn awd1ie(&mut self) -> Awd1ieW<IerSpec> {
+    pub fn awd1ie(&mut self) -> Awd1ieW<'_, IerSpec> {
         Awd1ieW::new(self, 7)
     }
     #[doc = "Bit 8 - AWD2IE"]
     #[inline(always)]
-    pub fn awd2ie(&mut self) -> Awd2ieW<IerSpec> {
+    pub fn awd2ie(&mut self) -> Awd2ieW<'_, IerSpec> {
         Awd2ieW::new(self, 8)
     }
     #[doc = "Bit 9 - AWD3IE"]
     #[inline(always)]
-    pub fn awd3ie(&mut self) -> Awd3ieW<IerSpec> {
+    pub fn awd3ie(&mut self) -> Awd3ieW<'_, IerSpec> {
         Awd3ieW::new(self, 9)
     }
     #[doc = "Bit 10 - JQOVFIE"]
     #[inline(always)]
-    pub fn jqovfie(&mut self) -> JqovfieW<IerSpec> {
+    pub fn jqovfie(&mut self) -> JqovfieW<'_, IerSpec> {
         JqovfieW::new(self, 10)
     }
 }

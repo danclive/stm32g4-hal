@@ -338,22 +338,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Programmable voltage detector enable Note: This bit is write-protected when the PVDL bit is set in the SYSCFG_CFGR2 register. The protection can be reset only by a system reset."]
     #[inline(always)]
-    pub fn pvde(&mut self) -> PvdeW<PwrCr2Spec> {
+    pub fn pvde(&mut self) -> PvdeW<'_, PwrCr2Spec> {
         PvdeW::new(self, 0)
     }
     #[doc = "Bits 1:3 - Programmable voltage detector level selection. These bits select the PVD falling threshold: Note: These bits are write-protected when the PVDL bit is set in the SYSCFG_CFGR2 register. The protection can be reset only by a system reset."]
     #[inline(always)]
-    pub fn pvdls(&mut self) -> PvdlsW<PwrCr2Spec> {
+    pub fn pvdls(&mut self) -> PvdlsW<'_, PwrCr2Spec> {
         PvdlsW::new(self, 1)
     }
     #[doc = "Bit 6 - Peripheral voltage monitoring 3 enable: V<sub>DDA</sub> vs. ADC/COMP min voltage 1.62V"]
     #[inline(always)]
-    pub fn pvmen1(&mut self) -> Pvmen1W<PwrCr2Spec> {
+    pub fn pvmen1(&mut self) -> Pvmen1W<'_, PwrCr2Spec> {
         Pvmen1W::new(self, 6)
     }
     #[doc = "Bit 7 - Peripheral voltage monitoring 4 enable: V<sub>DDA</sub> vs. DAC 1MSPS /DAC 15MSPS min voltage."]
     #[inline(always)]
-    pub fn pvmen2(&mut self) -> Pvmen2W<PwrCr2Spec> {
+    pub fn pvmen2(&mut self) -> Pvmen2W<'_, PwrCr2Spec> {
         Pvmen2W::new(self, 7)
     }
 }

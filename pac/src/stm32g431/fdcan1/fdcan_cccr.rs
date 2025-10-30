@@ -836,67 +836,67 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Initialization"]
     #[inline(always)]
-    pub fn init(&mut self) -> InitW<FdcanCccrSpec> {
+    pub fn init(&mut self) -> InitW<'_, FdcanCccrSpec> {
         InitW::new(self, 0)
     }
     #[doc = "Bit 1 - Configuration change enable"]
     #[inline(always)]
-    pub fn cce(&mut self) -> CceW<FdcanCccrSpec> {
+    pub fn cce(&mut self) -> CceW<'_, FdcanCccrSpec> {
         CceW::new(self, 1)
     }
     #[doc = "Bit 2 - ASM restricted operation mode The restricted operation mode is intended for applications that adapt themselves to different CAN bit rates. The application tests different bit rates and leaves the Restricted operation Mode after it has received a valid frame. In the optional Restricted operation Mode the node is able to transmit and receive data and remote frames and it gives acknowledge to valid frames, but it does not send active error frames or overload frames. In case of an error condition or overload condition, it does not send dominant bits, instead it waits for the occurrence of bus idle condition to resynchronize itself to the CAN communication. The error counters are not incremented. Bit ASM can only be set by software when both CCE and INIT are set to 1. The bit can be reset by the software at any time."]
     #[inline(always)]
-    pub fn asm(&mut self) -> AsmW<FdcanCccrSpec> {
+    pub fn asm(&mut self) -> AsmW<'_, FdcanCccrSpec> {
         AsmW::new(self, 2)
     }
     #[doc = "Bit 4 - Clock stop request"]
     #[inline(always)]
-    pub fn csr(&mut self) -> CsrW<FdcanCccrSpec> {
+    pub fn csr(&mut self) -> CsrW<'_, FdcanCccrSpec> {
         CsrW::new(self, 4)
     }
     #[doc = "Bit 5 - Bus monitoring mode Bit MON can only be set by software when both CCE and INIT are set to 1. The bit can be reset by the Host at any time."]
     #[inline(always)]
-    pub fn mon(&mut self) -> MonW<FdcanCccrSpec> {
+    pub fn mon(&mut self) -> MonW<'_, FdcanCccrSpec> {
         MonW::new(self, 5)
     }
     #[doc = "Bit 6 - Disable automatic retransmission"]
     #[inline(always)]
-    pub fn dar(&mut self) -> DarW<FdcanCccrSpec> {
+    pub fn dar(&mut self) -> DarW<'_, FdcanCccrSpec> {
         DarW::new(self, 6)
     }
     #[doc = "Bit 7 - Test mode enable"]
     #[inline(always)]
-    pub fn test(&mut self) -> TestW<FdcanCccrSpec> {
+    pub fn test(&mut self) -> TestW<'_, FdcanCccrSpec> {
         TestW::new(self, 7)
     }
     #[doc = "Bit 8 - FD operation enable"]
     #[inline(always)]
-    pub fn fdoe(&mut self) -> FdoeW<FdcanCccrSpec> {
+    pub fn fdoe(&mut self) -> FdoeW<'_, FdcanCccrSpec> {
         FdoeW::new(self, 8)
     }
     #[doc = "Bit 9 - FDCAN bit rate switching"]
     #[inline(always)]
-    pub fn brse(&mut self) -> BrseW<FdcanCccrSpec> {
+    pub fn brse(&mut self) -> BrseW<'_, FdcanCccrSpec> {
         BrseW::new(self, 9)
     }
     #[doc = "Bit 12 - Protocol exception handling disable"]
     #[inline(always)]
-    pub fn pxhd(&mut self) -> PxhdW<FdcanCccrSpec> {
+    pub fn pxhd(&mut self) -> PxhdW<'_, FdcanCccrSpec> {
         PxhdW::new(self, 12)
     }
     #[doc = "Bit 13 - Edge filtering during bus integration"]
     #[inline(always)]
-    pub fn efbi(&mut self) -> EfbiW<FdcanCccrSpec> {
+    pub fn efbi(&mut self) -> EfbiW<'_, FdcanCccrSpec> {
         EfbiW::new(self, 13)
     }
     #[doc = "Bit 14 - If this bit is set, the FDCAN pauses for two CAN bit times before starting the next transmission after successfully transmitting a frame."]
     #[inline(always)]
-    pub fn txp(&mut self) -> TxpW<FdcanCccrSpec> {
+    pub fn txp(&mut self) -> TxpW<'_, FdcanCccrSpec> {
         TxpW::new(self, 14)
     }
     #[doc = "Bit 15 - Non ISO operation If this bit is set, the FDCAN uses the CAN FD frame format as specified by the Bosch CAN FD Specification V1.0."]
     #[inline(always)]
-    pub fn niso(&mut self) -> NisoW<FdcanCccrSpec> {
+    pub fn niso(&mut self) -> NisoW<'_, FdcanCccrSpec> {
         NisoW::new(self, 15)
     }
 }

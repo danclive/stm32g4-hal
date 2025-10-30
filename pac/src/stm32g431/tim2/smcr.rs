@@ -133,62 +133,62 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Slave mode selection"]
     #[inline(always)]
-    pub fn sms(&mut self) -> SmsW<SmcrSpec> {
+    pub fn sms(&mut self) -> SmsW<'_, SmcrSpec> {
         SmsW::new(self, 0)
     }
     #[doc = "Bit 3 - OCREF clear selection"]
     #[inline(always)]
-    pub fn occs(&mut self) -> OccsW<SmcrSpec> {
+    pub fn occs(&mut self) -> OccsW<'_, SmcrSpec> {
         OccsW::new(self, 3)
     }
     #[doc = "Bits 4:6 - Trigger selection"]
     #[inline(always)]
-    pub fn ts(&mut self) -> TsW<SmcrSpec> {
+    pub fn ts(&mut self) -> TsW<'_, SmcrSpec> {
         TsW::new(self, 4)
     }
     #[doc = "Bit 7 - Master/Slave mode"]
     #[inline(always)]
-    pub fn msm(&mut self) -> MsmW<SmcrSpec> {
+    pub fn msm(&mut self) -> MsmW<'_, SmcrSpec> {
         MsmW::new(self, 7)
     }
     #[doc = "Bits 8:11 - External trigger filter"]
     #[inline(always)]
-    pub fn etf(&mut self) -> EtfW<SmcrSpec> {
+    pub fn etf(&mut self) -> EtfW<'_, SmcrSpec> {
         EtfW::new(self, 8)
     }
     #[doc = "Bits 12:13 - External trigger prescaler"]
     #[inline(always)]
-    pub fn etps(&mut self) -> EtpsW<SmcrSpec> {
+    pub fn etps(&mut self) -> EtpsW<'_, SmcrSpec> {
         EtpsW::new(self, 12)
     }
     #[doc = "Bit 14 - External clock enable"]
     #[inline(always)]
-    pub fn ece(&mut self) -> EceW<SmcrSpec> {
+    pub fn ece(&mut self) -> EceW<'_, SmcrSpec> {
         EceW::new(self, 14)
     }
     #[doc = "Bit 15 - External trigger polarity"]
     #[inline(always)]
-    pub fn etp(&mut self) -> EtpW<SmcrSpec> {
+    pub fn etp(&mut self) -> EtpW<'_, SmcrSpec> {
         EtpW::new(self, 15)
     }
     #[doc = "Bit 16 - Slave mode selection - bit 3"]
     #[inline(always)]
-    pub fn sms_3(&mut self) -> Sms3W<SmcrSpec> {
+    pub fn sms_3(&mut self) -> Sms3W<'_, SmcrSpec> {
         Sms3W::new(self, 16)
     }
     #[doc = "Bits 20:21 - Trigger selection - bit 4:3"]
     #[inline(always)]
-    pub fn ts_4_3(&mut self) -> Ts4_3W<SmcrSpec> {
+    pub fn ts_4_3(&mut self) -> Ts4_3W<'_, SmcrSpec> {
         Ts4_3W::new(self, 20)
     }
     #[doc = "Bit 24 - SMS Preload Enable"]
     #[inline(always)]
-    pub fn smspe(&mut self) -> SmspeW<SmcrSpec> {
+    pub fn smspe(&mut self) -> SmspeW<'_, SmcrSpec> {
         SmspeW::new(self, 24)
     }
     #[doc = "Bit 25 - SMS Preload Source"]
     #[inline(always)]
-    pub fn smsps(&mut self) -> SmspsW<SmcrSpec> {
+    pub fn smsps(&mut self) -> SmspsW<'_, SmcrSpec> {
         SmspsW::new(self, 25)
     }
 }

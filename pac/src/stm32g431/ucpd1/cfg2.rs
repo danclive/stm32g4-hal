@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - RXFILTDIS"]
     #[inline(always)]
-    pub fn rxfiltdis(&mut self) -> RxfiltdisW<Cfg2Spec> {
+    pub fn rxfiltdis(&mut self) -> RxfiltdisW<'_, Cfg2Spec> {
         RxfiltdisW::new(self, 0)
     }
     #[doc = "Bit 1 - RXFILT2N3"]
     #[inline(always)]
-    pub fn rxfilt2n3(&mut self) -> Rxfilt2n3W<Cfg2Spec> {
+    pub fn rxfilt2n3(&mut self) -> Rxfilt2n3W<'_, Cfg2Spec> {
         Rxfilt2n3W::new(self, 1)
     }
     #[doc = "Bit 2 - FORCECLK"]
     #[inline(always)]
-    pub fn forceclk(&mut self) -> ForceclkW<Cfg2Spec> {
+    pub fn forceclk(&mut self) -> ForceclkW<'_, Cfg2Spec> {
         ForceclkW::new(self, 2)
     }
     #[doc = "Bit 3 - WUPEN"]
     #[inline(always)]
-    pub fn wupen(&mut self) -> WupenW<Cfg2Spec> {
+    pub fn wupen(&mut self) -> WupenW<'_, Cfg2Spec> {
         WupenW::new(self, 3)
     }
 }

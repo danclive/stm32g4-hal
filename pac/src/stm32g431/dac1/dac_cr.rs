@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - DAC channel1 enable This bit is set and cleared by software to enable/disable DAC channel1."]
     #[inline(always)]
-    pub fn en1(&mut self) -> En1W<DacCrSpec> {
+    pub fn en1(&mut self) -> En1W<'_, DacCrSpec> {
         En1W::new(self, 0)
     }
     #[doc = "Bit 1 - DAC channel1 trigger enable"]
     #[inline(always)]
-    pub fn ten1(&mut self) -> Ten1W<DacCrSpec> {
+    pub fn ten1(&mut self) -> Ten1W<'_, DacCrSpec> {
         Ten1W::new(self, 1)
     }
     #[doc = "Bits 2:5 - DAC channel1 trigger selection These bits select the external event used to trigger DAC channel1. Note: Only used if bit TEN1 = 1 (DAC channel1 trigger enabled)."]
     #[inline(always)]
-    pub fn tsel1(&mut self) -> Tsel1W<DacCrSpec> {
+    pub fn tsel1(&mut self) -> Tsel1W<'_, DacCrSpec> {
         Tsel1W::new(self, 2)
     }
     #[doc = "Bits 6:7 - DAC channel1 noise/triangle wave generation enable These bits are set and cleared by software. Note: Only used if bit TEN1 = 1 (DAC channel1 trigger enabled)."]
     #[inline(always)]
-    pub fn wave1(&mut self) -> Wave1W<DacCrSpec> {
+    pub fn wave1(&mut self) -> Wave1W<'_, DacCrSpec> {
         Wave1W::new(self, 6)
     }
     #[doc = "Bits 8:11 - DAC channel1 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
     #[inline(always)]
-    pub fn mamp1(&mut self) -> Mamp1W<DacCrSpec> {
+    pub fn mamp1(&mut self) -> Mamp1W<'_, DacCrSpec> {
         Mamp1W::new(self, 8)
     }
     #[doc = "Bit 12 - DAC channel1 DMA enable This bit is set and cleared by software."]
     #[inline(always)]
-    pub fn dmaen1(&mut self) -> Dmaen1W<DacCrSpec> {
+    pub fn dmaen1(&mut self) -> Dmaen1W<'_, DacCrSpec> {
         Dmaen1W::new(self, 12)
     }
     #[doc = "Bit 13 - DAC channel1 DMA Underrun Interrupt enable This bit is set and cleared by software."]
     #[inline(always)]
-    pub fn dmaudrie1(&mut self) -> Dmaudrie1W<DacCrSpec> {
+    pub fn dmaudrie1(&mut self) -> Dmaudrie1W<'_, DacCrSpec> {
         Dmaudrie1W::new(self, 13)
     }
     #[doc = "Bit 14 - DAC Channel 1 calibration enable This bit is set and cleared by software to enable/disable DAC channel 1 calibration, it can be written only if bit EN1=0 into DAC_CR (the calibration mode can be entered/exit only when the DAC channel is disabled) Otherwise, the write operation is ignored."]
     #[inline(always)]
-    pub fn cen1(&mut self) -> Cen1W<DacCrSpec> {
+    pub fn cen1(&mut self) -> Cen1W<'_, DacCrSpec> {
         Cen1W::new(self, 14)
     }
     #[doc = "Bit 16 - DAC channel2 enable This bit is set and cleared by software to enable/disable DAC channel2."]
     #[inline(always)]
-    pub fn en2(&mut self) -> En2W<DacCrSpec> {
+    pub fn en2(&mut self) -> En2W<'_, DacCrSpec> {
         En2W::new(self, 16)
     }
     #[doc = "Bit 17 - DAC channel2 trigger enable"]
     #[inline(always)]
-    pub fn ten2(&mut self) -> Ten2W<DacCrSpec> {
+    pub fn ten2(&mut self) -> Ten2W<'_, DacCrSpec> {
         Ten2W::new(self, 17)
     }
     #[doc = "Bits 18:21 - DAC channel2 trigger selection These bits select the external event used to trigger DAC channel2 Note: Only used if bit TEN2 = 1 (DAC channel2 trigger enabled)."]
     #[inline(always)]
-    pub fn tsel2(&mut self) -> Tsel2W<DacCrSpec> {
+    pub fn tsel2(&mut self) -> Tsel2W<'_, DacCrSpec> {
         Tsel2W::new(self, 18)
     }
     #[doc = "Bits 22:23 - DAC channel2 noise/triangle wave generation enable These bits are set/reset by software. 1x: Triangle wave generation enabled Note: Only used if bit TEN2 = 1 (DAC channel2 trigger enabled)"]
     #[inline(always)]
-    pub fn wave2(&mut self) -> Wave2W<DacCrSpec> {
+    pub fn wave2(&mut self) -> Wave2W<'_, DacCrSpec> {
         Wave2W::new(self, 22)
     }
     #[doc = "Bits 24:27 - DAC channel2 mask/amplitude selector These bits are written by software to select mask in wave generation mode or amplitude in triangle generation mode. = 1011: Unmask bits\\[11:0\\] of LFSR/ triangle amplitude equal to 4095"]
     #[inline(always)]
-    pub fn mamp2(&mut self) -> Mamp2W<DacCrSpec> {
+    pub fn mamp2(&mut self) -> Mamp2W<'_, DacCrSpec> {
         Mamp2W::new(self, 24)
     }
     #[doc = "Bit 28 - DAC channel2 DMA enable This bit is set and cleared by software."]
     #[inline(always)]
-    pub fn dmaen2(&mut self) -> Dmaen2W<DacCrSpec> {
+    pub fn dmaen2(&mut self) -> Dmaen2W<'_, DacCrSpec> {
         Dmaen2W::new(self, 28)
     }
     #[doc = "Bit 29 - DAC channel2 DMA underrun interrupt enable This bit is set and cleared by software."]
     #[inline(always)]
-    pub fn dmaudrie2(&mut self) -> Dmaudrie2W<DacCrSpec> {
+    pub fn dmaudrie2(&mut self) -> Dmaudrie2W<'_, DacCrSpec> {
         Dmaudrie2W::new(self, 29)
     }
     #[doc = "Bit 30 - DAC Channel 2 calibration enable This bit is set and cleared by software to enable/disable DAC channel 2 calibration, it can be written only if bit EN2=0 into DAC_CR (the calibration mode can be entered/exit only when the DAC channel is disabled) Otherwise, the write operation is ignored."]
     #[inline(always)]
-    pub fn cen2(&mut self) -> Cen2W<DacCrSpec> {
+    pub fn cen2(&mut self) -> Cen2W<'_, DacCrSpec> {
         Cen2W::new(self, 30)
     }
 }

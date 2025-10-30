@@ -153,72 +153,72 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - TXMODE"]
     #[inline(always)]
-    pub fn txmode(&mut self) -> TxmodeW<CrSpec> {
+    pub fn txmode(&mut self) -> TxmodeW<'_, CrSpec> {
         TxmodeW::new(self, 0)
     }
     #[doc = "Bit 2 - TXSEND"]
     #[inline(always)]
-    pub fn txsend(&mut self) -> TxsendW<CrSpec> {
+    pub fn txsend(&mut self) -> TxsendW<'_, CrSpec> {
         TxsendW::new(self, 2)
     }
     #[doc = "Bit 3 - TXHRST"]
     #[inline(always)]
-    pub fn txhrst(&mut self) -> TxhrstW<CrSpec> {
+    pub fn txhrst(&mut self) -> TxhrstW<'_, CrSpec> {
         TxhrstW::new(self, 3)
     }
     #[doc = "Bit 4 - RXMODE"]
     #[inline(always)]
-    pub fn rxmode(&mut self) -> RxmodeW<CrSpec> {
+    pub fn rxmode(&mut self) -> RxmodeW<'_, CrSpec> {
         RxmodeW::new(self, 4)
     }
     #[doc = "Bit 5 - PHYRXEN"]
     #[inline(always)]
-    pub fn phyrxen(&mut self) -> PhyrxenW<CrSpec> {
+    pub fn phyrxen(&mut self) -> PhyrxenW<'_, CrSpec> {
         PhyrxenW::new(self, 5)
     }
     #[doc = "Bit 6 - PHYCCSEL"]
     #[inline(always)]
-    pub fn phyccsel(&mut self) -> PhyccselW<CrSpec> {
+    pub fn phyccsel(&mut self) -> PhyccselW<'_, CrSpec> {
         PhyccselW::new(self, 6)
     }
     #[doc = "Bits 7:8 - ANASUBMODE"]
     #[inline(always)]
-    pub fn anasubmode(&mut self) -> AnasubmodeW<CrSpec> {
+    pub fn anasubmode(&mut self) -> AnasubmodeW<'_, CrSpec> {
         AnasubmodeW::new(self, 7)
     }
     #[doc = "Bit 9 - ANAMODE"]
     #[inline(always)]
-    pub fn anamode(&mut self) -> AnamodeW<CrSpec> {
+    pub fn anamode(&mut self) -> AnamodeW<'_, CrSpec> {
         AnamodeW::new(self, 9)
     }
     #[doc = "Bits 10:11 - CCENABLE"]
     #[inline(always)]
-    pub fn ccenable(&mut self) -> CcenableW<CrSpec> {
+    pub fn ccenable(&mut self) -> CcenableW<'_, CrSpec> {
         CcenableW::new(self, 10)
     }
     #[doc = "Bit 16 - FRSRXEN"]
     #[inline(always)]
-    pub fn frsrxen(&mut self) -> FrsrxenW<CrSpec> {
+    pub fn frsrxen(&mut self) -> FrsrxenW<'_, CrSpec> {
         FrsrxenW::new(self, 16)
     }
     #[doc = "Bit 17 - FRSTX"]
     #[inline(always)]
-    pub fn frstx(&mut self) -> FrstxW<CrSpec> {
+    pub fn frstx(&mut self) -> FrstxW<'_, CrSpec> {
         FrstxW::new(self, 17)
     }
     #[doc = "Bit 18 - RDCH"]
     #[inline(always)]
-    pub fn rdch(&mut self) -> RdchW<CrSpec> {
+    pub fn rdch(&mut self) -> RdchW<'_, CrSpec> {
         RdchW::new(self, 18)
     }
     #[doc = "Bit 20 - CC1TCDIS"]
     #[inline(always)]
-    pub fn cc1tcdis(&mut self) -> Cc1tcdisW<CrSpec> {
+    pub fn cc1tcdis(&mut self) -> Cc1tcdisW<'_, CrSpec> {
         Cc1tcdisW::new(self, 20)
     }
     #[doc = "Bit 21 - CC2TCDIS"]
     #[inline(always)]
-    pub fn cc2tcdis(&mut self) -> Cc2tcdisW<CrSpec> {
+    pub fn cc2tcdis(&mut self) -> Cc2tcdisW<'_, CrSpec> {
         Cc2tcdisW::new(self, 21)
     }
 }

@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd0(&mut self) -> Pd0W<PwrPdcrcSpec> {
+    pub fn pd0(&mut self) -> Pd0W<'_, PwrPdcrcSpec> {
         Pd0W::new(self, 0)
     }
     #[doc = "Bit 1 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd1(&mut self) -> Pd1W<PwrPdcrcSpec> {
+    pub fn pd1(&mut self) -> Pd1W<'_, PwrPdcrcSpec> {
         Pd1W::new(self, 1)
     }
     #[doc = "Bit 2 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd2(&mut self) -> Pd2W<PwrPdcrcSpec> {
+    pub fn pd2(&mut self) -> Pd2W<'_, PwrPdcrcSpec> {
         Pd2W::new(self, 2)
     }
     #[doc = "Bit 3 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd3(&mut self) -> Pd3W<PwrPdcrcSpec> {
+    pub fn pd3(&mut self) -> Pd3W<'_, PwrPdcrcSpec> {
         Pd3W::new(self, 3)
     }
     #[doc = "Bit 4 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd4(&mut self) -> Pd4W<PwrPdcrcSpec> {
+    pub fn pd4(&mut self) -> Pd4W<'_, PwrPdcrcSpec> {
         Pd4W::new(self, 4)
     }
     #[doc = "Bit 5 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd5(&mut self) -> Pd5W<PwrPdcrcSpec> {
+    pub fn pd5(&mut self) -> Pd5W<'_, PwrPdcrcSpec> {
         Pd5W::new(self, 5)
     }
     #[doc = "Bit 6 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd6(&mut self) -> Pd6W<PwrPdcrcSpec> {
+    pub fn pd6(&mut self) -> Pd6W<'_, PwrPdcrcSpec> {
         Pd6W::new(self, 6)
     }
     #[doc = "Bit 7 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd7(&mut self) -> Pd7W<PwrPdcrcSpec> {
+    pub fn pd7(&mut self) -> Pd7W<'_, PwrPdcrcSpec> {
         Pd7W::new(self, 7)
     }
     #[doc = "Bit 8 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd8(&mut self) -> Pd8W<PwrPdcrcSpec> {
+    pub fn pd8(&mut self) -> Pd8W<'_, PwrPdcrcSpec> {
         Pd8W::new(self, 8)
     }
     #[doc = "Bit 9 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd9(&mut self) -> Pd9W<PwrPdcrcSpec> {
+    pub fn pd9(&mut self) -> Pd9W<'_, PwrPdcrcSpec> {
         Pd9W::new(self, 9)
     }
     #[doc = "Bit 10 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd10(&mut self) -> Pd10W<PwrPdcrcSpec> {
+    pub fn pd10(&mut self) -> Pd10W<'_, PwrPdcrcSpec> {
         Pd10W::new(self, 10)
     }
     #[doc = "Bit 11 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd11(&mut self) -> Pd11W<PwrPdcrcSpec> {
+    pub fn pd11(&mut self) -> Pd11W<'_, PwrPdcrcSpec> {
         Pd11W::new(self, 11)
     }
     #[doc = "Bit 12 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd12(&mut self) -> Pd12W<PwrPdcrcSpec> {
+    pub fn pd12(&mut self) -> Pd12W<'_, PwrPdcrcSpec> {
         Pd12W::new(self, 12)
     }
     #[doc = "Bit 13 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd13(&mut self) -> Pd13W<PwrPdcrcSpec> {
+    pub fn pd13(&mut self) -> Pd13W<'_, PwrPdcrcSpec> {
         Pd13W::new(self, 13)
     }
     #[doc = "Bit 14 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd14(&mut self) -> Pd14W<PwrPdcrcSpec> {
+    pub fn pd14(&mut self) -> Pd14W<'_, PwrPdcrcSpec> {
         Pd14W::new(self, 14)
     }
     #[doc = "Bit 15 - Port C pull-down bit y (y=0..15) When set, this bit activates the pull-down on PC\\[y\\] when APC bit is set in PWR_CR3 register."]
     #[inline(always)]
-    pub fn pd15(&mut self) -> Pd15W<PwrPdcrcSpec> {
+    pub fn pd15(&mut self) -> Pd15W<'_, PwrPdcrcSpec> {
         Pd15W::new(self, 15)
     }
 }

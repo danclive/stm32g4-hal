@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Event FIFO acknowledge index After the Host has read an element or a sequence of elements from the Tx event FIFO, it has to write the index of the last element read from Tx event FIFO to EFAI. This sets the Tx event FIFO get index TXEFS\\[EFGI\\] to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]."]
     #[inline(always)]
-    pub fn efai(&mut self) -> EfaiW<FdcanTxefaSpec> {
+    pub fn efai(&mut self) -> EfaiW<'_, FdcanTxefaSpec> {
         EfaiW::new(self, 0)
     }
 }

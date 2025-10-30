@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:19 - RXSOPX1"]
     #[inline(always)]
-    pub fn rxsopx1(&mut self) -> Rxsopx1W<RxOrdext1Spec> {
+    pub fn rxsopx1(&mut self) -> Rxsopx1W<'_, RxOrdext1Spec> {
         Rxsopx1W::new(self, 0)
     }
 }

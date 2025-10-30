@@ -113,27 +113,27 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - Synchronization jump width Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: t<sub>SJW</sub> = (DSJW + 1) x tq."]
     #[inline(always)]
-    pub fn dsjw(&mut self) -> DsjwW<FdcanDbtpSpec> {
+    pub fn dsjw(&mut self) -> DsjwW<'_, FdcanDbtpSpec> {
         DsjwW::new(self, 0)
     }
     #[doc = "Bits 4:7 - Data time segment after sample point Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS2</sub> = (DTSEG2 + 1) x tq."]
     #[inline(always)]
-    pub fn dtseg2(&mut self) -> Dtseg2W<FdcanDbtpSpec> {
+    pub fn dtseg2(&mut self) -> Dtseg2W<'_, FdcanDbtpSpec> {
         Dtseg2W::new(self, 4)
     }
     #[doc = "Bits 8:12 - Data time segment before sample point Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. t<sub>BS1</sub> = (DTSEG1 + 1) x tq."]
     #[inline(always)]
-    pub fn dtseg1(&mut self) -> Dtseg1W<FdcanDbtpSpec> {
+    pub fn dtseg1(&mut self) -> Dtseg1W<'_, FdcanDbtpSpec> {
         Dtseg1W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Data bit rate prescaler The value by which the oscillator frequency is divided to generate the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 31. The hardware interpreters this value as the value programmed plus 1."]
     #[inline(always)]
-    pub fn dbrp(&mut self) -> DbrpW<FdcanDbtpSpec> {
+    pub fn dbrp(&mut self) -> DbrpW<'_, FdcanDbtpSpec> {
         DbrpW::new(self, 16)
     }
     #[doc = "Bit 23 - Transceiver delay compensation"]
     #[inline(always)]
-    pub fn tdc(&mut self) -> TdcW<FdcanDbtpSpec> {
+    pub fn tdc(&mut self) -> TdcW<'_, FdcanDbtpSpec> {
         TdcW::new(self, 23)
     }
 }

@@ -143,67 +143,67 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Clock selector"]
     #[inline(always)]
-    pub fn cksel(&mut self) -> CkselW<CfgrSpec> {
+    pub fn cksel(&mut self) -> CkselW<'_, CfgrSpec> {
         CkselW::new(self, 0)
     }
     #[doc = "Bits 1:2 - Clock Polarity"]
     #[inline(always)]
-    pub fn ckpol(&mut self) -> CkpolW<CfgrSpec> {
+    pub fn ckpol(&mut self) -> CkpolW<'_, CfgrSpec> {
         CkpolW::new(self, 1)
     }
     #[doc = "Bits 3:4 - Configurable digital filter for external clock"]
     #[inline(always)]
-    pub fn ckflt(&mut self) -> CkfltW<CfgrSpec> {
+    pub fn ckflt(&mut self) -> CkfltW<'_, CfgrSpec> {
         CkfltW::new(self, 3)
     }
     #[doc = "Bits 6:7 - Configurable digital filter for trigger"]
     #[inline(always)]
-    pub fn trgflt(&mut self) -> TrgfltW<CfgrSpec> {
+    pub fn trgflt(&mut self) -> TrgfltW<'_, CfgrSpec> {
         TrgfltW::new(self, 6)
     }
     #[doc = "Bits 9:11 - Clock prescaler"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PrescW<CfgrSpec> {
+    pub fn presc(&mut self) -> PrescW<'_, CfgrSpec> {
         PrescW::new(self, 9)
     }
     #[doc = "Bits 13:16 - Trigger selector"]
     #[inline(always)]
-    pub fn trigsel(&mut self) -> TrigselW<CfgrSpec> {
+    pub fn trigsel(&mut self) -> TrigselW<'_, CfgrSpec> {
         TrigselW::new(self, 13)
     }
     #[doc = "Bits 17:18 - Trigger enable and polarity"]
     #[inline(always)]
-    pub fn trigen(&mut self) -> TrigenW<CfgrSpec> {
+    pub fn trigen(&mut self) -> TrigenW<'_, CfgrSpec> {
         TrigenW::new(self, 17)
     }
     #[doc = "Bit 19 - Timeout enable"]
     #[inline(always)]
-    pub fn timout(&mut self) -> TimoutW<CfgrSpec> {
+    pub fn timout(&mut self) -> TimoutW<'_, CfgrSpec> {
         TimoutW::new(self, 19)
     }
     #[doc = "Bit 20 - Waveform shape"]
     #[inline(always)]
-    pub fn wave(&mut self) -> WaveW<CfgrSpec> {
+    pub fn wave(&mut self) -> WaveW<'_, CfgrSpec> {
         WaveW::new(self, 20)
     }
     #[doc = "Bit 21 - Waveform shape polarity"]
     #[inline(always)]
-    pub fn wavpol(&mut self) -> WavpolW<CfgrSpec> {
+    pub fn wavpol(&mut self) -> WavpolW<'_, CfgrSpec> {
         WavpolW::new(self, 21)
     }
     #[doc = "Bit 22 - Registers update mode"]
     #[inline(always)]
-    pub fn preload(&mut self) -> PreloadW<CfgrSpec> {
+    pub fn preload(&mut self) -> PreloadW<'_, CfgrSpec> {
         PreloadW::new(self, 22)
     }
     #[doc = "Bit 23 - counter mode enabled"]
     #[inline(always)]
-    pub fn countmode(&mut self) -> CountmodeW<CfgrSpec> {
+    pub fn countmode(&mut self) -> CountmodeW<'_, CfgrSpec> {
         CountmodeW::new(self, 23)
     }
     #[doc = "Bit 24 - Encoder mode enable"]
     #[inline(always)]
-    pub fn enc(&mut self) -> EncW<CfgrSpec> {
+    pub fn enc(&mut self) -> EncW<'_, CfgrSpec> {
         EncW::new(self, 24)
     }
 }

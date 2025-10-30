@@ -73,7 +73,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 24 - Tx FIFO/queue mode This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn tfqm(&mut self) -> TfqmW<FdcanTxbcSpec> {
+    pub fn tfqm(&mut self) -> TfqmW<'_, FdcanTxbcSpec> {
         TfqmW::new(self, 24)
     }
 }

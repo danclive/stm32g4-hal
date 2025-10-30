@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - DAC Channel 1 Sawtooth Reset trigger selection"]
     #[inline(always)]
-    pub fn strsttrigsel1(&mut self) -> Strsttrigsel1W<DacStmodrSpec> {
+    pub fn strsttrigsel1(&mut self) -> Strsttrigsel1W<'_, DacStmodrSpec> {
         Strsttrigsel1W::new(self, 0)
     }
     #[doc = "Bits 8:11 - DAC Channel 1 Sawtooth Increment trigger selection"]
     #[inline(always)]
-    pub fn stinctrigsel1(&mut self) -> Stinctrigsel1W<DacStmodrSpec> {
+    pub fn stinctrigsel1(&mut self) -> Stinctrigsel1W<'_, DacStmodrSpec> {
         Stinctrigsel1W::new(self, 8)
     }
     #[doc = "Bits 16:19 - DAC Channel 1 Sawtooth Reset trigger selection"]
     #[inline(always)]
-    pub fn strsttrigsel2(&mut self) -> Strsttrigsel2W<DacStmodrSpec> {
+    pub fn strsttrigsel2(&mut self) -> Strsttrigsel2W<'_, DacStmodrSpec> {
         Strsttrigsel2W::new(self, 16)
     }
     #[doc = "Bits 24:27 - DAC Channel 2 Sawtooth Increment trigger selection"]
     #[inline(always)]
-    pub fn stinctrigsel2(&mut self) -> Stinctrigsel2W<DacStmodrSpec> {
+    pub fn stinctrigsel2(&mut self) -> Stinctrigsel2W<'_, DacStmodrSpec> {
         Stinctrigsel2W::new(self, 24)
     }
 }

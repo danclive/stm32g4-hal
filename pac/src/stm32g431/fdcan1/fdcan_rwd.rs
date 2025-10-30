@@ -31,7 +31,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - Watchdog configuration Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of FDCAN_CCCR register are set to 1."]
     #[inline(always)]
-    pub fn wdc(&mut self) -> WdcW<FdcanRwdSpec> {
+    pub fn wdc(&mut self) -> WdcW<'_, FdcanRwdSpec> {
         WdcW::new(self, 0)
     }
 }

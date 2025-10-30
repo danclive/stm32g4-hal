@@ -133,62 +133,62 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Interrupt Mask on external/internal line 32"]
     #[inline(always)]
-    pub fn im32(&mut self) -> Im32W<Imr2Spec> {
+    pub fn im32(&mut self) -> Im32W<'_, Imr2Spec> {
         Im32W::new(self, 0)
     }
     #[doc = "Bit 1 - Interrupt Mask on external/internal line 33"]
     #[inline(always)]
-    pub fn im33(&mut self) -> Im33W<Imr2Spec> {
+    pub fn im33(&mut self) -> Im33W<'_, Imr2Spec> {
         Im33W::new(self, 1)
     }
     #[doc = "Bit 2 - Interrupt Mask on external/internal line 34"]
     #[inline(always)]
-    pub fn im34(&mut self) -> Im34W<Imr2Spec> {
+    pub fn im34(&mut self) -> Im34W<'_, Imr2Spec> {
         Im34W::new(self, 2)
     }
     #[doc = "Bit 3 - Interrupt Mask on external/internal line 35"]
     #[inline(always)]
-    pub fn im35(&mut self) -> Im35W<Imr2Spec> {
+    pub fn im35(&mut self) -> Im35W<'_, Imr2Spec> {
         Im35W::new(self, 3)
     }
     #[doc = "Bit 4 - Interrupt Mask on external/internal line 36"]
     #[inline(always)]
-    pub fn im36(&mut self) -> Im36W<Imr2Spec> {
+    pub fn im36(&mut self) -> Im36W<'_, Imr2Spec> {
         Im36W::new(self, 4)
     }
     #[doc = "Bit 5 - Interrupt Mask on external/internal line 37"]
     #[inline(always)]
-    pub fn im37(&mut self) -> Im37W<Imr2Spec> {
+    pub fn im37(&mut self) -> Im37W<'_, Imr2Spec> {
         Im37W::new(self, 5)
     }
     #[doc = "Bit 6 - Interrupt Mask on external/internal line 38"]
     #[inline(always)]
-    pub fn im38(&mut self) -> Im38W<Imr2Spec> {
+    pub fn im38(&mut self) -> Im38W<'_, Imr2Spec> {
         Im38W::new(self, 6)
     }
     #[doc = "Bit 7 - Interrupt Mask on external/internal line 39"]
     #[inline(always)]
-    pub fn im39(&mut self) -> Im39W<Imr2Spec> {
+    pub fn im39(&mut self) -> Im39W<'_, Imr2Spec> {
         Im39W::new(self, 7)
     }
     #[doc = "Bit 8 - Interrupt Mask on external/internal line 40"]
     #[inline(always)]
-    pub fn im40(&mut self) -> Im40W<Imr2Spec> {
+    pub fn im40(&mut self) -> Im40W<'_, Imr2Spec> {
         Im40W::new(self, 8)
     }
     #[doc = "Bit 9 - Interrupt Mask on external/internal line 41"]
     #[inline(always)]
-    pub fn im41(&mut self) -> Im41W<Imr2Spec> {
+    pub fn im41(&mut self) -> Im41W<'_, Imr2Spec> {
         Im41W::new(self, 9)
     }
     #[doc = "Bit 10 - Interrupt Mask on external/internal line 42"]
     #[inline(always)]
-    pub fn im42(&mut self) -> Im42W<Imr2Spec> {
+    pub fn im42(&mut self) -> Im42W<'_, Imr2Spec> {
         Im42W::new(self, 10)
     }
     #[doc = "Bit 11 - Interrupt Mask on external/internal line 43"]
     #[inline(always)]
-    pub fn im43(&mut self) -> Im43W<Imr2Spec> {
+    pub fn im43(&mut self) -> Im43W<'_, Imr2Spec> {
         Im43W::new(self, 11)
     }
 }

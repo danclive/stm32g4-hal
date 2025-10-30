@@ -113,52 +113,52 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - EA"]
     #[inline(always)]
-    pub fn ea(&mut self) -> EaW<Ep0rSpec> {
+    pub fn ea(&mut self) -> EaW<'_, Ep0rSpec> {
         EaW::new(self, 0)
     }
     #[doc = "Bits 4:5 - STAT_TX"]
     #[inline(always)]
-    pub fn stat_tx(&mut self) -> StatTxW<Ep0rSpec> {
+    pub fn stat_tx(&mut self) -> StatTxW<'_, Ep0rSpec> {
         StatTxW::new(self, 4)
     }
     #[doc = "Bit 6 - DTOG_TX"]
     #[inline(always)]
-    pub fn dtog_tx(&mut self) -> DtogTxW<Ep0rSpec> {
+    pub fn dtog_tx(&mut self) -> DtogTxW<'_, Ep0rSpec> {
         DtogTxW::new(self, 6)
     }
     #[doc = "Bit 7 - CTR_TX"]
     #[inline(always)]
-    pub fn ctr_tx(&mut self) -> CtrTxW<Ep0rSpec> {
+    pub fn ctr_tx(&mut self) -> CtrTxW<'_, Ep0rSpec> {
         CtrTxW::new(self, 7)
     }
     #[doc = "Bit 8 - EP_KIND"]
     #[inline(always)]
-    pub fn ep_kind(&mut self) -> EpKindW<Ep0rSpec> {
+    pub fn ep_kind(&mut self) -> EpKindW<'_, Ep0rSpec> {
         EpKindW::new(self, 8)
     }
     #[doc = "Bits 9:10 - EP_TYPE"]
     #[inline(always)]
-    pub fn ep_type(&mut self) -> EpTypeW<Ep0rSpec> {
+    pub fn ep_type(&mut self) -> EpTypeW<'_, Ep0rSpec> {
         EpTypeW::new(self, 9)
     }
     #[doc = "Bit 11 - SETUP"]
     #[inline(always)]
-    pub fn setup(&mut self) -> SetupW<Ep0rSpec> {
+    pub fn setup(&mut self) -> SetupW<'_, Ep0rSpec> {
         SetupW::new(self, 11)
     }
     #[doc = "Bits 12:13 - STAT_RX"]
     #[inline(always)]
-    pub fn stat_rx(&mut self) -> StatRxW<Ep0rSpec> {
+    pub fn stat_rx(&mut self) -> StatRxW<'_, Ep0rSpec> {
         StatRxW::new(self, 12)
     }
     #[doc = "Bit 14 - DTOG_RX"]
     #[inline(always)]
-    pub fn dtog_rx(&mut self) -> DtogRxW<Ep0rSpec> {
+    pub fn dtog_rx(&mut self) -> DtogRxW<'_, Ep0rSpec> {
         DtogRxW::new(self, 14)
     }
     #[doc = "Bit 15 - CTR_RX"]
     #[inline(always)]
-    pub fn ctr_rx(&mut self) -> CtrRxW<Ep0rSpec> {
+    pub fn ctr_rx(&mut self) -> CtrRxW<'_, Ep0rSpec> {
         CtrRxW::new(self, 15)
     }
 }

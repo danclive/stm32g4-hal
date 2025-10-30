@@ -105,32 +105,32 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 11 - DAC channel1 ready status bit"]
     #[inline(always)]
-    pub fn dac1rdy(&mut self) -> Dac1rdyW<DacSrSpec> {
+    pub fn dac1rdy(&mut self) -> Dac1rdyW<'_, DacSrSpec> {
         Dac1rdyW::new(self, 11)
     }
     #[doc = "Bit 12 - DAC channel1 output register status bit"]
     #[inline(always)]
-    pub fn dorstat1(&mut self) -> Dorstat1W<DacSrSpec> {
+    pub fn dorstat1(&mut self) -> Dorstat1W<'_, DacSrSpec> {
         Dorstat1W::new(self, 12)
     }
     #[doc = "Bit 13 - DAC channel1 DMA underrun flag This bit is set by hardware and cleared by software (by writing it to 1)."]
     #[inline(always)]
-    pub fn dmaudr1(&mut self) -> Dmaudr1W<DacSrSpec> {
+    pub fn dmaudr1(&mut self) -> Dmaudr1W<'_, DacSrSpec> {
         Dmaudr1W::new(self, 13)
     }
     #[doc = "Bit 27 - DAC channel 2 ready status bit"]
     #[inline(always)]
-    pub fn dac2rdy(&mut self) -> Dac2rdyW<DacSrSpec> {
+    pub fn dac2rdy(&mut self) -> Dac2rdyW<'_, DacSrSpec> {
         Dac2rdyW::new(self, 27)
     }
     #[doc = "Bit 28 - DAC channel 2 output register status bit"]
     #[inline(always)]
-    pub fn dorstat2(&mut self) -> Dorstat2W<DacSrSpec> {
+    pub fn dorstat2(&mut self) -> Dorstat2W<'_, DacSrSpec> {
         Dorstat2W::new(self, 28)
     }
     #[doc = "Bit 29 - DAC channel2 DMA underrun flag This bit is set by hardware and cleared by software (by writing it to 1)."]
     #[inline(always)]
-    pub fn dmaudr2(&mut self) -> Dmaudr2W<DacSrSpec> {
+    pub fn dmaudr2(&mut self) -> Dmaudr2W<'_, DacSrSpec> {
         Dmaudr2W::new(self, 29)
     }
 }

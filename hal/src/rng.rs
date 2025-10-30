@@ -110,7 +110,7 @@ macro_rules! rng_core {
 
                         // using to_ne_bytes does not work for u8 and would make the macro
                         // implementation more complicated
-                        #[allow(clippy::transmute_num_to_bytes)]
+                        #[allow(unnecessary_transmutes)]
                         let bytes: [$type; BATCH_SIZE] = unsafe { mem::transmute(random_word) };
                         let n = cmp::min(BATCH_SIZE, buffer.len() - i);
                         buffer[i..i + n].copy_from_slice(&bytes[..n]);
@@ -156,6 +156,7 @@ macro_rules! rng_core_transmute {
             impl RngCore<$type> for Rng {
                 fn random(&mut self) -> Result<$type, ErrorKind> {
                     let num = <Self as RngCore<$from>>::random(self)?;
+                    #[allow(unnecessary_transmutes)]
                     Ok(unsafe { mem::transmute::<$from, $type>(num) })
                 }
 

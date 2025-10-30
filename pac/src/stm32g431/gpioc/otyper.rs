@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot0(&mut self) -> Ot0W<OtyperSpec> {
+    pub fn ot0(&mut self) -> Ot0W<'_, OtyperSpec> {
         Ot0W::new(self, 0)
     }
     #[doc = "Bit 1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot1(&mut self) -> Ot1W<OtyperSpec> {
+    pub fn ot1(&mut self) -> Ot1W<'_, OtyperSpec> {
         Ot1W::new(self, 1)
     }
     #[doc = "Bit 2 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot2(&mut self) -> Ot2W<OtyperSpec> {
+    pub fn ot2(&mut self) -> Ot2W<'_, OtyperSpec> {
         Ot2W::new(self, 2)
     }
     #[doc = "Bit 3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot3(&mut self) -> Ot3W<OtyperSpec> {
+    pub fn ot3(&mut self) -> Ot3W<'_, OtyperSpec> {
         Ot3W::new(self, 3)
     }
     #[doc = "Bit 4 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot4(&mut self) -> Ot4W<OtyperSpec> {
+    pub fn ot4(&mut self) -> Ot4W<'_, OtyperSpec> {
         Ot4W::new(self, 4)
     }
     #[doc = "Bit 5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot5(&mut self) -> Ot5W<OtyperSpec> {
+    pub fn ot5(&mut self) -> Ot5W<'_, OtyperSpec> {
         Ot5W::new(self, 5)
     }
     #[doc = "Bit 6 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot6(&mut self) -> Ot6W<OtyperSpec> {
+    pub fn ot6(&mut self) -> Ot6W<'_, OtyperSpec> {
         Ot6W::new(self, 6)
     }
     #[doc = "Bit 7 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot7(&mut self) -> Ot7W<OtyperSpec> {
+    pub fn ot7(&mut self) -> Ot7W<'_, OtyperSpec> {
         Ot7W::new(self, 7)
     }
     #[doc = "Bit 8 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot8(&mut self) -> Ot8W<OtyperSpec> {
+    pub fn ot8(&mut self) -> Ot8W<'_, OtyperSpec> {
         Ot8W::new(self, 8)
     }
     #[doc = "Bit 9 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot9(&mut self) -> Ot9W<OtyperSpec> {
+    pub fn ot9(&mut self) -> Ot9W<'_, OtyperSpec> {
         Ot9W::new(self, 9)
     }
     #[doc = "Bit 10 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot10(&mut self) -> Ot10W<OtyperSpec> {
+    pub fn ot10(&mut self) -> Ot10W<'_, OtyperSpec> {
         Ot10W::new(self, 10)
     }
     #[doc = "Bit 11 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot11(&mut self) -> Ot11W<OtyperSpec> {
+    pub fn ot11(&mut self) -> Ot11W<'_, OtyperSpec> {
         Ot11W::new(self, 11)
     }
     #[doc = "Bit 12 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot12(&mut self) -> Ot12W<OtyperSpec> {
+    pub fn ot12(&mut self) -> Ot12W<'_, OtyperSpec> {
         Ot12W::new(self, 12)
     }
     #[doc = "Bit 13 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot13(&mut self) -> Ot13W<OtyperSpec> {
+    pub fn ot13(&mut self) -> Ot13W<'_, OtyperSpec> {
         Ot13W::new(self, 13)
     }
     #[doc = "Bit 14 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot14(&mut self) -> Ot14W<OtyperSpec> {
+    pub fn ot14(&mut self) -> Ot14W<'_, OtyperSpec> {
         Ot14W::new(self, 14)
     }
     #[doc = "Bit 15 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot15(&mut self) -> Ot15W<OtyperSpec> {
+    pub fn ot15(&mut self) -> Ot15W<'_, OtyperSpec> {
         Ot15W::new(self, 15)
     }
 }

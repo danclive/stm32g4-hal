@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:14 - Synchronous prescaler factor"]
     #[inline(always)]
-    pub fn prediv_s(&mut self) -> PredivSW<PrerSpec> {
+    pub fn prediv_s(&mut self) -> PredivSW<'_, PrerSpec> {
         PredivSW::new(self, 0)
     }
     #[doc = "Bits 16:22 - Asynchronous prescaler factor"]
     #[inline(always)]
-    pub fn prediv_a(&mut self) -> PredivAW<PrerSpec> {
+    pub fn prediv_a(&mut self) -> PredivAW<'_, PrerSpec> {
         PredivAW::new(self, 16)
     }
 }

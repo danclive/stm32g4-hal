@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 2 - Random number generator enable"]
     #[inline(always)]
-    pub fn rngen(&mut self) -> RngenW<CrSpec> {
+    pub fn rngen(&mut self) -> RngenW<'_, CrSpec> {
         RngenW::new(self, 2)
     }
     #[doc = "Bit 3 - Interrupt enable"]
     #[inline(always)]
-    pub fn ie(&mut self) -> IeW<CrSpec> {
+    pub fn ie(&mut self) -> IeW<'_, CrSpec> {
         IeW::new(self, 3)
     }
     #[doc = "Bit 5 - Clock error detection"]
     #[inline(always)]
-    pub fn ced(&mut self) -> CedW<CrSpec> {
+    pub fn ced(&mut self) -> CedW<'_, CrSpec> {
         CedW::new(self, 5)
     }
 }

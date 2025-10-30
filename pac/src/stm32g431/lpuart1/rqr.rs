@@ -16,22 +16,22 @@ impl core::fmt::Debug for crate::generic::Reg<RqrSpec> {
 impl W {
     #[doc = "Bit 1 - Send break request"]
     #[inline(always)]
-    pub fn sbkrq(&mut self) -> SbkrqW<RqrSpec> {
+    pub fn sbkrq(&mut self) -> SbkrqW<'_, RqrSpec> {
         SbkrqW::new(self, 1)
     }
     #[doc = "Bit 2 - Mute mode request"]
     #[inline(always)]
-    pub fn mmrq(&mut self) -> MmrqW<RqrSpec> {
+    pub fn mmrq(&mut self) -> MmrqW<'_, RqrSpec> {
         MmrqW::new(self, 2)
     }
     #[doc = "Bit 3 - Receive data flush request"]
     #[inline(always)]
-    pub fn rxfrq(&mut self) -> RxfrqW<RqrSpec> {
+    pub fn rxfrq(&mut self) -> RxfrqW<'_, RqrSpec> {
         RxfrqW::new(self, 3)
     }
     #[doc = "Bit 4 - TXFRQ"]
     #[inline(always)]
-    pub fn txfrq(&mut self) -> TxfrqW<RqrSpec> {
+    pub fn txfrq(&mut self) -> TxfrqW<'_, RqrSpec> {
         TxfrqW::new(self, 4)
     }
 }

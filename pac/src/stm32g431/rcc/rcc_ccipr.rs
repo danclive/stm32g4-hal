@@ -1353,82 +1353,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - USART1 clock source selection This bit is set and cleared by software to select the USART1 clock source."]
     #[inline(always)]
-    pub fn usart1sel(&mut self) -> Usart1selW<RccCciprSpec> {
+    pub fn usart1sel(&mut self) -> Usart1selW<'_, RccCciprSpec> {
         Usart1selW::new(self, 0)
     }
     #[doc = "Bits 2:3 - USART2 clock source selection This bit is set and cleared by software to select the USART2 clock source."]
     #[inline(always)]
-    pub fn usart2sel(&mut self) -> Usart2selW<RccCciprSpec> {
+    pub fn usart2sel(&mut self) -> Usart2selW<'_, RccCciprSpec> {
         Usart2selW::new(self, 2)
     }
     #[doc = "Bits 4:5 - USART3 clock source selection This bit is set and cleared by software to select the USART3 clock source."]
     #[inline(always)]
-    pub fn usart3sel(&mut self) -> Usart3selW<RccCciprSpec> {
+    pub fn usart3sel(&mut self) -> Usart3selW<'_, RccCciprSpec> {
         Usart3selW::new(self, 4)
     }
     #[doc = "Bits 6:7 - UART4 clock source selection This bit is set and cleared by software to select the UART4 clock source."]
     #[inline(always)]
-    pub fn uart4sel(&mut self) -> Uart4selW<RccCciprSpec> {
+    pub fn uart4sel(&mut self) -> Uart4selW<'_, RccCciprSpec> {
         Uart4selW::new(self, 6)
     }
     #[doc = "Bits 8:9 - UART5 clock source selection These bits are set and cleared by software to select the UART5 clock source."]
     #[inline(always)]
-    pub fn uart5sel(&mut self) -> Uart5selW<RccCciprSpec> {
+    pub fn uart5sel(&mut self) -> Uart5selW<'_, RccCciprSpec> {
         Uart5selW::new(self, 8)
     }
     #[doc = "Bits 10:11 - LPUART1 clock source selection These bits are set and cleared by software to select the LPUART1 clock source."]
     #[inline(always)]
-    pub fn lpuart1sel(&mut self) -> Lpuart1selW<RccCciprSpec> {
+    pub fn lpuart1sel(&mut self) -> Lpuart1selW<'_, RccCciprSpec> {
         Lpuart1selW::new(self, 10)
     }
     #[doc = "Bits 12:13 - I2C1 clock source selection These bits are set and cleared by software to select the I2C1 clock source."]
     #[inline(always)]
-    pub fn i2c1sel(&mut self) -> I2c1selW<RccCciprSpec> {
+    pub fn i2c1sel(&mut self) -> I2c1selW<'_, RccCciprSpec> {
         I2c1selW::new(self, 12)
     }
     #[doc = "Bits 14:15 - I2C2 clock source selection These bits are set and cleared by software to select the I2C2 clock source."]
     #[inline(always)]
-    pub fn i2c2sel(&mut self) -> I2c2selW<RccCciprSpec> {
+    pub fn i2c2sel(&mut self) -> I2c2selW<'_, RccCciprSpec> {
         I2c2selW::new(self, 14)
     }
     #[doc = "Bits 16:17 - I2C3 clock source selection These bits are set and cleared by software to select the I2C3 clock source."]
     #[inline(always)]
-    pub fn i2c3sel(&mut self) -> I2c3selW<RccCciprSpec> {
+    pub fn i2c3sel(&mut self) -> I2c3selW<'_, RccCciprSpec> {
         I2c3selW::new(self, 16)
     }
     #[doc = "Bits 18:19 - Low power timer 1 clock source selection These bits are set and cleared by software to select the LPTIM1 clock source."]
     #[inline(always)]
-    pub fn lptim1sel(&mut self) -> Lptim1selW<RccCciprSpec> {
+    pub fn lptim1sel(&mut self) -> Lptim1selW<'_, RccCciprSpec> {
         Lptim1selW::new(self, 18)
     }
     #[doc = "Bits 20:21 - clock source selection These bits are set and cleared by software to select the SAI clock source."]
     #[inline(always)]
-    pub fn sai1sel(&mut self) -> Sai1selW<RccCciprSpec> {
+    pub fn sai1sel(&mut self) -> Sai1selW<'_, RccCciprSpec> {
         Sai1selW::new(self, 20)
     }
     #[doc = "Bits 22:23 - clock source selection These bits are set and cleared by software to select the I2S23 clock source."]
     #[inline(always)]
-    pub fn i2s23sel(&mut self) -> I2s23selW<RccCciprSpec> {
+    pub fn i2s23sel(&mut self) -> I2s23selW<'_, RccCciprSpec> {
         I2s23selW::new(self, 22)
     }
     #[doc = "Bits 24:25 - None"]
     #[inline(always)]
-    pub fn fdcansel(&mut self) -> FdcanselW<RccCciprSpec> {
+    pub fn fdcansel(&mut self) -> FdcanselW<'_, RccCciprSpec> {
         FdcanselW::new(self, 24)
     }
     #[doc = "Bits 26:27 - 48 MHz clock source selection These bits are set and cleared by software to select the 48 MHz clock source used by USB device FS and RNG."]
     #[inline(always)]
-    pub fn clk48sel(&mut self) -> Clk48selW<RccCciprSpec> {
+    pub fn clk48sel(&mut self) -> Clk48selW<'_, RccCciprSpec> {
         Clk48selW::new(self, 26)
     }
     #[doc = "Bits 28:29 - ADC1/2 clock source selection These bits are set and cleared by software to select the clock source used by the ADC interface."]
     #[inline(always)]
-    pub fn adc12sel(&mut self) -> Adc12selW<RccCciprSpec> {
+    pub fn adc12sel(&mut self) -> Adc12selW<'_, RccCciprSpec> {
         Adc12selW::new(self, 28)
     }
     #[doc = "Bits 30:31 - ADC3/4/5 clock source selection These bits are set and cleared by software to select the clock source used by the ADC345 interface."]
     #[inline(always)]
-    pub fn adc345sel(&mut self) -> Adc345selW<RccCciprSpec> {
+    pub fn adc345sel(&mut self) -> Adc345selW<'_, RccCciprSpec> {
         Adc345selW::new(self, 30)
     }
 }

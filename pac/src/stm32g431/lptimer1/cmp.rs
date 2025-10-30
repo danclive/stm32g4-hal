@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - Compare value"]
     #[inline(always)]
-    pub fn cmp(&mut self) -> CmpW<CmpSpec> {
+    pub fn cmp(&mut self) -> CmpW<'_, CmpSpec> {
         CmpW::new(self, 0)
     }
 }

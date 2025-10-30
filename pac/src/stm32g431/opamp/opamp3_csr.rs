@@ -153,72 +153,72 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Operational amplifier Enable"]
     #[inline(always)]
-    pub fn opaen(&mut self) -> OpaenW<Opamp3CsrSpec> {
+    pub fn opaen(&mut self) -> OpaenW<'_, Opamp3CsrSpec> {
         OpaenW::new(self, 0)
     }
     #[doc = "Bit 1 - FORCE_VP"]
     #[inline(always)]
-    pub fn force_vp(&mut self) -> ForceVpW<Opamp3CsrSpec> {
+    pub fn force_vp(&mut self) -> ForceVpW<'_, Opamp3CsrSpec> {
         ForceVpW::new(self, 1)
     }
     #[doc = "Bits 2:3 - VP_SEL"]
     #[inline(always)]
-    pub fn vp_sel(&mut self) -> VpSelW<Opamp3CsrSpec> {
+    pub fn vp_sel(&mut self) -> VpSelW<'_, Opamp3CsrSpec> {
         VpSelW::new(self, 2)
     }
     #[doc = "Bit 4 - USERTRIM"]
     #[inline(always)]
-    pub fn usertrim(&mut self) -> UsertrimW<Opamp3CsrSpec> {
+    pub fn usertrim(&mut self) -> UsertrimW<'_, Opamp3CsrSpec> {
         UsertrimW::new(self, 4)
     }
     #[doc = "Bits 5:6 - VM_SEL"]
     #[inline(always)]
-    pub fn vm_sel(&mut self) -> VmSelW<Opamp3CsrSpec> {
+    pub fn vm_sel(&mut self) -> VmSelW<'_, Opamp3CsrSpec> {
         VmSelW::new(self, 5)
     }
     #[doc = "Bit 7 - OPAHSM"]
     #[inline(always)]
-    pub fn opahsm(&mut self) -> OpahsmW<Opamp3CsrSpec> {
+    pub fn opahsm(&mut self) -> OpahsmW<'_, Opamp3CsrSpec> {
         OpahsmW::new(self, 7)
     }
     #[doc = "Bit 8 - OPAINTOEN"]
     #[inline(always)]
-    pub fn opaintoen(&mut self) -> OpaintoenW<Opamp3CsrSpec> {
+    pub fn opaintoen(&mut self) -> OpaintoenW<'_, Opamp3CsrSpec> {
         OpaintoenW::new(self, 8)
     }
     #[doc = "Bit 11 - CALON"]
     #[inline(always)]
-    pub fn calon(&mut self) -> CalonW<Opamp3CsrSpec> {
+    pub fn calon(&mut self) -> CalonW<'_, Opamp3CsrSpec> {
         CalonW::new(self, 11)
     }
     #[doc = "Bits 12:13 - CALSEL"]
     #[inline(always)]
-    pub fn calsel(&mut self) -> CalselW<Opamp3CsrSpec> {
+    pub fn calsel(&mut self) -> CalselW<'_, Opamp3CsrSpec> {
         CalselW::new(self, 12)
     }
     #[doc = "Bits 14:18 - PGA_GAIN"]
     #[inline(always)]
-    pub fn pga_gain(&mut self) -> PgaGainW<Opamp3CsrSpec> {
+    pub fn pga_gain(&mut self) -> PgaGainW<'_, Opamp3CsrSpec> {
         PgaGainW::new(self, 14)
     }
     #[doc = "Bits 19:23 - TRIMOFFSETP"]
     #[inline(always)]
-    pub fn trimoffsetp(&mut self) -> TrimoffsetpW<Opamp3CsrSpec> {
+    pub fn trimoffsetp(&mut self) -> TrimoffsetpW<'_, Opamp3CsrSpec> {
         TrimoffsetpW::new(self, 19)
     }
     #[doc = "Bits 24:28 - TRIMOFFSETN"]
     #[inline(always)]
-    pub fn trimoffsetn(&mut self) -> TrimoffsetnW<Opamp3CsrSpec> {
+    pub fn trimoffsetn(&mut self) -> TrimoffsetnW<'_, Opamp3CsrSpec> {
         TrimoffsetnW::new(self, 24)
     }
     #[doc = "Bit 30 - CALOUT"]
     #[inline(always)]
-    pub fn calout(&mut self) -> CaloutW<Opamp3CsrSpec> {
+    pub fn calout(&mut self) -> CaloutW<'_, Opamp3CsrSpec> {
         CaloutW::new(self, 30)
     }
     #[doc = "Bit 31 - LOCK"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LockW<Opamp3CsrSpec> {
+    pub fn lock(&mut self) -> LockW<'_, Opamp3CsrSpec> {
         LockW::new(self, 31)
     }
 }

@@ -80,7 +80,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - Cancellation finished interrupt enable. Each Tx buffer has its own CFIE bit."]
     #[inline(always)]
-    pub fn cfie(&mut self) -> CfieW<FdcanTxbcieSpec> {
+    pub fn cfie(&mut self) -> CfieW<'_, FdcanTxbcieSpec> {
         CfieW::new(self, 0)
     }
 }

@@ -1453,122 +1453,122 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Rx FIFO 0 new message"]
     #[inline(always)]
-    pub fn rf0n(&mut self) -> Rf0nW<FdcanIrSpec> {
+    pub fn rf0n(&mut self) -> Rf0nW<'_, FdcanIrSpec> {
         Rf0nW::new(self, 0)
     }
     #[doc = "Bit 1 - Rx FIFO 0 full"]
     #[inline(always)]
-    pub fn rf0f(&mut self) -> Rf0fW<FdcanIrSpec> {
+    pub fn rf0f(&mut self) -> Rf0fW<'_, FdcanIrSpec> {
         Rf0fW::new(self, 1)
     }
     #[doc = "Bit 2 - Rx FIFO 0 message lost"]
     #[inline(always)]
-    pub fn rf0l(&mut self) -> Rf0lW<FdcanIrSpec> {
+    pub fn rf0l(&mut self) -> Rf0lW<'_, FdcanIrSpec> {
         Rf0lW::new(self, 2)
     }
     #[doc = "Bit 3 - Rx FIFO 1 new message"]
     #[inline(always)]
-    pub fn rf1n(&mut self) -> Rf1nW<FdcanIrSpec> {
+    pub fn rf1n(&mut self) -> Rf1nW<'_, FdcanIrSpec> {
         Rf1nW::new(self, 3)
     }
     #[doc = "Bit 4 - Rx FIFO 1 full"]
     #[inline(always)]
-    pub fn rf1f(&mut self) -> Rf1fW<FdcanIrSpec> {
+    pub fn rf1f(&mut self) -> Rf1fW<'_, FdcanIrSpec> {
         Rf1fW::new(self, 4)
     }
     #[doc = "Bit 5 - Rx FIFO 1 message lost"]
     #[inline(always)]
-    pub fn rf1l(&mut self) -> Rf1lW<FdcanIrSpec> {
+    pub fn rf1l(&mut self) -> Rf1lW<'_, FdcanIrSpec> {
         Rf1lW::new(self, 5)
     }
     #[doc = "Bit 6 - High-priority message"]
     #[inline(always)]
-    pub fn hpm(&mut self) -> HpmW<FdcanIrSpec> {
+    pub fn hpm(&mut self) -> HpmW<'_, FdcanIrSpec> {
         HpmW::new(self, 6)
     }
     #[doc = "Bit 7 - Transmission completed"]
     #[inline(always)]
-    pub fn tc(&mut self) -> TcW<FdcanIrSpec> {
+    pub fn tc(&mut self) -> TcW<'_, FdcanIrSpec> {
         TcW::new(self, 7)
     }
     #[doc = "Bit 8 - Transmission cancellation finished"]
     #[inline(always)]
-    pub fn tcf(&mut self) -> TcfW<FdcanIrSpec> {
+    pub fn tcf(&mut self) -> TcfW<'_, FdcanIrSpec> {
         TcfW::new(self, 8)
     }
     #[doc = "Bit 9 - Tx FIFO empty"]
     #[inline(always)]
-    pub fn tfe(&mut self) -> TfeW<FdcanIrSpec> {
+    pub fn tfe(&mut self) -> TfeW<'_, FdcanIrSpec> {
         TfeW::new(self, 9)
     }
     #[doc = "Bit 10 - Tx event FIFO New Entry"]
     #[inline(always)]
-    pub fn tefn(&mut self) -> TefnW<FdcanIrSpec> {
+    pub fn tefn(&mut self) -> TefnW<'_, FdcanIrSpec> {
         TefnW::new(self, 10)
     }
     #[doc = "Bit 11 - Tx event FIFO full"]
     #[inline(always)]
-    pub fn teff(&mut self) -> TeffW<FdcanIrSpec> {
+    pub fn teff(&mut self) -> TeffW<'_, FdcanIrSpec> {
         TeffW::new(self, 11)
     }
     #[doc = "Bit 12 - Tx event FIFO element lost"]
     #[inline(always)]
-    pub fn tefl(&mut self) -> TeflW<FdcanIrSpec> {
+    pub fn tefl(&mut self) -> TeflW<'_, FdcanIrSpec> {
         TeflW::new(self, 12)
     }
     #[doc = "Bit 13 - Timestamp wraparound"]
     #[inline(always)]
-    pub fn tsw(&mut self) -> TswW<FdcanIrSpec> {
+    pub fn tsw(&mut self) -> TswW<'_, FdcanIrSpec> {
         TswW::new(self, 13)
     }
     #[doc = "Bit 14 - Message RAM access failure The flag is set when the Rx handler: has not completed acceptance filtering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance filtering or message storage is aborted and the Rx handler starts processing of the following message. was unable to write a message to the message RAM. In this case message storage is aborted. In both cases the FIFO put index is not updated. The partly stored message is overwritten when the next message is stored to this location. The flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the FDCAN is switched into Restricted operation Mode (see Restricted operation mode). To leave Restricted operation Mode, the Host CPU has to reset CCCR.ASM."]
     #[inline(always)]
-    pub fn mraf(&mut self) -> MrafW<FdcanIrSpec> {
+    pub fn mraf(&mut self) -> MrafW<'_, FdcanIrSpec> {
         MrafW::new(self, 14)
     }
     #[doc = "Bit 15 - Timeout occurred"]
     #[inline(always)]
-    pub fn too(&mut self) -> TooW<FdcanIrSpec> {
+    pub fn too(&mut self) -> TooW<'_, FdcanIrSpec> {
         TooW::new(self, 15)
     }
     #[doc = "Bit 16 - Error logging overflow"]
     #[inline(always)]
-    pub fn elo(&mut self) -> EloW<FdcanIrSpec> {
+    pub fn elo(&mut self) -> EloW<'_, FdcanIrSpec> {
         EloW::new(self, 16)
     }
     #[doc = "Bit 17 - Error passive"]
     #[inline(always)]
-    pub fn ep(&mut self) -> EpW<FdcanIrSpec> {
+    pub fn ep(&mut self) -> EpW<'_, FdcanIrSpec> {
         EpW::new(self, 17)
     }
     #[doc = "Bit 18 - Warning status"]
     #[inline(always)]
-    pub fn ew(&mut self) -> EwW<FdcanIrSpec> {
+    pub fn ew(&mut self) -> EwW<'_, FdcanIrSpec> {
         EwW::new(self, 18)
     }
     #[doc = "Bit 19 - Bus_Off status"]
     #[inline(always)]
-    pub fn bo(&mut self) -> BoW<FdcanIrSpec> {
+    pub fn bo(&mut self) -> BoW<'_, FdcanIrSpec> {
         BoW::new(self, 19)
     }
     #[doc = "Bit 20 - Watchdog interrupt"]
     #[inline(always)]
-    pub fn wdi(&mut self) -> WdiW<FdcanIrSpec> {
+    pub fn wdi(&mut self) -> WdiW<'_, FdcanIrSpec> {
         WdiW::new(self, 20)
     }
     #[doc = "Bit 21 - Protocol error in arbitration phase (nominal bit time is used)"]
     #[inline(always)]
-    pub fn pea(&mut self) -> PeaW<FdcanIrSpec> {
+    pub fn pea(&mut self) -> PeaW<'_, FdcanIrSpec> {
         PeaW::new(self, 21)
     }
     #[doc = "Bit 22 - Protocol error in data phase (data bit time is used)"]
     #[inline(always)]
-    pub fn ped(&mut self) -> PedW<FdcanIrSpec> {
+    pub fn ped(&mut self) -> PedW<'_, FdcanIrSpec> {
         PedW::new(self, 22)
     }
     #[doc = "Bit 23 - Access to reserved address"]
     #[inline(always)]
-    pub fn ara(&mut self) -> AraW<FdcanIrSpec> {
+    pub fn ara(&mut self) -> AraW<'_, FdcanIrSpec> {
         AraW::new(self, 23)
     }
 }

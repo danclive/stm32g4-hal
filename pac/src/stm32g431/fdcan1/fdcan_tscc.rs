@@ -116,12 +116,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Timestamp select These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn tss(&mut self) -> TssW<FdcanTsccSpec> {
+    pub fn tss(&mut self) -> TssW<'_, FdcanTsccSpec> {
         TssW::new(self, 0)
     }
     #[doc = "Bits 16:19 - Timestamp counter prescaler"]
     #[inline(always)]
-    pub fn tcp(&mut self) -> TcpW<FdcanTsccSpec> {
+    pub fn tcp(&mut self) -> TcpW<'_, FdcanTsccSpec> {
         TcpW::new(self, 16)
     }
 }

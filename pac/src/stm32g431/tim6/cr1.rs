@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Counter enable"]
     #[inline(always)]
-    pub fn cen(&mut self) -> CenW<Cr1Spec> {
+    pub fn cen(&mut self) -> CenW<'_, Cr1Spec> {
         CenW::new(self, 0)
     }
     #[doc = "Bit 1 - Update disable"]
     #[inline(always)]
-    pub fn udis(&mut self) -> UdisW<Cr1Spec> {
+    pub fn udis(&mut self) -> UdisW<'_, Cr1Spec> {
         UdisW::new(self, 1)
     }
     #[doc = "Bit 2 - Update request source"]
     #[inline(always)]
-    pub fn urs(&mut self) -> UrsW<Cr1Spec> {
+    pub fn urs(&mut self) -> UrsW<'_, Cr1Spec> {
         UrsW::new(self, 2)
     }
     #[doc = "Bit 3 - One-pulse mode"]
     #[inline(always)]
-    pub fn opm(&mut self) -> OpmW<Cr1Spec> {
+    pub fn opm(&mut self) -> OpmW<'_, Cr1Spec> {
         OpmW::new(self, 3)
     }
     #[doc = "Bit 7 - Auto-reload preload enable"]
     #[inline(always)]
-    pub fn arpe(&mut self) -> ArpeW<Cr1Spec> {
+    pub fn arpe(&mut self) -> ArpeW<'_, Cr1Spec> {
         ArpeW::new(self, 7)
     }
     #[doc = "Bit 11 - UIF status bit remapping"]
     #[inline(always)]
-    pub fn uifremap(&mut self) -> UifremapW<Cr1Spec> {
+    pub fn uifremap(&mut self) -> UifremapW<'_, Cr1Spec> {
         UifremapW::new(self, 11)
     }
     #[doc = "Bit 12 - Dithering Enable"]
     #[inline(always)]
-    pub fn dithen(&mut self) -> DithenW<Cr1Spec> {
+    pub fn dithen(&mut self) -> DithenW<'_, Cr1Spec> {
         DithenW::new(self, 12)
     }
 }

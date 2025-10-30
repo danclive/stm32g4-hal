@@ -31,7 +31,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 1:18 - Differential mode for channels 15 to 1"]
     #[inline(always)]
-    pub fn difsel_1_18(&mut self) -> Difsel1_18W<DifselSpec> {
+    pub fn difsel_1_18(&mut self) -> Difsel1_18W<'_, DifselSpec> {
         Difsel1_18W::new(self, 1)
     }
 }

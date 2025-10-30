@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 3 - Pending interrupt flag on line 35"]
     #[inline(always)]
-    pub fn pif35(&mut self) -> Pif35W<Pr2Spec> {
+    pub fn pif35(&mut self) -> Pif35W<'_, Pr2Spec> {
         Pif35W::new(self, 3)
     }
     #[doc = "Bit 4 - Pending interrupt flag on line 36"]
     #[inline(always)]
-    pub fn pif36(&mut self) -> Pif36W<Pr2Spec> {
+    pub fn pif36(&mut self) -> Pif36W<'_, Pr2Spec> {
         Pif36W::new(self, 4)
     }
     #[doc = "Bit 5 - Pending interrupt flag on line 37"]
     #[inline(always)]
-    pub fn pif37(&mut self) -> Pif37W<Pr2Spec> {
+    pub fn pif37(&mut self) -> Pif37W<'_, Pr2Spec> {
         Pif37W::new(self, 5)
     }
     #[doc = "Bit 6 - Pending interrupt flag on line 38"]
     #[inline(always)]
-    pub fn pif38(&mut self) -> Pif38W<Pr2Spec> {
+    pub fn pif38(&mut self) -> Pif38W<'_, Pr2Spec> {
         Pif38W::new(self, 6)
     }
 }

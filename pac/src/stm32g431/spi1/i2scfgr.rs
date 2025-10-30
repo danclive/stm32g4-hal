@@ -93,42 +93,42 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - CHLEN"]
     #[inline(always)]
-    pub fn chlen(&mut self) -> ChlenW<I2scfgrSpec> {
+    pub fn chlen(&mut self) -> ChlenW<'_, I2scfgrSpec> {
         ChlenW::new(self, 0)
     }
     #[doc = "Bits 1:2 - DATLEN"]
     #[inline(always)]
-    pub fn datlen(&mut self) -> DatlenW<I2scfgrSpec> {
+    pub fn datlen(&mut self) -> DatlenW<'_, I2scfgrSpec> {
         DatlenW::new(self, 1)
     }
     #[doc = "Bit 3 - CKPOL"]
     #[inline(always)]
-    pub fn ckpol(&mut self) -> CkpolW<I2scfgrSpec> {
+    pub fn ckpol(&mut self) -> CkpolW<'_, I2scfgrSpec> {
         CkpolW::new(self, 3)
     }
     #[doc = "Bits 4:5 - I2SSTD"]
     #[inline(always)]
-    pub fn i2sstd(&mut self) -> I2sstdW<I2scfgrSpec> {
+    pub fn i2sstd(&mut self) -> I2sstdW<'_, I2scfgrSpec> {
         I2sstdW::new(self, 4)
     }
     #[doc = "Bit 7 - PCMSYNC"]
     #[inline(always)]
-    pub fn pcmsync(&mut self) -> PcmsyncW<I2scfgrSpec> {
+    pub fn pcmsync(&mut self) -> PcmsyncW<'_, I2scfgrSpec> {
         PcmsyncW::new(self, 7)
     }
     #[doc = "Bits 8:9 - I2SCFG"]
     #[inline(always)]
-    pub fn i2scfg(&mut self) -> I2scfgW<I2scfgrSpec> {
+    pub fn i2scfg(&mut self) -> I2scfgW<'_, I2scfgrSpec> {
         I2scfgW::new(self, 8)
     }
     #[doc = "Bit 10 - I2SE"]
     #[inline(always)]
-    pub fn i2se(&mut self) -> I2seW<I2scfgrSpec> {
+    pub fn i2se(&mut self) -> I2seW<'_, I2scfgrSpec> {
         I2seW::new(self, 10)
     }
     #[doc = "Bit 11 - I2SMOD"]
     #[inline(always)]
-    pub fn i2smod(&mut self) -> I2smodW<I2scfgrSpec> {
+    pub fn i2smod(&mut self) -> I2smodW<'_, I2scfgrSpec> {
         I2smodW::new(self, 11)
     }
 }

@@ -111,47 +111,47 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - EN"]
     #[inline(always)]
-    pub fn en(&mut self) -> EnW<CompC4csrSpec> {
+    pub fn en(&mut self) -> EnW<'_, CompC4csrSpec> {
         EnW::new(self, 0)
     }
     #[doc = "Bits 4:6 - INMSEL"]
     #[inline(always)]
-    pub fn inmsel(&mut self) -> InmselW<CompC4csrSpec> {
+    pub fn inmsel(&mut self) -> InmselW<'_, CompC4csrSpec> {
         InmselW::new(self, 4)
     }
     #[doc = "Bit 8 - INPSEL"]
     #[inline(always)]
-    pub fn inpsel(&mut self) -> InpselW<CompC4csrSpec> {
+    pub fn inpsel(&mut self) -> InpselW<'_, CompC4csrSpec> {
         InpselW::new(self, 8)
     }
     #[doc = "Bit 15 - POL"]
     #[inline(always)]
-    pub fn pol(&mut self) -> PolW<CompC4csrSpec> {
+    pub fn pol(&mut self) -> PolW<'_, CompC4csrSpec> {
         PolW::new(self, 15)
     }
     #[doc = "Bits 16:18 - HYST"]
     #[inline(always)]
-    pub fn hyst(&mut self) -> HystW<CompC4csrSpec> {
+    pub fn hyst(&mut self) -> HystW<'_, CompC4csrSpec> {
         HystW::new(self, 16)
     }
     #[doc = "Bits 19:21 - BLANKSEL"]
     #[inline(always)]
-    pub fn blanksel(&mut self) -> BlankselW<CompC4csrSpec> {
+    pub fn blanksel(&mut self) -> BlankselW<'_, CompC4csrSpec> {
         BlankselW::new(self, 19)
     }
     #[doc = "Bit 22 - BRGEN"]
     #[inline(always)]
-    pub fn brgen(&mut self) -> BrgenW<CompC4csrSpec> {
+    pub fn brgen(&mut self) -> BrgenW<'_, CompC4csrSpec> {
         BrgenW::new(self, 22)
     }
     #[doc = "Bit 23 - SCALEN"]
     #[inline(always)]
-    pub fn scalen(&mut self) -> ScalenW<CompC4csrSpec> {
+    pub fn scalen(&mut self) -> ScalenW<'_, CompC4csrSpec> {
         ScalenW::new(self, 23)
     }
     #[doc = "Bit 31 - LOCK"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LockW<CompC4csrSpec> {
+    pub fn lock(&mut self) -> LockW<'_, CompC4csrSpec> {
         LockW::new(self, 31)
     }
 }

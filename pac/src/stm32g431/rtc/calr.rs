@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:8 - Calibration minus"]
     #[inline(always)]
-    pub fn calm(&mut self) -> CalmW<CalrSpec> {
+    pub fn calm(&mut self) -> CalmW<'_, CalrSpec> {
         CalmW::new(self, 0)
     }
     #[doc = "Bit 13 - Use a 16-second calibration cycle period"]
     #[inline(always)]
-    pub fn calw16(&mut self) -> Calw16W<CalrSpec> {
+    pub fn calw16(&mut self) -> Calw16W<'_, CalrSpec> {
         Calw16W::new(self, 13)
     }
     #[doc = "Bit 14 - Use an 8-second calibration cycle period"]
     #[inline(always)]
-    pub fn calw8(&mut self) -> Calw8W<CalrSpec> {
+    pub fn calw8(&mut self) -> Calw8W<'_, CalrSpec> {
         Calw8W::new(self, 14)
     }
     #[doc = "Bit 15 - Increase frequency of RTC by 488.5 ppm"]
     #[inline(always)]
-    pub fn calp(&mut self) -> CalpW<CalrSpec> {
+    pub fn calp(&mut self) -> CalpW<'_, CalrSpec> {
         CalpW::new(self, 15)
     }
 }

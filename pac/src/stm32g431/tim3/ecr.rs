@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Index Enable"]
     #[inline(always)]
-    pub fn ie(&mut self) -> IeW<EcrSpec> {
+    pub fn ie(&mut self) -> IeW<'_, EcrSpec> {
         IeW::new(self, 0)
     }
     #[doc = "Bits 1:2 - Index Direction"]
     #[inline(always)]
-    pub fn idir(&mut self) -> IdirW<EcrSpec> {
+    pub fn idir(&mut self) -> IdirW<'_, EcrSpec> {
         IdirW::new(self, 1)
     }
     #[doc = "Bits 3:4 - Index Blanking"]
     #[inline(always)]
-    pub fn iblk(&mut self) -> IblkW<EcrSpec> {
+    pub fn iblk(&mut self) -> IblkW<'_, EcrSpec> {
         IblkW::new(self, 3)
     }
     #[doc = "Bit 5 - First Index"]
     #[inline(always)]
-    pub fn fidx(&mut self) -> FidxW<EcrSpec> {
+    pub fn fidx(&mut self) -> FidxW<'_, EcrSpec> {
         FidxW::new(self, 5)
     }
     #[doc = "Bits 6:7 - Index Positioning"]
     #[inline(always)]
-    pub fn ipos(&mut self) -> IposW<EcrSpec> {
+    pub fn ipos(&mut self) -> IposW<'_, EcrSpec> {
         IposW::new(self, 6)
     }
     #[doc = "Bits 16:23 - Pulse width"]
     #[inline(always)]
-    pub fn pw(&mut self) -> PwW<EcrSpec> {
+    pub fn pw(&mut self) -> PwW<'_, EcrSpec> {
         PwW::new(self, 16)
     }
     #[doc = "Bits 24:26 - Pulse Width prescaler"]
     #[inline(always)]
-    pub fn pwprsc(&mut self) -> PwprscW<EcrSpec> {
+    pub fn pwprsc(&mut self) -> PwprscW<'_, EcrSpec> {
         PwprscW::new(self, 24)
     }
 }

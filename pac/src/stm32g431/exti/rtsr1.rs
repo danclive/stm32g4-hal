@@ -243,117 +243,117 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Rising trigger event configuration of line 0"]
     #[inline(always)]
-    pub fn rt0(&mut self) -> Rt0W<Rtsr1Spec> {
+    pub fn rt0(&mut self) -> Rt0W<'_, Rtsr1Spec> {
         Rt0W::new(self, 0)
     }
     #[doc = "Bit 1 - Rising trigger event configuration of line 1"]
     #[inline(always)]
-    pub fn rt1(&mut self) -> Rt1W<Rtsr1Spec> {
+    pub fn rt1(&mut self) -> Rt1W<'_, Rtsr1Spec> {
         Rt1W::new(self, 1)
     }
     #[doc = "Bit 2 - Rising trigger event configuration of line 2"]
     #[inline(always)]
-    pub fn rt2(&mut self) -> Rt2W<Rtsr1Spec> {
+    pub fn rt2(&mut self) -> Rt2W<'_, Rtsr1Spec> {
         Rt2W::new(self, 2)
     }
     #[doc = "Bit 3 - Rising trigger event configuration of line 3"]
     #[inline(always)]
-    pub fn rt3(&mut self) -> Rt3W<Rtsr1Spec> {
+    pub fn rt3(&mut self) -> Rt3W<'_, Rtsr1Spec> {
         Rt3W::new(self, 3)
     }
     #[doc = "Bit 4 - Rising trigger event configuration of line 4"]
     #[inline(always)]
-    pub fn rt4(&mut self) -> Rt4W<Rtsr1Spec> {
+    pub fn rt4(&mut self) -> Rt4W<'_, Rtsr1Spec> {
         Rt4W::new(self, 4)
     }
     #[doc = "Bit 5 - Rising trigger event configuration of line 5"]
     #[inline(always)]
-    pub fn rt5(&mut self) -> Rt5W<Rtsr1Spec> {
+    pub fn rt5(&mut self) -> Rt5W<'_, Rtsr1Spec> {
         Rt5W::new(self, 5)
     }
     #[doc = "Bit 6 - Rising trigger event configuration of line 6"]
     #[inline(always)]
-    pub fn rt6(&mut self) -> Rt6W<Rtsr1Spec> {
+    pub fn rt6(&mut self) -> Rt6W<'_, Rtsr1Spec> {
         Rt6W::new(self, 6)
     }
     #[doc = "Bit 7 - Rising trigger event configuration of line 7"]
     #[inline(always)]
-    pub fn rt7(&mut self) -> Rt7W<Rtsr1Spec> {
+    pub fn rt7(&mut self) -> Rt7W<'_, Rtsr1Spec> {
         Rt7W::new(self, 7)
     }
     #[doc = "Bit 8 - Rising trigger event configuration of line 8"]
     #[inline(always)]
-    pub fn rt8(&mut self) -> Rt8W<Rtsr1Spec> {
+    pub fn rt8(&mut self) -> Rt8W<'_, Rtsr1Spec> {
         Rt8W::new(self, 8)
     }
     #[doc = "Bit 9 - Rising trigger event configuration of line 9"]
     #[inline(always)]
-    pub fn rt9(&mut self) -> Rt9W<Rtsr1Spec> {
+    pub fn rt9(&mut self) -> Rt9W<'_, Rtsr1Spec> {
         Rt9W::new(self, 9)
     }
     #[doc = "Bit 10 - Rising trigger event configuration of line 10"]
     #[inline(always)]
-    pub fn rt10(&mut self) -> Rt10W<Rtsr1Spec> {
+    pub fn rt10(&mut self) -> Rt10W<'_, Rtsr1Spec> {
         Rt10W::new(self, 10)
     }
     #[doc = "Bit 11 - Rising trigger event configuration of line 11"]
     #[inline(always)]
-    pub fn rt11(&mut self) -> Rt11W<Rtsr1Spec> {
+    pub fn rt11(&mut self) -> Rt11W<'_, Rtsr1Spec> {
         Rt11W::new(self, 11)
     }
     #[doc = "Bit 12 - Rising trigger event configuration of line 12"]
     #[inline(always)]
-    pub fn rt12(&mut self) -> Rt12W<Rtsr1Spec> {
+    pub fn rt12(&mut self) -> Rt12W<'_, Rtsr1Spec> {
         Rt12W::new(self, 12)
     }
     #[doc = "Bit 13 - Rising trigger event configuration of line 13"]
     #[inline(always)]
-    pub fn rt13(&mut self) -> Rt13W<Rtsr1Spec> {
+    pub fn rt13(&mut self) -> Rt13W<'_, Rtsr1Spec> {
         Rt13W::new(self, 13)
     }
     #[doc = "Bit 14 - Rising trigger event configuration of line 14"]
     #[inline(always)]
-    pub fn rt14(&mut self) -> Rt14W<Rtsr1Spec> {
+    pub fn rt14(&mut self) -> Rt14W<'_, Rtsr1Spec> {
         Rt14W::new(self, 14)
     }
     #[doc = "Bit 15 - Rising trigger event configuration of line 15"]
     #[inline(always)]
-    pub fn rt15(&mut self) -> Rt15W<Rtsr1Spec> {
+    pub fn rt15(&mut self) -> Rt15W<'_, Rtsr1Spec> {
         Rt15W::new(self, 15)
     }
     #[doc = "Bit 16 - Rising trigger event configuration of line 16"]
     #[inline(always)]
-    pub fn rt16(&mut self) -> Rt16W<Rtsr1Spec> {
+    pub fn rt16(&mut self) -> Rt16W<'_, Rtsr1Spec> {
         Rt16W::new(self, 16)
     }
     #[doc = "Bit 17 - Rising trigger event configuration of line 17"]
     #[inline(always)]
-    pub fn rt17(&mut self) -> Rt17W<Rtsr1Spec> {
+    pub fn rt17(&mut self) -> Rt17W<'_, Rtsr1Spec> {
         Rt17W::new(self, 17)
     }
     #[doc = "Bit 19 - Rising trigger event configuration of line 19"]
     #[inline(always)]
-    pub fn rt19(&mut self) -> Rt19W<Rtsr1Spec> {
+    pub fn rt19(&mut self) -> Rt19W<'_, Rtsr1Spec> {
         Rt19W::new(self, 19)
     }
     #[doc = "Bit 20 - Rising trigger event configuration of line 20"]
     #[inline(always)]
-    pub fn rt20(&mut self) -> Rt20W<Rtsr1Spec> {
+    pub fn rt20(&mut self) -> Rt20W<'_, Rtsr1Spec> {
         Rt20W::new(self, 20)
     }
     #[doc = "Bit 21 - Rising trigger event configuration of line 21"]
     #[inline(always)]
-    pub fn rt21(&mut self) -> Rt21W<Rtsr1Spec> {
+    pub fn rt21(&mut self) -> Rt21W<'_, Rtsr1Spec> {
         Rt21W::new(self, 21)
     }
     #[doc = "Bit 22 - Rising trigger event configuration of line 22"]
     #[inline(always)]
-    pub fn rt22(&mut self) -> Rt22W<Rtsr1Spec> {
+    pub fn rt22(&mut self) -> Rt22W<'_, Rtsr1Spec> {
         Rt22W::new(self, 22)
     }
     #[doc = "Bits 29:31 - RT"]
     #[inline(always)]
-    pub fn rt(&mut self) -> RtW<Rtsr1Spec> {
+    pub fn rt(&mut self) -> RtW<'_, Rtsr1Spec> {
         RtW::new(self, 29)
     }
 }

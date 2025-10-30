@@ -22,37 +22,37 @@ impl core::fmt::Debug for crate::generic::Reg<IcrSpec> {
 impl W {
     #[doc = "Bit 0 - compare match Clear Flag"]
     #[inline(always)]
-    pub fn cmpmcf(&mut self) -> CmpmcfW<IcrSpec> {
+    pub fn cmpmcf(&mut self) -> CmpmcfW<'_, IcrSpec> {
         CmpmcfW::new(self, 0)
     }
     #[doc = "Bit 1 - Autoreload match Clear Flag"]
     #[inline(always)]
-    pub fn arrmcf(&mut self) -> ArrmcfW<IcrSpec> {
+    pub fn arrmcf(&mut self) -> ArrmcfW<'_, IcrSpec> {
         ArrmcfW::new(self, 1)
     }
     #[doc = "Bit 2 - External trigger valid edge Clear Flag"]
     #[inline(always)]
-    pub fn exttrigcf(&mut self) -> ExttrigcfW<IcrSpec> {
+    pub fn exttrigcf(&mut self) -> ExttrigcfW<'_, IcrSpec> {
         ExttrigcfW::new(self, 2)
     }
     #[doc = "Bit 3 - Compare register update OK Clear Flag"]
     #[inline(always)]
-    pub fn cmpokcf(&mut self) -> CmpokcfW<IcrSpec> {
+    pub fn cmpokcf(&mut self) -> CmpokcfW<'_, IcrSpec> {
         CmpokcfW::new(self, 3)
     }
     #[doc = "Bit 4 - Autoreload register update OK Clear Flag"]
     #[inline(always)]
-    pub fn arrokcf(&mut self) -> ArrokcfW<IcrSpec> {
+    pub fn arrokcf(&mut self) -> ArrokcfW<'_, IcrSpec> {
         ArrokcfW::new(self, 4)
     }
     #[doc = "Bit 5 - Direction change to UP Clear Flag"]
     #[inline(always)]
-    pub fn upcf(&mut self) -> UpcfW<IcrSpec> {
+    pub fn upcf(&mut self) -> UpcfW<'_, IcrSpec> {
         UpcfW::new(self, 5)
     }
     #[doc = "Bit 6 - Direction change to down Clear Flag"]
     #[inline(always)]
-    pub fn downcf(&mut self) -> DowncfW<IcrSpec> {
+    pub fn downcf(&mut self) -> DowncfW<'_, IcrSpec> {
         DowncfW::new(self, 6)
     }
 }

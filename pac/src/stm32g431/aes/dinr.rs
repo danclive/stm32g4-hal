@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - Data Input Register"]
     #[inline(always)]
-    pub fn aes_dinr(&mut self) -> AesDinrW<DinrSpec> {
+    pub fn aes_dinr(&mut self) -> AesDinrW<'_, DinrSpec> {
         AesDinrW::new(self, 0)
     }
 }

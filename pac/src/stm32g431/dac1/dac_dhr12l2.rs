@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 4:15 - DAC channel2 12-bit left-aligned data These bits are written by software which specify 12-bit data for DAC channel2."]
     #[inline(always)]
-    pub fn dacc2dhr(&mut self) -> Dacc2dhrW<DacDhr12l2Spec> {
+    pub fn dacc2dhr(&mut self) -> Dacc2dhrW<'_, DacDhr12l2Spec> {
         Dacc2dhrW::new(self, 4)
     }
     #[doc = "Bits 20:31 - DAC channel2 12-bit left-aligned data B"]
     #[inline(always)]
-    pub fn dacc2dhrb(&mut self) -> Dacc2dhrbW<DacDhr12l2Spec> {
+    pub fn dacc2dhrb(&mut self) -> Dacc2dhrbW<'_, DacDhr12l2Spec> {
         Dacc2dhrbW::new(self, 20)
     }
 }

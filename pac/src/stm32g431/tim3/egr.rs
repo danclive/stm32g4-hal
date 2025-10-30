@@ -26,47 +26,47 @@ impl core::fmt::Debug for crate::generic::Reg<EgrSpec> {
 impl W {
     #[doc = "Bit 0 - Update generation"]
     #[inline(always)]
-    pub fn ug(&mut self) -> UgW<EgrSpec> {
+    pub fn ug(&mut self) -> UgW<'_, EgrSpec> {
         UgW::new(self, 0)
     }
     #[doc = "Bit 1 - Capture/compare 1 generation"]
     #[inline(always)]
-    pub fn cc1g(&mut self) -> Cc1gW<EgrSpec> {
+    pub fn cc1g(&mut self) -> Cc1gW<'_, EgrSpec> {
         Cc1gW::new(self, 1)
     }
     #[doc = "Bit 2 - Capture/compare 2 generation"]
     #[inline(always)]
-    pub fn cc2g(&mut self) -> Cc2gW<EgrSpec> {
+    pub fn cc2g(&mut self) -> Cc2gW<'_, EgrSpec> {
         Cc2gW::new(self, 2)
     }
     #[doc = "Bit 3 - Capture/compare 3 generation"]
     #[inline(always)]
-    pub fn cc3g(&mut self) -> Cc3gW<EgrSpec> {
+    pub fn cc3g(&mut self) -> Cc3gW<'_, EgrSpec> {
         Cc3gW::new(self, 3)
     }
     #[doc = "Bit 4 - Capture/compare 4 generation"]
     #[inline(always)]
-    pub fn cc4g(&mut self) -> Cc4gW<EgrSpec> {
+    pub fn cc4g(&mut self) -> Cc4gW<'_, EgrSpec> {
         Cc4gW::new(self, 4)
     }
     #[doc = "Bit 5 - Capture/Compare control update generation"]
     #[inline(always)]
-    pub fn comg(&mut self) -> ComgW<EgrSpec> {
+    pub fn comg(&mut self) -> ComgW<'_, EgrSpec> {
         ComgW::new(self, 5)
     }
     #[doc = "Bit 6 - Trigger generation"]
     #[inline(always)]
-    pub fn tg(&mut self) -> TgW<EgrSpec> {
+    pub fn tg(&mut self) -> TgW<'_, EgrSpec> {
         TgW::new(self, 6)
     }
     #[doc = "Bit 7 - Break generation"]
     #[inline(always)]
-    pub fn bg(&mut self) -> BgW<EgrSpec> {
+    pub fn bg(&mut self) -> BgW<'_, EgrSpec> {
         BgW::new(self, 7)
     }
     #[doc = "Bit 8 - Break 2 generation"]
     #[inline(always)]
-    pub fn b2g(&mut self) -> B2gW<EgrSpec> {
+    pub fn b2g(&mut self) -> B2gW<'_, EgrSpec> {
         B2gW::new(self, 8)
     }
 }

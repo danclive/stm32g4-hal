@@ -73,32 +73,32 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Rising trigger event configuration bit of line 32"]
     #[inline(always)]
-    pub fn rt32(&mut self) -> Rt32W<Rtsr2Spec> {
+    pub fn rt32(&mut self) -> Rt32W<'_, Rtsr2Spec> {
         Rt32W::new(self, 0)
     }
     #[doc = "Bit 1 - Rising trigger event configuration bit of line 32"]
     #[inline(always)]
-    pub fn rt33(&mut self) -> Rt33W<Rtsr2Spec> {
+    pub fn rt33(&mut self) -> Rt33W<'_, Rtsr2Spec> {
         Rt33W::new(self, 1)
     }
     #[doc = "Bit 6 - Rising trigger event configuration bit of line 38"]
     #[inline(always)]
-    pub fn rt38(&mut self) -> Rt38W<Rtsr2Spec> {
+    pub fn rt38(&mut self) -> Rt38W<'_, Rtsr2Spec> {
         Rt38W::new(self, 6)
     }
     #[doc = "Bit 7 - Rising trigger event configuration bit of line 39"]
     #[inline(always)]
-    pub fn rt39(&mut self) -> Rt39W<Rtsr2Spec> {
+    pub fn rt39(&mut self) -> Rt39W<'_, Rtsr2Spec> {
         Rt39W::new(self, 7)
     }
     #[doc = "Bit 8 - Rising trigger event configuration bit of line 40"]
     #[inline(always)]
-    pub fn rt40(&mut self) -> Rt40W<Rtsr2Spec> {
+    pub fn rt40(&mut self) -> Rt40W<'_, Rtsr2Spec> {
         Rt40W::new(self, 8)
     }
     #[doc = "Bit 9 - Rising trigger event configuration bit of line 41"]
     #[inline(always)]
-    pub fn rt41(&mut self) -> Rt41W<Rtsr2Spec> {
+    pub fn rt41(&mut self) -> Rt41W<'_, Rtsr2Spec> {
         Rt41W::new(self, 9)
     }
 }

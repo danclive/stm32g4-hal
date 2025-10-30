@@ -103,47 +103,47 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - SMP10"]
     #[inline(always)]
-    pub fn smp10(&mut self) -> Smp10W<Smpr2Spec> {
+    pub fn smp10(&mut self) -> Smp10W<'_, Smpr2Spec> {
         Smp10W::new(self, 0)
     }
     #[doc = "Bits 3:5 - SMP11"]
     #[inline(always)]
-    pub fn smp11(&mut self) -> Smp11W<Smpr2Spec> {
+    pub fn smp11(&mut self) -> Smp11W<'_, Smpr2Spec> {
         Smp11W::new(self, 3)
     }
     #[doc = "Bits 6:8 - SMP12"]
     #[inline(always)]
-    pub fn smp12(&mut self) -> Smp12W<Smpr2Spec> {
+    pub fn smp12(&mut self) -> Smp12W<'_, Smpr2Spec> {
         Smp12W::new(self, 6)
     }
     #[doc = "Bits 9:11 - SMP13"]
     #[inline(always)]
-    pub fn smp13(&mut self) -> Smp13W<Smpr2Spec> {
+    pub fn smp13(&mut self) -> Smp13W<'_, Smpr2Spec> {
         Smp13W::new(self, 9)
     }
     #[doc = "Bits 12:14 - SMP14"]
     #[inline(always)]
-    pub fn smp14(&mut self) -> Smp14W<Smpr2Spec> {
+    pub fn smp14(&mut self) -> Smp14W<'_, Smpr2Spec> {
         Smp14W::new(self, 12)
     }
     #[doc = "Bits 15:17 - SMP15"]
     #[inline(always)]
-    pub fn smp15(&mut self) -> Smp15W<Smpr2Spec> {
+    pub fn smp15(&mut self) -> Smp15W<'_, Smpr2Spec> {
         Smp15W::new(self, 15)
     }
     #[doc = "Bits 18:20 - SMP16"]
     #[inline(always)]
-    pub fn smp16(&mut self) -> Smp16W<Smpr2Spec> {
+    pub fn smp16(&mut self) -> Smp16W<'_, Smpr2Spec> {
         Smp16W::new(self, 18)
     }
     #[doc = "Bits 21:23 - SMP17"]
     #[inline(always)]
-    pub fn smp17(&mut self) -> Smp17W<Smpr2Spec> {
+    pub fn smp17(&mut self) -> Smp17W<'_, Smpr2Spec> {
         Smp17W::new(self, 21)
     }
     #[doc = "Bits 24:26 - SMP18"]
     #[inline(always)]
-    pub fn smp18(&mut self) -> Smp18W<Smpr2Spec> {
+    pub fn smp18(&mut self) -> Smp18W<'_, Smpr2Spec> {
         Smp18W::new(self, 24)
     }
 }

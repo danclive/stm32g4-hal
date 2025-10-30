@@ -233,112 +233,112 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Pending bit 0"]
     #[inline(always)]
-    pub fn pif0(&mut self) -> Pif0W<Pr1Spec> {
+    pub fn pif0(&mut self) -> Pif0W<'_, Pr1Spec> {
         Pif0W::new(self, 0)
     }
     #[doc = "Bit 1 - Pending bit 1"]
     #[inline(always)]
-    pub fn pif1(&mut self) -> Pif1W<Pr1Spec> {
+    pub fn pif1(&mut self) -> Pif1W<'_, Pr1Spec> {
         Pif1W::new(self, 1)
     }
     #[doc = "Bit 2 - Pending bit 2"]
     #[inline(always)]
-    pub fn pif2(&mut self) -> Pif2W<Pr1Spec> {
+    pub fn pif2(&mut self) -> Pif2W<'_, Pr1Spec> {
         Pif2W::new(self, 2)
     }
     #[doc = "Bit 3 - Pending bit 3"]
     #[inline(always)]
-    pub fn pif3(&mut self) -> Pif3W<Pr1Spec> {
+    pub fn pif3(&mut self) -> Pif3W<'_, Pr1Spec> {
         Pif3W::new(self, 3)
     }
     #[doc = "Bit 4 - Pending bit 4"]
     #[inline(always)]
-    pub fn pif4(&mut self) -> Pif4W<Pr1Spec> {
+    pub fn pif4(&mut self) -> Pif4W<'_, Pr1Spec> {
         Pif4W::new(self, 4)
     }
     #[doc = "Bit 5 - Pending bit 5"]
     #[inline(always)]
-    pub fn pif5(&mut self) -> Pif5W<Pr1Spec> {
+    pub fn pif5(&mut self) -> Pif5W<'_, Pr1Spec> {
         Pif5W::new(self, 5)
     }
     #[doc = "Bit 6 - Pending bit 6"]
     #[inline(always)]
-    pub fn pif6(&mut self) -> Pif6W<Pr1Spec> {
+    pub fn pif6(&mut self) -> Pif6W<'_, Pr1Spec> {
         Pif6W::new(self, 6)
     }
     #[doc = "Bit 7 - Pending bit 7"]
     #[inline(always)]
-    pub fn pif7(&mut self) -> Pif7W<Pr1Spec> {
+    pub fn pif7(&mut self) -> Pif7W<'_, Pr1Spec> {
         Pif7W::new(self, 7)
     }
     #[doc = "Bit 8 - Pending bit 8"]
     #[inline(always)]
-    pub fn pif8(&mut self) -> Pif8W<Pr1Spec> {
+    pub fn pif8(&mut self) -> Pif8W<'_, Pr1Spec> {
         Pif8W::new(self, 8)
     }
     #[doc = "Bit 9 - Pending bit 9"]
     #[inline(always)]
-    pub fn pif9(&mut self) -> Pif9W<Pr1Spec> {
+    pub fn pif9(&mut self) -> Pif9W<'_, Pr1Spec> {
         Pif9W::new(self, 9)
     }
     #[doc = "Bit 10 - Pending bit 10"]
     #[inline(always)]
-    pub fn pif10(&mut self) -> Pif10W<Pr1Spec> {
+    pub fn pif10(&mut self) -> Pif10W<'_, Pr1Spec> {
         Pif10W::new(self, 10)
     }
     #[doc = "Bit 11 - Pending bit 11"]
     #[inline(always)]
-    pub fn pif11(&mut self) -> Pif11W<Pr1Spec> {
+    pub fn pif11(&mut self) -> Pif11W<'_, Pr1Spec> {
         Pif11W::new(self, 11)
     }
     #[doc = "Bit 12 - Pending bit 12"]
     #[inline(always)]
-    pub fn pif12(&mut self) -> Pif12W<Pr1Spec> {
+    pub fn pif12(&mut self) -> Pif12W<'_, Pr1Spec> {
         Pif12W::new(self, 12)
     }
     #[doc = "Bit 13 - Pending bit 13"]
     #[inline(always)]
-    pub fn pif13(&mut self) -> Pif13W<Pr1Spec> {
+    pub fn pif13(&mut self) -> Pif13W<'_, Pr1Spec> {
         Pif13W::new(self, 13)
     }
     #[doc = "Bit 14 - Pending bit 14"]
     #[inline(always)]
-    pub fn pif14(&mut self) -> Pif14W<Pr1Spec> {
+    pub fn pif14(&mut self) -> Pif14W<'_, Pr1Spec> {
         Pif14W::new(self, 14)
     }
     #[doc = "Bit 15 - Pending bit 15"]
     #[inline(always)]
-    pub fn pif15(&mut self) -> Pif15W<Pr1Spec> {
+    pub fn pif15(&mut self) -> Pif15W<'_, Pr1Spec> {
         Pif15W::new(self, 15)
     }
     #[doc = "Bit 16 - Pending bit 16"]
     #[inline(always)]
-    pub fn pif16(&mut self) -> Pif16W<Pr1Spec> {
+    pub fn pif16(&mut self) -> Pif16W<'_, Pr1Spec> {
         Pif16W::new(self, 16)
     }
     #[doc = "Bit 17 - Pending bit 17"]
     #[inline(always)]
-    pub fn pif17(&mut self) -> Pif17W<Pr1Spec> {
+    pub fn pif17(&mut self) -> Pif17W<'_, Pr1Spec> {
         Pif17W::new(self, 17)
     }
     #[doc = "Bit 19 - Pending bit 19"]
     #[inline(always)]
-    pub fn pif19(&mut self) -> Pif19W<Pr1Spec> {
+    pub fn pif19(&mut self) -> Pif19W<'_, Pr1Spec> {
         Pif19W::new(self, 19)
     }
     #[doc = "Bit 20 - Pending bit 20"]
     #[inline(always)]
-    pub fn pif20(&mut self) -> Pif20W<Pr1Spec> {
+    pub fn pif20(&mut self) -> Pif20W<'_, Pr1Spec> {
         Pif20W::new(self, 20)
     }
     #[doc = "Bit 21 - Pending bit 21"]
     #[inline(always)]
-    pub fn pif21(&mut self) -> Pif21W<Pr1Spec> {
+    pub fn pif21(&mut self) -> Pif21W<'_, Pr1Spec> {
         Pif21W::new(self, 21)
     }
     #[doc = "Bit 22 - Pending bit 22"]
     #[inline(always)]
-    pub fn pif22(&mut self) -> Pif22W<Pr1Spec> {
+    pub fn pif22(&mut self) -> Pif22W<'_, Pr1Spec> {
         Pif22W::new(self, 22)
     }
 }

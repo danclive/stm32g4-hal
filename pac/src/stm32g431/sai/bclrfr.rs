@@ -20,32 +20,32 @@ impl core::fmt::Debug for crate::generic::Reg<BclrfrSpec> {
 impl W {
     #[doc = "Bit 0 - Clear overrun / underrun"]
     #[inline(always)]
-    pub fn ovrudr(&mut self) -> OvrudrW<BclrfrSpec> {
+    pub fn ovrudr(&mut self) -> OvrudrW<'_, BclrfrSpec> {
         OvrudrW::new(self, 0)
     }
     #[doc = "Bit 1 - Mute detection flag"]
     #[inline(always)]
-    pub fn mutedet(&mut self) -> MutedetW<BclrfrSpec> {
+    pub fn mutedet(&mut self) -> MutedetW<'_, BclrfrSpec> {
         MutedetW::new(self, 1)
     }
     #[doc = "Bit 2 - Clear wrong clock configuration flag"]
     #[inline(always)]
-    pub fn wckcfg(&mut self) -> WckcfgW<BclrfrSpec> {
+    pub fn wckcfg(&mut self) -> WckcfgW<'_, BclrfrSpec> {
         WckcfgW::new(self, 2)
     }
     #[doc = "Bit 4 - Clear codec not ready flag"]
     #[inline(always)]
-    pub fn cnrdy(&mut self) -> CnrdyW<BclrfrSpec> {
+    pub fn cnrdy(&mut self) -> CnrdyW<'_, BclrfrSpec> {
         CnrdyW::new(self, 4)
     }
     #[doc = "Bit 5 - Clear anticipated frame synchronization detection flag"]
     #[inline(always)]
-    pub fn cafsdet(&mut self) -> CafsdetW<BclrfrSpec> {
+    pub fn cafsdet(&mut self) -> CafsdetW<'_, BclrfrSpec> {
         CafsdetW::new(self, 5)
     }
     #[doc = "Bit 6 - Clear late frame synchronization detection flag"]
     #[inline(always)]
-    pub fn lfsdet(&mut self) -> LfsdetW<BclrfrSpec> {
+    pub fn lfsdet(&mut self) -> LfsdetW<'_, BclrfrSpec> {
         LfsdetW::new(self, 6)
     }
 }

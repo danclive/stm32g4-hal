@@ -113,52 +113,52 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - DMAEN"]
     #[inline(always)]
-    pub fn rovse(&mut self) -> RovseW<Cfgr2Spec> {
+    pub fn rovse(&mut self) -> RovseW<'_, Cfgr2Spec> {
         RovseW::new(self, 0)
     }
     #[doc = "Bit 1 - DMACFG"]
     #[inline(always)]
-    pub fn jovse(&mut self) -> JovseW<Cfgr2Spec> {
+    pub fn jovse(&mut self) -> JovseW<'_, Cfgr2Spec> {
         JovseW::new(self, 1)
     }
     #[doc = "Bits 2:4 - RES"]
     #[inline(always)]
-    pub fn ovsr(&mut self) -> OvsrW<Cfgr2Spec> {
+    pub fn ovsr(&mut self) -> OvsrW<'_, Cfgr2Spec> {
         OvsrW::new(self, 2)
     }
     #[doc = "Bits 5:8 - ALIGN"]
     #[inline(always)]
-    pub fn ovss(&mut self) -> OvssW<Cfgr2Spec> {
+    pub fn ovss(&mut self) -> OvssW<'_, Cfgr2Spec> {
         OvssW::new(self, 5)
     }
     #[doc = "Bit 9 - Triggered Regular Oversampling"]
     #[inline(always)]
-    pub fn trovs(&mut self) -> TrovsW<Cfgr2Spec> {
+    pub fn trovs(&mut self) -> TrovsW<'_, Cfgr2Spec> {
         TrovsW::new(self, 9)
     }
     #[doc = "Bit 10 - EXTEN"]
     #[inline(always)]
-    pub fn rovsm(&mut self) -> RovsmW<Cfgr2Spec> {
+    pub fn rovsm(&mut self) -> RovsmW<'_, Cfgr2Spec> {
         RovsmW::new(self, 10)
     }
     #[doc = "Bit 16 - GCOMP"]
     #[inline(always)]
-    pub fn gcomp(&mut self) -> GcompW<Cfgr2Spec> {
+    pub fn gcomp(&mut self) -> GcompW<'_, Cfgr2Spec> {
         GcompW::new(self, 16)
     }
     #[doc = "Bit 25 - SWTRIG"]
     #[inline(always)]
-    pub fn swtrig(&mut self) -> SwtrigW<Cfgr2Spec> {
+    pub fn swtrig(&mut self) -> SwtrigW<'_, Cfgr2Spec> {
         SwtrigW::new(self, 25)
     }
     #[doc = "Bit 26 - BULB"]
     #[inline(always)]
-    pub fn bulb(&mut self) -> BulbW<Cfgr2Spec> {
+    pub fn bulb(&mut self) -> BulbW<'_, Cfgr2Spec> {
         BulbW::new(self, 26)
     }
     #[doc = "Bit 27 - SMPTRIG"]
     #[inline(always)]
-    pub fn smptrig(&mut self) -> SmptrigW<Cfgr2Spec> {
+    pub fn smptrig(&mut self) -> SmptrigW<'_, Cfgr2Spec> {
         SmptrigW::new(self, 27)
     }
 }

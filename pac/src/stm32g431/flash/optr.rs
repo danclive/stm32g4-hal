@@ -173,82 +173,82 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - Read protection level"]
     #[inline(always)]
-    pub fn rdp(&mut self) -> RdpW<OptrSpec> {
+    pub fn rdp(&mut self) -> RdpW<'_, OptrSpec> {
         RdpW::new(self, 0)
     }
     #[doc = "Bits 8:10 - BOR reset Level"]
     #[inline(always)]
-    pub fn bor_lev(&mut self) -> BorLevW<OptrSpec> {
+    pub fn bor_lev(&mut self) -> BorLevW<'_, OptrSpec> {
         BorLevW::new(self, 8)
     }
     #[doc = "Bit 12 - nRST_STOP"]
     #[inline(always)]
-    pub fn n_rst_stop(&mut self) -> NRstStopW<OptrSpec> {
+    pub fn n_rst_stop(&mut self) -> NRstStopW<'_, OptrSpec> {
         NRstStopW::new(self, 12)
     }
     #[doc = "Bit 13 - nRST_STDBY"]
     #[inline(always)]
-    pub fn n_rst_stdby(&mut self) -> NRstStdbyW<OptrSpec> {
+    pub fn n_rst_stdby(&mut self) -> NRstStdbyW<'_, OptrSpec> {
         NRstStdbyW::new(self, 13)
     }
     #[doc = "Bit 14 - nRST_SHDW"]
     #[inline(always)]
-    pub fn n_rst_shdw(&mut self) -> NRstShdwW<OptrSpec> {
+    pub fn n_rst_shdw(&mut self) -> NRstShdwW<'_, OptrSpec> {
         NRstShdwW::new(self, 14)
     }
     #[doc = "Bit 16 - Independent watchdog selection"]
     #[inline(always)]
-    pub fn idwg_sw(&mut self) -> IdwgSwW<OptrSpec> {
+    pub fn idwg_sw(&mut self) -> IdwgSwW<'_, OptrSpec> {
         IdwgSwW::new(self, 16)
     }
     #[doc = "Bit 17 - Independent watchdog counter freeze in Stop mode"]
     #[inline(always)]
-    pub fn iwdg_stop(&mut self) -> IwdgStopW<OptrSpec> {
+    pub fn iwdg_stop(&mut self) -> IwdgStopW<'_, OptrSpec> {
         IwdgStopW::new(self, 17)
     }
     #[doc = "Bit 18 - Independent watchdog counter freeze in Standby mode"]
     #[inline(always)]
-    pub fn iwdg_stdby(&mut self) -> IwdgStdbyW<OptrSpec> {
+    pub fn iwdg_stdby(&mut self) -> IwdgStdbyW<'_, OptrSpec> {
         IwdgStdbyW::new(self, 18)
     }
     #[doc = "Bit 19 - Window watchdog selection"]
     #[inline(always)]
-    pub fn wwdg_sw(&mut self) -> WwdgSwW<OptrSpec> {
+    pub fn wwdg_sw(&mut self) -> WwdgSwW<'_, OptrSpec> {
         WwdgSwW::new(self, 19)
     }
     #[doc = "Bit 23 - Boot configuration"]
     #[inline(always)]
-    pub fn n_boot1(&mut self) -> NBoot1W<OptrSpec> {
+    pub fn n_boot1(&mut self) -> NBoot1W<'_, OptrSpec> {
         NBoot1W::new(self, 23)
     }
     #[doc = "Bit 24 - SRAM2 parity check enable"]
     #[inline(always)]
-    pub fn sram2_pe(&mut self) -> Sram2PeW<OptrSpec> {
+    pub fn sram2_pe(&mut self) -> Sram2PeW<'_, OptrSpec> {
         Sram2PeW::new(self, 24)
     }
     #[doc = "Bit 25 - SRAM2 Erase when system reset"]
     #[inline(always)]
-    pub fn sram2_rst(&mut self) -> Sram2RstW<OptrSpec> {
+    pub fn sram2_rst(&mut self) -> Sram2RstW<'_, OptrSpec> {
         Sram2RstW::new(self, 25)
     }
     #[doc = "Bit 26 - nSWBOOT0"]
     #[inline(always)]
-    pub fn n_swboot0(&mut self) -> NSwboot0W<OptrSpec> {
+    pub fn n_swboot0(&mut self) -> NSwboot0W<'_, OptrSpec> {
         NSwboot0W::new(self, 26)
     }
     #[doc = "Bit 27 - nBOOT0"]
     #[inline(always)]
-    pub fn n_boot0(&mut self) -> NBoot0W<OptrSpec> {
+    pub fn n_boot0(&mut self) -> NBoot0W<'_, OptrSpec> {
         NBoot0W::new(self, 27)
     }
     #[doc = "Bits 28:29 - NRST_MODE"]
     #[inline(always)]
-    pub fn nrst_mode(&mut self) -> NrstModeW<OptrSpec> {
+    pub fn nrst_mode(&mut self) -> NrstModeW<'_, OptrSpec> {
         NrstModeW::new(self, 28)
     }
     #[doc = "Bit 30 - IRHEN"]
     #[inline(always)]
-    pub fn irhen(&mut self) -> IrhenW<OptrSpec> {
+    pub fn irhen(&mut self) -> IrhenW<'_, OptrSpec> {
         IrhenW::new(self, 30)
     }
 }

@@ -153,72 +153,72 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Programming"]
     #[inline(always)]
-    pub fn pg(&mut self) -> PgW<CrSpec> {
+    pub fn pg(&mut self) -> PgW<'_, CrSpec> {
         PgW::new(self, 0)
     }
     #[doc = "Bit 1 - Page erase"]
     #[inline(always)]
-    pub fn per(&mut self) -> PerW<CrSpec> {
+    pub fn per(&mut self) -> PerW<'_, CrSpec> {
         PerW::new(self, 1)
     }
     #[doc = "Bit 2 - Bank 1 Mass erase"]
     #[inline(always)]
-    pub fn mer1(&mut self) -> Mer1W<CrSpec> {
+    pub fn mer1(&mut self) -> Mer1W<'_, CrSpec> {
         Mer1W::new(self, 2)
     }
     #[doc = "Bits 3:9 - Page number"]
     #[inline(always)]
-    pub fn pnb(&mut self) -> PnbW<CrSpec> {
+    pub fn pnb(&mut self) -> PnbW<'_, CrSpec> {
         PnbW::new(self, 3)
     }
     #[doc = "Bit 16 - Start"]
     #[inline(always)]
-    pub fn strt(&mut self) -> StrtW<CrSpec> {
+    pub fn strt(&mut self) -> StrtW<'_, CrSpec> {
         StrtW::new(self, 16)
     }
     #[doc = "Bit 17 - Options modification start"]
     #[inline(always)]
-    pub fn optstrt(&mut self) -> OptstrtW<CrSpec> {
+    pub fn optstrt(&mut self) -> OptstrtW<'_, CrSpec> {
         OptstrtW::new(self, 17)
     }
     #[doc = "Bit 18 - Fast programming"]
     #[inline(always)]
-    pub fn fstpg(&mut self) -> FstpgW<CrSpec> {
+    pub fn fstpg(&mut self) -> FstpgW<'_, CrSpec> {
         FstpgW::new(self, 18)
     }
     #[doc = "Bit 24 - End of operation interrupt enable"]
     #[inline(always)]
-    pub fn eopie(&mut self) -> EopieW<CrSpec> {
+    pub fn eopie(&mut self) -> EopieW<'_, CrSpec> {
         EopieW::new(self, 24)
     }
     #[doc = "Bit 25 - Error interrupt enable"]
     #[inline(always)]
-    pub fn errie(&mut self) -> ErrieW<CrSpec> {
+    pub fn errie(&mut self) -> ErrieW<'_, CrSpec> {
         ErrieW::new(self, 25)
     }
     #[doc = "Bit 26 - PCROP read error interrupt enable"]
     #[inline(always)]
-    pub fn rderrie(&mut self) -> RderrieW<CrSpec> {
+    pub fn rderrie(&mut self) -> RderrieW<'_, CrSpec> {
         RderrieW::new(self, 26)
     }
     #[doc = "Bit 27 - Force the option byte loading"]
     #[inline(always)]
-    pub fn obl_launch(&mut self) -> OblLaunchW<CrSpec> {
+    pub fn obl_launch(&mut self) -> OblLaunchW<'_, CrSpec> {
         OblLaunchW::new(self, 27)
     }
     #[doc = "Bit 28 - SEC_PROT1"]
     #[inline(always)]
-    pub fn sec_prot1(&mut self) -> SecProt1W<CrSpec> {
+    pub fn sec_prot1(&mut self) -> SecProt1W<'_, CrSpec> {
         SecProt1W::new(self, 28)
     }
     #[doc = "Bit 30 - Options Lock"]
     #[inline(always)]
-    pub fn optlock(&mut self) -> OptlockW<CrSpec> {
+    pub fn optlock(&mut self) -> OptlockW<'_, CrSpec> {
         OptlockW::new(self, 30)
     }
     #[doc = "Bit 31 - FLASH_CR Lock"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LockW<CrSpec> {
+    pub fn lock(&mut self) -> LockW<'_, CrSpec> {
         LockW::new(self, 31)
     }
 }

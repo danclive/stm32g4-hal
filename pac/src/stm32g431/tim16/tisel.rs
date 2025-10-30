@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - TI1\\[0\\] to TI1\\[15\\] input selection"]
     #[inline(always)]
-    pub fn ti1sel(&mut self) -> Ti1selW<TiselSpec> {
+    pub fn ti1sel(&mut self) -> Ti1selW<'_, TiselSpec> {
         Ti1selW::new(self, 0)
     }
 }

@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - Wakeup auto-reload value bits"]
     #[inline(always)]
-    pub fn wut(&mut self) -> WutW<WutrSpec> {
+    pub fn wut(&mut self) -> WutW<'_, WutrSpec> {
         WutW::new(self, 0)
     }
 }

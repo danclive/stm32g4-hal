@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:9 - DAC Channel 1 hold Time (only valid in sample &amp; hold mode) Hold time= (THOLD\\[9:0\\]) x T LSI"]
     #[inline(always)]
-    pub fn thold1(&mut self) -> Thold1W<DacShhrSpec> {
+    pub fn thold1(&mut self) -> Thold1W<'_, DacShhrSpec> {
         Thold1W::new(self, 0)
     }
     #[doc = "Bits 16:25 - DAC Channel 2 hold time (only valid in sample &amp; hold mode). Hold time= (THOLD\\[9:0\\]) x T LSI"]
     #[inline(always)]
-    pub fn thold2(&mut self) -> Thold2W<DacShhrSpec> {
+    pub fn thold2(&mut self) -> Thold2W<'_, DacShhrSpec> {
         Thold2W::new(self, 16)
     }
 }

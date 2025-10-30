@@ -33,12 +33,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - DAC Channel 1 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
     #[inline(always)]
-    pub fn trefresh1(&mut self) -> Trefresh1W<DacShrrSpec> {
+    pub fn trefresh1(&mut self) -> Trefresh1W<'_, DacShrrSpec> {
         Trefresh1W::new(self, 0)
     }
     #[doc = "Bits 16:23 - DAC Channel 2 refresh Time (only valid in sample &amp; hold mode) Refresh time= (TREFRESH\\[7:0\\]) x T LSI"]
     #[inline(always)]
-    pub fn trefresh2(&mut self) -> Trefresh2W<DacShrrSpec> {
+    pub fn trefresh2(&mut self) -> Trefresh2W<'_, DacShrrSpec> {
         Trefresh2W::new(self, 16)
     }
 }

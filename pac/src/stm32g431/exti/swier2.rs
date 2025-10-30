@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 3 - Software interrupt on line 35"]
     #[inline(always)]
-    pub fn swi35(&mut self) -> Swi35W<Swier2Spec> {
+    pub fn swi35(&mut self) -> Swi35W<'_, Swier2Spec> {
         Swi35W::new(self, 3)
     }
     #[doc = "Bit 4 - Software interrupt on line 36"]
     #[inline(always)]
-    pub fn swi36(&mut self) -> Swi36W<Swier2Spec> {
+    pub fn swi36(&mut self) -> Swi36W<'_, Swier2Spec> {
         Swi36W::new(self, 4)
     }
     #[doc = "Bit 5 - Software interrupt on line 37"]
     #[inline(always)]
-    pub fn swi37(&mut self) -> Swi37W<Swier2Spec> {
+    pub fn swi37(&mut self) -> Swi37W<'_, Swier2Spec> {
         Swi37W::new(self, 5)
     }
     #[doc = "Bit 6 - Software interrupt on line 38"]
     #[inline(always)]
-    pub fn swi38(&mut self) -> Swi38W<Swier2Spec> {
+    pub fn swi38(&mut self) -> Swi38W<'_, Swier2Spec> {
         Swi38W::new(self, 6)
     }
 }

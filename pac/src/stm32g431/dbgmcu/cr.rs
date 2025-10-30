@@ -63,27 +63,27 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Debug Sleep Mode"]
     #[inline(always)]
-    pub fn dbg_sleep(&mut self) -> DbgSleepW<CrSpec> {
+    pub fn dbg_sleep(&mut self) -> DbgSleepW<'_, CrSpec> {
         DbgSleepW::new(self, 0)
     }
     #[doc = "Bit 1 - Debug Stop Mode"]
     #[inline(always)]
-    pub fn dbg_stop(&mut self) -> DbgStopW<CrSpec> {
+    pub fn dbg_stop(&mut self) -> DbgStopW<'_, CrSpec> {
         DbgStopW::new(self, 1)
     }
     #[doc = "Bit 2 - Debug Standby Mode"]
     #[inline(always)]
-    pub fn dbg_standby(&mut self) -> DbgStandbyW<CrSpec> {
+    pub fn dbg_standby(&mut self) -> DbgStandbyW<'_, CrSpec> {
         DbgStandbyW::new(self, 2)
     }
     #[doc = "Bit 5 - Trace pin assignment control"]
     #[inline(always)]
-    pub fn trace_ioen(&mut self) -> TraceIoenW<CrSpec> {
+    pub fn trace_ioen(&mut self) -> TraceIoenW<'_, CrSpec> {
         TraceIoenW::new(self, 5)
     }
     #[doc = "Bits 6:7 - Trace pin assignment control"]
     #[inline(always)]
-    pub fn trace_mode(&mut self) -> TraceModeW<CrSpec> {
+    pub fn trace_mode(&mut self) -> TraceModeW<'_, CrSpec> {
         TraceModeW::new(self, 6)
     }
 }

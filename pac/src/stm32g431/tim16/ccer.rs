@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Capture/Compare 1 output enable"]
     #[inline(always)]
-    pub fn cc1e(&mut self) -> Cc1eW<CcerSpec> {
+    pub fn cc1e(&mut self) -> Cc1eW<'_, CcerSpec> {
         Cc1eW::new(self, 0)
     }
     #[doc = "Bit 1 - Capture/Compare 1 output Polarity"]
     #[inline(always)]
-    pub fn cc1p(&mut self) -> Cc1pW<CcerSpec> {
+    pub fn cc1p(&mut self) -> Cc1pW<'_, CcerSpec> {
         Cc1pW::new(self, 1)
     }
     #[doc = "Bit 2 - Capture/Compare 1 complementary output enable"]
     #[inline(always)]
-    pub fn cc1ne(&mut self) -> Cc1neW<CcerSpec> {
+    pub fn cc1ne(&mut self) -> Cc1neW<'_, CcerSpec> {
         Cc1neW::new(self, 2)
     }
     #[doc = "Bit 3 - Capture/Compare 1 output Polarity"]
     #[inline(always)]
-    pub fn cc1np(&mut self) -> Cc1npW<CcerSpec> {
+    pub fn cc1np(&mut self) -> Cc1npW<'_, CcerSpec> {
         Cc1npW::new(self, 3)
     }
 }

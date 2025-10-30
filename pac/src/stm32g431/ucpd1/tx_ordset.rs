@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:19 - TXORDSET"]
     #[inline(always)]
-    pub fn txordset(&mut self) -> TxordsetW<TxOrdsetSpec> {
+    pub fn txordset(&mut self) -> TxordsetW<'_, TxOrdsetSpec> {
         TxordsetW::new(self, 0)
     }
 }

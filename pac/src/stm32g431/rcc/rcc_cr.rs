@@ -502,32 +502,32 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 8 - HSI16 clock enable Set and cleared by software. Cleared by hardware to stop the HSI16 oscillator when entering Stop, Standby or Shutdown mode. Set by hardware to force the HSI16 oscillator ON when STOPWUCK=1 or HSIASFS = 1 when leaving Stop modes, or in case of failure of the HSE crystal oscillator. This bit is set by hardware if the HSI16 is used directly or indirectly as system clock."]
     #[inline(always)]
-    pub fn hsion(&mut self) -> HsionW<RccCrSpec> {
+    pub fn hsion(&mut self) -> HsionW<'_, RccCrSpec> {
         HsionW::new(self, 8)
     }
     #[doc = "Bit 9 - HSI16 always enable for peripheral kernels. Set and cleared by software to force HSI16 ON even in Stop modes. The HSI16 can only feed USARTs and I<sup>2</sup>Cs peripherals configured with HSI16 as kernel clock. Keeping the HSI16 ON in Stop mode allows to avoid slowing down the communication speed because of the HSI16 startup time. This bit has no effect on HSION value."]
     #[inline(always)]
-    pub fn hsikeron(&mut self) -> HsikeronW<RccCrSpec> {
+    pub fn hsikeron(&mut self) -> HsikeronW<'_, RccCrSpec> {
         HsikeronW::new(self, 9)
     }
     #[doc = "Bit 16 - HSE clock enable Set and cleared by software. Cleared by hardware to stop the HSE oscillator when entering Stop, Standby or Shutdown mode. This bit cannot be reset if the HSE oscillator is used directly or indirectly as the system clock."]
     #[inline(always)]
-    pub fn hseon(&mut self) -> HseonW<RccCrSpec> {
+    pub fn hseon(&mut self) -> HseonW<'_, RccCrSpec> {
         HseonW::new(self, 16)
     }
     #[doc = "Bit 18 - HSE crystal oscillator bypass Set and cleared by software to bypass the oscillator with an external clock. The external clock must be enabled with the HSEON bit set, to be used by the device. The HSEBYP bit can be written only if the HSE oscillator is disabled."]
     #[inline(always)]
-    pub fn hsebyp(&mut self) -> HsebypW<RccCrSpec> {
+    pub fn hsebyp(&mut self) -> HsebypW<'_, RccCrSpec> {
         HsebypW::new(self, 18)
     }
     #[doc = "Bit 19 - Clock security system enable Set by software to enable the clock security system. When CSSON is set, the clock detector is enabled by hardware when the HSE oscillator is ready, and disabled by hardware if a HSE clock failure is detected. This bit is set only and is cleared by reset."]
     #[inline(always)]
-    pub fn csson(&mut self) -> CssonW<RccCrSpec> {
+    pub fn csson(&mut self) -> CssonW<'_, RccCrSpec> {
         CssonW::new(self, 19)
     }
     #[doc = "Bit 24 - Main PLL enable Set and cleared by software to enable the main PLL. Cleared by hardware when entering Stop, Standby or Shutdown mode. This bit cannot be reset if the PLL clock is used as the system clock."]
     #[inline(always)]
-    pub fn pllon(&mut self) -> PllonW<RccCrSpec> {
+    pub fn pllon(&mut self) -> PllonW<'_, RccCrSpec> {
         PllonW::new(self, 24)
     }
 }

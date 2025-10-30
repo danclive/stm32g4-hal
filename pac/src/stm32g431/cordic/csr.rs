@@ -123,57 +123,57 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - FUNC"]
     #[inline(always)]
-    pub fn func(&mut self) -> FuncW<CsrSpec> {
+    pub fn func(&mut self) -> FuncW<'_, CsrSpec> {
         FuncW::new(self, 0)
     }
     #[doc = "Bits 4:7 - PRECISION"]
     #[inline(always)]
-    pub fn precision(&mut self) -> PrecisionW<CsrSpec> {
+    pub fn precision(&mut self) -> PrecisionW<'_, CsrSpec> {
         PrecisionW::new(self, 4)
     }
     #[doc = "Bits 8:10 - SCALE"]
     #[inline(always)]
-    pub fn scale(&mut self) -> ScaleW<CsrSpec> {
+    pub fn scale(&mut self) -> ScaleW<'_, CsrSpec> {
         ScaleW::new(self, 8)
     }
     #[doc = "Bit 16 - IEN"]
     #[inline(always)]
-    pub fn ien(&mut self) -> IenW<CsrSpec> {
+    pub fn ien(&mut self) -> IenW<'_, CsrSpec> {
         IenW::new(self, 16)
     }
     #[doc = "Bit 17 - DMAREN"]
     #[inline(always)]
-    pub fn dmaren(&mut self) -> DmarenW<CsrSpec> {
+    pub fn dmaren(&mut self) -> DmarenW<'_, CsrSpec> {
         DmarenW::new(self, 17)
     }
     #[doc = "Bit 18 - DMAWEN"]
     #[inline(always)]
-    pub fn dmawen(&mut self) -> DmawenW<CsrSpec> {
+    pub fn dmawen(&mut self) -> DmawenW<'_, CsrSpec> {
         DmawenW::new(self, 18)
     }
     #[doc = "Bit 19 - NRES"]
     #[inline(always)]
-    pub fn nres(&mut self) -> NresW<CsrSpec> {
+    pub fn nres(&mut self) -> NresW<'_, CsrSpec> {
         NresW::new(self, 19)
     }
     #[doc = "Bit 20 - NARGS"]
     #[inline(always)]
-    pub fn nargs(&mut self) -> NargsW<CsrSpec> {
+    pub fn nargs(&mut self) -> NargsW<'_, CsrSpec> {
         NargsW::new(self, 20)
     }
     #[doc = "Bit 21 - RESSIZE"]
     #[inline(always)]
-    pub fn ressize(&mut self) -> RessizeW<CsrSpec> {
+    pub fn ressize(&mut self) -> RessizeW<'_, CsrSpec> {
         RessizeW::new(self, 21)
     }
     #[doc = "Bit 22 - ARGSIZE"]
     #[inline(always)]
-    pub fn argsize(&mut self) -> ArgsizeW<CsrSpec> {
+    pub fn argsize(&mut self) -> ArgsizeW<'_, CsrSpec> {
         ArgsizeW::new(self, 22)
     }
     #[doc = "Bit 31 - RRDY"]
     #[inline(always)]
-    pub fn rrdy(&mut self) -> RrdyW<CsrSpec> {
+    pub fn rrdy(&mut self) -> RrdyW<'_, CsrSpec> {
         RrdyW::new(self, 31)
     }
 }

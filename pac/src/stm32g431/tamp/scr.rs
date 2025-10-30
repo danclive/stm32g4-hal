@@ -83,37 +83,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - CTAMP1F"]
     #[inline(always)]
-    pub fn ctamp1f(&mut self) -> Ctamp1fW<ScrSpec> {
+    pub fn ctamp1f(&mut self) -> Ctamp1fW<'_, ScrSpec> {
         Ctamp1fW::new(self, 0)
     }
     #[doc = "Bit 1 - CTAMP2F"]
     #[inline(always)]
-    pub fn ctamp2f(&mut self) -> Ctamp2fW<ScrSpec> {
+    pub fn ctamp2f(&mut self) -> Ctamp2fW<'_, ScrSpec> {
         Ctamp2fW::new(self, 1)
     }
     #[doc = "Bit 2 - CTAMP3F"]
     #[inline(always)]
-    pub fn ctamp3f(&mut self) -> Ctamp3fW<ScrSpec> {
+    pub fn ctamp3f(&mut self) -> Ctamp3fW<'_, ScrSpec> {
         Ctamp3fW::new(self, 2)
     }
     #[doc = "Bit 18 - CITAMP3F"]
     #[inline(always)]
-    pub fn citamp3f(&mut self) -> Citamp3fW<ScrSpec> {
+    pub fn citamp3f(&mut self) -> Citamp3fW<'_, ScrSpec> {
         Citamp3fW::new(self, 18)
     }
     #[doc = "Bit 19 - CITAMP4F"]
     #[inline(always)]
-    pub fn citamp4f(&mut self) -> Citamp4fW<ScrSpec> {
+    pub fn citamp4f(&mut self) -> Citamp4fW<'_, ScrSpec> {
         Citamp4fW::new(self, 19)
     }
     #[doc = "Bit 20 - CITAMP5F"]
     #[inline(always)]
-    pub fn citamp5f(&mut self) -> Citamp5fW<ScrSpec> {
+    pub fn citamp5f(&mut self) -> Citamp5fW<'_, ScrSpec> {
         Citamp5fW::new(self, 20)
     }
     #[doc = "Bit 21 - CITAMP6F"]
     #[inline(always)]
-    pub fn citamp6f(&mut self) -> Citamp6fW<ScrSpec> {
+    pub fn citamp6f(&mut self) -> Citamp6fW<'_, ScrSpec> {
         Citamp6fW::new(self, 21)
     }
 }

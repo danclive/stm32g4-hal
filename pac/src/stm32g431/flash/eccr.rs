@@ -87,27 +87,27 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 24 - ECCIE"]
     #[inline(always)]
-    pub fn eccie(&mut self) -> EccieW<EccrSpec> {
+    pub fn eccie(&mut self) -> EccieW<'_, EccrSpec> {
         EccieW::new(self, 24)
     }
     #[doc = "Bit 28 - ECC correction"]
     #[inline(always)]
-    pub fn eccc2(&mut self) -> Eccc2W<EccrSpec> {
+    pub fn eccc2(&mut self) -> Eccc2W<'_, EccrSpec> {
         Eccc2W::new(self, 28)
     }
     #[doc = "Bit 29 - ECC2 detection"]
     #[inline(always)]
-    pub fn eccd2(&mut self) -> Eccd2W<EccrSpec> {
+    pub fn eccd2(&mut self) -> Eccd2W<'_, EccrSpec> {
         Eccd2W::new(self, 29)
     }
     #[doc = "Bit 30 - ECC correction"]
     #[inline(always)]
-    pub fn eccc(&mut self) -> EcccW<EccrSpec> {
+    pub fn eccc(&mut self) -> EcccW<'_, EccrSpec> {
         EcccW::new(self, 30)
     }
     #[doc = "Bit 31 - ECC detection"]
     #[inline(always)]
-    pub fn eccd(&mut self) -> EccdW<EccrSpec> {
+    pub fn eccd(&mut self) -> EccdW<'_, EccrSpec> {
         EccdW::new(self, 31)
     }
 }

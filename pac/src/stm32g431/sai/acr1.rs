@@ -153,72 +153,72 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Audio block mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> ModeW<Acr1Spec> {
+    pub fn mode(&mut self) -> ModeW<'_, Acr1Spec> {
         ModeW::new(self, 0)
     }
     #[doc = "Bits 2:3 - Protocol configuration"]
     #[inline(always)]
-    pub fn prtcfg(&mut self) -> PrtcfgW<Acr1Spec> {
+    pub fn prtcfg(&mut self) -> PrtcfgW<'_, Acr1Spec> {
         PrtcfgW::new(self, 2)
     }
     #[doc = "Bits 5:7 - Data size"]
     #[inline(always)]
-    pub fn ds(&mut self) -> DsW<Acr1Spec> {
+    pub fn ds(&mut self) -> DsW<'_, Acr1Spec> {
         DsW::new(self, 5)
     }
     #[doc = "Bit 8 - Least significant bit first"]
     #[inline(always)]
-    pub fn lsbfirst(&mut self) -> LsbfirstW<Acr1Spec> {
+    pub fn lsbfirst(&mut self) -> LsbfirstW<'_, Acr1Spec> {
         LsbfirstW::new(self, 8)
     }
     #[doc = "Bit 9 - Clock strobing edge"]
     #[inline(always)]
-    pub fn ckstr(&mut self) -> CkstrW<Acr1Spec> {
+    pub fn ckstr(&mut self) -> CkstrW<'_, Acr1Spec> {
         CkstrW::new(self, 9)
     }
     #[doc = "Bits 10:11 - Synchronization enable"]
     #[inline(always)]
-    pub fn syncen(&mut self) -> SyncenW<Acr1Spec> {
+    pub fn syncen(&mut self) -> SyncenW<'_, Acr1Spec> {
         SyncenW::new(self, 10)
     }
     #[doc = "Bit 12 - Mono mode"]
     #[inline(always)]
-    pub fn mono(&mut self) -> MonoW<Acr1Spec> {
+    pub fn mono(&mut self) -> MonoW<'_, Acr1Spec> {
         MonoW::new(self, 12)
     }
     #[doc = "Bit 13 - Output drive"]
     #[inline(always)]
-    pub fn out_dri(&mut self) -> OutDriW<Acr1Spec> {
+    pub fn out_dri(&mut self) -> OutDriW<'_, Acr1Spec> {
         OutDriW::new(self, 13)
     }
     #[doc = "Bit 16 - Audio block A enable"]
     #[inline(always)]
-    pub fn saiaen(&mut self) -> SaiaenW<Acr1Spec> {
+    pub fn saiaen(&mut self) -> SaiaenW<'_, Acr1Spec> {
         SaiaenW::new(self, 16)
     }
     #[doc = "Bit 17 - DMA enable"]
     #[inline(always)]
-    pub fn dmaen(&mut self) -> DmaenW<Acr1Spec> {
+    pub fn dmaen(&mut self) -> DmaenW<'_, Acr1Spec> {
         DmaenW::new(self, 17)
     }
     #[doc = "Bit 19 - No divider"]
     #[inline(always)]
-    pub fn nodiv(&mut self) -> NodivW<Acr1Spec> {
+    pub fn nodiv(&mut self) -> NodivW<'_, Acr1Spec> {
         NodivW::new(self, 19)
     }
     #[doc = "Bits 20:25 - Master clock divider"]
     #[inline(always)]
-    pub fn mcjdiv(&mut self) -> McjdivW<Acr1Spec> {
+    pub fn mcjdiv(&mut self) -> McjdivW<'_, Acr1Spec> {
         McjdivW::new(self, 20)
     }
     #[doc = "Bit 26 - OSR"]
     #[inline(always)]
-    pub fn osr(&mut self) -> OsrW<Acr1Spec> {
+    pub fn osr(&mut self) -> OsrW<'_, Acr1Spec> {
         OsrW::new(self, 26)
     }
     #[doc = "Bit 27 - MCKEN"]
     #[inline(always)]
-    pub fn mcken(&mut self) -> MckenW<Acr1Spec> {
+    pub fn mcken(&mut self) -> MckenW<'_, Acr1Spec> {
         MckenW::new(self, 27)
     }
 }

@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:11 - Watchdog counter reload value"]
     #[inline(always)]
-    pub fn rl(&mut self) -> RlW<RlrSpec> {
+    pub fn rl(&mut self) -> RlW<'_, RlrSpec> {
         RlW::new(self, 0)
     }
 }

@@ -124,7 +124,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - HSI48 clock enable Set and cleared by software. Cleared by hardware to stop the HSI48 when entering in Stop, Standby or Shutdown modes."]
     #[inline(always)]
-    pub fn hsi48on(&mut self) -> Hsi48onW<RccCrrcrSpec> {
+    pub fn hsi48on(&mut self) -> Hsi48onW<'_, RccCrrcrSpec> {
         Hsi48onW::new(self, 0)
     }
 }

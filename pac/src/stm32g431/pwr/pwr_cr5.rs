@@ -73,7 +73,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 8 - Main regular range 1 mode This bit is only valid for the main regulator in range 1 and has no effect on range 2. It is recommended to reset this bit when the system frequency is greater than 150 MHz. Refer to"]
     #[inline(always)]
-    pub fn r1mode(&mut self) -> R1modeW<PwrCr5Spec> {
+    pub fn r1mode(&mut self) -> R1modeW<'_, PwrCr5Spec> {
         R1modeW::new(self, 8)
     }
 }

@@ -913,77 +913,77 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - IO port A reset Set and cleared by software."]
     #[inline(always)]
-    pub fn gpioarst(&mut self) -> GpioarstW<RccAhb2rstrSpec> {
+    pub fn gpioarst(&mut self) -> GpioarstW<'_, RccAhb2rstrSpec> {
         GpioarstW::new(self, 0)
     }
     #[doc = "Bit 1 - IO port B reset Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiobrst(&mut self) -> GpiobrstW<RccAhb2rstrSpec> {
+    pub fn gpiobrst(&mut self) -> GpiobrstW<'_, RccAhb2rstrSpec> {
         GpiobrstW::new(self, 1)
     }
     #[doc = "Bit 2 - IO port C reset Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiocrst(&mut self) -> GpiocrstW<RccAhb2rstrSpec> {
+    pub fn gpiocrst(&mut self) -> GpiocrstW<'_, RccAhb2rstrSpec> {
         GpiocrstW::new(self, 2)
     }
     #[doc = "Bit 3 - IO port D reset Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiodrst(&mut self) -> GpiodrstW<RccAhb2rstrSpec> {
+    pub fn gpiodrst(&mut self) -> GpiodrstW<'_, RccAhb2rstrSpec> {
         GpiodrstW::new(self, 3)
     }
     #[doc = "Bit 4 - IO port E reset Set and cleared by software."]
     #[inline(always)]
-    pub fn gpioerst(&mut self) -> GpioerstW<RccAhb2rstrSpec> {
+    pub fn gpioerst(&mut self) -> GpioerstW<'_, RccAhb2rstrSpec> {
         GpioerstW::new(self, 4)
     }
     #[doc = "Bit 5 - IO port F reset Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiofrst(&mut self) -> GpiofrstW<RccAhb2rstrSpec> {
+    pub fn gpiofrst(&mut self) -> GpiofrstW<'_, RccAhb2rstrSpec> {
         GpiofrstW::new(self, 5)
     }
     #[doc = "Bit 6 - IO port G reset Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiogrst(&mut self) -> GpiogrstW<RccAhb2rstrSpec> {
+    pub fn gpiogrst(&mut self) -> GpiogrstW<'_, RccAhb2rstrSpec> {
         GpiogrstW::new(self, 6)
     }
     #[doc = "Bit 13 - ADC12 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn adc12rst(&mut self) -> Adc12rstW<RccAhb2rstrSpec> {
+    pub fn adc12rst(&mut self) -> Adc12rstW<'_, RccAhb2rstrSpec> {
         Adc12rstW::new(self, 13)
     }
     #[doc = "Bit 14 - ADC345 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn adc345rst(&mut self) -> Adc345rstW<RccAhb2rstrSpec> {
+    pub fn adc345rst(&mut self) -> Adc345rstW<'_, RccAhb2rstrSpec> {
         Adc345rstW::new(self, 14)
     }
     #[doc = "Bit 16 - DAC1 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn dac1rst(&mut self) -> Dac1rstW<RccAhb2rstrSpec> {
+    pub fn dac1rst(&mut self) -> Dac1rstW<'_, RccAhb2rstrSpec> {
         Dac1rstW::new(self, 16)
     }
     #[doc = "Bit 17 - DAC2 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn dac2rst(&mut self) -> Dac2rstW<RccAhb2rstrSpec> {
+    pub fn dac2rst(&mut self) -> Dac2rstW<'_, RccAhb2rstrSpec> {
         Dac2rstW::new(self, 17)
     }
     #[doc = "Bit 18 - DAC3 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn dac3rst(&mut self) -> Dac3rstW<RccAhb2rstrSpec> {
+    pub fn dac3rst(&mut self) -> Dac3rstW<'_, RccAhb2rstrSpec> {
         Dac3rstW::new(self, 18)
     }
     #[doc = "Bit 19 - DAC4 reset Set and cleared by software."]
     #[inline(always)]
-    pub fn dac4rst(&mut self) -> Dac4rstW<RccAhb2rstrSpec> {
+    pub fn dac4rst(&mut self) -> Dac4rstW<'_, RccAhb2rstrSpec> {
         Dac4rstW::new(self, 19)
     }
     #[doc = "Bit 24 - AESRST reset Set and cleared by software."]
     #[inline(always)]
-    pub fn aesrst(&mut self) -> AesrstW<RccAhb2rstrSpec> {
+    pub fn aesrst(&mut self) -> AesrstW<'_, RccAhb2rstrSpec> {
         AesrstW::new(self, 24)
     }
     #[doc = "Bit 26 - RNG reset Set and cleared by software."]
     #[inline(always)]
-    pub fn rngrst(&mut self) -> RngrstW<RccAhb2rstrSpec> {
+    pub fn rngrst(&mut self) -> RngrstW<'_, RccAhb2rstrSpec> {
         RngrstW::new(self, 26)
     }
 }

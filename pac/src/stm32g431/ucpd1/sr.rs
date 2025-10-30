@@ -193,92 +193,92 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - TXIS"]
     #[inline(always)]
-    pub fn txis(&mut self) -> TxisW<SrSpec> {
+    pub fn txis(&mut self) -> TxisW<'_, SrSpec> {
         TxisW::new(self, 0)
     }
     #[doc = "Bit 1 - TXMSGDISC"]
     #[inline(always)]
-    pub fn txmsgdisc(&mut self) -> TxmsgdiscW<SrSpec> {
+    pub fn txmsgdisc(&mut self) -> TxmsgdiscW<'_, SrSpec> {
         TxmsgdiscW::new(self, 1)
     }
     #[doc = "Bit 2 - TXMSGSENT"]
     #[inline(always)]
-    pub fn txmsgsent(&mut self) -> TxmsgsentW<SrSpec> {
+    pub fn txmsgsent(&mut self) -> TxmsgsentW<'_, SrSpec> {
         TxmsgsentW::new(self, 2)
     }
     #[doc = "Bit 3 - TXMSGABT"]
     #[inline(always)]
-    pub fn txmsgabt(&mut self) -> TxmsgabtW<SrSpec> {
+    pub fn txmsgabt(&mut self) -> TxmsgabtW<'_, SrSpec> {
         TxmsgabtW::new(self, 3)
     }
     #[doc = "Bit 4 - HRSTDISC"]
     #[inline(always)]
-    pub fn hrstdisc(&mut self) -> HrstdiscW<SrSpec> {
+    pub fn hrstdisc(&mut self) -> HrstdiscW<'_, SrSpec> {
         HrstdiscW::new(self, 4)
     }
     #[doc = "Bit 5 - HRSTSENT"]
     #[inline(always)]
-    pub fn hrstsent(&mut self) -> HrstsentW<SrSpec> {
+    pub fn hrstsent(&mut self) -> HrstsentW<'_, SrSpec> {
         HrstsentW::new(self, 5)
     }
     #[doc = "Bit 6 - TXUND"]
     #[inline(always)]
-    pub fn txund(&mut self) -> TxundW<SrSpec> {
+    pub fn txund(&mut self) -> TxundW<'_, SrSpec> {
         TxundW::new(self, 6)
     }
     #[doc = "Bit 8 - RXNE"]
     #[inline(always)]
-    pub fn rxne(&mut self) -> RxneW<SrSpec> {
+    pub fn rxne(&mut self) -> RxneW<'_, SrSpec> {
         RxneW::new(self, 8)
     }
     #[doc = "Bit 9 - RXORDDET"]
     #[inline(always)]
-    pub fn rxorddet(&mut self) -> RxorddetW<SrSpec> {
+    pub fn rxorddet(&mut self) -> RxorddetW<'_, SrSpec> {
         RxorddetW::new(self, 9)
     }
     #[doc = "Bit 10 - RXHRSTDET"]
     #[inline(always)]
-    pub fn rxhrstdet(&mut self) -> RxhrstdetW<SrSpec> {
+    pub fn rxhrstdet(&mut self) -> RxhrstdetW<'_, SrSpec> {
         RxhrstdetW::new(self, 10)
     }
     #[doc = "Bit 11 - RXOVR"]
     #[inline(always)]
-    pub fn rxovr(&mut self) -> RxovrW<SrSpec> {
+    pub fn rxovr(&mut self) -> RxovrW<'_, SrSpec> {
         RxovrW::new(self, 11)
     }
     #[doc = "Bit 12 - RXMSGEND"]
     #[inline(always)]
-    pub fn rxmsgend(&mut self) -> RxmsgendW<SrSpec> {
+    pub fn rxmsgend(&mut self) -> RxmsgendW<'_, SrSpec> {
         RxmsgendW::new(self, 12)
     }
     #[doc = "Bit 13 - RXERR"]
     #[inline(always)]
-    pub fn rxerr(&mut self) -> RxerrW<SrSpec> {
+    pub fn rxerr(&mut self) -> RxerrW<'_, SrSpec> {
         RxerrW::new(self, 13)
     }
     #[doc = "Bit 14 - TYPECEVT1"]
     #[inline(always)]
-    pub fn typecevt1(&mut self) -> Typecevt1W<SrSpec> {
+    pub fn typecevt1(&mut self) -> Typecevt1W<'_, SrSpec> {
         Typecevt1W::new(self, 14)
     }
     #[doc = "Bit 15 - TYPECEVT2"]
     #[inline(always)]
-    pub fn typecevt2(&mut self) -> Typecevt2W<SrSpec> {
+    pub fn typecevt2(&mut self) -> Typecevt2W<'_, SrSpec> {
         Typecevt2W::new(self, 15)
     }
     #[doc = "Bits 16:17 - TYPEC_VSTATE_CC1"]
     #[inline(always)]
-    pub fn typec_vstate_cc1(&mut self) -> TypecVstateCc1W<SrSpec> {
+    pub fn typec_vstate_cc1(&mut self) -> TypecVstateCc1W<'_, SrSpec> {
         TypecVstateCc1W::new(self, 16)
     }
     #[doc = "Bits 18:19 - TYPEC_VSTATE_CC2"]
     #[inline(always)]
-    pub fn typec_vstate_cc2(&mut self) -> TypecVstateCc2W<SrSpec> {
+    pub fn typec_vstate_cc2(&mut self) -> TypecVstateCc2W<'_, SrSpec> {
         TypecVstateCc2W::new(self, 18)
     }
     #[doc = "Bit 20 - FRSEVT"]
     #[inline(always)]
-    pub fn frsevt(&mut self) -> FrsevtW<SrSpec> {
+    pub fn frsevt(&mut self) -> FrsevtW<'_, SrSpec> {
         FrsevtW::new(self, 20)
     }
 }

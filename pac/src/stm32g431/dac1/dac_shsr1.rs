@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:9 - DAC Channel 1 sample Time (only valid in sample &amp; hold mode) These bits can be written when the DAC channel1 is disabled or also during normal operation. in the latter case, the write can be done only when BWSTx of DAC_SR register is low, If BWSTx=1, the write operation is ignored."]
     #[inline(always)]
-    pub fn tsample1(&mut self) -> Tsample1W<DacShsr1Spec> {
+    pub fn tsample1(&mut self) -> Tsample1W<'_, DacShsr1Spec> {
         Tsample1W::new(self, 0)
     }
 }

@@ -23,7 +23,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 16:18 - OCREF_CLR source selection"]
     #[inline(always)]
-    pub fn ocrsel(&mut self) -> OcrselW<Af2Spec> {
+    pub fn ocrsel(&mut self) -> OcrselW<'_, Af2Spec> {
         OcrselW::new(self, 16)
     }
 }

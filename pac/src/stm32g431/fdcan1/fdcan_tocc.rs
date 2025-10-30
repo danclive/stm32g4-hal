@@ -176,17 +176,17 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Timeout counter enable This is a protected write (P) bit, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn etoc(&mut self) -> EtocW<FdcanToccSpec> {
+    pub fn etoc(&mut self) -> EtocW<'_, FdcanToccSpec> {
         EtocW::new(self, 0)
     }
     #[doc = "Bits 1:2 - Timeout select When operating in Continuous mode, a write to TOCV presets the counter to the value configured by TOCC\\[TOP\\] and continues down-counting. When the timeout counter is controlled by one of the FIFOs, an empty FIFO presets the counter to the value configured by TOCC\\[TOP\\]. Down-counting is started when the first FIFO element is stored. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\] and bit 0 \\[INIT\\] of CCCR register are set to 1."]
     #[inline(always)]
-    pub fn tos(&mut self) -> TosW<FdcanToccSpec> {
+    pub fn tos(&mut self) -> TosW<'_, FdcanToccSpec> {
         TosW::new(self, 1)
     }
     #[doc = "Bits 16:31 - Timeout period Start value of the timeout counter (down-counter). Configures the timeout period."]
     #[inline(always)]
-    pub fn top(&mut self) -> TopW<FdcanToccSpec> {
+    pub fn top(&mut self) -> TopW<'_, FdcanToccSpec> {
         TopW::new(self, 16)
     }
 }

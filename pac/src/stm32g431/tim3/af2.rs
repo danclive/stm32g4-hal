@@ -153,72 +153,72 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - BRK BKIN input enable"]
     #[inline(always)]
-    pub fn bkine(&mut self) -> BkineW<Af2Spec> {
+    pub fn bkine(&mut self) -> BkineW<'_, Af2Spec> {
         BkineW::new(self, 0)
     }
     #[doc = "Bit 1 - BRK2 COMP1 enable"]
     #[inline(always)]
-    pub fn bk2cmp1e(&mut self) -> Bk2cmp1eW<Af2Spec> {
+    pub fn bk2cmp1e(&mut self) -> Bk2cmp1eW<'_, Af2Spec> {
         Bk2cmp1eW::new(self, 1)
     }
     #[doc = "Bit 2 - BRK2 COMP2 enable"]
     #[inline(always)]
-    pub fn bk2cmp2e(&mut self) -> Bk2cmp2eW<Af2Spec> {
+    pub fn bk2cmp2e(&mut self) -> Bk2cmp2eW<'_, Af2Spec> {
         Bk2cmp2eW::new(self, 2)
     }
     #[doc = "Bit 3 - BRK2 COMP3 enable"]
     #[inline(always)]
-    pub fn bk2cmp3e(&mut self) -> Bk2cmp3eW<Af2Spec> {
+    pub fn bk2cmp3e(&mut self) -> Bk2cmp3eW<'_, Af2Spec> {
         Bk2cmp3eW::new(self, 3)
     }
     #[doc = "Bit 4 - BRK2 COMP4 enable"]
     #[inline(always)]
-    pub fn bk2cmp4e(&mut self) -> Bk2cmp4eW<Af2Spec> {
+    pub fn bk2cmp4e(&mut self) -> Bk2cmp4eW<'_, Af2Spec> {
         Bk2cmp4eW::new(self, 4)
     }
     #[doc = "Bit 5 - BRK2 COMP5 enable"]
     #[inline(always)]
-    pub fn bk2cmp5e(&mut self) -> Bk2cmp5eW<Af2Spec> {
+    pub fn bk2cmp5e(&mut self) -> Bk2cmp5eW<'_, Af2Spec> {
         Bk2cmp5eW::new(self, 5)
     }
     #[doc = "Bit 6 - BRK2 COMP6 enable"]
     #[inline(always)]
-    pub fn bk2cmp6e(&mut self) -> Bk2cmp6eW<Af2Spec> {
+    pub fn bk2cmp6e(&mut self) -> Bk2cmp6eW<'_, Af2Spec> {
         Bk2cmp6eW::new(self, 6)
     }
     #[doc = "Bit 7 - BRK2 COMP7 enable"]
     #[inline(always)]
-    pub fn bk2cmp7e(&mut self) -> Bk2cmp7eW<Af2Spec> {
+    pub fn bk2cmp7e(&mut self) -> Bk2cmp7eW<'_, Af2Spec> {
         Bk2cmp7eW::new(self, 7)
     }
     #[doc = "Bit 9 - BRK2 BKIN input polarity"]
     #[inline(always)]
-    pub fn bk2inp(&mut self) -> Bk2inpW<Af2Spec> {
+    pub fn bk2inp(&mut self) -> Bk2inpW<'_, Af2Spec> {
         Bk2inpW::new(self, 9)
     }
     #[doc = "Bit 10 - BRK2 COMP1 input polarity"]
     #[inline(always)]
-    pub fn bk2cmp1p(&mut self) -> Bk2cmp1pW<Af2Spec> {
+    pub fn bk2cmp1p(&mut self) -> Bk2cmp1pW<'_, Af2Spec> {
         Bk2cmp1pW::new(self, 10)
     }
     #[doc = "Bit 11 - BRK2 COMP2 input polarity"]
     #[inline(always)]
-    pub fn bk2cmp2p(&mut self) -> Bk2cmp2pW<Af2Spec> {
+    pub fn bk2cmp2p(&mut self) -> Bk2cmp2pW<'_, Af2Spec> {
         Bk2cmp2pW::new(self, 11)
     }
     #[doc = "Bit 12 - BRK2 COMP3 input polarity"]
     #[inline(always)]
-    pub fn bk2cmp3p(&mut self) -> Bk2cmp3pW<Af2Spec> {
+    pub fn bk2cmp3p(&mut self) -> Bk2cmp3pW<'_, Af2Spec> {
         Bk2cmp3pW::new(self, 12)
     }
     #[doc = "Bit 13 - BRK2 COMP4 input polarity"]
     #[inline(always)]
-    pub fn bk2cmp4p(&mut self) -> Bk2cmp4pW<Af2Spec> {
+    pub fn bk2cmp4p(&mut self) -> Bk2cmp4pW<'_, Af2Spec> {
         Bk2cmp4pW::new(self, 13)
     }
     #[doc = "Bits 16:18 - OCREF_CLR source selection"]
     #[inline(always)]
-    pub fn ocrsel(&mut self) -> OcrselW<Af2Spec> {
+    pub fn ocrsel(&mut self) -> OcrselW<'_, Af2Spec> {
         OcrselW::new(self, 16)
     }
 }

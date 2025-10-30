@@ -31,7 +31,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:15 - counter value"]
     #[inline(always)]
-    pub fn cnt(&mut self) -> CntW<CntSpec> {
+    pub fn cnt(&mut self) -> CntW<'_, CntSpec> {
         CntW::new(self, 0)
     }
 }

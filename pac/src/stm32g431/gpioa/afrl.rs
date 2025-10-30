@@ -93,42 +93,42 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl0(&mut self) -> Afrl0W<AfrlSpec> {
+    pub fn afrl0(&mut self) -> Afrl0W<'_, AfrlSpec> {
         Afrl0W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl1(&mut self) -> Afrl1W<AfrlSpec> {
+    pub fn afrl1(&mut self) -> Afrl1W<'_, AfrlSpec> {
         Afrl1W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl2(&mut self) -> Afrl2W<AfrlSpec> {
+    pub fn afrl2(&mut self) -> Afrl2W<'_, AfrlSpec> {
         Afrl2W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl3(&mut self) -> Afrl3W<AfrlSpec> {
+    pub fn afrl3(&mut self) -> Afrl3W<'_, AfrlSpec> {
         Afrl3W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl4(&mut self) -> Afrl4W<AfrlSpec> {
+    pub fn afrl4(&mut self) -> Afrl4W<'_, AfrlSpec> {
         Afrl4W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl5(&mut self) -> Afrl5W<AfrlSpec> {
+    pub fn afrl5(&mut self) -> Afrl5W<'_, AfrlSpec> {
         Afrl5W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl6(&mut self) -> Afrl6W<AfrlSpec> {
+    pub fn afrl6(&mut self) -> Afrl6W<'_, AfrlSpec> {
         Afrl6W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl7(&mut self) -> Afrl7W<AfrlSpec> {
+    pub fn afrl7(&mut self) -> Afrl7W<'_, AfrlSpec> {
         Afrl7W::new(self, 28)
     }
 }

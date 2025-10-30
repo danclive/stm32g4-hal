@@ -63,27 +63,27 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:11 - Bus timeout A"]
     #[inline(always)]
-    pub fn timeouta(&mut self) -> TimeoutaW<TimeoutrSpec> {
+    pub fn timeouta(&mut self) -> TimeoutaW<'_, TimeoutrSpec> {
         TimeoutaW::new(self, 0)
     }
     #[doc = "Bit 12 - Idle clock timeout detection"]
     #[inline(always)]
-    pub fn tidle(&mut self) -> TidleW<TimeoutrSpec> {
+    pub fn tidle(&mut self) -> TidleW<'_, TimeoutrSpec> {
         TidleW::new(self, 12)
     }
     #[doc = "Bit 15 - Clock timeout enable"]
     #[inline(always)]
-    pub fn timouten(&mut self) -> TimoutenW<TimeoutrSpec> {
+    pub fn timouten(&mut self) -> TimoutenW<'_, TimeoutrSpec> {
         TimoutenW::new(self, 15)
     }
     #[doc = "Bits 16:27 - Bus timeout B"]
     #[inline(always)]
-    pub fn timeoutb(&mut self) -> TimeoutbW<TimeoutrSpec> {
+    pub fn timeoutb(&mut self) -> TimeoutbW<'_, TimeoutrSpec> {
         TimeoutbW::new(self, 16)
     }
     #[doc = "Bit 31 - Extended clock timeout enable"]
     #[inline(always)]
-    pub fn texten(&mut self) -> TextenW<TimeoutrSpec> {
+    pub fn texten(&mut self) -> TextenW<'_, TimeoutrSpec> {
         TextenW::new(self, 31)
     }
 }

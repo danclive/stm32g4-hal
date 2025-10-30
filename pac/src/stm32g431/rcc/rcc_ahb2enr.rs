@@ -913,77 +913,77 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - IO port A clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn gpioaen(&mut self) -> GpioaenW<RccAhb2enrSpec> {
+    pub fn gpioaen(&mut self) -> GpioaenW<'_, RccAhb2enrSpec> {
         GpioaenW::new(self, 0)
     }
     #[doc = "Bit 1 - IO port B clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn gpioben(&mut self) -> GpiobenW<RccAhb2enrSpec> {
+    pub fn gpioben(&mut self) -> GpiobenW<'_, RccAhb2enrSpec> {
         GpiobenW::new(self, 1)
     }
     #[doc = "Bit 2 - IO port C clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiocen(&mut self) -> GpiocenW<RccAhb2enrSpec> {
+    pub fn gpiocen(&mut self) -> GpiocenW<'_, RccAhb2enrSpec> {
         GpiocenW::new(self, 2)
     }
     #[doc = "Bit 3 - IO port D clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn gpioden(&mut self) -> GpiodenW<RccAhb2enrSpec> {
+    pub fn gpioden(&mut self) -> GpiodenW<'_, RccAhb2enrSpec> {
         GpiodenW::new(self, 3)
     }
     #[doc = "Bit 4 - IO port E clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn gpioeen(&mut self) -> GpioeenW<RccAhb2enrSpec> {
+    pub fn gpioeen(&mut self) -> GpioeenW<'_, RccAhb2enrSpec> {
         GpioeenW::new(self, 4)
     }
     #[doc = "Bit 5 - IO port F clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiofen(&mut self) -> GpiofenW<RccAhb2enrSpec> {
+    pub fn gpiofen(&mut self) -> GpiofenW<'_, RccAhb2enrSpec> {
         GpiofenW::new(self, 5)
     }
     #[doc = "Bit 6 - IO port G clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn gpiogen(&mut self) -> GpiogenW<RccAhb2enrSpec> {
+    pub fn gpiogen(&mut self) -> GpiogenW<'_, RccAhb2enrSpec> {
         GpiogenW::new(self, 6)
     }
     #[doc = "Bit 13 - ADC12 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn adc12en(&mut self) -> Adc12enW<RccAhb2enrSpec> {
+    pub fn adc12en(&mut self) -> Adc12enW<'_, RccAhb2enrSpec> {
         Adc12enW::new(self, 13)
     }
     #[doc = "Bit 14 - ADC345 clock enable Set and cleared by software"]
     #[inline(always)]
-    pub fn adc345en(&mut self) -> Adc345enW<RccAhb2enrSpec> {
+    pub fn adc345en(&mut self) -> Adc345enW<'_, RccAhb2enrSpec> {
         Adc345enW::new(self, 14)
     }
     #[doc = "Bit 16 - DAC1 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn dac1en(&mut self) -> Dac1enW<RccAhb2enrSpec> {
+    pub fn dac1en(&mut self) -> Dac1enW<'_, RccAhb2enrSpec> {
         Dac1enW::new(self, 16)
     }
     #[doc = "Bit 17 - DAC2 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn dac2en(&mut self) -> Dac2enW<RccAhb2enrSpec> {
+    pub fn dac2en(&mut self) -> Dac2enW<'_, RccAhb2enrSpec> {
         Dac2enW::new(self, 17)
     }
     #[doc = "Bit 18 - DAC3 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn dac3en(&mut self) -> Dac3enW<RccAhb2enrSpec> {
+    pub fn dac3en(&mut self) -> Dac3enW<'_, RccAhb2enrSpec> {
         Dac3enW::new(self, 18)
     }
     #[doc = "Bit 19 - DAC4 clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn dac4en(&mut self) -> Dac4enW<RccAhb2enrSpec> {
+    pub fn dac4en(&mut self) -> Dac4enW<'_, RccAhb2enrSpec> {
         Dac4enW::new(self, 19)
     }
     #[doc = "Bit 24 - AES clock enable Set and cleared by software."]
     #[inline(always)]
-    pub fn aesen(&mut self) -> AesenW<RccAhb2enrSpec> {
+    pub fn aesen(&mut self) -> AesenW<'_, RccAhb2enrSpec> {
         AesenW::new(self, 24)
     }
     #[doc = "Bit 26 - RNG enable Set and cleared by software."]
     #[inline(always)]
-    pub fn rngen(&mut self) -> RngenW<RccAhb2enrSpec> {
+    pub fn rngen(&mut self) -> RngenW<'_, RccAhb2enrSpec> {
         RngenW::new(self, 26)
     }
 }

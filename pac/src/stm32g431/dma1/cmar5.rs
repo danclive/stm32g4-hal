@@ -21,7 +21,7 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:31 - Memory 1 address (used in case of Double buffer mode)"]
     #[inline(always)]
-    pub fn ma(&mut self) -> MaW<Cmar5Spec> {
+    pub fn ma(&mut self) -> MaW<'_, Cmar5Spec> {
         MaW::new(self, 0)
     }
 }

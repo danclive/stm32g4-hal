@@ -133,12 +133,12 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Enable interrupt line 0"]
     #[inline(always)]
-    pub fn eint0(&mut self) -> Eint0W<FdcanIleSpec> {
+    pub fn eint0(&mut self) -> Eint0W<'_, FdcanIleSpec> {
         Eint0W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable interrupt line 1"]
     #[inline(always)]
-    pub fn eint1(&mut self) -> Eint1W<FdcanIleSpec> {
+    pub fn eint1(&mut self) -> Eint1W<'_, FdcanIleSpec> {
         Eint1W::new(self, 1)
     }
 }

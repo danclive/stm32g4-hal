@@ -45,22 +45,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - RESET bit"]
     #[inline(always)]
-    pub fn reset(&mut self) -> ResetW<CrSpec> {
+    pub fn reset(&mut self) -> ResetW<'_, CrSpec> {
         ResetW::new(self, 0)
     }
     #[doc = "Bits 3:4 - Polynomial size"]
     #[inline(always)]
-    pub fn polysize(&mut self) -> PolysizeW<CrSpec> {
+    pub fn polysize(&mut self) -> PolysizeW<'_, CrSpec> {
         PolysizeW::new(self, 3)
     }
     #[doc = "Bits 5:6 - Reverse input data"]
     #[inline(always)]
-    pub fn rev_in(&mut self) -> RevInW<CrSpec> {
+    pub fn rev_in(&mut self) -> RevInW<'_, CrSpec> {
         RevInW::new(self, 5)
     }
     #[doc = "Bit 7 - Reverse output data"]
     #[inline(always)]
-    pub fn rev_out(&mut self) -> RevOutW<CrSpec> {
+    pub fn rev_out(&mut self) -> RevOutW<'_, CrSpec> {
         RevOutW::new(self, 7)
     }
 }

@@ -433,37 +433,37 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bit 0 - Wakeup pin WKUP1 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP1"]
     #[inline(always)]
-    pub fn wp1(&mut self) -> Wp1W<PwrCr4Spec> {
+    pub fn wp1(&mut self) -> Wp1W<'_, PwrCr4Spec> {
         Wp1W::new(self, 0)
     }
     #[doc = "Bit 1 - Wakeup pin WKUP2 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP2"]
     #[inline(always)]
-    pub fn wp2(&mut self) -> Wp2W<PwrCr4Spec> {
+    pub fn wp2(&mut self) -> Wp2W<'_, PwrCr4Spec> {
         Wp2W::new(self, 1)
     }
     #[doc = "Bit 2 - Wakeup pin WKUP3 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP3"]
     #[inline(always)]
-    pub fn wp3(&mut self) -> Wp3W<PwrCr4Spec> {
+    pub fn wp3(&mut self) -> Wp3W<'_, PwrCr4Spec> {
         Wp3W::new(self, 2)
     }
     #[doc = "Bit 3 - Wakeup pin WKUP4 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP4"]
     #[inline(always)]
-    pub fn wp4(&mut self) -> Wp4W<PwrCr4Spec> {
+    pub fn wp4(&mut self) -> Wp4W<'_, PwrCr4Spec> {
         Wp4W::new(self, 3)
     }
     #[doc = "Bit 4 - Wakeup pin WKUP5 polarity This bit defines the polarity used for an event detection on external wake-up pin, WKUP5"]
     #[inline(always)]
-    pub fn wp5(&mut self) -> Wp5W<PwrCr4Spec> {
+    pub fn wp5(&mut self) -> Wp5W<'_, PwrCr4Spec> {
         Wp5W::new(self, 4)
     }
     #[doc = "Bit 8 - V<sub>BAT</sub> battery charging enable"]
     #[inline(always)]
-    pub fn vbe(&mut self) -> VbeW<PwrCr4Spec> {
+    pub fn vbe(&mut self) -> VbeW<'_, PwrCr4Spec> {
         VbeW::new(self, 8)
     }
     #[doc = "Bit 9 - V<sub>BAT</sub> battery charging resistor selection"]
     #[inline(always)]
-    pub fn vbrs(&mut self) -> VbrsW<PwrCr4Spec> {
+    pub fn vbrs(&mut self) -> VbrsW<'_, PwrCr4Spec> {
         VbrsW::new(self, 9)
     }
 }

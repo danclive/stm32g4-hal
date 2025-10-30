@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:7 - Dead-time falling edge generator setup"]
     #[inline(always)]
-    pub fn dtgf(&mut self) -> DtgfW<Dtr2Spec> {
+    pub fn dtgf(&mut self) -> DtgfW<'_, Dtr2Spec> {
         DtgfW::new(self, 0)
     }
     #[doc = "Bit 16 - Deadtime Asymmetric Enable"]
     #[inline(always)]
-    pub fn dtae(&mut self) -> DtaeW<Dtr2Spec> {
+    pub fn dtae(&mut self) -> DtaeW<'_, Dtr2Spec> {
         DtaeW::new(self, 16)
     }
     #[doc = "Bit 17 - Deadtime Preload Enable"]
     #[inline(always)]
-    pub fn dtpe(&mut self) -> DtpeW<Dtr2Spec> {
+    pub fn dtpe(&mut self) -> DtpeW<'_, Dtr2Spec> {
         DtpeW::new(self, 17)
     }
 }

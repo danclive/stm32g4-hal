@@ -43,17 +43,17 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - Capture/Compare 1 selection"]
     #[inline(always)]
-    pub fn cc1s(&mut self) -> Cc1sW<Ccmr1InputSpec> {
+    pub fn cc1s(&mut self) -> Cc1sW<'_, Ccmr1InputSpec> {
         Cc1sW::new(self, 0)
     }
     #[doc = "Bits 2:3 - Input capture 1 prescaler"]
     #[inline(always)]
-    pub fn ic1psc(&mut self) -> Ic1pscW<Ccmr1InputSpec> {
+    pub fn ic1psc(&mut self) -> Ic1pscW<'_, Ccmr1InputSpec> {
         Ic1pscW::new(self, 2)
     }
     #[doc = "Bits 4:7 - Input capture 1 filter"]
     #[inline(always)]
-    pub fn ic1f(&mut self) -> Ic1fW<Ccmr1InputSpec> {
+    pub fn ic1f(&mut self) -> Ic1fW<'_, Ccmr1InputSpec> {
         Ic1fW::new(self, 4)
     }
 }

@@ -53,22 +53,22 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:2 - TAMPFREQ"]
     #[inline(always)]
-    pub fn tampfreq(&mut self) -> TampfreqW<FltcrSpec> {
+    pub fn tampfreq(&mut self) -> TampfreqW<'_, FltcrSpec> {
         TampfreqW::new(self, 0)
     }
     #[doc = "Bits 3:4 - TAMPFLT"]
     #[inline(always)]
-    pub fn tampflt(&mut self) -> TampfltW<FltcrSpec> {
+    pub fn tampflt(&mut self) -> TampfltW<'_, FltcrSpec> {
         TampfltW::new(self, 3)
     }
     #[doc = "Bits 5:6 - TAMPPRCH"]
     #[inline(always)]
-    pub fn tampprch(&mut self) -> TampprchW<FltcrSpec> {
+    pub fn tampprch(&mut self) -> TampprchW<'_, FltcrSpec> {
         TampprchW::new(self, 5)
     }
     #[doc = "Bit 7 - TAMPPUDIS"]
     #[inline(always)]
-    pub fn tamppudis(&mut self) -> TamppudisW<FltcrSpec> {
+    pub fn tamppudis(&mut self) -> TamppudisW<'_, FltcrSpec> {
         TamppudisW::new(self, 7)
     }
 }
